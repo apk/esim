@@ -1,3 +1,6 @@
+#112 217 231-241
+#401-407 421(blocks) 424-469 499
+
 11u begin 1v
 4u 1000m
 <hp "In"
@@ -9902,14 +9905,16 @@ hp> "1591"
 1u 1000m
 <hp "158B"
 3v 200m
-w< 50m / 50m se "158a" 8d
-w< 50m / 50m se "158e" 8d
 2u 50m
-hs> "158P3"
+2u 50m
+w< 50m / 50m se "158a" 8d
+2u 50m
+hs> "158P4"
 3u 800m
-<hs "158N3"
-3u ~ se 100m
-end "158b"
+<hs "158S4"
+~ se 50m
+50m >w / 50m w "158b" 8d
+end "158c"
 
 13v begin -1u "159a" ne
 ~ 50m e
@@ -9951,16 +9956,32 @@ hp> "1582"
 1u 1000m
 1u 1000m
 <hp "158A"
-3v 200m
-2u 50m
-25m ekw< 25m / 25m se "158c" 8d / 25m nw "158a"
-50m >w / 50m nw "158e" 8d
-hs> "158P2"
+~ 50m se
+w< 50m / 50m e "158d" 8d
+~ 50m e
+hs> "158P1"
 3u 800m
-<hs "158N2"
+<hs "158S1"
 2u 50m
-50m >w / 50m sw "158d" 8d
-50m >w / 50m nw "158b" 13d
+ne
+50m >w / 50m w "158e" 8d
+e
+1u 100m
+hs> "158T"
+2u 50m
+50m >w / 50m nw "158c" 13d
+<hs "158U"
+~ 50m se
+s
+w< 50m / 50m sw "158f" 8d
+1u 25m
+sw
+~ 25m w
+hs> "158R1"
+3u 800m
+<hs "158N1"
+2u 50m
+50m >w / 50m ne "158g" 8d
 3v 200m
 hp> "158F"
 3v 1000m
@@ -9985,32 +10006,58 @@ end "157b"
 %quo1 157A 157N1 157N2
 %quo1 1582 157F 157P1 157P2
 
-61v begin +0u "158c" se
+65v begin -2u "158a" se
 ~ 50m e
-hs> "158P1"
+hs> "158P3"
 3u 800m
-<hs "158N1"
-~ 50m ne
-end "158d"
+<hs "158S3"
+2u 50m
+end "158b"
 
-%def 158B-158N3/+158N2/158N1
-%def 158A-158N2/158N1
+58v begin +3u "158d" e
+2u 50m
+hs> "158P2"
+3u 800m
+<hs "158S2"
+~ 50m se
+end "158e"
+
+78v begin +4u "158g" ne
+~ 50m e
+hs> "158N2"
+3u 800m
+<hs "158R2"
+1u 50m
+end "158f"
+
+%def 158B-158S4/158S3
+%def 158A-158S1/158S2
+%def 158S1-158U
+%def 158S2-158N1/158N2
+%def 158S3-158N1/158N2
+%def 158S4-158N1/158N2
+%def 158U-158N1/158N2
 %def 158N1-200A
 %def 158N2-200A
-%def 158N3-200A
 
-%def 158F-158P2/158P1
+%def 158F-158R1/158R2
+%def 158R1-158T
+%def 158R2-158P1/158P2
+%def 158T-158P1/158P2
 %def 158P1-1582
 %def 158P2-1582
 
-%mac hfiftyeight-hfiftynine 158F-158P3/+158P2/158P1
-%mac hfiftyeight-hfiftynine 158P1-1591
-%mac hfiftyeight-hfiftynine 158P2-1591
+%mac hfiftyeight-hfiftynine 158R1-158P4/158P3
+%mac hfiftyeight-hfiftynine 158R2-158P4/158P3
 %mac hfiftyeight-hfiftynine 158P3-1591
+%mac hfiftyeight-hfiftynine 158P4-1591
 
-%quo1 1581 158A 158N1 158N2
-%quo1 158F 158P1 158P2
-%quo2 1592 158B 158N3 158P3 1581 158A 158N1 158N2
+%quo1 1581 158A 158S1 158S2
+%quo1 1592 158B 158S3 158S4
+%quo1 158U 158N1 158N2
+%quo1 158F 158R1 158R2
+%quo1 158P3 158P4
+%quo1 158T 158P1 158P2
 
 ### NAUGHTYSIXTEEN
 
@@ -11157,7 +11204,8 @@ w< 50m / 50m ne "195k" 8d
 hs> "195P3"
 4u 800m
 <hs "195N3"
-w< 50m ne / 50m se "195i" 8d
+w< 50m / 50m se "195i" 8d
+~ 50m ne
 end "195l"
 
 1u begin -2u "92t195"
@@ -11174,10 +11222,10 @@ w< 50m / 50m ne "195n" 10d
 hs> "195P4"
 4u 800m
 <hs "195N4"
+w< 50m / 50m ne "195z" 8d
 2u 50m
 50m >w / 50m sw "195l" 13d
 50m >w / 50m nw "195o" 8d
-2u 50m
 2u 200m
 hp> "195G"
 1u 600m
@@ -11208,8 +11256,8 @@ hs> "195P5"
 <hs "195N5"
 2u 50m
 50m >w / 50m nw "195q" 8d
+50m >w / 50m sw "195z" 8d
 w< 50m / 50m se "195o" 8d
-2u 50m
 2u 50m
 2u 200m
 hp> "195F"
@@ -11238,11 +11286,11 @@ end "195q"
 %def 195N1-1963/196D
 %def 195N2-196D/+1963
 %def 195N3-1961/+1963/196D
-%def 195N4-1961
+%def 195N4-1961/196B
 %def 195N5-196B/+1961
 %def 195N6-1961/196B
 
-%def 195F-195P5/195P6
+%def 195F-195P5/195P6/195P4
 %def 195G-195P4/+195P5/195P3/195P6
 %def 195H-195P2/195P3/195P1
 %def 195I-195P1/+195P2/195P3
@@ -11253,7 +11301,7 @@ end "195q"
 %def 195P5-1956/92G
 %def 195P6-1956/92G
 
-%mac hninetyfive-ttwentynine 195F-195P5/195P6
+%mac hninetyfive-ttwentynine 195F-195P5/195P6/195P4
 %mac hninetyfive-ttwentynine 195G-195P4/+195P5/195P3/195P6
 %mac hninetyfive-ttwentynine 195H-195P2/195P3/195P1
 %mac hninetyfive-ttwentynine 195I-195P1/+195P2/195P3
@@ -19410,7 +19458,7 @@ end "175b"
 
 1v begin =8+14v "175c209"
 3v 1000m
-<hs "209A"
+<hp "209A"
 3v 200m
 w< 50m / 50m ne "209a" 13d
 2u 50m
@@ -31049,17 +31097,6 @@ end "262d"
 %quo2 2632 262F 262P0 262P1 262P2
 %quo3 2621 2623 262A 262N0 262N1 262N2 2632 262F 262P0 262P1 262P2
 
-38u begin -2u "262c263"
-1u 500m
-w< 50m / 50m se "263x" 20d
-1u 50m
-1u 2000m
-<hp "263A"
-1u 200m
-end "263x"
-
-%quo1 2631 263A
-
 ### TSEVENTYONE+TWO+THREE
 
 1u begin =4+18v "271c280"
@@ -31326,7 +31363,7 @@ hp> "2782"
 3v 1000m
 end "277c278"
 
-1u begin -2u "276cxxx"
+1u begin -2u "276c494"
 3v 1000m
 <hp "276B"
 3v 200m
@@ -31337,13 +31374,6 @@ hs> "276P0"
 <hs "276N0"
 3u ~ 100m se
 end "276d"
-
-19u begin +0u "276cxxx"
-w< 50m / 50m ne "xxa" 20d
-2u 2000m
-<hp "xxxA"
-1u 200m
-end "xxa"
 
 13v begin +3u "276a" se
 ~ 50m e
@@ -31388,14 +31418,9 @@ end "277b"
 %def 276P1-2762
 %def 276P2-2762
 
-%mac tseventysix-xxx 276F-276P0/+276P1
-%mac tseventysix-xxx 276P0-xxxA
-%mac tseventysix-xxx 276P1-xxxA
-
-%quo1 2761 276A 276N1 276N2
-%quo1 276B 276N0 276N1
-%quo1 276F 276P0 276P1 276P2
-%quo2 2761 276A 276B 276N0 276N2 276P0 276P2
+%mac tseventysix-fninetyfour 276F-276P0/+276P1
+%mac tseventysix-fninetyfour 276P0-494A
+%mac tseventysix-fninetyfour 276P1-494A
 
 %def 277A-277N1/277N2
 %def 277N1-2781
@@ -31539,6 +31564,457 @@ end "279d"
 %quo2 2791 279A 279N1 279N2 279N3
 %quo2 050 279F 279P1 279P2 279P3
 %quo3 2791 279A 279N1 279N2 279N3 050 279F 279P1 279P2 279P3
+
+### TSIXTYTHREE+FOUR
+
+1u begin =0+5v "262c263"
+3v 1000m
+<hp "263A"
+3v 200m
+w< 50m / 50m se "263a" 8d
+2u 50m
+hs> "263P1"
+7v 800m
+<hs "263N1"
+2u 50m
+50m >w / 50m sw "263b" 8d
+3v 200m
+hp> "263F"
+1u 1000m
+1u 1000m
+<hp "2641"
+1u 200m
+hp> "2642"
+1u 1000m
+1u 1000m
+<hp "264A"
+3v 200m
+w< 50m / 50m se "264a" 8d
+2u 50m
+hs> "264P1"
+7v 800m
+<hs "264N1"
+2u 50m
+50m >w / 50m sw "264b" 8d
+3v 200m
+hp> "264F"
+1u 1000m
+1u 1000m
+<hp "2651"
+1u 200m
+hp> "2652"
+3v 1000m
+end "264c265"
+
+13v begin +1u "263a" se
+~ 50m e
+hs> "263P2"
+7v 800m
+<hs "263N2"
+~ 50m ne
+end "263b"
+
+29u begin +0u "264a" se
+~ 50m e
+hs> "264P2"
+7v 800m
+<hs "264N2"
+~ 50m ne
+end "264b"
+
+%def 263A-263N1/263N2
+%def 263N1-2641
+%def 263N2-2641
+
+%def 263F-263P1/263P2
+%def 263P1-2632
+%def 263P2-2632
+
+%quo1 2631 263A 263N1 263N2
+%quo1 2642 263F 263P1 263P2
+
+%def 264A-264N1/264N2
+%def 264N1-2651
+%def 264N2-2651
+
+%def 264F-264P1/264P2
+%def 264P1-2642
+%def 264P2-2642
+
+%quo1 2641 264A 264N1 264N2
+%quo1 2652 264F 264P1 264P2
+
+### FNINETYFOUR
+
+19u begin =0+1v "276c494"
+3v 1000m
+<hp "4941"
+1u 200m
+hp> "4942"
+1u 1000m
+1u 1000m
+<hp "494A"
+~ 50m se
+w< 50m / 50m e "494a" 8d
+~ 50m e
+hs> "494P1"
+3u 800m
+<hs "494N1"
+2u 50m
+50m >w / 50m nw "494b" 8d
+3v 200m
+hp> "494F"
+1u 1000m
+1u 1000m
+<hp "2653"
+1u 200m
+hp> "2654"
+3v 1000m
+end "265c494"
+
+29u begin +2u "494a"
+2u 50m
+hs> "494P2"
+3u 800m
+<hs "494N2"
+~ 50m se
+end "494b"
+
+%quo1 2761 276A 276N1 276N2
+%quo1 4942 276B 276N0 276N1
+%quo1 276F 276P0 276P1 276P2
+%quo2 2761 276A 4942 276B 276N0 276N2 276P0 276P2
+
+%def 494A-494N1/494N2
+%def 494N1-2653
+%def 494N2-2653
+
+%def 494F-494P1/494P2
+%def 494P1-4942
+%def 494P2-4942
+
+%quo1 4941 494A 494N1 494N2
+%quo1 2654 494F 494P1 494P2
+
+### TSIXTYFIVE
+
+21u begin =22+25v "265m" sw
+~ 50m w
+hs> "265Q0"
+3u 800m
+<end "265P0"
+
+1u begin -5u "264c265"
+3v 1000m
+<hp "265A"
+3v 200m
+w< 50m / 50m ne "265a" 13d
+~ 50m se
+w< 50m / 50m e "265b" 8d
+~ 3u 100m e
+hs> "265P1"
+7v 800m
+<hs "265Q1"
+2u 50m
+50m >w / 50m sw "265m" 4d
+50m >w / 50m nw "265c" 8d
+4u 100m
+50m >w / 50m nw "265d" 10d
+3v 200m
+hp> "265F"
+1u 1000m
+1u 1000m
+<hp "2661"
+1u 200m
+hp> "2662"
+2u 1000m
+#XXX
+w< 50m / 50m ne "265c266"
+2u 2000m
+<hp "266A"
+1u 200m
+1u 800m
+<hp "266P"
+1u 50m
+end "265c266"
+%quo1 2661 266A
+
+21v begin +2u "265b"
+2u 50m
+50m >w / 50m nw "265e" 8d
+hs> "265P2"
+7v 800m
+<hs "265Q2"
+w< 50m / 50m ne "265f" 8d
+~ 50m se
+end "265c"
+
+21v begin -3u "265g" se
+w< 50m e / 50m se "265e" 8d
+2u 50m
+hs> "265P3"
+7v 800m
+<hs "265Q3"
+2u 50m
+50m >w ne / 50m sw "265f" 8d
+end "265h"
+
+1u begin -1u "265c494"
+3v 1000m
+<hp "265B"
+3v 200m
+2u 50m
+50m >w / 50m sw "265a" 13d
+w< 50m / 50m se "265g" 8d
+w< 50m / 50m ne "265i" 8d
+2u 50m
+hs> "265P4"
+7v 800m
+<hs "265Q4"
+2u 50m
+50m >w / 50m nw "265j" 8d
+se
+50m >w / 50m w "265h" 8d
+e
+w< 50m / 50m se "265k" 10d
+4u 100m
+hs> "265R4"
+3u 800m
+<hs "265N4"
+2u 50m
+50m >w / 50m sw "265l" 8d
+3v 200m
+hp> "265G"
+1u 1000m
+1u 1000m
+<hp "4951"
+1u 200m
+hp> "4952"
+3v 1000m
+end "265c495"
+
+25v begin -1u "265i" ne
+~ 50m e
+hs> "265P5"
+7v 800m
+<hs "265Q5"
+~ 50m se
+end "265j"
+
+54v begin +4u "265k" se
+w< 50m e 8d / 50m se "265d" 10d
+2u 50m
+hs> "265R3"
+3u 800m
+<hs "265N3"
+~ 50m ne
+end "265l"
+
+%def 265A-265Q1/265Q2/265Q5/265Q3/265Q4
+%def 265B-265Q4/265Q3/265Q5/265Q2
+%def 265Q1-2661
+%def 265Q2-2661
+%def 265Q3-2661
+%def 265Q4-2661
+%def 265Q5-2661
+
+%def 265F-265P1/265P2/265P5/265P3/265P4
+%def 265G-265R4/265R3
+%def 265R3-265P4/265P3/265P5/265P2
+%def 265R4-265P4/265P3/265P5/265P2
+%def 265P1-2652
+%def 265P2-2652
+%def 265P3-2652
+%def 265P4-2652
+%def 265P5-2652
+
+%mac tsixtyfive-fninetyfive 265A-265Q4/++265Q2/265Q5/265Q3
+%mac tsixtyfive-fninetyfive 265B-265Q4/265Q3/265Q5/265Q2
+%mac tsixtyfive-fninetyfive 265Q2-265N4/265N3
+%mac tsixtyfive-fninetyfive 265Q3-265N4/265N3
+%mac tsixtyfive-fninetyfive 265Q4-265N4/265N3
+%mac tsixtyfive-fninetyfive 265Q5-265N4/265N3
+%mac tsixtyfive-fninetyfive 265N3-4951
+%mac tsixtyfive-fninetyfive 265N4-4951
+
+%mac tsixtyfive-fninetyfour 265F-265P4/++265P2/265P5/265P3
+%mac tsixtyfive-fninetyfour 265G-265R4/265R3
+%mac tsixtyfive-fninetyfour 265R3-265P4/265P3/265P5/265P2
+%mac tsixtyfive-fninetyfour 265R4-265P4/265P3/265P5/265P2
+%mac tsixtyfive-fninetyfour 265P2-2654
+%mac tsixtyfive-fninetyfour 265P3-2654
+%mac tsixtyfive-fninetyfour 265P4-2654
+%mac tsixtyfive-fninetyfour 265P5-2654
+
+%mac tsixtyfive-turn-right 265F-265P0/265P2/265P3/265P5/265P4
+%mac tsixtyfive-turn-right 265G-265R4/265R3
+%mac tsixtyfive-turn-right 265R3-265P3/265P5/265P2/265P4
+%mac tsixtyfive-turn-right 265R4-265P3/265P5/265P2/265P4
+%mac tsixtyfive-turn-right 265P1-$
+%mac tsixtyfive-turn-right 265P2-$
+%mac tsixtyfive-turn-right 265P3-$
+%mac tsixtyfive-turn-right 265P4-$
+%mac tsixtyfive-turn-right 265P5-$
+
+%quo3 2651 265A 2653 265B 265Q2 265Q3 265Q4 265Q5
+%quo1 4952 265G 265R3 265R4
+%quo1 265N3 265N4
+%quo3 2662 265F 265P2 265P3 265P4 265P5
+%quo4 2651 265A 2653 265B 265Q2 265Q3 265Q4 265Q5 2662 265F 265P2 265P3 265P4 265P5
+
+### FNINETYFIVE-SEVEN
+
+1u begin =4+22v "265c495"
+3v 1000m
+<hp "495A"
+3v 200m
+w< 50m / 50m se "495a" 10d
+2u 50m
+hs> "495P1"
+3u 800m
+<hs "495N1"
+2u 50m
+50m >w / 50m sw "495b" 10d
+3v 200m
+hp> "495F"
+1u 1000m
+1u 1000m
+<hp "4961"
+1u 200m
+hp> "4962"
+1u 1000m
+1u 1000m
+<hp "496A"
+3v 200m
+w< 50m / 50m ne "496a" 10d
+w< 50m / 50m se "496c" 8d
+2u 50m
+hs> "496P2"
+3u 800m
+<hs "496N2"
+2u 50m
+50m >w / 50m sw "496d" 8d
+50m >w / 50m nw "496b" 10d
+3v 200m
+hp> "496F"
+3v 1000m
+end "496c497"
+
+13v begin +1u "495a" se
+~ 50m e
+hs> "495P2"
+3u 800m
+<hs "495N2"
+~ 50m ne
+end "495b"
+
+57v begin -2u "496a" ne
+~ 3u 100m e
+hs> "496P1"
+3u 800m
+<hs "496N1"
+3u ~ 100m se
+end "496b"
+
+61v begin +2u "496c" se
+~ 50m e
+hs> "496P3"
+3u 800m
+<hs "496N3"
+~ 50m ne
+end "496d"
+
+7u begin +7v "496c497"
+3v 1000m
+<hp "4971"
+1u 200m
+hp> "4972"
+1u 1000m
+1u 1000m
+<hp "497A"
+3v 200m
+w< 50m / 50m ne "497a" 10d
+w< 50m / 50m se "497c" 8d
+2u 50m
+hs> "497P2"
+3u 800m
+<hs "497N2"
+2u 50m
+50m >w / 50m sw "497d" 8d
+50m >w / 50m nw "497b" 10d
+3v 200m
+hp> "497F"
+1u 1000m
+1u 1000m
+<hp "4981"
+1u 200m
+hp> "4982"
+3v 1000m
+#XXX
+w< 50m / 50m ne "497c498"
+2u 2000m
+<hp "498A"
+1u 200m
+1u 800m
+<hp "498P"
+1u 50m
+end "497c498"
+%quo1 4981 498A
+
+33v begin -1u "497a" ne
+~ 3u 100m e
+hs> "497P1"
+3u 800m
+<hs "497N1"
+3u ~ 100m se
+end "497b"
+
+37v begin +2u "497c" se
+~ 50m e
+hs> "497P3"
+3u 800m
+<hs "497N3"
+~ 50m ne
+end "497d"
+
+%def 495A-495N1/495N2
+%def 495N1-4961
+%def 495N2-4961
+
+%def 495F-495P1/495P2
+%def 495P1-4952
+%def 495P2-4952
+
+%quo1 4951 495A 495N1 495N2
+%quo1 4962 495F 495P1 495P2
+
+%def 496A-496N2/496N1/496N3
+%def 496N1-4971
+%def 496N2-4971
+%def 496N3-4971
+
+%def 496F-496P2/496P1/496P3
+%def 496P1-4962
+%def 496P2-4962
+%def 496P3-4962
+
+%quo2 4961 496A 496N1 496N2 496N3
+%quo2 4972 496F 496P1 496P2 496P3
+%quo3 4961 496A 496N1 496N2 496N3 4972 496F 496P1 496P2 496P3
+
+%def 497A-497N2/497N1/497N3
+%def 497N1-498A
+%def 497N2-498A
+%def 497N3-498A
+
+%def 497F-497P2/497P1/497P3
+%def 497P1-4972
+%def 497P2-4972
+%def 497P3-4972
+
+%quo2 4971 497A 497N1 497N2 497N3
+%quo2 4982 497F 497P1 497P2 497P3
+%quo3 4971 497A 497N1 497N2 497N3 4982 497F 497P1 497P2 497P3
 
 ### FSEVENTYTWO
 
