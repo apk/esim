@@ -73,6 +73,8 @@ struct sig {
 	int zs3;
 	int zs3v;
 	int ks;
+	MUX_TIMEOUT_TYP tim;
+	int bst;
 } sigarr [100];
 
 void DrawPicture (void);
@@ -241,10 +243,24 @@ void handle_in (bmfItem_t *l) {
 			}
 		}
 		DrawSig (d);
+		if (d->zs3v != 0) {
+			if (d->bst == 0) {
+				struct timeval dt = MUX_GetTime ();
+				d->bst = 1;
+				MUX_SetTimeout (&d->tim, &dt);
+			}
+		} else {
+			if (d->bst != 0) {
+				MUX_RemoveTimeout (&d->tim);
+				d->bst = 0;
+			}
+		}
 		XFlush (mydisplay);
 		break;
 	}
 }
+
+void sig_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt);
 
 void io_recv (MUX_BMFCLT_TYP *pIo, bmfItem_t *l) {
 	handle_in (l);
@@ -285,6 +301,8 @@ bmfBuild_t B;
 
 void addsig (char *n) {
     if (nsig < sizeof (sigarr) / sizeof (sigarr [0])) {
+	MUX_InitTimeout (&sigarr [nsig].tim, sig_fire, &sigarr [nsig]);
+	sigarr [nsig].bst = 0;
 	sigarr [nsig].num = nsig;
 	sigarr [nsig].nmq = qq;
 	sigarr [nsig].ks = ks;
@@ -571,6 +589,22 @@ void DrawNum (int x, int y, int num, GC gc) {
 	}
 }
 
+void sig_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
+	struct sig *d = pTo->pvUserData;
+	int x = (d->nmq * 14 * Karo) / 4 + 3 * Karo;
+	int y = 11 * Karo;
+	if (d->bst == 0) return;
+	if (d->bst == 1) {
+		/* Draw green */
+		draw_dot (x + 1 * Karo, y + 11 * KaroH, 2 * Karo, mygreengc);
+		d->bst = 2;
+	} else {
+		draw_dot (x + 1 * Karo, y + 11 * KaroH, 2 * Karo, mygc);
+		d->bst = 1;
+	}
+	TV_AddInt (&dt, 1, 0);
+	MUX_SetTimeout (pTo, &dt);
+}
 
 void DrawSig (struct sig *d) {
 	XPoint pts [8];
@@ -634,7 +668,11 @@ void DrawSig (struct sig *d) {
 			}
 		}
 		if (d->wh && (d->vr == 0 || d->zs3v)) {
-			draw_dot (x + 3 * KaroH, y + 3 * KaroH, Karo, myclrgc);
+			if (d->hp != -1) {
+				draw_dot (x + 3 * KaroH, y + 3 * KaroH, Karo, myclrgc);
+			} else {
+				draw_dot (x + 3 * KaroH, y + 21 * KaroH, Karo, myclrgc);
+			}
 		}
 		return;
 	}
