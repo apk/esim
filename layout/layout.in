@@ -9888,10 +9888,6 @@ end "016r"
 %quo2 016G 016Y3 016Y4 016Y5
 %quo3 016L 016N3 016N4 016N5 016G 016Y3 016Y4 016Y5
 
-6u begin -1u "016t017"
-1u 100m
-end "017t016"
-
 ### HUNDREDFIFY + THREE + SIX
 
 26u begin =336+9u "150a" se
@@ -10047,6 +10043,240 @@ end "150h"
 
 %quo2 150B 150N2 150N3 150A 150N1 150P1
 %quo2 150G 150P2 150P3 150F 150N4 150P4
+
+### NAUGHTYSEVENTEEN
+
+27u begin =334+6u "017c" se
+~ 3u e 100m
+hs> "017R0"
+4u 800m
+<hs "017N0"
+~ ne 50m
+end "017f"
+
+1u begin -1u "016t017"
+2u 800m
+<hp "0173"
+1u 200m
+1u 800m
+<hp "017A"
+2u 200m
+w< 50m / 50m ne "017a" 8d
+4u 100m
+50m >w / 50m nw "017b" 8d
+2u 50m
+hs> "017P1"
+4u 800m
+<hs "017S1"
+2u 50m
+w< 50m / 50m se "017c" 8d
+2u 50m
+50m >w / 50m nw "017d" 8d
+hs> "017R1"
+4u 800m
+<hs "017N1"
+w< 50m / 50m ne "017e" 8d
+50m >w / 50m sw "017f" 8d
+5v 300m
+hp> "017G"
+1u 600m
+<hp "0181"
+1u 200m
+end "017t018"
+
+1v begin -2u "017t016"
+1u 200m
+hp> "0172"
+1u 800m
+1u 200m
+hp> "0174"
+1u 600m
+<hp "017B"
+2u 200m
+2u 50m
+50m >w / 50m sw "017a" 8d
+w< 50m / 50m se "017b" 8d
+w< 50m / 50m ne "017g" 8d
+2u 50m
+hs> "017P2"
+4u 800m
+<hs "017S2"
+2u 50m
+50m >w / 50m nw "017h" 8d
+w< 50m / 50m se "017d" 8d
+2u 50m
+hs> "017R2"
+4u 800m
+<hs "017N2"
+2u 50m
+50m >w / 50m sw "017e" 8d
+5v 300m
+hp> "017F"
+2u 800m
+end "018t017"
+
+16u begin -1u "017g" ne
+~ 50m e
+hs> "017P3"
+4u 800m
+<hs "017S3"
+~ 50m se
+end "017h"
+
+%def 017A-017S1/017S3/017S2
+%def 017B-017S2/+017S1/017S3
+%def 017S1-017N1/017N0
+%def 017S2-017N2/+017N1
+%def 017S3-017N1/017N2
+%def 017N0-0181
+%def 017N1-0181/018B
+%def 017N2-018B
+
+%def 017F-017R2/017R1
+%def 017G-017R1/017R0
+%def 017R0-017P1
+%def 017R1-017P1/+017P2/017P3
+%def 017R2-017P2/017P3
+%def 017P1-016G/+0174
+%def 017P2-0174/016G
+%def 017P3-0174/016G
+
+### NAUGHTYEIGHTEEN
+
+1u begin =334+7u "017t018"
+2u 800m
+<hp "0183"
+1u 200m
+1u 800m
+<hp "018A"
+2u 200m
+w< 50m / 50m ne "018a" 8d
+6u 150m
+hs> "018P1"
+4u 800m
+<hs "018N1"
+6u 150m
+50m >w / 50m nw "018b" 8d
+2u 200m
+hp> "018G"
+1u 600m
+<hp "0191"
+1u 200m
+1u 800m
+<hp "019A"
+2u 200m
+w< 50m / 50m ne "019a" 20d
+1u 25m se
+1u 200m e
+hp> "019G"
+1u 800m
+<hp "0193"
+1u 200m
+1u 800m
+<hp "019X"
+1u 200m ne
+n
+w< 50m / 50m nw "019b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "019Y"
+1u 800m
+<hp "0194"
+1u 200m
+1u 800m
+<hp "019F"
+1u 200m sw
+end "019c"
+
+1v begin -2u "018t017"
+1u 200m
+hp> "0182"
+1u 800m
+1u 200m
+hp> "0184"
+1u 600m
+<hp "018B"
+2u 200m
+2u 50m
+50m >w / 50m sw "018a" 8d
+w< 50m / 50m ne "018c" 8d
+2u 50m
+hs> "018P2"
+4u 800m
+<hs "018N2"
+2u 50m
+50m >w / 50m nw "018d" 8d
+w< 50m / 50m se "018b" 8d
+2u 50m
+2u 200m
+hp> "018F"
+1u 800m
+1u 200m
+hp> "0192"
+1u 600m
+<hp "019B"
+2u 200m
+w< 50m / 50m ne "019c" 20d
+50m >w / 50m sw "019a" 20d
+hp> "019H"
+5v 1800m
+<hp "019Z"
+1u 200m
+end "019b"
+
+14u begin -1u "018c" ne
+~ 50m e
+hs> "018P3"
+4u 800m
+<hs "018N3"
+~ 50m se
+end "018d"
+
+%def 018A-018N1/018N3/018N2
+%def 018B-018N2/018N3
+%def 018N1-0191
+%def 018N2-019B/+0191
+%def 018N3-0191/019B
+
+%def 018F-018P2/018P3
+%def 018G-018P1/+018P2/018P3
+%def 018P1-017G
+%def 018P2-0184/017G
+%def 018P3-0184/017G
+
+%def 019A-0193/019Z
+%def 019B-019Z/+019Y
+%def 019X-019H/+0194
+%def 019F-0192
+%def 019G-018G
+%def 019H-0192/+018G
+
+%quo2 017B 017S1 017S2 017S3
+%quo2 017R1 017P1 017P2 017P3
+%quo3 017B 017S1 017S2 017S3 017P1 017P2 017P3
+
+%quo3 018P1 017G 017R0 017N0 017R1 017P1 017P2 017P3
+%quo4 017B 017S1 017S2 017S3 018P1 017G 017R0 017N0 017R1 017P1 017P2 017P3
+%quo2 018P1 017G 017R0 017N0 017R1 017N1
+
+%quo1 017N2 017F
+%quo1 017N2 0182
+%quo1 017N2 0184
+
+%quo1 017N2 018B 018N2 018N3
+%quo2 019G 018G 018P2 018P3 017N2 018B 018N2 018N3
+%quo1 018A 018P1
+%quo1 0181 018P1
+%quo1 0183 018P1
+
+%quo1 0191 019G
+%quo1 019A 019G
+
+%quo1 019B 019Y 019Z
+%quo2 019B 019Y 019Z 019F 019H
+%quo2 019B 019Y 019Z 0194 019H
+
 
 ### HUNDREDFOURTEEN
 
