@@ -1,5 +1,24 @@
 /* Mode:C */
 
+/*
+  mkdir obj/Linux-2-i586 exe/Linux-2-i586
+  gcc -Wall -g -O -g  -I/home/krey/ak/../develop/c/gen/incl -I/usr/X11R6/include   -o obj/Linux-2-i586/esim.o -c esim.c
+  rm -f exe/Linux-2-i586/esim
+  gcc -Wall -g -O -o exe/Linux-2-i586/esim obj/Linux-2-i586/esim.o  -L/usr/X11R6/lib -lX11  /home/krey/ak/../develop/c/gen/lib/Linux-2-i586/pkg.a
+
+
+  esim -a ft.in
+  (-a: Etwas kompakter)
+Kommandos: 0-9: Simulationsgeschwindigkeit
+Linke Maustaste: Weichen stellen, Signal auf Fahrt (wo geht).
+Mittlere Maustaste stellt Selbststellbetrieb an Signalen um.
+Ctrl-Rechte Maustaste terminiert Programm.
+
+Space in Zugfenster selektiert für automatische Verfolgung;
+'s' aktiviert Anzeige des Signalnamens im Zugfenster.
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
