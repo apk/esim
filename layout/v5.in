@@ -65,7 +65,9 @@
 %mac t3 %ninety-ninetyfive
 %mac t3 %ninety-ninetythree,%naughtyseven-ninetythree
 %mac t3 %naughtytwelve-naughtythirteen
-%mac t3 %naughtythirteen-hfiftynine,%hfiftyeight-hfiftynine
+%mac t3 %naughtythirteen-hfiftynine
+%mac t3 %ttwo-right
+%mac t3 %hfiftyeight-hfiftynine
 %mac t3 %eighteen-seventyone
 %mac t3 %seventythree-seventyseven
 %mac t3 %three-left-turn
@@ -155,6 +157,13 @@
 %mac ir1e %four-five,%fiftythree-fiftytwo
 %mac ir1e %sixty-sixtynine,%seventy-sixtynine
 
+%mac ir1m %four-five,%ninety-ninetythree,%naughtyseven-ninetythree
+%mac ir1m %naughtyeleven-hfiftyone,%hfifty-hfiftyfive
+%mac ir1m %hninetysix-hfiftyfour,%hninetysix-hninetyone
+
+%mac ir1n %ninety-ninetythree,%naughtyseven-ninetythree
+%mac ir1n %naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
+
 %mac ir1p %hninetysix-hninetyone
 
 %mac ir1q %ninetytwo-naughtyten,%naughtynine-naughtyten
@@ -189,6 +198,18 @@
 %mac ir1w %hninety-hsixty
 %mac ir1w %hsixtynine-hsixtyeight
 
+%mac ir1y %naughtyfifteen-hfiftysix
+%mac ir1y %hninetyeight-hsixtythree
+%mac ir1y %hninetyeight-hfifty
+%mac ir1y %hfifty-hfiftysix
+%mac ir1y %naughtyfifteen-hfiftyseven
+
+%mac ir1z %ir1y
+%mac ir1z %ttwo-heighteen
+%mac ir1z %hsixteen-hseventeen
+
+%mac ir1y %htwentyfour-hseventyseven
+
 %mac ir2a %four-five,%fifteen-eighteen,%eighteen-fifteen
 %mac ir2a %nineteen-fifteen,%fiftyseven-twentytwo,%fiftynine-straight
 
@@ -199,6 +220,7 @@
 
 %mac ir7 %twentyone-twenty,%twenty-twentyone
 %mac ir7 %fiftyeight-hsixteen,%hsixteen-fiftyeight,%hsixteen-hseventeen
+%mac ir7 %ttwo-left,%ttwo-heighteen
 %mac ir7 %fiftyseven-twentytwo
 %mac ir8 %twentythree-thirty,%thirty-twentythree
 %mac ir8a %ir8,%eighteen-twentyone,18H-18P0,18I-18P0,18P0-$
@@ -388,6 +410,7 @@
 %mac ir0i %hseventyeight-htwentyfour
 %mac ir0i %htwentyfour-hseventyeight
 %mac ir0i %htwentyfour-hseventyseven
+%mac ir0i %ttwo-left
 
 %mac ir0j %ir0
 %mac ir0j %heighty-heightynine
@@ -407,6 +430,7 @@
 %mac ir0l %three-fourteen
 %mac ir0l %fiftynine-htwenty
 %mac ir0l %htwentyfour-hseventyseven
+%mac ir0l %ttwo-left
 
 %mac t1 5N1-4D/12
 %mac t1 %three-fourteen,%eighteen-twentyone
@@ -430,283 +454,295 @@
 # %trn len=97 v=140 n=loc %local
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 
+%trn len=380 v=200 n=iop %ir1y
 %trn len=380 v=200 n=ioq %ir9
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
 %trn len=380 v=200 n=ios %ir5
 %trn len=380 v=200 n=iot 
 
-%trn len=124 v=200 n=ql %five-six,%six-five
-%trn len=124 v=200 n=ql %five-six,%six-five
-%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
-%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
-%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
-%trn len=150 v=160 n=t1 %t1
-%trn len=150 v=160 n=t1 %t1
+%trn len=228 v=200 n=ir1m %ir1m
+%trn len=228 v=200 n=ir1y %ir1y
+%trn len=228 v=200 n=ir1z %ir1z
+%trn len=228 v=200 n=ir1m %ir1m
+%trn len=228 v=200 n=ir1y %ir1y
+%trn len=228 v=200 n=ir1z %ir1z
+%trn len=228 v=200 n=ir1m %ir1m
+%trn len=228 v=200 n=ir1y %ir1y
+%trn len=228 v=200 n=ir1z %ir1z
+%trn len=228 v=200 n=ir1y %ir1y
+%trn len=228 v=200 n=ir1z %ir1z
+%trn len=150 v=160 n=t3 %t3
+%trn len=228 v=200 n=ir8 %ir8,%ir7
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir6d %ir6d
+%trn len=97 v=140 n=loc-c %local,%five-eleven,%ten-turn,%ten-ten,10X-10U/10V-12H,%ten-turn,%ten-eleven
+%trn len=380 v=200 n=ir0a %ir0a
+%trn len=228 v=200 n=ir1b %ir1b
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=228 v=200 n=ir1p %outlet,%ir1p
+%trn len=228 v=200 n=ir8c %ir8c
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir5 %ir5
 %trn len=150 v=160 n=t2 %t2
-%trn len=150 v=160 n=t2 %t2
-%trn len=150 v=160 n=t3 %t3
-%trn len=150 v=160 n=t3 %t3
-%trn len=150 v=160 n=t3 %t3
-%trn len=150 v=160 n=t3 %t3
-%trn len=150 v=160 n=t3 %t3
-%trn len=150 v=160 n=t3 %t3
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t4 %t4
-%trn len=150 v=160 n=t5 %t5
-%trn len=150 v=160 n=t5 %t5
-%trn len=150 v=160 n=t5 %t5
-%trn len=150 v=160 n=t5 %t5
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=228 v=200 n=ir5 %ir5
 %trn len=150 v=160 n=t6 %t6
-%trn len=150 v=160 n=t6 %t6
-%trn len=150 v=160 n=t6 %t6
-%trn len=150 v=160 n=t6 %t6
+%trn len=228 v=200 n=ir5b %ir5b
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=380 v=200 n=ir0e %ir0e
+%trn len=380 v=200 n=ir0d %ir0d
+%trn len=228 v=200 n=ir3a %ir3a
+%trn len=228 v=200 n=ir6b %ir6b
+%trn len=228 v=200 n=ir6g %ir6g
+%trn len=228 v=200 n=ir1n %ir1n
+%trn len=150 v=160 n=t8 %t8
+%trn len=228 v=200 n=ir5 %ir5
+%trn len=228 v=200 n=ir1s %ir1s
+%trn len=228 v=200 n=ir6b %ir6b
+%trn len=380 v=200 n=ir0d %ir0d
+%trn len=150 v=160 n=t9 %t9
+%trn len=228 v=200 n=ir6 %ir6
+%trn len=228 v=200 n=ir5h %ir5h
+%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
+%trn len=380 v=200 n=ir0d %ir0d
+%trn len=228 v=200 n=ir1q %ir1q
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir3a %ir3a
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=228 v=200 n=ir6f %ir6f
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=124 v=200 n=ql %five-six,%six-five
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir6a %ir6a
 %trn len=150 v=160 n=t7 %t7
-%trn len=150 v=160 n=t8 %t8
-%trn len=150 v=160 n=t8 %t8
-%trn len=150 v=160 n=t8 %t8
-%trn len=150 v=160 n=t9 %t9
-%trn len=150 v=160 n=t9 %t9
-%trn len=150 v=160 n=t9 %t9
-%trn len=150 v=160 n=t9 %t9
-%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
-%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
-%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
-%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-k %irw
-%trn len=202 v=160 n=ir-k %irw
-%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
-%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
-%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
 %trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1a %ir1a
-%trn len=228 v=200 n=ir1a %ir1a
-%trn len=228 v=200 n=ir1a %ir1a
-%trn len=228 v=200 n=ir1a %ir1a
-%trn len=228 v=200 n=ir1b %ir1b
-%trn len=228 v=200 n=ir1b %ir1b
-%trn len=228 v=200 n=ir1b %ir1b
-%trn len=228 v=200 n=ir1b %ir1b
-%trn len=228 v=200 n=ir1e %ir1e
-%trn len=228 v=200 n=ir1e %ir1e
-%trn len=228 v=200 n=ir1e %ir1e
-%trn len=228 v=200 n=ir1e %ir1e
-%trn len=228 v=200 n=ir1e %ir1e
-%trn len=228 v=200 n=ir1n %ninety-ninetythree,%naughtyseven-ninetythree,%naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
-%trn len=228 v=200 n=ir1n %ninety-ninetythree,%naughtyseven-ninetythree,%naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
-%trn len=228 v=200 n=ir1n %ninety-ninetythree,%naughtyseven-ninetythree,%naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
-%trn len=228 v=200 n=ir1p %outlet,%ir1p
-%trn len=228 v=200 n=ir1p %outlet,%ir1p
-%trn len=228 v=200 n=ir1p %outlet,%ir1p
-%trn len=228 v=200 n=ir1p %outlet,%ir1p
-%trn len=228 v=200 n=ir1p %outlet,%ir1p
-%trn len=228 v=200 n=ir1q %ir1q
-%trn len=228 v=200 n=ir1q %ir1q
-%trn len=228 v=200 n=ir1q %ir1q
+%trn len=380 v=200 n=ir0g %ir0g
 %trn len=228 v=200 n=ir1r %ir1r
-%trn len=228 v=200 n=ir1r %ir1r
-%trn len=228 v=200 n=ir1r %ir1r
-%trn len=228 v=200 n=ir1s %ir1s
-%trn len=228 v=200 n=ir1s %ir1s
-%trn len=228 v=200 n=ir1s %ir1s
-%trn len=228 v=200 n=ir1t %ir1t
-%trn len=228 v=200 n=ir1t %ir1t
-%trn len=228 v=200 n=ir1u %ir1u
-%trn len=228 v=200 n=ir1u %ir1u
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=228 v=200 n=ir9a %ir9a
+%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir9d %ir9d
+%trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir6 %ir6
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir6g %ir6g
+%trn len=228 v=200 n=ir5f %ir5f
+%trn len=150 v=160 n=t8 %t8
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=150 v=160 n=t5 %t5
 %trn len=228 v=200 n=ir1v %ir1v
 %trn len=228 v=200 n=ir1w %ir1w
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2 %ir2
-%trn len=228 v=200 n=ir2a %ir2a
-%trn len=228 v=200 n=ir2a %ir2a
-%trn len=228 v=200 n=ir2a %ir2a
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3 %detour
-%trn len=228 v=200 n=ir3a %ir3a
-%trn len=228 v=200 n=ir3a %ir3a
-%trn len=228 v=200 n=ir3a %ir3a
-%trn len=228 v=200 n=ir3a %ir3a
-%trn len=228 v=200 n=ir4 %ir4
-%trn len=228 v=200 n=ir4 %ir4
-%trn len=228 v=200 n=ir4 %ir4
-%trn len=228 v=200 n=ir4 %ir4
-%trn len=228 v=200 n=ir4 %ir4
-%trn len=228 v=200 n=ir4a %ir4a
-%trn len=228 v=200 n=ir4a %ir4a
-%trn len=228 v=200 n=ir4a %ir4a
-%trn len=228 v=200 n=ir4a %ir4a
-%trn len=228 v=200 n=ir4b %ir4b
-%trn len=228 v=200 n=ir4b %ir4b
-%trn len=228 v=200 n=ir4b %ir4b
-%trn len=228 v=200 n=ir4c %ir4c
-%trn len=228 v=200 n=ir4c %ir4c
-%trn len=228 v=200 n=ir4c %ir4c
-%trn len=228 v=200 n=ir4c %ir4c
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5 %ir5
-%trn len=228 v=200 n=ir5a %ir5a
-%trn len=228 v=200 n=ir5a %ir5a
-%trn len=228 v=200 n=ir5a %ir5a
-%trn len=228 v=200 n=ir5b %ir5b
-%trn len=228 v=200 n=ir5c %ir5c
-%trn len=228 v=200 n=ir5c %ir5c
-%trn len=228 v=200 n=ir5c %ir5c
-%trn len=228 v=200 n=ir5d %ir5d
-%trn len=228 v=200 n=ir5e %ir5e
-%trn len=228 v=200 n=ir5f %ir5f
-%trn len=228 v=200 n=ir5f %ir5f
-%trn len=228 v=200 n=ir5f %ir5f
-%trn len=228 v=200 n=ir5g %ir5g
-%trn len=228 v=200 n=ir5h %ir5h
-%trn len=228 v=200 n=ir6 %ir6
-%trn len=228 v=200 n=ir6 %ir6
-%trn len=228 v=200 n=ir6 %ir6
-%trn len=228 v=200 n=ir6 %ir6
-%trn len=228 v=200 n=ir6a %ir6a
-%trn len=228 v=200 n=ir6a %ir6a
-%trn len=228 v=200 n=ir6a %ir6a
-%trn len=228 v=200 n=ir6a %ir6a
-%trn len=228 v=200 n=ir6a %ir6a
-%trn len=228 v=200 n=ir6a %ir6a
-%trn len=228 v=200 n=ir6b %ir6b
-%trn len=228 v=200 n=ir6b %ir6b
-%trn len=228 v=200 n=ir6b %ir6b
-%trn len=228 v=200 n=ir6c %ir6c
-%trn len=228 v=200 n=ir6c %ir6c
-%trn len=228 v=200 n=ir6c %ir6c
-%trn len=228 v=200 n=ir6d %ir6d
-%trn len=228 v=200 n=ir6d %ir6d
-%trn len=228 v=200 n=ir6d %ir6d
-%trn len=228 v=200 n=ir6e %ir6e
-%trn len=228 v=200 n=ir6e %ir6e
-%trn len=228 v=200 n=ir6f %ir6f
-%trn len=228 v=200 n=ir6f %ir6f
-%trn len=228 v=200 n=ir6g %ir6g
-%trn len=228 v=200 n=ir6g %ir6g
-%trn len=228 v=200 n=ir6h %ir6h
-%trn len=228 v=200 n=ir6h %ir6h
-%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
-%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
-%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
-%trn len=228 v=200 n=ir7a %ir7a
-%trn len=228 v=200 n=ir7a %ir7a
 %trn len=228 v=200 n=ir8 %ir8,%ir7
-%trn len=228 v=200 n=ir8 %ir8,%ir7
-%trn len=228 v=200 n=ir8 %ir8,%ir7
-%trn len=228 v=200 n=ir8 %ir8,%ir7
-%trn len=228 v=200 n=ir8a %ir8a
-%trn len=228 v=200 n=ir8b %ir8b
-%trn len=228 v=200 n=ir8b %ir8b
-%trn len=228 v=200 n=ir8b %ir8b
-%trn len=228 v=200 n=ir8c %ir8c
-%trn len=228 v=200 n=ir8c %ir8c
+%trn len=228 v=200 n=ir1r %ir1r
+%trn len=228 v=200 n=ir3a %ir3a
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir1e %ir1e
+%trn len=228 v=200 n=ir6a %ir6a
+%trn len=228 v=200 n=ir6 %ir6
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
 %trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9 %ir9
-%trn len=228 v=200 n=ir9a %ir9a
-%trn len=228 v=200 n=ir9a %ir9a
-%trn len=228 v=200 n=ir9b %ir9b
+%trn len=228 v=200 n=ir3 %detour
+%trn len=150 v=160 n=t1 %t1
 %trn len=228 v=200 n=ir9c %ir9c
-%trn len=228 v=200 n=ir9d %ir9d
-%trn len=228 v=200 n=ir9e %ir9e
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir4c %ir4c
+%trn len=228 v=200 n=ir4 %ir4
+%trn len=228 v=200 n=ir1n %ir1n
+%trn len=228 v=200 n=ir3 %detour
 %trn len=380 v=200 n=ir0 %ir0
-%trn len=380 v=200 n=ir0 %ir0
-%trn len=380 v=200 n=ir0 %ir0
-%trn len=380 v=200 n=ir0 %ir0
-%trn len=380 v=200 n=ir0a %ir0a
-%trn len=380 v=200 n=ir0a %ir0a
-%trn len=380 v=200 n=ir0b %ir0b
-%trn len=380 v=200 n=ir0b %ir0b
-%trn len=380 v=200 n=ir0c %ir0c
-%trn len=380 v=200 n=ir0c %ir0c
-%trn len=380 v=200 n=ir0d %ir0d
-%trn len=380 v=200 n=ir0d %ir0d
-%trn len=380 v=200 n=ir0d %ir0d
-%trn len=380 v=200 n=ir0d %ir0d
-%trn len=380 v=200 n=ir0e %ir0e
-%trn len=380 v=200 n=ir0e %ir0e
+%trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
+%trn len=150 v=160 n=t8 %t8
+%trn len=228 v=200 n=ir6d %ir6d
+%trn len=228 v=200 n=ir9a %ir9a
+%trn len=228 v=200 n=ir4a %ir4a
+%trn len=150 v=160 n=t9 %t9
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=150 v=160 n=t4 %t4
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir2a %ir2a
+%trn len=228 v=200 n=ir2 %ir2
 %trn len=380 v=200 n=ir0f %ir0f
-%trn len=380 v=200 n=ir0f %ir0f
-%trn len=380 v=200 n=ir0g %ir0g
-%trn len=380 v=200 n=ir0g %ir0g
-%trn len=380 v=200 n=ir0h %ir0h
-%trn len=380 v=200 n=ir0h %ir0h
-%trn len=380 v=200 n=ir0i %ir0i
-%trn len=380 v=200 n=ir0i %ir0i
-%trn len=380 v=200 n=ir0j %ir0j
-%trn len=380 v=200 n=ir0j %ir0j
-%trn len=380 v=200 n=ir0k %ir0k
-%trn len=380 v=200 n=ir0k %ir0k
+%trn len=228 v=200 n=ir1 %outlet
 %trn len=380 v=200 n=ir0l %ir0l
-%trn len=380 v=200 n=ir0l %ir0l
-%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
-%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
-%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
-%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
-%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
-%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
-%trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
-%trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
-%trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
-%trn len=97 v=140 n=loc %local
+%trn len=228 v=200 n=ir4a %ir4a
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir8b %ir8b
+%trn len=97 v=140 n=loc-c %local,%five-eleven,%ten-turn,%ten-ten,10X-10U/10V-12H,%ten-turn,%ten-eleven
+%trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir4 %ir4
+%trn len=380 v=200 n=ir0b %ir0b
+%trn len=150 v=160 n=t3 %t3
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir5e %ir5e
+%trn len=380 v=200 n=ir0i %ir0i
+%trn len=228 v=200 n=ir5a %ir5a
+%trn len=380 v=200 n=ir0g %ir0g
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir6e %ir6e
+%trn len=228 v=200 n=ir1u %ir1u
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
+%trn len=228 v=200 n=ir2a %ir2a
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=228 v=200 n=ir6e %ir6e
+%trn len=228 v=200 n=ir6d %ir6d
+%trn len=228 v=200 n=ir5a %ir5a
+%trn len=150 v=160 n=t4 %t4
+%trn len=380 v=200 n=ir0h %ir0h
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir6c %ir6c
+%trn len=228 v=200 n=ir7a %ir7a
 %trn len=97 v=140 n=loc-7 %five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,7F-7P3/7P2/7P4,7P3-$,7P2-$,7P4-$,%six-five,%five-six
-%trn len=97 v=140 n=loc-c %local,%five-eleven,%ten-turn,%ten-ten,10X-10U/10V-12H,%ten-turn,%ten-eleven
-%trn len=97 v=140 n=loc-c %local,%five-eleven,%ten-turn,%ten-ten,10X-10U/10V-12H,%ten-turn,%ten-eleven
+%trn len=228 v=200 n=ir4c %ir4c
+%trn len=380 v=200 n=ir0j %ir0j
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=97 v=140 n=loc %local
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=380 v=200 n=ir0h %ir0h
+%trn len=150 v=160 n=t2 %t2
+%trn len=150 v=160 n=t1 %t1
+%trn len=228 v=200 n=ir6h %ir6h
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir1u %ir1u
+%trn len=228 v=200 n=ir5c %ir5c
+%trn len=150 v=160 n=t4 %t4
+%trn len=228 v=200 n=ir8 %ir8,%ir7
+%trn len=228 v=200 n=ir5 %ir5
+%trn len=228 v=200 n=ir4 %ir4
+%trn len=150 v=160 n=t6 %t6
+%trn len=150 v=160 n=t5 %t5
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir6a %ir6a
+%trn len=228 v=200 n=ir5a %ir5a
+%trn len=228 v=200 n=ir6a %ir6a
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir5c %ir5c
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir1p %outlet,%ir1p
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir4 %ir4
+%trn len=228 v=200 n=ir5 %ir5
+%trn len=228 v=200 n=ir4c %ir4c
+%trn len=380 v=200 n=ir0d %ir0d
+%trn len=228 v=200 n=ir1t %ir1t
+%trn len=228 v=200 n=ir5c %ir5c
+%trn len=228 v=200 n=ir1e %ir1e
+%trn len=380 v=200 n=ir0f %ir0f
+%trn len=150 v=160 n=t3 %t3
+%trn len=228 v=200 n=ir6a %ir6a
+%trn len=150 v=160 n=t4 %t4
+%trn len=228 v=200 n=ir1q %ir1q
+%trn len=228 v=200 n=ir8c %ir8c
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=228 v=200 n=ir6h %ir6h
+%trn len=228 v=200 n=ir1s %ir1s
+%trn len=380 v=200 n=ir0a %ir0a
+%trn len=228 v=200 n=ir1p %outlet,%ir1p
+%trn len=380 v=200 n=ir0c %ir0c
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=150 v=160 n=t3 %t3
+%trn len=380 v=200 n=ir0l %ir0l
+%trn len=228 v=200 n=ir9b %ir9b
+%trn len=228 v=200 n=ir1e %ir1e
+%trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
+%trn len=228 v=200 n=ir4a %ir4a
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=150 v=160 n=t5 %t5
+%trn len=380 v=200 n=ir0b %ir0b
+%trn len=380 v=200 n=ir0i %ir0i
+%trn len=228 v=200 n=ir4b %ir4b
+%trn len=380 v=200 n=ir0 %ir0
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=228 v=200 n=ir1s %ir1s
+%trn len=380 v=200 n=ir0e %ir0e
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir3a %ir3a
+%trn len=228 v=200 n=ir6a %ir6a
+%trn len=228 v=200 n=ir3 %detour
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir2a %ir2a
+%trn len=124 v=200 n=ql %five-six,%six-five
+%trn len=380 v=200 n=ir0 %ir0
+%trn len=228 v=200 n=ir1e %ir1e
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=228 v=200 n=ir5 %ir5
+%trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=228 v=200 n=ir5g %ir5g
+%trn len=228 v=200 n=ir8 %ir8,%ir7
+%trn len=228 v=200 n=ir5f %ir5f
+%trn len=150 v=160 n=t5 %t5
+%trn len=228 v=200 n=ir8a %ir8a
+%trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir1r %ir1r
+%trn len=228 v=200 n=ir1b %ir1b
+%trn len=202 v=160 n=ir-k %irw
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir6f %ir6f
+%trn len=202 v=160 n=ir-k %irw
+%trn len=228 v=200 n=ir9e %ir9e
+%trn len=150 v=160 n=t6 %t6
+%trn len=228 v=200 n=ir5f %ir5f
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir4a %ir4a
+%trn len=228 v=200 n=ir6b %ir6b
+%trn len=228 v=200 n=ir6 %ir6
+%trn len=380 v=200 n=ir0c %ir0c
+%trn len=228 v=200 n=ir4b %ir4b
+%trn len=380 v=200 n=ir0j %ir0j
+%trn len=228 v=200 n=ir1b %ir1b
+%trn len=150 v=160 n=t9 %t9
+%trn len=228 v=200 n=ir8b %ir8b
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=150 v=160 n=t3 %t3
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir1e %ir1e
+%trn len=228 v=200 n=ir4b %ir4b
+%trn len=150 v=160 n=t9 %t9
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir6c %ir6c
+%trn len=150 v=160 n=t4 %t4
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir1b %ir1b
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=150 v=160 n=t4 %t4
+%trn len=228 v=200 n=ir1t %ir1t
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=380 v=200 n=ir0k %ir0k
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
+%trn len=228 v=200 n=ir6c %ir6c
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=150 v=160 n=t3 %t3
+%trn len=228 v=200 n=ir1q %ir1q
+%trn len=228 v=200 n=ir7a %ir7a
+%trn len=228 v=200 n=ir5d %ir5d
+%trn len=228 v=200 n=ir4c %ir4c
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir1n %ir1n
+%trn len=228 v=200 n=ir4 %ir4
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=150 v=160 n=t6 %t6
+%trn len=228 v=200 n=ir1p %outlet,%ir1p
+%trn len=228 v=200 n=ir3 %detour
+%trn len=150 v=160 n=t4 %t4
+%trn len=228 v=200 n=ir1p %outlet,%ir1p
+%trn len=380 v=200 n=ir0k %ir0k
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=228 v=200 n=ir5 %ir5
+%trn len=380 v=200 n=ir0 %ir0
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=228 v=200 n=ir8b %ir8b
