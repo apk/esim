@@ -51,6 +51,7 @@
 
 %mac two-zero 2F-2P2/2P3
 %mac two-zero 2G-2P2/2P3
+%mac two-zero 2H-2P3
 %mac two-zero 2P3-44
 
 %mac two-one 2F-2P2/2P3
@@ -420,8 +421,10 @@ hs> "2P3"
 <hs "2N3"
 w< 50m / 50m "2C" se
 ls> "123"
-4u 800m
-end
+2u 200m
+hp> "2H"
+3u 800m
+end "store"
 
 0u begin 39u "nLi"
 1u 200m
@@ -648,8 +651,9 @@ hs> "3P3"
 2u 50m
 50m >w / 50m sw
 w< 50m / 50m se
+2u 50m
 hs> "3R3"
-6u 400m
+4u 400m
 end "3E"
 
 8v begin 53u
@@ -671,13 +675,14 @@ end "3D"
 2u 1000m
 <hp "3A"
 2u 200m
-w< 50m / 50m se "3G"
+w< 50m / 50m se "3G" 10d
 w< 50m / 50m ne
 2u 50m
 hs> "3P1"
 4u 800m
 <hs "3S1"
-6u 100m
+w< 50m / 50m se "3g"
+4u 100m
 50m >w / 50m sw "3H"
 50m >w / 50m nw "3D"
 hs> "3R1"
@@ -688,14 +693,66 @@ hs> "3R1"
 end "3E"
 
 7u begin 56u se "3G"
-1u 25m
-3u 75m e
+~ 3u 100m e
 hs> "3P0"
 4u 800m
 <hs "3S0"
-5u 125m
-1u 25m ne
-end "3H"
+2u 50m
+50m >w / 50m nw "3g"
+w< 50m / 50m ne "3H"
+2u 50m
+<hs "3R0"
+4u 100m
+w< 50m / 50m ne "3a" 8d
+w< 50m / 50m ne "3b"
+2u 50m
+hs> "3Y1"
+7v 800m
+<hs "3X1"
+~ 50m ne
+50m >w / 50m w "3c"
+50m >w / 50m w "3d" 8d
+1u 50m n
+nw
+~ 200m w
+hp> "3C"
+1u 800m
+<hp "3Z"
+1u 1500m
+end "store"
+
+61v begin 56u "3a" ne
+w< 50m / 50m n "3e" 4d
+~ 50m e
+hs> "3Y3"
+7v 800m
+<hs "3X3"
+2u 50m
+50m >w / 50m nw "3f" 4d
+end "3d"
+
+65v begin 56u "3b" ne
+~ 50m e
+hs> "3Y2"
+7v 800m
+<hs "3X2"
+2u 50m
+end "3c"
+
+63v begin 54u "3e" n
+~ 25m ne
+~ 25m e
+hs> "3Y4"
+7v 800m
+<hs "3X4"
+~ 50m se
+end "3f"
+
+%def 3R0-3X1/3X3/3X2/3X4
+%def 3X1-3Z
+%def 3X2-3Z
+%def 3X3-3Z
+%def 3X4-3Z
 
 0u begin 16u "nB"
 1u 200m
