@@ -3438,9 +3438,14 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 }
 
 void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
-	dt = MUX_GetTime ();
+	struct timeval now = MUX_GetTime ();
 	TV_AddFrac (&dt, 1, 10);
-	MUX_SetTimeout (pTo, &dt);
+	TV_AddInt (&now, -1, 0);
+	if (TV_LessThan (&dt, &now)) {
+		MUX_SetTimeout (pTo, &now);
+	} else {
+		MUX_SetTimeout (pTo, &dt);
+	}
 
 	everysec ();
 	emulsteps ++;
