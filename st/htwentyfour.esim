@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esim 124A" $* 124B 124A 124C -- 124S5 124S4 124S3 124S2 124S1 -- 124N5 124N4 &
+esimc -title "esim 124F" $* 124G 124F 124H -- 124R4 124R5 -- 124P1 124P2 124P3 124P4 124P5 &
