@@ -3633,6 +3633,10 @@ void handle_smlwin(myevent) XEvent myevent; {
 			}
 		}
 		break;
+	      case 3:
+		if (myevent.xbutton.state & ControlMask) {
+		    done=1;
+		    break; }
 	      case 2:
 		x = myevent.xbutton.x;
 		y = myevent.xbutton.y;
@@ -3644,10 +3648,9 @@ void handle_smlwin(myevent) XEvent myevent; {
 				break;
 			}
 		}
-		break;
 #endif
+		break;
 	      case 3:
-		done=1;
 		break; }
 	    break;
 	  case MotionNotify:
@@ -3756,6 +3759,10 @@ void handle_window(myevent) XEvent myevent; {
 			}
 		}
 		break;
+	      case 3:
+		if (myevent.xbutton.state & ControlMask) {
+		    done=1;
+		    break; }
 	      case 2:
 		x = myevent.xbutton.x;
 		y = myevent.xbutton.y;
@@ -3768,8 +3775,6 @@ void handle_window(myevent) XEvent myevent; {
 			}
 		}
 		break;
-	      case 3:
-		done=1;
 		break; }
 	    break;
 	  case MotionNotify:
