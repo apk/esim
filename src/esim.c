@@ -416,6 +416,7 @@ struct train {
 	int oflg;		/* Count for signal openings by train */
 	int len;
 	int speed;
+	int dist;		/* Total distance gone */
 	int accto;		/* Acceleration inhibit timer */
 	int ztim;		/* Zero speed time */
 	int maxspeed;
@@ -1433,6 +1434,8 @@ int move_train (struct train *trn, int dist) {
 	if (b != a) {
 		printf ("Synchronicity error in move_train...\n");
 	}
+	if (trn->dist > 0) trn->dist += a;
+	else trn->dist = 0;
 	return a;
 }
 
@@ -1448,7 +1451,9 @@ char *find_dest (struct splan *spl, char *sign, char **ppos) {
 		/* Create the hash table */
 		char *cp, *bp;
 		struct splink *sp, **spp;
+#if 0
 		printf ("Converting plan of %d chars\n", strlen (spl->plan));
+#endif
 		z = 0;
 		if (spl->n == 0) spl->n = 53;
 		spl->H = malloc (spl->n * sizeof (*spl->H));
@@ -1476,7 +1481,9 @@ char *find_dest (struct splan *spl, char *sign, char **ppos) {
 again:
 			cp ++;
 		}
+#if 0
 		printf ("Converted %d plan entries\n", z);
+#endif
 	}
 	if (spl->n >= 0 && spl->H) {
 		/* Use the hash table */
@@ -1860,6 +1867,7 @@ void setup_train (void) {
 	trn->dir = 0;
 	trn->next = trlist;
 	trn->speed = 0;
+	trn->dist = 0;
 	trn->accto = 0;
 	trn->ztim = 0;
 	trlist = trn;
@@ -1946,12 +1954,12 @@ void set_followtrain (struct train *trn) {
 	}
 }
 
-void train_dwin (struct train *trn, struct sig *sig) {
+void train_dwin (struct train *trn, struct sig *sig, int mf) {
 	int h, w;
 	int x, y;
 	int ry;
 	char buf [100];
-	int mf = trn->dsig != sig;
+	mf |= trn->dsig != sig;
 	if (trn->dsig) trn->dsig->dsigcnt --;
 	trn->dsig = sig;
 	if (trn->dsig) trn->dsig->dsigcnt ++;
@@ -1961,9 +1969,16 @@ void train_dwin (struct train *trn, struct sig *sig) {
 		}
 		return;
 	}
-	sprintf (buf,
-		 "%.30s %3d", trn->name,
-		 (36 * trn->speed + 5000) / 10000);
+	if (trn->dist) {
+		sprintf (buf,
+			 "%.30s %3d %d.%d", trn->name,
+			 (36 * trn->speed + 5000) / 10000,
+			 (trn->dist / 1000000), (trn->dist / 100000) % 10);
+	} else {
+		sprintf (buf,
+			 "%.30s %3d", trn->name,
+			 (36 * trn->speed + 5000) / 10000);
+	}
 	h = font_height + font_depth + 1;
 	w = 2 + XTextWidth (myfontstruct, buf, strlen (buf));
 	x = XCenter (sig->d->cent.x);
@@ -2016,6 +2031,14 @@ void train_event (struct train *trn, XEvent myevent) {
 	    if(i==1) switch(text[0]) {
 	      case ' ':
 		set_followtrain (trn);
+		break;
+	      case 'd':
+		if (trn->dist == 0) {
+			trn->dist = 1;
+		} else {
+			trn->dist = 0;
+		}
+		train_dwin (trn, trn->dsig, 1);
 		break;
 	      default:
 	        break;
@@ -5269,7 +5292,7 @@ if (curr->speed > KMH2MMS (5) && lla < 1500000) lla = 1500000;
 			nstand ++;
 			curr->ztim ++;
 		}
-		train_dwin (curr, firstsig);
+		train_dwin (curr, firstsig, 0);
 #if 1
 		if (iDebugLevel > 0) printf ("%12.12s %5d.%02d (%5d) v=%3d %s\n",
 			curr->name ? curr->name : "Track",
