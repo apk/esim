@@ -413,7 +413,7 @@ struct train {
 	struct train *next;	/* List of */
 	int dir;		/* Index of front tip (dir of motion) */
 	struct tip ends [2];	/* Both ends of the train */
-	int oflg;
+	int oflg;		/* Count for signal openings by train */
 	int len;
 	int speed;
 	int accto;		/* Acceleration inhibit timer */
@@ -1243,13 +1243,12 @@ int move_tip (struct tip *t, int adv) {
 			check (l >= 0);
 			if (adv > 0) {
 				if (l > adv) l = adv;
-				dist += l;
 				adv -= l;
 			} else {
 				if (l > -adv) l = -adv;
-				dist += l;
 				adv += l;
 			}
+			dist += l;
 			t->pos += l;
 			if (t->pos < tk->len || t->next) {
 				/* Not off the end */
@@ -1260,6 +1259,7 @@ int move_tip (struct tip *t, int adv) {
 				break;
 			}
 			if (t->rev == 0) {
+				/* Front end goes off, mark used */
 				tk->use = 1;
 			}
 			c = tk->f;
@@ -1274,13 +1274,12 @@ int move_tip (struct tip *t, int adv) {
 			check (l >= 0);
 			if (adv > 0) {
 				if (l > adv) l = adv;
-				dist += l;
 				adv -= l;
 			} else {
 				if (l > -adv) l = -adv;
-				dist += l;
 				adv += l;
 			}
+			dist += l;
 			t->pos -= l;
 			if (t->pos > 0 || pr) {
 				/* Not off the end */
@@ -1513,7 +1512,7 @@ int test_lookahead (struct train *trn,
 			strcat (sigs, "*");
 			check (tip->rev == 1);
 			check (tip->pos >= t->pos);
-			return dist += tip->pos = t->pos;
+			return dist += tip->pos - t->pos;
 		}
 		dist += tk->len - t->pos;
 		c = tk->f;
@@ -3448,7 +3447,7 @@ void everysec (void);
 
 char *pszHost;
 
-int DNodeEvent_B1 (struct dnode *x, int xo, int yo);
+int DNodeEvent_B1 (struct dnode *x, int xo, int yo, int state);
 int DNodeEvent_B2 (struct dnode *x, int xo, int yo, int state);
 
 void DrawPicture (void);
@@ -3511,7 +3510,8 @@ void handle_smlwin(myevent) XEvent myevent; {
 		for (dp = dnode_list; dp; dp = dp->tnext) {
 			if (DNodeEvent_B1 (dp,
 					   x - XCenter (dp->cent.x),
-					   y - YCenter (dp->cent.y))) {
+					   y - YCenter (dp->cent.y),
+					   myevent.xbutton.state)) {
 				break;
 			}
 		}
@@ -3633,7 +3633,8 @@ void handle_window(myevent) XEvent myevent; {
 		for (dp = dnode_list; dp; dp = dp->tnext) {
 			if (DNodeEvent_B1 (dp,
 					   x - XCenter (dp->cent.x),
-					   y - YCenter (dp->cent.y))) {
+					   y - YCenter (dp->cent.y),
+					   myevent.xbutton.state)) {
 				break;
 			}
 		}
@@ -4016,7 +4017,7 @@ int main(argc,argv) int argc; char **argv; {
                 a_flg++; }
 	    else if(!strncmp(argv[i],"-s",2)) {
 		oncesteps = atoi (argv [i] + 2);
-		if (oncesteps < 1) oncesteps = 1; }
+		if (oncesteps < 0) oncesteps = 1; }
 	    else printf("Unknown option %s\n",argv[i]); }
 	else {
 	    fnam=argv[i]; }}
@@ -4719,7 +4720,7 @@ int IsInDNode (struct dnode *x, struct rect *q) {
 		r.y < q->y + q->h && q->y < r.y + r.h;
 }
 
-int DNodeEvent_B1 (struct dnode *x, int xo, int yo) {
+int DNodeEvent_B1 (struct dnode *x, int xo, int yo, int state) {
 	if (x->type == Straight) {
 	} else if (x->type == Switch) {
 		if (xo * xo + yo * yo < 400) {
@@ -4808,6 +4809,16 @@ int DNodeEvent_B1 (struct dnode *x, int xo, int yo) {
 #endif
 		if (xo * xo + yo * yo < 400) {
 			if (x->type & HpSig) {
+				if (state & ShiftMask) {
+					if (x->state == 0) {
+						x->state = DST_Sh1;
+					} else if (x->state == DST_Sh1) {
+						x->state = 0;
+					}
+					DrawDIllum (x);
+					DrawSmallDNode (x);
+					return 1;
+				}
 				try_build_path (x);
 				return 1;
 			}
