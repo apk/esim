@@ -429,6 +429,7 @@ struct train {
 	struct sig *dsig;	/* Where it is positioned */
 	int sigdelay;		/* Delay until next sigopen allowed */
 	char *sig;		/* Current final sig name */
+	int go;			/* Ignore inactive signals */
 };
 
 struct sig {
@@ -1442,7 +1443,10 @@ int move_train (struct train *trn, int dist) {
 	if (b != a) {
 		printf ("Synchronicity error in move_train...\n");
 	}
-	if (trn->dist > 0) trn->dist += a;
+	if (trn->dist > 0) {
+		trn->dist += a / 1000;
+		if (trn->dist < 0) trn->dist = 0x7fffffff;
+	}
 	else trn->dist = 0;
 	return a;
 }
@@ -1674,7 +1678,7 @@ int test_lookahead (struct train *trn,
 					*firstsigp = sig;
 				}
 			}
-			if (dist < longopendist && sig->d->mode) {
+			if (dist < longopendist && (sig->d->mode || trn->go)) {
 				int r;
 				char *n = 0;
 				char buf [8192];
@@ -1726,7 +1730,7 @@ int test_lookahead (struct train *trn,
 							r = try_make_path (sig, p, nth ? 0 : trn->speed);
 							if (r < 0) break;
 							if (r > 0) {
-								sig->d->mode --;
+								if (sig->d->mode) sig->d->mode --;
 								try_build_path (sig->d);
 								trn->oflg ++;
 								break;
@@ -1748,7 +1752,7 @@ int test_lookahead (struct train *trn,
 							r = try_make_path (sig, p, nth ? 0 : trn->speed);
 							if (r < 0) break;
 							if (r > 0) {
-								sig->d->mode --;
+								if (sig->d->mode) sig->d->mode --;
 								try_build_path (sig->d);
 								trn->oflg ++;
 								break;
@@ -1759,7 +1763,7 @@ int test_lookahead (struct train *trn,
 				} else {
 					r = try_make_path (sig, n, trn->speed);
 					if (r > 0) {
-						sig->d->mode --;
+						if (sig->d->mode) sig->d->mode --;
 						try_build_path (sig->d);
 						trn->oflg ++;
 					}
@@ -1877,6 +1881,7 @@ void setup_train (void) {
 	trn->next = trlist;
 	trn->speed = 0;
 	trn->dist = 0;
+	trn->go = 0;
 	trn->accto = 0;
 	trn->ztim = 0;
 	trlist = trn;
@@ -1982,7 +1987,7 @@ void train_dwin (struct train *trn, struct sig *sig, int mf) {
 		sprintf (buf,
 			 "%.30s %3d %d.%d", trn->name,
 			 (36 * trn->speed + 5000) / 10000,
-			 (trn->dist / 1000000), (trn->dist / 100000) % 10);
+			 (trn->dist / 1000), (trn->dist / 100) % 10);
 	} else {
 		sprintf (buf,
 			 "%.30s %3d", trn->name,
@@ -1992,6 +1997,11 @@ void train_dwin (struct train *trn, struct sig *sig, int mf) {
 		char *p = buf;
 		while (*p) p ++;
 		sprintf (p, " %s", trn->dsig->name);
+	}
+	if (trn->go) {
+		char *p = buf;
+		while (*p) p ++;
+		sprintf (p, " *");
 	}
 	h = font_height + font_depth + 1;
 	w = 2 + XTextWidth (myfontstruct, buf, strlen (buf));
@@ -2045,6 +2055,14 @@ void train_event (struct train *trn, XEvent myevent) {
 	    if(i==1) switch(text[0]) {
 	      case ' ':
 		set_followtrain (trn);
+		break;
+	      case 'g':
+		if (trn->go) {
+			trn->go = 0;
+		} else {
+			trn->go = 1;
+		}
+		train_dwin (trn, trn->dsig, 1);
 		break;
 	      case 's':
 		if (trn->sig) {
