@@ -379,6 +379,8 @@ int main(argc,argv) int argc; char **argv; {
                 karo = 12; }
 	    else if(!strcmp(argv[i],"-xxl")) {
                 karo = 16; }
+	    else if(!strcmp(argv[i],"-midi")) {
+                karo = 3; }
 	    else if(!strcmp(argv[i],"-small")) {
                 karo = 2; }
 	    else if(!strcmp(argv[i],"-b")) {
@@ -605,7 +607,7 @@ void sig_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 		draw_dot (x + 1 * Karo, y + 11 * KaroH, 2 * Karo, mygc);
 		d->bst = 1;
 	}
-	TV_AddInt (&dt, 1, 0);
+	TV_AddFrac (&dt, 1, 2);
 	MUX_SetTimeout (pTo, &dt);
 	XFlush (mydisplay);
 }
@@ -632,7 +634,7 @@ void DrawSig (struct sig *d) {
 		if (d->typ & T_ZV) {
 			DrawNum (x + 3 * KaroH, KaroH + 30 * Karo, d->zs3v, myyellowgc);
 		}
-		if (d->typ & T_NM) {
+		if (d->typ & T_NM && karo > 3) {
 			XDrawRectangle (mydisplay, basewindow, mythingc,
 					x + 4 * Karo - wd - 2, KaroH + 25 * Karo - 2, 2 * wd + 3, font_height + font_depth + 3);
 			XFillRectangle (mydisplay, basewindow, mywhitegc,
