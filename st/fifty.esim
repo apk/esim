@@ -1,0 +1,2 @@
+#!/bin/sh
+esimc -title "esimc 50F" $* 50I 50G 50F 50H -- 50S5 50S3 50S2 50S0 -- 50S13 -- 50P5 50P4 50P3 50P2 50P1 &

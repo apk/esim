@@ -1,0 +1,2 @@
+#!/bin/sh
+esimc -title "esimc 6F" $* 6G 6F 6H -- 6T -- 6R13 -- 6R1 6R2 6R3 6R4 6R5 -- 6P1 6P2 6P3 &
