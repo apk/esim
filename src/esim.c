@@ -1866,6 +1866,7 @@ void setup_train (void) {
 	if (!trn) return;
 	trn->oflg = 0;
 	trn->dir = 0;
+	trn->sig = 0;
 	trn->next = trlist;
 	trn->speed = 0;
 	trn->dist = 0;
