@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 223A" $* 223B 223A -- 223S1 223S2 223S3 -- 223N1 223N2 223N3 &
+esimc -title "esimc 223F" $* 223G 223F -- 223R3 223R2 223R1 -- 223P3 223P2 223P1 &

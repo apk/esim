@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 221A" $* 221B 221A -- 221N1 221N2 221N3 221N4 221N5 &
+esimc -title "esimc 221F" $* 221G 221F -- 221P5 221P4 221P3 221P2 221P1 &

@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 167A" $* 167C 167B 167A -- 167N5 167N4 167N3 167N2 167N1 &
+esimc -title "esimc 167F" $* 167H 167G 167F -- 167P1 167P2 167P3 167P4 167P5 &

@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 76A" $* 76A -- 76S1 76S2 76S3 76S4 -- 76N1 76N2 76N3 -- 76U &
+esimc -title "esimc 76F" $* 76H 76G -- 76T 76F -- 76R3 76R2 76R1 -- 76P4 76P3 76P2 76P1 &

@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 170A" $* 170A 170B -- 170N1 170N2 170N3 -- 171A -- 171N1 171N2 &
+esimc -title "esimc 170F" $* 171F -- 171P2 171P1 -- 170F -- 170P3 170P2 170P1 &

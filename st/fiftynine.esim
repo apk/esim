@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 59A" $* 59C 59E 59B 59D 59A -- 59N7 59N6 59N5 59N4 59N3 59N2 59N1 -- 59U 59T 1301 1201 &
+esimc -title "esimc 59F" $* 59K 1202 -- 59G 59I 59J 59H 59F -- 59P1 59P2 59P3 59P4 59P5 59P6 59P7 &
