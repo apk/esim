@@ -2018,6 +2018,7 @@ void train_event (struct train *trn, XEvent myevent) {
 		set_followtrain (trn);
 		break;
 	      default:
+	        break;
 	    } else {
 	      switch (mykey) {
 		case XK_R9:
@@ -3787,6 +3788,7 @@ void handle_window(myevent) XEvent myevent; {
 		}
 		break;
 	      default:
+		break;
 	    } else {
 	      switch (mykey) {
 		case XK_R9:
