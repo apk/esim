@@ -29577,7 +29577,7 @@ w< 4u / ne "138a" 10d
 hs> "138P1"
 4u 800m
 <hs "138N1"
-~ 2u 75m ne
+2u ~ 75m ne
 end "138c"
 
 1u begin -2u "137t138"
