@@ -22,7 +22,7 @@ MUX_TIMEOUT_TYP xTo;
 MUX_TIMEOUT_TYP xTick;
 MUX_FD_TYP xX;
 
-MUX_BMFIO_TYP xIo;
+MUX_BMFCLT_TYP xIo;
 
 Display *mydisplay;
 Window basewindow;
@@ -246,19 +246,38 @@ void handle_in (bmfItem_t *l) {
 	}
 }
 
-void io_recv (MUX_BMFIO_TYP *pIo, bmfItem_t *l) {
+void io_recv (MUX_BMFCLT_TYP *pIo, bmfItem_t *l) {
 	handle_in (l);
 	bmfDrop (l);
 }
 
-void io_fail (MUX_BMFIO_TYP *pIo) {
-	printf ("conn fail...\n");
-	exit (1);
+void io_reset (MUX_BMFCLT_TYP *pIo) {
+	int i;
+	for (i = 0; i < nsig; i ++) {
+		sigarr [i].typ = 0;
+		sigarr [i].hp = 0;
+		sigarr [i].vr = 0;
+		sigarr [i].wh = 0;
+		sigarr [i].zs3 = 0;
+		sigarr [i].zs3v = 0;
+	}
+	XClearArea (mydisplay, basewindow, 0, 0, 0, 0, True);
+	XFlush (mydisplay);
 }
 
-void io_eof (MUX_BMFIO_TYP *pIo) {
-	printf ("conn eof...\n");
-	exit (0);
+bmfItem_t *req_item = 0;
+
+void io_open (MUX_BMFCLT_TYP *pIo) {
+	MUX_SendToBmfClt (&xIo, bmfMakeMessage (
+			BMF_NAME, "#set-id",
+			BMF_NAME, "esimc",
+			BMF_ASN, "host",
+			BMF_STR, MUX_GetHostName (),
+			BMF_ASN, "pid",
+			BMF_INT, MUX_GetPid (),
+			BMF_TAIL, req_item,
+			BMF_END));
+	MUX_SendToBmfClt (&xIo, bmfRef (req_item));
 }
 
 int qq = 0;
@@ -284,7 +303,6 @@ int main(argc,argv) int argc; char **argv; {
     XSizeHints myhint;
     int myscreen;
     int i;
-    int fd;
     struct timeval currtime;
     char *title = "esimc";
     char *display_name;
@@ -504,15 +522,8 @@ int main(argc,argv) int argc; char **argv; {
 		X_req, X_hdl, X_fail, 0);
     MUX_AddMuxFd (&xX);
 
-    fd = MUX_OpenTcpConnection (shost, pt);
-    if (fd < 0) {
-	printf ("Failed to connect to %s:%d...\n", shost, pt);
-	exit (1);
-    }
-
-    MUX_InitBmfIO (&xIo, fd, io_recv, io_fail, io_eof, 0);
-    MUX_AddBmfIO (&xIo);
-    MUX_SendToBmfIO (&xIo, bmfBuildFini (&B));
+    MUX_InitBmfClt (&xIo, shost, pt, 250, io_recv, io_reset, io_open, 0);
+    req_item = bmfBuildFini (&B);
 
     MUX_DoServe ();
     exit (1);
