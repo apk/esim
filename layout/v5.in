@@ -930,6 +930,11 @@
 %mac ic1c %fthirtyfive-fthirtyfour,%fthirtyfive-fthirtysix
 %mac ic1c %ftwentyeight-ftwentynine
 
+%mac ic1d %fseventy-tfourtythree,%tfourtythree-fseventy
+%mac ic1d %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%mac ic1d %thhundred-thtwentyfive
+%mac ic1d %fthirtyfive-fthirtysix
+
 %mac ic1g %outlet,%ttwentynine-ftwenty,%ftwenty-ttwentynine
 %mac ic1g %ffive-fsix,%ffour-fthree,%fsixtyseven-fsixtyeight
 %mac ic1g %ffiftyfour-fsixty,%fsixtyfive-fsixtyfour
@@ -975,7 +980,7 @@
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 # %trn len=80 n=tst %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree,%hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
 
-%trn len=228 v=200 n=ir1x %ir1x
+%trn len=228 v=200 n=ir6k %ir6k
 
 %trn len=380 v=200 n=iop %ir1y
 %trn len=380 v=200 n=ioq %ir9
@@ -985,6 +990,8 @@
 %trn len=380 v=200 n=iou %iou
 %trn len=380 v=200 n=iov %iov
 
+%trn len=228 v=200 n=ir1x %ir1x
+%trn len=310 v=200 n=ic1d %ic1d
 %trn len=228 v=200 n=ir0s %ir0s
 %trn len=228 v=200 n=ir5j %ir5j
 %trn len=228 v=200 n=ir5b %ir5b
@@ -993,12 +1000,12 @@
 %trn len=228 v=200 n=ir5f %ir5f
 %trn len=202 v=160 n=ir-b %ir-b
 %trn len=228 v=200 n=ir1b %ir1b
+%trn len=310 v=200 n=ic1d %ic1d
 %trn len=150 v=160 n=t4 %t4
 %trn len=228 v=200 n=ir0 %ir0
 %trn len=228 v=200 n=ir0h %ir0h
 %trn len=310 v=200 n=ic1h %ic1h
 %trn len=228 v=200 n=ir1y %ir1y
-%trn len=228 v=200 n=ir6k %ir6k
 %trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=228 v=200 n=ir7n %ir7n
 %trn len=228 v=200 n=ir2 %ir2
@@ -1019,6 +1026,7 @@
 %trn len=228 v=200 n=ir5 %ir5
 %trn len=228 v=200 n=ir8u %ir8u
 %trn len=228 v=200 n=ir8 %ir8,%ir8s
+%trn len=310 v=200 n=ic1d %ic1d
 %trn len=228 v=200 n=ir2q %ir2q
 %trn len=310 v=200 n=ic1c %ic1c
 %trn len=228 v=200 n=ir6 %ir6
@@ -1032,6 +1040,7 @@
 %trn len=228 v=200 n=ir6s %ir6s
 %trn len=228 v=200 n=ir1p %outlet,%ir1p
 %trn len=228 v=200 n=ir9f %ir9f
+%trn len=310 v=200 n=ic1d %ic1d
 %trn len=228 v=200 n=ir1g %ir1g
 %trn len=228 v=200 n=ir6k %ir6k
 %trn len=228 v=200 n=ir8c %ir8c
