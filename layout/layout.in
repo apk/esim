@@ -37490,11 +37490,11 @@ w< 50m / 50m ne "499e" 8d
 hp> "499C"
 1u 1000m
 1u 1000m
-<hp "4441"
+<hp "3441"
 1u 200m
-hp> "4442"
+hp> "3442"
 2u 1000m
-end "444c499"
+end "344c499"
 
 1u begin -1u "00t499"
 2u 800m
@@ -37555,17 +37555,17 @@ end "498t499"
 %def 499P3-4998/498G
 %def 499P4-498G/+4998
 
-%mac fninetynine-ffourtyfour 499F-499P2/++499P3/499P1
-%mac fninetynine-ffourtyfour 499G-499P4/+499P2/499P1/499P3
-%mac fninetynine-ffourtyfour 499P1-4441
-%mac fninetynine-ffourtyfour 499P2-4441
-%mac fninetynine-ffourtyfour 499P3-4441
-%mac fninetynine-ffourtyfour 499P4-4441
+%mac fninetynine-thfourtyfour 499F-499P2/++499P3/499P1
+%mac fninetynine-thfourtyfour 499G-499P4/+499P2/499P1/499P3
+%mac fninetynine-thfourtyfour 499P1-3441
+%mac fninetynine-thfourtyfour 499P2-3441
+%mac fninetynine-thfourtyfour 499P3-3441
+%mac fninetynine-thfourtyfour 499P4-3441
 
 %quo2 499N1 499N2 499N3
-%quo3 499B 4442 499C 499N1 499N2 499N3 499N4 499P4
+%quo3 499B 3442 499C 499N1 499N2 499N3 499N4 499P4
 %quo3 499G 499P1 499P2 499P3 499P4
-%quo4 499B 4442 499C 499N1 499N2 499N3 499N4 499G 499P1 499P2 499P3 499P4
+%quo4 499B 3442 499C 499N1 499N2 499N3 499N4 499G 499P1 499P2 499P3 499P4
 
 ### FNINETYEIGHT
 
@@ -37669,47 +37669,47 @@ end "498h"
 %quo3 498G 498P1 498P2 498P3 498P4
 %quo4 498B 498N1 498N2 498N3 498N4 498G 498P1 498P2 498P3 498P4
 
-### FFOURTYFOUR
+### THFOURTYFOUR
 
-1u begin =0+1v "444c499"
+1u begin =0+1v "344c499"
 2u 1000m
-<hp "444A"
+<hp "344A"
 3v 200m
-w< 50m / 50m se "444a" 10d
+w< 50m / 50m se "344a" 10d
 2u 50m
-hs> "444P1"
+hs> "344P1"
 3u 800m
-<hs "444N1"
+<hs "344N1"
 2u 50m
-50m >w / 50m sw "444b" 10d
+50m >w / 50m sw "344b" 10d
 3v 800m
-hp> "444F"
+hp> "344F"
 1u 1000m
 1u 1000m
-<hp "4443"
+<hp "3443"
 1u 200m
-hp> "4444"
+hp> "3444"
 2u 1000m
-end "444c469"
+end "344c469"
 
-7u begin +1u "444a" se
+7u begin +1u "344a" se
 ~ 50m e
-hs> "444P2"
+hs> "344P2"
 3u 800m
-<hs "444N2"
+<hs "344N2"
 ~ 50m ne
-end "444b"
+end "344b"
 
-%def 444A-444N1/444N2
-%def 444N1-4443
-%def 444N2-4443
+%def 344A-344N1/344N2
+%def 344N1-3443
+%def 344N2-3443
 
-%def 444F-444P1/444P2
-%def 444P1-4442
-%def 444P2-4442
+%def 344F-344P1/344P2
+%def 344P1-3442
+%def 344P2-3442
 
-%quo1 4441 444A 444N1 444N2
-%quo1 4444 444F 444P1 444P2
+%quo1 3441 344A 344N1 344N2
+%quo1 3444 344F 344P1 344P2
 
 ### THSEVENTY
 
@@ -37903,11 +37903,11 @@ w< 50m / 50m se "469k" 8d
 50m >w ne / 50m sw "469l" 10d
 end "469y"
 
-1u begin -1u "445c469"
+1u begin -1u "345c469"
 2u 1000m
-<hp "4452"
+<hp "3452"
 1u 200m
-hp> "4451"
+hp> "3451"
 1u 1000m
 1u 1000m
 <hp "469H"
@@ -37924,7 +37924,7 @@ w< 50m / 50m se "469n" 8d
 2u 200m
 hp> "469C"
 2u 1000m
-end "444c469"
+end "344c469"
 
 %quo1 469N1 370B 370N1 370N2
 %quo2 469N1 370B 370N1 370N2 370G 370P1 370P2
@@ -37943,15 +37943,15 @@ end "444c469"
 %def 469N5-3701/370B
 %def 469N6-3701/370B
 
-%mac fsixtynine-ffourtyfive 469A-469N3/+469N5/++469N6/469N4
-%mac fsixtynine-ffourtyfive 469B-469N3/+469N5/++469N6/469N4
-%mac fsixtynine-ffourtyfive 469C-469N6/469N5/469N4/469N3
-%mac fsixtynine-ffourtyfive 469N1-4451
-%mac fsixtynine-ffourtyfive 469N2-4451
-%mac fsixtynine-ffourtyfive 469N3-4451
-%mac fsixtynine-ffourtyfive 469N4-4451
-%mac fsixtynine-ffourtyfive 469N5-4451
-%mac fsixtynine-ffourtyfive 469N6-4451
+%mac fsixtynine-thfourtyfive 469A-469N3/+469N5/++469N6/469N4
+%mac fsixtynine-thfourtyfive 469B-469N3/+469N5/++469N6/469N4
+%mac fsixtynine-thfourtyfive 469C-469N6/469N5/469N4/469N3
+%mac fsixtynine-thfourtyfive 469N1-3451
+%mac fsixtynine-thfourtyfive 469N2-3451
+%mac fsixtynine-thfourtyfive 469N3-3451
+%mac fsixtynine-thfourtyfive 469N4-3451
+%mac fsixtynine-thfourtyfive 469N5-3451
+%mac fsixtynine-thfourtyfive 469N6-3451
 
 %def 469F-469P1/469P3/469P5/469P4/469P2/469P6
 %def 469G-469P2/469P3/469P5/469P4/469P6
@@ -37963,15 +37963,15 @@ end "444c469"
 %def 469P5-4698/4690
 %def 469P6-4698/4690
 
-%mac fsixtynine-ffourtyfour 469F-469P6/+469P5/++469P4/469P3/469P2
-%mac fsixtynine-ffourtyfour 469G-469P6/+469P5/++469P4/469P3/469P2
-%mac fsixtynine-ffourtyfour 469H-469P6/469P5/469P4/469P3
-%mac fsixtynine-ffourtyfour 469P1-4444
-%mac fsixtynine-ffourtyfour 469P2-4444
-%mac fsixtynine-ffourtyfour 469P3-4444
-%mac fsixtynine-ffourtyfour 469P4-4444
-%mac fsixtynine-ffourtyfour 469P5-4444
-%mac fsixtynine-ffourtyfour 469P6-4444
+%mac fsixtynine-thfourtyfour 469F-469P6/+469P5/++469P4/469P3/469P2
+%mac fsixtynine-thfourtyfour 469G-469P6/+469P5/++469P4/469P3/469P2
+%mac fsixtynine-thfourtyfour 469H-469P6/469P5/469P4/469P3
+%mac fsixtynine-thfourtyfour 469P1-3444
+%mac fsixtynine-thfourtyfour 469P2-3444
+%mac fsixtynine-thfourtyfour 469P3-3444
+%mac fsixtynine-thfourtyfour 469P4-3444
+%mac fsixtynine-thfourtyfour 469P5-3444
+%mac fsixtynine-thfourtyfour 469P6-3444
 
 %quo1 3702 469N1
 %quo1 3704 469N1
@@ -38063,9 +38063,9 @@ hp> "468C"
 2u 1000m
 end "468c497"
 
-%quo3 468N1 4699 469B 4443 469C 469N3 469N4 469N5 469N6
-%quo3 370P3 469G 4452 469H 469P3 469P4 469P5 469P6
-%quo4 468N1 4699 469B 4443 469C 469N3 469N4 469N5 469N6 370P3 469G 4452 469H 469P3 469P4 469P5 469P6
+%quo3 468N1 4699 469B 3443 469C 469N3 469N4 469N5 469N6
+%quo3 370P3 469G 3452 469H 469P3 469P4 469P5 469P6
+%quo4 468N1 4699 469B 3443 469C 469N3 469N4 469N5 469N6 370P3 469G 3452 469H 469P3 469P4 469P5 469P6
 
 %def 468A-468N2/468N3/468N1
 %def 468B-468N1/+468N2/468N3
@@ -38095,92 +38095,92 @@ end "468c497"
 %quo1 4696 468N1
 %quo1 4698 468N1
 
-### FFOURTYFIVE+SIX
+### THFOURTYFIVE+SIX
 
-1v begin =8+9v "445c469"
+1v begin =8+9v "345c469"
 2u 1000m
-<hp "445A"
+<hp "345A"
 3v 200m
-w< 50m / 50m ne "445a" 10d
+w< 50m / 50m ne "345a" 10d
 2u 50m
-hs> "445P1"
+hs> "345P1"
 3u 800m
-<hs "445N1"
+<hs "345N1"
 2u 50m
-50m >w / 50m nw "445b" 10d
+50m >w / 50m nw "345b" 10d
 3v 200m
-hp> "445F"
+hp> "345F"
 1u 1000m
 1u 1000m
-<hp "4461"
+<hp "3461"
 1u 200m
-hp> "4462"
+hp> "3462"
 1u 1000m
 1u 1000m
-<hp "446A"
+<hp "346A"
 3v 200m
-w< 50m / 50m se "446a" 10d
-w< 50m / 50m ne "446b" 8d
+w< 50m / 50m se "346a" 10d
+w< 50m / 50m ne "346b" 8d
 2u 50m
-hs> "446P2"
+hs> "346P2"
 3u 800m
-<hs "446N2"
+<hs "346N2"
 2u 50m
-50m >w / 50m nw "446c" 8d
-50m >w / 50m sw "446d" 10d
+50m >w / 50m nw "346c" 8d
+50m >w / 50m sw "346d" 10d
 3v 200m
-hp> "446F"
+hp> "346F"
 2u 1000m
-end "446t447"
+end "346t347"
 
-13v begin -1u "445a" ne
+13v begin -1u "345a" ne
 ~ 50m e
-hs> "445P2"
+hs> "345P2"
 3u 800m
-<hs "445N2"
+<hs "345N2"
 ~ 50m se
-end "445b"
+end "345b"
 
-61v begin +0u "446b" ne
+61v begin +0u "346b" ne
 ~ 50m e
-hs> "446P3"
+hs> "346P3"
 3u 800m
-<hs "446N3"
+<hs "346N3"
 ~ 50m se
-end "446c"
+end "346c"
 
-57v begin +2u "446a" se
+57v begin +2u "346a" se
 ~ 3u 100m e
-hs> "446P1"
+hs> "346P1"
 3u 800m
-<hs "446N1"
+<hs "346N1"
 3u ~ 100m ne
-end "446d"
+end "346d"
 
-%def 445A-445N1/445N2
-%def 445N1-4461
-%def 445N2-4461
+%def 345A-345N1/345N2
+%def 345N1-3461
+%def 345N2-3461
 
-%def 445F-445P1/445P2
-%def 445P1-4452
-%def 445P2-4452
+%def 345F-345P1/345P2
+%def 345P1-3452
+%def 345P2-3452
 
-%quo1 4451 445A 445N1 445N2
-%quo1 4462 445F 445P1 445P2
+%quo1 3451 345A 345N1 345N2
+%quo1 3462 345F 345P1 345P2
 
-%def 446A-446N2/446N1/446N3
-%def 446N1-$
-%def 446N2-$
-%def 446N3-$
+%def 346A-346N2/346N1/346N3
+%def 346N1-$
+%def 346N2-$
+%def 346N3-$
 
-%def 446F-446P2/446P1/446P3
-%def 446P1-4462
-%def 446P2-4462
-%def 446P3-4462
+%def 346F-346P2/346P1/346P3
+%def 346P1-3462
+%def 346P2-3462
+%def 346P3-3462
 
-%quo2 4461 446A 446N1 446N2 446N3
-%quo2 446F 446P1 446P2 446P3
-%quo3 4461 446A 446N1 446N2 446N3 446F 446P1 446P2 446P3
+%quo2 3461 346A 346N1 346N2 346N3
+%quo2 346F 346P1 346P2 346P3
+%quo3 3461 346A 346N1 346N2 346N3 346F 346P1 346P2 346P3
 
 ### FSIXTYSEVEN
 
@@ -39376,8 +39376,8 @@ end "463g"
 %def 463P4-4638
 %def 463P5-4638
 
-%mac fsixtytwo-ffourtyone 463P1-4638/4630
-%mac fsixtytwo-ffourtyone 463P2-4638/4630
+%mac fsixtytwo-thfourtyone 463P1-4638/4630
+%mac fsixtytwo-thfourtyone 463P2-4638/4630
 
 ### FSIXTYTWO
 
@@ -39464,11 +39464,11 @@ w< 50m / 50m se "462f" 8d
 hp> "462C"
 1u 1000m
 1u 1000m
-<hp "4411"
+<hp "3411"
 1u 200m
-hp> "4412"
+hp> "3412"
 2u 1000m
-end "441c462"
+end "341c462"
 
 23v begin -1u "462g" ne
 w< 50m e / 50m ne "462i" 8d
@@ -39521,65 +39521,65 @@ end "462j"
 %def 462P2-4620/+4628
 %def 462P3-4628/4620
 
-%mac fsixtytwo-ffourtyone 462F-462R1
-%mac fsixtytwo-ffourtyone 462G-462Q4/462Q3/462Q5/462Q6
-%mac fsixtytwo-ffourtyone 462H-462Q4/462Q5/462Q6/462Q3
-%mac fsixtytwo-ffourtyone 462R1-462P1
-%mac fsixtytwo-ffourtyone 462R2-462P2
-%mac fsixtytwo-ffourtyone 462Q3-4411
-%mac fsixtytwo-ffourtyone 462Q4-4411
-%mac fsixtytwo-ffourtyone 462Q5-4411
-%mac fsixtytwo-ffourtyone 462Q6-4411
+%mac fsixtytwo-thfourtyone 462F-462R1
+%mac fsixtytwo-thfourtyone 462G-462Q4/462Q3/462Q5/462Q6
+%mac fsixtytwo-thfourtyone 462H-462Q4/462Q5/462Q6/462Q3
+%mac fsixtytwo-thfourtyone 462R1-462P1
+%mac fsixtytwo-thfourtyone 462R2-462P2
+%mac fsixtytwo-thfourtyone 462Q3-3411
+%mac fsixtytwo-thfourtyone 462Q4-3411
+%mac fsixtytwo-thfourtyone 462Q5-3411
+%mac fsixtytwo-thfourtyone 462Q6-3411
 
-### FFOURTYONE
+### THFOURTYONE
 
-23u begin -3v "441c462"
+23u begin -3v "341c462"
 2u 1000m
-<hp "441A"
+<hp "341A"
 3v 200m
-w< 50m / 50m se "441a" 10d
-w< 50m / 50m ne "441b" 8d
+w< 50m / 50m se "341a" 10d
+w< 50m / 50m ne "341b" 8d
 2u 50m
-hs> "441P2"
+hs> "341P2"
 3u 800m
-<hs "441N2"
+<hs "341N2"
 2u 50m
-50m >w / 50m nw "441c" 8d
-50m >w / 50m sw "441d" 10d
+50m >w / 50m nw "341c" 8d
+50m >w / 50m sw "341d" 10d
 3v 200m
-hp> "441F"
+hp> "341F"
 2u 1000m
-end "441c442"
+end "341c342"
 
-29u begin +1u "441a" se
+29u begin +1u "341a" se
 ~ 3u 100m e
-hs> "441P1"
+hs> "341P1"
 3u 800m
-<hs "441N1"
+<hs "341N1"
 3u ~ 100m ne
-end "441d"
+end "341d"
 
-31u begin -2u "441b" ne
+31u begin -2u "341b" ne
 ~ 50m e
-hs> "441P3"
+hs> "341P3"
 3u 800m
-<hs "441N3"
+<hs "341N3"
 ~ 50m se
-end "441c"
+end "341c"
 
-%def 441A-441N2/441N1/441N3
-%def 441N1-442A
-%def 441N2-442A
-%def 441N3-442A
+%def 341A-341N2/341N1/341N3
+%def 341N1-342A
+%def 341N2-342A
+%def 341N3-342A
 
-%def 441F-441P2/441P1/441P3
-%def 441P1-4412
-%def 441P2-4412
-%def 441P3-4412
+%def 341F-341P2/341P1/341P3
+%def 341P1-3412
+%def 341P2-3412
+%def 341P3-3412
 
-%quo2 4411 441A 441N1 441N2 441N3
-%quo2 441F 441P1 441P2 441P3
-%quo3 4411 441A 441N1 441N2 441N3 441F 441P1 441P2 441P3
+%quo2 3411 341A 341N1 341N2 341N3
+%quo2 341F 341P1 341P2 341P3
+%quo3 3411 341A 341N1 341N2 341N3 341F 341P1 341P2 341P3
 
 ### FSIXTYONE
 
@@ -39666,8 +39666,8 @@ end "460t461"
 %quo1 462N2 462R2 462S2
 
 %quo3 4638 462H 4630 462G 462Q3 462Q4 462Q5 462Q6
-%quo3 4629 462B 462S3 4412 462C 462N3 462N4 462N5 462N6
-%quo4 4638 462H 4630 462G 462Q3 462Q4 462Q5 462Q6 4629 462B 462S3 4412 462C 462N3 462N4 462N5 462N6
+%quo3 4629 462B 462S3 3412 462C 462N3 462N4 462N5 462N6
+%quo4 4638 462H 4630 462G 462Q3 462Q4 462Q5 462Q6 4629 462B 462S3 3412 462C 462N3 462N4 462N5 462N6
 
 %def 461A-461N3/461N1/461N2
 %def 461B-461N2/461N1
@@ -39701,95 +39701,95 @@ end "460t461"
 %quo1 461P3 4617
 %quo1 461P3 4615
 
-### FFOURTYTWO + THREE
+### THFOURTYTWO + THREE
 
-46u begin =4+9v "441c442" w
+46u begin =4+9v "341c342" w
 2u 1000m
-<hp "442A"
+<hp "342A"
 3v 200m
-w< 50m / 50m nw "442a" 10d
+w< 50m / 50m nw "342a" 10d
 2u 50m
-hs> "442P1"
+hs> "342P1"
 3u 800m
-<hs "442N1"
+<hs "342N1"
 2u 50m
-50m >w / 50m ne "442b" 10d
+50m >w / 50m ne "342b" 10d
 3v 200m
-hp> "442F"
+hp> "342F"
 1u 1000m
 1u 1000m
-<hp "4431"
+<hp "3431"
 1u 200m
-hp> "4432"
+hp> "3432"
 1u 1000m
 1u 1000m
-<hp "443A"
+<hp "343A"
 3v 200m
-w< 50m / 50m sw "443a"
-w< 50m / 50m nw "443b" 8d
+w< 50m / 50m sw "343a"
+w< 50m / 50m nw "343b" 8d
 2u 50m
-hs> "443P2"
+hs> "343P2"
 3u 800m
-<hs "443S2"
+<hs "343S2"
 2u 50m
-25m >w< 25m / 25m nw "443c" 4d / 25m se "443d"
+25m >w< 25m / 25m nw "343c" 4d / 25m se "343d"
 2u 50m
-hs> "443R2"
+hs> "343R2"
 3u 800m
-<end "443N2"
+<end "343N2"
 
-40u begin -1u "442a" nw
+40u begin -1u "342a" nw
 ~ 50m w
-hs> "442P2"
+hs> "342P2"
 3u 800m
-<hs "442N2"
+<hs "342N2"
 ~ 50m sw
-end "442b"
+end "342b"
 
-16u begin +0u "443b" nw
+16u begin +0u "343b" nw
 ~ 50m w
-hs> "443P1"
+hs> "343P1"
 3u 800m
-<hs "443S1"
+<hs "343S1"
 4u 100m
-50m >w / 50m se "443c" 5d
-hs> "443R1"
+50m >w / 50m se "343c" 5d
+hs> "343R1"
 3u 800m
-<end "443N1"
+<end "343N1"
 
-18u begin +2u "443a" sw
+18u begin +2u "343a" sw
 ~ 3u 100m w
-hs> "443P3"
+hs> "343P3"
 3u 800m
-<hs "443S3"
+<hs "343S3"
 ~ 50m nw
-end "443d"
+end "343d"
 
-%def 442A-442N1/++442N2
-%def 442N1-4431
-%def 442N2-4431
+%def 342A-342N1/++342N2
+%def 342N1-3431
+%def 342N2-3431
 
-%def 442F-442P1/++442P2
-%def 442P1-441F
-%def 442P2-441F
+%def 342F-342P1/++342P2
+%def 342P1-341F
+%def 342P2-341F
 
-%quo1 442A 442N1 442N2
-%quo1 4432 442F 442P1 442P2
+%quo1 342A 342N1 342N2
+%quo1 3432 342F 342P1 342P2
 
-%def 443A-443S2/++443S1/443S3
-%def 443S1-443N1
-%def 443S2-443N2/++443N1
-%def 443S3-443N2/+443N1
+%def 343A-343S2/++343S1/343S3
+%def 343S1-343N1
+%def 343S2-343N2/++343N1
+%def 343S3-343N2/+343N1
 
-%def 443R1-443P1/+443P2/443P3
-%def 443R2-443P2/443P3
-%def 443P1-4432
-%def 443P2-4432
-%def 443P3-4432
+%def 343R1-343P1/+343P2/343P3
+%def 343R2-343P2/343P3
+%def 343P1-3432
+%def 343P2-3432
+%def 343P3-3432
 
-%quo2 4431 443A 443S1 443S2 443S3
-%quo2 443P1 443P2 443P3
-%quo3 4431 443A 443S1 443S2 443S3 443P1 443P2 443P3
+%quo2 3431 343A 343S1 343S2 343S3
+%quo2 343P1 343P2 343P3
+%quo3 3431 343A 343S1 343S2 343S3 343P1 343P2 343P3
 
 ### FFIFTYSEVEN
 
@@ -41196,7 +41196,7 @@ end "450f"
 %quo2 451P7 450G 450R5 450P2 450P3 450Q2 450Q3 450B
 %quo2 450Q1 450Q2 450Q3 450B
 
-### FFOURTYNINE
+### THFOURTYNINE
 
 37v begin =14+19v "449a" se
 ~ 50m e
