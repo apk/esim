@@ -50,6 +50,8 @@ static int YCenter (int v) {
 
 int todo = 1;
 
+int emulsteps = 0;
+
 void panic (char *s) {
 	printf ("Panic: %s\n", s);
 	fflush (stdout);
@@ -3441,6 +3443,7 @@ void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	MUX_SetTimeout (pTo, &dt);
 
 	everysec ();
+	emulsteps ++;
 	if (todo) {
 		XClearArea(mydisplay,basewindow,0,0,0,0,False);
 		DrawPicture ();
@@ -3560,9 +3563,22 @@ static BMFCONN_CMD_HDLR (BmfUsePlan) {
 	return BMFCONN_CMD_SYNERR ();
 }
 
+static BMFCONN_CMD_HDLR (BmfGetSteps) {
+	int d = useplans;
+	if (bmfIsEnd (args)) {
+		return bmfMakeMessage (
+			BMF_NAME, "ok",
+			BMF_NAME, bmfGetName (cmd),
+			BMF_INT, emulsteps,
+			BMF_END);
+	}
+	return BMFCONN_CMD_SYNERR ();
+}
+
 MUX_BMFCMDTABLE_TYP arCmdTable[] = {
 	{ "sig", BmfSig, "sig [name:str]..." },
 	{ "use-plans", BmfUsePlan, "use-plans [flag:int]" },
+	{ "get-steps", BmfGetSteps, "get-steps" },
 	{ 0, 0, 0 }
 };
 
