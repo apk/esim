@@ -237,8 +237,8 @@ end "80j"
 
 %quo1 81N1 80B 80P0 80S0
 %quo2 80S1 80N2 80N3 80R2 80R3
-%quo1 80G 80N2 80N3 80R2 80R3
-%quo2 80H 80G 80N2 80N3 80R2 80R3 80R1 80N1
+%quo2 80G 80N2 80N3 80R2 80R3
+%quo3 80H 80G 80N2 80N3 80R2 80R3 80R1 80N1
 %quo1 80G 80R2 80R3
 %quo2 80H 80G 80R2 80R3 80R1 80N1
 %quo1 801 80P2
@@ -8986,7 +8986,7 @@ end "012t011"
 
 ### NAUGHTTWELVE
 
-47v begin =338+10u "012a" se
+25u begin =675+20v "012a" se
 ~ 50m e
 hs> "012P0"
 4u 800m
@@ -9001,7 +9001,10 @@ end "012b"
 w< 50m / 50m ne "012c" 8d
 4u 100m
 w< 50m / 50m ne "012d" 10d
-6u 150m
+4u 100m
+1u 100m
+<hs "012S1"
+2u 50m
 50m >w / 50m nw "012e" 8d
 w< 50m / 50m se "012a" 8d
 50m >w / 50m nw "012f" 10d
@@ -9032,6 +9035,8 @@ w< 50m / 50m ne "012i" 10d
 2u 50m
 50m >w / 50m sw "012d" 10d
 50m >w / 50m nw "012j" 10d
+1u 100m
+<hs "012S2"
 w< 50m / 50m se "012e" 8d
 w< 50m / 50m ne "012k" 10d
 w< 50m / 50m se "012f" 10d
@@ -9056,8 +9061,11 @@ end "013t012"
 50m >w / 50m nw "012l" 10d
 50m >w / 50m sw "012i" 10d
 w< 50m / 50m se "012j" 10d
+2u 50m
+1u 100m
+<hs "012S3"
 w< 50m / 50m ne "012m" 10d
-4u 100m
+2u 50m
 50m >w / 50m sw "012k" 10d
 2u 50m
 hs> "012P3"
@@ -9082,9 +9090,10 @@ hp> "0126"
 2u 200m
 2u 50m
 w< 50m / 50m se "012l" 10d
-8u 200m
+6u 150m
+3v 100m
+4u 100m
 50m >w / 50m sw "012m" 10d
-2u 50m
 w< 50m / 50m ne "012p" 8d
 2u 50m
 hs> "012P4"
@@ -9100,7 +9109,7 @@ hp> "012F"
 2u 800m
 end "113t012"
 
-47v begin -1u "012p" ne
+25u begin -1u "012p" ne
 ~ 50m e
 hs> "012P5"
 4u 800m
@@ -9108,14 +9117,22 @@ hs> "012P5"
 ~ se 50m
 end "012q"
 
-%def 012A-012N3/012N5/012N4
-%def 012B-012N4/+012N3/012N5
-%def 012C-012N3/012N5/012N4
-%def 012D-012N3/012N5/012N4
+%def 012A-012S3
+%def 012B-012N4/012S3/012N5
+%def 012C-012S2/012S3
+%def 012D-012S2/012S3
+%def 012S2-012N3/012N5/012N4
+%def 012S3-012N3
 %def 012N3-1131/113B
 %def 012N4-113B/+1131
 %def 012N5-1131/113B
 
+%mac naughtytwelve-naughtythirteen 012A-012S2
+%mac naughtytwelve-naughtythirteen 012B-012S2
+%mac naughtytwelve-naughtythirteen 012C-012S1/012S2
+%mac naughtytwelve-naughtythirteen 012D-012S2/+012S1
+%mac naughtytwelve-naughtythirteen 012S1-012N1/012N0/012N2
+%mac naughtytwelve-naughtythirteen 012S2-012N2/+012N1/012N0
 %mac naughtytwelve-naughtythirteen 012A-012N1/012N0/012N2
 %mac naughtytwelve-naughtythirteen 012B-012N1/012N0/012N2
 %mac naughtytwelve-naughtythirteen 012C-012N1/012N0/012N2
@@ -9135,13 +9152,15 @@ end "012q"
 %def 012P4-0126/0128/011G/011I
 %def 012P5-0126/0128/011G/011I
 
-%quo2 012B 012D 012N0 012N1 012N2
+%quo2 012B 012D 012S2 012N0 012N1 012N2
 %quo2 012I 012P0 012P1 012P2
-%quo3 012B 012I 012P0 012P1 012P2
+%quo3 012B 012D 012S2 012I 012P0 012P1 012P2
 
-%quo2 012B 012D 012N3 012N4 012N5
+%quo2 012B 012D 012S3 012N3 012N4 012N5
 %quo2 012G 012P3 012P4 012P5
-%quo3 012B 012D 012N3 012N4 012N5 012G 012P3 012P4 012P5
+%quo3 012B 012D 012S3 012N3 012N4 012N5 012G 012P3 012P4 012P5
+
+%quo1 012S2 012P3 012N3
 
 ### HUNDREDFIFTYONE
 
