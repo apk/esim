@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 207A" $* 207A -- 207S1 207S3 -- 207N1 207N2 207N3 207N4 &
+esimc -title "esimc 207F" $* 207F -- 207R4 207R3 207R2 207R1 -- 207P3 207P1 &

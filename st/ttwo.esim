@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 202A" $* 202A -- 202N0 202N1 202N2 202N3 202N4 202N5 &
+esimc -title "esimc 202F" $* 202F 202G -- 202R1 -- 202P5 202P4 202P3 202P2 &

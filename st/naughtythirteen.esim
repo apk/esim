@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 013A" $* 013C 013B 013A -- 013N3 013N2 013N1 &
+esimc -title "esimc 013F" $* 013G 013F 013H -- 013P1 013P2 013P3 &
