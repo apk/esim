@@ -672,6 +672,7 @@ int try_build_path (struct dnode *d) {
 			sp = 55555;
 			kl_f = 0;
 			while (sig && sig->lcks && sig->lcks == sig->flck) {
+				int rsp;
 				struct dnode *src = sig->lcks;
 				len += sig->len;
 				vrl += sig->len;
@@ -687,13 +688,19 @@ int try_build_path (struct dnode *d) {
 						vrs = -1;
 					}
 				}
-				if (src->sig->maxsp > 0 && src->sig->maxsp <= sp) {
-					sp = 55555;
-				}
-				if (44444 <= sp) {
+				if (sp >= 44444) {
 					/* > 160: Hp1 */
 					sp = 55555;
 				}
+				rsp = sp;
+				if (src->sig->maxsp > 0 && src->sig->maxsp <= sp) {
+					sp = 55555;
+				}
+#if 0
+printf ("%s: sp=%d, rsp=%d, maxsp=%d, len=%d, vrl=%d, state=%x\n",
+	src->sig->name, sp, rsp, src->sig->maxsp,
+	len, vrl, src->state);
+#endif
 				if (sp < 18000) {
 					src->state = DST_Hp2;
 					src->hps = sp;
@@ -712,9 +719,9 @@ int try_build_path (struct dnode *d) {
 					src->state = DST_Kl;
 					src->hps = -1;
 					src->vrs = -1;
-				} else if ((len < 745000 && sp > 29166)
-					|| (len < 595000 && sp > 26388)
-					|| (len < 495000 && sp > 23611)
+				} else if ((len < 745000 && rsp > 29166)
+					|| (len < 595000 && rsp > 26388)
+					|| (len < 495000 && rsp > 23611)
 					|| (vrl < /*80*/740000 && src->state & DST_Kl)) {
 					src->state = DST_Kl;
 					src->state |= vr;
@@ -1833,7 +1840,7 @@ struct pln {
 	int len;
 	int v;
 	char *n;
-} plans [500] = {
+} plans [600] = {
 	{ "2N3-31,A-S3-21,4P5-1,1A-1N2" },
 	{ "2N3-3B-3S2,4S24-4N5/4S34,4N5-1F/4N4,2A-2N3" },
 	{ "2N3-31,4S24-4N5/4S34,4N5-1F/4N4,2A-2N3" },
@@ -3637,6 +3644,7 @@ void handle_smlwin(myevent) XEvent myevent; {
 		if (myevent.xbutton.state & ControlMask) {
 		    done=1;
 		    break; }
+		break;
 	      case 2:
 		x = myevent.xbutton.x;
 		y = myevent.xbutton.y;
