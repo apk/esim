@@ -5586,7 +5586,7 @@ end "30e"
 %mac thirty-seventeen 30P3-40G
 
 %mac thirty-twentythree 30F-30R11/+30R1/30R12
-%mac thirty-twentythree 30G-30R1/+30R11/+30R3/30R12
+%mac thirty-twentythree 30G-30R3/+30R11/+30R1/30R12
 %mac thirty-twentythree 30R1-30P11/30P10
 %mac thirty-twentythree 30R3-30P11/30P10
 %mac thirty-twentythree 30R11-30P11/30P10
@@ -8507,7 +8507,7 @@ end "57t58"
 2u 200m
 2u 50m
 50m >w / 50m sw "57a"
-w< 50m / 50m ne "57c"
+w< 50m / 50m ne "57c" 7d
 2u 50m
 hs> "57P2"
 4u 800m
@@ -8551,9 +8551,9 @@ hp> "269"
 <hp "57D"
 2u 200m
 2u 50m
-50m >w / 50m nw "57f"
+50m >w / 50m nw "57f" 8d
 ne
-w< 50m / 50m e "57g"
+w< 50m / 50m e "57g" 8d
 2u 50m e
 hs> "57P4"
 4u 800m
@@ -8570,7 +8570,7 @@ hp> "576"
 1u 600m
 <hp "57C"
 2u 200m
-w< 50m / 50m se "57f"
+w< 50m / 50m se "57f" 8d
 1u 25m
 2u 50m ne
 3u 75m e
@@ -8601,7 +8601,7 @@ hp> "586"
 end "58t57"
 
 23v begin +3u "57c" ne
-50m >w e / 50m nw "57g"
+50m >w e / 50m nw "57g" 8d
 hs> "57P3"
 4u 800m
 <hs "57N3"
@@ -8623,7 +8623,7 @@ end "57d"
 %mac fiftyseven-fiftysix 57H-57P3
 %mac fiftyseven-fiftysix 57P1-56G
 %mac fiftyseven-fiftysix 57P2-56G
-%mac fiftyseven-fiftysix 57P3-576/56G
+%mac fiftyseven-fiftysix 57P3-576/+56G
 %mac fiftyseven-fiftysix 57P4-576
 %mac fiftyseven-fiftysix 57P5-576
 
@@ -8632,7 +8632,7 @@ end "57d"
 %mac fiftyseven-twentytwo 57G-57P4/57P3
 %mac fiftyseven-twentytwo 57H-57P3
 %mac fiftyseven-twentytwo 57P2-24G
-%mac fiftyseven-twentytwo 57P3-269/24G
+%mac fiftyseven-twentytwo 57P3-269/+24G
 %mac fiftyseven-twentytwo 57P4-269
 
 %def %fiftyseven-fiftyeight
