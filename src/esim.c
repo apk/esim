@@ -31,8 +31,8 @@ long font_height;
 long font_depth;
 unsigned long myforeground, mybackground;
 
-#define FieldXSize 24	/* 27 */
-#define FieldYSize 16	/* 18 */
+int FieldXSize = 24;	/* 27 */
+int FieldYSize = 16;	/* 18 */
 
 #define XXIII 12
 #define KMH2MMS(x) (((x) * 10000) / 36)
@@ -68,7 +68,8 @@ int checkfail (char *t, char *f, int l) {
 #define AT if (iDebugLevel > 2) printf ("At %s:%d\n", __FILE__, __LINE__)
 	
 
-int xsize = 37 * FieldXSize - 1, ysize = 44 * FieldYSize - 1;
+int xsize = 1145, ysize = 800;
+/* int xsize = 37 * FieldXSize - 1, ysize = 44 * FieldYSize - 1; */
 
 #define Switch		0x100
 #define Signal		0x200
@@ -1638,6 +1639,10 @@ int test_lookahead (struct train *trn,
 								if (trn->speed > 0) break;
 								if (trn->ztim < 100) break;
 							} else if (*p == '+') {
+								if (p [1] == '+') {
+									if (trn->speed * 36 > 160 * 1000) break;
+									p ++;
+								}
 								nth = 0;
 								p ++;
 							}
@@ -3734,7 +3739,11 @@ int main(argc,argv) int argc; char **argv; {
                 r_flg++; }
 	    else if(!strcmp(argv[i],"-t")) {
                 t_flg++; }
+	    else if(!strcmp(argv[i],"-x")) {
+		FieldXSize -= 3; }
 	    else if(!strcmp(argv[i],"-a")) {
+		FieldXSize -= 3;
+		FieldYSize -= 2;
                 a_flg++; }
 	    else if(!strncmp(argv[i],"-s",2)) {
 		oncesteps = atoi (argv [i] + 2);
@@ -3771,8 +3780,8 @@ int main(argc,argv) int argc; char **argv; {
     else {
 	mybackground=WhitePixel(mydisplay,myscreen);
 	myforeground=BlackPixel(mydisplay,myscreen); }
-    myhint.x=FieldXSize * 20 - 1;
-    myhint.y=FieldYSize * 7 - 1;
+    myhint.x=100;
+    myhint.y=100;
     myhint.width=xsize;
     myhint.height=ysize;
     myhint.flags=PSize;
