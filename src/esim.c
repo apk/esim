@@ -4897,10 +4897,12 @@ int IsInDNode (struct dnode *x, struct rect *q) {
 		r.y < q->y + q->h && q->y < r.y + r.h;
 }
 
+#define inxo(xo,yo) ((xo) < 40 && (xo) > -40 && (yo) < 40 && (yo) > -40 && (xo) * (xo) + (yo) * (yo) < 300)
+
 int DNodeEvent_B1 (struct dnode *x, int xo, int yo, int state) {
 	if (x->type == Straight) {
 	} else if (x->type == Switch) {
-		if (xo * xo + yo * yo < 400) {
+		if (inxo (xo, yo)) {
 			if (x->lock || x->occcnt) {
 				/* Nothing */
 			} else {
@@ -4913,7 +4915,7 @@ int DNodeEvent_B1 (struct dnode *x, int xo, int yo, int state) {
 			return 1;
 		}
 	} else if (x->type == FullCross) {
-		if (xo * xo + yo * yo < 400) {
+		if (inxo (xo, yo)) {
 			if (x->lock || x->occcnt) {
 				/* Nothing */
 			} else {
@@ -4934,7 +4936,7 @@ int DNodeEvent_B1 (struct dnode *x, int xo, int yo, int state) {
 			return 1;
 		}
 	} else if (x->type == HalfCross) {
-		if (xo * xo + yo * yo < 400) {
+		if (inxo (xo, yo)) {
 			if (x->lock || x->occcnt) {
 				/* Nothing */
 			} else {
@@ -4984,7 +4986,7 @@ int DNodeEvent_B1 (struct dnode *x, int xo, int yo, int state) {
 			printf ("Left: xo = %d\n", xo);
 		}
 #endif
-		if (xo * xo + yo * yo < 400) {
+		if (inxo (xo, yo)) {
 			if (x->type & HpSig) {
 				if (state & ShiftMask) {
 					if (x->state == 0) {
@@ -5033,7 +5035,7 @@ int DNodeEvent_B2 (struct dnode *x, int xo, int yo, int state) {
 			printf ("Left: xo = %d\n", xo);
 		}
 #endif
-		if (xo * xo + yo * yo < 400) {
+		if (inxo (xo, yo)) {
 			if (state & ShiftMask) {
 				switch (x->mode) {
 				default:
