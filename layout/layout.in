@@ -2393,7 +2393,8 @@ hs> "2R2"
 50m >w / 50m "2C" nw 8d
 50m >w / 50m "2y" sw 8d
 w< 50m / 50m "2D" se
-4u 250m
+2u 50m
+2u 200m
 hp> "2F"
 1u 800m
 1u 200m
@@ -2432,7 +2433,7 @@ w< 50m / 50m "2z" se
 2u 50m
 w< 50m / 50m ne "2y" 8d
 2u 50m
-50m >w / 50m sw "2w"
+50m >w / 50m sw "2w" 10d
 50m >w / 50m nw "2D"
 2u 200m
 hp> "2G"
@@ -2470,8 +2471,7 @@ end
 hs> "2P4"
 7u 800m
 <hs "2N4"
-2u 45m
-1u 25m ne
+2u ~ ne 70m
 end "2w"
 
 %quo2 39 2G 2P3 2R2 2P1
@@ -3188,8 +3188,8 @@ end "14f"
 %mac fourteen-three 14R13-14R3/14P4
 %mac fourteen-three 14R3-14P3
 %mac fourteen-three 14G-14P2/14P1
-%mac fourteen-three 14P1-146
-%mac fourteen-three 14P2-146
+%mac fourteen-three 14P1-146/149
+%mac fourteen-three 14P2-149/+146
 %mac fourteen-three 14P3-146
 %mac fourteen-three 14P4-146
 
@@ -5615,7 +5615,7 @@ end "30e"
 
 %mini 700 -392
 
-1u begin =259u "30t31"
+1v begin =259u "30t31"
 2u 800m
 <hp "31A"
 2u 200m
@@ -5644,6 +5644,7 @@ hp> "31G"
 1u 800m
 <hp "325"
 1u 200m
+hp> "330"
 1u 800m
 <hp "327"
 1u 200m
@@ -5652,7 +5653,7 @@ hp> "31G"
 1u 200m
 end "31t53"
 
-1v begin -2u "31t30"
+0v begin -2u "31t30"
 1u 200m
 hp> "318"
 1u 600m
@@ -5680,6 +5681,7 @@ hp> "322"
 1u 200m
 hp> "324"
 1u 800m
+<hp "339"
 1u 200m
 hp> "326"
 1u 800m
@@ -5688,7 +5690,7 @@ hp> "328"
 2u 800m
 end "53t31"
 
-27v begin -1u "31b" ne
+26v begin -1u "31b" ne
 1u 25m
 1u 25m e
 hs> "31P1"
@@ -5698,7 +5700,7 @@ hs> "31P1"
 1u 25m se
 end "31c"
 
-19v begin +4u "31e" se
+18v begin +4u "31e" se
 1u 25m
 5u 125m e
 hs> "31P4"
@@ -5714,10 +5716,10 @@ end "31c32"
 
 %mac thirtyone-fiftythree 31A-31N3/31N4/31N1/31N2
 %mac thirtyone-fiftythree 31B-31N2/+31N3/31N1
-%mac thirtyone-fiftythree 31N1-321/53K
-%mac thirtyone-fiftythree 31N2-53K/+321
-%mac thirtyone-fiftythree 31N3-321/53K
-%mac thirtyone-fiftythree 31N4-321/53K
+%mac thirtyone-fiftythree 31N1-321/339
+%mac thirtyone-fiftythree 31N2-339/+321
+%mac thirtyone-fiftythree 31N3-321/339
+%mac thirtyone-fiftythree 31N4-321/339
 
 %mac thirtyone-thirtytwo 31A-31N4/+31N3/31N1/31N2
 %mac thirtyone-thirtytwo 31B-31N3/+31N2/31N1
@@ -5738,8 +5740,8 @@ end "31c32"
 %def %thirtyone-thirty
 
 %quo2 31B 31N1 31N2 31N3
-%quo2 31G 31H 31P1 31P2 31P3
-%quo3 31B 31G 31H 31N1 31N2 31N3 31P1 31P2 31P3
+%quo2 330 31G 31H 31P1 31P2 31P3
+%quo3 31B 330 31G 31H 31N1 31N2 31N3 31P1 31P2 31P3
 
 ### THIRTYTWO
 
@@ -6263,13 +6265,13 @@ end "54t53a"
 %mac fiftythree-thirtyone 53C-53N6/53N5/53N7/53N3/53N4/53N2
 %mac fiftythree-thirtyone 53D-53N4/+53N5/53N6/53N7/53N3/53N2
 %mac fiftythree-thirtyone 53E-53N5/53N3/53N4/53N2
-%mac fiftythree-thirtyone 53N1-320/31G
-%mac fiftythree-thirtyone 53N2-320/31G
-%mac fiftythree-thirtyone 53N3-320/31G
-%mac fiftythree-thirtyone 53N4-31G/+320
-%mac fiftythree-thirtyone 53N5-320/31G
-%mac fiftythree-thirtyone 53N6-320/31G
-%mac fiftythree-thirtyone 53N7-320/31G
+%mac fiftythree-thirtyone 53N1-320/330
+%mac fiftythree-thirtyone 53N2-320/330
+%mac fiftythree-thirtyone 53N3-320/330
+%mac fiftythree-thirtyone 53N4-330/+320
+%mac fiftythree-thirtyone 53N5-320/330
+%mac fiftythree-thirtyone 53N6-320/330
+%mac fiftythree-thirtyone 53N7-320/330
 
 %mac fiftythree-fiftyfive 53A-53N7/53N6/53N5/53N3/53N4/53N2/53N1
 %mac fiftythree-fiftyfive 53B-53N2/+53N5/+53N3/53N6/53N7/53N4/53N1
@@ -6323,9 +6325,9 @@ end "54t53a"
 %quo1 53P6 53P7
 
 %quo2 32N1 53E 53N1 53N2 53N3
-%quo2 53I 53K 53P1 53P2 53P3
-%quo3 32N1 53E 53N1 53N2 53N3 53I 53K 53P1 53P2 53P3
-%quo2 53P2 53N2 53P3 53N3 53K
+%quo2 53I 339 53K 53P1 53P2 53P3
+%quo3 32N1 53E 53N1 53N2 53N3 53I 339 53K 53P1 53P2 53P3
+%quo2 53P2 53N2 53P3 53N3 339 53K
 
 %quo2 53B 53D 53H 53P4 53P5 53N4 53N5
 %quo1 53H 53P5 53N5
