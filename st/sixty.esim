@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 60A" $* 60B 60A 60D 60C -- 60N1 60N2 60N3 60N4 60N5 &
+esimc -title "esimc 60F" $* 60I 60G 60F 60H -- 60P5 60P4 60P3 60P2 60P1 &
