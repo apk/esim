@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 57A" $* 57C 57D 57B 57A -- 57N5 57N4 57N3 57N2 57N1 &
+esimc -title "esimc 57F" $* 57H 57G 57F -- 57P1 57P2 57P3 57P4 57P5 &

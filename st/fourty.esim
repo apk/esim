@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 40A" $* 40B 40A 40E 40D 40C -- 40S5 -- 40N6  40N5 40N4 40N3 40N2 40N1 &
+esimc -title "esimc 40F" $* 40G 40F -- 40P1 40P2 40P3 40P4 40P5 40P6 &

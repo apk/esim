@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 30A" $* 30C 30B 30A -- 30S11 30S10 30S1 30S2 30S3 -- 30N12 30N11 30N1 30N3 &
+esimc -title "esimc 30F" $* 30G 30F -- 30R3 30R1 30R11 30R12 -- 30P3 30P2 30P1 30P10 30P11 &
