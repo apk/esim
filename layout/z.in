@@ -1,15 +1,53 @@
 %trn len=100 v=200 n=0 
 
-1u begin =2+3u
+1u begin =2+5u
 2u 800m
 <hp "1"
 2u 200m
 >w / nw "472t471" 20d
+1u 800m
+<hp "1a"
+1u 200m
+1u 800m
+<hp "1b"
+1u 200m
+1u 800m
+<hp "1c"
+1u 200m
+1u 800m
+<hp "1d"
+1u 200m
+w< / se "y" 20d
+>w / sw "x" 20d
+1u 800m
+<hp "1e"
+1u 200m
 end "471t472"
 
-1u begin -1u "472u471"
-1u 50m
+15v begin +2u "472u471"
+1u 800m
+<hp "2a"
+1u 200m
+1u 800m
+<hp "2b"
+1u 200m
+1u 800m
+<hp "2c"
+1u 200m
+1u 800m
+<hp "2d"
+1u 200m
+w< / ne "x" 20d
+>w / nw "y" 20d
+1u 800m
+<hp "2e"
+1u 200m
 end "471u472"
+
+%def 1d-1e
+%def 2d-1e
+%mac b 1d-2e
+%mac b 2d-2e
 
 ### FSEVENTYTWO
 
@@ -438,7 +476,7 @@ hs> "474R4"
 ~ 50m se
 end "474g"
 
-%def 474A-474S2/474N1
+%def 474A-474S2/474S1
 %def 474B-474S3/+474S2/474S1
 %def 474S1-474N2/474N4/474N3
 %def 474S2-474N2/474N4/474N3
@@ -1628,6 +1666,106 @@ end "339t338"
 %quo2 338G 338P1 338P2 338P3
 %quo3 338G 338P1 338P2 338P3 338B 3389 338C 338N1 338N2 338N3
 
+### THTHIRTYTWO
+
+1u begin =11+13v "333t332"
+2u 800m
+<hp "3334"
+1u 200m
+1u 800m
+<hp "332F"
+2u 800m
+3u w< 3u / ne "332a" 8d
+3u >w 3u / nw "332b" 10d
+hs> "332N1"
+4u 800m
+<hs "332P1"
+7u >w / nw "332c" 10d
+2u 200m
+hp> "332B"
+1u 600m
+<hp "3320"
+1u 200m
+1u 800m
+<hp "3328"
+1u 200m
+1u 800m
+<hp "3326"
+1u 200m
+1u 800m
+<hp "3324"
+1u 200m
+end "332t331"
+
+1v begin -2u "332t333"
+1u 200m
+hp> "3335"
+1u 800m
+1u 200m
+hp> "3333"
+1u 600m
+<hp "332G"
+2u 200m
+3u >w / nw "332d" 10d
+>w / sw "332a" 8d
+w< / se "332b" 10d
+w< 3u / ne "332e" 10d
+hs> "332N2"
+4u 800m
+<hs "332P2"
+3u >w / nw "332f" 13d
+w< 3u / se "332c" 10d
+2u 200m
+hp> "332A"
+1u 800m
+1u 200m
+hp> "3329"
+1u 800m
+1u 200m
+hp> "3327"
+1u 800m
+1u 200m
+hp> "3325"
+2u 800m
+end "331t332"
+
+7v begin -2u "332c338"
+2u 1000m
+<hp "332H"
+2u 200m
+w< 5u / se "332d" 10d
+5u >w / sw "332e" 10d
+hs> "332N3"
+4u 800m
+<hs "332P3"
+~ 50m se
+end "332f"
+
+%def 332A-332N2/332N3
+%def 332B-332N1/+332N2/332N3
+%def 332N1-333I/+3333
+%def 332N2-3333/333I
+%def 332N3-3333/333I
+
+%mac ththirtytwo-ththirtyeight 332A-332N3/+332N2
+%mac ththirtytwo-ththirtyeight 332B-332N1/+332N3/+332N2
+%mac ththirtytwo-ththirtyeight 332N1-3389
+%mac ththirtytwo-ththirtyeight 332N2-3389
+%mac ththirtytwo-ththirtyeight 332N3-3389
+
+%def 332F-332P1/332P3/332P2
+%def 332G-332P2/+332P1/332P3
+%def 332H-332P3/+332P1/332P2
+%def 332P1-3320
+%def 332P2-331G/+3320
+%def 332P3-3320/331G
+
+%quo1 332P2 332P3
+%quo2 332B 332N1 332N2 332N3
+
+%quo2 332P2 332P3 332N1 332P1 332G 3380 332H
+%quo3 332B 332N2 332N3 332P2 332P3 332N1 332P1 332G 3380 332H
+
 ### THTHIRTYNINE
 
 24u begin =13+17v "339a" se
@@ -1860,112 +1998,12 @@ end "340g"
 %quo2 340D 340Y 340Z 340H 340I
 %quo2 340D 340Y 340Z 3408 340I
 
-### THTHIRTYTWO
-
-1u begin =11+13v "333t332"
-2u 800m
-<hp "3334"
-1u 200m
-1u 800m
-<hp "332F"
-2u 800m
-3u w< 3u / ne "332a" 8d
-3u >w 3u / nw "332b" 10d
-hs> "332N1"
-4u 800m
-<hs "332P1"
-7u >w / nw "332c" 10d
-2u 200m
-hp> "332B"
-1u 600m
-<hp "3320"
-1u 200m
-1u 800m
-<hp "3328"
-1u 200m
-1u 800m
-<hp "3326"
-1u 200m
-1u 800m
-<hp "3324"
-1u 200m
-end "332t331"
-
-1v begin -2u "332t333"
-1u 200m
-hp> "3335"
-1u 800m
-1u 200m
-hp> "3333"
-1u 600m
-<hp "332G"
-2u 800m
-3u >w / nw "332d" 10d
->w / sw "332a" 8d
-w< / se "332b" 10d
-w< 3u / ne "332e" 10d
-hs> "332N2"
-4u 800m
-<hs "332P2"
-3u >w / nw "332f" 13d
-w< 3u / se "332c" 10d
-2u 200m
-hp> "332A"
-1u 800m
-1u 200m
-hp> "3329"
-1u 800m
-1u 200m
-hp> "3327"
-1u 800m
-1u 200m
-hp> "3325"
-2u 800m
-end "331t332"
-
-7v begin -2u "332c338"
-2u 1000m
-<hp "332H"
-2u 200m
-w< 5u / se "332d" 10d
-5u >w / sw "332e" 10d
-hs> "332N3"
-4u 800m
-<hs "332P3"
-~ 50m se
-end "332f"
-
-%def 332A-332N2/332N3
-%def 332B-332N1/+332N2/332N3
-%def 332N1-333I/+3333
-%def 332N2-3333/333I
-%def 332N3-3333/333I
-
-%mac ththirtytwo-ththirtyeight 332A-332N3/+332N2
-%mac ththirtytwo-ththirtyeight 332B-332N1/+332N3/+332N2
-%mac ththirtytwo-ththirtyeight 332N1-3389
-%mac ththirtytwo-ththirtyeight 332N2-3389
-%mac ththirtytwo-ththirtyeight 332N3-3389
-
-%def 332F-332P1/332P3/332P2
-%def 332G-332P2/+332P1/332P3
-%def 332H-332P3/+332P1/332P2
-%def 332P1-3320
-%def 332P2-331G/+3320
-%def 332P3-3320/331G
-
-%quo1 332P2 332P3
-%quo2 332B 332N1 332N2 332N3
-
-%quo2 332P2 332P3 332N1 332P1 332G 3380 332H
-%quo3 332B 332N2 332N3 332P2 332P3 332N1 332P1 332G 3380 332H
-
 ### THTHIRTYONE
 
 16u begin =13+17v "331a" se
 ~ 50m e
 hs> "331N1"
-4u 800m
+7v 800m
 <hs "331P1"
 ~ 50m ne
 end "331b"
@@ -1981,7 +2019,7 @@ end "331b"
 w< / ne "331d" 8d
 w< 3u / se "331a" 8d
 hs> "331N2"
-4u 800m
+7v 800m
 <hs "331P2"
 3u >w / sw "331b" 8d
 w< 3u / ne "331e" 8d
@@ -1989,6 +2027,9 @@ w< 3u / ne "331e" 8d
 2u 200m
 hp> "331B"
 1u 600m
+<hp "3318"
+1u 200m
+1u 800m
 <hp "3316"
 1u 200m
 1u 800m
@@ -2012,13 +2053,16 @@ w< 3u / se "331c" 8d
 3u >w / sw "331d" 8d
 w< 3u / ne "331g" 8d
 hs> "331N3"
-4u 800m
+7v 800m
 <hs "331P3"
 3u >w / nw "331h" 8d
 >w / sw "331e" 8d
 w< 3u / se "331f" 8d
 2u 200m
 hp> "331A"
+1u 800m
+1u 200m
+hp> "3317"
 1u 800m
 1u 200m
 hp> "3315"
@@ -2031,7 +2075,7 @@ end "330t331"
 18u begin -1u "331g" ne
 ~ 50m e
 hs> "331N4"
-4u 800m
+7v 800m
 <hs "331P4"
 ~ 50m se
 end "331h"
@@ -2045,10 +2089,10 @@ end "331h"
 
 %def 331F-331P2/331P1/331P4/331P3
 %def 331G-331P3/+331P2/331P4/331P1
-%def 331P1-3316/330G
-%def 331P2-3316/330G
-%def 331P3-330G/+3316
-%def 331P4-3316/330G
+%def 331P1-3318/330G
+%def 331P2-3318/330G
+%def 331P3-330G/+3318
+%def 331P4-3318/330G
 
 %quo3 331B 331N1 331N2 331N3 331N4
 %quo3 331G 331P1 331P2 331P3 331P4
@@ -2082,7 +2126,7 @@ hs> "330S2"
 2u 200m
 hp> "330B"
 1u 600m
-<hp "3306"
+<hp "3300"
 1u 200m
 end "330t329"
 
@@ -2130,9 +2174,9 @@ end "330g"
 %def 330R1-330P2/330P4/330P3
 %def 330R2-330P2/330P4/330P3
 %def 330R3-330P3/330P4
-%def 330P2-3306
-%def 330P3-329G/+3306
-%def 330P4-3306/329G
+%def 330P2-3300
+%def 330P3-329G/+3300
+%def 330P4-3300/329G
 
 %quo1 330S2 330N1 330N2
 %quo2 330S2 330N1 330N2 330G 330R1 330R2
@@ -2140,74 +2184,398 @@ end "330g"
 %quo1 330R3 330P3 330P4
 %quo2 330R3 330P3 330P4 330B 330S3 330S4
 
-### EPILOG
+### THTWENTYNINE
 
-1u begin =7+9v "330t329"
+51v begin =9+13v "329a" se
+~ 50m e
+hs> "329N1"
+7v 800m
+<hs "329P1"
+~ 50m ne
+end "329b"
+
+1u begin -1u "330t329"
 2u 800m
+<hp "3308"
+1u 200m
+1u 800m
+<hp "3306"
+1u 200m
+1u 800m
+<hp "3304"
+1u 200m
+1u 800m
+<hp "3302"
+1u 200m
+1u 800m
 <hp "329F"
 2u 200m
-w< 3u / ne "329a" 6d
-3u >w / nw "329b" 8d
-hs> "329N1"
-3u 800m
-<end "329P1"
+w< 3u / ne "329c" 8d
+3u >w / nw "329d" 8d
+w< 3u / se "329a" 8d
+hs> "329N2"
+7v 800m
+<hs "329P2"
+3u >w / sw "329b"
+>w / nw "329e" 8d
+w< 3u / ne "329f" 8d
+2u 200m
+hp> "329B"
+1u 600m
+<hp "3296"
+1u 200m
+end "329t328"
 
 1v begin -2u "329t330"
+1u 200m
+hp> "3309"
+1u 800m
+1u 200m
+hp> "3307"
+1u 800m
+1u 200m
+hp> "3305"
+1u 800m
+1u 200m
+hp> "3303"
+1u 800m
 1u 200m
 hp> "3301"
 1u 600m
 <hp "329G"
 2u 200m
-3u >w / sw "329a" 6d
-w< 3u / se "329b" 8d
-hs> "329N2"
+3u >w / sw "329c" 8d
+w< / se "329d" 8d
+w< 3u / ne "329g" 8d
+hs> "329N3"
+7v 800m
+<hs "329P3"
+3u >w / nw "329h" 8d
+w< 3u / se "329e" 8d
+3u >w / sw "329f" 8d
+2u 200m
+hp> "329A"
+2u 800m
+end "328t329"
+
+47v begin -1u "329g" ne
+~ 50m e
+hs> "329N4"
+7v 800m
+<hs "329P4"
+~ 50m se
+end "329h"
+
+%def 329A-329N3/329N4/329N1/329N2
+%def 329B-329N2/+329N3/329N1/329N4
+%def 329N1-3301/330B
+%def 329N2-330B/+3301
+%def 329N3-3301/330B
+%def 329N4-3301/330B
+
+%def 329F-329P2/329P1/329P4/329P3
+%def 329G-329P3/+329P2/329P4/329P1
+%def 329P1-3296/328G
+%def 329P2-3296/328G
+%def 329P3-328G/+3296
+%def 329P4-3296/328G
+
+### THTWENTYEIGHT
+
+1u begin =7+9v "329t328"
+2u 800m
+<hp "3294"
+1u 200m
+1u 800m
+<hp "3292"
+1u 200m
+1u 800m
+<hp "328F"
+2u 200m
+w< 7u / ne "328a" 8d
+hs> "328N1"
+4u 800m
+<hs "328P1"
+7u >w / nw "328b" 8d
+2u 800m
+hp> "328B"
+1u 600m
+<hp "3280"
+1u 200m
+1u 800m
+<hp "3288"
+1u 200m
+1u 800m
+<hp "3286"
+1u 200m
+1u 800m
+<hp "3284"
+1u 200m
+1u 800m
+<hp "3282"
+1u 200m
+end "328t327"
+
+1v begin -2u "328t329"
+1u 200m
+hp> "3295"
+1u 800m
+1u 200m
+hp> "3293"
+1u 800m
+1u 200m
+hp> "3291"
+1u 800m
+<hp "328G"
+2u 200m
+3u >w / sw "328a" 8d
+w< 3u / ne "328c" 8d
+hs> "328N2"
+4u 800m
+<hs "328P2"
+3u >w / nw "328d" 8d
+w< 3u / se "328b" 8d
+2u 200m
+hp> "328A"
+1u 800m
+1u 200m
+hp> "3289"
+1u 800m
+1u 200m
+hp> "3287"
+1u 800m
+1u 200m
+hp> "3285"
+1u 800m
+1u 200m
+hp> "3283"
+2u 800m
+end "327t328"
+
+33v begin -1u "328c" ne
+~ 50m e
+hs> "328N3"
+4u 800m
+<hs "328P3"
+~ 50m se
+end "328d"
+
+%quo1 328N1 328F
+%quo1 328N1 3292
+%quo1 328N1 3294
+%quo1 328N1 3296
+
+%quo3 328N1 329B 329N1 329N2 329N3 329N4
+%quo3 329G 329P1 329P2 329P3 329P4
+%quo4 328N1 329B 329N1 329N2 329N3 329N4 329G 329P1 329P2 329P3 329P4
+
+%def 328A-328N2/328N3
+%def 328B-328N1/+328N2/328N3
+%def 328N1-329B
+%def 328N2-3291/329B
+%def 328N3-3291/329B
+
+%def 328F-328P1/328P3/328P2
+%def 328G-328P2/328P3
+%def 328P1-3280
+%def 328P2-327G/+3280
+%def 328P3-3280/327G
+
+### THTWENTYSEVEN
+
+30u begin =13+17v "327a" se
+~ 50m e
+hs> "327S1"
+7v 800m
+<hs "327P1"
+2u ~ 75m ne
+end "327b"
+
+1u begin -1u "328t327"
+2u 800m
+<hp "327F"
+2u 200m
+w< 7u / ne "327c" 10d
+hs> "327N2"
+7v 800m
+<hs "327R2"
+3u w< 3u / ne "327d" 10d
+3u >w / nw "327e" 8d
+w< 3u / se "327a" 8d
+hs> "327S2"
+7v 800m
+<hs "327P2"
+w< 3v / ne "327f" 8d
+3v >w / sw "327b" 8d
+5v 275m
+hp> "327B"
+1u 600m
+<hp "3278"
+1u 200m
+end "327t326"
+
+1v begin -2u "327t328"
+1u 200m
+hp> "3281"
+1u 600m
+<hp "327G"
+2u 200m
+3u >w / sw "327c" 10d
+w< 3u / ne "327g" 13d
+hs> "327N3"
+7v 800m
+<hs "327R3"
+3u >w / nw "327h" 8d
+>w / sw "327d" 10d
+w< / se "327e" 8d
+w< 5u / ne "327i" 10d
+hs> "327S3"
+7v 800m
+<hs "327P3"
+3u >w 2u / sw "327f" 8d
+5v 275m
+hp> "327A"
+2u 800m
+end "326t327"
+
+23v begin -1u "327g" ne
+~ 50m e
+hs> "327N4"
+7v 800m
+<hs "327R4"
+w< 5u / se "327h" 8d
+5u >w / sw "327i" 10d
+2u 200m
+hp> "327C"
+1u 1000m
+1u 1000m
+<hp "3270"
+1u 200m
+hp> "3279"
+2u 1000m
+end "327cxxx"
+
+%quo1 327N2 327F
+%quo1 327N2 3282
+%quo1 327N2 3284
+%quo1 327N2 3286
+%quo1 327N2 3288
+%quo1 327N2 3280
+
+%quo1 328G 328P2 328P3
+%quo2 328G 328P2 328P3 328N2 328N3 328B 327N2
+
+%def 327A-327S3/327S2
+%def 327B-327S2/327S1
+%def 327S1-327N3/327N4/327N2
+%def 327S2-327N2/+327N3/327N4
+%def 327S3-327N3/327N4/327N2
+%def 327C-327N4/327N3/327N2
+%def 327N2-328B
+%def 327N3-3281/328B
+%def 327N4-3281/328B
+
+%def 327F-327R2/327R4/327R3
+%def 327G-327R3/327R4
+%def 327R2-327P2/327P1/327P3
+%def 327R3-327P3/+327P2/327P1
+%def 327R4-327P2/327P1/327P3
+%def 327P1-3278
+%def 327P2-3278/326G
+%def 327P3-326G
+
+%quo1 327G 327R3 327R4
+%quo2 327G 327R3 327R4 327N3 327N4 327C 3279
+
+%quo1 327B 327S1 327S2
+%quo2 327B 327S1 327S2 327P1 327P2
+
+### EPILOG
+
+1u begin =7+9v "327t326"
+2u 800m
+<hp "326F"
+2u 200m
+w< 3u / ne "326a" 6d
+3u >w / nw "326b" 8d
+hs> "326N1"
 3u 800m
-<end "329P2"
+<end "326P1"
 
-%def 329F-329P1/+329P2
-%def 329G-329P2/+329P1
-%def 329N1-330B/+3301
-%def 329N2-3301/330B
-%quo2 329G 329N1 329N2 329P1 329P2
+1v begin -2u "326t327"
+1u 200m
+hp> "3271"
+1u 600m
+<hp "326G"
+2u 200m
+3u >w / sw "326a" 6d
+w< 3u / se "326b" 8d
+hs> "326N2"
+3u 800m
+<end "326P2"
+
+%def 326F-326P1/+326P2
+%def 326G-326P2/+326P1
+%def 326N1-327B/+3271
+%def 326N2-3271/327B
+%quo2 327P3 326G 326N1 326N2 326P1 326P2
+%quo1 327P3 327A
+%quo1 327P3 3271
+
+# %trn len=100 v=200 n=0 
+%trn len=100 v=200 n=1 %fseventythree-fseventyseven
+%trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
+%trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=6 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
 
 %trn len=100 v=200 n=0 
+%trn len=100 v=200 n=1 %fseventythree-fseventyseven
 %trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
 %trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
 %trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
 %trn len=100 v=200 n=6 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
+
 %trn len=100 v=200 n=0 
+%trn len=100 v=200 n=1 %fseventythree-fseventyseven
 %trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
 %trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=0 
-%trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
-%trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=6 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight
-%trn len=100 v=200 n=0 
-%trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
-%trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
 %trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
 %trn len=100 v=200 n=6 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
+
 %trn len=100 v=200 n=0 
-%trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
+%trn len=100 v=200 n=1 %fseventythree-fseventyseven
 %trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=6 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
+
 %trn len=100 v=200 n=0 
-%trn len=100 v=200 n=2 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour
+%trn len=100 v=200 n=1 %fseventythree-fseventyseven
 %trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=5 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo
-%trn len=100 v=200 n=6 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
+
 %trn len=100 v=200 n=0 
 %trn len=100 v=200 n=1 %fseventythree-fseventyseven
+%trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
+
 %trn len=100 v=200 n=0 
 %trn len=100 v=200 n=1 %fseventythree-fseventyseven
-%trn len=100 v=200 n=0 
-%trn len=100 v=200 n=1 %fseventythree-fseventyseven
-%trn len=100 v=200 n=0 
-%trn len=100 v=200 n=1 %fseventythree-fseventyseven
-%trn len=100 v=200 n=0 
-%trn len=100 v=200 n=1 %fseventythree-fseventyseven
-%trn len=100 v=200 n=0 
-%trn len=100 v=200 n=1 %fseventythree-fseventyseven
+%trn len=100 v=200 n=3 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=4 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo
+%trn len=100 v=200 n=7 %b
+%trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
