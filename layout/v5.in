@@ -981,6 +981,7 @@
 # %trn len=80 n=tst %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree,%hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
 
 %trn len=228 v=200 n=ir6k %ir6k
+%trn len=228 v=200 n=ir0v %ir0v
 
 %trn len=380 v=200 n=iop %ir1y
 %trn len=380 v=200 n=ioq %ir9
@@ -1118,7 +1119,6 @@
 %trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour,%ffour-sixtyseven-side
 %trn len=310 v=200 n=ic1 %ic1
 %trn len=80 n=tA %hninetysix-hninetyone,%tfiftyfour-tsixtynine,%teighty-tsixtynine,%tcourse,%ffourty-stwentyfour,%stwentyfour-ffourty
-%trn len=228 v=200 n=ir0v %ir0v
 %trn len=228 v=200 n=ir3 %detour
 %trn len=228 v=200 n=ir1h %ir1h
 %trn len=228 v=200 n=ir6b %ir6b
