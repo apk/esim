@@ -287,14 +287,14 @@
 # %trn len=97 v=140 n=loc %local
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
-%trn len=150 v=160 n=t6 %t6
-%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=380 v=200 n=ioq %ir9
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
 %trn len=380 v=200 n=ios %ir5
 %trn len=380 v=200 n=iot 
 
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=150 v=160 n=t6 %t6
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=150 v=160 n=t6 %t6
 %trn len=150 v=160 n=t6 %t6
 %trn len=150 v=160 n=t2 %t2
