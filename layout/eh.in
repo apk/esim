@@ -449,22 +449,17 @@ end "47m"
 2u 800m
 <hp "47A"
 2u 200m
-2u 50m
-w< 50m / 50m ne "47a" 8d
-11v 150m
+3u w< 3u / 50m ne "47a" 8d
+7v 100m
 <hs "47S1"
-2u 50m
-50m >w / 50m nw "47b" 10d
-w< 50m / 50m se "47l" 8d
-2u 50m
+3u >w / 50m nw "47b" 10d
+w< 3u / 50m se "47l" 8d
 hs> "47P1"
 4u 800m
 <hs "47N1"
-2u 50m
-50m >w / 50m sw "47m" 8d
-50m >w / 50m nw "47c" 10d
-w< 50m / 50m ne "47d" 8d
-2u 50m
+3u >w / sw "47m" 8d
+>w / nw "47c" 10d
+w< 3u / ne "47d" 8d
 2u 200m
 hp> "47G"
 1u 600m
@@ -482,22 +477,18 @@ hp> "470"
 1u 600m
 <hp "47B"
 2u 200m
-4u 100m
-50m >w / 50m sw "47a" 8d
-50m >w / 50m nw "47e" 10d
-w< 50m / 50m ne "47f" 8d
-w< 50m / 50m se "47b" 10d
-2u 50m
-50m >w / 50m nw "47k" 8d
+5u >w / sw "47a" 8d
+>w / nw "47e" 10d
+w< / ne "47f" 8d
+w< 2u / se "47b" 10d
+2u >w / nw "47k" 8d
 hs> "47P2"
 4u 800m
 <hs "47N2"
-2u 50m
-50m >w / 50m nw "47g" 10d
-w< 50m / 50m se "47c" 10d
-2u 50m
-50m >w / 50m nw "47h" 13d
-50m >w / 50m sw "47d" 8d
+3u >w / nw "47g" 10d
+w< 2u / se "47c" 10d
+2u >w / nw "47h" 13d
+>w / sw "47d" 8d
 2u 200m
 hp> "47F"
 1u 600m
@@ -812,19 +803,15 @@ end "403b"
 1u 800m
 <hp "403F"
 2u 200m
-w< 50m / 50m ne "403c" 8d
-4u 100m
-50m >w / 50m nw "403d" 8d
-w< 50m / 50m se "403a" 8d
-2u 50m
+w< 3u / 50m ne "403c" 8d
+3u >w / 50m nw "403d" 8d
+w< 3u / 50m se "403a" 8d
 hs> "403N2"
 7v 800m
 <hs "403P2"
-2u 50m
-50m >w / 50m sw "403b" 8d
+3u >w / 50m sw "403b" 8d
 50m >w / 50m nw "403e" 8d
-w< 50m / 50m ne "403f" 8d
-2u 50m
+w< 3u / 50m ne "403f" 8d
 2u 200m
 hp> "403B"
 1u 600m
