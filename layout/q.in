@@ -33,6 +33,22 @@ end "91t92"
 1u 200m
 end "010t92"
 
+16u begin 3u "150c198"
+1u 1000m
+w< 50m / 50m se "xxx" 20d
+1u 2000m
+<hp "150F"
+1u 1000m
+end "xxx"
+
+13u begin 4u "161c198"
+1u 1000m
+w< 50m / 50m se "xxx" 20d
+1u 2000m
+<hp "161B"
+1u 1000m
+end "xxx"
+
 19u begin 1u "198t199"
 1u 800m
 <hp "X"
@@ -70,7 +86,7 @@ end "199t198"
 
 %def X1-X2
 
-20u begin =3+2u "196t191"
+22u begin =3+2u "196t191"
 1u 800m
 <hp "X"
 1u 200m
@@ -913,14 +929,56 @@ end "199t198"
 %quo1 197N3 1986
 %quo1 197N3 1988
 
+%def 198A-198N1/198N2/198N3/198N4
+%def 198B-198N4/+198N1/198N2/198N3
+%def 198C-198N3/+198N1/198N2/198N4
+%def 198N1-1991/199B
+%def 198N2-1991/199B
+%def 198N3-1991/199B
+%def 198N4-199B/+1991
+
+%mac hninetyeight-hfifty 198A-198N3/+198N1/198N2/198N4
+%mac hninetyeight-hfifty 198B-198N3/+198N4/198N1/198N2
+%mac hninetyeight-hfifty 198C-198N3/198N2/198N1/198N4
+%mac hninetyeight-hfifty 198N1-150F
+%mac hninetyeight-hfifty 198N2-150F
+%mac hninetyeight-hfifty 198N3-150F
+%mac hninetyeight-hfifty 198N4-150F
+
+%mac hninetyeight-hsixtyone 198A-198N2/+198N1/198N3/198N4
+%mac hninetyeight-hsixtyone 198B-198N2/+198N3/198N4/198N1
+%mac hninetyeight-hsixtyone 198C-198N2/+198N3/198N1/198N4
+%mac hninetyeight-hsixtyone 198N1-161B
+%mac hninetyeight-hsixtyone 198N2-161B
+%mac hninetyeight-hsixtyone 198N3-161B
+%mac hninetyeight-hsixtyone 198N4-161B
+
+%def 198F-198P4/198P3/198P2/198P1
+%def 198G-198P1/+198P4/198P3/198P2
+%def 198H-198P3/+198P4/198P2/198P1
+%def 198I-198P2/+198P4/+198P3/198P1
+%def 198P1-197G/+1988
+%def 198P2-1988/197G
+%def 198P3-1988/197G
+%def 198P4-1988/197G
+
+%quo3 197N3 198B 198N1 198N2 198N3 198N4
+%quo3 198G 198H 198I 198P1 198P2 198P3 198P4
+%quo4 197N3 198B 198N1 198N2 198N3 198N4 198G 198H 198I 198P1 198P2 198P3 198P4
+
 ### EPILOG
 
+%trn len=228 v=200 n=g %hninetyeight-hfifty
+%trn len=228 v=200 n=h %hninetyeight-hsixtyone
 %trn len=228 v=200 n=a 
 %trn len=228 v=200 n=b %ninetytwo-naughtyten
 %trn len=228 v=200 n=c %hninetysix-hninetyone
 %trn len=228 v=200 n=d %ninetytwo-naughtyten,%hninetysix-hninetyone
 %trn len=228 v=200 n=e %hninetysix-hfiftyfour
 %trn len=228 v=200 n=f %hninetysix-hfiftyfour,%hninetysix-hninetyone
+%trn len=228 v=200 n=a 
+%trn len=228 v=200 n=g %hninetyeight-hfifty
+%trn len=228 v=200 n=h %hninetyeight-hsixtyone
 %trn len=228 v=200 n=a 
 %trn len=228 v=200 n=b %ninetytwo-naughtyten
 %trn len=228 v=200 n=c %hninetysix-hninetyone
