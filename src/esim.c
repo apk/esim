@@ -444,6 +444,7 @@ struct sig {
 	struct qlgm *qgrp;	/* Quorum interlock group list */
 	int dsigcnt;		/* How many trains see me as stop? */
 	int maxsp;		/* Posted maximum speed */
+	int cnt;		/* Usage count */
 };
 
 struct ilg {
@@ -1968,6 +1969,7 @@ struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 	s->qgrp = 0;
 	s->dsigcnt = 0;
 	s->maxsp = 0;
+	s->cnt = 0;
 	return s;
 }
 
@@ -3761,6 +3763,20 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 	exit (1);
 }
 
+static FILE *dump_cnts (char *s) {
+	FILE *fp = fopen (s, "w");
+	struct dnode *dn;
+	if (fp) {
+		for (dn = dnode_list; dn; dn = dn->tnext) {
+			if (dn->sig && dn->sig->name) {
+				fprintf (fp, "%d %s\n", dn->sig->cnt, dn->sig->name);
+			}
+		}
+		fclose (fp);
+	}
+	return fp;
+}
+
 void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	int i;
 	struct timeval now = MUX_GetTime ();
@@ -3781,7 +3797,10 @@ void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 		DrawPicture ();
 	}
 	XFlush (mydisplay);
-	if (done) exit (0);
+	if (done) {
+		dump_cnts ("e.cnt");
+		exit (0);
+	}
 }
 
 	/*
@@ -3880,6 +3899,12 @@ static BMFCONN_CMD_HDLR (BmfSig) {
 	return BMFCONN_CMD_OK ();
 }
 
+static BMFCONN_CMD_HDLR (BmfDumpCounts) {
+	struct dnode *dn;
+	FILE *fp = dump_cnts ("siglist");
+	return BMFCONN_CMD_OK ();
+}
+
 static BMFCONN_CMD_HDLR (BmfUsePlan) {
 	int d = useplans;
 	if (bmfParseMessage (args,
@@ -3939,6 +3964,7 @@ MUX_BMFCMDTABLE_TYP arCmdTable[] = {
 	{ "get-steps", BmfGetSteps, "get-steps" },
 	{ "once-steps", BmfOnceSteps, "once-steps [steps:int]" },
 	{ "nstanding", BmfNStanding, "nstanding" },
+	{ "dump-counts", BmfDumpCounts, "dump-counts ..." },
 	{ 0, 0, 0 }
 };
 
@@ -4250,6 +4276,9 @@ void DrawDIllum (struct dnode *x) {
 	if (x->sig && x->sig->name) {
 		if (x->propstate != x->state) {
 			x->propstate = x->state;
+			if (x->state == 0) {
+				x->sig->cnt ++;
+			}
 			MUX_SendMsgToPredicatedBmfConn (
 				&xConnList,
 				bmfSigState (x),
