@@ -269,8 +269,8 @@ void addsig (char *n) {
 	sigarr [nsig].num = nsig;
 	sigarr [nsig].nmq = qq;
 	sigarr [nsig].ks = ks;
-	sigarr [nsig ++].name = argv [i];
-	bmfBuildAddString (&B, argv [i]);
+	sigarr [nsig ++].name = n;
+	bmfBuildAddString (&B, n);
 	qq += 4;
     }
 }
