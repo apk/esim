@@ -265,6 +265,7 @@ int main(argc,argv) int argc; char **argv; {
     int i;
     int fd;
     struct timeval currtime;
+    char *title = "esimc";
     char *display_name;
     char *fontname=0;
     char *deffont="-adobe-helvetica-medium-r-normal--14-140-75-75-p-77-iso8859-1";
@@ -305,6 +306,9 @@ int main(argc,argv) int argc; char **argv; {
 	    else if(!strcmp(argv[i],"-gn")) {
 		if(++i==argc) printf("No green color name\n");
                 else greenname=argv[i]; }
+	    else if(!strcmp(argv[i],"-title")) {
+		if(++i==argc) printf("No title\n");
+		else title = argv [i]; }
 	    else if(!strcmp(argv[i],"-geometry")) {
 		if(++i==argc) printf("No geometry\n"); }
 	    else if(!strcmp(argv[i],"-hv")) {
@@ -377,7 +381,7 @@ int main(argc,argv) int argc; char **argv; {
        DefaultRootWindow(mydisplay),
        myhint.x,myhint.y,myhint.width,myhint.height,
        1, myforeground,color.pixel);
-    XSetStandardProperties(mydisplay,basewindow,"esimc","ESimC",
+    XSetStandardProperties(mydisplay,basewindow,title,"ESimC",
        None,argv,argc,&myhint);
     mygc=XCreateGC(mydisplay,basewindow,0,0);
     XSetBackground (mydisplay, mygc, mybackground);
