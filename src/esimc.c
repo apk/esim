@@ -41,6 +41,7 @@ char *greenname = "green";
 int todo = 1;
 
 int ks = 0;
+int ak = 0;
 
 int xsize = 300, ysize = 100;
 
@@ -73,6 +74,7 @@ struct sig {
 	int zs3;
 	int zs3v;
 	int ks;
+	int ak;
 	MUX_TIMEOUT_TYP tim;
 	int bst;
 } sigarr [100];
@@ -317,6 +319,7 @@ void addsig (char *n) {
 	sigarr [nsig].num = nsig;
 	sigarr [nsig].nmq = qq;
 	sigarr [nsig].ks = ks;
+	sigarr [nsig].ak = ak;
 	sigarr [nsig ++].name = n;
 	bmfBuildAddString (&B, n);
 	qq += 4;
@@ -378,9 +381,14 @@ int main(argc,argv) int argc; char **argv; {
 	    else if(!strcmp(argv[i],"-geometry")) {
 		if(++i==argc) printf("No geometry\n"); }
 	    else if(!strcmp(argv[i],"-hv")) {
-                ks = 0; }
+		ak = 0;
+		ks = 0; }
 	    else if(!strcmp(argv[i],"-ks")) {
+		ak = 0;
                 ks = 1; }
+	    else if(!strcmp(argv[i],"-ak")) {
+		ak = 1;
+                ks = 0; }
 	    else if(!strcmp(argv[i],"-big")) {
                 karo = 8; }
 	    else if(!strcmp(argv[i],"-xl")) {
@@ -687,6 +695,70 @@ void DrawSig (struct sig *d) {
 			} else {
 				draw_dot (x + 3 * KaroH, y + 21 * KaroH, Karo, myclrgc);
 			}
+		}
+		return;
+	}
+	if (d->ak) {
+#if 0
+		if (d->hp > 0 && d->hp < 160 && d->zs3 == 0) {
+			d->zs3 = 4;
+			d->typ |= T_ZS;
+		}
+		if (d->vr > 0 && d->vr < 160 && d->zs3v == 0) {
+			d->zs3v = 4;
+			d->typ |= T_ZV;
+		}
+#endif
+		if (d->typ & T_ZS) {
+			DrawNum (x + 3 * KaroH, 2 * Karo, d->zs3, myclrgc);
+		}
+		if (d->typ & T_ZV) {
+			DrawNum (x + 3 * KaroH, KaroH + 32 * Karo, d->zs3v, myyellowgc);
+		}
+		if (d->typ & T_NM && karo > 3) {
+			XDrawRectangle (mydisplay, basewindow, mythingc,
+					x + 4 * Karo - wd - 2, KaroH + 27 * Karo - 2, 2 * wd + 3, font_height + font_depth + 3);
+			XFillRectangle (mydisplay, basewindow, mywhitegc,
+					x + 4 * Karo - wd - 1, KaroH + 27 * Karo - 1, 2 * wd + 2, font_height + font_depth + 2);
+			XDrawString (mydisplay, basewindow, mygc, x + 4 * Karo - wd, KaroH + 27 * Karo + font_height,
+				     d->name, strlen (d->name));
+		}
+		pts [0].x = x;
+		pts [0].y = 12 * Karo;
+		pts [1].x = Karo;
+		pts [1].y = -Karo;
+		pts [2].x = 6 * Karo;
+		pts [2].y = 0;
+		pts [3].x = Karo;
+		pts [3].y = Karo;
+		pts [4].x = 0;
+		pts [4].y = 15 * Karo;
+		pts [5].x = -8 * Karo;
+		pts [5].y = 0;
+		XFillPolygon (mydisplay, basewindow, mygc, pts, 6, Convex, CoordModePrevious);
+
+		if (d->hp == 0) {
+			draw_dot (x + 1 * Karo, y + 8 * KaroH, 2 * Karo, myredgc);
+			return;
+		}
+		if (d->hp == -1 && d->vr == -1) {
+			draw_dot (x + 3 * KaroH, y + 3 * KaroH, Karo, myclrgc);
+			return;
+		}
+		if (/* d->vr == 0 || (d->hp >= 0 && d->hp <= 60)*/
+		    d->hp > 0 && d->hp <= 60) {
+			draw_dot (x + 5 * Karo, y + 23 * KaroH, 2 * Karo, myyellowgc);
+		}
+		if (d->vr != 0) {
+			draw_dot (x + 5 * Karo, y + 3 * KaroH, 2 * Karo, mygreengc);
+		}
+		if (/*(d->vr > 0 && d->vr <= 60) ||
+		      (d->hp > 0 && d->hp <= 60 && d->vr == 0)*/
+		    d->vr >= 0 && d->vr <= 60) {
+			draw_dot (x + 1 * Karo, y + 14 * KaroH, 2 * Karo, myyellowgc);
+		}
+		if (d->wh && (d->vr >= 0 && d->vr < 160 || d->zs3v)) {
+			draw_dot (x + 3 * KaroH, y + 3 * KaroH, Karo, myclrgc);
 		}
 		return;
 	}
