@@ -229,6 +229,42 @@
 %mac ir6f %fifty-eightyseven
 %mac ir6f %sixty-sixtynine,%seventy-sixtynine
 
+%mac ir6g %twentyseven-fourtyone,%fourtyone-twentyseven
+%mac ir6g %fiftyseven-twentytwo
+%mac ir6g %eighteen-seventyone
+
+%mac ir6h %ir6g
+%mac ir6h %three-seventyseven
+%mac ir6h %seventythree-seventyseven
+
+%mac ir6g %two-one,%one-two
+%mac ir6g %twelve-seventyfour
+
+%mac t3 %eighteen-twentyone,5N1-4D/12
+%mac t3 %twentyfive-ninetyseven
+%mac t3 %ninetyfive-ninetysix
+%mac t3 %ninety-ninetyfive
+%mac t3 %ninety-ninetythree,%naughtyseven-ninetythree
+%mac t3 %eighteen-seventyone
+%mac t3 %seventythree-seventyseven
+%mac t3 %three-left-turn
+%mac t3 %three-seventyseven
+
+%mac t4 %three-fourteen
+%mac t4 %twentyfour-twentysix
+%mac t4 %fiftysix-twentysix
+%mac t4 %fiftysix-ninetynine
+%mac t4 %ninety-ninetyfive
+%mac t4 %ninety-ninetythree,%naughtyseven-ninetythree
+%mac t4 %eighteen-seventyone
+%mac t4 %twelve-seventyfour
+%mac t4 %twelve-eleven
+%mac t4 %eleven-twelve
+%mac t4 %six-five
+%mac t4 %five-six
+%mac t4 %five-eleven
+%mac t4 %sixtyfive-sixtysix-slow
+
 %mac t1 5N1-4D/12
 %mac t1 %three-fourteen,%eighteen-twentyone
 %mac t1 %fiftythree-fiftytwo
@@ -271,7 +307,9 @@
 %trn len=150 v=160 n=t7 %t7
 %trn len=150 v=160 n=t8 %t8
 %trn len=228 v=200 n=ir8b %ir8b
+%trn len=228 v=200 n=ir6h %ir6h
 %trn len=228 v=200 n=ir8b %ir8b
+%trn len=228 v=200 n=ir6g %ir6g
 %trn len=228 v=200 n=ir8b %ir8b
 %trn len=228 v=200 n=ir6d %ir6d
 %trn len=124 v=200 n=ql %five-six,%six-five
@@ -284,12 +322,14 @@
 %trn len=228 v=200 n=ir5b %ir5b
 %trn len=97 v=140 n=loc %local
 %trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir6h %ir6h
 %trn len=228 v=200 n=ir3 %detour
 %trn len=228 v=200 n=ir6 %ir6
 %trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
 %trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
 %trn len=150 v=160 n=t3 %t3
 %trn len=228 v=200 n=ir8a %ir8a
+%trn len=228 v=200 n=ir6g %ir6g
 %trn len=228 v=200 n=ir8c %ir8c
 %trn len=228 v=200 n=ir6b %ir6b
 %trn len=150 v=160 n=t3 %t3
