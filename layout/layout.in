@@ -8784,16 +8784,13 @@ end "010c"
 2u 800m
 <hp "09C"
 2u 200m
-w< 50m / 50m ne "09a" 8d
-12u 300m
-50m >w / 50m nw "09b" 10d
+w< 15v / ne "09a" 8d
+15v >w / nw "09b" 10d
 hs> "09P1"
 4u 800m
 <hs "09N1"
-w< 50m / 50m ne "09c" 10d
-8u 200m
-50m >w / 50m nw "09d" 8d
-2u 50m
+w< 5u / ne "09c" 10d
+5u >w 3u / nw "09d" 8d
 2u 200m
 hp> "09I"
 1u 600m
@@ -8807,22 +8804,17 @@ hp> "0100"
 1u 600m
 <hp "09D"
 2u 200m
-2u 50m
-50m >w / 50m sw "09a" 8d
-w< 50m / 50m ne "09e" 10d
-4u 100m
-50m >w / 50m nw "09f" 10d
-w< 50m / 50m se "09b" 10d
-2u 50m
+3u >w 3v / sw "09a" 8d
+3v w< 3u / ne "09e" 10d
+3u >w / nw "09f" 10d
+w< 3u / se "09b" 10d
 hs> "09P2"
 4u 800m
 <hs "09N2"
-2u 50m
-50m >w / 50m sw "09c" 10d
-50m >w / 50m nw "09g" 10d
-w< 50m / 50m ne "09h" 10d
-w< 50m / 50m se "09d" 8d
-4u 100m
+3u >w / sw "09c" 10d
+>w / nw "09g" 10d
+w< / ne "09h" 10d
+w< 5u / se "09d" 8d
 2u 200m
 hp> "09H"
 2u 800m
@@ -8832,24 +8824,19 @@ end "011u09"
 2u 800m
 <hp "09A"
 2u 200m
-2u 50m
-50m >w / 50m nw "09i" 8d
-w< 50m / 50m ne "09j" 8d
-50m >w / 50m sw "09e" 10d
-w< 50m / 50m se "09f" 10d
-w< 50m / 50m ne "09k" 8d
-2u 50m
+3u >w / nw "09i" 8d
+w< 3v / ne "09j" 8d
+3v >w / sw "09e" 10d
+w< / se "09f" 10d
+w< 3u / ne "09k" 8d
 hs> "09P3"
 4u 800m
 <hs "09N3"
-2u 50m
-50m >w / 50m nw "09l" 10d
-w< 50m / 50m se "09g" 10d
-2u 50m
-50m >w / 50m nw "09m" 8d
-50m >w / 50m sw "09h" 10d
-w< 50m / 50m ne "09n" 8d
-2u 50m
+3u >w / nw "09l" 10d
+w< 2u / se "09g" 10d
+2u >w / nw "09m" 8d
+>w / sw "09h" 10d
+w< 3u / ne "09n" 8d
 2u 200m
 hp> "09G"
 1u 600m
@@ -8863,21 +8850,17 @@ hp> "090"
 1u 600m
 <hp "09B"
 2u 200m
-w< 50m / 50m se "09i" 8d
-4u 100m
-50m >w / 50m sw "09j" 8d
-w< 50m / 50m ne "09o" 8d
-2u 50m
-50m >w / 50m sw "09k" 10d
+w< 3u / se "09i" 8d
+3u >w / sw "09j" 8d
+w< 5v / ne "09o" 8d
+5v >w / sw "09k" 10d
 hs> "09P4"
 4u 800m
 <hs "09N4"
-w< 50m / 50m se "09l" 10d
-2u 50m
-50m >w / 50m nw "09p" 8d
-w< 50m / 50m se "09m" 8d
-6u 150m
-50m >w / 50m sw "09n" 8d
+w< 3v / se "09l" 10d
+3v >w 3v / nw "09p" 8d
+3v w< 4u / se "09m" 8d
+4u >w / sw "09n" 8d
 2u 200m
 hp> "09F"
 2u 800m
@@ -8958,17 +8941,13 @@ end "011c151"
 1u 800m
 <hp "011C"
 2u 200m
-w< 50m / 50m ne "011b" 8d
-6u 150m
-50m >w / 50m nw "011c" 8d
-2u 50m
+w< 4u / ne "011b" 8d
+4u >w 3u / nw "011c" 8d
 hs> "011P1"
 4u 800m
 <hs "011N1"
-6u 150m
-50m >w / 50m nw "011d" 10d
-w< 50m / 50m se "011a" 10d
-2u 50m
+7u >w / nw "011d" 10d
+w< 4u / se "011a" 10d
 2u 200m
 hp> "011I"
 1u 600m
@@ -8988,21 +8967,17 @@ hp> "0118"
 1u 600m
 <hp "011D"
 2u 200m
-2u 50m
-50m >w / 50m sw "011b" 8d
-w< 50m / 50m ne "011e" 8d
-w< 50m / 50m se "011c" 8d
-2u 50m
-50m >w / 50m nw "011f" 10d
+3u >w / sw "011b" 8d
+w< / ne "011e" 8d
+w< 2u / se "011c" 8d
+2u >w / nw "011f" 10d
 hs> "011P2"
 4u 800m
 <hs "011N2"
-2u 50m
-50m >w / 50m nw "011g" 10d
-w< 50m / 50m se "011d" 10d
-50m >w / 50m nw "011z" 8d
-w< 50m / 50m ne "011h" 8d
-2u 50m
+3u >w / nw "011g" 10d
+w< 3v / se "011d" 10d
+3v >w / nw "011z" 8d
+w< 3u / ne "011h" 8d
 2u 200m
 hp> "011H"
 1u 800m
@@ -9018,21 +8993,17 @@ end "012u011"
 1u 800m
 <hp "011A"
 2u 200m
-2u 50m
-50m >w / 50m nw "011i" 10d
-2u 50m
-50m >w / 50m sw "011e" 8d
-w< 50m / 50m se "011f" 10d
-2u 50m
+3u >w / nw "011i" 10d
+3u >w / sw "011e" 8d
+w< 3u / se "011f" 10d
 hs> "011P3"
 4u 800m
 <hs "011N3"
-w< 50m / 50m se "011g" 10d
-50m >w / 50m nw "011j" 8d
-w< 50m / 50m se "011z" 8d
-w< 50m / 50m ne "011k" 8d
-2u 50m
-50m >w / 50m sw "011h" 8d
+w< 3v / se "011g" 10d
+3v >w / nw "011j" 8d
+w< / se "011z" 8d
+w< 2u / ne "011k" 8d
+2u >w / sw "011h" 8d
 2u 200m
 hp> "011G"
 1u 600m
@@ -9052,16 +9023,12 @@ hp> "0116"
 1u 600m
 <hp "011B"
 2u 200m
-w< 50m / 50m se "011i" 10d
-2u 50m
-8u 200m
+w< 11u / se "011i" 10d
 hs> "011P4"
 4u 800m
 <hs "011N4"
-w< 50m / 50m se "011j" 8d
-6u 150m
-50m >w / 50m sw "011k" 8d
-2u 50m
+2u w< 4u / se "011j" 8d
+4u >w 3u / sw "011k" 8d
 2u 200m
 hp> "011F"
 1u 800m
