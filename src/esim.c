@@ -427,7 +427,8 @@ struct train {
 	Window dwin;		/* The data window */
 	char dtxt [100];	/* The current text */
 	struct sig *dsig;	/* Where it is positioned */
-	int sigdelay;			/* Delay until next sigopen allowed */
+	int sigdelay;		/* Delay until next sigopen allowed */
+	char *sig;		/* Current final sig name */
 };
 
 struct sig {
@@ -1979,6 +1980,11 @@ void train_dwin (struct train *trn, struct sig *sig, int mf) {
 			 "%.30s %3d", trn->name,
 			 (36 * trn->speed + 5000) / 10000);
 	}
+	if (trn->sig && trn->dsig && trn->dsig->name) {
+		char *p = buf;
+		while (*p) p ++;
+		sprintf (p, " %s", trn->dsig->name);
+	}
 	h = font_height + font_depth + 1;
 	w = 2 + XTextWidth (myfontstruct, buf, strlen (buf));
 	x = XCenter (sig->d->cent.x);
@@ -2031,6 +2037,14 @@ void train_event (struct train *trn, XEvent myevent) {
 	    if(i==1) switch(text[0]) {
 	      case ' ':
 		set_followtrain (trn);
+		break;
+	      case 's':
+		if (trn->sig) {
+			trn->sig = 0;
+		} else {
+			trn->sig = "";
+		}
+		train_dwin (trn, trn->dsig, 1);
 		break;
 	      case 'd':
 		if (trn->dist == 0) {
