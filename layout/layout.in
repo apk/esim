@@ -9697,8 +9697,9 @@ hs> "015Q1"
 4u 800m
 <hs "015N1"
 w< 50m / 50m ne "015g" 8d
-8u 200m
-50m >w / 50m nw "015h" 10d
+~ 50m ne
+e
+6u >w 2u / nw "015h" 10d
 2u 200m
 hp> "015G"
 1u 600m
@@ -9768,7 +9769,7 @@ hp> "0168"
 end "016t015"
 
 35u begin +2u "015n" se
-2u 50m
+1u 25m
 end "015h"
 
 %def 015A-015S1/015S4
@@ -9843,14 +9844,16 @@ hp> "1591"
 1u 1000m
 <hp "158B"
 3v 200m
-2u 50m
-2u 50m
 w< 50m / 50m se "158a" 8d
+ne
+w< 50m / 50m e "158x" 8d
+e
 2u 50m
-hs> "158P4"
+hs> "158P5"
 3u 800m
-<hs "158S4"
+<hs "158S5"
 ~ se 50m
+50m >w / 50m w "158y" 8d
 50m >w / 50m w "158b" 8d
 end "158c"
 
@@ -9944,15 +9947,23 @@ end "157b"
 %quo1 157A 157N1 157N2
 %quo1 1582 157F 157P1 157P2
 
-65v begin -2u "158a" se
-~ 50m e
+57v begin -2u "158a" se
+~ 3u 100m e
 hs> "158P3"
 3u 800m
 <hs "158S3"
+4u 100m
+end "158b"
+
+61v begin -2u "158x" se
+~ 50m e
+hs> "158P4"
+3u 800m
+<hs "158S4"
 2u 50m
 end "158b"
 
-58v begin +3u "158d" e
+58v begin +5u "158d" e
 2u 50m
 hs> "158P2"
 3u 800m
@@ -9968,12 +9979,13 @@ hs> "158N2"
 1u 50m
 end "158f"
 
-%def 158B-158S4/158S3
+%def 158B-158S5/158S3/158S4
 %def 158A-158S1/158S2
 %def 158S1-158U
 %def 158S2-158N1/158N2
 %def 158S3-158N1/158N2
 %def 158S4-158N1/158N2
+%def 158S5-158N1/158N2
 %def 158U-158N1/158N2
 %def 158N1-200A
 %def 158N2-200A
@@ -9985,17 +9997,21 @@ end "158f"
 %def 158P1-1582
 %def 158P2-1582
 
-%mac hfiftyeight-hfiftynine 158R1-158P4/158P3
-%mac hfiftyeight-hfiftynine 158R2-158P4/158P3
+%mac hfiftyeight-hfiftynine 158R1-158P5/158P3/158P4
+%mac hfiftyeight-hfiftynine 158R2-158P5/158P3/158P4
 %mac hfiftyeight-hfiftynine 158P3-1591
 %mac hfiftyeight-hfiftynine 158P4-1591
+%mac hfiftyeight-hfiftynine 158P5-1591
 
 %quo1 1581 158A 158S1 158S2
-%quo1 1592 158B 158S3 158S4
+%quo1 158T 158P1 158P2
+
 %quo1 158U 158N1 158N2
 %quo1 158F 158R1 158R2
-%quo1 158P3 158P4
-%quo1 158T 158P1 158P2
+
+%quo2 1592 158B 158S3 158S4 158S5
+%quo2 158P3 158P4 158P5
+%quo3 1592 158B 158S3 158S4 158S5 158P3 158P4 158P5
 
 ### NAUGHTYSIXTEEN
 
