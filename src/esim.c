@@ -763,6 +763,7 @@ int try_build_path (struct dnode *d) {
 
 void turn_iring (struct conn *c, struct dnode *x, int v) {
 	struct conn *cc = c;
+	check (!(x->occcnt || x->lock));
 	while (1) {
 		if (x == cc->actl) {
 			cc->c_na = v;
@@ -792,6 +793,23 @@ void turn_ring (struct conn *c, struct dnode *x, int v) {
 	DrawSmallDNode (x);
 }
 
+static void addhp (int *hp) {
+	*hp += 2;
+}
+
+static void occhp (int *hp) {
+	*hp |= 1;
+}
+
+static int isocchp (int hp) {
+	return hp & 1;
+}
+
+static void mergehp (int *hp, int h) {
+	*hp += h & ~1;
+	*hp |= h & 1;
+}
+
 void turn_a (struct conn *c, int v) {
 	if (c->c_na != v) {
 		turn_ring (c, c->actl, v);
@@ -804,158 +822,196 @@ void turn_b (struct conn *c, int v) {
 	}
 }
 
-int switch_to_a (struct conn *c) {
+int mark_a (struct conn *c) {
 	struct dnode *x = c->actl;
-	if (c->c_na != 0) {
+	if (x) {
 		if (x->ctrn != currtrn && x->cycno == cycle) return 1;
-		turn_a (c, 0);
 		x->cycno = cycle;
 		x->ctrn = currtrn;
-		return 1;
 	}
-	if (x) x->cycno = cycle;
-	if (x) x->ctrn = currtrn;
 	return 0;
 }
 
-int switch_to_b (struct conn *c) {
+int mark_b (struct conn *c) {
 	struct dnode *x = c->bctl;
-	if (c->d_nb != 0) {
+	if (x) {
 		if (x->ctrn != currtrn && x->cycno == cycle) return 1;
-		turn_b (c, 0);
 		x->cycno = cycle;
 		x->ctrn = currtrn;
-		return 1;
 	}
-	if (x) x->cycno = cycle;
-	if (x) x->ctrn = currtrn;
 	return 0;
 }
 
-int switch_to_c (struct conn *c) {
-	struct dnode *x = c->actl;
-	if (c->c_na != 1) {
-		if (x->ctrn != currtrn && x->cycno == cycle) return 1;
-		turn_a (c, 1);
-		x->cycno = cycle;
-		x->ctrn = currtrn;
-		return 1;
+int switch_to_a (struct conn *c, int m) {
+	if (m > 1) {
+		if (c->c_na != 0) {
+			turn_a (c, 0);
+			m --;
+		}
 	}
-	if (x) x->cycno = cycle;
-	if (x) x->ctrn = currtrn;
-	return 0;
+	return m;
 }
 
-int switch_to_d (struct conn *c) {
-	struct dnode *x = c->bctl;
-	if (c->d_nb != 1) {
-		if (x->ctrn != currtrn && x->cycno == cycle) return 1;
-		turn_b (c, 1);
-		x->cycno = cycle;
-		x->ctrn = currtrn;
-		return 1;
+int switch_to_b (struct conn *c, int m) {
+	if (m > 1) {
+		if (c->d_nb != 0) {
+			turn_b (c, 0);
+			m --;
+		}
 	}
-	if (x) x->cycno = cycle;
-	if (x) x->ctrn = currtrn;
-	return 0;
+	return m;
 }
+
+int switch_to_c (struct conn *c, int m) {
+	if (m > 1) {
+		if (c->c_na != 1) {
+			turn_a (c, 1);
+			m --;
+		}
+	}
+	return m;
+}
+
+int switch_to_d (struct conn *c, int m) {
+	if (m > 1) {
+		if (c->d_nb != 1) {
+			turn_b (c, 1);
+			m --;
+		}
+	}
+	return m;
+}
+
+struct try_make {
+	int m;
+};
 
 int try_make_subpath_c (struct conn *c,
 			struct trk *tk,
 			int dist,
-			int m,
 			char *n,
-			int sp);
+			struct try_make *sp,
+			int *hp);
 
 int try_make_subpath (struct conn *c,
 		      int f,
 		      int dist,
-		      int m,
 		      char *n,
-		      int sp) {
+		      struct try_make *sp,
+		      int *hp) {
 	/* (Don't check the signal on c */
+	/* *hp is to return the number of diverging switches on the
+	 * partial route. The lowest bit specially indicates that
+	 * the route is occupied and cannot be taken although it exists.
+	 * (And it is a pure return value and to be always set
+	 * unless return value is -1.)
+	 */
 	int r;
 	int ra, rb;
+	int ha, hb;
 	if (f) {
 		/* Go forward from conn */
 		/*
 		 * (Switches need not be done since they always
 		 * include some track that references the same dnode.
 		 */
+		int mm = sp->m;
+		sp->m = 0;
 		if (c->b) {
-			ra = try_make_subpath_c (c, c->b, dist, 0, n, sp);
+			ra = try_make_subpath_c (c, c->b, dist, n, sp, &ha);
 			if (ra < 0) return ra;
 		} else {
 			ra = 0;
 		}
 		if (c->d && n) {
-			rb = try_make_subpath_c (c, c->d, dist, 0, n, sp);
+			rb = try_make_subpath_c (c, c->d, dist, n, sp, &hb);
 			if (rb < 0) return rb;
 		} else {
 			rb = 0;
 		}
-		if (ra == 0 && rb == 0) return 0;
-		if (ra >= rb && c->b) {
-if (!m) return ra;
-			r = try_make_subpath_c (c, c->b, dist, m, n, sp);
+		sp->m = mm;
+		if (ra == 0 && rb == 0) {
+			*hp = 1;
+			return 0;
+		}
+		if (c->b && (ra > rb || (ra == rb && ha <= hb))) {
+			if (sp->m < 1) {
+				*hp = ha;
+				return ra;
+			}
+			r = try_make_subpath_c (c, c->b, dist, n, sp, hp);
 			if (r < 0) return r;
 			if (r) {
-				if (m) {
-					if (switch_to_b (c)) return -1;
-				}
+				if (mark_b (c)) return -1;
+				sp->m = switch_to_b (c, sp->m);
 				return r;
 			}
 		}
-		if (rb >= ra && c->d && n) {
-			if (sp > (60 * 10000) / 36) return 0;
-if (!m) return rb;
-			r = try_make_subpath_c (c, c->d, dist, m, n, sp);
+		if (c->d && n && (rb > ra || (rb == ra && hb <= ha))) {
+			/*old if (sp > (60 * 10000) / 36) return 0; */
+			if (sp->m < 1) {
+				*hp = hb;
+				return rb;
+			}
+			r = try_make_subpath_c (c, c->d, dist, n, sp, hp);
 			if (r < 0) return r;
 			if (r) {
-				if (m) {
-					if (switch_to_d (c)) return -1;
-				}
+				addhp (hp);
+				if (mark_b (c)) return -1;
+				sp->m = switch_to_d (c, sp->m);
 				return r;
 			}
 		}
 	} else {
+		int mm = sp->m;
+		sp->m = 0;
 		if (c->a) {
-			ra = try_make_subpath_c (c, c->a, dist, 0, n, sp);
+			ra = try_make_subpath_c (c, c->a, dist, n, sp, &ha);
 			if (ra < 0) return ra;
 		} else {
 			ra = 0;
 		}
 		if (c->c && n) {
-			rb = try_make_subpath_c (c, c->c, dist, 0, n, sp);
+			rb = try_make_subpath_c (c, c->c, dist, n, sp, &hb);
 			if (rb < 0) return rb;
 		} else {
 			rb = 0;
 		}
-		if (ra == 0 && rb == 0) return 0;
-		if (ra >= rb && c->a) {
-if (!m) return ra;
-			r = try_make_subpath_c (c, c->a, dist, m, n, sp);
+		sp->m = mm;
+		if (ra == 0 && rb == 0) {
+			*hp = 1;
+			return 0;
+		}
+		if (c->a && (ra > rb || (ra == rb && ha <= hb))) {
+			if (sp->m < 1) {
+				*hp = ha;
+				return ra;
+			}
+			r = try_make_subpath_c (c, c->a, dist, n, sp, hp);
 			if (r < 0) return r;
 			if (r) {
-				if (m) {
-					if (switch_to_a (c)) return -1;
-				}
+				if (mark_a (c)) return -1;
+				sp->m = switch_to_a (c, sp->m);
 				return r;
 			}
 		}
-		if (rb >= ra && c->c && n) {
-			if (sp > (60 * 10000) / 36) return 0;
-if (!m) return rb;
-			r = try_make_subpath_c (c, c->c, dist, m, n, sp);
+		if (c->c && n && (rb > ra || (rb == ra && hb <= ha))) {
+			/*old if (sp > (60 * 10000) / 36) return 0; */
+			if (sp->m < 1) {
+				*hp = hb;
+				return rb;
+			}
+			r = try_make_subpath_c (c, c->c, dist, n, sp, hp);
 			if (r < 0) return r;
 			if (r) {
-				if (m) {
-					if (switch_to_c (c)) return -1;
-				}
+				addhp (hp);
+				if (mark_a (c)) return -1;
+				sp->m = switch_to_c (c, sp->m);
 				return r;
 			}
 		}
 	}
+	*hp = 1;
 	return 0;
 }
 
@@ -1078,17 +1134,19 @@ if (c->sf) if (iDebugLevel > 2) printf (" [%s]", c->sf->name);
 	}
 }
 
-int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, int m, char *n, int sp) {
+int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, char *n, struct try_make *sp, int *hp) {
 	struct dnode *x;
-	int f;
+	int f, ha;
 	struct sig *sig;
 	int r = tk->maxsp ? tk->maxsp : 55555;
 	int ra;
 	dist += tk->len;
 	x = tk->x;
-	if (5 * sp > 6 * r) return 0;
+	/*old if (5 * sp > 6 * r) return 0; */
+	*hp = 0;
 	if (x && (x->occcnt || x->lock)) {
-		return 0;
+		/* if (m > 0) return -1; */
+		occhp (hp);
 	}
 	if (c == tk->r) {
 		c = tk->f;
@@ -1097,19 +1155,33 @@ int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, int m, char *n
 		c = tk->r;
 	}
 	if (tk == c->a) {
-		if (m) if (switch_to_a (c)) return -1;
+		if (sp->m > 0) {
+			if (mark_a (c)) return -1;
+			sp->m = switch_to_a (c, sp->m);
+		}
 		f = 1;
 		sig = c->sr;
 	} else if (tk == c->c) {
-		if (m) if (switch_to_c (c)) return -1;
+		addhp (hp);
+		if (sp->m > 0) {
+			if (mark_a (c)) return -1;
+			sp->m = switch_to_c (c, sp->m);
+		}
 		f = 1;
 		sig = c->sr;
 	} else if (tk == c->b) {
-		if (m) if (switch_to_b (c)) return -1;
+		if (sp->m > 0) {
+			if (mark_b (c)) return -1;
+			sp->m = switch_to_b (c, sp->m);
+		}
 		f = 0;
 		sig = c->sf;
 	} else if (tk == c->d) {
-		if (m) if (switch_to_d (c)) return -1;
+		addhp (hp);
+		if (sp->m > 0) {
+			if (mark_b (c)) return -1;
+			sp->m = switch_to_d (c, sp->m);
+		}
 		f = 0;
 		sig = c->sf;
 	} else {
@@ -1126,7 +1198,7 @@ int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, int m, char *n
 		if (!n || strcmp (n, sig->name) == 0) {
 			/* Found matching signal */
 			if (check_oppose (c, sig)) return 0;
-			if (tk->maxsp) r --;
+			/*old if (tk->maxsp) r --; */
 			return r;
 		}
 		if (dist > 3000000) {
@@ -1134,22 +1206,28 @@ int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, int m, char *n
 			return 0;
 		}
 	}
-	ra = try_make_subpath (c, f, dist, m, n, sp);
+	ra = try_make_subpath (c, f, dist, n, sp, &ha);
 	if (ra < 0) return ra;
+	mergehp (hp, ha);
 	if (ra < r) r = ra;
 	/* This does not do as expected, because we lose
 	 * the point count from higher speeds once it gets lower.
 	 * Would have to reserve lower bits for point count.
 	 */
-	if (r > 1 && tk->maxsp) r --;
 	return r;
 }
 
 int try_opt_make_subpath (struct conn *c, int f, int dist, char *n, int sp) {
-	int r = try_make_subpath (c, f, dist, 0, n, sp);
-	if (r > 0) {
-		r = try_make_subpath (c, f, dist, 1, n, sp);
+	int h, r;
+	struct try_make tm;
+	tm.m = 0;
+	r = try_make_subpath (c, f, dist, n, &tm, &h);
+	if (r > 0 && !isocchp (h)) {
+		tm.m = 2;
+		r = try_make_subpath (c, f, dist, n, &tm, &h);
+		if (tm.m == 1) return -1;
 	}
+	if (r > 0 && isocchp (h)) return 0;
 	return r;
 }
 
