@@ -947,6 +947,19 @@
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 # %trn len=80 n=tst %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree,%hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
 
+%trn len=310 v=200 n=ic1 %ic1
+%trn len=310 v=200 n=ic1a %ic1a
+%trn len=310 v=200 n=ic1b %ic1b
+%trn len=310 v=200 n=ic1c %ic1c
+%trn len=310 v=200 n=ic1g %ic1g
+%trn len=310 v=200 n=ic1h %ic1h
+%trn len=310 v=200 n=ic1i %ic1i
+%trn len=310 v=200 n=ic1j %ic1j
+%trn len=310 v=200 n=ic1k %ic1k
+%trn len=310 v=200 n=ic1l %ic1l
+%trn len=310 v=200 n=ic1x %ic1x
+%trn len=310 v=200 n=ic1y %ic1y
+
 %trn len=380 v=200 n=iop %ir1y
 %trn len=380 v=200 n=ioq %ir9
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
