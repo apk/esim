@@ -3437,7 +3437,7 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 	exit (1);
 }
 
-int oncesteps;
+int oncesteps = 1;
 
 void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	int i;
