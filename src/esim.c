@@ -3703,8 +3703,8 @@ void handle_smlwin(myevent) XEvent myevent; {
 				break;
 			}
 		}
-#endif
 		break;
+#endif
 	      case 3:
 		break; }
 	    break;
