@@ -4289,24 +4289,6 @@ hp> "24I"
 2u 1000m
 end "24c174"
 
-69v begin +7u "24c174"
-2u 1000m
-w< 50m / 50m se "174x" 20d
-2u 50m
-2u 800m
-<hp "174G"
-~ 50m se
-end "174y"
-
-77v begin +1u "174x" se
-~ 50m e
-hp> "174F"
-2u 800m
-2u 50m
-50m >w / 50m nw "174y" 20d
-2u 1000m
-end "26c174"
-
 %mac twentyfour-fiftyseven 24A-24N3/24N2/24N1/24N4
 %mac twentyfour-fiftyseven 24B-24N4/+24N3/24N2/24N1
 %mac twentyfour-fiftyseven 24N1-261/57D
@@ -4323,10 +4305,10 @@ end "26c174"
 
 %mac twentyfour-hseventyfour 24A-24N3/24N2/24N1/24N4
 %mac twentyfour-hseventyfour 24B-24N4/+24N3/24N2/24N1
-%mac twentyfour-hseventyfour 24N1-174G
-%mac twentyfour-hseventyfour 24N2-174G
-%mac twentyfour-hseventyfour 24N3-174G
-%mac twentyfour-hseventyfour 24N4-174G
+%mac twentyfour-hseventyfour 24N1-174F
+%mac twentyfour-hseventyfour 24N2-174F
+%mac twentyfour-hseventyfour 24N3-174F
+%mac twentyfour-hseventyfour 24N4-174F
 
 %mac twentyfour-twenty 24F-24P4/24P2/24P3/24P1
 %mac twentyfour-twenty 24G-24P3/+24P4/24P2/24P1
@@ -7263,8 +7245,8 @@ end "26d"
 %mac twentysix-twentyfour 26P2-24H
 
 %mac twentysix-hseventyfour 26F-26P3/26P2
-%mac twentysix-hseventyfour 26P2-174F
-%mac twentysix-hseventyfour 26P3-174F
+%mac twentysix-hseventyfour 26P2-174G
+%mac twentysix-hseventyfour 26P3-174G
 
 %def %twentysix-fiftysix
 %def %twentysix-twentyfour
@@ -13293,9 +13275,9 @@ end "142d"
 %def 142P1-141F
 %def 142P2-141F
 
-### HUNDRED-SEVENTY + ONE
+### HUNDRED-SEVENTY - THREE
 
-14u begin =11+13v "170a" se
+14u begin =11+17v "170a" se
 ~ 50m e
 hs> "170P3"
 3u 800m
@@ -13364,34 +13346,65 @@ hs> "171P2"
 ~ 50m ne
 end "171b"
 
-47v begin +3u "171c172"
+1v begin +11v "171c172"
 3v 1000m
-<hp "1721"
-1u 200m
-hp> "1722"
-1u 1000m
-1u 1000m
 <hp "172A"
 3v 200m
-w< 50m / 50m se "172a" 8d
+w< 50m / 50m ne "172a" 8d
 2u 50m
 hs> "172P1"
 3u 800m
 <hs "172N1"
 2u 50m
-50m >w / 50m sw "172b" 8d
+50m >w / 50m nw "172b" 8d
 3v 200m
 hp> "172F"
+1u 1000m
+1u 1000m
+<hp "1731"
+1u 200m
+hp> "1732"
+1u 1000m
+1u 1000m
+<hp "173A"
+3v 200m
+w< 50m / 50m ne "173a" 10d
+w< 50m / 50m se "173c" 8d
+2u 50m
+hs> "173P1"
+3u 800m
+<hs "173N1"
+2u 50m
+50m >w / 50m sw "173d" 8d
+50m >w / 50m nw "173b" 10d
+3v 200m
+hp> "173F"
 3v 1000m
-end "172c173"
+end "173c174"
 
-33u begin +1u "172a" se
+6u begin -1u "172a" ne
 ~ 50m e
 hs> "172P2"
 3u 800m
 <hs "172N2"
-~ 50m ne
+~ 50m se
 end "172b"
+
+28u begin -0u "173a" ne
+~ 3u 100m e
+hs> "173P2"
+3u 800m
+<hs "173N2"
+3u ~ 100m se
+end "173b"
+
+30u begin +2u "173c" se
+~ 500m e
+hs> "173P0"
+3u 800m
+<hs "173N0"
+~ 500m ne
+end "173d"
 
 %quo1 143F 143P0 143P1 143P2
 %quo1 1431 143A 143N1 143N2
@@ -13422,26 +13435,172 @@ end "172b"
 %quo3 1703 170B 170N2 170N3 170F 170P2 170P3 1701 170A 170P1 170N1
 
 %def 171A-171N1/171N2
-%def 171N1-1721
-%def 171N2-1721
+%def 171N1-172A
+%def 171N2-172A
 
 %def 171F-171P1/171P2
 %def 171P1-170F
 %def 171P2-170F
 
 %quo1 171A 171N1 171N2
-%quo1 1722 171F 171P1 171P2
+%quo1 171F 171P1 171P2
 
 %def 172A-172N1/172N2
-%def 172N1-173A
-%def 172N2-173A
+%def 172N1-1731
+%def 172N2-1731
 
 %def 172F-172P1/172P2
-%def 172P1-1722
-%def 172P2-1722
+%def 172P1-171F
+%def 172P2-171F
 
-%quo1 1721 172A 172N1 172N2
-%quo1 172F 172P1 172P2
+%quo1 172A 172N1 172N2
+%quo1 1732 172F 172P1 172P2
+
+%def 173A-173N1/173N2/173N0
+%def 173N0-1741
+%def 173N1-1741
+%def 173N2-1741
+
+%def 173F-173P1/173P2/173P0
+%def 173P0-1732
+%def 173P1-1732
+%def 173P2-1732
+
+### HUNDRED-SEVENTYFOUR
+
+3v begin =18+21v "173c174"
+2u 1000m
+<hp "1741"
+1u 200m
+hp> "1742"
+1u 800m
+<hp "174A"
+3v 200m
+w< 50m / 50m ne "174a" 13d
+se
+w< 50m / 50m e "174b" 10d
+2u 50m e
+hs> "174P1"
+7v 800m
+<hs "174S1"
+10u 250m
+50m >w / 50m nw "174c" 10d
+w< 50m / 50m se "174t" 8d
+2u 50m
+hs> "174R1"
+7v 800m
+<hs "174N1"
+2u 50m
+50m >w / 50m sw "174u" 8d
+3v 200m
+hp> "174F"
+3v 800m
+end "24c174"
+
+25v begin +1u "174b" ne
+~ 50m e
+hs> "174P2"
+7v 800m
+<hs "174S2"
+w< 50m / 50m ne "174d" 8d
+6u 150m
+50m >w se / 50m nw "174e" 8d
+end "174c"
+
+25v begin -3u "174f"
+2u 50m
+hs> "174P3"
+7v 800m
+<hs "174S3"
+2u 50m
+50m >w / 50m sw "174d" 8d
+50m >w / 50m nw "174g" 8d
+w< 50m / 50m se "174e" 8d
+w< 50m / 50m ne "174h" 10d
+2u 50m
+hs> "174R4"
+7v 800m
+<hs "174N4"
+~ 50m ne
+end "174v"
+
+29v begin -2u "174i"
+2u 50m
+hs> "174P4"
+7v 800m
+<hs "174S4"
+~ 50m se
+end "174g"
+
+21v begin +3u "174a" ne
+w< 50m / 50m e "174f" 10d
+w< 50m / 50m e "174i" 8d
+~ 50m e
+hs> "174P5"
+7v 800m
+<hs "174S5"
+2u 50m
+2u 50m se
+4u 100m e
+50m >w / 50m sw "174h" 10d
+hs> "174R5"
+7v 800m
+<hs "174N5"
+2u 50m
+50m >w / 50m sw "174v" 10d
+3v 200m
+hp> "174G"
+2u 1000m
+end "26c174"
+
+33u begin +4u "174t" se
+~ 50m e
+hs> "174R0"
+7v 800m
+<hs "174N0"
+~ 50m ne
+end "174u"
+
+%quo2 1731 173A 173N0 173N1 173N2
+%quo2 1742 173F 173P0 173P1 173P2
+%quo3 1731 173A 173N0 173N1 173N2 1742 173F 173P0 173P1 173P2
+
+%def 174A-174S1/174S2/174S3/174S4
+%def 174S1-174N1/174N0
+%def 174S2-174N1/174N0
+%def 174S3-174N1/174N0
+%def 174S4-174N1/174N0
+%def 174N0-24I
+%def 174N1-24I
+
+%mac hseventyfour-twentysix 174A-174S5/174S3/174S4/174S2
+%mac hseventyfour-twentysix 174S2-174N4/+174N5
+%mac hseventyfour-twentysix 174S3-174N5/+174N4
+%mac hseventyfour-twentysix 174S4-174N5/+174N4
+%mac hseventyfour-twentysix 174S5-174N5
+%mac hseventyfour-twentysix 174N4-26B
+%mac hseventyfour-twentysix 174N5-26B
+
+%def 174F-174R1/174R0
+%def 174G-174R5/174R4
+%def 174R0-174P1/174P2/174P3/174P4
+%def 174R1-174P1/174P2/174P3/174P4
+%def 174R4-174P3/174P4/174P2
+%def 174R5-174P5/174P3/174P4/174P2
+%def 174P1-1742
+%def 174P2-1742
+%def 174P3-1742
+%def 174P4-1742
+%def 174P5-1742
+
+%quo2 1741 174A 174S2 174S3 174S4
+%quo2 174P2 174P3 174P4
+%quo3 1741 174A 174S2 174S3 174S4 174P2 174P3 174P4
+
+%quo1 174N0 174N1
+%quo1 174N4 174N5
+%quo1 174F 174R0 174R1
+%quo1 174G 174R4 174R5
 
 ### HUNDRED-THIRTYONE
 
@@ -15887,9 +16046,9 @@ end "125g"
 
 %def 125F-125P2/125P3/125P1
 %def 125G-125P1/+125P2/125P3
-%def 125P1-124G/+1254
-%def 125P2-1254/124G
-%def 125P3-1254/124G
+%def 125P1-124G/+1258
+%def 125P2-1258/124G
+%def 125P3-1258/124G
 
 %mac htwentyfive-hseventyeight 125F-125P3/125P2/125P1
 %mac htwentyfive-hseventyeight 125G-125P3/+125P1/+125P2
