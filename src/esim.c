@@ -40,6 +40,8 @@ int FieldYSize = 16;	/* 18 */
 #define KMH2MMS(x) (((x) * 10000) / 36)
 #define MMS2KMH(x) (((x) * 36 + 5000) / 10000)
 
+int yoff = 0;
+
 static int XCenter (int v) {
 	int r = FieldXSize * v + FieldXSize / 2 - 1;
 	return r / 2;
@@ -47,7 +49,7 @@ static int XCenter (int v) {
 
 static int YCenter (int v) {
 	int r = FieldYSize * v + FieldYSize / 2 - 1;
-	return r / 2;
+	return r / 2 - yoff;
 }
 
 int todo = 1;
@@ -276,7 +278,7 @@ int gettok (char **pp, int *val, char **cal) {
 		}
 		if (*p == 'm') {
 			*pp = p + 1;
-			*val = n;
+			*val = 1000 * n;
 			return Meter;
 		}
 		*pp = p;
@@ -2121,7 +2123,7 @@ struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 
 struct trk *MkTrk (int m, struct conn *a, struct conn *b, struct dnode *x) {
 	struct trk *t = malloc (sizeof (struct trk));
-	t->len = m > 0 ? 1000 * m : 1;
+	t->len = m > 0 ? m : 1;
 	t->maxsp = 0;
 	t->f = b;
 	t->r = a;
@@ -2915,11 +2917,16 @@ int parseline (char *p) {
 			if (A [0].flags & Dseen) {
 				ErrDiag ("Direction on joint end");
 			}
+			for (i = 0; i < 3; i ++) {
+				if (!(A [i].flags & Useen)) {
+					A [i].u = 2;
+				}
+			}
 			if (!(A [1].flags & Mseen)) {
-				ErrDiag ("Length required on split end");
+				A [1].m = (A [0].u + A [1].u) * 12500;
 			}
 			if (!(A [2].flags & Mseen)) {
-				ErrDiag ("Length required on split end");
+				A [2].m = (A [0].u + A [2].u) * 12500;
 			}
 			if (A [1].flags & Dseen) {
 				d1 = A [1].d;
@@ -2942,11 +2949,6 @@ int parseline (char *p) {
 			}
 			if (A [0].name || A [1].name) {
 				ErrDiag ("Name on switch");
-			}
-			for (i = 0; i < 3; i ++) {
-				if (!(A [i].flags & Useen)) {
-					A [i].u = 2;
-				}
 			}
 			x = mkdnode (Switch);
 			x->one = currpos;
@@ -2992,14 +2994,19 @@ int parseline (char *p) {
 			if (A [1].flags & (Mseen | Sseen)) {
 				ErrDiag ("No length allowed on joined end");
 			}
+			for (i = 0; i < 3; i ++) {
+				if (!(A [i].flags & Useen)) {
+					A [i].u = 2;
+				}
+			}
 			if (A [0].flags & Dseen) {
 				ErrDiag ("Direction on incoming end");
 			}
 			if (!(A [0].flags & Mseen)) {
-				ErrDiag ("Length required on incoming end");
+				A [0].m = (A [0].u + A [1].u) * 12500;
 			}
 			if (!(A [2].flags & Mseen)) {
-				ErrDiag ("Length required on split end");
+				A [2].m = (A [2].u + A [1].u) * 12500;
 			}
 			if (A [1].flags & Dseen) {
 				d1 = A [1].d;	/* Joined exit */
@@ -3022,11 +3029,6 @@ int parseline (char *p) {
 			}
 			if (A [0].name || A [1].name) {
 				ErrDiag ("Name on switch");
-			}
-			for (i = 0; i < 3; i ++) {
-				if (!(A [i].flags & Useen)) {
-					A [i].u = 2;
-				}
 			}
 			x = mkdnode (Switch);
 			x->two = currpos;
@@ -3597,16 +3599,35 @@ void DrawSmallPicture (void);
 void DrawPart (struct rect *);
 
 void stash (int f) {
-	if (ypos + ysize > totalysize) {
-		ypos = totalysize - ysize;
+	if (yoff + ypos + ysize > totalysize) {
+		ypos = totalysize - ysize - yoff;
 		f = 1;
 	}
-	if (ypos < 0) {
-		ypos = 0;
+	if (yoff + ypos < 0) {
+		ypos = -yoff;
 		f = 1;
 	}
 	if (f) {
-		XMoveWindow (mydisplay, drawwindow, 0, -ypos);
+		if (ypos >= 0 && ypos < 10000) {
+			XMoveWindow (mydisplay, drawwindow, 0, -ypos);
+		} else {
+			struct train *curr;
+			while (ypos >= 10000) {
+				yoff += 3000;
+				ypos -= 3000;
+			}
+			while (ypos < 0) {
+				yoff -= 3000;
+				ypos += 3000;
+			}
+			XMoveWindow (mydisplay, drawwindow, 0, -ypos);
+			/* Flush all window data */
+			XClearArea (mydisplay, drawwindow, 0, 0, 0, 0, True);
+			/* and reposition train windows */
+			for (curr = trlist; curr; curr = curr->next) {
+				train_dwin (curr, curr->dsig, 1);
+			}
+		}
 	}
 }
 
@@ -4399,18 +4420,29 @@ void DrawSLine (struct moff *moff, struct coord *a, struct coord *b, GC *gcp) {
 	}
 }
 
-void DrawFLine (struct coord *a, struct coord *b, int f, int g, GC *gcp) {
-	int xs = b->x - a->x;
-	int ys = b->y - a->y;
-	if (xs > 0) xs = FieldXSize;
-	else if (xs < 0) xs = -FieldXSize;
-	if (ys > 0) ys = FieldYSize;
-	else if (ys < 0) ys = -FieldYSize;
+void DrawFLine (struct coord *a, struct coord *b, int f, int g, GC *gcp, int h) {
+	struct coord c = *b;
+	int xs = c.x - a->x;
+	int ys = c.y - a->y;
+	if (xs > 0) {
+		if (h && xs > 2) c.x = a->x + 2;
+		xs = FieldXSize;
+	} else if (xs < 0) {
+		if (h && xs < -2) c.x = a->x - 2;
+		xs = -FieldXSize;
+	}
+	if (ys > 0) {
+		if (h && ys > 3) c.y = a->y + 3;
+		ys = FieldYSize;
+	} else if (ys < 0) {
+		if (h && ys < -3) c.y = a->y - 3;
+		ys = -FieldYSize;
+	}
 	XDrawLine (mydisplay, drawwindow, *gcp,
 		   XCenter (a->x) + (xs * f) / 12,
 		   YCenter (a->y) + (ys * f) / 12,
-		   XCenter (b->x) - (xs * g) / 12,
-		   YCenter (b->y) - (ys * g) / 12);
+		   XCenter (c.x) - (xs * g) / 12,
+		   YCenter (c.y) - (ys * g) / 12);
 }
 
 static int conn_pred (MUX_BMFCONN_TYP *pConn, void *p) {
@@ -4457,7 +4489,7 @@ void DrawDIllum (struct dnode *x) {
 		} else {
 			gcp = &mygc;
 		}
-		DrawFLine (&x->cent, &x->one, 4, 4, gcp);
+		DrawFLine (&x->cent, &x->one, 4, 4, gcp, 0);
 	} else if (x->type == Curve) {
 		if (x->occcnt) {
 			gcp = &myredgc;
@@ -4466,8 +4498,8 @@ void DrawDIllum (struct dnode *x) {
 		} else {
 			gcp = &mygc;
 		}
-		DrawFLine (&x->cent, &x->one, 0, 4, gcp);
-		DrawFLine (&x->cent, &x->two, 0, 4, gcp);
+		DrawFLine (&x->cent, &x->one, 0, 4, gcp, 0);
+		DrawFLine (&x->cent, &x->two, 0, 4, gcp, 0);
 	} else if (x->type == FullCross || x->type == HalfCross) {
 		int nb = x->swtch->actl == x ? x->swtch->c_na : x->swtch->d_nb;
 		int nd = x->swtcb->actl == x ? x->swtcb->c_na : x->swtcb->d_nb;
@@ -4480,19 +4512,19 @@ void DrawDIllum (struct dnode *x) {
 		if (!x->lock && !x->occcnt) {
 			fl = 4;
 		}
-		DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
-		DrawFLine (&x->cent, &x->three, 0, 4, &mygc);
-		DrawFLine (&x->cent, &x->one, 0, 4, &mygc);
-		DrawFLine (&x->cent, &x->four, 0, 4, &mygc);
+		DrawFLine (&x->cent, &x->two, 0, 4, &mygc, 0);
+		DrawFLine (&x->cent, &x->three, 0, 4, &mygc, 0);
+		DrawFLine (&x->cent, &x->one, 0, 4, &mygc, 0);
+		DrawFLine (&x->cent, &x->four, 0, 4, &mygc, 0);
 		if (nb) {
-			DrawFLine (&x->cent, &x->three, fl, 4, gcp);
+			DrawFLine (&x->cent, &x->three, fl, 4, gcp, fl == 4);
 		} else {
-			DrawFLine (&x->cent, &x->two, fl, 4, gcp);
+			DrawFLine (&x->cent, &x->two, fl, 4, gcp, fl == 4);
 		}
 		if (nd) {
-			DrawFLine (&x->cent, &x->four, fl, 4, gcp);
+			DrawFLine (&x->cent, &x->four, fl, 4, gcp, fl == 4);
 		} else {
-			DrawFLine (&x->cent, &x->one, fl, 4, gcp);
+			DrawFLine (&x->cent, &x->one, fl, 4, gcp, fl == 4);
 		}
 	} else if (x->type == Switch) {
 		if (x->occcnt) {
@@ -4500,35 +4532,23 @@ void DrawDIllum (struct dnode *x) {
 		} else {
 			gcp = &myclrgc;
 		}
-#if 0
-		DrawFLine (&x->cent, &x->one, 4, 4, 
-			   x->lock || x->occcnt ? gcp : &mygc);
-		if (x->swtch->actl == x ? x->swtch->c_na : x->swtch->d_nb) {
-			DrawFLine (&x->cent, &x->two, 4, 4, &mygc);
-			DrawFLine (&x->cent, &x->three, 4, 4, gcp);
-		} else {
-			DrawFLine (&x->cent, &x->three, 4, 4, &mygc);
-			DrawFLine (&x->cent, &x->two, 4, 4, gcp);
-		}
-#else
 		fl = 0;
 		if (!x->lock && !x->occcnt) {
-			DrawFLine (&x->cent, &x->one, 0, 4,  &mygc);
+			DrawFLine (&x->cent, &x->one, 0, 4,  &mygc, 0);
 			fl = 4;
 		}
 		if (x->swtch->actl == x ? x->swtch->c_na : x->swtch->d_nb) {
-			DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
-DrawFLine (&x->cent, &x->three, 0, 4, &mygc);
-			DrawFLine (&x->cent, &x->three, fl, 4, gcp);
+			DrawFLine (&x->cent, &x->two, 0, 4, &mygc, 0);
+			DrawFLine (&x->cent, &x->three, 0, 4, &mygc, 0);
+			DrawFLine (&x->cent, &x->three, fl, 4, gcp, fl == 4);
 		} else {
-			DrawFLine (&x->cent, &x->three, 0, 4, &mygc);
-DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
-			DrawFLine (&x->cent, &x->two, fl, 4, gcp);
+			DrawFLine (&x->cent, &x->three, 0, 4, &mygc, 0);
+			DrawFLine (&x->cent, &x->two, 0, 4, &mygc, 0);
+			DrawFLine (&x->cent, &x->two, fl, 4, gcp, fl == 4);
 		}
 		if (x->lock || x->occcnt) {
-			DrawFLine (&x->cent, &x->one, 0, 4, gcp);
+			DrawFLine (&x->cent, &x->one, 0, 4, gcp, 0);
 		}
-#endif
 	} else if (x->type & Stop) {
 		/* End block, no changing illum */
 	} else if (x->type & (HpSig | LsSig)) {
