@@ -9,6 +9,7 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/cursorfont.h>
+#include <X11/keysym.h>
 
 #include "muxbmf.h"
 
@@ -19,6 +20,7 @@ MUX_BMFCONNLIST_TYP xConnList;
 MUX_BMFLSTN_TYP xListen;
 
 Display *mydisplay;
+Window drawwindow;
 Window basewindow;
 Window smlwin;
 Cursor mycurs;
@@ -29,7 +31,7 @@ GC mysmlgc, mysmlredgc, mysmlclrgc, mysmlgreengc;
 XFontStruct *myfontstruct;
 long font_height;
 long font_depth;
-unsigned long myforeground, mybackground;
+unsigned long myforeground, mybackground, markground, spaceground;
 
 int FieldXSize = 24;	/* 27 */
 int FieldYSize = 16;	/* 18 */
@@ -68,7 +70,10 @@ int checkfail (char *t, char *f, int l) {
 #define AT if (iDebugLevel > 2) printf ("At %s:%d\n", __FILE__, __LINE__)
 	
 
-int xsize = 1145, ysize = 800;
+int xsize = 1145, ysize = 700;
+int totalysize;
+int ypos = 0;
+
 /* int xsize = 37 * FieldXSize - 1, ysize = 44 * FieldYSize - 1; */
 
 #define Switch		0x100
@@ -461,6 +466,8 @@ struct qlg {
 
 struct sig *actlist = 0;	/* Active path list */
 
+struct train *followtrain = 0;
+
 struct train *currtrn = 0;	/* I hate globals, but is the easiest way... */
 
 void do_paths (void) {
@@ -653,7 +660,7 @@ int try_build_path (struct dnode *d) {
 					DrawSmallDNode (x);
 				}
 			}
-			/* Finally locate end of total path, then
+			/* Finally locate end of rotal path, then
 			 * redo all signals on the path
 			 */
 			while (sig->d->lock) sig = sig->d->lock;
@@ -1814,11 +1821,11 @@ if (iDebugLevel > 2) printf ("LENGTH %d\n", l);
 
 	trn->sigdelay = 0;
 
-	trn->dwin = XCreateSimpleWindow (mydisplay, basewindow,
+	trn->dwin = XCreateSimpleWindow (mydisplay, drawwindow,
 					 0, 0,
 					 5, 5, 1, 
 					 myforeground,
-					 mybackground);
+					 spaceground);
     	XSelectInput (mydisplay, trn->dwin,
 		      ButtonPressMask|ButtonReleaseMask|Button1MotionMask|KeyPressMask|ExposureMask|StructureNotifyMask);
     	XDefineCursor(mydisplay,trn->dwin,mydotcurs);
@@ -1836,9 +1843,12 @@ void train_ddraw (struct train *trn) {
 			 trn->dtxt, strlen (trn->dtxt));
 }
 
+void stash (int f);
+
 void train_dwin (struct train *trn, struct sig *sig) {
 	int h, w;
 	int x, y;
+	int ry;
 	char buf [100];
 	if (trn->dsig) trn->dsig->dsigcnt --;
 	trn->dsig = sig;
@@ -1849,11 +1859,12 @@ void train_dwin (struct train *trn, struct sig *sig) {
 	}
 	sprintf (buf,
 		 "%.30s %3d", trn->name,
-		 (36 * trn->speed + 500) / 10000);
+		 (36 * trn->speed + 5000) / 10000);
 	h = font_height + font_depth + 1;
 	w = 2 + XTextWidth (myfontstruct, buf, strlen (buf));
 	x = XCenter (sig->d->cent.x);
 	y = YCenter (sig->d->cent.y);
+	ry = y;
 	if (IsSameDir (Dir_W, sig->d->sigdir)) {
 		x -= w;
 		y -= h + 2;
@@ -1864,14 +1875,74 @@ void train_dwin (struct train *trn, struct sig *sig) {
 	XMapWindow (mydisplay, trn->dwin);
 	if (strcmp (buf, trn->dtxt)) {
 		strcpy (trn->dtxt, buf);
-		train_ddraw (trn);
+
+		if (ry < ypos - 4 * FieldYSize ||
+		    ry > ypos + 4 * FieldYSize + ysize) {
+			/* Out of sight */
+		} else {
+			train_ddraw (trn);
+		}
+	}
+	if (trn == followtrain) {
+		if (ypos - 15 * FieldYSize > ry
+		 || ry > ypos + ysize + 15 * FieldYSize) {
+			ypos = y - ysize / 2;
+			stash (1);
+		} else if (ypos + 5 * FieldYSize > ry) {
+			ypos = ry - 12 * FieldYSize;
+			stash (1);
+		} else if (ry > ypos + ysize - 5 * FieldYSize) {
+			ypos = y - ysize + 12 * FieldYSize;
+			stash (1);
+		}
 	}
 }
 
 void train_event (struct train *trn, XEvent myevent) {
     /* struct dnode *dp; */
     {
+	KeySym mykey;
+	char text[10];
+	int i;
 	switch(myevent.type) {
+	  case KeyPress:
+	    i=XLookupString(&myevent,text,10,&mykey,0);
+	    if(i==1) switch(text[0]) {
+	      case ' ':
+		if (followtrain != trn) {
+			if (followtrain) {
+				XSetWindowBackground (mydisplay,
+					followtrain->dwin, spaceground);
+				train_ddraw (followtrain);
+			}
+			followtrain = trn;
+			XSetWindowBackground (mydisplay,
+				trn->dwin, markground);
+			train_ddraw (trn);
+		} else {
+			XSetWindowBackground (mydisplay,
+				trn->dwin, spaceground);
+			train_ddraw (trn);
+			followtrain = 0;
+		}
+		break;
+	      default:
+	    } else {
+	      switch (mykey) {
+		case XK_R9:
+		case XK_Prior:
+		  break;
+		case XK_R15:
+		case XK_Next:
+		  break;
+		case XK_R14:
+		case XK_Down:
+		  break;
+		case XK_R8:
+		case XK_Up:
+		  break;
+	      }
+	    }
 	  case Expose:
 	    train_ddraw (trn);
 	    break; }}}
@@ -2000,6 +2071,7 @@ struct dnode *mkdnode (int t) {
 }
 
 struct coord currpos = { 10, 10 };
+int max_ypos = 10;
 
 int currdir = 0;
 
@@ -3324,6 +3396,7 @@ int readgpfile (char *fn) {
 printf ("%03d/%03d %s", currpos.x, currpos.y, buf);
 #endif
 			if (parseline (buf)) break;
+			if (max_ypos < currpos.y) max_ypos = currpos.y;
 		}
 		fclose (fp);
 	} else {
@@ -3367,6 +3440,20 @@ void DrawPicture (void);
 void DrawSmallPicture (void);
 void DrawPart (struct rect *);
 
+void stash (int f) {
+	if (ypos + ysize > totalysize) {
+		ypos = totalysize - ysize;
+		f = 1;
+	}
+	if (ypos < 0) {
+		ypos = 0;
+		f = 1;
+	}
+	if (f) {
+		XMoveWindow (mydisplay, drawwindow, 0, -ypos);
+	}
+}
+
 void handle_smlwin(myevent) XEvent myevent; {
     /* struct dnode *dp; struct rect R; int x,y; */
     {
@@ -3383,7 +3470,7 @@ void handle_smlwin(myevent) XEvent myevent; {
 	    R.y =myevent.xexpose.y;
 	    R.w =myevent.xexpose.width;
 	    R.h =myevent.xexpose.height;
-	    /* XClearArea(mydisplay,basewindow,R.x,R.y,R.w,R.h,False); */
+	    /* XClearArea(mydisplay,drawwindow,R.x,R.y,R.w,R.h,False); */
 	    DrawPart(&R);
 #endif
 	    DrawSmallPicture ();
@@ -3438,7 +3525,7 @@ void handle_smlwin(myevent) XEvent myevent; {
 	  case KeyPress:
 	    break; }}}
 
-void handle_window(myevent) XEvent myevent; {
+void handle_bwin(myevent) XEvent myevent; {
     struct dnode *dp;
     struct rect R;
     int x,y; {
@@ -3449,13 +3536,15 @@ void handle_window(myevent) XEvent myevent; {
 #endif
 	switch(myevent.type) {
 	  case Expose:
+#if 0
 	    /* if(myevent.xexpose.count) break; */
 	    R.x =myevent.xexpose.x;
 	    R.y =myevent.xexpose.y;
 	    R.w =myevent.xexpose.width;
 	    R.h =myevent.xexpose.height;
-	    /* XClearArea(mydisplay,basewindow,R.x,R.y,R.w,R.h,False); */
+	    /* XClearArea(mydisplay,drawwindow,R.x,R.y,R.w,R.h,False); */
 	    DrawPart(&R);
+#endif
 	    break;
 	  case GraphicsExpose:
 	    break;
@@ -3465,7 +3554,61 @@ void handle_window(myevent) XEvent myevent; {
 	    if(xsize!=myevent.xconfigure.width || ysize!=myevent.xconfigure.height) {
 		xsize=myevent.xconfigure.width;
 		ysize=myevent.xconfigure.height;
+		stash (0);
 		/* todo=1; */ }
+	    break;
+	  case ButtonPress:
+	    switch(myevent.xbutton.button) {
+	      case 1:
+		x = myevent.xbutton.x;
+		y = myevent.xbutton.y;
+		break;
+	      case 2:
+		x = myevent.xbutton.x;
+		y = myevent.xbutton.y;
+		break;
+	      case 3:
+		done=1;
+		break; }
+	    break;
+	  case MotionNotify:
+	    break;
+	  case ButtonRelease:
+	    break;
+	  case KeyPress:
+	    break; }}}
+
+int oncesteps = 1;
+int nstanding = 0;
+
+void handle_window(myevent) XEvent myevent; {
+    struct dnode *dp;
+    struct rect R;
+    int x,y; {
+	KeySym mykey;
+	char text[10];
+	int i;
+	switch(myevent.type) {
+	  case Expose:
+	    /* if(myevent.xexpose.count) break; */
+	    R.x =myevent.xexpose.x;
+	    R.y =myevent.xexpose.y;
+	    R.w =myevent.xexpose.width;
+	    R.h =myevent.xexpose.height;
+	    /* XClearArea(mydisplay,drawwindow,R.x,R.y,R.w,R.h,False); */
+	    DrawPart(&R);
+	    break;
+	  case GraphicsExpose:
+	    break;
+	  case NoExpose:
+	    break;
+	  case ConfigureNotify:
+#if 0
+	    if(xsize!=myevent.xconfigure.width || ysize!=myevent.xconfigure.height) {
+		xsize=myevent.xconfigure.width;
+		ysize=myevent.xconfigure.height;
+		/* todo=1; */ }
+#endif
 	    break;
 	  case ButtonPress:
 	    switch(myevent.xbutton.button) {
@@ -3501,6 +3644,69 @@ void handle_window(myevent) XEvent myevent; {
 	  case ButtonRelease:
 	    break;
 	  case KeyPress:
+	    i=XLookupString(&myevent,text,10,&mykey,0);
+	    if(i==1) switch(text[0]) {
+	      case '0':
+		oncesteps = 0;
+		break;
+	      case '1':
+		oncesteps = 1;
+		break;
+	      case '2':
+		oncesteps = 2;
+		break;
+	      case '3':
+		oncesteps = 3;
+		break;
+	      case '4':
+		oncesteps = 4;
+		break;
+	      case '5':
+		oncesteps = 5;
+		break;
+	      case '6':
+		oncesteps = 6;
+		break;
+	      case '7':
+		oncesteps = 7;
+		break;
+	      case '8':
+		oncesteps = 8;
+		break;
+	      case '9':
+		oncesteps = 9;
+		break;
+	      case '-':
+		if (oncesteps > 0) oncesteps --;
+		break;
+	      case '+':
+		if (oncesteps < 20) oncesteps ++;
+		break;
+	      default:
+	    } else {
+	      switch (mykey) {
+		case XK_R9:
+		case XK_Prior:
+		  ypos -= ysize - 4 * FieldYSize;
+		  stash (1);
+		  break;
+		case XK_R15:
+		case XK_Next:
+		  ypos += ysize - 4 * FieldYSize;
+		  stash (1);
+		  break;
+		case XK_R14:
+		case XK_Down:
+		  ypos += (myevent.xkey.state & ShiftMask) ? 1 : FieldYSize;
+		  stash (1);
+		  break;
+		case XK_R8:
+		case XK_Up:
+		  ypos -= (myevent.xkey.state & ShiftMask) ? 1 : FieldYSize;
+		  stash (1);
+		  break;
+	      }
+	    }
 	    break; }}}
 
 int X_req (MUX_FD_TYP *x) {
@@ -3516,6 +3722,8 @@ void X_hdl (MUX_FD_TYP *x, int rev) {
 			if(myevent.type==MappingNotify) {
 				XRefreshKeyboardMapping(&myevent); }
 			else if(myevent.xany.window==basewindow) {
+				handle_bwin(myevent); }
+			else if(myevent.xany.window==drawwindow) {
 				handle_window(myevent); }
 			else if(myevent.xany.window==smlwin) {
 				handle_smlwin(myevent); }
@@ -3535,9 +3743,6 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 	exit (1);
 }
 
-int oncesteps = 1;
-int nstanding = 0;
-
 void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	int i;
 	struct timeval now = MUX_GetTime ();
@@ -3554,7 +3759,7 @@ void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 		emulsteps ++;
 	}
 	if (todo) {
-		XClearArea(mydisplay,basewindow,0,0,0,0,False);
+		XClearArea(mydisplay,drawwindow,0,0,0,0,False);
 		DrawPicture ();
 	}
 	XFlush (mydisplay);
@@ -3566,7 +3771,7 @@ void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	currtime.tv_usec = 102000 - ((currtime.tv_usec + 1000000) % 100000);
 	currtime.tv_sec = 0;
     XFreeGC(mydisplay,mygc);
-    XDestroyWindow(mydisplay,basewindow);
+    XDestroyWindow(mydisplay,drawwindow);
     XCloseDisplay(mydisplay);
     exit(0); }
 	*/
@@ -3774,6 +3979,8 @@ int main(argc,argv) int argc; char **argv; {
     xsize = (xsize * FieldXSize) / 24;
 
     readgpfile (pszHost);
+    totalysize = YCenter (max_ypos + 4);
+    if (ysize > totalysize) ysize = totalysize;
 
     mydisplay=XOpenDisplay(display_name);
     if(!mydisplay) {
@@ -3811,6 +4018,10 @@ int main(argc,argv) int argc; char **argv; {
        DefaultRootWindow(mydisplay),
        myhint.x,myhint.y,myhint.width,myhint.height,
        1, myforeground,color.pixel);
+    drawwindow=XCreateSimpleWindow(mydisplay,
+	basewindow,
+	0, ypos, xsize, totalysize,
+	0, myforeground,color.pixel);
     XSetStandardProperties(mydisplay,basewindow,"esim","ESim",
        None,argv,argc,&myhint);
     smlwin=XCreateSimpleWindow(mydisplay,
@@ -3854,6 +4065,8 @@ int main(argc,argv) int argc; char **argv; {
 	color.pixel = myforeground;
 	printf ("Color red failed\n");
     }
+markground = color.pixel;
+spaceground = mybackground;
     XSetForeground (mydisplay, myredgc, color.pixel);
     XSetBackground (mydisplay, myredgc, mybackground);
     XSetForeground (mydisplay, mysmlredgc, color.pixel);
@@ -3902,6 +4115,18 @@ int main(argc,argv) int argc; char **argv; {
     XSetForeground (mydisplay, mygraygc, color.pixel);
     XSetBackground (mydisplay, mygraygc, mybackground);
 
+    if (XAllocNamedColor (mydisplay, cmap, "lightskyblue", &exact, &color) == 0) {
+	printf ("Color lightskyblue failed\n");
+    } else {
+	markground = color.pixel;
+    }
+
+    if (XAllocNamedColor (mydisplay, cmap, "lemonchiffon", &exact, &color) == 0) {
+	printf ("Color lemonchiffon failed\n");
+    } else {
+	spaceground = color.pixel;
+    }
+
     XSetLineAttributes (mydisplay, mygc, 9, LineSolid, CapRound, JoinRound);
     XSetLineAttributes (mydisplay, myredgc, 5, LineSolid, CapRound, JoinRound);
     XSetLineAttributes (mydisplay, mygreengc, 5, LineSolid, CapRound, JoinRound);
@@ -3913,8 +4138,10 @@ int main(argc,argv) int argc; char **argv; {
     XTextExtents(myfontstruct,"",0,&dummy,&font_height,&font_depth,&Dummy);
     mycurs=XCreateFontCursor(mydisplay,XC_crosshair);
     mydotcurs=XCreateFontCursor(mydisplay,XC_dot);
-    XDefineCursor(mydisplay,basewindow,mycurs);
+    XDefineCursor(mydisplay,drawwindow,mycurs);
     XSelectInput(mydisplay,basewindow,
+       StructureNotifyMask);
+    XSelectInput(mydisplay,drawwindow,
        ButtonPressMask|ButtonReleaseMask
        |Button1MotionMask
        |KeyPressMask|ExposureMask|StructureNotifyMask);
@@ -3923,6 +4150,7 @@ int main(argc,argv) int argc; char **argv; {
        |Button1MotionMask
        |KeyPressMask|ExposureMask|StructureNotifyMask);
     XMapRaised(mydisplay,basewindow);
+    XMapRaised(mydisplay,drawwindow);
     XMapRaised(mydisplay,smlwin);
 
     MUX_InitTimeout (&xTo, to_fire, 0);
@@ -3953,7 +4181,7 @@ int main(argc,argv) int argc; char **argv; {
 }
 
 void DrawLine (struct coord *a, struct coord *b) {
-	XDrawLine (mydisplay, basewindow, mygc,
+	XDrawLine (mydisplay, drawwindow, mygc,
 		   XCenter (a->x),
 		   YCenter (a->y),
 		   XCenter (b->x),
@@ -3979,7 +4207,7 @@ void DrawFLine (struct coord *a, struct coord *b, int f, int g, GC *gcp) {
 	else if (xs < 0) xs = -FieldXSize;
 	if (ys > 0) ys = FieldYSize;
 	else if (ys < 0) ys = -FieldYSize;
-	XDrawLine (mydisplay, basewindow, *gcp,
+	XDrawLine (mydisplay, drawwindow, *gcp,
 		   XCenter (a->x) + (xs * f) / 12,
 		   YCenter (a->y) + (ys * f) / 12,
 		   XCenter (b->x) - (xs * g) / 12,
@@ -4000,6 +4228,7 @@ void DrawDIllum (struct dnode *x) {
 	int xb, yb, xc;
 	GC *gcp, *gcpu;
 	int fl;
+	int ry;
 	if (x->sig && x->sig->name) {
 		if (x->propstate != x->state) {
 			x->propstate = x->state;
@@ -4010,6 +4239,14 @@ void DrawDIllum (struct dnode *x) {
 				x->sig->name);
 		}
 	}
+
+	ry = YCenter (x->cent.y);
+	if (ry < ypos - 4 * FieldYSize ||
+	    ry > ypos + 4 * FieldYSize + ysize) {
+		/* Out of sight */
+		return;
+	}
+
 	if (x->type == Straight) {
 		if (x->occcnt) {
 			gcp = &myredgc;
@@ -4155,32 +4392,32 @@ DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
 			gclp = &mybluegc;
 			break;
 		}
-		XFillRectangle (mydisplay, basewindow, *gclp,
+		XFillRectangle (mydisplay, drawwindow, *gclp,
 				xd - 1, yb - 1, 3, 3);
 		if (x->type & HpSig) {
 			/* Only these have the upper light */
 			if (gcpu == &mywhitegc) {
 				/* Need clear the border */
 				XDrawLine (mydisplay,
-					   basewindow,
+					   drawwindow,
 					   mygc,
 					   xc, yb,
 					   xc, yb);
 			}
 			XDrawLine (mydisplay,
-				   basewindow,
+				   drawwindow,
 				   *gcpu,
 				   xc, yb,
 				   xc, yb);
 		}
 		XDrawLine (mydisplay,
-			   basewindow,
+			   drawwindow,
 			   mygc,
 			   xb, yb,
 			   xb, yb);
 		if (gcp) {
 			XDrawLine (mydisplay,
-				   basewindow,
+				   drawwindow,
 				   *gcp,
 				   xb, yb,
 				   xb, yb);
@@ -4204,15 +4441,15 @@ DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
 				if (x->state & DST_Vr1) {
 					vgc = &mygreengc;
 				}
-				XFillRectangle (mydisplay, basewindow, *vgc,
+				XFillRectangle (mydisplay, drawwindow, *vgc,
 						xv, yv, 2, 2);
 				if (x->state & DST_Vr2) {
 					vgc = &mygreengc;
 				}
-				XFillRectangle (mydisplay, basewindow, *vgc,
+				XFillRectangle (mydisplay, drawwindow, *vgc,
 						xv + dv, yv + dv, 2, 2);
 				if (x->state & DST_VrWh) {
-					XFillRectangle (mydisplay, basewindow,
+					XFillRectangle (mydisplay, drawwindow,
 							mywhitegc,
 							xv + dv, yv, 2, 2);
 				}
@@ -4223,7 +4460,7 @@ DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
 				int i;
 				for (i = 0; i < 4; i ++) {
 					XFillRectangle (mydisplay,
-							basewindow,
+							drawwindow,
 							myclrgc,
 							xb - 2 + i, yb - 2 + i,
 							2, 2);
@@ -4231,7 +4468,7 @@ DrawFLine (&x->cent, &x->two, 0, 4, &mygc);
 			} else {
 				/* Red bar */
 				XFillRectangle (mydisplay,
-						basewindow,
+						drawwindow,
 						myredgc,
 						xb - 1, yb - 2,
 						3, 5);
@@ -4263,7 +4500,7 @@ void DrawDNode (struct dnode *x) {
 			xb -= 5;
 		}
 		XFillRectangle (mydisplay,
-				basewindow,
+				drawwindow,
 				mygc,
 				xb, yb - 9,
 				6, 19);
@@ -4280,17 +4517,17 @@ void DrawDNode (struct dnode *x) {
 			xb = XCenter (x->cent.x) - XXIII;
 			yb = YCenter (x->cent.y) + 12;
 			XFillRectangle (mydisplay,
-					basewindow,
+					drawwindow,
 					mygc,
 					xb, yb - 4,
 					1, 9);
 			XFillRectangle (mydisplay,
-					basewindow,
+					drawwindow,
 					mygc,
 					xb, yb - 1,
 					10, 3);
 			XDrawLine (mydisplay,
-				   basewindow,
+				   drawwindow,
 				   mygc,
 				   xb + 12, yb,
 				   xb + l, yb);
@@ -4299,17 +4536,17 @@ void DrawDNode (struct dnode *x) {
 			xb = XCenter (x->cent.x) + XXIII;
 			yb = YCenter (x->cent.y) - 12;
 			XFillRectangle (mydisplay,
-					basewindow,
+					drawwindow,
 					mygc,
 					xb, yb - 4,
 					1, 9);
 			XFillRectangle (mydisplay,
-					basewindow,
+					drawwindow,
 					mygc,
 					xb - 9, yb - 1,
 					10, 3);
 			XDrawLine (mydisplay,
-				   basewindow,
+				   drawwindow,
 				   mygc,
 				   xb - 12, yb,
 				   xb - l, yb);
@@ -4320,6 +4557,7 @@ void DrawDNode (struct dnode *x) {
 
 void DrawSmallDNode (struct dnode *d) {
 	GC *gcp;
+	return;
 	if (d->type == Straight || d->type == Switch || d->type == Curve) {
 		if (d->occcnt) {
 			gcp = &mysmlredgc;
@@ -4618,7 +4856,7 @@ void DrawPicture (void) {
 	for (j = 0; j <= (xsize / FieldYSize); j ++) {
 		for (i = 0; i <= (xsize / FieldXSize); i ++) {
 
-			XFillRectangle (mydisplay, basewindow, mygraygc,
+			XFillRectangle (mydisplay, drawwindow, mygraygc,
 					FieldXSize * i, FieldYSize * j,
 					FieldXSize - 1, FieldYSize - 1);
 		}
@@ -4633,7 +4871,7 @@ void DrawPicture (void) {
 			switch (tp->type) {
 			case TF_Occ:
 				XFillRectangle (mydisplay,
-						basewindow,
+						drawwindow,
 						mygc,
 						FieldXSize * i + 5,
 						FieldYSize * j + 5,
@@ -4645,17 +4883,17 @@ void DrawPicture (void) {
 				xb = XCenter (i) - 10;
 				yb = YCenter (j) + 12;
 				XFillRectangle (mydisplay,
-						basewindow,
+						drawwindow,
 						mygc,
 						xb, yb - 4,
 						1, 9);
 				XFillRectangle (mydisplay,
-						basewindow,
+						drawwindow,
 						mygc,
 						xb, yb - 1,
 						10, 3);
 				XDrawLine (mydisplay,
-					   basewindow,
+					   drawwindow,
 					   mygc,
 					   xb + 12, yb,
 					   xb + 21, yb);
@@ -4665,7 +4903,7 @@ void DrawPicture (void) {
 			for (b = 0; b < 8; b ++) {
 				if (tp->blacks & dirtab [b].bit) {
 					XDrawLine (mydisplay,
-						   basewindow,
+						   drawwindow,
 						   mygc,
 					   	   XCenter (i)
 						     + dirtab [b].xf
@@ -4696,7 +4934,7 @@ void DrawPicture (void) {
 			}
 			if (tp->blacks == Dir_WE && tp->illum == Dir_WE) {
 				XDrawLine (mydisplay,
-					   basewindow,
+					   drawwindow,
 					   *gcp,
 					   XCenter (i)
 					     - (FieldXSize / 3) + 1,
@@ -4707,7 +4945,7 @@ void DrawPicture (void) {
 			} else for (b = 0; b < 8; b ++) {
 				if (tp->illum & dirtab [b].bit) {
 					XDrawLine (mydisplay,
-						   basewindow,
+						   drawwindow,
 						   *gcp,
 					   	   XCenter (i)
 						     + dirtab [b].xf
@@ -4731,19 +4969,19 @@ void DrawPicture (void) {
 #endif
 
 #if 0
-	XDrawLine (mydisplay, basewindow, mygc,
+	XDrawLine (mydisplay, drawwindow, mygc,
 		   XCenter (0), YCenter (5 + 3),
 		   XCenter (17), YCenter (5 + 3));
 
-	XDrawLine (mydisplay, basewindow, mygc,
+	XDrawLine (mydisplay, drawwindow, mygc,
 		   XCenter (4), YCenter (5 + 3),
 		   XCenter (5), YCenter (5 + 2));
 
-	XDrawLine (mydisplay, basewindow, mygc,
+	XDrawLine (mydisplay, drawwindow, mygc,
 		   XCenter (5), YCenter (5 + 2),
 		   XCenter (10), YCenter (5 + 2));
 
-	XDrawLine (mydisplay, basewindow, mygc,
+	XDrawLine (mydisplay, drawwindow, mygc,
 		   XCenter (9), YCenter (5 + 2),
 		   XCenter (10), YCenter (5 + 3));
 
@@ -4751,7 +4989,7 @@ void DrawPicture (void) {
 		int j;
 
 		if (i != 4 && i != 10) {
-			XDrawLine (mydisplay, basewindow, myclrgc,
+			XDrawLine (mydisplay, drawwindow, myclrgc,
 			   XCenter (i) - FieldXSize / 3 + 1, YCenter (5 + 3),
 			   XCenter (i) + FieldXSize / 3 - 1, YCenter (5 + 3));
 		}
@@ -4768,10 +5006,10 @@ void DrawPicture (void) {
 			continue;
 		}
 
-		XDrawLine (mydisplay, basewindow, myclrgc,
+		XDrawLine (mydisplay, drawwindow, myclrgc,
 		   XCenter (i) - FieldXSize / 3, YCenter (5 + j),
 		   XCenter (i) - FieldXSize / 6, YCenter (5 + j));
-		XDrawLine (mydisplay, basewindow, myclrgc,
+		XDrawLine (mydisplay, drawwindow, myclrgc,
 		   XCenter (i) + FieldXSize / 6, YCenter (5 + j),
 		   XCenter (i) + FieldXSize / 3, YCenter (5 + j));
 
@@ -4779,35 +5017,35 @@ void DrawPicture (void) {
 
 	for (i = 6; i < 9; i ++) {
 		if (i != 4 && i != 10) {
-			XDrawLine (mydisplay, basewindow, myredgc,
+			XDrawLine (mydisplay, drawwindow, myredgc,
 			   XCenter (i) - FieldXSize / 3 + 1, YCenter (5 + 2),
 			   XCenter (i) + FieldXSize / 3 - 1, YCenter (5 + 2));
 		}
 	}
 
-	XDrawLine (mydisplay, basewindow, myclrgc,
+	XDrawLine (mydisplay, drawwindow, myclrgc,
 	   XCenter (5) - FieldXSize / 3, YCenter (5 + 2) + FieldYSize / 3,
 	   XCenter (5) - FieldXSize / 6, YCenter (5 + 2) + FieldYSize / 6);
-	XDrawLine (mydisplay, basewindow, myclrgc,
+	XDrawLine (mydisplay, drawwindow, myclrgc,
 	   XCenter (5) + FieldXSize / 6, YCenter (5 + 2),
 	   XCenter (5) + FieldXSize / 3, YCenter (5 + 2));
 #endif
 
 #if 0
-	XFillRectangle (mydisplay, basewindow, mygc,
+	XFillRectangle (mydisplay, drawwindow, mygc,
 			35, 35, 120, 230);
 
-	XFillArc (mydisplay, basewindow, mygreengc,
+	XFillArc (mydisplay, drawwindow, mygreengc,
 		  50, 50, 30, 30, 0, 23040);
-	XFillArc (mydisplay, basewindow, myredgc,
+	XFillArc (mydisplay, drawwindow, myredgc,
 		  50, 95, 30, 30, 0, 23040);
-	XFillArc (mydisplay, basewindow, myredgc,
+	XFillArc (mydisplay, drawwindow, myredgc,
 		  110, 95, 30, 30, 0, 23040);
-	XFillArc (mydisplay, basewindow, myclrgc,
+	XFillArc (mydisplay, drawwindow, myclrgc,
 		  110 + 7, 140 + 7, 16, 16, 0, 23040);
-	XFillArc (mydisplay, basewindow, myclrgc,
+	XFillArc (mydisplay, drawwindow, myclrgc,
 		  50 + 7, 185 + 7, 16, 16, 0, 23040);
-	XFillArc (mydisplay, basewindow, myyellowgc,
+	XFillArc (mydisplay, drawwindow, myyellowgc,
 		  50, 230, 30, 30, 0, 23040);
 #endif
 
