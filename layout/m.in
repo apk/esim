@@ -126,46 +126,28 @@ end "175b"
 
 ### TNINE
 
-20u begin =10+14v "209a" se
+1v begin =8+14v "175c209"
+3v 1000m
+<hs "209A"
+3v 200m
+w< 50m / 50m ne "209a" 13d
+2u 50m
+hs> "209P1"
+3u 800m
+<hs "209S1"
+2u 50m
+50m >w / 50m nw "209b" 8d
+3u ~ 100m se
 ~ 50m e
 hs> "209R1"
 7v 800m
 <hs "209N1"
-w< 50m / 50m ne "209b" 8d
-5u ~ 3u ne 200m
-end "209c"
-
-18u begin -2u "209d" se
-w< 50m e 8d / 50m se "209a" 10d
-2u 50m
-hs> "209R2"
-7v 800m
-<hs "209N2"
-2u 50m
-50m >w ne / 50m sw "209b" 8d
-end "209e"
-
-1v begin -1u "175c209"
-3v 1000m
-<hs "209A"
+w< 50m / 50m ne "209c" 8d
+4u 100m
+hs> "209R11"
 3v 200m
-w< 50m / 50m ne "209f" 13d
 2u 50m
-hs> "209P3"
-3u 800m
-<hs "209S3"
-2u 50m
-50m >w / 50m nw "209x" 8d
-w< 50m / 50m se "209d" 10d
-4u 100m
-hs> "209R3"
-7v 800m
-<hs "209N3"
-4u 100m
-50m >w / 50m sw "209e" 8d
-w< 50m / 50m ne "209g" 10d
-2u 50m
-50m >w / 50m sw "209c" 10d
+50m >w / 50m nw "209d" 9d
 2u 200m
 hp> "209F"
 1u 1000m
@@ -176,20 +158,26 @@ hp> "2112"
 2u 1000m
 end "209c211"
 
-6u begin -1u "209f" ne
+6u begin -1u "209a" ne
 ~ 50m e
-hs> "209P4"
+hs> "209P5"
 3u 800m
-<hs "209S4"
-w< 50m / 50m se "209x" 8d
-8u 200m
-hs> "209R4"
+<hs "209S5"
+w< 50m / 50m se "209b" 8d
+~ 50m ne
+w< 50m / 50m e "209e" 10d
+~ 50m e
+hs> "209R5"
 7v 800m
-<hs "209N4"
-6u 150m
+<hs "209N5"
+w< 50m / 50m se "209f" 8d
+~ 50m se
+50m >w / 50m w "209g" 10d
+~ 50m e
+hs> "209R15"
+3v 200m
 2u 50m
-50m >w / 50m sw "209g" 10d
-2u 50m
+50m >w / 50m sw "209h" 9d
 2u 200m
 hp> "209G"
 1u 1000m
@@ -200,37 +188,83 @@ hp> "2102"
 2u 1000m
 end "209c210"
 
-%def 209A-209S3/209S4
-%def 209S3-209N3/209N1/209N2
-%def 209S4-209N3/209N1/209N2
+18u begin -3u "209e"
+2u 50m
+hs> "209R4"
+7v 800m
+<hs "209N4"
+2u 50m
+25m ekw< 25m / 25m se "209i" / 25m nw "209f"
+end "209g"
+
+61v begin +3u "209j" nw
+w< 50m w / 50m nw "209i"
+2u 50m
+hs> "209N3"
+3u 800m
+<end "209R3"
+
+73v begin +2u "209d" nw
+50m >w w / 50m ne "209h" 9d
+3v 200m
+<hs "209R12"
+w< 50m / 50m nw "209j" 8d
+w< 50m / 50m sw "209c" 8d
+2u 50m
+hs> "209N2"
+3u 800m
+<end "209R2"
+
+%def 209A-209S1/+209S5
+%def 209S1-209N1
+%def 209S5-209N1/209N5/209N4
 %def 209N1-2111
 %def 209N2-2111
 %def 209N3-2111
+%def 209N4-2111
+%def 209N5-2111
 
-%mac tnine-tten 209A-209S4/+209S3
-%mac tnine-tten 209S3-209N3/209N2/209N1
-%mac tnine-tten 209S4-209N4/209N3/209N2/209N1
+%mac tnine-tten 209A-209S5/+209S1
+%mac tnine-tten 209S1-209N1
+%mac tnine-tten 209S5-209N5/209N4/209N1
 %mac tnine-tten 209N1-2101
 %mac tnine-tten 209N2-2101
 %mac tnine-tten 209N3-2101
 %mac tnine-tten 209N4-2101
+%mac tnine-tten 209N5-2101
 
-%def 209F-209R3/209R1/209R2
-%def 209G-209R4/209R3/209R2/209R1
-%def 209R1-209P3/209P4
-%def 209R2-209P3/209P4
-%def 209R3-209P3/209P4
-%def 209R4-209P4
-%def 209P3-2092
-%def 209P4-2092
+%def 209F-209R11/209R12
+%def 209G-209R15/209R12
+%def 209R15-209R5/209R4
+%def 209R12-209R1/+209R5/209R4
+%def 209R11-209R1
+%def 209R1-209P1/209P5
+%def 209R4-209P5
+%def 209R5-209P5
+%def 209P1-2092
+%def 209P5-2092
 
-%quo1 2091 209A 209S3 209S4
-%quo1 209P3 209P4
-%quo2 209N1 209N2 209N3
-%quo2 2112 209F 209R1 209R2 209R3
-%quo3 209N1 209N2 209N3 2112 209F 209R1 209R2 209R3
-%quo3 2112 209F 209R1 209R2 209R3 2102 209G 209N4 209R4
-%quo4 209N1 209N2 209N3 2112 209F 209R1 209R2 209R3 2102 209G 209N4 209R4
+%quo2 209S5 209N1 209N4 209N5
+%quo2 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5
+%quo3 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5
+
+%quo3 2091 209A 209S5 209N1 209N4 209N5 209P1 209S1
+%quo3 2091 209A 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5 209P1 209S1
+
+%quo2 2091 209A 209P1 209P5 209S1
+%quo2 209P1 209P5 2092 175F 175P1 175P2
+
+%quo1 209R1 209N1 209R11
+%quo2 209R4 209N4 209R5 209N5 209R15
+
+%mac tnine-right 209F-209R12/209R11
+%mac tnine-right 209G-209R12/209R15
+%mac tnine-right 209R11-209R1
+%mac tnine-right 209R12-209R2/+209R3/209R4/209R1/209R5
+%mac tnine-right 209R15-209R4/209R5
+%mac tnine-right 209R1-$
+%mac tnine-right 209R4-$
+%mac tnine-right 209R5-$
 
 ### TTEN
 
@@ -529,18 +563,18 @@ hs> "299R2"
 
 %trn len=100 n=l %televen-tninetyeight
 %trn len=100 n=m %televen-tninetyeight
-# %trn len=100 n=n %televen-tninetyeight
-%trn len=100 n=o %televen-tninetyeight,%televen-tnine
-# %trn len=100 n=p %televen-tninetyeight,%televen-tnine
+%trn len=100 n=n %televen-tninetyeight
+%trn len=100 n=o %televen-tninetyeight,%televen-tnine,%tnine-right
+%trn len=100 n=p %televen-tninetyeight,%televen-tnine
 %trn len=100 n=t 
-# %trn len=100 n=u 
-%trn len=100 n=w %tnine-tten,%tten-tnine
+%trn len=100 n=u 
+%trn len=100 n=w %tnine-tten,%tten-tnine,%tnine-right
 %trn len=100 n=x %tnine-tten,%tten-tnine
-# %trn len=100 n=y %tnine-tten,%tten-tnine
-# %trn len=100 n=z %tnine-tten,%tten-tnine
+%trn len=100 n=y %tnine-tten,%tten-tnine
+%trn len=100 n=z %tnine-tten,%tten-tnine
 %trn len=100 n=a %televen-tnine
 %trn len=100 n=b %televen-tnine
-# %trn len=100 n=c %televen-tnine
-# %trn len=100 n=d %televen-tnine
+%trn len=100 n=c %televen-tnine
+%trn len=100 n=d %televen-tnine
 
 %quo2 2121 212A 212X

@@ -119,6 +119,9 @@
 %mac t9 %hfourtynine-hfourtyfour
 %mac t9 %hfourtythree-hseventy
 %mac t9 %hseventyfour-twentysix
+%mac t9 %seventynine-eighty,%eighty-seventynine
+%mac t9 %twelve-eleven,%eleven-twelve
+%mac t9 %tten-tnine,%tnine-tten
 
 %mac detour %fourteen-thirteen
 %mac detour %fifteen-eighteen
@@ -220,13 +223,14 @@
 
 %mac ir7 %twentyone-twenty,%twenty-twentyone
 %mac ir7 %fiftyeight-hsixteen,%hsixteen-fiftyeight,%hsixteen-hseventeen
-%mac ir7 %ttwo-left,%ttwo-heighteen
+%mac ir7 %ttwo-heighteen
 %mac ir7 %fiftyseven-twentytwo
 %mac ir8 %twentythree-thirty,%thirty-twentythree
 %mac ir8a %ir8,%eighteen-twentyone,18H-18P0,18I-18P0,18P0-$
-%mac ir8b %ir7,%ir8,%thirtyone-thirtytwo,%thirtytwo-fiftytwo,%fiftytwo-thirtytwo
+%mac ir8b %thundred-left,%ir7,%ir8,%thirtyone-thirtytwo,%thirtytwo-fiftytwo,%fiftytwo-thirtytwo
 %mac ir8b %fiftyone-side
 %mac ir8c %ir8,%three-fourteen,%eighteen-twentyone
+%mac ir7 %ttwo-left
 
 %mac ir7a %twentyone-twenty,%twenty-twentyone,
 %mac ir7a %fiftyseven-twentytwo,%fiftynine-fiftyeight
@@ -288,6 +292,7 @@
 %mac ir4b %thirteen-fourteen
 %mac ir4b %fourteen-thirteen
 %mac ir4b %fourtyone-twentyseven
+%mac ir4b %fiftynine-fiftyeight
 %mac ir4b %fiftyseven-twentytwo
 %mac ir4b %fourtythree-eightythree
 %mac ir4b %fifty-eightyseven
@@ -297,6 +302,9 @@
 %mac ir4c %fourtythree-eightythree
 %mac ir4c %eightyseven-seventysix,%seventysix-eightyseven
 %mac ir4c %naughtyfour-naughtythree,%naughtyfour-seventyfive
+%mac ir4c %tten-tnine
+%mac ir4c %tnine-tten
+%mac ir4c %hthirtyfour-hfourtyfive
 
 %mac ir6 %fourty-fourtyone
 %mac ir6 %fiftythree-fiftyfive
@@ -371,11 +379,14 @@
 %mac ir0a %hfourtynine-hfourtyfour
 %mac ir0a %hfourtyone-hthirtyone
 %mac ir0a %hthirtyone-hfourtyone
+%mac ir0a %televen-tnine
 
 %mac ir0b %three-fourteen
 %mac ir0b %fiftynine-htwenty
 %mac ir0b %hfourtynine-hfourtyfour
 %mac ir0b %htwentyone-hfourty
+%mac ir0b %televen-tnine
+%mac ir0b %televen-tninetyeight
 
 %mac ir0c %three-fourteen
 %mac ir0c %hfourty-hthirtyone
@@ -385,9 +396,11 @@
 %mac ir0d %ir0z
 %mac ir0d %hthirtythree-hfourtyfive
 %mac ir0d %hfourtyfive-hthirtythree
+%mac ir0d %televen-tnine
 
 %mac ir0e %three-fourteen
 %mac ir0e %hthirtyfour-hfourtyfive
+%mac ir0e %televen-tnine
 
 %mac ir0f %ir0e
 %mac ir0f %hthirtyfive-hseventynine-left
@@ -447,6 +460,8 @@
 %mac t7 %t1,%hundredone-two
 %mac t8 %t2,%hundredone-two
 
+%mac localc %local,%five-eleven,%ten-turn,%ten-ten,%tten-tnine,%tnine-right,%tnine-tten,%ten-turn,%ten-eleven
+
 #########################################
 
 # %trn len=124 v=200 n=q-l %five-six,%ten-eleven,%two-one,%three-left-turn
@@ -454,12 +469,21 @@
 # %trn len=97 v=140 n=loc %local
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 
+%trn len=150 v=160 n=t9 %t9
+%trn len=150 v=160 n=t9 %t9
+%trn len=228 v=200 n=ir4c %ir4c
+%trn len=228 v=200 n=ir4c %ir4c
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=202 v=160 n=ir-c %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn,%televen-tninetyeight
+%trn len=97 v=140 n=loc-b %zero-one,%televen-tninetyeight,%televen-tnine,%tnine-right
 %trn len=380 v=200 n=iop %ir1y
 %trn len=380 v=200 n=ioq %ir9
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
 %trn len=380 v=200 n=ios %ir5
 %trn len=380 v=200 n=iot 
 
+%trn len=97 v=140 n=loc-c %localc
+%trn len=97 v=140 n=loc-c %localc
 %trn len=228 v=200 n=ir0h %ir0h
 %trn len=228 v=200 n=ir1m %ir1m
 %trn len=228 v=200 n=ir1y %ir1y
@@ -522,7 +546,6 @@
 %trn len=228 v=200 n=ir6a %ir6a
 %trn len=228 v=200 n=ir1y %ir1y
 %trn len=228 v=200 n=ir6g %ir6g
-%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
 %trn len=228 v=200 n=ir4c %ir4c
 %trn len=228 v=200 n=ir3 %detour
 %trn len=150 v=160 n=t9 %t9
@@ -595,7 +618,6 @@
 %trn len=228 v=200 n=ir1q %ir1q
 %trn len=228 v=200 n=ir5f %ir5f
 %trn len=228 v=200 n=ir4a %ir4a
-%trn len=97 v=140 n=loc-c %local,%five-eleven,%ten-turn,%ten-ten,10X-10U/10V-12H,%ten-turn,%ten-eleven
 %trn len=150 v=160 n=t2 %t2
 %trn len=228 v=200 n=ir5g %ir5g
 %trn len=228 v=200 n=ir9b %ir9b
@@ -627,7 +649,6 @@
 %trn len=228 v=200 n=ir9 %ir9
 %trn len=228 v=200 n=ir8b %ir8b
 %trn len=150 v=160 n=t4 %t4
-%trn len=97 v=140 n=loc-c %local,%five-eleven,%ten-turn,%ten-ten,10X-10U/10V-12H,%ten-turn,%ten-eleven
 %trn len=228 v=200 n=ir1 %outlet
 %trn len=228 v=200 n=ir1z %ir1z
 %trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
@@ -691,7 +712,7 @@
 %trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
 %trn len=228 v=200 n=ir1t %ir1t
 %trn len=228 v=200 n=ir0d %ir0d
-%trn len=97 v=140 n=loc-7 %five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,7F-7P3/7P2/7P4,7P3-$,7P2-$,7P4-$,%six-five,%five-six
+%trn len=97 v=140 n=loc-7 %five-eleven,%eleven-twelve,10I-11B,10J-11B,%televen-tninetyeight,7F-7P3/7P2/7P4,7P3-$,7P2-$,7P4-$,%six-five,%five-six
 %trn len=150 v=160 n=t8 %t8
 %trn len=228 v=200 n=ir1m %ir1m
 %trn len=80 n=35c %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%thirtyseven-fifteen,%fifteen-thirtyseven,%fifteen-eighteen,%eighteen-fifteen,%nineteen-fifteen,%twentyfour-twentysix,%fiftysix-twentysix,%fiftyfive-ninetysix,%ninetysix-fiftyfive,%ninetyfive-ninetysix,%ninety-ninetyfive,%hninetyeight-hsixtyone,%hsixtyone-hsixtytwo
