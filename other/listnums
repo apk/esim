@@ -1,0 +1,23 @@
+#!/bin/sh
+first=999
+ex=999
+(sed -n -e 's/^.*hp.*"\([0-9][0-9]*\)[AF]"$/\1/p' <layout.in | sort -n | uniq; echo 999) | while read n
+do
+	# echo first=$first ex=$ex n=$n
+	if [ `expr $ex + 1` = $n ]
+	then
+		ex=$n
+	else
+		if [ $first != 999 ]
+		then
+			if [ $first = $ex ]
+			then
+				echo $first
+			else
+				echo $first - $ex
+			fi
+		fi
+		first=$n
+		ex=$n
+	fi
+done
