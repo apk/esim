@@ -9812,10 +9812,10 @@ end "05n"
 %mac naughtyfive-naughtysix 05S3-05N3/05N4
 %mac naughtyfive-naughtysix 05S8-05N2/05N1
 %mac naughtyfive-naughtysix 05S9-05N2/05N1
-%mac naughtyfive-naughtysix 05N1-051
-%mac naughtyfive-naughtysix 05N2-051
-%mac naughtyfive-naughtysix 05N3-051
-%mac naughtyfive-naughtysix 05N4-051
+%mac naughtyfive-naughtysix 05N1-06B/+051
+%mac naughtyfive-naughtysix 05N2-051/06B
+%mac naughtyfive-naughtysix 05N3-051/06B
+%mac naughtyfive-naughtysix 05N4-051/06B
 
 %mac naughtyfive-naughtyfour 05F-05R1/05R2/05R3/05R4
 %mac naughtyfive-naughtyfour 05G-05R2/+05R1/05R3/05R4
@@ -11606,7 +11606,7 @@ end "101c"
 
 %quo3 101A 101N1 101N2 101N3 101F 101G 101P1 101P2 101P3
 %quo1 101A 101N1 101N2
-%quo1 101A 101N2 101N2
+%quo1 101A 101N2 101N3
 %quo2 101F 101G 101P1 101P2 101P3
 %quo2 101F 101P1 101P2 101N1 101N2
 %quo2 101G 101P2 101P3 101N2 101N3
