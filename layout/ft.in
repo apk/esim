@@ -17,6 +17,7 @@ hp> "3997"
 end "398c399"
 
 %quo1 X 3997
+%def 3997-X
 
 25u begin +0u "398t399"
 1u 50m
@@ -687,15 +688,15 @@ hs> "353S9"
 3u 800m
 <end "353P9"
 
-77v begin -2u "801c" sw
+79v begin -2u "801c" sw
 ~ 2u 75m w
 hs> "801N1"
 4u 800m
 <hs "801P1"
-~ 50m nw
+2u ~ 75m nw
 end "801d"
 
-91v begin -1u "801t802" w
+93v begin -1u "801t802" w
 1u 200m
 hp> "8021"
 1u 150m
@@ -709,7 +710,8 @@ hs> "801N2"
 hs> "801S2"
 3v 200m
 <hs "801P2"
-3u >w / se "801d" 8d
+w< 3v / nw "801z" 801D
+3v >w / se "801d" 8d
 w< 3u / nw "801b" 8d
 2u 200m
 hp> "801A"
@@ -721,7 +723,7 @@ hp> "8011"
 2u 200m
 w< / sw "353dz" 8d
 w< / nw "353cc" 5d
-25m >w< 25m / 25m sw "353cb" 4d / 25m ne "353cd"
+25m >ekw 25m / 25m sw "353cb" 4d / 25m ne "353cd"
 w< / nw "353ce" 5d
 >w / ne "353a" 5d
 hs> "353S1"
@@ -731,7 +733,7 @@ hs> "353S1"
 "353cc" >< "353cd"
 "353ce" >< "353a"
 
-90v begin -2u "802t801" w
+92v begin -2u "802t801" w
 2u 300m
 <hp "801F"
 2u 200m
@@ -742,7 +744,8 @@ hs> "801N3"
 1u 200m
 1u 400m
 <hs "801P3"
-7u >w / se "801b" 8d
+3u >w 2u / se "801z" 801D
+3u >w / se "801b" 8d
 2u 200m
 hp> "801B"
 1u 100m
@@ -754,7 +757,7 @@ hp> "801B"
 w< / nw "353da" 5d
 25m >w< 25m / 25m sw "353cd" 4d / 25m ne "353db"
 25m ekw< 25m / 25m nw "353cf" 4d / 25m se "353cc"
-25m >w< 25m / 25m sw "353a" 4d / 25m ne "353b"
+25m >ekw 25m / 25m sw "353a" 4d / 25m ne "353b"
 >w / se "353ce" 5d
 hs> "353S2"
 3u 800m
@@ -790,9 +793,9 @@ hs> "353N3"
 <hs "353R3"
 w< 50m / 50m nw "353d" 5d
 25m >w< 25m / 25m sw "353db" 4d / 25m ne "353dc"
-25m >w< 25m / 25m nw "353e" 4d / 25m se "353da"
-25m ekw< 25m / 25m sw "353b" 6d / 25m ne "353f"
-25m >w< 25m / 25m nw "353cg" 6d / 25m se "353cf"
+25m ekw< 25m / 25m nw "353e" 4d / 25m se "353da"
+25m >w< 25m / 25m sw "353b" 4d / 25m ne "353f"
+25m >w< 25m / 25m nw "353cg" 4d / 25m se "353cf"
 50m >w / 50m ne "353g" 5d
 hs> "353S3"
 3u 800m
