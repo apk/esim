@@ -2761,9 +2761,9 @@ hs> "325N0"
 ~ 50m ne
 end "325h"
 
-%quo3 325N1 326B 326N1 326N2 326N3 326N4
-%quo3 3263 3267 326G 326P1 326P2 326P3 326P4
-%quo4 325N1 326B 326N1 326N2 326N3 326N4 3263 3267 326G 326P1 326P2 326P3 326P4
+%quo3 3263 3267 326B 326N1 326N2 326N3 326N4
+%quo3 327P3 326G 326P1 326P2 326P3 326P4
+%quo4 3263 3267 326B 326N1 326N2 326N3 326N4 327P3 326G 326P1 326P2 326P3 326P4
 
 %def 325A-325N2/325N3/325N0/325N1
 %def 325B-325N1/+325N2/325N0/325N3
@@ -2810,11 +2810,13 @@ hp> "2321"
 1u 1000m
 <hp "231F"
 3v 200m
-w< 3u / ne "231a" 10d
+ne
+w< / e "231a" 10d
+2u 50m e
 hs> "231N1"
 7v 800m
 <hs "231P1"
-3u >w / nw "231b" 10d
+3u >w / sw "231b" 10d
 3v 200m
 hp> "231A"
 3v 1000m
@@ -2829,12 +2831,12 @@ hs> "232N2"
 end "232b"
 %quo1 2332 2331 232F
 
-65v begin +0u "231a" ne
+65v begin +0u "231a" se
 ~ 50m e
 hs> "231N2"
 7v 800m
 <hs "231P2"
-~ 50m se
+~ 50m ne
 end "231b"
 %quo1 2332 2331 232F
 
@@ -2862,7 +2864,13 @@ end "231b"
 
 ### THHUNDRED
 
-8u begin =3+37v "231c300"
+41u begin =1+37v "300bf" ne
+~ 50m e
+hs> "300R10"
+3u 800m
+<end "300N10"
+
+19v begin +1u "231c300"
 2u 1000m
 <hp "2312"
 1u 200m
@@ -2871,10 +2879,18 @@ hp> "2311"
 1u 1000m
 <hp "300F"
 2u 200m
-~ 50m se
-end "300a"
+w< 4u / se "300a" 10d
+4u >w / sw "300bb" 8d
+hs> "300P9"
+4u 800m
+<hs "300S9"
+w< 3u / se "300be" 5d
+3u 75m >w< 3u 75m / 25m ne "300bf" 4d / 25m sw "300bd"
+hs> "300R9"
+3u 800m
+<end "300N9"
 
-13v begin +2u "300t325"
+6u begin +2u "300t325"
 1u 200m
 hp> "3255"
 1u 800m
@@ -2886,24 +2902,25 @@ hp> "3251"
 1u 600m
 <hp "300D"
 2u 200m
-2u 50m
-ne
->w / w "300a" 13d
-e
-w< 7u / se "300b" 10d
+3u >w / sw "300ba" 8d
+>w / nw "300a" 10d
+w< / se "300b" 10d
+w< 3u / ne "300bb" 8d
 hs> "300P8"
 4u 800m
 <hs "300S8"
-w< 3u / se "300c" 5d
+3u 75m >w< 25m / 25m se "300c" 4d / 25m nw "300be"
+25m ekw< 25m / 25m ne "300bd" 4d / 25m sw "300bc"
 w< / se "300d" 5d
 >w / sw "300e" 5d
 hs> "300R8"
 3u 800m
 <end "300N8"
 
+"300c" >< "300bc"
 "300d" >< "300e"
 
-7u begin +2u "325t300"
+13v begin +2u "325t300"
 2u 800m
 <hp "3254"
 1u 200m
@@ -2913,15 +2930,14 @@ hs> "300R8"
 1u 800m
 <hp "300C"
 2u 200m
-3u 75m
-2u 50m ne
-e
-2u >w / nw "300b" 10d
+w< 3u / ne "300ba" 8d
+5u >w / nw "300b" 10d
 w< 3u / se "300f" 8d
 hs> "300P7"
 4u 800m
 <hs "300S7"
-3u 75m ekw< 25m / 25m se "300g" 4d / 25m nw "300c"
+w< / ne "300bc" 5d
+25m ekw< 25m / 25m se "300g" 4d / 25m nw "300c"
 25m >w< 25m / 25m ne "300e" 4d / 25m sw "300h" 
 >w / nw "300d" 5d
 hs> "300R7"
@@ -2930,7 +2946,7 @@ hs> "300R7"
 
 "300g" >< "300h"
 
-53v begin -1u "300f" se
+56v begin +1u "300f" se
 ~ 50m e
 hs> "300P6"
 4u 800m
@@ -2946,7 +2962,13 @@ hs> "300R6"
 "300i" >< "300j"
 "300k" >< "300l"
 
-11v begin +3u "300t259"
+4v begin +3u "300t259"
+1u 200m
+hp> "3004"
+1u 800m
+1u 200m
+hp> "3006"
+1u 800m
 1u 200m
 hp> "3008"
 1u 600m
@@ -2968,8 +2990,14 @@ hs> "300R5"
 "300n" >< "300o"
 "300p" >< "300q"
 
-6u begin +2u "259t300"
+5v begin +2u "259t300"
 2u 800m
+<hp "3005"
+1u 200m
+1u 800m
+<hp "3007"
+1u 200m
+1u 800m
 <hp "300A"
 2u 200m
 3u >w / nw "300m" 8d
@@ -2992,7 +3020,7 @@ hs> "300R4"
 "300v" >< "300w"
 "300x" >< "300y"
 
-29v begin +3u "300z" ne
+32v begin +3u "300z" ne
 ~ 50m e
 >w / nw "300r" 8d
 w< / se "300aa" 8d
@@ -3013,8 +3041,13 @@ hs> "300R3"
 "300ab" >< "300ac"
 "300ad" >< "300ae"
 
-8u begin +1u "xxxc300"
+11v begin +1u "999c300"
 2u 800m
+<hp "3009"
+1u 200m
+hp> "3000"
+1u 1000m
+1u 1000m
 <hp "300E"
 2u 200m
 w< 4u / ne "300z" 10d
@@ -3025,15 +3058,15 @@ hs> "300P2"
 <hs "300S2"
 w< / ne "300ac" 5d
 25m >w< 25m / 25m se "300ag" 4d / 25m nw "300ab" 
-25m >w< 25m / 25m ne "300ad" 4d / 25m sw "300ah" 
-25m >w< 3u 75m / 25m se "300ai" 4d / 25m nw "300ac" 
+25m >w< 25m / 25m ne "300ae" 4d / 25m sw "300ah" 
+25m >ekw 3u 75m / 25m se "300ai" 4d / 25m nw "300ad" 
 hs> "300R2"
 3u 800m
 <end "300N2"
 
 "300ag" >< "300ah"
 
-49v begin +1u "300af" se
+26u begin +1u "300af" se
 ~ 50m e
 hs> "300P1"
 4u 800m
@@ -3050,66 +3083,78 @@ hs> "300R1"
 
 %mac thhundred-thtwentyfive 300A-300S4/300S3/300S2/300S1
 %mac thhundred-thtwentyfive 300B-300S5/+300S4/300S3/300S2/300S1
-%mac thhundred-thtwentyfive 300C-300S7/300S6
-%mac thhundred-thtwentyfive 300D-300S8/+300S7/300S6
-%mac thhundred-thtwentyfive 300F-300S8/+300S7/300S6
+%mac thhundred-thtwentyfive 300C-300S7/300S6/300S9/300S8
+%mac thhundred-thtwentyfive 300D-300S8/+300S7/+300S9/300S6
+%mac thhundred-thtwentyfive 300E-300S2/300S3/300S1/300S4
+%mac thhundred-thtwentyfive 300F-300S9/+300S8/+300S7/300S6
 %mac thhundred-thtwentyfive 300S1-300N3/+300N4
 %mac thhundred-thtwentyfive 300S2-300N6/+300N5/+300N3/+300N4
 %mac thhundred-thtwentyfive 300S3-300N8/+300N6/+300N5/+300N3/+300N4/+300N7
 %mac thhundred-thtwentyfive 300S4-300N8/+300N6/+300N5/+300N3/+300N4/+300N7
 %mac thhundred-thtwentyfive 300S5-300N8/+300N6/+300N5/+300N3/+300N4/+300N7
 %mac thhundred-thtwentyfive 300S6-300N8/+300N6/+300N5/+300N7/300N4/300N3
-%mac thhundred-thtwentyfive 300S7-300N8/+300N7/+300N6/+300N5
-%mac thhundred-thtwentyfive 300S8-300N8/+300N7/+300N6/+300N5
+%mac thhundred-thtwentyfive 300S7-300N8/+300N9/+300N10/+300N7/+300N6/+300N5
+%mac thhundred-thtwentyfive 300S8-300N8/+300N9/+300N10/+300N7/+300N6/+300N5
+%mac thhundred-thtwentyfive 300S9-300N8/+300N9/+300N10/+300N7/+300N6/+300N5
 
 %mac thhundred-thtwentyfive 300R3-300P6
 %mac thhundred-thtwentyfive 300R4-300P6
-%mac thhundred-thtwentyfive 300R5-300P8/300P6/300P7
-%mac thhundred-thtwentyfive 300R6-300P8/300P6/300P7
-%mac thhundred-thtwentyfive 300R7-300P7/+300P8/300P6
-%mac thhundred-thtwentyfive 300R8-300P8/300P6/300P7
+%mac thhundred-thtwentyfive 300R5-300P8/300P6/300P7/300P9
+%mac thhundred-thtwentyfive 300R6-300P8/300P6/300P7/300P9
+%mac thhundred-thtwentyfive 300R7-300P7/+300P8/300P6/300P9
+%mac thhundred-thtwentyfive 300R8-300P8/300P6/300P7/300P9
+%mac thhundred-thtwentyfive 300R9-300P8/+300P9/300P7
+%mac thhundred-thtwentyfive 300R10-300P9/300P8/300P7
 %mac thhundred-thtwentyfive 300P6-3251/325B
 %mac thhundred-thtwentyfive 300P7-325B/+3251
-%mac thhundred-thtwentyfive 300P8-3251
+%mac thhundred-thtwentyfive 300P8-3251/325B
+%mac thhundred-thtwentyfive 300P9-3251/325B
 
 %mac thhundred-tthirtyone 300A-300S4/300S3/300S2/300S1
 %mac thhundred-tthirtyone 300B-300S5/+300S4/300S3/300S2/300S1
-%mac thhundred-tthirtyone 300C-300S7/300S6
-%mac thhundred-tthirtyone 300D-300S8/+300S7/300S6
-%mac thhundred-tthirtyone 300F-300S8/+300S7/300S6
+%mac thhundred-tthirtyone 300C-300S7/300S6/300S9/300S8
+%mac thhundred-tthirtyone 300D-300S8/+300S7/+300S9/300S6
+%mac thhundred-tthirtyone 300E-300S2/300S3/300S1/300S4
+%mac thhundred-tthirtyone 300F-300S9/+300S8/+300S7/300S6
 %mac thhundred-tthirtyone 300S1-300N3/+300N4
 %mac thhundred-tthirtyone 300S2-300N6/+300N5/+300N3/+300N4
 %mac thhundred-tthirtyone 300S3-300N8/+300N6/+300N5/+300N3/+300N4/+300N7
 %mac thhundred-tthirtyone 300S4-300N8/+300N6/+300N5/+300N3/+300N4/+300N7
 %mac thhundred-tthirtyone 300S5-300N8/+300N6/+300N5/+300N3/+300N4/+300N7
 %mac thhundred-tthirtyone 300S6-300N8/+300N6/+300N5/+300N7/300N4/300N3
-%mac thhundred-tthirtyone 300S7-300N8/+300N7/+300N6/+300N5
-%mac thhundred-tthirtyone 300S8-300N8/+300N7/+300N6/+300N5
+%mac thhundred-tthirtyone 300S7-300N8/+300N9/+300N10/+300N7/+300N6/+300N5
+%mac thhundred-tthirtyone 300S8-300N8/+300N9/+300N10/+300N7/+300N6/+300N5
+%mac thhundred-tthirtyone 300S9-300N9/+300N8/+300N10/+300N7/+300N6/+300N5
 
 %mac thhundred-tthirtyone 300R3-300P6
 %mac thhundred-tthirtyone 300R4-300P6
-%mac thhundred-tthirtyone 300R5-300P8/300P6/300P7
-%mac thhundred-tthirtyone 300R6-300P8/300P6/300P7
-%mac thhundred-tthirtyone 300R7-300P7/+300P8/300P6
-%mac thhundred-tthirtyone 300R8-300P8/300P6/300P7
+%mac thhundred-tthirtyone 300R5-300P9/300P8/300P6/300P7
+%mac thhundred-tthirtyone 300R6-300P9/300P8/300P6/300P7
+%mac thhundred-tthirtyone 300R7-300P9/+300P8/+300P7/300P6
+%mac thhundred-tthirtyone 300R8-300P9/300P8/300P6/300P7
+%mac thhundred-tthirtyone 300R9-300P9/300P8/300P7
+%mac thhundred-tthirtyone 300R10-300P9/300P8/300P7
 %mac thhundred-tthirtyone 300P6-2311
 %mac thhundred-tthirtyone 300P6-2311
 %mac thhundred-tthirtyone 300P7-2311
 %mac thhundred-tthirtyone 300P8-2311
+%mac thhundred-tthirtyone 300P9-2311
 
 %mac thhundred-tfiftynine 300A-300S4/300S3/300S2/300S1
 %mac thhundred-tfiftynine 300B-300S5/+300S4/300S3/300S2/300S1
-%mac thhundred-tfiftynine 300C-300S7/300S6
-%mac thhundred-tfiftynine 300D-300S8/+300S7/300S6
-%mac thhundred-tfiftynine 300F-300S8/+300S7/300S6
+%mac thhundred-tfiftynine 300C-300S7/300S6/300S9/300S8
+%mac thhundred-tfiftynine 300D-300S8/+300S7/+300S9/300S6
+%mac thhundred-tfiftynine 300E-300S2/300S3/300S1/300S4
+%mac thhundred-tfiftynine 300F-300S9/+300S8/+300S7/300S6
 %mac thhundred-tfiftynine 300S1-300N3/+300N2/+300N4/+300N1
 %mac thhundred-tfiftynine 300S2-300N5/+300N3/+300N2/+300N4/+300N6/+300N1
 %mac thhundred-tfiftynine 300S3-300N5/+300N3/+300N2/+300N4/+300N6/+300N1/300N7/300N8
 %mac thhundred-tfiftynine 300S4-300N5/+300N4/+300N3/+300N2/+300N6/+300N1/300N7/300N8
 %mac thhundred-tfiftynine 300S5-300N5/+300N4/+300N3/+300N2/+300N6/+300N1/300N7/300N8
-%mac thhundred-tfiftynine 300S6-300N5/+300N6/+300N3/+300N4/+300N2/300N1/300N7/300N8
+%mac thhundred-tfiftynine 300S6-300N5/+300N6/+300N3/+300N4/300N7/300N8
 %mac thhundred-tfiftynine 300S7-300N5/+300N6/300N7/300N8
 %mac thhundred-tfiftynine 300S8-300N5/+300N6/300N7/300N8
+%mac thhundred-tfiftynine 300S9-300N5/+300N6/300N7/300N8
 
 %mac thhundred-tfiftynine 300R1-300P5/300P3/300P2/300P1/300P4
 %mac thhundred-tfiftynine 300R2-300P5/300P3/300P2/300P1/300P4
@@ -3125,28 +3170,132 @@ hs> "300R1"
 %mac thhundred-tfiftynine 300P4-3008/259G
 %mac thhundred-tfiftynine 300P5-3008/259G
 
+%mac thhundred-nnn 300A-300S2/300S3/300S1/300S4
+%mac thhundred-nnn 300B-300S5/+300S4/300S3/300S2/300S1
+%mac thhundred-nnn 300C-300S7/300S6/300S9/300S8
+%mac thhundred-nnn 300D-300S8/+300S7/+300S9/300S6
+%mac thhundred-nnn 300E-300S2/300S3/300S1/300S4
+%mac thhundred-nnn 300F-300S9/+300S8/+300S7/300S6
+%mac thhundred-nnn 300S1-300N1/+300N2/+300N3/+300N4
+%mac thhundred-nnn 300S2-300N2/+300N1/+300N3/+300N4/+300N5/+300N6
+%mac thhundred-nnn 300S3-300N2/+300N3/+300N1/+300N4/+300N5/+300N6/300N7/300N8
+%mac thhundred-nnn 300S4-300N2/+300N3/+300N1/+300N4/+300N5/+300N6/300N7/300N8
+%mac thhundred-nnn 300S5-300N2/+300N3/+300N1/+300N4/+300N5/+300N6/300N7/300N8
+%mac thhundred-nnn 300S6-300N3/+300N4/+300N5/+300N6/300N7/300N8
+%mac thhundred-nnn 300S7-300N5/+300N6/300N7/300N8
+%mac thhundred-nnn 300S8-300N5/+300N6/300N7/300N8
+%mac thhundred-nnn 300S9-300N5/+300N6/300N7/300N8
+
+%mac thhundred-nnn 300R1-300P2/300P1/300P3/300P4
+%mac thhundred-nnn 300R2-300P2/300P3/300P1/300P4
+%mac thhundred-nnn 300R3-300P2/300P3/300P1/300P4
+%mac thhundred-nnn 300R4-300P2/300P3/300P1/300P4
+%mac thhundred-nnn 300R5-300P2/300P3/300P4
+%mac thhundred-nnn 300R6-300P2/300P3/300P4
+%mac thhundred-nnn 300R7-300P3/300P4
+%mac thhundred-nnn 300R8-300P3/300P4
+%mac thhundred-nnn 300P1-3000
+%mac thhundred-nnn 300P2-3000
+%mac thhundred-nnn 300P3-3000
+%mac thhundred-nnn 300P4-3000
+
 %def %thhundred-thtwentyfive
 
-%quo4 300S8 300R5 300R6 300R7 300R8 300N5 300N6 300N7 300N8
-%quo6 300S5 300S8 300R5 300R6 300R7 300R8 300N5 300N6 300N7 300N8 300R3 300N3 300R4 300N4
+%quo6 300S5 300R5 300R6 300R7 300R8 300N5 300N6 300N7 300N8 300R3 300N3 300R4 300N4
 
-%quo1 300P6 300P7
-%quo2 300D 2312 300F 300S6 300S7 300P6 300P7
+%quo3 300P6 300P7 300P8 300P9
+%quo3 300D 2312 300F 300S6 300S7 300S8 300S9
+%quo4 300P6 300P7 300P8 300P9 300D 2312 300F 300S6 300S7 300S8 300S9
 
-%quo3 300B 300E 300S1 300S2 300S3 300S4
-%quo3 300P1 300P2 300P3 300P4
-%quo4 300B 300E 300S1 300S2 300S3 300S4 300P1 300P2 300P3 300P4
+%quo2 300S2 300S3 300S4
+%quo2 300P2 300P3 300P4
+%quo3 300B 3009 300E 300P1 300S1 300S2 300S3 300S4
+%quo4 300B 3009 300E 300P1 300S1 300S2 300S3 300S4 300P2 300P3 300P4
+
+### TTHIRTYFOUR+THREE
+
+1v begin =3+9v "999c300"
+3v 1000m
+<hp "999F"
+3v 200m
+w< / ne "999a" 10d
+w< 3u / se "999b" 8d
+hs> "999N2"
+7v 800m
+<hs "999P2"
+3u >w / sw "999c" 8d
+>w / nw "999d" 10d
+3v 200m
+hp> "999A"
+1u 1000m
+1u 1000m
+<hp "9992"
+1u 200m
+hp> "9991"
+1u 1000m
+1u 1000m
+<hp "998F"
+3v 200m
+w< 3u / se "998a" 10d
+hs> "998N1"
+7v 800m
+<hs "998P1"
+3u >w / sw "998b" 10d
+3v 200m
+hp> "998A"
+3v 1000m
+end "997c998"
+
+6u begin -1u "999a" ne
+~ 3u 100m e
+hs> "999N1"
+7v 800m
+<hs "999P1"
+3u ~ 100m se
+end "999d"
+
+8u begin +2u "999b" se
+~ 50m e
+hs> "999N3"
+7v 800m
+<hs "999P3"
+~ 50m ne
+end "999c"
+
+65v begin +0u "998a" se
+~ 50m e
+hs> "998N2"
+7v 800m
+<hs "998P2"
+~ 50m ne
+end "998b"
+
+%def 999A-999N2/++999N1/999N3
+%def 999N1-3009
+%def 999N2-3009
+%def 999N3-3009
+
+%def 999F-999P2/++999P1/999P3
+%def 999P1-9992
+%def 999P2-9992
+%def 999P3-9992
+
+%quo2 9991 999A 999N1 999N2 999N3
+%quo2 3000 999F 999P1 999P2 999P3
+%quo3 9991 999A 999N1 999N2 999N3 3000 999F 999P1 999P2 999P3
+
+%def 998A-998N1/++998N2
+%def 998N1-9991
+%def 998N2-9991
+
+%def 998F-998P1/++998P2
+%def 998P1-9982
+%def 998P2-9982
 
 ### EPILOG
 
 1u begin =7+9v "300t259"
 2u 800m
-<hp "3006"
-1u 200m
-1u 800m
-<hp "3004"
-1u 200m
-1u 800m
 <hp "3002"
 1u 200m
 1u 800m
@@ -3159,12 +3308,6 @@ hs> "259N1"
 <end "259P1"
 
 1v begin -2u "259t300"
-1u 200m
-hp> "3007"
-1u 800m
-1u 200m
-hp> "3005"
-1u 800m
 1u 200m
 hp> "3003"
 1u 800m
@@ -3184,6 +3327,18 @@ hs> "259N2"
 %def 259N1-300B/+3001
 %def 259N2-3001/300B
 %quo2 259G 259N1 259N2 259P1 259P2
+
+1v begin -2u "997c998"
+3v 1000m
+<hp "9982"
+1u 200m
+hp> "9981"
+3u 800m
+<end "997F"
+%quo1 9982 9981 997F
+
+%quo1 9992 998F 998P1 998P2
+%quo1 9981 998A 998N1 998N2
 
 # %trn len=100 v=200 n=0 
 %trn len=100 v=200 n=1 %fseventythree-fseventyseven
@@ -3213,8 +3368,14 @@ hs> "259N2"
 %trn len=100 v=200 n=24 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-thtwentyfive
 %trn len=100 v=200 n=25 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-thtwentyfive
 %trn len=100 v=200 n=26 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight,%thhundred-tfiftynine,%thhundred-thtwentyfive
+%trn len=100 v=200 n=29 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-nnn,%thhundred-tfiftynine
 %trn len=100 v=200 n=33 %thtwentyseven-tthirtyfour,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-tthirtyone
 %trn len=100 v=200 n=34 %thtwentyseven-tthirtyfour,%b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-tthirtyone
+%trn len=100 v=200 n=43 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-nnn,%thhundred-thtwentyfive
+%trn len=100 v=200 n=44 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-nnn,%thhundred-thtwentyfive
+%trn len=100 v=200 n=45 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo,%thhundred-nnn,%thhundred-thtwentyfive
+%trn len=100 v=200 n=46 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight,%thhundred-nnn,%thhundred-thtwentyfive
+%trn len=100 v=200 n=49 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-nnn
 
 %trn len=100 v=200 n=0 
 %trn len=100 v=200 n=1 %fseventythree-fseventyseven
