@@ -431,8 +431,8 @@ end "78d"
 %def 12N2-103/+12D
 %def 12N1-12D/103
 
-%def 12C-10Z
-%def 12D-10W/+10Z
+%def 12C-210A
+%def 12D-210B/+210A
 %def 12H-102
 %def 12I-104/102
 %def 12J-104/+102
@@ -2113,7 +2113,7 @@ hs> "12P1"
 1u 25m se
 end "12d"
 
-47u begin +3u "12t10" w
+47u begin +3u "12t210" w
 1u 1100m w
 <hp "12I"
 3v 200m
@@ -2184,7 +2184,7 @@ end "Tri"
 1u 25m nw
 end "12y"
 
-47u begin -4u "10t12" w
+47u begin -4u "210t12" w
 1u 1100m
 <hp "12H"
 3v 200m
@@ -13255,7 +13255,10 @@ hs> "202N3"
 50m >w / 50m sw "202f" 13d
 3v 200m
 hp> "202A"
-1u 1000m
+1u 800m
+<hp "2024"
+1u 200m
+hp> "2023"
 1u 1000m
 <hp "2022"
 1u 200m
@@ -13333,10 +13336,10 @@ end "202h"
 
 %def 202F-202P3/202P5/202P4/202P2
 %def 202G-202P2/202P3/202P4/202P5
-%def 202P2-2022
-%def 202P3-2022
-%def 202P4-2022
-%def 202P5-2022
+%def 202P2-2024
+%def 202P3-2024
+%def 202P4-2024
+%def 202P5-2024
 %def 202R1-202P1/+202P0
 
 %mac ttwo-left 202F-202R1/+202P4/202P3/202P5/202P2
@@ -13353,9 +13356,9 @@ end "202h"
 %mac ttwo-right 202N5-$
 
 %quo2 202R1 202N0 202N1 202P0 202P1
-%quo3 2021 202A 202N2 202N3 202N4 202N5
+%quo3 2021 2023 202A 202N2 202N3 202N4 202N5
 %quo3 2032 202F 202G 202P2 202P3 202P4 202P5
-%quo4 2021 202A 202N2 202N3 202N4 202N5 2032 202F 202G 202P2 202P3 202P4 202P5
+%quo4 2021 2023 202A 202N2 202N3 202N4 202N5 2032 202F 202G 202P2 202P3 202P4 202P5
 
 # 203
 
@@ -13433,8 +13436,14 @@ end "200d"
 %def 201P1-2012
 %def 201P2-2012
 
-%quo1 2011 201A 201N1 201N2
-%quo1 2022 201F 201P1 201P2
+%quo1 201N1 201N2
+%quo1 201P1 201P2
+
+# XXX to trivial, should only limit one (or the other) direction to one
+%quo3 2011 201A 201N1 201N2 2024 2022 201F 201P1 201P2
+
+%quo4 2011 201A 201N1 201N2 2021 2023 202A 202N2 202N3 202N4 202N5
+%quo5 2011 201A 201N1 201N2 2021 2023 202A 202N2 202N3 202N4 202N5 2032 202F 202G 202P2 202P3 202P4 202P5
 
 %def 200A-200N1/200N3/200N2
 %def 200N1-2011
@@ -13446,9 +13455,17 @@ end "200d"
 %def 200P2-158F
 %def 200P3-158F
 
+%mac thundred-left 200F-200P2/+200P3/200P1
+%mac thundred-left 200P1-$
+%mac thundred-left 200P2-$
+%mac thundred-left 200P3-$
+
 %quo2 200A 200N1 200N2 200N3
 %quo2 2012 200F 200P1 200P2 200P3
 %quo3 200A 200N1 200N2 200N3 2012 200F 200P1 200P2 200P3
+
+%quo3 2024 2022 201F 201P1 201P2 2012 200F 200P1 200P2 200P3
+%quo4 2024 2022 201F 201P1 201P2 200A 200N1 200N2 200N3 2012 200F 200P1 200P2 200P3
 
 ### FIFTYSEVEN
 
@@ -14344,26 +14361,6 @@ end "116p"
 
 %quo6 1172 116C 116P0 116N0 116H 116P5 116N5 116B 116N1 116N2 116N3 116N4 116G 116P1 116P2 116P3 116P4
 
-### HUNDRED-FOURTYTWO
-
-1u begin =4+2u "149c176"
-2u 200m
-w< 50m / 50m se "x" 20d
-2u 2000m
-<hp "176A"
-1u 200m
-1u 800m
-<hp "176X"
-1u 200m
-1u 1000m
-1u 1000m
-<hp "176Y"
-1u 200m
-1u 800m
-<hp "176Z"
-1u 200m
-end "x"
-
 ### HUNDRED-THIRTY
 
 41v begin =8+9u "130a" se
@@ -14551,6 +14548,544 @@ end "121t120"
 %def 120P1-1206/59G
 %def 120P2-59G/+1206
 %def 120P3-1206
+
+### DUMMIES
+
+3u begin =1+3u "212t211"
+2u 200m
+w< 50m / 50m ne "211y"
+2u 800m
+<hp "212B"
+2u 2000m
+end "211y"
+
+16u begin +0u "211t212"
+2u 200m
+w< 50m / 50m ne "211x"
+2u 800m
+<hp "212A"
+1u 200m
+1u 800m
+<hp "212X"
+2u 2000m
+end "211x"
+
+### HSEVENTYFIVE+SIX
+
+1v begin =2+11v "149c176"
+2u 1000m
+<hp "176A"
+3v 200m
+w< 50m / 50m se "176a" 8d
+2u 50m
+hs> "176P1"
+3u 800m
+<hs "176N1"
+2u 50m
+50m >w / 50m sw "176b" 8d
+3v 200m
+hp> "176F"
+1u 1000m
+1u 1000m
+<hp "1751"
+1u 200m
+hp> "1752"
+1u 1000m
+1u 1000m
+<hp "175A"
+3v 200m
+w< 50m / 50m se "175a" 8d
+2u 50m
+hs> "175P1"
+3u 800m
+<hs "175N1"
+2u 50m
+50m >w / 50m sw "175b" 8d
+3v 200m
+hp> "175F"
+3v 1000m
+<hp "2091"
+1u 200m
+hp> "2092"
+1u 1000m
+1u 1000m
+end "175c209"
+
+13v begin +1u "176a" se
+~ 50m e
+hs> "176P2"
+3u 800m
+<hs "176N2"
+~ 50m ne
+end "176b"
+
+57v begin +0u "175a" se
+~ 50m e
+hs> "175P2"
+3u 800m
+<hs "175N2"
+~ 50m ne
+end "175b"
+
+%def 176A-176N1/176N2
+%def 176N1-1751
+%def 176N2-1751
+
+%def 176F-176P1/176P2
+%def 176P1-149F
+%def 176P2-149F
+
+%quo1 176A 176N1 176N2
+%quo1 1752 176F 176P1 176P2
+
+%def 175A-175N1/175N2
+%def 175N1-2091
+%def 175N2-2091
+
+%def 175F-175P1/175P2
+%def 175P1-176F
+%def 175P2-176F
+
+%quo1 1751 175A 175N1 175N2
+%quo1 2092 175F 175P1 175P2
+
+### TNINE
+
+1v begin =8+14v "175c209"
+3v 1000m
+<hs "209A"
+3v 200m
+w< 50m / 50m ne "209a" 13d
+2u 50m
+hs> "209P1"
+3u 800m
+<hs "209S1"
+2u 50m
+50m >w / 50m nw "209b" 8d
+3u ~ 100m se
+~ 50m e
+hs> "209R1"
+7v 800m
+<hs "209N1"
+w< 50m / 50m ne "209c" 8d
+4u 100m
+hs> "209R11"
+3v 200m
+2u 50m
+50m >w / 50m nw "209d" 9d
+2u 200m
+hp> "209F"
+1u 1000m
+1u 1000m
+<hp "2111"
+1u 200m
+hp> "2112"
+2u 1000m
+end "209c211"
+
+6u begin -1u "209a" ne
+~ 50m e
+hs> "209P5"
+3u 800m
+<hs "209S5"
+w< 50m / 50m se "209b" 8d
+~ 50m ne
+w< 50m / 50m e "209e" 10d
+~ 50m e
+hs> "209R5"
+7v 800m
+<hs "209N5"
+w< 50m / 50m se "209f" 8d
+~ 50m se
+50m >w / 50m w "209g" 10d
+~ 50m e
+hs> "209R15"
+3v 200m
+2u 50m
+50m >w / 50m sw "209h" 9d
+2u 200m
+hp> "209G"
+1u 1000m
+1u 1000m
+<hp "2101"
+1u 200m
+hp> "2102"
+2u 1000m
+end "209c210"
+
+18u begin -3u "209e"
+2u 50m
+hs> "209R4"
+7v 800m
+<hs "209N4"
+2u 50m
+25m ekw< 25m / 25m se "209i" / 25m nw "209f"
+end "209g"
+
+61v begin +3u "209j" nw
+w< 50m w / 50m nw "209i" 8d
+2u 50m
+hs> "209N3"
+3u 800m
+<end "209R3"
+
+73v begin +2u "209d" nw
+50m >w w / 50m ne "209h" 9d
+3v 200m
+<hs "209R12"
+w< 50m / 50m nw "209j" 8d
+w< 50m / 50m sw "209c" 8d
+2u 50m
+hs> "209N2"
+3u 800m
+<end "209R2"
+
+%def 209A-209S1/+209S5
+%def 209S1-209N1
+%def 209S5-209N1/209N5/209N4
+%def 209N1-2111
+%def 209N2-2111
+%def 209N3-2111
+%def 209N4-2111
+%def 209N5-2111
+
+%mac tnine-tten 209A-209S5/+209S1
+%mac tnine-tten 209S1-209N1
+%mac tnine-tten 209S5-209N5/209N4/209N1
+%mac tnine-tten 209N1-2101
+%mac tnine-tten 209N2-2101
+%mac tnine-tten 209N3-2101
+%mac tnine-tten 209N4-2101
+%mac tnine-tten 209N5-2101
+
+%def 209F-209R11/209R12
+%def 209G-209R15/209R12
+%def 209R15-209R5/209R4
+%def 209R12-209R1/+209R5/209R4
+%def 209R11-209R1
+%def 209R1-209P1/209P5
+%def 209R4-209P5
+%def 209R5-209P5
+%def 209P1-2092
+%def 209P5-2092
+
+%quo2 209S5 209N1 209N4 209N5
+%quo2 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5
+%quo3 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5
+
+%quo3 2091 209A 209S5 209N1 209N4 209N5 209P1 209S1
+%quo3 2091 209A 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5 209P1 209S1
+
+%quo2 2091 209A 209P1 209P5 209S1
+%quo2 209P1 209P5 2092 175F 175P1 175P2
+
+%quo1 209R1 209N1 209R11
+%quo2 209R4 209N4 209R5 209N5 209R15
+
+%mac tnine-right 209F-209R12/209R11
+%mac tnine-right 209G-209R12/209R15
+%mac tnine-right 209R11-209R1
+%mac tnine-right 209R12-209R2/+209R3/209R4/209R1/209R5
+%mac tnine-right 209R15-209R4/209R5
+%mac tnine-right 209R1-$
+%mac tnine-right 209R4-$
+%mac tnine-right 209R5-$
+
+### TTEN
+
+57v begin =5+8u "210a" se
+~ 50m e
+2u 200m
+hp> "210H"
+2u 1000m
+end "209c210"
+
+1u begin -1u "12t210"
+2u 1000m
+<hp "210A"
+2u 200m
+w< 50m / 50m ne "210b" 8d
+6u 150m
+hs> "210P1"
+4u 800m
+<hs "210N1"
+6u 150m
+50m >w / 50m nw "210c" 10d
+w< 50m / 50m se "210a" 13d
+2u 50m
+2u 200m
+hp> "210G"
+1u 1000m
+1u 1000m
+<hp "210C"
+2u 200m
+2u 50m
+50m >w / 50m nw "210d" 13d
+2u 200m
+hp> "210I"
+2u 1000m
+end "210c211"
+
+1u begin -2u "210t12"
+2u 1000m
+<hp "210B"
+2u 200m
+2u 50m
+50m >w / 50m sw "210b" 8d
+w< 50m / 50m ne "210e" 8d
+2u 50m
+hs> "210P2"
+4u 800m
+<hs "210N2"
+2u 50m
+50m >w / 50m nw "210f" 8d
+w< 50m / 50m se "210c" 10d
+6u 150m
+2u 200m
+hp> "210F"
+1u 1000m
+1u 1000m
+<hp "210D"
+2u 200m
+~ 50m se
+end "210d"
+
+23v begin -1u "210e" ne
+~ 50m e
+hs> "210P3"
+4u 800m
+<hs "210N3"
+~ 50m se
+end "210f"
+
+%def 210A-210N1/210N3/210N2
+%def 210B-210N2/210N3
+%def 210N1-210C
+%def 210N2-210D/+210C
+%def 210N3-210C/210D
+%def 210C-211A
+%def 210D-211A
+
+%mac tten-tnine 210A-210N1/210N3/210N2
+%mac tten-tnine 210B-210N2/210N3
+%mac tten-tnine 210N1-2102
+%mac tten-tnine 210N2-2102
+%mac tten-tnine 210N3-2102
+
+%def 210I-210G/+210F
+%def 210F-210P2/210P3
+%def 210G-210P1/+210P2/210P3
+%def 210H-210P2/+210P1/210P3
+%def 210P1-12I
+%def 210P2-12H/12I
+%def 210P3-12H/12I
+
+%quo2 210A 210N1 210N2 210N3
+%quo2 210G 2101 210H 210P1 210P2 210P3
+%quo3 210A 210N1 210N2 210N3 210G 2101 210H 210P1 210P2 210P3
+%quo3 210G 2101 210H 210P1 210P2 210P3 210I 210F 210D
+%quo4 210A 210N1 210N2 210N3 210G 2101 210H 210P1 210P2 210P3 210I 210F 210D
+%quo2 210I 210F 210D 210C
+
+### TELEVEN
+
+15u begin =7+12v "211a" se
+~ 50m e
+hs> "211P1"
+7v 800m
+<hs "211N1"
+w< 50m / 50m ne "211b" 8d
+8u 200m
+50m >w / 50m nw "211c" 8d
+3v 200m
+hp> "211H"
+1u 1000m
+1u 1000m
+<hp "2981"
+1u 200m
+hp> "2982"
+2u 1000m
+end "211c298"
+
+1u begin -1u "209c211"
+2u 1000m
+<hp "211B"
+3v 200m
+w< 50m / 50m ne "211d" 13d
+4u 100m
+50m >w / 50m nw "211e" 10d
+w< 50m / 50m se "211a" 10d
+2u 50m
+hs> "211P2"
+7v 800m
+<hs "211N2"
+2u 50m
+50m >w / 50m sw "211b" 8d
+50m >w / 50m nw "211f" 13d
+w< 50m / 50m ne "211g" 8d
+w< 50m / 50m se "211c" 8d
+2u 50m
+3v 200m
+hp> "211G"
+1u 1000m
+1u 1000m
+<hp "2121"
+1u 200m
+hp> "2122"
+2u 1000m
+end "211t212"
+
+1u begin -2u "210c211"
+2u 1000m
+<hp "211A"
+3v 200m
+2u 50m
+50m >w / 50m sw "211d" 13d
+w< 50m / 50m se "211e" 10d
+w< 50m / 50m ne "211h" 8d
+2u 50m
+hs> "211P3"
+7v 800m
+<hs "211N3"
+2u 50m
+50m >w / 50m nw "211i" 8d
+w< 50m / 50m se "211f" 13d
+4u 100m
+50m >w / 50m sw "211g" 8d
+2u 50m
+3v 200m
+hp> "211F"
+1u 1000m
+1u 1000m
+3v 200m
+hp> "2124"
+2u 1000m
+end "212t211"
+
+13u begin -1u "211h" ne
+~ 50m e
+hs> "211P4"
+7v 800m
+<hs "211N4"
+~ 50m se
+end "211i"
+
+%def 211A-211N3/+211N2/211N1/211N4
+%def 211B-211N2/211N1/211N3/211N4
+%def 211N1-2121/212B
+%def 211N2-2121/212B
+%def 211N3-212B/+2121
+%def 211N4-2121/212B
+
+%mac televen-tninetyeight 211A-211N1/211N2/211N3/211N4
+%mac televen-tninetyeight 211B-211N1/211N2/211N3/211N4
+%mac televen-tninetyeight 211N1-2981
+%mac televen-tninetyeight 211N2-2981
+%mac televen-tninetyeight 211N3-2981
+%mac televen-tninetyeight 211N4-2981
+
+%def 211F-211P3/211P4/211P1/211P2
+%def 211G-211P2/+211P3/211P1/211P4
+%def 211H-211P1/+211P3/211P2/211P4
+%def 211P1-210I
+%def 211P2-210I
+%def 211P3-210I
+%def 211P4-210I
+
+%mac televen-tnine 211F-211P3/211P4/211P2/211P1
+%mac televen-tnine 211G-211P2/211P3/211P1/211P4
+%mac televen-tnine 211H-211P1/+211P2/211P3/211P4
+%mac televen-tnine 211P1-2112
+%mac televen-tnine 211P2-2112
+%mac televen-tnine 211P3-2112
+%mac televen-tnine 211P4-2112
+
+%quo3 2111 211A 211B 211N1 211N2 211N3 211N4
+%quo3 2122 211G 2982 211H 211P1 211P2 211P3 211P4
+%quo4 2111 211A 211B 211N1 211N2 211N3 211N4 2122 211G 2982 211H 211P1 211P2 211P3 211P4
+
+%quo2 2121 212A 212X
+
+### TNINETYEIGHT+NINE
+
+1v begin =2+6v "211c298"
+2u 1000m
+<hp "298A"
+3v 200m
+w< 50m / 50m ne "298a" 8d
+2u 50m
+hs> "298P1"
+7v 800m
+<hs "298N1"
+2u 50m
+50m >w / 50m nw "298b" 8d
+3v 200m
+hp> "298F"
+1u 1000m
+1u 1000m
+<hp "2991"
+1u 200m
+hp> "2992"
+1u 1000m
+1u 1000m
+<hp "299A"
+3v 200m
+w< 50m / 50m se "299a" 10d
+2u 50m
+hs> "299P1"
+7v 800m
+<hs "299S1"
+w< 50m / 50m se "299b"
+4u 1000m
+50m >w / 50m sw "299c"
+hs> "299R1"
+3u 800m
+<end "299N1"
+
+13v begin -1u "298a" ne
+~ 50m e
+hs> "298P2"
+7v 800m
+<hs "298N2"
+~ 50m se
+end "298b"
+
+29u begin +2u "299a" se
+~ 50m e
+hs> "299P2"
+7v 800m
+<hs "299S2"
+2u 50m
+50m >w / 50m nw "299b"
+w< 50m / 50m ne "299c"
+2u 50m
+hs> "299R2"
+3u 800m
+<end "299N2"
+
+%def 298A-298N1/298N2
+%def 298N1-2991
+%def 298N2-2991
+
+%def 298F-298P1/298P2
+%def 298P1-2982
+%def 298P2-2982
+
+%quo1 2981 298A 298N1 298N2
+%quo1 2992 298F 298P1 298P2
+
+%def 299A-299S1/299S2
+%def 299S1-299N1/299N2
+%def 299S2-299N2/299N1
+
+%def 299R1-299P1/299P2
+%def 299R2-299P2/+299P1
+%def 299P1-2992
+%def 299P2-2992
+
+%quo3 2991 299A 299S1 299S2 299R1 299R2 299N1 299N2
+%quo1 299P1 299P2
+
 
 ### HUNDRED-FOURTYNINE + EIGHT + FOUR
 
