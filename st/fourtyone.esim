@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 41A" $* 41C 41B 41A -- 41N4 41N3 41Q2 41Q1 -- 41N1 &
+esimc -title "esimc 41F" $* 41G 41F 41H 41I -- 41P1 41P2 41P3 41P4 &

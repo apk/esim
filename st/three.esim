@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 3A" $* 3C 3B 3A -- 3S5 -- 3Q1 3Q2 3Q3 3Q4 3Q5 3Q6 3Q7 3Q8 3Q9 -- 3N1 3N5 &
+esimc -title "esimc 3F" $* 3G 3F -- 3I 3H -- 3R5 3R2 3R1 -- 3P9 3P8 3P7 3P6 3P5 3P4 3P3 3P2 3P1 &
