@@ -1,517 +1,2114 @@
-1u begin =3-320u "In"
-2u 1000m
-<hp "X"
-2u 50m
-50m >w / 50m sw "xx" 20d
+### HUNDRED-FOURTYTWO
+
+1u begin =3+2u "NoIn"
+2u 800m
+<hp "1"
+2u 200m
+50m >w / 50m sw "x" 20d
+hp> "nox"
 2u 2000m
-<hp "016G"
+<hp "178A"
 2u 1000m
-50m >w / 50m sw "xx" 20d
-50m >w / 50m sw "017t016" 20d
-end "016t017"
+50m >w / 50m sw "x" 20d
+end "149c178"
 
-### HUNDREDFIFY + THREE + SIX
+1u begin -2u "120t59"
+1u 200m
+end "59t120"
 
-26u begin =336+9u "150a" se
-~ 3u 100m e
-hs> "150P1"
-3u 800m
-<hs "150N1"
-~ 50m ne
-end "150b"
+5u begin +0u "130t59"
+1u 200m
+end "59t130"
 
-12v begin +0u "153a" se
+9u begin +0u "172c173"
+w< 50m / 50m se "x4x" 20d
+2u 2000m
+<hp "173A"
+1u 400m
+end "x4x"
+
+### HUNDRED-THIRTY
+
+41v begin =8+9u "130a" se
 ~ 50m e
-hs> "153P2"
-3u 800m
-<hs "153N2"
+hs> "130P1"
+4u 800m
+<hs "130N1"
 ~ 50m ne
-end "153b"
+end "130b"
 
-1v begin -1u "152c153"
-3v 1000m
-<hp "153A"
-3v 200m
-w< 50m / 50m se "153a" 8d
+1u begin -1u "59t130"
+2u 800m
+<hp "1303"
+1u 200m
+1u 800m
+<hp "1305"
+1u 200m
+1u 800m
+<hp "130A"
+2u 200m
+w< 50m / 50m ne "130c" 8d
+4u 100m
+50m >w / 50m nw "130d" 8d
+w< 50m / 50m se "130a" 8d
 2u 50m
-hs> "153P1"
-3u 800m
-<hs "153N1"
+hs> "130P2"
+4u 800m
+<hs "130N2"
 2u 50m
-50m >w / 50m sw "153b" 8d
-3v 200m
-hp> "153F"
-1u 1000m
-1u 1000m
-<hp "150A"
-3v 200m
-w< 50m / 50m ne "150c" 8d
-w< 50m / 50m se "150a" 8d
+50m >w / 50m sw "130b" 8d
+50m >w / 50m nw "130e" 8d
+w< 50m / 50m ne "130f" 8d
 2u 50m
-50m >w / 50m nw "150d" 8d
-hs> "150P2"
-3u 800m
-<hs "150N2"
-2u 50m
-50m >w / 50m sw "150b" 8d
-50m >w / 50m nw "150e" 8d
-w< 50m / 50m ne "150f" 8d
-2u 50m
-3v 200m
-hp> "150G"
-3v 1000m
-end "150c155"
+2u 200m
+hp> "130G"
+1u 600m
+<hp "1311"
+1u 200m
+1u 800m
+<hp "1313"
+1u 200m
+end "130t131"
 
-1v begin -2u "015c156"
-3v 1000m
-<hp "156F"
-3v 200m
-w< 50m / 50m ne "156a" 8d
+1v begin -2u "130t59"
+1u 200m
+hp> "1302"
+1u 800m
+1u 200m
+hp> "1304"
+1u 800m
+1u 200m
+hp> "1306"
+1u 600m
+<hp "130B"
+2u 200m
 2u 50m
-hs> "156N1"
-3u 800m
-<hs "156P1"
+50m >w / 50m sw "130c" 8d
+w< 50m / 50m se "130d" 8d
+w< 50m / 50m ne "130g" 8d
 2u 50m
-50m >w / 50m nw "156b" 8d
-3v 200m
-hp> "156A"
-1u 1000m
-1u 1000m
-<hp "150B"
-3v 200m
+hs> "130P3"
+4u 800m
+<hs "130N3"
 2u 50m
-50m >w / 50m sw "150c" 8d
-w< 50m / 50m se "150d" 8d
-w< 50m / 50m ne "150g" 8d
-2u 50m
-hs> "150P3"
-3u 800m
-<hs "150N3"
-w< 50m / 50m se "150e" 8d
-2u 50m
-50m >w / 50m nw "150h" 8d
-50m >w / 50m sw "150f" 8d
-3v 200m
-hp> "150F"
-3v 1000m
-end "150c198"
+50m >w / 50m nw "130h" 8d
+w< 50m / 50m se "130e" 8d
+4u 100m
+50m >w / 50m sw "130f" 8d
+2u 200m
+hp> "130F"
+1u 800m
+1u 200m
+hp> "1312"
+2u 800m
+end "131t130"
 
-12v begin -1u "156a" ne
+37v begin -1u "130g" ne
 ~ 50m e
-hs> "156N2"
-3u 800m
-<hs "156P2"
+hs> "130P4"
+4u 800m
+<hs "130N4"
 ~ 50m se
-end "156b"
+end "130h"
 
-30u begin +0u "150g" ne
+%def 130A-130N2/130N1/130N4/130N3
+%def 130B-130N3/+130N2/130N4/130N1
+%def 130N1-1311/131B
+%def 130N2-1311/131B
+%def 130N3-131B/+1311
+%def 130N4-1311/131B
+
+%def 130F-130P3/130P4/130P1/130P2
+%def 130G-130P2/+130P3/130P1/130P4
+%def 130P1-1306/59I
+%def 130P2-59I/+1306
+%def 130P3-1306/59I
+%def 130P4-1306/59I
+
+### HUNDRED-TWENTY
+
+33v begin =6+7u "120a" se
 ~ 50m e
-hs> "150P4"
-3u 800m
-<hs "150N4"
+hs> "120P1"
+4u 800m
+<hs "120N1"
+~ 50m ne
+end "120b"
+
+1u begin -1u "59t120"
+2u 800m
+<hp "1203"
+1u 200m
+1u 800m
+<hp "1205"
+1u 200m
+1u 800m
+<hp "120A"
+2u 200m
+2u 50m
+50m >w / 50m nw "120c" 8d
+w< 50m / 50m se "120a" 8d
+2u 50m
+hs> "120P2"
+4u 800m
+<hs "120N2"
+2u 50m
+50m >w / 50m sw "120b" 8d
+w< 50m / 50m ne "120d" 8d
+2u 50m
+2u 200m
+hp> "120G"
+1u 600m
+<hp "1211"
+1u 200m
+1u 800m
+<hp "1213"
+1u 200m
+1u 800m
+<hp "1215"
+1u 200m
+end "120t121"
+
+1v begin -2u "120t59"
+1u 200m
+hp> "1202"
+1u 800m
+1u 200m
+hp> "1204"
+1u 800m
+1u 200m
+hp> "1206"
+1u 600m
+<hp "120B"
+2u 200m
+w< 50m / 50m se "120c" 8d
+6u 150m
+hs> "120P3"
+4u 800m
+<hs "120N3"
+6u 150m
+50m >w / 50m sw "120d" 8d
+2u 200m
+hp> "120F"
+1u 800m
+1u 200m
+hp> "1212"
+1u 800m
+1u 200m
+hp> "1214"
+2u 800m
+end "121t120"
+
+%def 120A-120N2/120N1
+%def 120B-120N3/+120N2/120N1
+%def 120N1-1211/121B
+%def 120N2-1211/121B
+%def 120N3-121B
+
+%def 120F-120P3/120P1/120P2
+%def 120G-120P2/+120P1
+%def 120P1-1206/59G
+%def 120P2-59G/+1206
+%def 120P3-1206
+
+### HUNDRED-FOURTYNINE + EIGHT + FOUR
+
+8u begin =7+9u "149a" se
+~ 50m e
+hs> "149N1"
+7v 800m
+<hs "149P1"
+3u ~ 100m ne
+end "149b"
+
+6u begin -2u "149c" se
+w< 50m e / 50m se "149a" 8d
+2u 50m
+hs> "149N2"
+7v 800m
+<hs "149P2"
+2u 50m
+50m >w / 50m nw "149d" 8d
+50m >w / 50m sw "149b" 8d
+w< 50m / 50m ne "149e" 8d
+2u 50m
+3v 200m
+hp> "149A"
+1u 1000m
+1u 1000m
+<hp "144F"
+3v 200m
+w< 50m / 50m se "144a" 8d
+2u 50m
+hs> "144N1"
+7v 800m
+<hs "144P1"
+2u 50m
+50m >w / 50m sw "144b" 8d
+3v 200m
+hp> "144A"
+3v 1000m
+end "143c144"
+
+1v begin -1u "149c178"
+3v 1000m
+<hp "149F"
+3v 200m
+w< 50m / 50m se "149c" 13d
+w< 50m / 50m ne "149f" 8d
+2u 50m
+hs> "149N3"
+7v 800m
+<hs "149P3"
+w< 50m / 50m se "149d" 8d
+2u 50m
+50m >w / 50m nw "149g" 8d
+2u 50m
+50m >w / 50m sw "149e" 8d
+3v 200m
+hp> "149B"
+1u 1000m
+1u 1000m
+<hp "148F"
+3v 200m
+w< 50m / 50m ne "148a" 8d
+2u 50m
+hs> "148N1"
+7v 800m
+<hs "148P1"
+2u 50m
+50m >w / 50m nw "148b" 8d
+3v 200m
+hp> "148A"
+3v 1000m
+end "147c148"
+
+8u begin -1u "149f" ne
+~ 50m e
+hs> "149N4"
+7v 800m
+<hs "149P4"
 3u ~ 100m se
-end "150h"
+end "149g"
 
-%def 153A-153N1/153N2
-%def 153N1-150A
-%def 153N2-150A
-
-%def 153F-153P1/153P2
-%def 153P1-152F
-%def 153P2-152F
-
-%quo1 153A 153N1 153N2
-%quo1 153F 153P1 153P2
-
-%def 156A-156N1/156N2
-%def 156N1-015H
-%def 156N2-015H
-
-%def 156F-156P1/156P2
-%def 156P1-150B
-%def 156P2-150B
-
-%quo1 156A 156N1 156N2
-%quo1 156F 156P1 156P2
-
-%def 150A-150N2/+150N3/150N4/150N1
-%def 150A-150N3/150N4/150N2
-%def 150N1-198H
-%def 150N2-198H
-%def 150N3-198H
-%def 150N4-198H
-
-%mac hfifty-hfiftyfive 150A-150N2/150N1/150N3
-%mac hfifty-hfiftyfive 150B-150N3/+150N2
-%mac hfifty-hfiftyfive 150N1-155F
-%mac hfifty-hfiftyfive 150N2-155F
-%mac hfifty-hfiftyfive 150N3-155F
-
-%def 150F-150P3/+150P2/150P1/150P4
-%def 150G-150P2/150P1/150P3
-%def 150P1-153F
-%def 150P2-153F
-%def 150P3-153F
-%def 150P4-153F
-
-%mac hfifty-hfiftysix 150F-150P3/150P4/150P2
-%mac hfifty-hfiftysix 150G-150P2/+150P3
-%mac hfifty-hfiftysix 150P2-156A
-%mac hfifty-hfiftysix 150P3-156A
-%mac hfifty-hfiftysix 150P4-156A
-
-%quo1 150B 150N2 150N3
-%quo1 150G 150P2 150P3
-
-%quo2 150B 150N2 150N3 150A 150N1 150P1
-%quo2 150G 150P2 150P3 150F 150N4 150P4
-
-### NAUGHTYSEVENTEEN
-
-27u begin =334+6u "017c" se
-~ 3u e 100m
-hs> "017R0"
-4u 800m
-<hs "017N0"
-~ ne 50m
-end "017f"
-
-1u begin -1u "016t017"
-2u 800m
-<hp "0173"
-1u 200m
-1u 800m
-<hp "017A"
-2u 200m
-w< 50m / 50m ne "017a" 8d
-4u 100m
-50m >w / 50m nw "017b" 8d
-2u 50m
-hs> "017P1"
-4u 800m
-<hs "017S1"
-2u 50m
-w< 50m / 50m se "017c" 8d
-2u 50m
-50m >w / 50m nw "017d" 8d
-hs> "017R1"
-4u 800m
-<hs "017N1"
-w< 50m / 50m ne "017e" 8d
-50m >w / 50m sw "017f" 8d
-5v 300m
-hp> "017G"
-1u 600m
-<hp "0181"
-1u 200m
-1u 800m
-<hp "0183"
-1u 200m
-end "017t018"
-
-1v begin -2u "017t016"
-1u 200m
-hp> "0172"
-1u 800m
-1u 200m
-hp> "0174"
-1u 600m
-<hp "017B"
-2u 200m
-2u 50m
-50m >w / 50m sw "017a" 8d
-w< 50m / 50m se "017b" 8d
-w< 50m / 50m ne "017g" 8d
-2u 50m
-hs> "017P2"
-4u 800m
-<hs "017S2"
-2u 50m
-50m >w / 50m nw "017h" 8d
-w< 50m / 50m se "017d" 8d
-2u 50m
-hs> "017R2"
-4u 800m
-<hs "017N2"
-2u 50m
-50m >w / 50m sw "017e" 8d
-5v 300m
-hp> "017F"
-1u 800m
-1u 200m
-hp> "0182"
-2u 800m
-end "018t017"
-
-16u begin -1u "017g" ne
+65v begin +0u "148a" ne
 ~ 50m e
-hs> "017P3"
-4u 800m
-<hs "017S3"
+hs> "148N2"
+7v 800m
+<hs "148P2"
 ~ 50m se
-end "017h"
+end "148b"
 
-%def 017A-017S1/017S3/017S2
-%def 017S1-017N1/017N0
-%def 017S2-017N2/+017N1
-%def 017S3-017N1/017N2
-%def 017N0-0181
-%def 017N1-0181/018B
-%def 017N2-018B
-
-%def 017F-017R2/017R1
-%def 017G-017R1/017R0
-%def 017R0-017P1
-%def 017R1-017P1/+017P2/017P3
-%def 017R2-017P2/017P3
-%def 017P1-016G
-%def 017P2-0174/016G
-%def 017P3-0174/016G
-
-### NAUGHTYEIGHTEEN
-
-1u begin =334+7u "017t018"
-2u 800m
-<hp "0185"
-1u 200m
-1u 800m
-<hp "018A"
-2u 200m
-w< 50m / 50m ne "018a" 8d
-6u 150m
-hs> "018P1"
-4u 800m
-<hs "018N1"
-6u 150m
-50m >w / 50m nw "018b" 8d
-2u 200m
-hp> "018G"
-1u 600m
-<hp "0191"
-1u 200m
-1u 800m
-<hp "019A"
-2u 200m
-w< 50m / 50m ne "019a" 20d
-1u 25m se
-1u 200m e
-hp> "019G"
-1u 800m
-<hp "0193"
-1u 200m
-1u 800m
-<hp "019X"
-1u 200m ne
-n
-w< 50m / 50m nw "019b" 20d
-1u 25m
-1u 25m nw
-1u 200m w
-hp> "019Y"
-1u 800m
-<hp "0194"
-1u 200m
-1u 800m
-<hp "019F"
-1u 200m sw
-end "019c"
-
-1v begin -2u "018t017"
-1u 200m
-hp> "0184"
-1u 800m
-1u 200m
-hp> "0186"
-1u 600m
-<hp "018B"
-2u 200m
-2u 50m
-50m >w / 50m sw "018a" 8d
-w< 50m / 50m ne "018c" 8d
-2u 50m
-hs> "018P2"
-4u 800m
-<hs "018N2"
-2u 50m
-50m >w / 50m nw "018d" 8d
-w< 50m / 50m se "018b" 8d
-2u 50m
-2u 200m
-hp> "018F"
-1u 800m
-1u 200m
-hp> "0192"
-1u 600m
-<hp "019B"
-2u 200m
-w< 50m / 50m ne "019c" 20d
-50m >w / 50m sw "019a" 20d
-hp> "019H"
-5v 1800m
-<hp "019Z"
-1u 200m
-end "019b"
-
-14u begin -1u "018c" ne
+65v begin +4u "144a" se
 ~ 50m e
-hs> "018P3"
-4u 800m
-<hs "018N3"
-~ 50m se
-end "018d"
-
-%def 018A-018N1/018N3/018N2
-%def 018B-018N2/018N3
-%def 018N1-0191
-%def 018N2-019B/+0191
-%def 018N3-0191/019B
-
-%def 018F-018P2/018P3
-%def 018G-018P1/+018P2/018P3
-%def 018P1-017G
-%def 018P2-0186/017G
-%def 018P3-0186/017G
-
-%def 019A-0193/019Z
-%def 019B-019Y/+019Z
-%def 019X-0194/019H
-%def 019G-0192/+018G
-
-%quo2 017B 017S1 017S2 017S3
-%quo2 017R1 017P1 017P2 017P3
-%quo3 017B 017S1 017S2 017S3 017P1 017P2 017P3
-
-%quo3 018P1 017G 017R0 017N0 017R1 017P1 017P2 017P3
-%quo4 017B 017S1 017S2 017S3 018P1 017G 017R0 017N0 017R1 017P1 017P2 017P3
-%quo2 018P1 017G 017R0 017N0 017R1 017N1
-
-%quo1 017N2 017F
-%quo1 017N2 0182
-%quo1 017N2 0184
-%quo1 017N2 0186
-
-%quo1 018B 018N2 018N3
-%quo2 019G 018G 018P2 018P3 018B 018N2 018N3
-%quo1 018A 018P1
-%quo1 0181 018P1
-%quo1 0183 018P1
-%quo1 0185 018P1
-
-%quo1 0191 019G
-%quo1 019A 019G
-
-%quo1 019B 019Y 019Z
-%quo2 019B 019Y 019Z 019F 019H
-%quo2 019B 019Y 019Z 0193 019H
-
-### HUNDREDFOURTEEN
-
-23u begin =336+9u "114a" se
-~ 50m e
-hs> "114P1"
-4u 800m
-<hs "114N1"
+hs> "144N2"
+7v 800m
+<hs "144P2"
 ~ 50m ne
-end "114b"
+end "144b"
 
-1u begin -1u "113t114"
-2u 800m
-<hp "1143"
-1u 200m
-1u 800m
-<hp "1145"
-1u 200m
-1u 800m
-<hp "1147"
-1u 200m
-1u 800m
-<hp "114A"
-2u 200m
-w< 50m / 50m ne "114d" 8d
-4u 100m
-50m >w / 50m nw "114c" 8d
-w< 50m / 50m se "114a" 8d
-2u 50m
-hs> "114P2"
-4u 800m
-<hs "114N2"
-2u 50m
-50m >w / 50m sw "114b" 8d
-50m >w / 50m nw "114f" 8d
-w< 50m / 50m ne "114e" 8d
-2u 50m
-2u 200m
-hp> "114G"
-1u 600m
-<hp "1151"
-1u 200m
-end "114t115"
+%def 149A-149N2/149N3/149N1
+%def 149B-149N3/149N4/149N1/149N2
+%def 149N1-178A
+%def 149N2-178A
+%def 149N3-178A
+%def 149N4-178A
 
-1v begin -2u "114t113"
-1u 200m
-hp> "1142"
-1u 800m
-1u 200m
-hp> "1144"
-1u 800m
-1u 200m
-hp> "1146"
-1u 800m
-1u 200m
-hp> "1148"
-1u 600m
-<hp "114B"
-2u 200m
-2u 50m
-50m >w / 50m sw "114d" 8d
-w< 50m / 50m se "114c" 8d
-w< 50m / 50m ne "114g" 8d
-2u 50m
-hs> "114P3"
-4u 800m
-<hs "114N3"
-2u 50m
-50m >w / 50m nw "114h" 8d
-w< 50m / 50m se "114f" 8d
-4u 100m
-50m >w / 50m sw "114e" 8d
-2u 200m
-hp> "114F"
-2u 800m
-end "115t114"
+%def 149F-149P3/149P4/149P1/149P2
+%def 149P1-148F
+%def 149P2-148F
+%def 149P3-148F
+%def 149P4-148F
 
-21u begin -1u "114g" ne
+%mac hfourtynine-hfourtyfour 149F-149P2/149P1/149P3
+%mac hfourtynine-hfourtyfour 149P1-144F
+%mac hfourtynine-hfourtyfour 149P2-144F
+%mac hfourtynine-hfourtyfour 149P3-144F
+
+%quo2 149A 149N1 149N2 149N3
+%quo2 149F 149P1 149P2 149P3
+%quo3 149A 149N1 149N2 149N3 149F 149P1 149P2 149P3
+%quo3 149A 149N1 149N2 149N3 149B 149N4 149P4
+%quo4 149A 149N1 149N2 149N3 149F 149P1 149P2 149P3 149B 149N4 149P4
+
+%def 148A-148N1/148N2
+%def 148N1-149B
+%def 148N2-149B
+
+%def 148F-148P1/148P2
+%def 148P1-1484
+%def 148P2-1484
+
+%def 144A-144N1/144N2
+%def 144N1-149A
+%def 144N2-149A
+
+%def 144F-144P1/144P2
+%def 144P1-143F
+%def 144P2-143F
+
+%quo1 144A 144N1 144N2
+%quo1 144F 144P1 144P2
+
+### HUNDRED-FOURTYSEVEN
+
+17u begin =5+6v "147a" se
+~ 3u 100m e
+hs> "147N0"
+7v 800m
+<hs "147P0"
+3u ~ 100m ne
+end "147b"
+
+4u begin -1u "147c148"
+2u 1000m
+<hp "1484"
+1u 200m
+hp> "1483"
+1u 800m
+<hp "1482"
+1u 200m
+hp> "1481"
+1u 1000m
+1u 1000m
+<hp "147F"
+3v 200m
+w< 50m / 50m se "147a" 10d
+w< 50m / 50m ne "147c" 8d
+2u 50m
+hs> "147N1"
+7v 800m
+<hs "147P1"
+2u 50m
+50m >w / 50m nw "147d" 8d
+50m >w / 50m sw "147b" 10d
+3v 200m
+hp> "147A"
+1u 1000m
+1u 1000m
+<hp "1472"
+1u 200m
+hp> "1471"
+2u 1000m
+end "146c147"
+
+19u begin -1u "147c" ne
 ~ 50m e
-hs> "114P4"
-4u 800m
-<hs "114N4"
+hs> "147N2"
+7v 800m
+<hs "147P2"
 ~ 50m se
-end "114h"
+end "147d"
 
-%def 114A-114N2/114N1/114N4/114N3
-%def 114B-114N3/+114N2/114N1/114N4
-%def 114N1-1151/115B
-%def 114N2-1151/115B
-%def 114N3-115B/+1151
-%def 114N4-1151/115B
+%quo1 1483 1481 148A 148N1 148N2
+%quo1 148F 148P1 148P2
 
-%def 114F-114P3/114P4/114P1/114P2
-%def 114G-114P2/+114P3/114P4/114P1
-%def 114P1-1148/113G
-%def 114P2-113G/+1148
-%def 114P3-1148/113G
-%def 114P4-1148/113G
+%def 147A-147N1/147N0/147N2
+%def 147N0-1481
+%def 147N1-1481
+%def 147N2-1481
+
+%def 147F-147P1/147P0/147P2
+%def 147P0-1472
+%def 147P1-1472
+%def 147P2-1472
+
+%quo2 1484 1482 147F 147P0 147P1 147P2
+%quo2 1471 147A 147N0 147N1 147N2
+%quo3 1484 1482 147F 147P0 147P1 147P2 1471 147A 147N0 147N1 147N2
+
+### HUNDRED-FOURTYTHREE + TWO
+
+6u begin =4+5u "143a" se
+~ 3u e 100m
+hs> "143N0"
+7v 800m
+<hs "143P0"
+2u 50m
+50m >w / 50m nw "143b" 8d
+3v 200m
+hp> "143B"
+3v 1000m
+end "143c170"
+
+50v begin +1u "142c170"
+3v 1000m
+<hp "142G"
+3v 200m
+w< 50m / 50m ne "142a" 8d
+2u 50m
+hs> "142N0"
+7v 800m
+<hs "142P0"
+3u ~ ne 100m
+end "142b"
+
+1v begin -2u "143c144"
+3v 1000m
+<hp "143F"
+3v 200m
+w< 50m / 50m se "143a" 13d
+w< 50m / 50m ne "143c" 8d
+2u 50m
+hs> "143N1"
+7v 800m
+<hs "143P1"
+w< 50m / 50m se "143b" 8d
+50m >w / 50m nw "143d" 8d
+3v 200m
+hp> "143A"
+1u 1000m
+1u 1000m
+<hp "1432"
+1u 200m
+hp> "1431"
+1u 1000m
+1u 1000m
+<hp "142F"
+3v 200m
+w< 50m / 50m ne "142c" 8d
+50m >w / 50m sw "142a" 8d
+hs> "142N1"
+7v 800m
+<hs "142P1"
+2u 50m
+50m >w / 50m nw "142d" 8d
+50m >w / 50m sw "142b" 13d
+3v 200m
+hp> "142A"
+3v 1000m
+end "141c142"
+
+8u begin -1u "143c" ne
+~ 50m e
+hs> "143N2"
+7v 800m
+<hs "143P2"
+~ 50m se
+end "143d"
+
+61v begin +0u "142c" ne
+~ 50m e
+hs> "142N2"
+7v 800m
+<hs "142P2"
+~ 50m se
+end "142d"
+
+%def 143A-143N1/143N2
+%def 143B-143N0/+143N1
+%def 143N0-144A
+%def 143N1-144A
+%def 143N2-144A
+
+%def 143F-143P1/143P2
+%def 143P1-1432
+%def 143P2-1432
+
+%mac hfourtythree-hseventy 143F-143P0/+143P1
+%mac hfourtythree-hseventy 143P0-1703
+%mac hfourtythree-hseventy 143P1-1703
+
+%def 142A-142N1/142N2
+%def 142N1-1431
+%def 142N2-1431
+
+%mac hfourtytwo-hseventy 142A-142N0/+142N1
+%mac hfourtytwo-hseventy 142N0-1701
+%mac hfourtytwo-hseventy 142N1-1701
+
+%def 142F-142P1/142P2
+%def 142G-142P0/+142P1
+%def 142P0-141F
+%def 142P1-141F
+%def 142P2-141F
+
+### HUNDRED-SEVENTY + ONE
+
+14u begin =11+13v "170a" se
+~ 50m e
+hs> "170P3"
+3u 800m
+<hs "170N3"
+~ 50m ne
+end "170b"
+
+1v begin -1u "143c170"
+3v 1000m
+<hp "1703"
+1u 200m
+hp> "1704"
+1u 1000m
+1u 1000m
+<hp "170B"
+3v 200m
+2u 50m
+50m >w / 50m nw "170c" 8d
+w< 50m / 50m se "170a" 8d
+2u 50m
+hs> "170P2"
+3u 800m
+<hs "170N2"
+2u 50m
+50m >w ne / 50m sw "170b" 8d
+end "170d"
+
+1v begin -2u "142c170"
+3v 1000m
+<hp "1701"
+1u 200m
+hp> "1702"
+1u 1000m
+1u 1000m
+<hp "170A"
+3v 200m
+w< 50m / 50m se "170c" 8d
+6u 150m
+hs> "170P1"
+3u 800m
+<hs "170N1"
+4u 100m
+50m >w / 50m sw "170d" 13d
+3v 200m
+hp> "170F"
+1u 1000m
+<hp "171A"
+3v 200m
+w< 50m / 50m se "171a" 8d
+2u 50m
+hs> "171P1"
+3u 800m
+<hs "171N1"
+2u 50m
+50m >w / 50m sw "171b" 8d
+3v 200m
+hp> "171F"
+3v 1000m
+end "171c172"
+
+33u begin +1u "171a" se
+~ 50m e
+hs> "171P2"
+3u 800m
+<hs "171N2"
+~ 50m ne
+end "171b"
+
+47v begin +3u "171c172"
+3v 1000m
+<hp "1721"
+1u 200m
+hp> "1722"
+1u 1000m
+1u 1000m
+<hp "172A"
+3v 200m
+w< 50m / 50m se "172a" 8d
+2u 50m
+hs> "172P1"
+3u 800m
+<hs "172N1"
+2u 50m
+50m >w / 50m sw "172b" 8d
+3v 200m
+hp> "172F"
+3v 1000m
+end "172c173"
+
+33u begin +1u "172a" se
+~ 50m e
+hs> "172P2"
+3u 800m
+<hs "172N2"
+~ 50m ne
+end "172b"
+
+%quo1 143F 143P0 143P1 143P2
+%quo1 1431 143A 143N1 143N2
+%quo1 1704 143B 143N0 143N1
+
+%quo1 142A 142N0 142N1 142N2
+%quo1 1432 142F 142P1 142P2
+%quo1 1702 142G 142P0 142P1
+
+%def 170A-170N1/170N2/170N3
+%def 170B-170N2/170N3
+%def 170N1-171A
+%def 170N2-171A
+%def 170N3-171A
+
+%def 170F-170P1/170P2/170P3
+%def 170P1-1702
+%def 170P2-1702
+%def 170P3-1702
+
+%mac hseventy-hfourtythree 170F-170P2/170P3
+%mac hseventy-hfourtythree 170P2-1704
+%mac hseventy-hfourtythree 170P3-1704
+
+%quo1 1703 170B 170N2 170N3
+%quo1 170F 170P2 170P3
+%quo2 1703 170B 170N2 170N3 1701 170A 170P1 170N1
+%quo3 1703 170B 170N2 170N3 170F 170P2 170P3 1701 170A 170P1 170N1
+
+%def 171A-171N1/171N2
+%def 171N1-1721
+%def 171N2-1721
+
+%def 171F-171P1/171P2
+%def 171P1-170F
+%def 171P2-170F
+
+%quo1 171A 171N1 171N2
+%quo1 1722 171F 171P1 171P2
+
+%def 172A-172N1/172N2
+%def 172N1-173A
+%def 172N2-173A
+
+%def 172F-172P1/172P2
+%def 172P1-1722
+%def 172P2-1722
+
+%quo1 1721 172A 172N1 172N2
+%quo1 172F 172P1 172P2
+
+### HUNDRED-THIRTYONE
+
+30v begin =9+9u "131c140"
+2u 1000m
+<hp "131C"
+2u 200m
+w< 50m / 50m ne "131a" 10d
+6u 150m
+50m >w / 50m nw "131b" 8d
+hs> "131Q0"
+7v 800m
+<hs "131N0"
+~ 50m ne
+end "131c"
+
+1u begin -2u "130t131"
+2u 800m
+<hp "131A"
+2u 200m
+w< 50m / 50m ne "131d" 8d
+6u 150m
+50m >w / 50m nw "131e" 10d
+hs> "131P1"
+3u 800m
+<hs "131S1"
+2u 50m
+50m >w / 50m sw "131a" 10d
+w< 50m / 50m ne "131f" 10d
+w< 50m / 50m se "131b" 8d
+2u 50m
+hs> "131Q1"
+7v 800m
+<hs "131N1"
+w< 50m / 50m ne "131z" 10d
+50m >w / 50m sw "131c" 13d
+2u 50m
+50m >w / 50m nw "131g" 8d
+2u 200m
+hp> "131G"
+1u 600m
+<hp "1321"
+1u 200m
+end "131t132"
+
+1v begin -2u "131t130"
+1u 200m
+hp> "1314"
+1u 600m
+<hp "131B"
+2u 200m
+2u 50m
+50m >w / 50m sw "131d" 8d
+50m >w / 50m nw "131h" 10d
+w< 50m / 50m se "131e" 10d
+w< 50m / 50m ne "131i" 8d
+2u 50m
+hs> "131P2"
+3u 800m
+<hs "131S2"
+2u 50m
+w< 50m / 50m ne "131j" 8d
+50m >w / 50m sw "131f" 10d
+hs> "131Q2"
+7v 800m
+<hs "131N2"
+2u 50m
+50m >w / 50m nw "131k" 13d
+50m >w / 50m sw "131z" 10d
+w< 50m / 50m se "131g" 8d
+2u 50m
+2u 200m
+hp> "131F"
+2u 800m
+end "132t131"
+
+3u begin -2u "131c141"
+2u 1000m
+<hp "131D"
+2u 200m
+w< 50m / 50m se "131h" 10d
+6u 150m
+50m >w / 50m sw "131i" 8d
+hs> "131P3"
+3u 800m
+<hs "131S3"
+4u 100m
+50m >w / 50m sw "131j" 8d
+hs> "131R3"
+7v 800m
+<hs "131N3"
+~ 50m se
+end "131k"
+
+%def 131A-131S1/131S2/131S3
+%def 131B-131S2/+131S1/131S3
+%def 131D-131S1/131S2/131S3
+%def 131C-131N0/131N1/131N2
+%def 131S1-131N1/131N0/131N2
+%def 131S2-131N2/131N3
+%def 131S3-131N3
+%def 131N0-1321
+%def 131N1-1321/132B
+%def 131N2-132B/+1321
+%def 131N3-1321/+132B
+
+%def 131F-131Q2/131R3/131Q1
+%def 131G-131Q1/+131Q2/131R3/131Q0
+%def 131Q0-131P1
+%def 131Q1-131P1
+%def 131Q2-131P2/131P1
+%def 131R3-131P2/131P3
+%def 131P1-130G/+1314
+%def 131P2-1314/130G
+%def 131P3-1314/130G
+
+%mac hthirtyone-hfourty 131F-131Q2/131Q1
+%mac hthirtyone-hfourty 131G-131Q0/+131Q1/131Q2
+%mac hthirtyone-hfourty 131Q0-140G
+%mac hthirtyone-hfourty 131Q1-140G
+%mac hthirtyone-hfourty 131Q2-140G
+
+%mac hthirtyone-hfourtyone 131F-131R3/+131Q2/131Q1
+%mac hthirtyone-hfourtyone 131G-131R3/+131Q3/131Q2/131Q0
+%mac hthirtyone-hfourtyone 131Q0-131P1
+%mac hthirtyone-hfourtyone 131Q1-131P1
+%mac hthirtyone-hfourtyone 131Q2-131P2/131P1
+%mac hthirtyone-hfourtyone 131R3-131P3/131P2
+%mac hthirtyone-hfourtyone 131P1-141B
+%mac hthirtyone-hfourtyone 131P2-141B
+%mac hthirtyone-hfourtyone 131P3-141B
+
+%quo2 131B 131D 131S1 131S2 131S3
+%quo2 131P1 131P2 131P3
+%quo3 131B 131D 131S1 131S2 131S3 131P1 131P2 131P3
+
+%quo2 131C 131N0 131N1 131N2
+%quo2 131G 131Q0 131Q1 131Q2
+%quo3 131C 131N0 131N1 131N2 131G 131Q0 131Q1 131Q2
+
+### HUNDRED_THIRTYTWO
+
+43v begin =6+7u "132a" se
+~ 50m e
+hs> "132P1"
+4u 800m
+<hs "132N1"
+~ 50m ne
+end "132b"
+
+1u begin -1u "131t132"
+2u 800m
+<hp "1323"
+1u 200m
+1u 800m
+<hp "1325"
+1u 200m
+1u 800m
+<hp "1327"
+1u 200m
+1u 800m
+<hp "1329"
+1u 200m
+1u 800m
+<hp "132A"
+2u 200m
+2u 50m
+50m >w / 50m nw "132c" 8d
+w< 50m / 50m se "132a" 8d
+2u 50m
+hs> "132P2"
+4u 800m
+<hs "132N2"
+2u 50m
+50m >w / 50m sw "132b" 8d
+w< 50m / 50m ne "132d" 8d
+2u 50m
+2u 200m
+hp> "132G"
+1u 600m
+<hp "1331"
+1u 200m
+1u 800m
+<hp "1333"
+1u 200m
+1u 800m
+<hp "1335"
+1u 200m
+end "132t133"
+
+1v begin -2u "132t131"
+1u 200m
+hp> "1322"
+1u 800m
+1u 200m
+hp> "1324"
+1u 800m
+1u 200m
+hp> "1326"
+1u 800m
+1u 200m
+hp> "1328"
+1u 800m
+1u 200m
+hp> "1320"
+1u 600m
+<hp "132B"
+2u 200m
+w< 50m / 50m se "132c" 8d
+6u 150m
+hs> "132P3"
+4u 800m
+<hs "132N3"
+6u 150m
+50m >w / 50m sw "132d" 8d
+2u 200m
+hp> "132F"
+1u 800m
+1u 200m
+hp> "1332"
+1u 800m
+1u 200m
+hp> "1334"
+2u 800m
+end "133t132"
+
+%def 132A-132N2/132N1
+%def 132B-132N3/+132N2/132N1
+%def 132N1-1331/133B
+%def 132N2-1331/133B
+%def 132N3-133B
+
+%def 132F-132P3/132P1/132P2
+%def 132G-132P2/132P1
+%def 132P1-1320/131G
+%def 132P2-131G/+1320
+%def 132P3-1320
+
+%quo1 132G 132P1 132P2
+%quo2 132B 132N1 132N2 132G 132P1 132P2
+
+### HUNDRED_THIRTYTHREE
+
+33v begin =6+7u "133a" se
+~ 50m e
+hs> "133P1"
+4u 800m
+<hs "133N1"
+~ 50m ne
+end "133b"
+
+1u begin -1u "132t133"
+2u 800m
+<hp "1337"
+1u 200m
+1u 800m
+<hp "1339"
+1u 200m
+1u 800m
+<hp "133A"
+2u 200m
+2u 50m
+50m >w / 50m nw "133c" 8d
+w< 50m / 50m se "133a" 8d
+2u 50m
+hs> "133P2"
+4u 800m
+<hs "133N2"
+2u 50m
+50m >w / 50m sw "133b" 8d
+w< 50m / 50m ne "133d" 10d
+6u 150m
+2u 200m
+hp> "133G"
+1u 600m
+<hp "1341"
+1u 200m
+1u 800m
+<hp "1343"
+1u 200m
+1u 800m
+<hp "1345"
+1u 200m
+end "133t134"
+
+1v begin -2u "133t132"
+1u 200m
+hp> "1336"
+1u 800m
+1u 200m
+hp> "1338"
+1u 800m
+1u 200m
+hp> "1330"
+1u 600m
+<hp "133B"
+2u 200m
+w< 50m / 50m se "133c" 8d
+6u 150m
+hs> "133P3"
+4u 800m
+<hs "133N3"
+6u 150m
+50m >w / 50m sw "133d" 10d
+w< 50m / 50m ne "133e" 13d
+2u 50m
+2u 200m
+hp> "133F"
+1u 800m
+1u 200m
+hp> "1342"
+1u 800m
+1u 200m
+hp> "1344"
+2u 800m
+end "134t133"
+
+67v begin -1u "133e" ne
+~ 50m e
+2u 200m
+hp> "133H"
+1u 1000m
+1u 1000m
+<hp "1451"
+1u 200m
+hp> "1452"
+2u 1000m
+end "133c145"
+
+%def 133A-133N2/133N1
+%def 133B-133N3/+133N2/133N1
+%def 133N1-1341/134B
+%def 133N2-1341/134B
+%def 133N3-134B
+
+%def 133F-133P3/133P1/133P2
+%def 133G-133P2/133P1
+%def 133H-133P3/133P1/133P2
+%def 133P1-1330/132G
+%def 133P2-132G/+1330
+%def 133P3-1330
+
+%mac hthirtythree-hfourtyfive 133A-133N2/133N1
+%mac hthirtythree-hfourtyfive 133B-133N3/+133N2/133N1
+%mac hthirtythree-hfourtyfive 133N1-1451
+%mac hthirtythree-hfourtyfive 133N2-1451
+%mac hthirtythree-hfourtyfive 133N3-1451
+
+%quo1 133G 133P1 133P2
+%quo2 1452 133H 133G 133P1 133P2 133P3 133N3
+%quo2 132N3 133B 133N1 133N2 133G 133P1 133P2
+%quo3 132N3 133B 133N1 133N2 1452 133H 133G 133P1 133P2 133P3 133N3
+
+%quo1 132N3 132F
+%quo1 132N3 1332
+%quo1 132N3 1334
+%quo1 132N3 1336
+%quo1 132N3 1338
+%quo1 132N3 1330
+
+### HUNDRED-THIRTYFOUR
+
+2u begin =13+14u "133t134"
+2u 800m
+<hp "1347"
+1u 200m
+1u 800m
+<hp "134A"
+2u 200m
+w< 50m / 50m ne "134a" 8d
+8u 200m
+50m >w / 50m nw "134b" 8d
+hs> "134P1"
+4u 800m
+<hs "134N1"
+2u 50m
+2u 50m ne
+~ 50m e
+50m >w / 50m nw "134c" 10d
+2u 200m
+hp> "134G"
+1u 600m
+<hp "1351"
+1u 200m
+1u 800m
+<hp "1353"
+1u 200m
+hp> "1350"
+1u 800m
+<hp "1355"
+1u 200m
+end "134t135"
+
+3v begin -2u "134t133"
+1u 200m
+hp> "1346"
+1u 800m
+1u 200m
+hp> "1348"
+1u 600m
+<hp "134B"
+2u 200m
+2u 50m
+50m >w / 50m sw "134a" 8d
+50m >w / 50m nw "134d" 8d
+w< 50m / 50m ne "134e" 8d
+w< 50m / 50m se "134b" 8d
+2u 50m
+hs> "134P2"
+4u 800m
+<hs "134N2"
+~ ne 50m
+50m >w / 50m w "134f" 13d
+e
+w< 50m / 50m se "134c" 10d
+2u 50m
+2u 300m
+hp> "134F"
+1u 800m
+1u 200m
+hp> "1352"
+1u 800m
+<hp "1359"
+1u 200m
+hp> "1354"
+2u 800m
+end "135t134"
+
+11u begin -3u "134g" se
+w< 50m e / 50m se "134d" 8d
+4u 100m
+50m >w / 50m sw "134e" 8d
+hs> "134P3"
+4u 800m
+<hs "134N3"
+~ 50m ne
+end "134h"
+
+1v begin -1u "134c145"
+2u 1000m
+<hp "1454"
+1u 200m
+hp> "1453"
+1u 1000m
+1u 1000m
+<hp "134C"
+2u 200m
+w< 50m / 50m se "134g" 8d
+2u 50m
+w< 50m / 50m ne "134i" 8d
+2u 50m
+hs> "134P4"
+4u 800m
+<hs "134N4"
+2u 50m
+50m >w / 50m nw "134j" 8d
+se
+50m >w / 50m w "134h" 8d
+end "134f"
+
+15u begin -1u "134i" ne
+~ 50m e
+hs> "134P5"
+4u 800m
+<hs "134N5"
+~ 50m se
+end "134j"
+
+%def 134A-134N1/134N3/134N2
+%def 134B-134N2/+134N1/134N3
+%def 134C-134N4/+134N1/134N5/134N3/134N2
+%def 134N1-1351/1359
+%def 134N2-1359/+1351
+%def 134N3-1351/1359
+%def 134N4-1351/1359
+%def 134N5-1351/1359
+
+%def 134F-134P2/134P3/134P1
+%def 134G-134P1/+134P2/134P3
+%def 134P1-133G/+1348
+%def 134P2-1348/133G
+%def 134P3-1348/133G
+
+%mac hthirtyfour-hfourtyfive 134F-134P4/134P5/134P3/134P2/134P1
+%mac hthirtyfour-hfourtyfive 134G-134P4/+134P1/134P5/134P3/134P2
+%mac hthirtyfour-hfourtyfive 134P1-1453
+%mac hthirtyfour-hfourtyfive 134P2-1453
+%mac hthirtyfour-hfourtyfive 134P3-1453
+%mac hthirtyfour-hfourtyfive 134P4-1453
+%mac hthirtyfour-hfourtyfive 134P5-1453
+
+%quo2 133N3 134B 134N1 134N2 134N3
+%quo2 1350 134G 134P1 134P2 134P3
+%quo3 133N3 134B 134N1 134N2 134N3 1350 134G 134P1 134P2 134P3
+
+%quo4 133N3 134B 134N1 134N2 134N3 1454 134C 134N4 134N5 134P4 134P5
+%quo5 133N3 134B 134N1 134N2 134N3 1350 134G 134P1 134P2 134P3 1454 134C 134N4 134N5 134P4 134P5
+
+%quo1 133N3 133F
+%quo1 133N3 1342
+%quo1 133N3 1344
+%quo1 133N3 1346
+%quo1 133N3 1348
+
+### HUNDREDFOURTYISX + FIVE
+
+1v begin -3u "146c147"
+2u 1000m
+<hp "146F"
+3v 200m
+w< 50m / 50m ne "146a" 8d
+2u 50m
+hs> "146N1"
+7v 800m
+<hs "146P1"
+2u 50m
+50m >w / 50m nw "146b" 8d
+3v 200m
+hp> "146A"
+1u 1000m
+1u 1000m
+<hp "145F"
+3v 200m
+w< 50m / 50m se "145a" 13d
+w< 50m / 50m ne "145d" 8d
+2u 50m
+hs> "145N2"
+7v 800m
+<hs "145P2"
+w< 50m / 50m se "145b" 8d
+2u 50m
+50m >w / 50m nw "145e" 8d
+50m >w / 50m sw "145c" 8d
+3v 200m
+hp> "145A"
+2u 1000m
+end "134c145"
+
+13v begin -1u "146a" ne
+~ 50m e
+hs> "146N2"
+7v 800m
+<hs "146P2"
+~ 50m se
+end "146b"
+
+54v begin +0u "145d" ne
+~ 50m e
+hs> "145N3"
+7v 800m
+<hs "145P3"
+3u ~ se 100m
+end "145e"
+
+50v begin +2u "145a" se
+~ 3u 100m e
+hs> "145N1"
+7v 800m
+<hs "145P1"
+2u 50m
+50m >w / 50m nw "145b" 8d
+w< 50m / 50m ne "145c" 8d
+2u 50m
+3v 200m
+hp> "145B"
+2u 1000m
+end "133c145"
+
+%def 146A-146N1/146N2
+%def 146N1-147A
+%def 146N2-147A
+
+%def 146F-146P1/146P2
+%def 146P1-145F
+%def 146P2-145F
+
+%quo1 146A 146N1 146N2
+%quo1 1472 146F 146P1 146P2
+
+%def 145F-145P2/145P3/145P1
+%def 145P1-1454
+%def 145P2-1454
+%def 145P3-1454
+
+%def 145A-145N2/145N3/145N1
+%def 145B-145N1/145N2
+%def 145N1-146A
+%def 145N2-146A
+%def 145N3-146A
+
+%mac hfourtyfive-hthirtythree 145F-145P1/+145P2
+%mac hfourtyfive-hthirtythree 145P1-1452
+%mac hfourtyfive-hthirtythree 145P2-1452
+
+%quo1 133N3 1451 145B 145N1 145N2
+%quo1 145F 145P1 145P2
+%quo2 133N3 1451 145B 145N1 145N2 1453 145A 145N3 145P3
+%quo3 133N3 1451 145B 145N1 145N2 145F 145P1 145P2 1453 145A 145N3 145P3
+
+### HUNDRED-THIRTYFIVE
+
+20u begin =10+11u "135a" se
+~ 50m e
+hs> "135P0"
+4u 800m
+<hs "135N0"
+~ 50m ne
+end "135b"
+
+18u begin -2u "135c" se
+w< 50m e / 50m se "135a" 8d
+2u 50m
+hs> "135P1"
+4u 800m
+<hs "135N1"
+2u 50m
+50m >w / 50m sw "135b" 8d
+w< 50m / 50m ne "135d" 8d
+4u 100m
+50m >w / 50m nw "135e" 8d
+2u 200m
+hp> "135I"
+1u 800m
+<hp "1791"
+1u 200m
+hp> "1794"
+2u 1000m
+end "135t179"
+
+16u begin -2u "135f" se
+w< 50m e 12d / 50m se "135c" 13d
+2u 50m
+hs> "135P2"
+4u 800m
+<hs "135Q2"
+w< 50m / 50m ne "135g" 8d
+4u 100m
+50m >w / 50m nw "135h" 8d
+50m >w / 50m sw "135d" 8d
+w< 50m / 50m se "135e" 8d
+2u 50m
+2u 200m
+hp> "135H"
+1u 800m
+<hp "1793"
+1u 200m
+hp> "1792"
+2u 1000m
+end "179t135"
+
+1u begin -1u "134t135"
+2u 800m
+<hp "1357"
+1u 200m
+1u 800m
+<hp "135A"
+2u 200m
+2u 50m
+50m >w / 50m nw "135i" 10d
+w< 50m / 50m ne "135j" 8d
+w< 50m / 50m se "135f" 13d
+2u 50m
+hs> "135P3"
+4u 800m
+<hs "135Q3"
+2u 50m
+50m >w / 50m nw "135k" 8d
+50m >w / 50m sw "135g" 8d
+w< 50m / 50m se "135h" 8d
+2u 50m
+hs> "135R3"
+7v 800m
+<hs "135N3"
+w< 50m / 50m ne "135l" 8d
+2u 50m
+5v 300m
+hp> "135G"
+1u 600m
+<hp "1361"
+1u 200m
+end "135t136"
+
+1v begin -2u "135t134"
+1u 200m
+hp> "1356"
+1u 800m
+1u 200m
+hp> "1358"
+1u 600m
+<hp "135B"
+2u 200m
+w< 50m / 50m se "135i" 10d
+4u 100m
+50m >w / 50m sw "135j" 8d
+2u 50m
+hs> "135P4"
+4u 800m
+<hs "135Q4"
+w< 50m / 50m se "135k" 8d
+2u 50m
+w< 50m / 50m ne "135m" 8d
+2u 50m
+hs> "135R4"
+7v 800m
+<hs "135N4"
+2u 50m
+50m >w / 50m nw "135n" 8d
+50m >w / 50m sw "135l" 8d
+5v 200m
+hp> "135F"
+2u 800m
+end "136t135"
+
+29u begin -1u "135m" ne
+~ 50m e
+hs> "135R5"
+7v 800m
+<hs "135N5"
+~ 50m se
+end "135n"
+
+%def 135A-135Q3/135Q2/135Q4
+%def 135B-135Q4/+135Q3/135Q2
+%def 135Q2-135N3
+%def 135Q3-135N3
+%def 135Q4-135N4/+135N3/135N5
+%def 135N3-1361/136B
+%def 135N4-136B
+%def 135N5-136B
+
+%mac hthirtyfive-hseventynine 135A-135N1/+135Q2/+135Q3/135N0/135Q4
+%mac hthirtyfive-hseventynine 135B-135Q4/+135N1/+135Q2/135Q3/135N0
+%mac hthirtyfive-hseventynine 135N0-1791/+1793
+%mac hthirtyfive-hseventynine 135N1-1791/1793
+%mac hthirtyfive-hseventynine 135Q2-1793/1791
+%mac hthirtyfive-hseventynine 135Q3-1791/+1793
+%mac hthirtyfive-hseventynine 135Q4-1791/+1793
+
+%mac hthirtyfive-hseventynine-left 135A-135Q2/+135N1/+135Q3/135N0/135Q4
+%mac hthirtyfive-hseventynine-left 135B-135Q4/+135Q2/+135N1/135Q3/135N0
+%mac hthirtyfive-hseventynine-left 135N0-1793/+1791
+%mac hthirtyfive-hseventynine-left 135N1-1791/1793
+%mac hthirtyfive-hseventynine-left 135Q2-1793/1791
+%mac hthirtyfive-hseventynine-left 135Q3-1793/+1791
+%mac hthirtyfive-hseventynine-left 135Q4-1793/+1791
+
+%def 135F-135R4/135R5/135R3
+%def 135G-135R3
+%def 135R3-135P3/+135P4/135P2
+%def 135R4-135P4
+%def 135R5-135P4
+%def 135H-135P2/+135P4/135P1/135P0/135P3
+%def 135I-135P1/+135P4/135P2/135P0/135P3
+%def 135P0-1358/1350
+%def 135P1-1358/1350
+%def 135P2-1358/1350
+%def 135P3-1350/+1358
+%def 135P4-1358/1350
+
+%quo2 1359 135B 135Q2 135Q3 135Q4
+%quo2 135G 135R3 135P2 135P3 135P4
+%quo3 1359 135B 135Q2 135Q3 135Q4 135G 135R3 135P2 135P3 135P4
+%quo1 135G 135N3
+%quo1 135N5 135N4
+%quo4 135G 135R3 135P2 135P3 135P4 1792 135H 1794 135I 135P0 135P1 135N0 135N1
+%quo5 1359 135B 135Q2 135Q3 135Q4 135G 135R3 135P2 135P3 135P4 1792 135H 1794 135I 135P0 135P1 135N0 135N1
+
+### HUNDRED-SEVENTYNINE
+
+1v begin =5+6u "135t179"
+3v 1000m
+<hp "179A"
+3v 200m
+w< 50m / 50m ne "179a" 8d
+6u 150m
+hs> "179P1"
+7v 800m
+<hs "179N1"
+6u 150m
+50m >w / 50m nw "179b" 8d
+3v 200m
+hp> "179G"
+1u 1000m
+1u 1000m
+<hp "1801"
+1u 200m
+hp> "1804"
+3v 1000m
+end "179t180"
+
+1v begin -2u "179t135"
+3v 1000m
+<hp "179B"
+3v 200m
+2u 50m
+50m >w / 50m sw "179a" 8d
+w< 50m / 50m ne "179c" 8d
+2u 50m
+hs> "179P2"
+7v 800m
+<hs "179N2"
+2u 50m
+50m >w / 50m nw "179d" 8d
+w< 50m / 50m se "179b" 8d
+2u 50m
+3v 200m
+hp> "179F"
+1u 1000m
+1u 1000m
+<hp "1803"
+1u 200m
+hp> "1802"
+3v 1000m
+end "180t179"
+
+10u begin -1u "179c" ne
+~ 50m e
+hs> "179P3"
+7v 800m
+<hs "179N3"
+~ 50m se
+end "179d"
+
+%def 179A-179N1/179N2/179N3
+%def 179B-179N2/179N3
+%def 179N1-1801
+%def 179N2-1803/1801
+%def 179N3-1803/+1801
+
+%def 179F-179P2/179P3
+%def 179G-179P1/179P2/179P3
+%def 179P1-1792/+1794
+%def 179P2-1792/1794
+%def 179P3-1794
+
+%quo1 1793 179B 179N2 179N3
+%quo1 1802 179F 179P2 179P3
+
+%quo2 1793 179B 179N2 179N3 1791 179A 179N1 179P1 1804 179G
+%quo2 1802 179F 179P2 179P3 1791 179A 179N1 179P1 1804 179G
+%quo3 1793 179B 179N2 179N3 1802 179F 179P2 179P3 1791 179A 179N1 179P1 1804 179G
+
+### HUNDRED-EIGHTY
+
+1v begin =10+15u "179t180"
+2u 1000m
+<hp "180A"
+2u 200m
+2u 50m
+50m >w / 50m nw "180a" 10d
+w< 50m / 50m ne "180b" 10d
+w< 50m / 50m se "180c" 8d
+2u 50m
+hs> "180P4"
+3u 800m
+<hs "180X4"
+~ 50m se
+50m >w / 50m w "180d" 8d
+50m >w / 50m n "180e" 10d
+2u 200m e
+hp> "180K"
+1u 1000m
+1u 1000m
+<hp "1806"
+1u 200m
+hp> "1805"
+2u 1000m
+w< 50m / 50m ne "180c189" 20d
+2u 2500m
+<hp "189F"
+%quo1 1806 189F
+1u 200m
+end "180c189"
+
+1v begin -2u "180t179"
+2u 1000m
+<hp "180B"
+2u 200m
+w< 50m / 50m se "180a" 10d
+4u 100m
+50m >w / 50m sw "180b" 10d
+w< 50m / 50m ne "180f" 8d
+4u 100m
+hs> "180P1"
+4u 800m
+<hs "180N1"
+4u 100m
+50m >w / 50m nw "180g" 8d
+6u 150m
+50m >w / 50m sw "180h" 10d
+2u 200m
+hp> "180F"
+1u 1000m
+1u 1000m
+<hp "1811"
+1u 200m
+hp> "1812"
+2u 1000m
+end "180c181"
+
+13u begin +3u "180c" se
+~ 50m e
+hs> "180P5"
+3u 800m
+<hs "180X5"
+2u 50m
+end "180d"
+
+24u begin +2u "180e" ne
+w< 50m / 50m e "180i" 8d
+~ 50m e
+hs> "180Y4"
+3u 800m
+<hs "180N4"
+2u 50m
+50m >w ne / 50m sw "180j" 8d
+end "180h"
+
+26u begin -1u "180i"
+2u 50m
+hs> "180Y5"
+3u 800m
+<hs "180N5"
+~ 50m ne
+end "180j"
+
+15u begin -5u "180f" ne
+w< 50m / 50m e "180k" 8d
+~ 50m e
+hs> "180P3"
+4u 800m
+<hs "180N3"
+~ 50m se
+50m >w / 50m w "180l" 8d
+end "180g"
+
+17u begin -1u "180k"
+2u 50m
+hs> "180P2"
+4u 800m
+<hs "180N2"
+2u 50m
+end "180l"
+
+%def 180A-180N1/180N2/180N3
+%def 180B-180N1/180N2/180N3
+%def 180K-180N4/180N5
+%def 180N1-1811
+%def 180N2-1811
+%def 180N3-1811
+%def 180N4-1811
+%def 180N5-1811
+
+%def 180F-180P1/180P2/180P3
+%def 180P1-1802/1804
+%def 180P2-1802/1804
+%def 180P3-1802/1804
+%def 180P4-1804/1802
+%def 180P5-1804/1802
+
+%mac heighty-heightynine 180A-180X4/180X5
+%mac heighty-heightynine 180F-180Y4/180Y5
+%mac heighty-heightynine 180X4-1806
+%mac heighty-heightynine 180X5-1806
+%mac heighty-heightynine 180Y4-1806
+%mac heighty-heightynine 180Y5-1806
+
+%mac heighty-hseventynine 180K-180P4/180P5
+
+%quo2 1801 180A 1803 180B 180N1 180N2 180N3
+%quo2 1812 180F 180P1 180P2 180P3
+%quo3 1801 180A 1803 180B 180N1 180N2 180N3 1812 180F 180P1 180P2 180P3
+
+%quo1 1801 180A 1803 180B 180X4 180X5
+%quo1 1805 180K 180P4 180P5
+
+%quo1 1812 180F 180Y4 180Y5
+%quo1 1805 180K 180N4 180N5
+
+5v begin -9v "180c181"
+3v 1000m
+<hp "181A"
+3v 200m
+w< 50m / 50m se "181a" 8d
+2u 50m
+hs> "181P1"
+7v 800m
+<hs "181N1"
+2u 50m
+50m >w / 50m sw "181b" 8d
+3v 200m
+hp> "181F"
+1u 1000m
+1u 1000m
+<hp "1821"
+1u 200m
+hp> "1822"
+1u 1000m
+1u 1000m
+<hp "182A"
+3v 200m
+w< 50m / 50m se "182a" 8d
+w< 50m / 50m ne "182c" 13d
+2u 50m
+hs> "182P1"
+7v 800m
+<hs "182N1"
+w< 50m / 50m ne "182d" 8d
+50m >w / 50m sw "182b" 8d
+3v 200m
+hp> "182F"
+3v 1000m
+end "182c183"
+
+8u begin +1u "181a" se
+~ 50m e
+hs> "181P2"
+7v 800m
+<hs "181N2"
+~ 50m ne
+end "181b"
+
+61v begin +0u "182a" se
+~ 3u 100m e
+hs> "182P0"
+7v 800m
+<hs "182N0"
+~ 50m ne
+end "182b"
+
+65v begin -2u "182c" ne
+~ 50m e
+hs> "182P2"
+7v 800m
+<hs "182N2"
+2u 50m
+50m >w / 50m sw "182d" 8d
+3v 200m
+hp> "182G"
+3v 1000m
+end "138c182"
+
+40u begin -3u "182c183"
+1u 50m
+w< 50m / 50m ne "183x" 20d
+2u 2000m
+<hp "183A"
+1u 200m
+end "183x"
+
+40u begin -2u "138c182"
+1u 50m
+w< 50m / 50m ne "138x" 20d
+2u 2000m
+<hp "138C"
+1u 200m
+end "138x"
+
+%def 181A-181N1/181N2
+%def 181N1-1821
+%def 181N2-1821
+
+%def 181F-181P1/181P2
+%def 181P1-1812
+%def 181P2-1812
+
+%quo1 1811 181A 181N1 181N2
+%quo1 1822 181F 181P1 181P2
+
+%def 182A-182N1/182N0
+%def 182N1-183A
+%def 182N0-183A
+
+%mac heightytwo-hthirtyeight 182A-182N2/+182N1
+%mac heightytwo-hthirtyeight 182N1-138C
+%mac heightytwo-hthirtyeight 182N2-138C
+
+%def 182F-182P1/182P0
+%def 182G-182P2/+182P1
+%def 182P0-1822
+%def 182P1-1822
+%def 182P2-1822
+
+%quo1 1821 182A 182N0 182N1 182N2
+%quo1 182F 182P0 182P1
+%quo1 182G 182P1 182P2
+
+### HUNDRED-TWENTYONE
+
+1u begin =14+16u "120t121"
+2u 800m
+<hp "121A"
+2u 200m
+w< 50m / 50m ne "121a" 8d
+2u 50m
+1u 100m
+hs> "121P1"
+4u 800m
+<hs "121S1"
+10u 250m
+50m >w / 50m nw "121b" 8d
+hs> "121R1"
+4u 800m
+<hs "121N1"
+6u 150m
+50m >w / 50m nw "121c" 8d
+2u 200m
+hp> "121G"
+1u 600m
+<hp "1221"
+1u 200m
+end "121t122"
+
+1v begin -2u "121t120"
+1u 200m
+hp> "1216"
+1u 600m
+<hp "121B"
+2u 200m
+2u 50m
+50m >w / 50m sw "121a" 8d
+1u 100m
+hs> "121P2"
+4u 800m
+<hs "121S2"
+w< 50m / 50m ne "121d" 8d
+4u 100m
+50m >w / 50m nw "121e" 8d
+w< 50m / 50m se "121b" 8d
+2u 50m
+hs> "121R2"
+4u 800m
+<hs "121N2"
+2u 50m
+50m >w / 50m nw "121f" 10d
+w< 50m / 50m se "121c" 8d
+2u 50m
+2u 200m
+hp> "121F"
+2u 800m
+end "122t121"
+
+5u begin -2u "121c140"
+2u 1000m
+<hp "1402"
+1u 200m
+hp> "1401"
+2u 1000m
+2u 1000m
+<hp "121C"
+2u 200m
+2u 50m
+50m >w / 50m sw "121d" 8d
+w< 50m / 50m se "121e" 8d
+w< 50m / 50m ne "121g" 8d
+2u 50m
+hs> "121Q3"
+4u 800m
+<hs "121N3"
+2u 50m
+50m >w se / 50m nw "121h" 8d
+end "121f"
+
+47v begin -1u "121g" ne
+~ 50m e
+hs> "121Q4"
+4u 800m
+<hs "121N4"
+~ 50m se
+end "121h"
+
+5u begin +1u "121c140" w
+2u 1000m
+<hp "140A"
+1u 100m
+1u 100m nw
+n
+w< 50m / 50m ne "140a" 13d
+1u 25m
+ne
+w< 50m / 50m e "140b" 8d
+~ 50m e
+hs> "140P1"
+7v 800m
+<hs "140N1"
+w< 50m / 50m se "140c" 8d
+6u 150m
+50m >w / 50m sw "140d" 8d
+3v 200m
+hp> "140F"
+1u 1000m
+1u 1000m
+<hp "141A"
+3v 200m
+w< 50m / 50m se "141a" 8d
+4u 100m
+50m >w / 50m sw "141b" 8d
+hs> "141P1"
+7v 800m
+<hs "141N1"
+2u 50m
+50m >w / 50m sw "141c" 10d
+3v 200m
+hp> "141F"
+2u 1000m
+end "141c142"
+
+5v begin -5u "140b" e
+2u 50m
+hs> "140P2"
+7v 800m
+<hs "140N2"
+2u 50m
+50m >w / 50m nw "140c" 8d
+50m >w / 50m sw "140e" 8d
+w< 50m se / 50m ne "140d" 8d
+end "140f"
+
+3v begin +2u "140a"
+3u 125m
+hs> "140P3"
+7v 800m
+<hs "140N3"
+2u 50m
+w< 50m / 50m ne "140e" 8d
+4u 100m
+50m >w / 50m nw "140f" 8d
+3v 200m
+hp> "140G"
+2u 1000m
+end "131c140"
+
+21u begin -2u "131c141"
+2u 1000m
+<hp "141B"
+3v 200m
+2u 50m
+50m >w / 50m nw "141a" 8d
+w< 50m / 50m ne "141b" 8d
+2u 50m
+hs> "141P2"
+7v 800m
+<hs "141N2"
+~ 50m ne
+end "141c"
+
+%def 121A-121S1/121S2
+%def 121B-121S2
+%def 121C-121N1/+121N3/121N4/121N2
+%def 121S1-121N1
+%def 121S2-121N2/+121N1/121N4/121N3
+%def 121N1-1221
+%def 121N2-122B/+1221
+%def 121N3-1221/+122B
+%def 121N4-1221/122B
+
+%def 121F-121R2/121Q3/121Q4
+%def 121G-121R1/+121R2/121Q3/121Q4
+%def 121R1-121P1/+121P2
+%def 121R2-121P2
+%def 121Q3-121P2
+%def 121Q4-121P2
+%def 121P1-120G
+%def 121P2-1216/120G
+
+%mac htwentyone-hfourty 121F-121Q3/121Q4/121R2
+%mac htwentyone-hfourty 121G-121Q3/+121R1/121Q4/121R2
+%mac htwentyone-hfourty 121R1-1401
+%mac htwentyone-hfourty 121R2-1401
+%mac htwentyone-hfourty 121Q3-1401
+%mac htwentyone-hfourty 121Q4-1401
+
+%quo3 120N3 121B 121S2 1402 121C 121N1 121N2 121N3 121N4
+%quo3 121G 121R1 121R2 121Q3 121Q4
+%quo4 120N3 121B 121S2 1402 121C 121N1 121N2 121N3 121N4 121G 121R1 121R2 121Q3 121Q4
+%quo1 121B 121P2
+%quo1 120N3 121P2
+
+%quo1 120N3 120F
+%quo1 120N3 1212
+%quo1 120N3 1214
+%quo1 120N3 1216
+
+%quo1 121P1 121A
+%quo1 121P1 1215
+%quo1 121P1 1213
+%quo1 121P1 1211
+
+%quo2 120B 120P1 120P2 120N1 120N2 120G 121P1
+%quo1 120P1 120P2 120G 121P1
+
+%def 140A-140N1/140N2/140N3
+%def 140N1-141A
+%def 140N2-141A
+%def 140N3-141A
+
+%def 140F-140P1/140P2/140P3
+%def 140G-140P3/140P2/140P1
+%def 140P1-1402
+%def 140P2-1402
+%def 140P3-1402
+
+%mac hfourty-hthirtyone 140A-140N3/140N2/140N1
+%mac hfourty-hthirtyone 140N1-131C
+%mac hfourty-hthirtyone 140N2-131C
+%mac hfourty-hthirtyone 140N3-131C
+
+%quo2 1401 140A 140N1 140N2 140N3
+%quo2 140F 140G 140P1 140P2 140P3
+%quo3 1401 140A 140N1 140N2 140N3 140F 140G 140P1 140P2 140P3
+
+%def 141A-141N1/141N2
+%def 141B-141N2/+141N1
+%def 141N1-142A
+%def 141N2-142A
+
+%def 141F-141P1/141P2
+%def 141P1-140F
+%def 141P2-140F
+
+%mac hfourtyone-hthirtyone 141F-141P2/141P1
+%mac hfourtyone-hthirtyone 141P1-131D
+%mac hfourtyone-hthirtyone 141P2-131D
+
+%quo1 141A 141B 141N1 141N2
+%quo1 141F 141P1 141P2
+
+1u begin =3-345u "121t122"
+2u 800m
+<hp "1a"
+1u 200m
+1u 800m
+<hp "1b"
+1u 200m
+w< 50m / 50m ne "1q" 20d
+1u 800m
+<hp "1c"
+1u 200m
+1u 800m
+<hp "1d"
+1u 200m
+1u 800m
+<hp "1e"
+1u 200m
+end "1p"
+
+1v begin -2u "122t121"
+1u 200m
+hp> "1h"
+1u 800m
+1u 200m
+hp> "1g"
+1u 800m
+1u 200m
+hp> "1f"
+1u 800m
+w< 50m / 50m ne "1p" 20d
+1u 900m
+<hp "122B"
+1u 200m
+1u 800m
+<hp "1z"
+1u 200m
+end "1q"
+
+21u begin +2u "135t136"
+2u 800m
+<hp "2a"
+1u 200m
+1u 800m
+<hp "2b"
+1u 200m
+w< 50m / 50m ne "2q" 20d
+1u 800m
+<hp "2c"
+1u 200m
+1u 800m
+<hp "2d"
+1u 200m
+1u 800m
+<hp "2e"
+1u 200m
+end "2p"
+
+41v begin -2u "136t135"
+1u 200m
+hp> "2h"
+1u 800m
+1u 200m
+hp> "2g"
+1u 800m
+1u 200m
+hp> "2f"
+1u 800m
+w< 50m / 50m ne "2p" 20d
+1u 900m
+<hp "136B"
+1u 200m
+1u 800m
+<hp "2z"
+1u 200m
+end "2q"
 
 ### EPILOG
 
-%trn len=228 v=200 n=a 
-%trn len=228 v=200 n=b 
-%trn len=228 v=200 n=c 
-%trn len=228 v=200 n=d 
-%trn len=228 v=200 n=e 
-%trn len=228 v=200 n=f 
-%trn len=228 v=200 n=g 
-%trn len=228 v=200 n=h 
-%trn len=228 v=200 n=i 
-%trn len=228 v=200 n=j 
-
+%trn len=228 v=200 n=f1 %hfourtyone-hthirtyone,%hthirtythree-hfourtyfive,%hfourtyfive-hthirtythree
+%trn len=228 v=200 n=d2 %hfourtynine-hfourtyfour,%htwentyone-hfourty
+%trn len=228 v=200 n=b3 
+%trn len=228 v=200 n=j1 %hthirtyfive-hseventynine,%heighty-heightynine,%heighty-hseventynine
+%trn len=228 v=200 n=i3 %hthirtyfive-hseventynine-left
+%trn len=228 v=200 n=i2 %hthirtyfive-hseventynine-left
+%trn len=228 v=200 n=b2 
+%trn len=228 v=200 n=a1 %hfourtynine-hfourtyfour
+%trn len=228 v=200 n=b5 
+%trn len=228 v=200 n=c1 %hfourtynine-hfourtyfour,%hfourtyone-hthirtyone,%hthirtyone-hfourtyone
+%trn len=228 v=200 n=x2 %hfourtynine-hfourtyfour,%hfourtythree-hseventy,%hseventy-hfourtythree
+%trn len=228 v=200 n=b4 
+%trn len=228 v=200 n=d1 %hfourtynine-hfourtyfour,%htwentyone-hfourty
+%trn len=228 v=200 n=c2 %hfourtynine-hfourtyfour,%hfourtyone-hthirtyone,%hthirtyone-hfourtyone
+%trn len=228 v=200 n=e1 %hfourty-hthirtyone,%hthirtyone-hfourty,%htwentyone-hfourty
+%trn len=228 v=200 n=y1 %hfourtynine-hfourtyfour,%hfourtytwo-hseventy,%htwentyone-hfourty
+%trn len=228 v=200 n=z1 %hfourtyone-hthirtyone,%hthirtyone-hfourtyone,%hfourtytwo-hseventy
+%trn len=228 v=200 n=y3 %hfourtynine-hfourtyfour,%hfourtytwo-hseventy,%htwentyone-hfourty
+%trn len=228 v=200 n=l1 %hthirtyfive-hseventynine,%heighty-heightynine,%heightytwo-hthirtyeight
+%trn len=228 v=200 n=f3 %hfourtyone-hthirtyone,%hthirtythree-hfourtyfive,%hfourtyfive-hthirtythree
+%trn len=228 v=200 n=h1 %hthirtyfour-hfourtyfive,%hthirtyfive-hseventynine,%heighty-heightynine,%heighty-hseventynine
+%trn len=228 v=200 n=b1 
+%trn len=228 v=200 n=y2 %hfourtynine-hfourtyfour,%hfourtytwo-hseventy,%htwentyone-hfourty
+%trn len=228 v=200 n=g1 %hthirtyfour-hfourtyfive
+%trn len=228 v=200 n=b6 
+%trn len=228 v=200 n=a3 %hfourtynine-hfourtyfour
+%trn len=228 v=200 n=e2 %hfourty-hthirtyone,%hthirtyone-hfourty,%htwentyone-hfourty
+%trn len=228 v=200 n=x1 %hfourtynine-hfourtyfour,%hfourtythree-hseventy,%hseventy-hfourtythree
+%trn len=228 v=200 n=a4 %hfourtynine-hfourtyfour
+%trn len=228 v=200 n=i1 %hthirtyfive-hseventynine-left
+%trn len=228 v=200 n=k1 %hthirtyfive-hseventynine,%heighty-heightynine
+%trn len=228 v=200 n=g2 %hthirtyfour-hfourtyfive
+%trn len=228 v=200 n=h2 %hthirtyfour-hfourtyfive,%hthirtyfive-hseventynine,%heighty-heightynine,%heighty-hseventynine
+%trn len=228 v=200 n=f2 %hfourtyone-hthirtyone,%hthirtythree-hfourtyfive,%hfourtyfive-hthirtythree
+%trn len=228 v=200 n=a2 %hfourtynine-hfourtyfour
