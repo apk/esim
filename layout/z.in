@@ -19,8 +19,17 @@
 1u 200m
 w< / se "y" 20d
 >w / sw "x" 20d
-1u 800m
+1u 300m
 <hp "1e"
+1u 200m
+1u 300m
+<hp "1f"
+1u 200m
+1u 300m
+<hp "1g"
+1u 200m
+1u 300m
+<hp "1h"
 1u 200m
 end "471t472"
 
@@ -39,12 +48,21 @@ end "471t472"
 1u 200m
 w< / ne "x" 20d
 >w / nw "y" 20d
-1u 800m
+1u 300m
 <hp "2e"
+1u 200m
+1u 300m
+<hp "2f"
+1u 200m
+1u 300m
+<hp "2g"
+1u 200m
+1u 300m
+<hp "2h"
 1u 200m
 end "471u472"
 
-30u begin +0u "448t449"
+35u begin +0u "448t449"
 1u 50m
 end "449t448"
 
@@ -3714,11 +3732,11 @@ end "375f"
 %def 375N2-4481/448B
 %def 375N3-4481/448B
 
-%mac thseventyfifve-thseventysix 375A-375N3/375N2
-%mac thseventyfifve-thseventysix 375B-375N1/+375N3/+375N2
-%mac thseventyfifve-thseventysix 375N1-3761
-%mac thseventyfifve-thseventysix 375N2-3761
-%mac thseventyfifve-thseventysix 375N3-3761
+%mac thseventyfive-thseventysix 375A-375N3/375N2
+%mac thseventyfive-thseventysix 375B-375N1/+375N3/+375N2
+%mac thseventyfive-thseventysix 375N1-3761
+%mac thseventyfive-thseventysix 375N2-3761
+%mac thseventyfive-thseventysix 375N3-3761
 
 %def 375F-375P1/375P3/375P2
 %def 375G-375P2/+375P1/375P3
@@ -4119,8 +4137,8 @@ hs> "258N2"
 %trn len=100 v=200 n=7 %b
 %trn len=100 v=200 n=8 %b,%fseventythree-fseventyseven
 %trn len=100 v=200 n=9 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine
-%trn len=100 v=200 n=29 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix,%thhundred-tfiftynine
-%trn len=100 v=200 n=49 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix
+%trn len=100 v=200 n=29 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix,%thhundred-tfiftynine
+%trn len=100 v=200 n=49 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix
 %trn len=100 v=200 n=99 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty
 
 %trn len=100 v=200 n=0 
@@ -4141,14 +4159,14 @@ hs> "258N2"
 %trn len=100 v=200 n=24 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-thtwentyfive
 %trn len=100 v=200 n=25 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-thtwentyfive
 %trn len=100 v=200 n=26 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight,%thhundred-tfiftynine,%thhundred-thtwentyfive
-%trn len=100 v=200 n=29 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix,%thhundred-tfiftynine
+%trn len=100 v=200 n=29 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix,%thhundred-tfiftynine
 %trn len=100 v=200 n=33 %thtwentyseven-tthirtyfour,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-tthirtyone
 %trn len=100 v=200 n=34 %thtwentyseven-tthirtyfour,%b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-tfiftynine,%thhundred-tthirtyone
-%trn len=100 v=200 n=43 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix,%thhundred-thtwentyfive
-%trn len=100 v=200 n=44 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix,%thhundred-thtwentyfive
-%trn len=100 v=200 n=45 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix,%thhundred-thtwentyfive
-%trn len=100 v=200 n=46 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight,%thhundred-theighty,%thseventyfifve-thseventysix,%thhundred-thtwentyfive
-%trn len=100 v=200 n=49 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfifve-thseventysix
+%trn len=100 v=200 n=43 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix,%thhundred-thtwentyfive
+%trn len=100 v=200 n=44 %b,%fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix,%thhundred-thtwentyfive
+%trn len=100 v=200 n=45 %ththirtyfive-ththirtyfour,%ththirtythree-ththirtyfour,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix,%thhundred-thtwentyfive
+%trn len=100 v=200 n=46 %fseventythree-fseventyseven,%ththirtyeight-ththirtytwo,%ththirtytwo-ththirtyeight,%thhundred-theighty,%thseventyfive-thseventysix,%thhundred-thtwentyfive
+%trn len=100 v=200 n=49 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty,%thseventyfive-thseventysix
 %trn len=100 v=200 n=99 %fseventythree-fseventyseven,%ththirtythree-ththirtytwo,%thhundred-theighty
 
 %trn len=100 v=200 n=0 
