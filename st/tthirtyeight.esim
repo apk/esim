@@ -1,0 +1,5 @@
+#!/bin/sh
+esimc -title "esimc 238C" $* 238C 238B -- 238S3 238S2 238S1 -- 238N4 238N3 238N2 238N1 &
+esimc -title "esimc 238F" $* 238G 238F -- 238R1 238R2 238R3 238R4 -- 238P1 238P2 238N5 &
+esimc -title "esimc 238A" $* 238A -- 238U3 238U5 238U6 &
+esimc -title "esimc 238T" $* 238T5 238T3 -- 238P6 238P5 238P3 &

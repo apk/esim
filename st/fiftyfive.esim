@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 55A" $* 55B 55A 55C -- 55N4 55N3 55N2 55N1 &
+esimc -title "esimc 55F" $* 55G 55F -- 55P1 55P2 55P3 55P4 &
