@@ -1313,12 +1313,16 @@ w< 50m / 50m ne "6F"
 4u 100m
 50m >w / 50m sw "6J" 8d
 50m >w / 50m nw "6G"
-2u 200m
+1u 150m
+<hp "9"
+1u 50m
 hp> "6G"
 1u 450m
-<hp "9"
+<hp "7"
 1u 200m
 end "vA"
+
+%quo1 7 9
 
 7u begin +1u "6Y" se
 1u 25m
@@ -9605,9 +9609,9 @@ end "83k"
 %mac eightythree-fourtyfour 83P4-44H
 %mac eightythree-fourtyfour 83P5-44H
 
-%quo4 83A 83B 83S1 83S2 83S3 83S4 83S5
+%quo4 83A 44N1 83B 83S1 83S2 83S3 83S4 83S5
 %quo4 83P1 83P2 83P3 83P4 83P5
-%quo5 83A 83B 83S1 83S2 83S3 83S4 83S5 83P1 83P2 83P3 83P4 83P5
+%quo5 83A 44N1 83B 83S1 83S2 83S3 83S4 83S5 83P1 83P2 83P3 83P4 83P5
 %quo2 83F 83G 83R2 83R3 83R4
 %quo2 83N2 83N3 83N4
 %quo3 83F 83G 83R2 83R3 83R4 83N2 83N3 83N4
@@ -10590,8 +10594,8 @@ w< 50m / 50m se "50e" 8d
 1u 25m ne
 end "50k"
 
-%quo4 509 51B 51G 76U 51C 51P1 51P2 51P4 51P3 51N1 51N2 51N3 51N4
-%quo3 509 51B 76U 51C 51N1 51N2 51N3 51N4
+%quo4 509 51B 51G 76U 51D 51C 51P1 51P2 51P4 51P3 51N1 51N2 51N3 51N4
+%quo3 509 51B 76U 51D 51C 51N1 51N2 51N3 51N4
 %quo3 51G 51P1 51P2 51P4 51P3
 
 %def 50A-50N5/50N4/50Q2/50Q0/50Q1/50N3
@@ -11679,12 +11683,6 @@ end "101c"
 %quo2 101F 101G 101P1 101P2 101P3
 %quo3 101A 101N1 101N2 101N3 101F 101G 101P1 101P2 101P3
 
-%mac hundred 60N1-100A
-%mac hundred 60N2-100A
-%mac hundred 60N3-100A
-%mac hundred 60N4-100A
-%mac hundred 60N5-100A
-
 ### HUNDREDMORE
 
 1v begin =3+8v "101c102"
@@ -11754,16 +11752,16 @@ hs> "103R3"
 5v 800m
 <end "103N3"
 
-%def 102A-102N1/102N2
-%def 102B-102N2/102N1
+%def 102A-102N1/+102N2
+%def 102B-102N2/+102N1
 %def 102N1-1021
 %def 102N2-1021
 
-%def 102F-102P1/102P2
+%def 102F-102P1/+102P2
 %def 102P1-101G
 %def 102P2-101G
 
-%mac hundredtwo-four 102F-102P2/102P1
+%mac hundredtwo-four 102F-102P2/+102P1
 %mac hundredtwo-four 102P1-104B
 %mac hundredtwo-four 102P2-104B
 
@@ -11879,7 +11877,7 @@ end "104g"
 %def 104P2-101F
 %def 104P3-101F
 
-%mac hundredfour-two 105F-105P2/105P1
+%mac hundredfour-two 105F-105P2/+105P1
 %mac hundredfour-two 105P2-104G/104F
 %mac hundredfour-two 104F-104P3/+104P1/104P0/104P2
 %mac hundredfour-two 104G-104P3
@@ -11896,7 +11894,7 @@ end "104g"
 %def 105N1-106A
 %def 105N2-106A
 
-%def 105F-105P1/105P2
+%def 105F-105P1/+105P2
 %def 105P1-104F
 %def 105P2-104G/+104F
 
@@ -11952,7 +11950,7 @@ end "108b"
 hs> "107P2"
 3u 800m
 <hs "107S2"
-2u 50m
+w< 50m / 50m ne "107l"
 25m ekw< 25m / 25m se "107d" / 25m nw "107g"
 25m >w< 25m / 25m ne "107h" / 25m sw "107b"
 25m >w< 25m / 25m se "107e" / 25m nw "107i"
@@ -11987,9 +11985,9 @@ hs> "107P1"
 3u 800m
 <hs "107S1"
 w< 50m / 50m se "107g" 
-2u 50m
+25m >w< 25m / 25m ne "107m" / 25m sw "107l"
 w< 50m / 50m se "107i" 
-25m >w< 25m / 25m ne "107j" / 25m sw "107h"
+25m >ekw 25m / 25m ne "107j" / 25m sw "107h"
 2u 50m
 hs> "107R1"
 3u 800m
@@ -12003,8 +12001,9 @@ hs> "106P2"
 ~ 50m ne
 end "106b"
 
-81v begin -2u "107j" ne
-~ 50m e
+73v begin -2u "107m" ne
+~ 3u 100m e
+50m >w / 50m sw "107j"
 hs> "107R0"
 3u 800m
 <end "107N0"
@@ -12015,15 +12014,25 @@ hs> "107P4"
 3u 800m
 <hs "107S4"
 2u 50m
-w< 50m / 50m ne "107y"
+25m ekw< 25m / 25m ne "107y" / 25m sw "107n"
 25m >w< 25m / 25m se "107k" / 25m nw "107c"
-2u 50m e
+50m >w / 50m sw "107o" 8d
 hs> "107R4"
 3u 800m
 <end "107N4"
 
-81v begin +2u "107k" se
-~ 50m e
+53v begin +3u "107c110" # "107k" se
+2u 1000m
+<hp "1102"
+1u 200m
+hp> "1101"
+2u 800m
+<hp "107C"
+3v 200m
+w< 50m / 50m ne "107n"
+2u 50m
+w< 50m / 50m ne "107o" 8d
+50m >w / 50m nw "107k"
 hs> "107R5"
 3u 800m
 <end "107N5"
@@ -12056,16 +12065,30 @@ hs> "107R5"
 %def 107S2-107N2/+107N3/+107N1/+107N4/107N0/107N5
 %def 107S3-107N3/+107N4/+107N2/+107N5/107N1/107N0
 %def 107S4-107N4/+107N3/+107N2/+107N5
+%def 107C-107N5/+107N4/+107N3/+107N2
 
-%def 107R0-107P3/107P2
-%def 107R1-107P3/107P2
-%def 107R2-107P3/107P2/107P4
-%def 107R3-107P3/107P2/107P4
-%def 107R4-107P3/107P2/107P4
-%def 107R5-107P3/107P2/107P4
-%def 107P4-1082
-%def 107P3-1082
-%def 107P2-1082
+%mac hundrednull 107R0-107P3/107P2
+%mac hundrednull 107R1-107P3/107P2
+%mac hundrednull 107R2-107P3/107P2/107P4
+%mac hundrednull 107R3-107P3/107P2/107P4
+%mac hundrednull 107R4-107P3/107P2/107P4
+%mac hundrednull 107R5-107P3/107P2/107P4
+%mac hundrednull 107P4-1082
+%mac hundrednull 107P3-1082
+%mac hundrednull 107P2-1082
+
+%mac hundredten 107S1-107N5/+107N4/+107N3/+107N2
+%mac hundredten 107S2-107N5/+107N4/+107N3/+107N2
+%mac hundredten 107S3-107N5/+107N4/+107N3/+107N2
+%mac hundredten 107S4-107N5/+107N4/+107N3/+107N2
+%mac hundredten 107R2-1101
+%mac hundredten 107R3-1101
+%mac hundredten 107R4-1101
+%mac hundredten 107R5-1101
+# This is needed...
+%mac hundredten 1101-110A
+
+%def %hundrednull
 
 %mac hundred 107R0-107P1/107P2
 %mac hundred 107R1-107P1/107P2
@@ -12076,12 +12099,20 @@ hs> "107R5"
 %mac hundred 107P1-1062
 %mac hundred 107P2-1062
 
+%mac hundred 60N1-100A
+%mac hundred 60N2-100A
+%mac hundred 60N3-100A
+%mac hundred 60N4-100A
+%mac hundred 60N5-100A
+
 %quo1 1081 107A 107S3 107S4
 %quo1 107P3 107P4
 %quo1 1061 107B 107S1 107S2
 %quo1 107P1 107P2
 
-1v begin =3u "85c89"
+%quo4 1102 107C 107R2 107R3 107R4 107R5 107N2 107N3 107N4 107N5
+
+1v begin =3+7u "85c89"
 2u 1000m
 <hp "89B"
 3v 200m
@@ -12131,24 +12162,24 @@ hp> "89F"
 1u 1000m
 <hp "109A"
 3v 200m
-w< 50m / 50m ne "109a" 8d
+w< 50m / 50m se "109a" 8d
 2u 50m
 hs> "109P1"
 3u 800m
 <hs "109N1"
 2u 50m
-50m >w / 50m nw "109b" 8d
+50m >w / 50m sw "109b" 8d
 3v 200m
 hp> "109F"
 2u 1000m
 end "108c109"
 
-65v begin -1u "109a" ne
+65v begin +1u "109a" se
 ~ 50m e
 hs> "109P2"
 3u 800m
 <hs "109N2"
-~ 50m se
+~ 50m ne
 end "109b"
 
 %def 89A-89N3/89N4/89N2
@@ -12190,3 +12221,103 @@ end "109b"
 %quo1 109A 109N1 109N2
 %quo1 109F 109P1 109P2
 
+########## HUNDREDTEN
+
+40u begin =3u "107c110" w
+2u 1000m
+<hp "110A"
+3v 200m
+w< 50m / 50m sw "110a" 10d
+w< 50m / 50m nw "110b" 8d
+2u 50m
+hs> "110P2"
+3u 800m
+<hs "110N2"
+2u 50m
+50m >w / 50m ne "110c" 8d
+50m >w / 50m se "110d" 10d
+3v 200m
+hp> "110F"
+1u 1000m
+1u 1000m
+<hp "1111"
+1u 200m
+hp> "1112"
+1u 1000m
+1u 1000m
+<hp "111A"
+3v 200m
+w< 50m / 50m sw "111a" 8d
+w< 50m / 50m nw "111b"
+2u 50m
+hs> "111P2"
+3u 800m
+<end "111N2"
+
+34u begin +1u "110a" sw
+w< 50m / 50m w "110e"
+~ 50m w
+hs> "110P0"
+3u 800m
+<hs "110N0"
+~ 50m nw
+50m >w / 50m e "110f"
+end "110d"
+
+32u begin +1u "110e" w
+2u 50m
+hs> "110P1"
+3u 800m
+<hs "110N1"
+2u 50m
+end "110f"
+
+32u begin -3u "110b" nw
+~ 50m w
+hs> "110P3"
+3u 800m
+<hs "110N3"
+~ 50m sw
+end "110c"
+
+6u begin +0u "111b" nw
+~ 50m w
+hs> "111P3"
+3u 800m
+<end "111N3"
+
+8u begin +2u "111a" sw
+w< 50m / 50m w "111c"
+~ 50m w
+hs> "111P0"
+3u 800m
+<end "111N0"
+
+6u begin +1u "111c" w
+2u 50m
+hs> "111P1"
+3u 800m
+<end "111N1"
+
+%def 110A-110N2/+110N0/110N3/110N1
+%def 110N0-1111
+%def 110N1-1111
+%def 110N2-1111
+%def 110N3-1111
+%def 110F-110P2/+110P0/110P3/110P1
+%def 110P0-1102
+%def 110P1-1102
+%def 110P2-1102
+%def 110P3-1102
+
+%quo3 1101 110A 110N0 110N1 110N2 110N3
+%quo3 1112 110F 110P0 110P1 110P2 110P3
+%quo4 1101 110A 1112 110F 110N0 110N1 110N2 110N3 110P0 110P1 110P2 110P3
+
+%def 111A-111N2/+111N0/+111N3/+111N1
+%def 111P0-1112
+%def 111P1-1112
+%def 111P2-1112
+%def 111P3-1112
+
+%quo4 1111 111A 111N0 111N1 111N2 111N3 111P0 111P1 111P2 111P3

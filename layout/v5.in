@@ -145,6 +145,14 @@
 %mac irn %fourtythree-eightythree
 %mac irn %eightythree-eightyeight
 
+%mac irj %irn
+%mac irj %hundred
+%mac irj %hundredtwo-four
+%mac irj %hundredfour-two
+%mac irj %hundrednull
+
+%mac irn %hundredten,%hundrednull
+
 %mac irw %twentyseven-fourtyone
 %mac irw %fourtyfour-eightythree
 %mac irw %eightythree-fourtyfour
@@ -229,7 +237,8 @@
 %mac t2 %t1
 %mac t2 %sixty-sixtynine
 %mac t2 %seventy-sixtynine
-%mac t6 %t2
+%mac t6 %hundredten
+%mac t6 %t1
 %mac t6 %hundredtwo-four
 %mac t6 %hundredfour-two
 %mac t7 %t1,%hundredone-two
@@ -242,11 +251,15 @@
 # %trn len=97 v=140 n=loc %local
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=150 v=160 n=t6 %t6
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=380 v=200 n=ioq %ir9
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
 %trn len=380 v=200 n=ios %ir5
 %trn len=380 v=200 n=iot 
 
+%trn len=150 v=160 n=t6 %t6
 %trn len=150 v=160 n=t6 %t6
 %trn len=150 v=160 n=t2 %t2
 %trn len=150 v=160 n=t1 %t1
@@ -304,7 +317,7 @@
 %trn len=228 v=200 n=ir5c %ir5c
 %trn len=228 v=200 n=ir2 %ir2
 %trn len=228 v=200 n=ir6d %ir6d
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=228 v=200 n=ir5 %ir5
 %trn len=228 v=200 n=ir2 %ir2
 %trn len=228 v=200 n=ir9 %ir9
@@ -359,12 +372,12 @@
 %trn len=228 v=200 n=ir9 %ir9
 %trn len=228 v=200 n=ir3 %detour
 %trn len=150 v=160 n=t5 %t5
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=228 v=200 n=ir5c %ir5c
 %trn len=228 v=200 n=ir1 %outlet
 %trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
 %trn len=228 v=200 n=ir1 %outlet
-%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
 %trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
 %trn len=228 v=200 n=ir1 %outlet
 %trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
