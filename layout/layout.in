@@ -8546,7 +8546,8 @@ w< 50m / 50m ne "08a" 8d
 hs> "08P1"
 4u 800m
 <hs "08N1"
-6u 150m
+2u ~ 2u 100m ne
+2u ~ 2u 100m e
 50m >w / 50m nw "08b" 8d
 2u 200m
 hp> "08G"
@@ -8583,8 +8584,9 @@ w< 50m / 50m ne "08c" 8d
 hs> "08P2"
 4u 800m
 <hs "08N2"
-2u 50m
-50m >w / 50m nw "08d" 8d
+~ 50m ne
+50m >w / 50m w "08d" 8d
+~ 50m e
 w< 50m / 50m se "08b" 8d
 2u 50m
 2u 200m
@@ -8610,8 +8612,7 @@ end "09t08"
 hs> "08P3"
 4u 800m
 <hs "08N3"
-1u 25m
-1u 25m se
+2u 50m
 end "08d"
 
 %quo3 069 06D 07B 07N1 07N2 07N3 08P1 07G 07R1 07P1 07P2 07P3
@@ -8647,7 +8648,7 @@ end "08d"
 
 ### NAUGTYTEN
 
-4u begin =337+7u "92t010"
+5u begin =337+7u "92t010"
 2u 800m
 <hp "0103"
 1u 200m
@@ -8667,15 +8668,13 @@ hs> "010P2"
 4u 800m
 <hs "010N2"
 3u >w / sw "010c" 8d
-w< 3u / ne "010d" 8d
+3u >w / nw "010d" 8d
 2u 200m
 hp> "010G"
-1u 600m
-<hp "0109"
-1u 200m
+3v 300m
 end "010t09"
 
-7v begin -2u "010t92"
+9v begin -2u "010t92"
 1u 200m
 hp> "0102"
 1u 800m
@@ -8691,17 +8690,19 @@ hp> "0108"
 <hp "010B"
 2u 200m
 3u >w / sw "010e" 8d
-w< 7u / se "010a" 8d
+w< / se "010a" 8d
+w< 3u / ne "010f" 8d
 hs> "010P3"
 4u 800m
 <hs "010N3"
-7u >w / sw "010d" 8d
+3u >w 2u / nw "010g" 8d
+2u w< 3u / se "010d" 8d
 2u 200m
 hp> "010F"
-2u 800m
+3v 300m
 end "09t010"
 
-26u begin +3u "010b" se
+27u begin +3u "010b" se
 ~ 50m e
 hs> "010P1"
 4u 800m
@@ -8709,25 +8710,40 @@ hs> "010P1"
 ~ 50m ne
 end "010c"
 
-%def 010A-010N2/010N1/010N3
-%def 010B-010N3/+010N2/010N1
-%def 010N1-0109/09D
-%def 010N2-0109/09D
-%def 010N3-09D
+25u begin -4u "010f" ne
+~ 50m e
+hs> "010P4"
+4u 800m
+<hs "010N4"
+~ 50m se
+end "010g"
 
-%def 010F-010P3/010P1/010P2
-%def 010G-010P2/+010P1
+%def 010A-010N2/010N1/010N4/010N3
+%def 010B-010N3/+010N2/010N4/010N1
+%def 010N1-09C
+%def 010N2-09C
+%def 010N3-09D/+09C
+%def 010N4-09C/09D
+
+%def 010F-010P3/010P4
+%def 010G-010P2/+010P3/010P4/010P1
 %def 010P1-0108/+92D
 %def 010P2-92D/+0108
 %def 010P3-0108/92D
+%def 010P4-0108/92D
 
-%quo1 010G 010P2 010P1
-%quo2 010G 010P2 010P1 010B 010N2 010N1
+%quo1 010N3 010N4
+# XXX?
+%quo3 010B 010N1 010N2 010N3 010N4 010G 010P1 010P2
+
+%quo3 010B 010N1 010N2 010N3 010N4
+%quo3 010G 010P1 010P2 010P3 010P4
+%quo4 010B 010N1 010N2 010N3 010N4 010G 010P1 010P2 010P3 010P4
 
 ### NAUGHTYNINE
 
-1u begin =343+13u "010t09"
-2u 800m
+3v begin =343+13u "010t09"
+3v 300m
 <hp "09C"
 2u 200m
 w< 15v / ne "09a" 8d
@@ -8744,10 +8760,8 @@ hp> "09I"
 1u 200m
 end "09u011"
 
-1v begin -2u "09t010"
-1u 200m
-hp> "0100"
-1u 600m
+3v begin -2u "09t010"
+3v 300m
 <hp "09D"
 2u 200m
 3u >w 3v / sw "09a" 8d
@@ -8856,20 +8870,17 @@ end "09r"
 %mac naughtynine-naughtyten 09G-09P3/+09P2/09P4/09P1
 %mac naughtynine-naughtyten 09H-09P2/09P3/09P4/09P1
 %mac naughtynine-naughtyten 09I-09P1/+09P2/09P3/09P4
-%mac naughtynine-naughtyten 09P1-010G/+0100
-%mac naughtynine-naughtyten 09P2-0100/010G
-%mac naughtynine-naughtyten 09P3-010G/+0100
-%mac naughtynine-naughtyten 09P4-0100/010G
+%mac naughtynine-naughtyten 09P1-010G/+010F
+%mac naughtynine-naughtyten 09P2-010F/010G
+%mac naughtynine-naughtyten 09P3-010G/+010F
+%mac naughtynine-naughtyten 09P4-010F/010G
 
-%quo3 010N3 09D 09N1 09N2 09N3 09N4
+%quo3 09D 09N1 09N2 09N3 09N4
 %quo3 09G 09I 09P1 09P2 09P3 09P4
-%quo4 010N3 09D 09N1 09N2 09N3 09N4 09G 09I 09P1 09P2 09P3 09P4
+%quo4 09D 09N1 09N2 09N3 09N4 09G 09I 09P1 09P2 09P3 09P4
 
-%quo5 09B 010N3 09D 09N1 09N2 09N3 09N4 09P5 09N5 09P6 09N6
-%quo6 09B 010N3 09D 09N1 09N2 09N3 09N4 09G 09I 09P1 09P2 09P3 09P4 09P5 09N5 09P6 09N6
-
-%quo1 010N3 010F
-%quo1 010N3 0100
+%quo5 09B 09D 09N1 09N2 09N3 09N4 09P5 09N5 09P6 09N6
+%quo6 09B 09D 09N1 09N2 09N3 09N4 09G 09I 09P1 09P2 09P3 09P4 09P5 09N5 09P6 09N6
 
 ### NAUGHTELEVEN
 
@@ -53715,7 +53726,7 @@ hs> "328N1"
 4u 800m
 <hs "328P1"
 7u >w / nw "328b" 8d
-2u 800m
+2u 200m
 hp> "328B"
 1u 600m
 <hp "3280"
@@ -53865,8 +53876,10 @@ w< 5u / se "327h" 8d
 5u >w / sw "327i" 10d
 2u 200m
 hp> "327C"
-1u 1000m
-1u 1000m
+1u 600m
+<hp "2346"
+1u 200m
+1u 800m
 <hp "2344"
 1u 200m
 hp> "2343"
@@ -53904,9 +53917,9 @@ end "234c327"
 
 %mac thtwentyseven-tthirtyfour 327F-327R4/++327R2/327R3
 %mac thtwentyseven-tthirtyfour 327G-327R4/+327R3
-%mac thtwentyseven-tthirtyfour 327R2-2344
-%mac thtwentyseven-tthirtyfour 327R3-2344
-%mac thtwentyseven-tthirtyfour 327R4-2344
+%mac thtwentyseven-tthirtyfour 327R2-2346
+%mac thtwentyseven-tthirtyfour 327R3-2346
+%mac thtwentyseven-tthirtyfour 327R4-2346
 
 %quo1 327G 327R3 327R4
 %quo2 327G 327R3 327R4 327N3 327N4 327C 2343
@@ -53983,8 +53996,8 @@ end "233b"
 %def 234P3-2342
 
 %quo2 2341 234A 234N1 234N2 234N3
-%quo2 2344 234F 234P1 234P2 234P3
-%quo3 2341 234A 234N1 234N2 234N3 2344 234F 234P1 234P2 234P3
+%quo2 2346 2344 234F 234P1 234P2 234P3
+%quo3 2341 234A 234N1 234N2 234N3 2346 2344 234F 234P1 234P2 234P3
 
 %def 233A-233N1/++233N2
 %def 233N1-2341
