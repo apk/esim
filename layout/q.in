@@ -1,0 +1,931 @@
+1u begin 3u "In"
+2u 1000m
+<hp "X"
+2u 50m
+50m >w / 50m sw "xx" 20d
+2u 2000m
+<hp "150G"
+2u 1000m
+50m >w / 50m sw "xx" 20d
+end "150c155"
+
+1u begin 1u "92t91"
+1u 800m
+<hp "55F"
+1u 200m
+1u 800m
+<hp "R"
+1u 200m
+1u 800m
+<hp "R"
+1u 200m
+end "91t92"
+
+10u begin 1u "92t010"
+1u 800m
+<hp "R"
+1u 200m
+1u 800m
+<hp "R"
+1u 200m
+1u 800m
+<hp "R"
+1u 200m
+end "010t92"
+
+19u begin 1u "198t199"
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X1"
+1u 200m
+w< 50m / 50m ne "x1" 20d
+1u 200m
+hp> "199B"
+1u 800m
+50m >w / 50m nw "x1" 20d
+1u 800m
+<hp "X2"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+end "199t198"
+
+%def X1-X2
+
+20u begin =3+2u "196t191"
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+1u 800m
+<hp "X"
+1u 200m
+end "191t196"
+
+### NINETYTWO
+
+1u begin =10+9u "010t92"
+2u 800m
+<hp "92C"
+2u 200m
+2u 50m
+w< 50m / 50m ne "92a" 8d
+6u 150m
+50m >w / 50m nw "92b" 8d
+2u 50m
+hs> "92P1"
+4u 800m
+<hs "92N1"
+2u 50m
+w< 50m / 50m ne "92c" 13d
+6u 150m
+50m >w / 50m nw "92d" 13d
+2u 50m
+2u 200m
+hp> "92I"
+1u 600m
+<hp "1953"
+1u 200m
+1u 800m
+<hp "1957"
+1u 200m
+end "92u195"
+
+1u begin -2u "91t92"
+2u 800m
+<hp "92A"
+2u 200m
+2u 50m
+2u 50m
+50m >w / 50m sw "92a" 8d
+50m >w / 50m nw "92e" 8d
+w< 50m / 50m se "92b" 8d
+w< 50m / 50m ne "92f" 8d
+2u 50m
+hs> "92P2"
+4u 800m
+<hs "92N2"
+2u 50m
+2u 50m
+50m >w / 50m sw "92c" 13d
+50m >w / 50m nw "92g" 8d
+w< 50m / 50m se "92d" 13d
+w< 50m / 50m ne "92h" 8d
+2u 50m
+2u 200m
+hp> "92G"
+1u 600m
+<hp "1951"
+1u 200m
+1u 800m
+<hp "1955"
+1u 200m
+end "92t195"
+
+1v begin -2u "92t91"
+1u 200m
+hp> "920"
+1u 600m
+<hp "92B"
+2u 200m
+2u 50m
+50m >w / 50m nw "92i" 13d
+w< 50m / 5m se "92e" 8d
+w< 50m / 50m ne "92j" 13d
+4u 100m
+50m >w / 50m sw "92f" 8d
+hs> "92P3"
+4u 800m
+<hs "92N3"
+2u 50m
+50m >w / 50m nw "92k" 8d
+w< 50m / 50m se "92g" 8d
+w< 50m / 50m ne "92l" 8d
+4u 100m
+50m >w / 50m sw "92h" 8d
+2u 200m
+hp> "92F"
+1u 800m
+1u 200m
+hp> "1952"
+2u 800m
+end "195t92"
+
+1v begin -2u "92t010"
+1u 200m
+hp> "0101"
+1u 600m
+<hp "92D"
+2u 200m
+w< 50m / 50m se "92i" 13d
+6u 150m
+50m >w / 50m sw "92j" 13d
+4u 100m
+hs> "92P4"
+4u 800m
+<hs "92N4"
+w< 50m / 50m se "92k" 8d
+6u 150m
+50m >w / 50m sw "92l" 8d
+6u 150m
+hp> "92H"
+1u 800m
+1u 200m
+hp> "1953"
+2u 800m
+end "195u92"
+
+%def 92A-92N2/92N1/92N3
+%def 92B-92N3/+92N2/92N1/92N4
+%def 92C-92N1/92N2/92N3
+%def 92D-92N4/+92N2/92N1/92N3
+%def 92N1-1951/++1953/195B
+%def 92N2-1951/1953/195B
+%def 92N3-195B/+1951/1953/195D
+%def 92N4-195D/+1951/1953/195B
+
+%def 92F-92P3/92P4/92P2/92P1
+%def 92G-92P2/+92P3/92P4/92P1
+%def 92H-92P4/92P3
+%def 92I-92P1/+92P3/92P4/92P2
+%def 92P1-91G/+920
+%def 92P2-920/91G
+%def 92P3-920/91G
+%def 92P4-920
+
+%mac ninetytwo-naughtyten 92P1-0101/010B
+%mac ninetytwo-naughtyten 92P2-010B/+0101
+%mac ninetytwo-naughtyten 92P3-0101/010B
+%mac ninetytwo-naughtyten 92P4-0101
+
+%quo3 92B 92D 92N1 92N2 92N3 92N4
+%quo3 92G 92I 92P1 92P2 92P3 92P4
+%quo4 92B 92D 92N1 92N2 92N3 92N4 92G 92I 92P1 92P2 92P3 92P4
+
+### HUNDREDFIFTYFOUR + FIVE
+
+1u begin =4+3u "150c155"
+3v 800m
+<hp "155F"
+3v 200m
+w< 50m / 50m se "155a" 8d
+2u 50m
+hs> "155N1"
+7v 800m
+<hs "155P1"
+2u 50m
+50m >w / 50m sw "155b" 8d
+3v 200m
+hp> "155A"
+1u 1000m
+1u 1000m
+<hp "1552"
+1u 200m
+hp> "1551"
+1u 1000m
+1u 1000m
+<hp "154F"
+3v 200m
+w< 50m / 50m se "154a" 8d
+2u 50m
+hs> "154N1"
+7v 800m
+<hs "154P1"
+2u 200m
+50m >w / 50m sw "154b" 8d
+3v 200m
+hp> "154A"
+1u 1000m
+1u 1000m
+<hp "1542"
+1u 200m
+hp> "1541"
+3v 1000m
+end "154c196"
+
+13v begin +1u "155a" se
+~ 50m e
+hs> "155N2"
+7v 800m
+<hs "155P2"
+~ 50m ne
+end "155b"
+
+29u begin +0u "154a" se
+~ 50m e
+hs> "154N2"
+7v 800m
+<hs "154P2"
+~ 50m ne
+end "154b"
+
+%def 155A-155N1/155N2
+%def 155N1-150G
+%def 155N2-150G
+
+%def 155F-155P1/155P2
+%def 155P1-1552
+%def 155P2-1552
+
+%quo1 1551 155A 155N1 155N2
+%quo1 155F 155P1 155P2
+
+%def 154A-154N1/154N2
+%def 154N1-1551
+%def 154N2-1551
+
+%def 154F-154P1/154P2
+%def 154P1-1542
+%def 154P2-1542
+
+%quo1 1541 154A 154N1 154N2
+%quo1 1552 154F 154P1 154P2
+
+### HUNDREDNINETYFIVE
+
+1u begin =14+13u "92u195"
+2u 800m
+<hp "195C"
+2u 200m
+w< 50m / 50m ne "195c" 8d
+4u 100m
+50m >w / 50m nw "195d" 8d
+6u 150m
+hs> "195P1"
+4u 800m
+<hs "195N1"
+w< 50m / 50m ne "195e" 8d
+6u 150m
+50m >w / 50m nw "195f" 8d
+2u 200m
+hp> "195I"
+1u 600m
+<hp "1963"
+1u 200m
+1u 800m
+<hp "1967a"
+1u 200m
+1u 800m
+<hp "1967"
+1u 200m
+end "195u196"
+
+1v begin -2u "195u92"
+1u 200m
+hp> "1958"
+1u 600m
+<hp "195D"
+2u 200m
+2u 50m
+50m >w / 50m sw "195c" 8d
+w< 50m / 50m se "195d" 8d
+w< 50m / 50m ne "195g" 8d
+4u 100m
+50m >w / 50m nw "195h" 8d
+hs> "195P2"
+4u 800m
+<hs "195N2"
+2u 50m
+50m >w / 50m sw "195e" 8d
+50m >w / 50m nw "195i" 8d
+w< 50m / 50m se "195f" 8d
+2u 50m
+2u 200m
+hp> "195H"
+1u 800m
+1u 200m
+hp> "1964a"
+1u 800m
+1u 200m
+hp> "1964"
+2u 800m
+end "196u195"
+
+23v begin -3u "195j" se
+~ 50m e
+50m >w / 50m sw "195g" 8d
+w< 50m / 50m se "195h" 8d
+w< 50m / 50m ne "195k" 8d
+2u 50m
+hs> "195P3"
+4u 800m
+<hs "195N3"
+w< 50m se / 50m ne "195l" 8d
+end "195i"
+
+1u begin -1u "92t195"
+2u 800m
+<hp "195A"
+2u 200m
+2u 50m
+50m >w / 50m nw "195m" 8d
+w< 50m / 50m se "195j" 8d
+w< 50m / 50m ne "195n" 8d
+6u 150m
+50m >w / 50m sw "195k" 8d
+hs> "195P4"
+4u 800m
+<hs "195N4"
+2u 50m
+50m >w / 50m sw "195l" 8d
+50m >w / 50m nw "195o" 8d
+2u 50m
+2u 200m
+hp> "195G"
+1u 600m
+<hp "1961"
+1u 200m
+1u 800m
+<hp "1965a"
+1u 200m
+1u 800m
+<hp "1965"
+1u 200m
+end "195t196"
+
+1v begin -2u "195t92"
+1u 200m
+hp> "1956"
+1u 600m
+<hp "195B"
+2u 200m
+w< 50m / 50m se "195m" 8d
+6u 150m
+50m >w / 50m sw "195n" 8d
+w< 50m / 50m ne "195p" 8d
+2u 50m
+hs> "195P5"
+4u 800m
+<hs "195N5"
+2u 50m
+50m >w / 50m nw "195q" 8d
+w< 50m / 50m se "195o" 8d
+2u 50m
+2u 50m
+2u 200m
+hp> "195F"
+1u 800m
+1u 200m
+hp> "1962"
+1u 800m
+1u 200m
+hp> "1962a"
+2u 800m
+end "196t195"
+
+35v begin -1u "195p" ne
+~ 50m e
+hs> "195P6"
+4u 800m
+<hs "195N6"
+~ 50m se
+end "195q"
+
+%def 195A-195N4/195N3/195N6/195N5/195N2
+%def 195B-195N5/+195N4/195N3/195N6/195N2
+%def 195C-195N1/195N3/195N4/195N2
+%def 195D-195N2/+195N1/195N3/195N4
+%def 195N1-1963/196D
+%def 195N2-196D/+1963
+%def 195N3-1963/1961/196D
+%def 195N4-1961
+%def 195N5-196B/+1961
+%def 195N6-1961/196B
+
+%def 195F-195P5/195P6
+%def 195G-195P4/+195P5/195P3/195P6
+%def 195H-195P2/195P3/195P1
+%def 195I-195P1/+195P2/195P3
+%def 195P1-92I/+1958
+%def 195P2-1958/1956/92I/92G
+%def 195P3-1958/1956/92G/92I
+%def 195P4-92G/+1956/1958/92I
+%def 195P5-1956/92G
+%def 195P6-1956/92G
+
+%quo2 195B 195N4 195N5 195N6
+%quo2 195G 195P4 195P5 195P6
+%quo3 195B 195N4 195N5 195N6 195G 195P4 195P5 195P6
+
+%quo2 195D 195N1 195N2 195N3
+%quo2 195I 195P1 195P2 195P3
+%quo3 195D 195N1 195N2 195N3 195I 195P1 195P2 195P3
+
+### HUNDREDNINETYSIX
+
+1u begin =15+13u "195u196"
+2u 800m
+<hp "196C"
+2u 200m
+2u 50m
+w< 50m / 50m ne "196a" 8d
+8u 200m
+50m >w / 50m nw "196b" 10d
+hs> "196P1"
+7v 800m
+<hs "196N1"
+w< 50m / 50m ne "196c" 10d
+3u ~ 100m ne
+~ 3u 100m e
+50m >w / 50m nw "196d" 10d
+4u 100m
+50m >w / 50m nw "196e" 8d
+2u 200m
+hp> "196I"
+1u 600m
+<hp "1911"
+1u 200m
+end "196t191"
+
+1v begin -2u "196u195"
+1u 200m
+hp> "1968"
+1u 600m
+<hp "196D"
+2u 200m
+w< 50m / 50m ne "196f" 8d
+2u 50m
+50m >w / 50m sw "196a" 8d
+50m >w / 50m nw "196g" 10d
+w< 50m / 50m ne "196h" 8d
+w< 50m / 50m se "196b" 10d
+2u 50m
+hs> "196P2"
+7v 800m
+<hs "196N2"
+2u 50m
+50m >w / 50m sw "196c" 10d
+ne
+50m >w / 50m w "196i" 10d
+e
+w< 50m / 50m ne "196j" 10d
+w< 50m / 50m se "196d" 10d
+2u 50m
+50m >w / 50m nw "196k" 10d
+w< 50m / 50m se "196e" 8d
+2u 50m
+2u 200m
+hp> "196H"
+2u 800m
+end "191t196"
+
+31v begin -1u "196h" ne
+50m >w e / 50m nw "196l" 10d
+w< 50m / 50m ne "196m" 8d
+2u 50m
+hs> "196P3"
+7v 800m
+<hs "196N3"
+w< 50m se / 50m ne "196n" 8d
+end "196i"
+
+1u begin -1u "154c196"
+2u 800m
+<hp "196E"
+2u 200m
+2u 50m
+50m >w / 50m sw "196f" 8d
+w< 50m / 50m se "196g" 10d
+50m >w / 50m nw "196o" 10d
+ne
+w< 50m / 50m e "196l" 10d
+e
+w< 50m / 50m ne "196p" 8d
+2u 50m
+50m >w / 50m sw "196m" 8d
+hs> "196P4"
+7v 800m
+<hs "196N4"
+2u 50m
+50m >w / 50m sw "196n" 8d
+50m >w / 50m nw "196q" 8d
+50m >w / 50m sw "196j" 10d
+w< 50m se / 50m ne "196r" 10d
+end "196k"
+
+31v begin -4u "196s"
+2u 50m
+50m >w / 50m sw "196p" 8d
+2u 50m
+hs> "196P5"
+7v 800m
+<hs "196N5"
+2u 50m
+w< 50m se / 50m ne "196t" 10d
+end "196q"
+
+1u begin +2u "195t196"
+2u 800m
+<hp "196A"
+2u 200m
+2u 50m
+50m >w / 50m nw "196u" 8d
+w< 50m / 50m se "196o" 10d
+~ 50m ne
+w< 50m / 50m e "196s" 8d
+~ 50m e
+w< 50m / 50m ne "196v" 8d
+2u 50m
+hs> "196P6"
+7v 800m
+<hs "196N6"
+2u 50m
+50m >w / 50m nw "196w" 8d
+se
+50m >w / 50m w "196t" 10d
+e
+w< 50m / 50m ne "196x" 10d
+2u 50m
+50m >w / 50m sw "196r" 10d
+w< 50m / 50m ne "196y" 10d
+2u 50m
+2u 200m
+hp> "196G"
+1u 600m
+<hp "1971"
+1u 200m
+end "196t197"
+
+1v begin -2u "196t195"
+1u 200m
+hp> "1966"
+1u 600m
+<hp "196B"
+2u 200m
+w< 50m / 50m se "196u" 8d
+4u 100m
+4u 100m ne
+4u 100m e
+50m >w / 50m sw "196v" 8d
+hs> "196P7"
+7v 800m
+<hs "196N7"
+w< 50m / 50m se "196w" 8d
+3u ~ 100m se
+~ 50m e
+50m >w / 50m sw "196x" 10d
+4u 100m
+50m >w / 50m sw "196y" 10d
+2u 200m
+hp> "196F"
+2u 800m
+end "197t196"
+
+%def 196A-196N6/196N5/196N4/196N3/196N7
+%def 196B-196N7/+196N6/196N5/196N4/196N3
+%def 196C-196N1/196N3/196N4/196N2
+%def 196D-196N2/+196N3/196N4/196N5/196N1
+%def 196E-196N4/196N5/196N3/196N2/196N1
+%def 196N1-1971/197B
+%def 196N2-1971/197B
+%def 196N3-1971/197B
+%def 196N4-1971/197B
+%def 196N5-1971/197B
+%def 196N6-1971/197B
+%def 196N7-197B/+1971
+
+%mac hninetysix-hninetyone 92N1-1953/1951/195B
+%mac hninetysix-hninetyone 92N2-1953/++1951/195B
+%mac hninetysix-hninetyone 92N3-195B/+1953/+1951/195D
+%mac hninetysix-hninetyone 92N4-195D/+1953/+1951/195B
+%mac hninetysix-hninetyone 196A-196N3/196N4/196N5
+%mac hninetysix-hninetyone 196B-196N3/196N4/196N5
+%mac hninetysix-hninetyone 196C-196N1/196N3/196N4/196N2
+%mac hninetysix-hninetyone 196D-196N2/+196N1/196N3/196N4/196N5
+%mac hninetysix-hninetyone 196E-196N1/+196N4/196N3/196N5/196N2
+%mac hninetysix-hninetyone 196N1-1911/191B
+%mac hninetysix-hninetyone 196N2-191B/+1911
+%mac hninetysix-hninetyone 196N3-1911/191B
+%mac hninetysix-hninetyone 196N4-1911/191B
+%mac hninetysix-hninetyone 196N5-1911/191B
+
+%def 196F-196P7/196P5/196P4/196P3/196P2/196P6/196P1
+%def 196G-196P6/+196P7/+196P2/196P5/196P4/196P3/196P1
+%def 196H-196P2/196P3/196P4/196P5/196P1
+%def 196I-196P1/+196P2/196P3/196P4/196P5
+%def 196P1-195I/+1968
+%def 196P2-1968/195I
+%def 196P3-1968/1966/195I/195G
+%def 196P4-1968/1966/195I/195G
+%def 196P5-1966/1968/195G/195I
+%def 196P6-195G/+1966
+%def 196P7-1966/195G
+
+%mac hninetysix-hfiftyfour 196F-196P4/196P5/196P3/196P2/196P1
+%mac hninetysix-hfiftyfour 196G-196P4/196P5/196P3/196P2/196P1
+%mac hninetysix-hfiftyfour 196H-196P4/196P3/196P2/196P5/196P1
+%mac hninetysix-hfiftyfour 196I-196P4/196P3/196P2/196P5/196P1
+%mac hninetysix-hfiftyfour 196P1-1541
+%mac hninetysix-hfiftyfour 196P2-1541
+%mac hninetysix-hfiftyfour 196P3-1541
+%mac hninetysix-hfiftyfour 196P4-1541
+%mac hninetysix-hfiftyfour 196P5-1541
+
+%quo2 196B 196N3 196N4 196N5
+%quo2 196P3 196P4 196P5
+%quo3 196B 196N3 196N4 196N5 196P3 196P4 196P5
+
+%quo4 196B 1542 196E 196D 196N1 196N2 196N3 196N4 196N5 196P1 196P2
+%quo4 196G 196I 196P1 196P2 196P3 196P4 196P5 196N1 196N2
+%quo5 196B 1542 196E 196D 196N1 196N2 196N3 196N4 196N5 196G 196I 196P1 196P2 196P3 196P4 196P5
+
+### HUNDREDNINETYSEVEN
+
+43v begin =8+7u "197a" se
+~ 50m e
+hs> "197P1"
+4u 800m
+<hs "197N1"
+~ 50m ne
+end "197b"
+
+1u begin -1u "196t197"
+2u 800m
+<hp "1973"
+1u 200m
+1u 800m
+<hp "1975"
+1u 200m
+1u 800m
+<hp "1977"
+1u 200m
+1u 800m
+<hp "1979"
+1u 200m
+1u 800m
+<hp "197A"
+2u 200m
+2u 50m
+50m >w / 50m nw "197c" 8d
+w< 50m / 50m se "197a" 8d
+2u 50m
+hs> "197P2"
+4u 800m
+<hs "197N2"
+2u 50m
+50m >w / 50m sw "197b" 8d
+w< 50m / 50m ne "197d" 8d
+2u 50m
+2u 200m
+hp> "197G"
+1u 600m
+<hp "1981"
+1u 200m
+1u 800m
+<hp "1983"
+1u 200m
+1u 800m
+<hp "1985"
+1u 200m
+end "197t198"
+
+1v begin -2u "197t196"
+1u 200m
+hp> "1972"
+1u 800m
+1u 200m
+hp> "1974"
+1u 800m
+1u 200m
+hp> "1976"
+1u 800m
+1u 200m
+hp> "1978"
+1u 800m
+1u 200m
+hp> "1970"
+1u 600m
+<hp "197B"
+2u 200m
+w< 50m / 50m se "197c" 8d
+6u 150m
+hs> "197P3"
+4u 800m
+<hs "197N3"
+6u 150m
+50m >w / 50m sw "197d" 8d
+2u 200m
+hp> "197F"
+1u 800m
+1u 200m
+hp> "1982"
+1u 800m
+1u 200m
+hp> "1984"
+2u 800m
+end "198t197"
+
+%def 197A-197N2/197N1
+%def 197B-197N3/+197N2/197N1
+%def 197N1-1981/198B
+%def 197N2-1981/198B
+%def 197N3-198B
+
+%def 197F-197P3/197P1/197P2
+%def 197G-197P2/197P1
+%def 197P1-1970/196G
+%def 197P2-196G/+1970
+%def 197P3-1970
+
+%quo1 197G 197P2 197P1
+%quo2 197B 197N2 197N1 197G 197P2 197P1
+
+%quo1 197N3 197F
+%quo1 197N3 1982
+%quo1 197N3 1984
+
+### HUNDREDNINETYEIGHT
+
+1u begin =11+9u "197t198"
+2u 800m
+<hp "1987"
+1u 200m
+1u 800m
+<hp "198A"
+2u 200m
+w< 50m / 50m ne "198a" 13d
+10u 250m
+50m >w / 50m nw "198b" 8d
+hs> "198P1"
+4u 800m
+<hs "198N1"
+w< 50m / 50m ne "198c" 8d
+8u 200m
+50m >w / 50m nw "198d" 10d
+2u 50m
+2u 200m
+hp> "198G"
+1u 600m
+<hp "1991"
+1u 200m
+end "198t199"
+
+10u begin -1u "198a" ne
+w< 50m e / 50m ne "198e" 10d
+4u 100m
+50m >w / 50m nw "198f" 10d
+w< 50m / 50m se "198b" 8d
+2u 50m
+hs> "198P2"
+4u 800m
+<hs "198N2"
+2u 50m
+50m >w / 50m sw "198c" 8d
+50m >w / 50m nw "198g" 10d
+w< 50m / 50m ne "198h" 8d
+w< 50m / 50m se "198d" 10d
+2u 50m
+2u 50m
+2u 200m
+hp> "198I"
+2u 1000m
+end "161c198"
+
+7v begin -3u "163c198"
+2u 1000m
+<hp "198C"
+2u 200m
+2u 50m
+50m >w / 50m nw "198i" 10d
+50m >w / 50m sw "198e" 10d
+w< 50m / 50m se "198f" 10d
+w< 50m / 50m ne "198j" 8d
+2u 50m
+hs> "198P3"
+4u 800m
+<hs "198N3"
+2u 50m
+50m >w / 50m nw "198k" 8d
+w< 50m / 50m se "198g" 10d
+w< 50m / 50m ne "198l" 10d
+2u 50m
+50m >w / 50m sw "198h" 8d
+w< 50m / 50m ne "198m" 8d
+2u 50m
+2u 200m
+hp> "198H"
+2u 200m
+end "150c198"
+
+1v begin -2u "198t197"
+1u 200m
+hp> "1986"
+1u 800m
+1u 200m
+hp> "1988"
+1u 600m
+<hp "198B"
+2u 200m
+w< 50m / 50m se "198i" 10d
+8u 200m
+50m >w / 50m sw "198j" 8d
+hs> "198P4"
+4u 800m
+<hs "198N4"
+w< 50m / 50m se "198k" 8d
+6u 150m
+50m >w / 50m sw "198l" 10d
+4u 100m
+50m >w / 50m sw "198m" 8d
+2u 200m
+hp> "198F"
+2u 800m
+end "199t198"
+
+%quo1 197N3 1986
+%quo1 197N3 1988
+
+### EPILOG
+
+%trn len=228 v=200 n=a 
+%trn len=228 v=200 n=b %ninetytwo-naughtyten
+%trn len=228 v=200 n=c %hninetysix-hninetyone
+%trn len=228 v=200 n=d %ninetytwo-naughtyten,%hninetysix-hninetyone
+%trn len=228 v=200 n=e %hninetysix-hfiftyfour
+%trn len=228 v=200 n=f %hninetysix-hfiftyfour,%hninetysix-hninetyone
+%trn len=228 v=200 n=a 
+%trn len=228 v=200 n=b %ninetytwo-naughtyten
+%trn len=228 v=200 n=c %hninetysix-hninetyone
+%trn len=228 v=200 n=d %ninetytwo-naughtyten,%hninetysix-hninetyone
+%trn len=228 v=200 n=a 
+%trn len=228 v=200 n=b %ninetytwo-naughtyten
+%trn len=228 v=200 n=e %hninetysix-hfiftyfour
+
