@@ -1874,11 +1874,14 @@ void train_dwin (struct train *trn, struct sig *sig) {
 	int x, y;
 	int ry;
 	char buf [100];
+	int mf = trn->dsig != sig;
 	if (trn->dsig) trn->dsig->dsigcnt --;
 	trn->dsig = sig;
 	if (trn->dsig) trn->dsig->dsigcnt ++;
 	if (sig == 0) {
-		XUnmapWindow (mydisplay, trn->dwin);
+		if (mf) {
+			XUnmapWindow (mydisplay, trn->dwin);
+		}
 		return;
 	}
 	sprintf (buf,
@@ -1895,8 +1898,10 @@ void train_dwin (struct train *trn, struct sig *sig) {
 	} else {
 		y += 1;
 	}
-	XMoveResizeWindow (mydisplay, trn->dwin, x, y, w, h);
-	XMapWindow (mydisplay, trn->dwin);
+	if (mf) {
+		XMoveResizeWindow (mydisplay, trn->dwin, x, y, w, h);
+		XMapWindow (mydisplay, trn->dwin);
+	}
 	if (strcmp (buf, trn->dtxt)) {
 		strcpy (trn->dtxt, buf);
 
