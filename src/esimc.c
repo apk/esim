@@ -243,16 +243,18 @@ void handle_in (bmfItem_t *l) {
 			}
 		}
 		DrawSig (d);
-		if (d->zs3v != 0) {
-			if (d->bst == 0) {
-				struct timeval dt = MUX_GetTime ();
-				d->bst = 1;
-				MUX_SetTimeout (&d->tim, &dt);
-			}
-		} else {
-			if (d->bst != 0) {
-				MUX_RemoveTimeout (&d->tim);
-				d->bst = 0;
+		if (d->ks) {
+			if (d->zs3v != 0) {
+				if (d->bst == 0) {
+					struct timeval dt = MUX_GetTime ();
+					d->bst = 1;
+					MUX_SetTimeout (&d->tim, &dt);
+				}
+			} else {
+				if (d->bst != 0) {
+					MUX_RemoveTimeout (&d->tim);
+					d->bst = 0;
+				}
 			}
 		}
 		XFlush (mydisplay);
@@ -276,6 +278,7 @@ void io_reset (MUX_BMFCLT_TYP *pIo) {
 		sigarr [i].wh = 0;
 		sigarr [i].zs3 = 0;
 		sigarr [i].zs3v = 0;
+		sigarr [i].bst = 0;
 	}
 	XClearArea (mydisplay, basewindow, 0, 0, 0, 0, True);
 	XFlush (mydisplay);
@@ -604,6 +607,7 @@ void sig_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	}
 	TV_AddInt (&dt, 1, 0);
 	MUX_SetTimeout (pTo, &dt);
+	XFlush (mydisplay);
 }
 
 void DrawSig (struct sig *d) {
@@ -662,7 +666,7 @@ void DrawSig (struct sig *d) {
 			draw_dot (x + 5 * Karo, y + 11 * KaroH, 2 * Karo, myyellowgc);
 		} else {
 			if (d->typ & T_VR) {
-				draw_dot (x + 1 * Karo, y + 11 * KaroH, 2 * Karo, mygreengc);
+				if (d->bst != 1) draw_dot (x + 1 * Karo, y + 11 * KaroH, 2 * Karo, mygreengc);
 			} else {
 				draw_dot (x + 3 * Karo, y + 11 * KaroH, 2 * Karo, mygreengc);
 			}
