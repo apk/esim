@@ -2476,10 +2476,10 @@ hs> "2R2"
 4u 690m
 <hs "2N2"
 2u 50m
-50m >w / 50m "2C" nw 8d
+50m >w / 50m "2C" nw
 50m >w / 50m "2y" sw 8d
-w< 50m / 50m "2D" se
-2u 50m
+w< 50m / 50m "2D" se 8d
+50m >w / 50m "2X" nw 8d
 2u 200m
 hp> "2F"
 1u 800m
@@ -2520,7 +2520,7 @@ w< 50m / 50m "2z" se
 w< 50m / 50m ne "2y" 8d
 2u 50m
 50m >w / 50m sw "2w" 10d
-50m >w / 50m nw "2D"
+50m >w / 50m nw "2D" 8d
 2u 200m
 hp> "2G"
 1u 600m
@@ -2546,9 +2546,15 @@ w< 50m e 7d / 50m "2E" 13d se
 hs> "2P3"
 6u 800m
 <hs "2N3"
-w< 50m / 50m "2C" se 8d
+w< 50m / 50m "2C" se
+2u 50m
 ls> "123"
-4u 800m
+2u 50m
+<ls "124"
+w< 50m / 50m "2X" se 8d
+2u 50m
+ls> "125"
+3u 800m
 end
 
 17u begin +12v "2z" se
@@ -4272,6 +4278,7 @@ end "20a"
 
 %mac twenty-twentyone 20F-20R2
 %mac twenty-twentyone 20G-20R2
+%mac twenty-twentyone 20R1-20K
 %mac twenty-twentyone 20R2-20K
 
 %def %twenty-twentytwo
@@ -12514,6 +12521,90 @@ end "168t167"
 %quo1 192N5 1676
 %quo1 192N5 1678
 
+### TEIGHTEEN + TNINETEEN
+
+87v begin =6+7v "169c218" w
+2u 1000m
+<hp "218A"
+3v 200m
+w< 50m / 50m sw "218a" 8d
+2u 50m
+hs> "218P1"
+7v 800m
+<hs "218N1"
+2u 50m
+50m >w / 50m se "218b" 8d
+3v 200m
+hp> "218F"
+1u 1000m
+1u 1000m
+<hp "2191"
+1u 200m
+hp> "2192"
+1u 1000m
+1u 1000m
+<hp "219A"
+3v 200m
+w< 50m / 50m nw "219a" 8d
+2u 50m
+hs> "219P1"
+7v 800m
+<hs "219S1"
+w< 50m / 50m sw "219b"
+50m >w / 50m ne "219c"
+hs> "219R1"
+3u 800m
+<end "219N1"
+
+75v begin +1u "218a" sw
+~ 50m w
+hs> "218P2"
+7v 800m
+<hs "218N2"
+~ 50m nw
+end "218b"
+
+15u begin -2u "219a" nw
+~ 50m w
+hs> "219P2"
+7v 800m
+<hs "219S2"
+w< 50m / 50m sw "219c"
+2u 50m
+hs> "219R2"
+3u 800m
+<end "219N2"
+
+22v begin +3u w
+5v 800m
+<ls "219.1"
+2u 50m
+50m >w / 50m ne "219b"
+hs> "219R0"
+3u 800m
+<end "219N0"
+
+%def 218A-218N1/218N2
+%def 218N1-2191
+%def 218N2-2191
+
+%def 218F-218P1/218P2
+%def 218P1-169D
+%def 218P2-169D
+
+%def 219A-219S1/219S2
+%def 219S1-219N1/219N0
+%def 219S2-219N2/219N1
+
+%def 219R0-219P1
+%def 219R1-219P1/219P2
+%def 219R2-219P2
+%def 219P1-2192
+%def 219P2-2192
+
+%quo1 2191 219A 219S1 219S2
+%quo1 219P1 219P2
+
 ### HUNDRED-SIXTYEIGHT
 
 14u begin =7+7u "168a" se
@@ -12532,7 +12623,7 @@ end "168b"
 <hp "168A"
 2u 200m
 2u 50m
-50m >w / 50m nw "168c" 8d
+50m >w / 50m nw "168c" 10d
 w< 50m / 50m se "168a" 8d
 2u 50m
 hs> "168P2"
@@ -12561,7 +12652,7 @@ hp> "1686"
 1u 600m
 <hp "168B"
 2u 200m
-w< 50m / 50m se "168c" 8d
+w< 50m / 50m se "168c" 10d
 w< 50m / 50m ne "168e" 8d
 2u 50m
 hs> "168P3"
@@ -12626,7 +12717,8 @@ w< 50m / 50m ne "169b" 5d
 "169m" >< "169y"
 25m >w< 25m / 25m se "169z" 4d / 25m nw "169d"
 "169c" >< "169d"
-2u 50m
+50m >w / 50m sw "169aa" 5d
+"169z" >< "169aa"
 hs> "169R3"
 3u 800m
 <end "169N3"
@@ -12651,12 +12743,13 @@ hs> "169P4"
 4u 800m
 <hs "169S4"
 2u 50m
-25m >w< 25m / 25m se "169l" 4d / 25m nw "169k"
+25m ekw< 25m / 25m se "169l" 4d / 25m nw "169k"
 25m >w< 25m / 25m ne "169f" 4d / 25m sw "169b"
 25m >w< 25m / 25m se "169d" 4d / 25m nw "169g"
 "169f" >< "169g"
 25m >w< 25m / 25m ne "169h" 4d / 25m sw "169c"
-2u 50m
+50m >w / 50m nw "169ae" 5d
+"169ae" >< "169h"
 hs> "169R4"
 3u 800m
 <end "169N4"
@@ -12666,22 +12759,34 @@ hs> "169R4"
 hs> "169P5"
 4u 800m
 <hs "169S5"
-w< 50m / 50m se "169k" 5d
+w< 50m / 50m se "169k" 6d
 2u 50m
 w< 50m / 50m se "169g" 5d
 25m >w< 25m / 25m ne "169i" 4d / 25m sw "169f"
-2u 50m
-50m >w / 50m sw "169h" 4d
+25m >w< 25m / 25m se "169ae" 4d / 25m nw "169af"
+"169af" >< "169i"
+50m >w / 50m sw "169h" 5d
 hs> "169R5"
 3u 800m
 <end "169N5"
 
 79v begin -2u "169i" ne
-w< 50m / 50m e "169j" 5d
+25m >w< 25m / 25m e "169j" 4d / 25m w "169ag"
 ~ 50m e
 hs> "169R7"
 3u 800m
 <end "169N7"
+
+79v begin +0u "169af" nw
+50m >w / 50m e "169ag" 5d
+3v 50m n
+ne
+~ 200m e
+hp> "169D"
+1u 200m
+<hp "169P6"
+2u 1000m
+end "169c218"
 
 83v begin -1u "169j"
 2u 50m
@@ -12703,10 +12808,12 @@ w< 50m / 50m se "169t" 8d
 hs> "169P2"
 4u 800m
 <hs "169S2"
-2u 50m
-25m >w< 25m / 25m ne "169y" 4d / 25m sw "169u"
+w< 50m / 50m se "169ac" 5d
+25m ekw< 25m / 25m ne "169y" 4d / 25m sw "169u"
+"169ac" >< "169u"
 25m >w< 25m / 25m se "169v" 4d / 25m nw "169m"
-2u 50m
+25m >w< 25m / 25m ne "169aa" 4d / 25m sw "169ab"
+"169v" >< "169ab"
 50m >w / 50m nw "169z" 5d
 hs> "169R2"
 3u 800m
@@ -12718,15 +12825,17 @@ hs> "169P1"
 4u 800m
 <hs "169S1"
 w< 50m / 50m ne "169u" 5d
-4u 100m
-25m >w< 25m / 25m se "169w" 4d / 25m nw "169v"
+25m >w< 25m / 25m se "169ad" 4d / 25m nw "169ac"
+w< 50m / 50m ne "169ab" 5d
+25m >ekw 25m / 25m se "169w" 4d / 25m nw "169v"
 2u 50m
 hs> "169R1"
 3u 800m
 <end "169N1"
 
-83v begin +2u "169w" se
-~ 50m e
+75v begin +2u "169ad" se
+~ 3u 100m e
+50m >w / 50m nw "169w" 6d
 hs> "169R0"
 3u 800m
 <end "169N0"
@@ -12749,11 +12858,12 @@ hs> "169R0"
 %mac hsixtynine-hsixtyeight 169A-169S3/169S5/169S4
 %mac hsixtynine-hsixtyeight 169B-169S4/169S5
 %mac hsixtynine-hsixtyeight 169C-169S2/169S1
+%mac hsixtynine-hsixtyeight 169D-169N4/+169N7/169N6/169N5
 %mac hsixtynine-hsixtyeight 169S1-169N4/169N3/169N5/169N2/169N1/169N0
-%mac hsixtynine-hsixtyeight 169S2-169N4/169N3/169N5/169N2/169N1/169N0
-%mac hsixtynine-hsixtyeight 169S3-169N4/169N3/169N5/169N6/169N7/169N2/169N1/169N0
-%mac hsixtynine-hsixtyeight 169S4-169N4/169N3/169N5/169N6/169N7/169N2/169N1/169N0
-%mac hsixtynine-hsixtyeight 169S5-169N5/169N4/169N6/169N3/169N7/169N2/169N1/169N0
+%mac hsixtynine-hsixtyeight 169S2-169N4/+169N2/169N3/169N5/169N1/169N0
+%mac hsixtynine-hsixtyeight 169S3-169N4/169N3/169N2/169N5/169N6/169N7/169N1/169N0
+%mac hsixtynine-hsixtyeight 169S4-169N4/169N3/169N2/169N5/169N6/169N7/169N1/169N0
+%mac hsixtynine-hsixtyeight 169S5-169N5/+169N7/169N4/169N6/169N3/169N2/169N1/169N0
 
 %mac hsixtynine-hsixtyeight 169R0-169P4/169P5/169P3
 %mac hsixtynine-hsixtyeight 169R1-169P4/169P5/169P3
@@ -12772,11 +12882,12 @@ hs> "169R0"
 %mac hsixtynine-hsixty 169A-169S3/169S5/169S4
 %mac hsixtynine-hsixty 169B-169S4/169S5
 %mac hsixtynine-hsixty 169C-169S2/169S1
-%mac hsixtynine-hsixty 169S1-169N1/169N0/169N2/169N3/169N4/169N5
-%mac hsixtynine-hsixty 169S2-169N2/169N1/169N0/169N3/169N4/169N5
-%mac hsixtynine-hsixty 169S3-169N2/169N3/169N1/169N0/169N4/169N5
-%mac hsixtynine-hsixty 169S4-169N2/169N1/169N0/169N3/169N4/169N5
-%mac hsixtynine-hsixty 169S5-169N2/169N1/169N0/169N3/169N4/169N5
+%mac hsixtynine-hsixty 169D-169N5/+169N4
+%mac hsixtynine-hsixty 169S1-169N1/+169N0/+169N2/169N3/169N4/169N5
+%mac hsixtynine-hsixty 169S2-169N2/+169N1/+169N0/169N3/169N4/169N5
+%mac hsixtynine-hsixty 169S3-169N2/+169N0/+169N1/169N3/169N4/169N5
+%mac hsixtynine-hsixty 169S4-169N2/+169N1/+169N0/169N3/169N4/169N5
+%mac hsixtynine-hsixty 169S5-169N2/+169N1/+169N0/169N3/169N4/169N5
 %mac hsixtynine-hsixty 169R0-169P2/169P1
 %mac hsixtynine-hsixty 169R1-169P2/169P1
 %mac hsixtynine-hsixty 169R2-169P2/169P1
@@ -12785,6 +12896,20 @@ hs> "169R0"
 %mac hsixtynine-hsixty 169R5-169P2/169P1
 %mac hsixtynine-hsixty 169P1-1601
 %mac hsixtynine-hsixty 169P2-1601
+
+%mac hsixtynine-teighteen 169A-169S3/169S5/169S4
+%mac hsixtynine-teighteen 169B-169S4/169S5
+%mac hsixtynine-teighteen 169C-169S2/169S1
+%mac hsixtynine-teighteen 169D-169N6/+169N7/169N4/169N5
+%mac hsixtynine-teighteen 169S1-169N4/+169N5
+%mac hsixtynine-teighteen 169S2-169N4/+169N5
+%mac hsixtynine-teighteen 169S3-169N6/+169N7/169N4/169N5
+%mac hsixtynine-teighteen 169S4-169N6/+169N7/169N4/169N5
+%mac hsixtynine-teighteen 169S5-169N6/+169N5/169N7/169N4
+%mac hsixtynine-teighteen 169R4-169P6
+%mac hsixtynine-teighteen 169R5-169P6
+%mac hsixtynine-teighteen 169R6-169P6
+%mac hsixtynine-teighteen 169R7-169P6
 
 %quo1 169P3 169A
 %quo1 169P3 1697
@@ -12796,6 +12921,11 @@ hs> "169R0"
 
 %quo1 1602 169C 169S1 169S2
 %quo1 169P1 169P2
+
+%quo6 169P6 218A 218N1 218N2 2192 218F 218P1 218P2 169D 169N4 169N5 169R4 169R5 2191 219A 219S1 219S2 219P1 219P2 219R1 219N1
+%quo2 169D 169N4 169N5 169R4 169R5
+%quo1 169P6 218A 218N1 218N2
+%quo1 2192 218F 218P1 218P2
 
 ### HUNDRED-NINETYTHREE
 
