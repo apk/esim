@@ -81,9 +81,9 @@
 %mac ir5b %seventysix-eightyseven
 %mac ir5b %eightyseven-seventysix
 %mac ir5b %eightynine-tour
-%mac ir5c %ir5,%naughtysix-ninetyfour,%hninetysix-hninetyone
-%mac ir5d %ir5a,%naughtysix-ninetyfour,%hninetysix-hninetyone
-%mac ir5e %ir5b,%naughtysix-ninetyfour,%hninetysix-hninetyone
+%mac ir5c %ir5,%naughtysix-ninetyfour,%hninetysix-hninetyone,%tfifty-hninety
+%mac ir5d %ir5a,%naughtysix-ninetyfour,%hninetysix-hninetyone,%tfifty-hninety
+%mac ir5e %ir5b,%naughtysix-ninetyfour,%hninetysix-hninetyone,%tfifty-hninety
 %mac ir5f %ir5,%naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
 %mac ir5g %ir5a,%naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
 %mac ir5h %ir5b,%naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
@@ -147,7 +147,7 @@
 %mac t9 %hninetysix-hfiftyfour
 %mac t9 %hninetyeight-hsixtyone
 %mac t9 %hsixtynine-hsixty
-%mac t9 %hninety-hsixty
+%mac t9 %tfifty-teightyone,%tfifty-hninety,%hninety-hsixty
 %mac t9 %hsixtynine-hsixtyeight
 %mac t9 %hsixtyfour-hsixtyone
 %mac t9 %hseventy-hfourtythree
@@ -192,6 +192,7 @@
 %mac ir1a %outlet,%hninetysix-hninetyone
 %mac ir1b %ir1a,%hninetytwo-hsixtyseven,%hsixtyseven-hninetytwo
 %mac ir1b %hsixtynine-teighteen,%hsixtynine-hsixtyeight
+%mac ir1a %tfifty-hninety
 
 %mac ir1c %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree
 %mac ir1c %hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
@@ -201,43 +202,43 @@
 
 %mac ir1m %four-five,%ninety-ninetythree,%naughtyseven-ninetythree
 %mac ir1m %naughtyeleven-hfiftyone,%hfifty-hfiftyfive
-%mac ir1m %hninetysix-hfiftyfour,%hninetysix-hninetyone
+%mac ir1m %tfiftythree-tfiftyseven,%tfifty-hninety,%hninetysix-hfiftyfour,%hninetysix-hninetyone
 
 %mac ir1n %ninety-ninetythree,%naughtyseven-ninetythree
 %mac ir1n %naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
 
-%mac ir1p %hninetysix-hninetyone
+%mac ir1p %hninetysix-hninetyone,%tfifty-hninety
 
 %mac ir1q %ninetytwo-naughtyten,%naughtynine-naughtyten
-%mac ir1q %hninetysix-hninetyone,%fiftynine-htwenty
+%mac ir1q %hninetysix-hninetyone,%tfifty-hninety,%fiftynine-htwenty
 
 %mac ir1r %ninetytwo-naughtyten,%naughtynine-naughtyten
 
 %mac ir1s %ninetytwo-naughtyten,%naughtynine-naughtyten
-%mac ir1s %hninetysix-hninetyone
+%mac ir1s %hninetysix-hninetyone,%tfifty-hninety
 %mac ir1s %naughtytwelve-naughtythirteen
 %mac ir1s %naughtysixteen-naughtyfifteen
 
 %mac ir1t %hninetyeight-hsixtythree
 %mac ir1t %hsixtyseven-hninetythree
-%mac ir1t %hninetythree-hsixtyseven
+%mac ir1t %tfifty-hninety,%hninetythree-hsixtyseven
 
 %mac ir1u %hninetynine-hsixtyone
 %mac ir1u %hsixtyone-hninetynine
 %mac ir1u %hsixtyfour-hsixtyone
 %mac ir1u %hsixtyseven-hninetythree
-%mac ir1u %hninetythree-hsixtyseven
+%mac ir1u %tfifty-hninety,%hninetythree-hsixtyseven
 
 %mac ir1v %hninetyeight-hsixtythree
 %mac ir1v %hsixtynine-hsixty
-%mac ir1v %hninety-hsixty
+%mac ir1v %tfifty-hninety,%hninety-hsixty
 %mac ir1v %hsixtynine-hsixtyeight
 
 %mac ir1w %hninetynine-hsixtyone
 %mac ir1w %hsixtyone-hninetynine
 %mac ir1w %hsixtyfour-hsixtyone
 %mac ir1w %hsixtynine-hsixty
-%mac ir1w %hninety-hsixty
+%mac ir1w %tfiftythree-tfiftyseven,%tfifty-hninety,%hninety-hsixty
 %mac ir1w %hsixtynine-hsixtyeight
 
 %mac ir1y %naughtyfifteen-hfiftysix
@@ -354,6 +355,7 @@
 
 %mac ir6a %fourty-fourtyone
 %mac ir6a %hninetysix-hninetyone
+%mac ir6a %tfifty-hninety
 
 %mac ir6b %fourtyfour-eightythree
 %mac ir6b %eightythree-fourtyfour
@@ -364,6 +366,7 @@
 %mac ir6b %hninetyeight-hsixtyone
 %mac ir6b %hsixtyfour-hsixtyone
 %mac ir6b %hsixtyseven-hninetythree
+%mac ir6b %tfifty-hninety
 %mac ir6b %hninetythree-hsixtyseven
 
 %mac ir6c %fourty-fourtyone
@@ -430,7 +433,7 @@
 %mac ir6i %twentyfour-hseventyfour
 
 %mac ir0 %ninetytwo-naughtyten,%naughtynine-naughtyten
-%mac ir0 %hninetysix-hninetyone
+%mac ir0 %hninetysix-hninetyone,%tfifty-hninety
 %mac ir0z %ir0
 %mac ir0z %hninetytwo-hsixtyseven,%hsixtynine-teighteen,%hsixtynine-hsixtyeight,%hsixtyseven-hninetytwo
 
@@ -536,7 +539,8 @@
 %mac ir0r %tninetyfour-ttwentyfive
 
 %mac t0 5N1-4D/12
-%mac t0 %hninetysix-hninetyone,%hninety-hsixty,%hsixtynine-teighteen,%hsixtynine-hsixty
+%mac t0 %hninetysix-hninetyone,%tfifty-teightyone,%tfifty-hninety,%hninety-hsixty,%hsixtynine-teighteen,%hsixtynine-hsixty
+
 %mac t1 5N1-4D/12
 %mac t1 %three-fourteen,%eighteen-twentyone
 %mac t1 %fiftythree-fiftytwo
