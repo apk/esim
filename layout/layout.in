@@ -43765,8 +43765,8 @@ end "471u470"
 %mac fseventy-tfourtythree 470G-470P3/470P1/470P2
 %mac fseventy-tfourtythree 470H-470P6/470P4/470P3/470P5
 %mac fseventy-tfourtythree 470I-470P5/+470P6/470P4/470P3
-%mac fseventy-tfourtythree 470P1-4803/244D
-%mac fseventy-tfourtythree 470P2-4803/244D
+%mac fseventy-tfourtythree 470P1-244D/+4803
+%mac fseventy-tfourtythree 470P2-244D/+4803
 %mac fseventy-tfourtythree 470P3-4810/243I
 %mac fseventy-tfourtythree 470P4-4810/243I
 %mac fseventy-tfourtythree 470P5-243I/+4810
@@ -43907,12 +43907,12 @@ end "472u471"
 %def 471I-471P3/+471P4/++471P2/471P1
 %def 471P1-470G/+4716/++4718/470I
 %def 471P2-4716/4718/470G/470I
-%def 471P3-470I/+4718/++4716/471G
+%def 471P3-470I/+4718/++4716/470G
 %def 471P4-4718/471I
 
-%mac fseventy-tfourtythree 471P1-470G/+4716/++4718/470I
-%mac fseventy-tfourtythree 471P2-4716/4718/470G/470I
-%mac fseventy-tfourtythree 471P3-470I/+4718/++4716/471G
+%mac fseventy-tfourtythree 471P1-4716/++4718/470I
+%mac fseventy-tfourtythree 471P2-4716/4718/470I
+%mac fseventy-tfourtythree 471P3-470I/+4718/++4716
 
 %quo2 4719 471B 471N1 471N2 471N3
 %quo2 471G 471P1 471P2 471P3
