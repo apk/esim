@@ -1,4 +1,5 @@
 %trn len=200 v=200 n=a 
+%def 3997-X
 
 1u begin =3+6u
 2u 800m
@@ -31,9 +32,62 @@ end "391t390"
 1u 50m
 end "348t349"
 
-36u begin +0u "803t804"
-1u 50m
-end "804t803"
+1u begin +2u "805t806"
+1u 800m
+<hp "x1"
+1u 200m
+1u 800m
+<hp "x2"
+1u 200m
+1u 800m
+<hp "x3"
+1u 200m
+1u 800m
+<hp "x4"
+1u 200m
+1u 800m
+<hp "x5"
+1u 200m
+1u 800m
+<hp "x6"
+1u 200m
+1u 800m
+<hp "x7"
+1u 200m
+1u 800m
+<hp "x8"
+1u 200m
+1u 800m
+<hp "x9"
+1u 200m
+1u 800m
+<hp "x10"
+1u 200m
+1u 800m
+<hp "x11"
+1u 200m
+1u 800m
+<hp "x12"
+1u 200m
+1u 800m
+<hp "x13"
+1u 200m
+1u 800m
+<hp "x14"
+1u 200m
+1u 800m
+<hp "x15"
+1u 200m
+1u 800m
+<hp "x16"
+1u 200m
+1u 800m
+<hp "x17"
+1u 200m
+1u 800m
+<hp "x18"
+1u 200m
+end "806t805"
 
 ### THNINETYEIGHT
 
@@ -699,7 +753,7 @@ end "801d"
 93v begin -1u "801t802" w
 1u 200m
 hp> "8021"
-1u 150m
+1u 175m
 <hp "801G"
 2u 200m
 w< 3v / sw "801c" 8d
@@ -1030,7 +1084,7 @@ hs> "353S8"
 
 %def 801F-801R3/801P2
 %def 801G-801P2/801P1
-%def 801P1-8012/353J
+%def 801P1-353J/+8012
 %def 801P2-353J/+8012
 %def 801P3-8012
 
@@ -1042,7 +1096,7 @@ hs> "353S8"
 
 ### ATWO
 
-19u begin =14+19v "802a" se
+39v begin =14+19v "802a" se
 ~ 50m e
 hs> "802P1"
 4u 800m
@@ -1050,11 +1104,16 @@ hs> "802P1"
 ~ 50m ne
 end "802b"
 
-17v begin -1u "801t802"
+1u begin +1u "801t802"
 2u 300m
 <hp "802A"
-2u 200m
+2u 225m
 3u >w / nw "802c" 8d
+3v 175m
+<hs "802S12"
+2u ~ 2u ne 225m
+e
+w< / ne "802z" 8d
 w< 3u / se "802a" 8d
 hs> "802P2"
 3v 200m
@@ -1072,21 +1131,27 @@ hp> "802G"
 1u 200m
 1u 300m
 <hp "8033"
-1u 250m
-1u 250m
-<hp "8035"
+1u 200m
 hp> "8038"
+1u 300m
+<hp "8035"
 1u 200m
 end "802t803"
 
-16v begin -2u "802t801"
+1v begin -2u "802t801"
 1u 200m
 hp> "8022"
-1u 150m
+1u 175m
 <hp "802B"
-2u 200m
-w< / se "802c" 8d
-w< 3u / ne "802f" 8d
+2u 225m
+w< 3u / se "802c" 8d
+hs> "802T"
+1u 175m
+<hs "802S3"
+~ 2u ne 200m
+e
+w< 3v / ne "802f" 8d
+3v >w / sw "802z" 8d
 hs> "802P3"
 1u 400m
 1u 200m
@@ -1108,8 +1173,8 @@ hp> "8034"
 2u 300m
 end "803t802"
 
-17u begin -1u "802f" ne
-~ 50m e
+33v begin -3u "802f" ne
+~ 2u 75m e
 hs> "802P4"
 4u 800m
 <hs "802N4"
@@ -1118,8 +1183,10 @@ end "802g"
 
 %quo1 801N3 801F 8022
 
-%def 802A-802S2/802N1
-%def 802B-802N3/+802S2/802N4/802N1
+%def 802A-802S12
+%def 802B-802S3/+802S12
+%def 802S12-802S2/802N1/802N3
+%def 802S3-802N3/802N4
 %def 802N1-8031/8037
 %def 802N2-8031/8037
 %def 802N3-8037/+8031
@@ -1129,12 +1196,12 @@ end "802g"
 %def 802G-802P2/+802R3/802P1/802P4
 %def 802P1-8022/801G
 %def 802P2-801G/+8022
-%def 802P3-8022
+%def 802P3-8022/801G
 %def 802P4-8022
 
-%quo3 801N3 802B 802N1 802S2 802N2 802N3 802N4
+%quo3 801N3 802B 802N1 802S12 802S2 802N2 802N3 802N4
 %quo3 802P1 802R3 802P2 802P3 802P4 802G 8038
-%quo4 801N3 802B 802N1 802S2 802N2 802N3 802N4 802P1 802R3 802P2 802P3 802P4 802G 8038
+%quo4 801N3 802B 802N1 802S12 802S2 802N2 802N3 802N4 802P1 802R3 802P2 802P3 802P4 802G 8038
 %quo1 802S2 802N2
 %quo1 802R3 802P3
 
@@ -1142,116 +1209,411 @@ end "802g"
 
 ### ATHREE
 
-36v begin =12+15v "803a" se
+23v begin =8+11v "803a" se
 ~ 50m e
 hs> "803P1"
 4u 800m
-<hs "803N1"
-3u w< 4u / ne "803b" 8d
-4u >w / nw "803c" 8d
-2u 200m
-hp> "803H"
-2u 1000m
-end "803cxxx"
+<hs "803S1"
+~ 50m ne
+end "803b"
 
 1u begin -1u "802t803"
 2u 300m
 <hp "803A"
 2u 200m
-3u >w / nw "803d" 8d
-w< 3u / ne "803e" 8d
-1u 100m
-<hs "803S2"
-1u 100m
-w< 3u / se "803a" 10d
+3u >w / nw "803c" 8d
+w< 3u / se "803a" 8d
 hs> "803P2"
 3v 300m
 <hs "803S12"
 1u 200m
 1u 300m
+<hs "803S2"
+3u >w / sw "803b" 8d
+w< 7u / ne "803d" 8d
+hs> "803R2"
+3v 300m
+<hs "803S22"
+1u 200m
+1u 300m
 <hs "803N2"
-3u >w / nw "803f" 10d
->w / sw "803b" 8d
->w / nw "803j" 8d
-w< / se "803c" 10d
-w< 3u / ne "803g" 8d
+7u >w / nw "803e" 6d
 2u 200m
 hp> "803G"
-1u 600m
-<hp "8041"
-1u 200m
-1u 800m
-<hp "8043"
-1u 200m
+1u 50m
 end "803t804"
 
-36v begin -3u "803h" se
-~ 50m e
-hs> "803P3"
-4u 800m
-<hs "803N3"
-w< se / ne "803i" 8d
-end "803f"
-
-1u begin +1u "803t802"
-2u 300m
-<hp "803B"
-hp> "8036"
-3v 200m
-w< 3u / se "803d" 8d
-3u >w / sw "803e" 8d
-1u 100m
-<hs "803S4"
-1u 100m
-ne
-w< / e "803h" 10d
-2u 50m e
-hs> "803P4"
-1u 400m
+1v begin -2u "803t802"
 1u 200m
-hs> "803R4"
+hp> "8036"
+1u 100m
+<hp "803B"
+2u 200m
+w< 7u / se "803c" 8d
+hs> "803P3"
+1u 300m
+1u 200m
+hs> "803R13"
 3v 200m
-<hs "803N4"
-2u 50m
-se
->w / w "803i" 8d
-e
-w< 4u / se "803j" 8d
-4u >w / sw "803g" 8d
+<hs "803S3"
+7u >w / sw "803d" 8d
+w< 3u / ne "803f" 8d
+hs> "803R3"
+1u 300m
+1u 200m
+hs> "803R23"
+3v 200m
+<hs "803N3"
+3u >w / nw "803g" 8d
+w< 3u / se "803e" 8d
 2u 200m
 hp> "803F"
-1u 800m
-1u 200m
-hp> "8042"
-2u 800m
+1u 50m
 end "804t803"
 
-%def 803A-803S2/803S4
-%def 803B-803S4/+803S2
-%def 803S2-803S12/803N1
-%def 803S4-803N4/+803N3
-%def 803N1-8041/804B
-%def 803N2-8041/804B
-%def 803N3-8041/804B
-%def 803N4-804B/+8041
+57v begin -1u "803f" ne
+~ 50m e
+hs> "803R4"
+4u 800m
+<hs "803N4"
+~ 50m se
+end "803g"
 
-%def 803F-803R4/803P3/803P1/803P2
-%def 803G-803P2/+803R4/+803P3/803P1
-%def 803H-803P3/++803R4/++803P1/803P2
+%def 803A-803S12/803S1
+%def 803B-803S3/+803S12/803S1
+%def 803S1-803S22/803N4/803N3
+%def 803S2-803S22/803N4/803N3
+%def 803S3-803N3/803N4
+%def 803N2-804A/804B
+%def 803N3-804B/+804A
+%def 803N4-804A/804B
+
+%def 803F-803R23/803R4
+%def 803G-803R2/+803R23/803R4
+%def 803R2-803P2/803P1
+%def 803R3-803R13/803P1/803P2
+%def 803R4-803R13/803P1/803P2
 %def 803P1-8036/8038
 %def 803P2-8038/+8036
 %def 803P3-8036/8038
-%def 803P4-8036/8038
 
-%quo3 8037 803B 803S2 803S4 803N1 803S12 803N2 803N3 803N4
-%quo3 803G 803H 803P1 803P2 803P3 803R4 803P4
-%quo4 8037 803B 803S2 803S4 803N1 803S12 803N2 803N3 803N4 803G 803H 803P1 803P2 803P3 803R4 803P4
-%quo1 803R4 803P4
-%quo1 803S12 803N2
-%quo2 803S2 803P1 803P2 803S12 803N1 803N2
-%quo2 803S4 803P3 803P4 803R4 803N3 803N4
+%quo1 803R2 803P1 803P2
+%quo2 8037 803B 803S1 803S12 803S2 803R2 803P1 803P2
+%quo1 803S12 803S2 803P2
+%quo1 803S22 803N2
+
+%quo1 803S3 803N3 803N4
+%quo2 803S3 803N3 803N4 803R3 803R23 803R4 803G
+%quo1 803N3 803R3 803R23
+%quo1 803P3 803R13
+
+# %quo3 8037 803B 803S2 803S4 803N1 803S12 803N2 803N3 803N4
+# %quo3 803G 803H 803P1 803P2 803P3 803R4 803P4
+# %quo4 8037 803B 803S2 803S4 803N1 803S12 803N2 803N3 803N4 803G 803H 803P1 803P2 803P3 803R4 803P4
+# %quo1 803R4 803P4
+# %quo1 803S12 803N2
+# %quo2 803S2 803P1 803P2 803S12 803N1 803N2
+# %quo2 803S4 803P3 803P4 803R4 803N3 803N4
 
 %quo1 8034 8036
+
+### ATEN
+
+19u begin =4+3v "804c810"
+2u 1000m
+<hp "8101"
+1u 200m
+hp> "8102"
+1u 1000m
+1u 1000m
+<hp "810A"
+3v 200m
+w< 3u / ne "810a" 10d
+hs> "810P1"
+7v 800m
+<hs "810N1"
+3u >w / nw "810b" 10d
+3v 200m
+hp> "810F"
+2u 1000m
+end "810c811"
+
+29u begin -1u "810a" ne
+~ 50m e
+hs> "810P2"
+7v 800m
+<hs "810N2"
+~ 50m se
+end "810b"
+
+%def 810A-810N1/++810N2
+%def 810N1-811A
+%def 810N2-811A
+
+%def 810F-810P1/++810P2
+%def 810P1-8102
+%def 810P2-8102
+
+%quo1 8101 810A 810N1 810N2
+%quo1 810F 810P1 810P2
+
+### AFOUR
+
+6u begin =12+19v "804a" se
+w< / e "804b"
+~ 50m e
+hs> "804P1"
+4u 800m
+<hs "804S1"
+2u 50m
+ne
+>w / w "804c" 6d
+e
+5u >w / nw "804d" 8d
+hs> "804R1"
+4u 800m
+<hs "804N1"
+w< 4u / ne "804e" 8d
+4u >w / nw "804f" 10d
+2u 200m
+hp> "804H"
+2u 1000m
+end "804c810"
+
+8u begin +1u "804b" e
+2u 50m
+hs> "804P2"
+4u 800m
+<hs "804S2"
+w< se / ne "804g" 6d
+end "804c"
+
+1v begin -2u "803t804"
+1u 50m
+<hp "804A"
+2u 300m
+w< 3u / se "804a" 8d
+hs> "804P3"
+4u 800m
+<hs "804S3"
+5u >w / sw "804g"
+>w / nw "804h" 8d
+w< 3u / se "804d" 8d
+hs> "804R3"
+4u 800m
+<hs "804N3"
+3u >w / sw "804e" 8d
+>w / nw "804i" 10d
+w< / se "804f" 10d
+w< 3u / ne "804j" 8d
+2u 200m
+hp> "804G"
+1u 600m
+<hp "8051"
+1u 200m
+end "804t805"
+
+1v begin -2u "804t803"
+1u 50m
+<hp "804B"
+2u 300m
+w< 3u / ne "804k"
+hs> "804P4"
+1u 300m
+1u 200m
+hs> "804R14"
+3v 300m
+<hs "804S4"
+3u >w / nw "804l"
+w< 3u / se "804h" 8d
+2u 50m
+hs> "804R4"
+4u 800m
+<hs "804N4"
+4u 100m
+w< 4u / se "804i" 10d
+4u >w / sw "804j" 8d
+2u 200m
+hp> "804F"
+2u 800m
+end "805t804"
+
+6u begin -1u "804k" ne
+~ 50m e
+hs> "804P5"
+4u 800m
+<hs "804S5"
+~ 50m se
+end "804l"
+
+%def 804A-804S3/804S1/804S2
+%def 804B-804S4/804S5
+%def 804S1-804N1
+%def 804S2-804N3/804N1
+%def 804S3-804N3/804N1
+%def 804S4-804N4/+804N3/804N1
+%def 804S5-804N3/804N4/804N1
+%def 804N1-8051/805B
+%def 804N3-8051/805B
+%def 804N4-805B/+8051
+
+%mac afour-aten 804A-804S1/+804S2/++804S3
+%mac afour-aten 804B-804S4/804S5
+%mac afour-aten 804S1-804N1
+%mac afour-aten 804S2-804N1/804N3
+%mac afour-aten 804S3-804N1/+804N3
+%mac afour-aten 804S4-804N4/+804N1/+804N3
+%mac afour-aten 804S5-804N1/+804N3/804N4
+%mac afour-aten 804N1-8101
+%mac afour-aten 804N3-8101
+%mac afour-aten 804N4-8101
+
+%def 804F-804R4/804R1/804R3
+%def 804G-804R3/+804R4/804R1
+%def 804H-804R1/++804R4/804R3
+%def 804R1-804R14/+804P1/804P2/804P3/804P5
+%def 804R3-804P3/+804R14/804P2/804P5
+%def 804R4-804R14/804P5
+%def 804P1-803G
+%def 804P2-803G
+%def 804P3-803G
+%def 804P4-803F
+%def 804P5-803F
+
+%quo1 804B 804S4 804S5
+%quo2 804P4 804P5 804R14 804B 804S4 804S5
+%quo1 804P4 804R14 804S4
+
+%quo2 804P1 804P2 804P3
+%quo3 804A 804S1 804S2 804S3 804P1 804P2 804P3
+
+%quo1 804R1 804R3
+%quo2 804R1 804R3 804G 8102 804H 804R4 804N4
+%quo2 804N1 804N3 804N4
+%quo3 804R1 804R3 804R4 804G 8102 804H 804N1 804N3 804N4
+
+### AFOUR
+
+23u begin =10+9v "805a" se
+w< / e "805b"
+~ 50m e
+hs> "805P1"
+7v 800m
+<hs "805N1"
+~ 50m ne
+>w / w "805c"
+end "805d"
+
+25u begin +1u "805b"
+2u 50m
+hs> "805P2"
+7v 800m
+<hs "805N2"
+2u 50m
+end "805c"
+
+1u begin -2u "804t805"
+2u 800m
+<hp "8053"
+1u 200m
+1u 800m
+<hp "8055"
+1u 200m
+1u 800m
+<hp "8057"
+1u 200m
+1u 800m
+<hp "805A"
+2u 200m
+w< 3u / ne "805e" 8d
+3u >w / nw "805f" 10d
+w< 3u / se "805a" 10d
+hs> "805P3"
+7v 800m
+<hs "805N3"
+5u >w / nw "805g" 8d
+>w / sw "805d" 10d
+w< 3u / ne "805h" 10d
+2u 200m
+hp> "805G"
+1u 600m
+<hp "8061"
+1u 200m
+end "805t806"
+
+1v begin -2u "805t804"
+1u 200m
+hp> "8052"
+1u 800m
+1u 200m
+hp> "8054"
+1u 800m
+1u 200m
+hp> "8056"
+1u 800m
+1u 200m
+hp> "8058"
+1u 600m
+<hp "805B"
+2u 200m
+3u >w / sw "805e" 8d
+w< / se "805f" 10d
+w< 3u / ne "805i" 8d
+hs> "805P4"
+7v 800m
+<hs "805N4"
+3u >w / nw "805j" 8d
+w< 4u / se "805g" 8d
+4u >w / sw "805h" 10d
+2u 200m
+hp> "805F"
+2u 800m
+end "806t805"
+
+21u begin -1u "805i" ne
+~ 50m e
+hs> "805P5"
+7v 800m
+<hs "805N5"
+~ 50m se
+end "805j"
+
+%def 805A-805N3/805N1/805N5/805N2/805N4
+%def 805B-805N4/+805N3/+805N1/805N5/805N2
+%def 805N1-8061/806B
+%def 805N2-8061/806B
+%def 805N3-8061/806B
+%def 805N4-806B/+8061
+%def 805N5-8061/806B
+
+%def 805F-805P4/805P5/805P1/805P2/805P3
+%def 805G-805P3/+805P4/805P1/805P5/805P2
+%def 805P1-8058/804G
+%def 805P2-8058/804G
+%def 805P3-804G/+8058
+%def 805P4-8058/804G
+%def 805P5-8058/804G
+
+%quo4 805B 805N1 805N2 805N3 805N4 805N5
+%quo4 805G 805P1 805P2 805P3 805P4 805P5
+%quo5 805B 805N1 805N2 805N3 805N4 805N5 805G 805P1 805P2 805P3 805P4 805P5
+
+### AELEVEN
+
+35u begin =3+0u "810c811"
+2u 1000m
+<hp "811A"
+w< 50m / ne "811a" 20d
+1u 800m
+1u 200m
+<hp "811N1"
+1u 800m
+1u 200m
+<hp "811X1"
+1u 800m
+end "811a"
+%quo1 811A 811N1
+%def 811X1-810F
 
 ### THNINETYFOUR
 
@@ -2273,7 +2635,8 @@ end "391h"
 
 ### EPILOG
 
-%trn len=700 v=200 n=F %thninetysix-thfiftyfive,%thfifythree-aone
+%trn len=700 v=200 n=Z %thninetysix-thfiftyfive,%thfifythree-aone,%afour-aten
+%trn len=700 v=200 n=Z %thninetysix-thfiftyfive,%thfifythree-aone,%afour-aten
 %trn len=700 v=200 n=F %thninetysix-thfiftyfive,%thfifythree-aone
 %trn len=200 v=200 n=n %thninetythree-thfiftyone,%thninetythree-thfifty,%thfifythree-aone,%thfifythree-thfiftytwo
 %trn len=200 v=200 n=m %thninetythree-thfiftyone,%thfifythree-aone,%thfifythree-thfiftytwo
@@ -2284,6 +2647,8 @@ end "391h"
 
 %trn len=200 v=200 n=e %thninetysix-thfiftyfive,%thfifythree-thfiftyfour
 %trn len=200 v=200 n=e %thninetysix-thfiftyfive,%thfifythree-thfiftyfour
+%trn len=200 v=200 n=z %thninetysix-thfiftyfive,%thfifythree-aone,%afour-aten
+%trn len=200 v=200 n=z %thninetysix-thfiftyfive,%thfifythree-aone,%afour-aten
 %trn len=200 v=200 n=f %thninetysix-thfiftyfive,%thfifythree-aone
 %trn len=200 v=200 n=f %thninetysix-thfiftyfive,%thfifythree-aone
 %trn len=200 v=200 n=f %thninetysix-thfiftyfive,%thfifythree-aone
