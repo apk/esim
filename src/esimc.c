@@ -320,6 +320,10 @@ int main(argc,argv) int argc; char **argv; {
                 ks = 1; }
 	    else if(!strcmp(argv[i],"-big")) {
                 karo = 8; }
+	    else if(!strcmp(argv[i],"-xl")) {
+                karo = 12; }
+	    else if(!strcmp(argv[i],"-xxl")) {
+                karo = 16; }
 	    else if(!strcmp(argv[i],"-small")) {
                 karo = 2; }
 	    else if(!strcmp(argv[i],"-b")) {
