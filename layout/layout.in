@@ -8376,33 +8376,18 @@ hp> "08G"
 <hp "091"
 1u 200m
 1u 800m
-<hp "09A"
-2u 200m
-w< 50m / 50m ne "09a" 20d
-1u 25m se
-1u 200m e
-hp> "09E"
-1u 800m
 <hp "093"
 1u 200m
 1u 800m
-<hp "09F"
-1u 200m ne
-n
-w< 50m / 50m nw "09b" 20d
-1u 25m
-1u 25m nw
-1u 200m w
-hp> "09G"
-1u 800m
-<hp "094"
+<hp "095"
 1u 200m
 1u 800m
-<hp "09C"
-1u 200m sw
-end "09d"
-
-%def 09F-094/+09D
+<hp "097"
+1u 200m
+1u 800m
+<hp "099"
+1u 200m
+end "08t09"
 
 1v begin -2u "08t07"
 1u 200m
@@ -8429,18 +8414,17 @@ hp> "08F"
 1u 800m
 1u 200m
 hp> "092"
-1u 600m
-<hp "09B"
-2u 200m
-w< 50m / 50m ne "09d" 20d
-50m >w / 50m sw "09a" 20d
-hp> "09D"
-5v 1800m
-<hp "09H"
+1u 800m
 1u 200m
-end "09b"
-
-%def 09D-092/+08G
+hp> "094"
+1u 800m
+1u 200m
+hp> "096"
+1u 800m
+1u 200m
+hp> "098"
+2u 800m
+end "09t08"
 
 14u begin -1u "08c" ne
 1u 25m
@@ -8451,6 +8435,12 @@ hs> "08P3"
 1u 25m
 1u 25m se
 end "08d"
+
+1u begin +0u "08t09"
+1u 100m
+1u 100m
+1u 100m
+end "09t08"
 
 %quo3 069 06D 07B 07N1 07N2 07N3 08P1 07G 07R1 07P1 07P2 07P3
 %quo2 069 06D 07B 07N1 07N2 07N3
@@ -8481,12 +8471,7 @@ end "08d"
 %def 08P3-086/07G
 
 %quo1 08B 08N2 08N3
-%quo2 08B 08N2 08N3 08P3 08P2 08G 09E
-
-%quo1 09E 09A
-%quo1 09E 091
-
-%quo1 09B 09D 09H
+%quo2 08B 08N2 08N3 08P3 08P2 08G
 
 ### FIFTYSEVEN
 
