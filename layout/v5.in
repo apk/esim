@@ -775,7 +775,7 @@
 %trn len=150 v=160 n=t5 %t5
 %trn len=228 v=200 n=ir5h %ir5h
 %trn len=228 v=200 n=ir1b %ir1b
-%trn len=97 v=140 n=loc-7 %five-eleven,%eleven-twelve,10I-11B,10J-11B,%televen-tninetyeight,7F-7P3/7P2/7P4,7P3-$,7P2-$,7P4-$,%six-five,%five-six
+%trn len=97 v=140 n=loc-7 %five-eleven,%eleven-twelve,10I-11B,10J-11B,%televen-tninetyeight,7F-7P3/7P2/7P4,7G-7P3/+7P4/7P2,7P3-$,7P2-$,7P4-$,%six-five,%five-six
 %trn len=228 v=200 n=ir6 %ir6
 %trn len=310 v=200 n=ic1c %ic1c
 %trn len=80 n=uX %hninetyfive-ttwentynine,%ir1a,%tfiftythree-tfiftyseven,%tseventyseven-ttwentynine,%tseventysix-fninetyfour,%tsixtyfive-fninetyfour
