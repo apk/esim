@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 43A" $* 43B 43A 43C -- 43N1 43N2 43N3 43N4 43N5 &
+esimc -title "esimc 43F" $* 43G 43F -- 43P5 43P4 43P3 43P2 43P1 &

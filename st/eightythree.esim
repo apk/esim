@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 83A" $* 83A 83B -- 83S5 83S4 83S3 83S2 83S1 -- 83N4 83N3 83N2 &
+esimc -title "esimc 83F" $* 83G 83F -- 83R2 83R3 83R4 -- 83P1 83P2 83P3 83P4 83P5 &
