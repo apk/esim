@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 150A" $* 150B 150A -- 150N4 150N3 150N2 150N1 &
+esimc -title "esimc 150F" $* 150G 150F -- 150P1 150P2 150P3 150P4 &
