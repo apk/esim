@@ -261,6 +261,24 @@ void io_eof (MUX_BMFIO_TYP *pIo) {
 	exit (0);
 }
 
+int qq = 0;
+bmfBuild_t B;
+
+void addsig (char *n) {
+    if (nsig < sizeof (sigarr) / sizeof (sigarr [0])) {
+	sigarr [nsig].num = nsig;
+	sigarr [nsig].nmq = qq;
+	sigarr [nsig].ks = ks;
+	sigarr [nsig ++].name = argv [i];
+	bmfBuildAddString (&B, argv [i]);
+	qq += 4;
+    }
+}
+
+void addsigs (char *n) {
+	addsig (n);
+}
+
 int main(argc,argv) int argc; char **argv; {
 	char *shost = "localhost";
     XSizeHints myhint;
@@ -278,8 +296,6 @@ int main(argc,argv) int argc; char **argv; {
 
     Colormap cmap;
     XColor exact, color;
-    bmfBuild_t B;
-    int qq = 0;
 
     display_name=getenv("DISPLAY");
 
@@ -342,14 +358,7 @@ int main(argc,argv) int argc; char **argv; {
                 qq+=2; }
 	    else printf("Unknown option %s\n",argv[i]); }
 	else {
-	    if (nsig < sizeof (sigarr) / sizeof (sigarr [0])) {
-		sigarr [nsig].num = nsig;
-		sigarr [nsig].nmq = qq;
-		sigarr [nsig].ks = ks;
-		sigarr [nsig ++].name = argv [i];
-		bmfBuildAddString (&B, argv [i]);
-		qq += 4;
-	    }
+	    addsigs (argv [i]);
 	}}
     if(!display_name) display_name="";
 
