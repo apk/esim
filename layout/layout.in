@@ -10340,12 +10340,12 @@ end "150h"
 
 ### NAUGHTYSEVENTEEN
 
-27u begin =334+6u "017c" se
-~ 3u e 100m
+28u begin =334+6u "017c" se
+~ 2u 75m e
 hs> "017R0"
 4u 800m
 <hs "017N0"
-~ ne 50m
+2u ~ 75m ne
 end "017f"
 
 1u begin -1u "016t017"
@@ -10362,15 +10362,13 @@ w< 50m / 50m ne "017a" 8d
 hs> "017P1"
 4u 800m
 <hs "017S1"
-2u 50m
-w< 50m / 50m se "017c" 8d
-2u 50m
-50m >w / 50m nw "017d" 8d
+4u w< 3v / se "017c" 8d
+3v >w / 50m nw "017d" 8d
 hs> "017R1"
 4u 800m
 <hs "017N1"
-w< 50m / 50m ne "017e" 8d
-50m >w / 50m sw "017f" 8d
+w< 3v / ne "017e" 8d
+3v >w / sw "017f" 8d
 5v 300m
 hp> "017G"
 1u 600m
@@ -10402,8 +10400,7 @@ w< 50m / 50m se "017d" 8d
 hs> "017R2"
 4u 800m
 <hs "017N2"
-2u 50m
-50m >w / 50m sw "017e" 8d
+3u >w 2u / sw "017e" 8d
 5v 300m
 hp> "017F"
 2u 800m
