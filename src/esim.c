@@ -1723,7 +1723,7 @@ int test_lookahead (struct train *trn,
 								if (trn->ztim < 100) break;
 							} else if (*p == '+') {
 								if (p [1] == '+') {
-									if (trn->speed * 36 > 160 * 1000) break;
+									if (trn->speed * 36 > 160 * 10000) break;
 									p ++;
 								}
 								nth = 0;
