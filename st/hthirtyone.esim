@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 131A" $* 131D 131B 131A -- 131S3 131S2 131S1 131C -- 131N3 131N2 131N1 131N0 &
+esimc -title "esimc 131F" $* 131G 131F -- 131Q0 131Q1 131Q2 131R3 -- 131P1 131P2 131P3 &

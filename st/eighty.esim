@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 80A" $* 80B 80A -- 80S0 80S1 80S2 -- 80N1 80N2 80N3 &
+esimc -title "esimc 80F" $* 80G 80F 80H -- 80R3 80R2 80R1 -- 80P2 80P1 80P0 &

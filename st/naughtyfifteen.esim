@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 015A" $* 015B 015A -- 015S4 015C 015S1 -- 015N4 015N3 015N2 015N1 &
+esimc -title "esimc 015F" $* 015G 015H 015F -- 015Q1 015Q2 015Q3 015Q4 -- 015P1 015P4 &

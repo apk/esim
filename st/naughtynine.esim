@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 09A" $* 09B 09A 09D 09C -- 09N6 09N5 09N4 09N3 09N2 09N1 &
+esimc -title "esimc 09F" $* 09I 09H 09G 09F -- 09P1 09P2 09P3 09P4 09P5 09P6 &

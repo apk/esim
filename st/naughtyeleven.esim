@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 011A" $* 011B 011A 011D 011C -- 011N4 011N3 011N2 011N1 &
+esimc -title "esimc 011F" $* 011J 011I 011H 011G 011F -- 011P1 011P2 011P3 011P4 &
