@@ -1748,7 +1748,7 @@ struct pln {
 	int len;
 	int v;
 	char *n;
-} plans [300] = {
+} plans [500] = {
 	{ "2N3-31,A-S3-21,4P5-1,1A-1N2" },
 	{ "2N3-3B-3S2,4S24-4N5/4S34,4N5-1F/4N4,2A-2N3" },
 	{ "2N3-31,4S24-4N5/4S34,4N5-1F/4N4,2A-2N3" },
