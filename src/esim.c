@@ -3437,7 +3437,10 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 	exit (1);
 }
 
+int oncesteps;
+
 void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
+	int i;
 	struct timeval now = MUX_GetTime ();
 	TV_AddFrac (&dt, 1, 10);
 	TV_AddInt (&now, -1, 0);
@@ -3447,8 +3450,10 @@ void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 		MUX_SetTimeout (pTo, &dt);
 	}
 
-	everysec ();
-	emulsteps ++;
+	for (i = 0; i < oncesteps; i ++) {
+		everysec ();
+		emulsteps ++;
+	}
 	if (todo) {
 		XClearArea(mydisplay,basewindow,0,0,0,0,False);
 		DrawPicture ();
@@ -3569,7 +3574,6 @@ static BMFCONN_CMD_HDLR (BmfUsePlan) {
 }
 
 static BMFCONN_CMD_HDLR (BmfGetSteps) {
-	int d = useplans;
 	if (bmfIsEnd (args)) {
 		return bmfMakeMessage (
 			BMF_NAME, "ok",
@@ -3580,10 +3584,27 @@ static BMFCONN_CMD_HDLR (BmfGetSteps) {
 	return BMFCONN_CMD_SYNERR ();
 }
 
+static BMFCONN_CMD_HDLR (BmfOnceSteps) {
+	int d = oncesteps;
+	if (bmfParseMessage (args,
+			BMF_INT | BMF_OPT_OPT, &d,
+			BMF_END) == 0) {
+		if (d < 1) d = 1;
+		oncesteps = d;
+		return bmfMakeMessage (
+			BMF_NAME, "ok",
+			BMF_NAME, bmfGetName (cmd),
+			BMF_INT, oncesteps,
+			BMF_END);
+	}
+	return BMFCONN_CMD_SYNERR ();
+}
+
 MUX_BMFCMDTABLE_TYP arCmdTable[] = {
 	{ "sig", BmfSig, "sig [name:str]..." },
 	{ "use-plans", BmfUsePlan, "use-plans [flag:int]" },
 	{ "get-steps", BmfGetSteps, "get-steps" },
+	{ "once-steps", BmfOnceSteps, "once-steps [steps:int]" },
 	{ 0, 0, 0 }
 };
 
@@ -3617,13 +3638,16 @@ int main(argc,argv) int argc; char **argv; {
 	    else if(!strcmp(argv[i],"-d")) {
                 iDebugLevel ++; }
 	    else if(!strncmp(argv[i],"-d",2)) {
-                iDebugLevel = atoi (argv[i]) + 2; }
+                iDebugLevel = atoi (argv[i] + 2); }
 	    else if(!strcmp(argv[i],"-r")) {
                 r_flg++; }
 	    else if(!strcmp(argv[i],"-t")) {
                 t_flg++; }
 	    else if(!strcmp(argv[i],"-a")) {
                 a_flg++; }
+	    else if(!strncmp(argv[i],"-s",2)) {
+		oncesteps = atoi (argv [i] + 2);
+		if (oncesteps < 1) oncesteps = 1; }
 	    else printf("Unknown option %s\n",argv[i]); }
 	else {
 	    fnam=argv[i]; }}
