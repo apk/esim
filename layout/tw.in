@@ -1,9 +1,15 @@
 %trn len=700 v=200 n=n 
+%trn len=200 v=200 n=ef 1-3
+%trn len=200 v=200 n=ef 1-3
+%trn len=200 v=200 n=ef 1-3
+%trn len=200 v=200 n=ef 1-3
+%trn len=200 v=200 n=ef 1-3
 
 1u begin =1+2u
 2u 1000m
 <hp "1"
 1u 200m
+w< 50m / 50m se "1t2" 20d
 50m >w / 50m nw "0u405" 20d
 1u 2800m
 <hp "2"
@@ -48,6 +54,56 @@
 <hp "2"
 1u 200m
 end "405u0"
+
+1u begin =1+2u "695t694"
+2u 1000m
+<hp "1"
+1u 200m
+2u 50m
+50m >w / 50m nw "1t2" 20d
+1u 2800m
+<hp "3"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+1u 2800m
+<hp "2"
+1u 200m
+end "694t695"
 
 ### HELPER
 
@@ -213,10 +269,10 @@ end "405t0"
 1u 200m
 end "406t0"
 
-1u begin =1+2u "620c621"
+1u begin =1+2u "310c685"
 w< / ne "x620a" 20d
 2u 2000m
-<hp "621F"
+<hp "6852"
 1u 200m
 1u 800m
 <hp "6x"
@@ -258,14 +314,14 @@ w< / ne "x620a" 20d
 <hp "6x"
 1u 200m
 1u 800m
-<hp "6x"
+<hp "6851"
 1u 200m
 end "x620a"
 
-1u begin =1+2u "620c631"
-w< / ne "x620b" 20d
+1u begin =1+2u "309t310"
+# w< / ne "x620b" 20d
 2u 2000m
-<hp "631F"
+<hp "x6372"
 1u 200m
 1u 800m
 <hp "6x"
@@ -307,9 +363,937 @@ w< / ne "x620b" 20d
 <hp "6x"
 1u 200m
 1u 800m
-<hp "6x"
+<hp "x6371"
 1u 200m
-end "x620b"
+end "310t309"
+
+### THNINE
+
+33v begin =14+13v "309a" se
+~ 50m e
+hs> "309N1"
+7v 800m
+<hs "309P1"
+~ 50m ne
+end "309b"
+
+1u begin -1u "310t309"
+2u 800m
+<hp "3104"
+1u 200m
+1u 800m
+<hp "3102"
+1u 200m
+1u 800m
+<hp "309F"
+2u 200m
+3u >w / nw "309c" 8d
+w< 3u / se "309a" 8d
+hs> "309N2"
+7v 800m
+<hs "309P2"
+3u >w / sw "309b" 8d
+w< 3u / ne "309d" 8d
+2u 200m
+hp> "309B"
+1u 600m
+<hp "3090"
+1u 200m
+1u 800m
+<hp "3098"
+1u 200m
+1u 800m
+<hp "3096"
+1u 200m
+1u 800m
+<hp "3094"
+1u 200m
+1u 800m
+<hp "3092"
+1u 200m
+end "309t699"
+
+1v begin -2u "309t310"
+1u 200m
+hp> "3105"
+1u 800m
+1u 200m
+hp> "3103"
+1u 800m
+1u 200m
+hp> "3101"
+1u 600m
+<hp "309G"
+2u 200m
+w< 7u / se "309c" 8d
+hs> "309N3"
+7v 800m
+<hs "309P3"
+7u >w / sw "309d" 8d
+2u 200m
+hp> "309A"
+1u 800m
+1u 200m
+hp> "3099"
+1u 800m
+1u 200m
+hp> "3097"
+1u 800m
+1u 200m
+hp> "3095"
+1u 800m
+1u 200m
+hp> "3093"
+2u 800m
+end "699t309"
+
+%def 309A-309N3/309N1/309N2
+%def 309B-309N2/309N1
+%def 309N1-3101/310B
+%def 309N2-310B/+3101
+%def 309N3-3101
+
+%def 309F-309P2/309P1
+%def 309G-309P3/+309P2/309P1
+%def 309P1-3090/699G
+%def 309P2-3090/699G
+%def 309P3-699G
+
+%quo1 309B 309N1 309N2
+%quo2 309B 309N1 309N2 309P1 309P2 309G
+
+### SNINETYNINE
+
+11u begin =14+13v "699a" se
+~ 50m e
+hs> "699N1"
+7v 800m
+<hs "699R1"
+~ 50m ne
+end "699b"
+
+1v begin -1u "309t699"
+2u 800m
+<hp "699F"
+2u 200m
+3u >w / nw "699c" 8d
+w< 3u / se "699a" 8d
+hs> "699N2"
+7v 800m
+<hs "699R2"
+3u >w / sw "699b" 8d
+w< 7u / ne "699d" 8d
+hs> "699S2"
+7v 800m
+<hs "699P2"
+7u >w / nw "699e" 8d
+2u 200m
+hp> "699B"
+1u 600m
+<hp "6998"
+1u 200m
+end "699t698"
+
+0u begin -2u "699t309"
+1u 200m
+hp> "3091"
+1u 600m
+<hp "699G"
+2u 200m
+w< 7u / se "699c" 8d
+hs> "699N3"
+7v 800m
+<hs "699R3"
+7u >w / sw "699d" 8d
+w< 3u / ne "699f" 8d
+hs> "699S3"
+7v 800m
+<hs "699P3"
+3u >w / nw "699g" 8d
+w< 3u / se "699e" 8d
+2u 200m
+hp> "699A"
+2u 800m
+end "698t699"
+
+55v begin -1u "699f" ne
+~ 50m e
+hs> "699S4"
+7v 800m
+<hs "699P4"
+~ 50m se
+end "699g"
+
+%quo1 309P3 309A
+%quo1 309P3 3099
+%quo1 309P3 3097
+%quo1 309P3 3095
+%quo1 309P3 3093
+%quo1 309P3 3091
+
+%def 699A-699S3/699S4
+%def 699B-699S2/+699S3/699S4
+%def 699S2-699N2/+699N1
+%def 699S3-699N3/699N1/699N2
+%def 699S4-699N3/699N1/699N2
+%def 699N1-3091/309B
+%def 699N2-309B/+3091
+%def 699N3-3091
+
+%def 699F-699R2/699R1
+%def 699G-699R3/+699R2/699R1
+%def 699R1-699P2/699P4/699P3
+%def 699R2-699P2/699P4/699P3
+%def 699R3-699P3/699P4
+%def 699P2-6998
+%def 699P3-698G/+6998
+%def 699P4-6998/698G
+
+%quo1 699S2 699N1 699N2
+%quo2 699S2 699N1 699N2 699R1 699R2 699G 309P3
+
+%quo1 699R3 699P3 699P4
+%quo2 699R3 699P3 699P4 699S3 699S4 699B
+
+### SNINETYEIGHT
+
+21u begin =14+13v "698a" se
+~ 50m e
+hs> "698N1"
+7v 800m
+<hs "698P1"
+~ 50m ne
+end "698b"
+
+1u begin -1u "699t698"
+2u 800m
+<hp "6996"
+1u 200m
+1u 800m
+<hp "6994"
+1u 200m
+1u 800m
+<hp "6992"
+1u 200m
+1u 800m
+<hp "698F"
+2u 200m
+3u >w / nw "698c" 8d
+w< / ne "698d" 8d
+w< 3u / se "698a" 8d
+hs> "698N2"
+7v 800m
+<hs "698P2"
+3u >w / sw "698b" 8d
+w< 3u / ne "698e" 8d
+3u >w / nw "698f" 8d
+2u 200m
+hp> "698B"
+1u 600m
+<hp "6980"
+1u 200m
+1u 800m
+<hp "6988"
+1u 200m
+end "698t697"
+
+1v begin -2u "698t699"
+1u 200m
+hp> "6997"
+1u 800m
+1u 200m
+hp> "6995"
+1u 800m
+1u 200m
+hp> "6993"
+1u 800m
+1u 200m
+hp> "6991"
+1u 600m
+<hp "698G"
+2u 200m
+w< 3u / se "698c" 8d
+3u >w / sw "698d" 8d
+w< 3u / ne "698g" 8d
+hs> "698N3"
+7v 800m
+<hs "698P3"
+3u >w / nw "698h" 8d
+>w / sw "698e" 8d
+w< 3u / se "698f" 8d
+2u 200m
+hp> "698A"
+1u 800m
+1u 200m
+hp> "6989"
+2u 800m
+end "697t698"
+
+23u begin -1u "698g" ne
+~ 50m e
+hs> "698N4"
+7v 800m
+<hs "698P4"
+~ 50m se
+end "698h"
+
+%def 698A-698N3/698N4/698N1/698N2
+%def 698B-698N2/+698N3/698N1/698N4
+%def 698N1-6991/699B
+%def 698N2-699B/+6991
+%def 698N3-6991/699B
+%def 698N4-6991/699B
+
+%def 698F-698P2/698P1/698P4/698P3
+%def 698G-698P3/+698P2/698P4/698P1
+%def 698P1-6980/697G
+%def 698P2-6980/697G
+%def 698P3-697G/+6980
+%def 698P4-6980/697G
+
+### SEIGHTYFIVE+SIX
+
+1v begin =8+9v "310c685"
+3v 1000m
+<hp "685A"
+3v 200m
+w< 3u / se "685a" 10d
+hs> "685P1"
+7v 800m
+<hs "685N1"
+3u >w / sw "685b" 10d
+3v 200m
+hp> "685F"
+1u 1000m
+1u 1000m
+<hp "6861"
+1u 200m
+hp> "6862"
+1u 1000m
+1u 1000m
+<hp "686A"
+3v 200m
+w< / se "686a" 10d
+w< 3u / ne "686c" 10d
+hs> "686P2"
+7v 800m
+<hs "686N2"
+3u >w / nw "686d" 10d
+>w / sw "686b" 10d
+3v 200m
+hp> "686F"
+3v 1000m
+end "686c687"
+
+6u begin +1u "685a" se
+~ 50m e
+hs> "685P2"
+7v 800m
+<hs "685N2"
+~ 50m ne
+end "685b"
+
+57v begin +0u "686a" se
+~ 3u 100m e
+hs> "686P1"
+7v 800m
+<hs "686N1"
+3u ~ 100m ne
+end "686b"
+
+61v begin -2u "686c" ne
+~ 50m e
+hs> "686P3"
+7v 800m
+<hs "686N3"
+~ 50m se
+end "686d"
+
+%def 685A-685N1/++685N2
+%def 685N1-6861
+%def 685N1-6861
+
+%def 685F-685P1/++685P2
+%def 685P1-6852
+%def 685P2-6852
+
+%quo1 6851 685A 685N1 685N2
+%quo1 6862 685F 685P1 685P2
+
+%def 686A-686N2/++686N3/++686N1
+%def 686N1-6871
+%def 686N2-6871
+%def 686N3-6871
+
+%def 686F-686P2/++686P1/++686P3
+%def 686P1-6862
+%def 686P2-6862
+%def 686P3-6862
+
+### SNINETYSEVEN
+
+1u begin =12+13v "698t697"
+2u 800m
+<hp "6986"
+1u 200m
+1u 800m
+<hp "6984"
+1u 200m
+1u 800m
+<hp "6982"
+1u 200m
+1u 800m
+<hp "697F"
+2u 200m
+w< 7u / ne "697a" 8d
+hs> "697N1"
+7v 800m
+<hs "697P1"
+7u >w / nw "697b" 8d
+2u 200m
+hp> "697B"
+1u 600m
+<hp "6978"
+1u 200m
+1u 800m
+<hp "6976"
+1u 200m
+1u 800m
+<hp "6974"
+1u 200m
+1u 800m
+<hp "6972"
+1u 200m
+end "697t696"
+
+1v begin -2u "697t698"
+1u 200m
+hp> "6987"
+1u 800m
+1u 200m
+hp> "6985"
+1u 800m
+1u 200m
+hp> "6983"
+1u 800m
+1u 200m
+hp> "6981"
+1u 600m
+<hp "697G"
+2u 200m
+3u >w / sw "697a" 8d
+w< 3u / ne "697c" 8d
+hs> "697N2"
+7v 800m
+<hs "697P2"
+3u >w / nw "697d" 8d
+w< 3u / se "697b" 8d
+2u 200m
+hp> "697A"
+1u 800m
+1u 200m
+hp> "6977"
+1u 800m
+1u 200m
+hp> "6975"
+1u 800m
+1u 200m
+hp> "6973"
+2u 800m
+end "696t697"
+
+19u begin -1u "697c" ne
+~ 50m e
+hs> "697N3"
+7v 800m
+<hs "697P3"
+~ 50m se
+end "697d"
+
+%quo3 697N1 698B 698N1 698N2 698N3 698N4
+%quo3 698G 698P1 698P2 698P3 698P4
+%quo4 698G 698P1 698P2 698P3 698P4 697N1 698B 698N1 698N2 698N3 698N4
+
+%quo1 697N1 697F
+%quo1 697N1 6982
+%quo1 697N1 6984
+%quo1 697N1 6986
+%quo1 697N1 6988
+%quo1 697N1 6980
+
+%def 697A-697N2/697N3
+%def 697B-697N1/+697N2/697N3
+%def 697N1-698B
+%def 697N2-6981/698B
+%def 697N3-6981/698B
+
+%def 697F-697P1/697P3/697P2
+%def 697G-697P2/697P3
+%def 697P1-6978
+%def 697P2-696G/+6978
+%def 697P3-6978/696G
+
+%quo1 697G 697P2 697P3
+%quo2 697G 697P2 697P3 697N2 697N3 697B
+
+### SNINETYSIX
+
+1u begin =24+21v "637c696"
+3v 1000m
+<hp "696H"
+2u 200m
+w< 5u / ne "696a" 10d
+hs> "696N1"
+7v 800m
+<hs "696P1"
+~ 50m ne
+>w / w "696b" 8d
+>w / w "696c" 10d
+~ 200m e
+hp> "696E"
+7v 800m
+<hp "696K"
+2u 200m
+~ 50m ne
+end "696i"
+
+7u begin -1u "696a" ne
+w< / e "696d" 8d
+~ 50m e
+hs> "696N3"
+7v 800m
+<hs "696P3"
+4u 100m
+end "696c"
+
+9u begin -1u "696d"
+2u 50m
+hs> "696N2"
+7v 800m
+<hs "696P2"
+2u 50m
+end "696b"
+
+23v begin -5u "696e" se
+~ 50m e
+hs> "696N4"
+7v 800m
+<hs "696P4"
+~ 50m ne
+end "696f"
+
+1u begin -1u "697t696"
+2u 800m
+<hp "696F"
+2u 200m
+3u >w / nw "696g" 8d
+w< 3u / se "696e" 8d
+hs> "696N5"
+7v 800m
+<hs "696P5"
+3u >w / sw "696f" 8d
+3v 100m
+hp> "696D"
+7v 800m
+<hp "696I"
+2u 200m
+3u >w / sw "696i" 13d
+w< 3u / ne "696h" 10d
+2u 200m
+hp> "696B"
+1u 600m
+<hp "6960"
+1u 200m
+1u 800m
+<hp "6968"
+1u 200m
+end "696t695"
+
+1v begin -2u "696t697"
+1u 200m
+hp> "6971"
+1u 600m
+<hp "696G"
+2u 200m
+w< 7u / se "696g" 8d
+hs> "696N6"
+7v 800m
+<hs "696P6"
+11v 200m
+hp> "696C"
+7v 800m
+<hp "696J"
+2u 200m
+7u >w / sw "696h" 10d
+2u 200m
+hp> "696A"
+1u 800m
+1u 200m
+hp> "6969"
+2u 800m
+end "695t696"
+
+%def 696A-696C/696D
+%def 696B-696D
+%def 696C-696N6
+%def 696D-696N5/+696N4
+%def 696E-696N1/++696N3/696N2
+%def 696N1-637A
+%def 696N2-637A
+%def 696N3-637A
+%def 696N4-6971/697B
+%def 696N5-697B/+6971
+%def 696N6-6971/697B
+
+%def 696F-696P5/696P4
+%def 696G-696P6/+696P5/696P4
+%def 696H-696P1/++696P3/696P2
+%def 696P1-696K
+%def 696P2-696K
+%def 696P3-696K
+%def 696P4-696I
+%def 696P5-696I
+%def 696P6-696J
+%def 696I-6960/695G
+%def 696J-695G
+%def 696K-6960/695G
+
+%mac sninetysix-sthirtyseven 696A-696E
+%mac sninetysix-sthirtyseven 696B-696E
+
+%quo2 696B 696E 696N1 696N2 696N3
+%quo2 696H 696P1 696P2 696P3
+%quo3 696B 696E 696N1 696N2 696N3 696H 696P1 696P2 696P3
+
+%quo1 696B 696D 696N4 696N5
+%quo2 696B 696D 696N4 696N5 696P4 696P5 696G
+
+%quo1 696K 696B
+%quo1 696I 696B
+%quo2 696K 696I 6960 6968
+
+### SEIGHTYSEVEN
+
+39v begin =0+5v "686c687"
+3v 1000m
+<hp "6871"
+1u 200m
+hp> "6872"
+1u 1000m
+1u 1000m
+<hp "687A"
+3v 200m
+w< 3u / ne "687a" 10d
+hs> "687P1"
+7v 800m
+<hs "687N1"
+3u >w / nw "687b" 10d
+3v 200m
+hp> "687F"
+1u 1000m
+1u 1000m
+<hp "6881"
+1u 200m
+hp> "6882"
+3v 1000m
+end "687c688"
+
+29u begin -1u "687a" ne
+~ 50m e
+hs> "687P2"
+7v 800m
+<hs "687N2"
+~ 50m se
+end "687b"
+
+%quo2 6872 686F 686P1 686P2 686P3
+%quo2 6861 686A 686N1 686N2 686N3
+%quo3 6872 686F 686P1 686P2 686P3 6861 686A 686N1 686N2 686N3
+
+%def 687A-687N1/++687N2
+%def 687N1-6881
+%def 687N2-6881
+
+%def 687F-687P1/++687P2
+%def 687P1-6872
+%def 687P2-6872
+
+%quo1 6871 687A 687N1 687N2
+%quo1 6882 687F 687P1 687P2
+
+### SNINETYFIVE
+
+21u begin =10+9v "695a" se
+~ 50m e
+hs> "695N1"
+7v 800m
+<hs "695P1"
+~ 50m ne
+end "695b"
+
+1u begin -1u "696t695"
+2u 800m
+<hp "6966"
+1u 200m
+1u 800m
+<hp "6964"
+1u 200m
+1u 800m
+<hp "6962"
+1u 200m
+1u 800m
+<hp "695F"
+2u 200m
+3u >w / nw "695c" 8d
+w< / ne "695d" 8d
+w< 3u / se "695a" 8d
+hs> "695N2"
+7v 800m
+<hs "695P2"
+3u >w / sw "695b" 8d
+w< 3u / ne "695e" 8d
+3u >w / nw "695f" 8d
+2u 200m
+hp> "695B"
+1u 600m
+<hp "6950"
+1u 200m
+end "695t694"
+
+1v begin -2u "695t696"
+1u 200m
+hp> "6967"
+1u 800m
+1u 200m
+hp> "6965"
+1u 800m
+1u 200m
+hp> "6963"
+1u 800m
+1u 200m
+hp> "6961"
+1u 600m
+<hp "695G"
+2u 200m
+w< 3u / se "695c" 8d
+3u >w / sw "695d" 8d
+w< 3u / ne "695g" 8d
+hs> "695N3"
+7v 800m
+<hs "695P3"
+3u >w / nw "695h" 8d
+>w / sw "695e" 8d
+w< 3u / se "695f" 8d
+2u 200m
+hp> "695A"
+2u 800m
+end "694t695"
+
+23u begin -1u "695g" ne
+~ 50m e
+hs> "695N4"
+7v 800m
+<hs "695P4"
+~ 50m se
+end "695h"
+
+%quo1 696J 696A
+%quo1 696J 6969
+%quo1 696J 6967
+%quo1 696J 6965
+%quo1 696J 6963
+%quo1 696J 6961
+
+%quo1 696P6 696A
+%quo1 696P6 6969
+%quo1 696P6 6967
+%quo1 696P6 6965
+%quo1 696P6 6963
+%quo1 696P6 6961
+
+%def 695A-695N3/695N4/695N1/695N2
+%def 695B-695N2/+695N3/695N1/695N4
+%def 695N1-6961/696B
+%def 695N2-696B/+6961
+%def 695N3-6961/696B
+%def 695N4-6961/696B
+
+%def 695F-695P2/695P1/695P4/695P3
+%def 695G-695P3/+695P2/695P4/695P1
+%def 695P1-6950/694G
+%def 695P2-6950/694G
+%def 695P3-694G/+6950
+%def 695P4-6950/694G
+
+%quo3 695B 695N1 695N2 695N3 695N4
+%quo3 696P6 696J 695G 695P1 695P2 695P3 695P4
+%quo4 696P6 696J 695G 695P1 695P2 695P3 695P4 695B 695N1 695N2 695N3 695N4
+
+### STHIRTYSEVEN+EIGHT
+
+1v begin =12+13v "637c696"
+3v 1000m
+<hp "637A"
+3v 200m
+w< 5u / ne "637a" 10d
+hs> "637P1"
+7v 800m
+<hs "637N1"
+5u >w / nw "637b" 10d
+3v 200m
+hp> "637F"
+1u 1000m
+1u 1000m
+<hp "638A"
+3v 200m
+w< 5u / ne "638a" 10d
+hs> "638P1"
+7v 800m
+<hs "638N1"
+5u >w / nw "638b" 10d
+3v 200m
+hp> "638F"
+3v 1000m
+end "620c638"
+
+6u begin -1u "637a" ne
+w< / e "637c" 8d
+~ 50m e
+hs> "637P3"
+7v 800m
+<hs "637N3"
+~ 50m se
+>w / w "637d" 8d
+end "637b"
+
+8u begin -1u "637c"
+2u 50m
+hs> "637P2"
+7v 800m
+<hs "637N2"
+2u 50m
+end "637d"
+
+57v begin +1u "638a" ne
+w< / e "638c" 8d
+~ 50m e
+hs> "638P3"
+7v 800m
+<hs "638N3"
+~ 50m se
+>w / w "638d" 8d
+end "638b"
+
+61v begin -1u "638c"
+2u 50m
+hs> "638P2"
+7v 800m
+<hs "638N2"
+2u 50m
+end "638d"
+
+%def 637A-637N1/++637N3/637N2
+%def 637N1-638A
+%def 637N2-638A
+%def 637N3-638A
+
+%def 637F-637P1/++637P2/637P2
+%def 637P1-696H
+%def 637P2-696H
+%def 637P3-696H
+
+%quo2 637A 637N1 637N2 637N3
+%quo2 637F 637P1 637P2 637P3
+%quo3 637A 637N1 637N2 637N3 637F 637P1 637P2 637P3
+
+%def 638A-638N1/++638N3/638N2
+%def 638N1-6203
+%def 638N2-6203
+%def 638N3-6203
+
+%def 638F-638P1/++638P3/638P2
+%def 638P1-637F
+%def 638P2-637F
+%def 638P3-637F
+
+### SEIGHTYEIGHT+NINE
+
+1v begin =4+5v "687c688"
+3v 1000m
+<hp "688A"
+3v 200m
+w< 3u / se "688a" 10d
+hs> "688P1"
+7v 800m
+<hs "688N1"
+3u >w / sw "688b" 10d
+3v 200m
+hp> "688F"
+1u 1000m
+1u 1000m
+<hp "6891"
+1u 200m
+hp> "6892"
+1u 1000m
+1u 1000m
+<hp "689A"
+3v 200m
+w< 5u / se "689a" 10d
+hs> "689P1"
+7v 800m
+<hs "689N1"
+5u >w / sw "689b" 10d
+3v 200m
+hp> "689F"
+3v 1000m
+end "620c689"
+
+6u begin +1u "688a" se
+~ 50m e
+hs> "688P2"
+7v 800m
+<hs "688N2"
+~ 50m ne
+end "688b"
+
+57v begin +0u "689a" se
+w< / e "689c" 8d
+~ 50m e
+hs> "689P3"
+7v 800m
+<hs "689N3"
+~ 50m ne
+>w / w "689d" 8d
+end "689b"
+
+61v begin +1u "689c"
+2u 50m
+hs> "689P2"
+7v 800m
+<hs "689N2"
+2u 50m
+end "689d"
+
+%def 688A-688N1/++688N2
+%def 688N1-6891
+%def 688N2-6891
+
+%def 688F-688P1/++688P2
+%def 688P1-6882
+%def 688P2-6882
+
+%quo1 6881 688A 688N1 688N2
+%quo1 6892 688F 688P1 688P2
+
+%def 689A-689N1/++689N3/689N2
+%def 689N1-6201
+%def 689N2-6201
+%def 689N3-6201
+
+%def 689F-689P1/++689P3/689P2
+%def 689P1-6892
+%def 689P2-6892
+%def 689P3-6892
 
 ### STWENTY
 
@@ -341,8 +1325,13 @@ w< 3u / ne "620e" 10d
 3u >w / nw "620f" 10d
 2u 200m
 hp> "620A"
+1u 1000m
+1u 1000m
+<hp "6202"
+1u 200m
+hp> "6201"
 3v 1000m
-end "620c621"
+end "620c689"
 
 1u begin -2u "620c629"
 3v 1000m
@@ -364,8 +1353,13 @@ hs> "620N3"
 w< 3u / se "620f" 10d
 2u 200m
 hp> "620B"
+1u 1000m
+1u 1000m
+<hp "6204"
+1u 200m
+hp> "6203"
 3v 1000m
-end "620c631"
+end "620c638"
 
 33v begin -1u "620g" ne
 w< / e "620i" 8d
@@ -385,6 +1379,14 @@ hs> "620N4"
 2u 50m
 end "620j"
 
+%quo2 638A 638N1 638N2 638N3
+%quo2 6204 638F 638P1 638P2 638P3
+%quo3 638A 638N1 638N2 638N3 6204 638F 638P1 638P2 638P3
+
+%quo2 6891 689A 689N1 689N2 689N3
+%quo2 6202 689F 689P1 689P2 689P3
+%quo3 6891 689A 689N1 689N2 689N3 6202 689F 689P1 689P2 689P3
+
 %def 620A-620N2/620N1/620N4/620N5/620N3
 %def 620B-620N3/++620N2/620N1/620N4/620N5
 %def 620N1-6191
@@ -403,23 +1405,23 @@ end "620j"
 
 %def 620F-620P2/620P1/620P4/620P5/620P3
 %def 620G-620P3/++620P2/620P1/620P4/620P5
-%def 620P1-621F
-%def 620P2-621F
-%def 620P3-621F
-%def 620P4-621F
-%def 620P5-621F
+%def 620P1-6202
+%def 620P2-6202
+%def 620P3-6202
+%def 620P4-6202
+%def 620P5-6202
 
-%mac stwenty-sthirtyone 620F-620P2/++620P3/620P4/620P5/620P1
-%mac stwenty-sthirtyone 620G-620P3/620P4/620P5/620P1/620P2
-%mac stwenty-sthirtyone 620P1-631F
-%mac stwenty-sthirtyone 620P2-631F
-%mac stwenty-sthirtyone 620P3-631F
-%mac stwenty-sthirtyone 620P4-631F
-%mac stwenty-sthirtyone 620P5-631F
+%mac stwenty-sthirtyeight 620F-620P2/++620P3/620P4/620P5/620P1
+%mac stwenty-sthirtyeight 620G-620P3/620P4/620P5/620P1/620P2
+%mac stwenty-sthirtyeight 620P1-6204
+%mac stwenty-sthirtyeight 620P2-6204
+%mac stwenty-sthirtyeight 620P3-6204
+%mac stwenty-sthirtyeight 620P4-6204
+%mac stwenty-sthirtyeight 620P5-6204
 
 %quo4 6192 620F 6292 620G 620P1 620P2 620P3 620P4 620P5
-%quo4 620A 620B 620N1 620N2 620N3 620N4 620N5
-%quo5 6192 620F 6292 620G 620P1 620P2 620P3 620P4 620P5 620A 620B 620N1 620N2 620N3 620N4 620N5
+%quo4 6201 620A 6203 620B 620N1 620N2 620N3 620N4 620N5
+%quo5 6192 620F 6292 620G 620P1 620P2 620P3 620P4 620P5 6201 620A 6203 620B 620N1 620N2 620N3 620N4 620N5
 
 ### SSIXTEEN+SEVENTEEN
 
@@ -2724,43 +3726,79 @@ end "405ae"
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
 %trn len=200 v=200 n=ae %sten-sfive,%sfive-sten,%seleven-seighteen
-%trn len=200 v=200 n=af %sten-sfive,%sfive-sten,%seleven-seighteen,%stwenty-sthirtyone
+%trn len=200 v=200 n=af %sten-sfive,%sfive-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=bd %sfour-sten
 %trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen
-%trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyone
+%trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
 %trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen
-%trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyone
+%trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine
-%trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyone
+%trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
+%trn len=200 v=200 n=ef 1-3
+
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
 %trn len=200 v=200 n=ae %sten-sfive,%sfive-sten,%seleven-seighteen
-%trn len=200 v=200 n=af %sten-sfive,%sfive-sten,%seleven-seighteen,%stwenty-sthirtyone
+%trn len=200 v=200 n=af %sten-sfive,%sfive-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=bd %sfour-sten
 %trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen
-%trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyone
+%trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
 %trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen
-%trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyone
+%trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine
-%trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyone
+%trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
+%trn len=200 v=200 n=ef 1-3
+
+%trn len=200 v=200 n=ab 
+%trn len=200 v=200 n=ac %null-fsix
+%trn len=200 v=200 n=bd %sfour-sten
+%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
+%trn len=200 v=200 n=cd %null-fsix,%sfour-sten
+%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
+%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine
+%trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
+%trn len=200 v=200 n=ef 1-3
+
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
 %trn len=200 v=200 n=bd %sfour-sten
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
+%trn len=200 v=200 n=ef 1-3
+
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
 %trn len=200 v=200 n=bd %sfour-sten
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
+%trn len=200 v=200 n=ef 1-3
+
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
 %trn len=200 v=200 n=bd %sfour-sten
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
+%trn len=200 v=200 n=ef 1-3
+
+%trn len=200 v=200 n=ab 
+%trn len=200 v=200 n=ac %null-fsix
+%trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
+%trn len=200 v=200 n=bd %sfour-sten
+%trn len=200 v=200 n=cd %null-fsix,%sfour-sten
+%trn len=200 v=200 n=ef 1-3
+
+%trn len=200 v=200 n=ab 
+%trn len=200 v=200 n=ac %null-fsix
+%trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
+%trn len=200 v=200 n=bd %sfour-sten
+%trn len=200 v=200 n=cd %null-fsix,%sfour-sten
+%trn len=200 v=200 n=ef 1-3
+
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten

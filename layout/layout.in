@@ -37279,22 +37279,17 @@ end "87k"
 1u 800m
 <hp "60F"
 2u 200m
-2u 50m
-50m >w / 50m nw "60a" 8d
-50m >w / 50m sw "60b" 10d
-w< 50m / 50m ne "60c" 10d
-w< 50m / 50m se "60d" 8d
-2u 50m
-2u 50m
+3u >w / nw "60a" 8d
+>w / sw "60b" 10d
+w< / ne "60c" 10d
+w< 5u / se "60d" 8d
 hs> "60N2"
 4u 800m
 <hs "60P2"
-2u 50m
-50m >w / 50m sw "60e" 8d
-w< 50m / 50m ne "60f" 8d
-4u 100m
-50m >w / 50m sw "60g" 13d
-50m >w / 50m nw "60h" 8d
+3u >w / 50m sw "60e" 8d
+w< 3u / 50m ne "60f" 8d
+3u >w / 50m sw "60g" 13d
+>w / 50m nw "60h" 8d
 2u 200m
 hp> "60B"
 1u 600m
@@ -37311,52 +37306,45 @@ hp> "601"
 1u 600m
 <hp "60G"
 2u 200m
-w< 50m / 50m se "60a" 8d
-2u 50m
-50m >w / 50m nw "60q" 10d
-w< 50m / 50m ne "60i" 13d
-50m >w / 50m sw "60c" 10d
-w< 50m / 50m ne "60j" 10d
-4u 100m
+w< 3v / se "60a" 8d
+3v >w / nw "60q" 10d
+w< 3v / ne "60i" 13d
+3v >w / sw "60c" 10d
+w< 5u / ne "60j" 10d
 hs> "60N3"
 4u 800m
 <hs "60P3"
-2u 50m
-50m >w / 50m nw "60k" 8d
-50m >w / 50m sw "60f" 8d
-w< 50m / 50m ne "60l" 8d
-w< 50m / 50m se "60h" 8d
-2u 50m
+3u >w / nw "60k" 8d
+>w / sw "60f" 8d
+w< / ne "60l" 8d
+w< 3u / se "60h" 8d
 2u 200m
 hp> "60A"
 2u 800m
 end "49t60"
 
-11v begin +4u "60c100"
+9v begin +4u "60c100"
 2u 1000m
 <hp "60H"
-2u 50m
-w< 50m / 50m ne "60b" 10d
-6u 15m
-50m >w / 50m nw "60d" 8d
-2u 50m
+2u 200m
+2u w< 4u / ne "60b" 10d
+4u >w 3u / nw "60d" 8d
 hs> "60N1"
 4u 800m
 <hs "60P1"
-w< 50m / 50m ne "60e" 8d
-7u ~ 200m ne
+w< 7u / ne "60e" 8d
+~ 50m ne
 end "60g"
 
-36v begin -7u "60r" ne
-~ 3u 100m e
-50m >w / 50m sw "60n" 10d
+34v begin -7u "60r" ne
+~ 50m e
+4u >w / sw "60n" 10d
 hs> "60N5"
 4u 800m
 <hs "60P5"
-w< 50m / 50m se "60o" 8d
-4u 100m
-50m >w / 50m sw "60p" 8d
-~ ne 50m
+2u w< 3u / se "60o" 8d
+3u >w / sw "60p" 8d
+1u ne 25m
 2u e 200m
 hp> "60C"
 1u 800m
@@ -37365,24 +37353,20 @@ hp> "695"
 2u 800m
 end "69t60"
 
-11v begin +1u "100c60"
+9v begin +1u "100c60"
 2u 1000m
 <hp "60I"
 2u 50m
-w< 50m / 50m se "60q" 10d
-4u 100m
-25m >w< 25m / 25m ne "60r" 10d / 25m sw "60i"
-2u 50m
-25m >ekw 25m / 25m ne "60n" 10d / 25m sw "60j"
-2u 50m
+w< 3u / se "60q" 10d
+75m 3u >w< 5v 62m / 25m ne "60r" 10d / 25m sw "60i"
+5v 63m >ekw 75m 3u / 25m ne "60n" 10d / 25m sw "60j"
 hs> "60N4"
 4u 800m
 <hs "60P4"
-w< 50m / 50m se "60k" 8d
-50m >w / 50m nw "60o" 8d
-w< 50m / 50m ne "60p" 8d
-2u 50m
-50m >w / 50m sw "60l" 8d
+w< 3v / se "60k" 8d
+3v >w / nw "60o" 8d
+w< 3v / ne "60p" 8d
+3v >w / sw "60l" 8d
 ne ~ e 200m
 hp> "60D"
 1u 600m
