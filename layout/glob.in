@@ -3,7 +3,7 @@
 %mac outlet %outlet-tour
 
 %mac local %left-turn-four,%four-six
-%mac local 6F-6R1/6R4/6R2
+%mac local 6T-6R1/6R4/6R2
 %mac local 6G-6R1/6R2/6R4/6R13
 %mac local 6H-6R4/6R1/6R2/6R13
 %mac local 6R13-$,6R4-$,6R2-$,6R1-$
