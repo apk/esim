@@ -419,6 +419,7 @@ struct train {
 	int len;
 	int speed;
 	int dist;		/* Total distance gone */
+	int udist;		/* dist mm's */
 	int accto;		/* Acceleration inhibit timer */
 	int ztim;		/* Zero speed time */
 	int maxspeed;
@@ -1447,6 +1448,11 @@ int move_train (struct train *trn, int dist) {
 	}
 	if (trn->dist > 0) {
 		trn->dist += a / 1000;
+		trn->udist += a % 1000;
+		while (trn->udist >= 1000) {
+			trn->dist += 1;
+			trn->udist -= 1000;
+		}
 		if (trn->dist < 0) trn->dist = 0x7fffffff;
 	}
 	else trn->dist = 0;
@@ -1883,6 +1889,7 @@ void setup_train (void) {
 	trn->next = trlist;
 	trn->speed = 0;
 	trn->dist = 0;
+	trn->udist = 0;
 	trn->go = 0;
 	trn->accto = 0;
 	trn->ztim = 0;
@@ -1987,9 +1994,9 @@ void train_dwin (struct train *trn, struct sig *sig, int mf) {
 	}
 	if (trn->dist) {
 		sprintf (buf,
-			 "%.30s %3d %d.%d", trn->name,
+			 "%.30s %3d %d.%02d", trn->name,
 			 (36 * trn->speed + 5000) / 10000,
-			 (trn->dist / 1000), (trn->dist / 100) % 10);
+			 (trn->dist / 1000), (trn->dist / 10) % 100);
 	} else {
 		sprintf (buf,
 			 "%.30s %3d", trn->name,
@@ -2077,6 +2084,7 @@ void train_event (struct train *trn, XEvent myevent) {
 	      case 'd':
 		if (trn->dist == 0) {
 			trn->dist = 1;
+			trn->udist = 0;
 		} else {
 			trn->dist = 0;
 		}
