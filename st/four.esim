@@ -1,3 +1,3 @@
 #!/bin/sh
 esimc -title "esimc 4F" $* 4G 4F -- 4H 4R4 4R3 -- 4R13 -- 4P6 4P5 4P4 4P3 4P2 4P1 -- 0 4P11 -- 1 11 -- 6G 6F 5F &
-esimc -title "esimc 4A" $* 4D 4C 4B 4A -- 4S24 -- 4S34 -- 4S1 4S2 4S3 4S4 -- 4S14 4N5 4N6 -- 4N3 4N4 -- 98 -- A B &
+esimc -title "esimc 4A" $* 4D 4C 4B 4A -- 4S24 -- 4S34 -- 4S1 4S2 4S3 4S4 -- 4S14 4N5 4N6 -- 4N3 4N4 -- 98 -- B A &
