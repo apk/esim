@@ -4085,7 +4085,7 @@ static BMFCONN_CMD_HDLR (BmfSig) {
 
 static BMFCONN_CMD_HDLR (BmfDumpCounts) {
 	struct dnode *dn;
-	FILE *fp = dump_cnts ("siglist");
+	dump_cnts ("siglist");
 	return BMFCONN_CMD_OK ();
 }
 
