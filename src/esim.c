@@ -355,6 +355,23 @@ int cycle = 1;		/* Emulation cycle counter */
 void DrawDIllum (struct dnode *x);
 void DrawSmallDNode (struct dnode *x);
 
+struct splan {
+	char *plan;
+	int n;
+	struct splink **H;
+};
+
+struct splink {
+	struct splink *next;
+	char *pos;
+};
+
+void initplan (struct splan *spl, char *p) {
+	spl->plan = p;
+	spl->n = 5;
+	spl->H = 0;
+}
+
 struct conn {
 	struct trk *a, *c;	/* Backward conns */
 	struct trk *b, *d;	/* Forward conns */
@@ -397,7 +414,7 @@ struct train {
 	int ztim;		/* Zero speed time */
 	int maxspeed;
 	char *name;
-	char *plan;
+	struct splan plan;
 	char *ppos;
 
 	Window dwin;		/* The data window */
@@ -1335,16 +1352,88 @@ int move_train (struct train *trn, int dist) {
 	return a;
 }
 
-char *find_dest (char *plan, char *sign, char **ppos) {
+char *find_dest (struct splan *spl, char *sign, char **ppos) {
 	static char destname [100];
-	char *p = plan;
-	int z = 0;
-	if (!plan || !sign) {
+	char *p = spl->plan;
+	int z;
+	int i;
+	if (!spl->plan || !sign) {
 		return 0;
+	}
+	if (spl->n >= 0 && !spl->H) {
+		/* Create the hash table */
+		char *cp, *bp;
+		struct splink *sp, **spp;
+		printf ("Converting plan of %d chars\n", strlen (spl->plan));
+		z = 0;
+		if (spl->n == 0) spl->n = 53;
+		spl->H = malloc (spl->n * sizeof (*spl->H));
+		for (i = 0; i < spl->n; i ++) {
+			spl->H [i] = 0;
+		}
+		cp = spl->plan;
+		while (1) {
+			unsigned int h = 0;
+			bp = cp;
+			while (*cp && *cp != '-') {
+				if (*cp == '/') goto again;
+				if (*cp == ',') goto again;
+				h = (13 * h + (*cp)) % spl->n;
+				cp ++;
+			}
+			for (spp = &spl->H [h]; *spp; spp = &(*spp)->next);
+			sp = malloc (sizeof (struct splink));
+			sp->pos = bp;
+			sp->next = *spp;
+			*spp = sp;
+			while (*cp && *cp != ',' && *cp != '-') cp ++;
+			if (!*cp) break;
+			z ++;
+again:
+			cp ++;
+		}
+		printf ("Converted %d plan entries\n", z);
+	}
+	if (spl->n >= 0 && spl->H) {
+		/* Use the hash table */
+		unsigned int h = 0;
+		int i;
+		char *s, *q;
+		struct splink *sp;
+		for (i = 0; sign [i]; i ++) {
+			h = (13 * h + (sign [i])) % spl->n;
+		}
+		for (sp = spl->H [h]; sp; sp = sp->next) {
+			if (ppos && (*ppos > sp->pos)) continue;
+			if (strncmp (sign, sp->pos, i) == 0) {
+				if (sp->pos [i] == '-') {
+					break;
+				}
+			}
+		}
+		if (!sp) {
+			for (sp = spl->H [h]; sp; sp = sp->next) {
+				if (strncmp (sign, sp->pos, i) == 0) {
+					if (sp->pos [i] == '-') {
+						break;
+					}
+				}
+			}
+		}
+		if (!sp) return 0;
+		s = destname;
+		q = sp->pos + i + 1;
+		while (*q && *q != ',' && *q != '-') {
+			*s ++ = *q ++;
+		}
+		*s = 0;
+		if (ppos) *ppos = sp->pos;
+		return destname;
 	}
 	if (ppos && *ppos) {
 		p = *ppos;
 	}
+	z = 0;
 	while (1) {
 		char *s = sign;
 		char *q = p;
@@ -1366,14 +1455,14 @@ char *find_dest (char *plan, char *sign, char **ppos) {
 		while (*p && *p != ',' && *p != '-') p ++;
 		if (!*p) {
 			if (++ z > 1) return 0;
-			p = plan;
+			p = spl->plan;
 			continue;
 		}
 		p ++;
 	}
 }
 
-char *defplan = 0;
+struct splan defplan = { 0 };
 int useplans = 1;
 
 int test_lookahead (struct train *trn,
@@ -1496,7 +1585,7 @@ int test_lookahead (struct train *trn,
 					}
 				}
 				if (useplans) {
-					n = find_dest (trn->plan, sig->name,
+					n = find_dest (&trn->plan, sig->name,
 						     &trn->ppos);
 				}
 				if (sig->d->mode == -1) {
@@ -1510,7 +1599,7 @@ int test_lookahead (struct train *trn,
 					if (trn->speed == 0) {
 						return -1;
 					}
-				} else if (n || (defplan && (n = find_dest (defplan, sig->name, 0)))) {
+				} else if (n || (defplan.plan && (n = find_dest (&defplan, sig->name, 0)))) {
 					int nth = 0;
 					char *p, *q;
 					strcpy (buf, n);
@@ -1709,7 +1798,7 @@ if (iDebugLevel > 2) printf ("LENGTH %d\n", l);
 	trn->dir = 0;
 	trn->len = l;
 
-	trn->plan = nextplan->pl;
+	initplan (&trn->plan, nextplan->pl);
 	trn->maxspeed = nextplan->v;
 	trn->name = nextplan->n;
 	if (nextplan->pl) nextplan ++;
@@ -1949,6 +2038,8 @@ static char *asdf (char *x, char *prep) {
 			char *q = prep;
 			while (*q) *dest ++ = *q ++;
 			*dest ++ = ',';
+			free (prep);
+			prep = 0;
 		}
 		cur = x;
 		while (*cur) {
@@ -2056,7 +2147,7 @@ int isquo (char **pp) {
 int parsedef (char *p) {
 	int num;
 	if (strncmp (p, "%def ", 5) == 0) {
-		defplan = asdf (p + 5, defplan);
+		defplan.plan = asdf (p + 5, defplan.plan);
 	} else if (strncmp (p, "%inc ", 5) == 0) {
 		char *q;
 		p += 5;
