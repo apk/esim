@@ -685,13 +685,15 @@ end "78d"
 %mac nine-thirtynine 9N1-39B
 %mac nine-thirtynine 9N2-39B
 
-%mac nine-sixtyone 9A-9N2
+%mac nine-sixtyone 9A-9N2/9N3
 %mac nine-sixtyone 9N2-61G
+%mac nine-sixtyone 9N3-61G
 
 %mac nine-eight 9F-9P1/9P2
-%mac nine-eight 9G-9P2
+%mac nine-eight 9G-9P2/9P3
 %mac nine-eight 9P1-8F
 %mac nine-eight 9P2-8F
+%mac nine-eight 9P3-8F
 
 %def %nine-thirtynine
 %def %nine-eight
@@ -1215,7 +1217,8 @@ end "65k"
 %def %sixtyfive-sixtysix
 
 %quo2 652 652a 652b
-%quo2 65H 654 654a 654b
+%quo2 654 654a 654b
+%quo4 652 652a 652b 65B 65B 654 654a 654b 65D 65D 65P3 65H
 
 %quo1 65S2 65R2 65N2 65G
 %quo1 65S2 65P3
@@ -1240,6 +1243,7 @@ end "65k"
 %mac sixtyfive-sixtyfour 65D-64A
 
 %quo1 65B 65D 66N1
+
 %quo1 66N1 66F
 %quo1 66N1 652d
 %quo1 66N1 652c
@@ -1494,16 +1498,18 @@ end "7i"
 
 %mini 200 -36
 
-3u begin =25u "63c64"
+1v begin =27+2u "63c64"
 2u 1000m
 <hp "63A"
 3v 200m
 w< 50m / 50m se "63a" 8d
+w< 50m / 50m ne "63c"
 2u 50m
 hs> "63P1"
 7v 800m
 <hs "63N1"
 2u 50m
+50m >w / 50m nw "63d"
 50m >w / 50m sw "63b" 8d
 3v 200m
 hp> "63F"
@@ -1516,48 +1522,55 @@ hp> "622"
 1u 1000m
 <hp "62A"
 3v 200m
-w< 50m / 50m se "62a" 8d
+w< 50m / 50m ne "62a" 8d
 2u 50m
 hs> "62P1"
 7v 800m
 <hs "62N1"
 2u 50m
-50m >w / 50m sw "62b" 8d
+50m >w / 50m nw "62b" 8d
 3v 200m
 hp> "62F"
 2u 1000m
 end "61c62"
 
-9u begin +1u "63a" se
-1u 25m
-1u 25m e
+13v begin +1u "63a" se
+~ 3u 100m e
 hs> "63P2"
 7v 800m
 <hs "63N2"
-1u 25m
-1u 25m ne
+3u ~ 100m ne
 end "63b"
 
-63v begin +0u "62a" se
-1u 25m
-1u 25m e
+17v begin -2u "63c" ne
+~ 50m e
+hs> "63P0"
+7v 800m
+<hs "63N0"
+~ 50m se
+end "63d"
+
+66v begin +0u "62a" ne
+~ 50m e
 hs> "62P2"
 7v 800m
 <hs "62N2"
-1u 25m
-1u 25m ne
+~ 50m se
 end "62b"
 
-%def 63A-63N1/63N2
+%def 63A-63N1/63N2/63N0
+%def 63N0-621
 %def 63N1-621
 %def 63N2-621
 
-%def 63F-63P1/63P2
+%def 63F-63P1/63P2/63P0
+%def 63P0-64F
 %def 63P1-64F
 %def 63P2-64F
 
-%quo1 63A 63N1 63N2
-%quo1 622 63F 63P1 63P2
+%quo2 63A 63N0 63N1 63N2
+%quo2 622 63F 63P0 63P1 63P2
+%quo3 63A 63N0 63N1 63N2 622 63F 63P0 63P1 63P2
 
 %def 62A-62N1/62N2
 %def 62N1-61A
@@ -1574,14 +1587,14 @@ end "62b"
 
 %mini 250 -42
 
-53v begin =28+3u "61c62"
+49v begin =27+3u "61c62"
 2u 1000m
 <hp "61A"
 3v 200m
 se
+w< 50m / 50m e "61c" 8d
 w< 50m / 50m e "61a" 10d
-1u 25m
-1u 25m e
+2u 50m e
 hs> "61P1"
 7v 800m
 <hs "61N1"
@@ -1592,13 +1605,21 @@ hp> "61F"
 2u 1000m
 end "39c61"
 
-65v begin +1u "61a"
-2u 50m
+61v begin +1u "61c" ne
+~ 3u 100m e
+hs> "61P3"
+7v 800m
+<hs "61N3"
+~ 50m se
+end "61d"
+
+65v begin +2u "61a" ne
+~ 50m e
 hs> "61P2"
 7v 800m
 <hs "61N2"
 w< 50m / 50m se "61b" 8d
-2u 50m
+50m >w / 50m nw "61d" 8d
 3v 200m
 hp> "61G"
 2u 1000m
@@ -1609,15 +1630,18 @@ end "9c61"
 %def 61N2-39A
 
 %def 61F-61P1/61P2
-%def 61G-61P2
+%def 61G-61P2/61P3
 %def 61P1-62F
 %def 61P2-62F
+%def 61P3-62F
 
-%mac sixtyone-nine 61A-61N2-9G
+%mac sixtyone-nine 61A-61N2/61N3
+%mac sixtyone-nine 61N2-9G
+%mac sixtyone-nine 61N3-9G
 
-%quo1 61A 61P2
-%quo1 61A 61N1 61N2
+%quo1 61A 61N1 61N2 61N3
 %quo1 61F 61P1 61P2
+%quo1 61G 61P2 61P3
 
 ### FOUR
 
@@ -1801,19 +1825,19 @@ w
 hs> "8P2"
 4u 800m
 <hs "8N2"
-2u 50m
+3v 50m
 2u 50m
 50m >w / 50m ne "8d" 8d
-2u 200m
+3v 200m
 hp> "8F"
 1u 1100m
 1u 1100m
 <hp "9A"
-2u 200m
-w< 50m / 50m nw "9a" 8d
-2u 50m
+3v 200m
+w< 50m / 50m nw "9a" 10d
+4u 100m
 hp> "9P1"
-4u 800m
+7v 800m
 <hp "9N1"
 2u 50m
 50m >w / 50m ne "9b"
@@ -1837,37 +1861,45 @@ end "9c39"
 
 ### NINE & EIGHT
 
-27u begin +4u ne "8d"
+55v begin +4u ne "8d"
 1u 25m
 3u 75m e
 hs> "8N1"
-4u 800m
+7v 800m
 <hs "8P1"
 1u 25m
 1u 25m se
 end "8a"
 
-16u begin +0u nw "9a"
-1u 25m nw
-1u 25m w
+35v begin +0u nw "9a"
+w< 50m w / 50m nw "9c"
+2u 50m
 hp> "9P2"
-4u 800m
+7v 800m
 <hp "9N2"
 w< 50m / 50m sw "9b"
-2u 50m
+50m >w / 50m ne "9d"
 2u 200m
 hp> "9G"
 2u 1000m
 end "9c61"
+
+31v begin -2u nw "9c"
+~ 50m w
+hp> "9P3"
+7v 800m
+<hp "9N3"
+~ 50m sw
+end "9d"
 
 %quo1 47 49 8A 8N1 8N2
 %quo1 8F 8P1 8P2
 
 # %quo2 47 49 8A 8N1 8N2 9A 9N1 9N2
 
-%quo1 9A 9N1 9N2
-%quo1 9F 9G 9P1 9P2
-%quo1 9P2 9A
+%quo1 9A 9N1 9N2 9N3
+%quo1 9F 9P1 9P2
+%quo1 9G 9P2 9P3
 
 ### ZERO
 
@@ -4327,9 +4359,9 @@ end "24c174"
 %quo1 20N3 244
 %quo1 20N3 246
 %quo1 20N3 248
-%quo2 20N3 24B 24N1 24N2 24N3
-%quo2 24G 24H 24P1 24P2 24P3
-%quo3 20N3 24B 24N1 24N2 24N3 24G 24H 24P1 24P2 24P3
+%quo3 20N3 24B 24N1 24N2 24N3 24N4
+%quo3 24G 24H 24I 24P1 24P2 24P3 24P4
+%quo4 20N3 24B 24N1 24N2 24N3 24N4 24G 24H 24I 24P1 24P2 24P3 24P4
 
 ### TWENTY-ONE
 

@@ -430,6 +430,17 @@
 # %trn len=97 v=140 n=loc %local
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+
 %trn len=380 v=200 n=ioq %ir9
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
 %trn len=380 v=200 n=ios %ir5
@@ -446,7 +457,6 @@
 %trn len=228 v=200 n=ir1s %ir1s
 %trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
 %trn len=228 v=200 n=ir3 %detour
-%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
 %trn len=228 v=200 n=ir5f %ir5f
 %trn len=228 v=200 n=ir1 %outlet
 %trn len=150 v=160 n=t9 %t9
