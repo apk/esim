@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 407A" $* 407B 407A -- 407N3 407N2 407N1 &
+esimc -title "esimc 407F" $* 407G 407F 407H -- 407R3 -- 407P1 407P2 407P3 -- 4072 &

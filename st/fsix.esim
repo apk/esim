@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 406A" $* 406D 406B 406A 406C 406E -- 406R4 406R3 406R2 -- 406N5 406N4 406N3 406N2 406N1 &
+esimc -title "esimc 406F" $* 406G 406F -- 406P1 406P2 406P3 406P4 406P5 &
