@@ -37711,106 +37711,106 @@ end "344b"
 %quo1 3441 344A 344N1 344N2
 %quo1 3444 344F 344P1 344P2
 
-### THSEVENTY
+### THEIGHTYONE
 
-1u begin =12+13v "371t370"
+1u begin =12+13v "382t381"
 2u 800m
-<hp "3714"
+<hp "3824"
 1u 200m
 1u 800m
-<hp "3712"
+<hp "3822"
 1u 200m
 1u 800m
-<hp "370F"
+<hp "381F"
 2u 200m
-w< 50m / 50m ne "370a" 10d
+w< 50m / 50m ne "381a" 10d
 4u 100m
-50m >w / 50m nw "370b" 10d
-w< 50m / 50m ne "370c" 8d
+50m >w / 50m nw "381b" 10d
+w< 50m / 50m ne "381c" 8d
 2u 50m
-hs> "370N1"
+hs> "381N1"
 4u 800m
-<hs "370P1"
+<hs "381P1"
 2u 50m
-50m >w / 50m nw "370d" 8d
-w< 50m / 50m ne "370e" 8d
+50m >w / 50m nw "381d" 8d
+w< 50m / 50m ne "381e" 8d
 2u 50m
 2u 200m
-hp> "370B"
+hp> "381B"
 1u 600m
-<hp "3706"
+<hp "3816"
 1u 200m
 1u 800m
-<hp "3704"
+<hp "3814"
 1u 200m
 1u 800m
-<hp "3702"
+<hp "3812"
 1u 200m
-end "370t469"
+end "381t469"
 
-37v begin -3u "370f" se
+37v begin -3u "381f" se
 ~ 50m e
-50m >w / 50m sw "370c" 8d
-hs> "370N2"
+50m >w / 50m sw "381c" 8d
+hs> "381N2"
 4u 800m
-<hs "370P2"
-w< 50m / 50m se "370d" 8d
+<hs "381P2"
+w< 50m / 50m se "381d" 8d
 ~ 50m ne
-end "370g"
+end "381g"
 
-# 1v begin +1u "370t371"
-1v begin +1u "371t370"
+# 1v begin +1u "381t382"
+1v begin +1u "382t381"
 1u 200m
-hp> "3715"
+hp> "3825"
 1u 800m
 1u 200m
-hp> "3713"
+hp> "3823"
 1u 800m
 1u 200m
-hp> "3711"
+hp> "3821"
 1u 600m
-<hp "370G"
+<hp "381G"
 2u 200m
 2u 50m
-50m >w / 50m sw "370a" 10d
-w< 50m / 50m se "370b" 10d
+50m >w / 50m sw "381a" 10d
+w< 50m / 50m se "381b" 10d
 ne
-w< 50m / 50m e "370f" 8d
+w< 50m / 50m e "381f" 8d
 4u 100m e
-hs> "370N3"
+hs> "381N3"
 4u 800m
-<hs "370P3"
+<hs "381P3"
 4u 100m
 se
-50m >w / 50m w "370g" 8d
+50m >w / 50m w "381g" 8d
 e
-50m >w / 50m sw "370e" 8d
+50m >w / 50m sw "381e" 8d
 2u 200m
-hp> "370A"
+hp> "381A"
 1u 800m
 1u 200m
-hp> "3705"
+hp> "3815"
 1u 800m
 1u 200m
-hp> "3703"
+hp> "3813"
 2u 800m
-end "469t370"
+end "469t381"
 
-%def 370A-370N3/370N2/370N1
-%def 370B-370N1/370N2
-%def 370N1-371B/+3711
-%def 370N2-3711/371B
-%def 370N3-3711/371B
+%def 381A-381N3/381N2/381N1
+%def 381B-381N1/381N2
+%def 381N1-382B/+3821
+%def 381N2-3821/382B
+%def 381N3-3821/382B
 
-%def 370F-370P1/370P2/370P3
-%def 370G-370P3/+370P1/370P2
-%def 370P1-3706/469G
-%def 370P2-3706/469G
-%def 370P3-469G/+3706
+%def 381F-381P1/381P2/381P3
+%def 381G-381P3/+381P1/381P2
+%def 381P1-3816/469G
+%def 381P2-3816/469G
+%def 381P3-469G/+3816
 
 ### FSIXTYNINE
 
-1u begin =16+25v "370t469"
+1u begin =16+25v "381t469"
 2u 800m
 <hp "469F"
 2u 200m
@@ -37834,9 +37834,9 @@ hp> "469B"
 1u 200m
 end "469t468"
 
-1v begin -2u "469t370"
+1v begin -2u "469t381"
 1u 200m
-hp> "3701"
+hp> "3811"
 1u 600m
 <hp "469G"
 2u 200m
@@ -37926,22 +37926,22 @@ hp> "469C"
 2u 1000m
 end "344c469"
 
-%quo1 469N1 370B 370N1 370N2
-%quo2 469N1 370B 370N1 370N2 370G 370P1 370P2
-%quo1 370P3 370A
-%quo1 370P3 3705
-%quo1 370P3 3703
-%quo1 370P3 3701
+%quo1 469N1 381B 381N1 381N2
+%quo2 469N1 381B 381N1 381N2 381G 381P1 381P2
+%quo1 381P3 381A
+%quo1 381P3 3815
+%quo1 381P3 3813
+%quo1 381P3 3811
 
 %def 469A-469N2/469N3/469N5/469N4/469N6
 %def 469B-469N1/+469N2/469N3/469N4/469N5/469N6
 %def 469C-469N2/+469N5/+469N6/+469N4/469N3
-%def 469N1-370B
-%def 469N2-3701/370B
-%def 469N3-3701/370B
-%def 469N4-3701/370B
-%def 469N5-3701/370B
-%def 469N6-3701/370B
+%def 469N1-381B
+%def 469N2-3811/381B
+%def 469N3-3811/381B
+%def 469N4-3811/381B
+%def 469N5-3811/381B
+%def 469N6-3811/381B
 
 %mac fsixtynine-thfourtyfive 469A-469N3/+469N5/++469N6/469N4
 %mac fsixtynine-thfourtyfive 469B-469N3/+469N5/++469N6/469N4
@@ -37973,9 +37973,9 @@ end "344c469"
 %mac fsixtynine-thfourtyfour 469P5-3444
 %mac fsixtynine-thfourtyfour 469P6-3444
 
-%quo1 3702 469N1
-%quo1 3704 469N1
-%quo1 3706 469N1
+%quo1 3812 469N1
+%quo1 3814 469N1
+%quo1 3816 469N1
 %quo1 469F 469N1
 
 ### FSIXTYEIGHT
@@ -38064,8 +38064,8 @@ hp> "468C"
 end "468c497"
 
 %quo3 468N1 4699 469B 3443 469C 469N3 469N4 469N5 469N6
-%quo3 370P3 469G 3452 469H 469P3 469P4 469P5 469P6
-%quo4 468N1 4699 469B 3443 469C 469N3 469N4 469N5 469N6 370P3 469G 3452 469H 469P3 469P4 469P5 469P6
+%quo3 381P3 469G 3452 469H 469P3 469P4 469P5 469P6
+%quo4 468N1 4699 469B 3443 469C 469N3 469N4 469N5 469N6 381P3 469G 3452 469H 469P3 469P4 469P5 469P6
 
 %def 468A-468N2/468N3/468N1
 %def 468B-468N1/+468N2/468N3
@@ -38131,7 +38131,7 @@ hs> "346P2"
 3v 200m
 hp> "346F"
 2u 1000m
-end "346t347"
+end "346c347"
 
 13v begin -1u "345a" ne
 ~ 50m e
