@@ -1882,6 +1882,8 @@ struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 	s->name = name;
 	s->d = x;
 	s->lcks = 0;
+	s->pre = 0;
+	s->sp = 0;
 	s->im = 0;
 	s->grp = 0;
 	s->qgrp = 0;
@@ -3534,6 +3536,7 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 }
 
 int oncesteps = 1;
+int nstanding = 0;
 
 void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
 	int i;
@@ -3680,6 +3683,17 @@ static BMFCONN_CMD_HDLR (BmfGetSteps) {
 	return BMFCONN_CMD_SYNERR ();
 }
 
+static BMFCONN_CMD_HDLR (BmfNStanding) {
+	if (bmfIsEnd (args)) {
+		return bmfMakeMessage (
+			BMF_NAME, "ok",
+			BMF_NAME, bmfGetName (cmd),
+			BMF_INT, nstanding,
+			BMF_END);
+	}
+	return BMFCONN_CMD_SYNERR ();
+}
+
 static BMFCONN_CMD_HDLR (BmfOnceSteps) {
 	int d = oncesteps;
 	if (bmfParseMessage (args,
@@ -3701,6 +3715,7 @@ MUX_BMFCMDTABLE_TYP arCmdTable[] = {
 	{ "use-plans", BmfUsePlan, "use-plans [flag:int]" },
 	{ "get-steps", BmfGetSteps, "get-steps" },
 	{ "once-steps", BmfOnceSteps, "once-steps [steps:int]" },
+	{ "nstanding", BmfNStanding, "nstanding" },
 	{ 0, 0, 0 }
 };
 
@@ -4801,6 +4816,7 @@ int spf = 4;
 void everysec (void) {
 	struct train *curr, *ol;
 	struct train **curp;
+	int nstand = 0;
 #if 1
 	if (iDebugLevel > 0) printf ("--------------\n");
 #endif
@@ -4867,6 +4883,7 @@ if (curr->speed > KMH2MMS (5) && lla < 1500000) lla = 1500000;
 		if (curr->speed > 0) {
 			curr->ztim = 0;
 		} else if (curr->ztim < 1000000) {
+			nstand ++;
 			curr->ztim ++;
 		}
 		train_dwin (curr, firstsig);
@@ -4902,4 +4919,5 @@ if (curr->speed > KMH2MMS (5) && lla < 1500000) lla = 1500000;
 	setup_train ();
 	do_paths ();
 	cycle ++;
+	nstanding = nstand;
 }
