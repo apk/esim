@@ -386,7 +386,7 @@ struct conn {
 	struct dnode *actl;	/* Backward switch field */
 	struct dnode *bctl;	/* Forward switch field */
 	struct conn *anxt;	/* Other conns of A motor (ring) */
-	struct conn *bnxt;	/* Other conns of A motor (ring) */
+	struct conn *bnxt;	/* Other conns of B motor (ring) */
 };
 
 struct conn *startconn = 0;	/** XXX Where to start... */
