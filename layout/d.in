@@ -1,0 +1,106 @@
+
+%trn len=220 v=200 n=6
+%trn len=220 v=200 n=7 
+%trn len=220 v=200 n=8 
+
+1u begin =10+14u "06t07"
+2u 800m
+<hp "07A"
+2u 200m
+2u 50m
+50m >w / 50m nw "07a" 8d
+w< 50m / 50m se "07b" 9d
+2u 50m
+hs> "07P2"
+4u 800m
+<hs "07N2"
+2u 50m
+50m >w / 50m sw "07c" 8d
+w< 50m / 50m ne "07d" 8d
+2u 50m
+5v 200m
+6u 150m
+50m >w / 50m nw "07e" 10d
+<hp "07T"
+3v 200m
+hp> "07G"
+1u 800m
+<hp "081"
+1u 200m
+1u 800m
+<hp "083"
+1u 200m
+end "08t07" #XXX "07t08"
+
+1v begin -2u "07c93" #XXX "07t06"
+1u 200m
+hp> "078"
+1u 600m
+<hp "07B"
+2u 200m
+w< 50m / 50m se "07a" 8d
+6u 150m
+hs> "07P1"
+4u 800m
+<hs "07N1"
+6u 150m
+50m >w / 50m sw "07d" 8d
+hs> "07R1"
+2u 200m
+2u 50m
+50m >w / 50m nw "07f" 13d
+w< 50m / 50m se "07e" 10d
+2u 50m
+2u 200m
+hp> "07F"
+1u 800m
+1u 200m
+hp> "082"
+2u 800m
+end "08t07"
+
+23v begin +3u "07b" se
+1u 25m
+1u 25m e
+hs> "07P3"
+4u 800m
+<hs "07N3"
+1u 25m
+1u 25m ne
+end "07c"
+
+10u begin -7u "07c93"
+2u 1000m
+<hp "07C"
+3v 200m
+w< 50m / 50m se "07g" 8d
+w< 50m / 50m ne "07h"
+2u 50m
+hs> "07P12"
+3u 800m
+<hs "07N12"
+2u 50m
+50m >w / 50m nw "07i"
+se
+1u 25m
+50m >w / 50m w "07j" 8d
+end "07f"
+
+16u begin +1u "07g" se
+1u 25m
+3u 75m e
+hs> "07P11"
+3u 800m
+<hs "07N11"
+5u 125m
+end "07j"
+
+18u begin -2u "07h" ne
+1u 25m
+1u 25m e
+hs> "07P13"
+3u 800m
+<hs "07N13"
+1u 25m
+1u 25m se
+end "07i"

@@ -1,0 +1,489 @@
+
+1u begin =3+9u "51t50"
+2u 800m
+<hp "50F"
+2u 200m
+2u 50m
+50m >w / 50m nw "50a"
+w< 50m / 50m se "50b"
+2u 50m
+50m >w / 50m nw "50m" 8d
+50m >w / 50m sw "50c" 8d
+w< 50m / 50m se "50n" 8d
+w< 50m / 50m ne "50d" 8d
+2u 50m
+hs> "50N3"
+4u 800m
+<hs "50P3"
+2u 50m
+50m >w / 50m nw "50e"
+50m >w / 50m sw "50f" 10d
+w< 50m / 50m ne "50g"
+2u 50m
+2u 200m
+hp> "50B"
+1u 600m
+<hp "496"
+1u 200m
+1u 800m
+<hp "494"
+1u 200m
+end "50t49"
+
+3u begin -4u "50c76" e
+2u 1000m
+<hp "50I"
+2u 200m
+1u 25m
+1u 25m se
+end "50l"
+
+1v begin +2u "50t51"
+1u 200m
+hp> "501"
+1u 600m
+<hp "50G"
+2u 200m
+w< 50m / 50m se "50a"
+2u 50m
+50m >w / 50m nw "50l" 10d
+w< 50m / 50m se "50m" 8d
+2u 50m ne
+2u 50m e
+w< 50m / 50m se "50j" 8d
+4u 100m
+hs> "50N5"
+4u 800m
+<hs "50P5"
+4u 100m
+se
+50m >w / 50m w "50k" 8d
+2u 50m e
+50m >w / 50m sw "50g"
+2u 200m
+hp> "50A"
+1u 800m
+1u 200m
+hp> "495"
+2u 800m
+end "49t50"
+
+5u begin +4u "50c87"
+2u 1000m
+<hp "50H"
+2u 200m
+2u 50m
+50m >w / 50m nw "50b"
+w< 50m / 50m ne "50c" 8d
+w< 50m / 50m se "50h" 8d
+2u 50m
+50m >w / 50m nw "50n" 8d
+1u 25m
+hs> "50N2"
+4u 800m
+<hs "50P2"
+3u 75m
+50m >w ne / 50m sw "50i" 8d
+end "50f"
+
+35v begin +1u "50h" se
+w< 50m / 50m e "50o"
+1u 25m
+1u 25m e
+hs> "50N0"
+4u 800m
+<hs "50P0"
+1u 25m
+1u 25m ne
+50m >w / 50m w "50p"
+end "50i"
+
+39v begin +1u "50o" e
+2u 50m
+hs> "50N1"
+4u 800m
+<hs "50P1"
+2u 50m
+end "50p"
+
+39v begin -7u "50j" se
+1u 25m
+1u 25m e
+50m >w / 50m sw "50d" 8d
+hs> "50N4"
+4u 800m
+<hs "50P4"
+w< 50m / 50m se "50e"
+1u 25m
+1u 25m ne
+end "50k"
+
+%def 50A-50N5/50N4/50N2/50N0/50N1/50N3
+%def 50B-50N3/+50N4/50N2/50N0/50N1
+%def 50N0-501/51B
+%def 50N1-501/51B
+%def 50N2-501/51B
+%def 50N3-51B/+501
+%def 50N4-501/51B
+%def 50N5-501
+
+%mac fifty-eightyseven 50A-50N4/50N2/50N0/50N1/50N3
+%mac fifty-eightyseven 50B-50N2/50N0/50N1/50N4/50N3
+%mac fifty-eightyseven 50N0-87F
+%mac fifty-eightyseven 50N1-87F
+%mac fifty-eightyseven 50N2-87F
+%mac fifty-eightyseven 50N3-87F
+%mac fifty-eightyseven 50N4-87F
+
+%mac fifty-seventysix 50A-50N5/50N4/50N2/50N3
+%mac fifty-seventysix 50B-50N3/+50N2/50N4
+%mac fifty-seventysix 50N2-76F
+%mac fifty-seventysix 50N3-76F
+%mac fifty-seventysix 50N4-76F
+%mac fifty-seventysix 50N5-76F
+
+%def 50F-50P3/50P2/50P0/50P1/50P4
+%def 50G-50P5/+50P3/50P2/50P0/50P1/50P4
+%def 50H-50P2/50P3/50P0/50P1/50P4
+%def 50I-50P3/50P4/50P2/50P5
+
+%def 50P0-496/49G
+%def 50P1-496/49G
+%def 50P2-496/49G
+%def 50P3-496/49G
+%def 50P4-496/49G
+%def 50P5-49G
+
+### EIGHTYSIX-SEVEN
+
+%mini 490 -605
+
+1v begin =2+26v "85c86"
+2u 1000m
+<hp "86A"
+3v 200m
+w< 50m / 50m ne "86a"
+2u 50m
+hs> "86P1"
+3u 800m
+<hs "86N1"
+2u 50m
+50m >w / 50m nw "86b"
+3v 200m
+hp> "86F"
+2u 1000m
+end "86c87"
+
+13v begin -1u "86a" ne
+1u 25m
+1u 25m e
+hs> "86P2"
+3u 800m
+<hs "86N2"
+1u 25m
+1u 25m se
+end "86b"
+
+1v begin +5u "86c87"
+2u 1000m
+<hp "871"
+1u 200m
+hp> "872"
+1u 1000m
+1u 1000m
+<hp "87A"
+3v 200m
+w< 50m / 50m se "87a" 8d
+w< 50m / 50m ne "87b" 8d
+2u 50m
+hs> "87P2"
+3u 800m
+<hs "87S2"
+w< 50m / 50m ne "87c" 13d
+se
+50m >w / 50m w "87d" 8d
+w< 50m / 50m e "87e" 8d
+e
+2u 50m
+hs> "87R1"
+3u 800m
+<hs "87N1"
+w< 50m / 50m ne "87f" 8d
+2u 50m
+2u 50m ne
+4u 100m e
+50m >w / 50m nw "87g" 8d
+3v 200m
+hp> "87F"
+2u 1000m
+end "50c87"
+
+21v begin +1u "87a" se
+1u 25m
+3u 75m e
+hs> "87P1"
+3u 800m
+<hs "87S1"
+1u 25m
+1u 25m ne
+end "87d"
+
+25v begin -2u "87b" ne
+1u 25m
+1u 25m e
+hs> "87P3"
+3u 800m
+<hs "87N3"
+2u 50m
+se
+50m 8d >w e / 50m w "87c" 13d
+w< 50m ne / 50m se "87h" 12d
+e
+2u 50m
+hs> "87R4"
+3u 800m
+<hs "87N4"
+w< 50m / 50m se "87i" 8d
+6u 150m
+50m >w / 50m sw "87j" 8d
+3v 200m
+hp> "87G"
+2u 2000m
+end "51c87"
+
+49v begin +1u "87h" e
+2u 50m
+hs> "87S3"
+3u 800m
+<hs "87N3"
+2u 50m
+50m >w / 50m nw "87i"
+50m >w / 50m sw "87k"
+w< 50m / 50m ne "87j"
+w< 50m / 50m se "87g"
+2u 50m
+3v 200m
+hp> "87H"
+2u 1000m
+end "76c87"
+
+49v begin +3u ne "87e"
+1u 25m
+1u 25m e
+hs> "87S2"
+3u 800m
+<hs "87N2"
+2u 50m
+50m >w ne / 50m sw "87f"
+end "87k"
+
+%def 86A-86N1/86N2
+%def 86N1-871
+%def 86N2-871
+
+%def 86F-86P1/86P2
+%def 86P1-85F
+%def 86P2-85F
+
+%quo1 86A 86N1 86N2
+%quo1 872 86F 86P1 86P2
+
+%mac eightyseven-fifty 87A-87S2/87S1/87S3
+%mac eightyseven-fifty 87S1-87N1/87N2
+%mac eightyseven-fifty 87S2-87N1/87N2/87N3/87N4
+%mac eightyseven-fifty 87S3-87N3/87N4
+%mac eightyseven-fifty 87N1-50H
+%mac eightyseven-fifty 87N2-50H
+%mac eightyseven-fifty 87N3-50H
+%mac eightyseven-fifty 87N4-50H
+
+%mac eightyseven-fiftyone 87A-87S2/87S1/87S3
+%mac eightyseven-fiftyone 87S1-87N2/87N1
+%mac eightyseven-fiftyone 87S2-87N4/87N3/87N2/87N1
+%mac eightyseven-fiftyone 87S3-87N4/87N3
+%mac eightyseven-fiftyone 87N1-51C
+%mac eightyseven-fiftyone 87N2-51C
+%mac eightyseven-fiftyone 87N3-51C
+%mac eightyseven-fiftyone 87N4-51C
+
+%mac eightyseven-seventysix 87A-87S2/87S1/87S3
+%mac eightyseven-seventysix 87S1-87N2/87N1
+%mac eightyseven-seventysix 87S2-87N3/87N4/87N2/87N1
+%mac eightyseven-seventysix 87S3-87N3/87N4
+%mac eightyseven-seventysix 87N1-76G
+%mac eightyseven-seventysix 87N2-76G
+%mac eightyseven-seventysix 87N3-76G
+%mac eightyseven-seventysix 87N4-76G
+
+%mac eightyseven-eightysix 87F-87R1/87R3/87R4/87R2
+%mac eightyseven-eightysix 87G-87R3/+87R1/87R4/87R2
+%mac eightyseven-eightysix 87H-87R4/+87R3/+87R1/87R2
+%mac eightyseven-eightysix 87R1-87P2/87P1
+%mac eightyseven-eightysix 87R2-87P2/87P1
+%mac eightyseven-eightysix 87R3-87P2/87P3
+%mac eightyseven-eightysix 87R4-87P2/87P3
+%mac eightyseven-eightysix 87P1-872
+%mac eightyseven-eightysix 87P2-872
+%mac eightyseven-eightysix 87P3-872
+
+%def %eightyseven-fifty
+%def %eightyseven-eightysix
+
+%quo2 871 87A 87S1 87S2 87S3
+%quo2 87P1 87P2 87P3
+%quo3 871 87A 87S1 87S2 87S3 87P1 87P2 87P3
+%quo3 87F 87G 87H 87R1 87R2 87R3 87R4
+%quo3 87N1 87N2 87N3 87N4
+%quo4 87F 87G 87H 87R1 87R2 87R3 87R4 87N1 87N2 87N3 87N4
+
+### FOURTYNINE
+
+%mini 800 1200-
+
+1u begin =2+6u "50t49"
+2u 900m
+<hp "492"
+1u 200m
+1u 900m
+<hp "49F"
+2u 200m
+w< 50m / 50m ne "49a" 8d
+6u 150m
+hs> "49N3"
+4u 800m
+<hs "49P3"
+6u 150m
+50m >w / 50m nw "49d" 8d
+2u 200m
+hp> "49B"
+1u 600m
+<hp "488"
+1u 200m
+1u 800m
+<hp "48F"
+2u 200m
+w< 50m / 50m ne "48a" 20d
+1u 25m se
+1u 200m e
+hp> "48C"
+1u 800m
+<hp "486"
+1u 200m
+1u 800m
+<hp "48H"
+1u 200m ne
+n
+w< 50m / 50m nw "48b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "48J"
+1u 800m
+<hp "481"
+1u 200m
+1u 800m
+<hp "48A"
+1u 200m sw
+end "48d"
+
+%def 48H-481/+48B
+
+1v begin -2u "49t50"
+1u 200m
+hp> "493"
+1u 800m
+1u 200m
+hp> "491"
+1u 600m
+<hp "49G"
+2u 200m
+2u 50m
+50m >w / 50m sw "49a" 8d
+w< 50m / 50m ne "49b"
+2u 50m
+hs> "49N2"
+4u 800m
+<hs "49P2"
+2u 50m
+50m >w / 50m nw "49c"
+w< 50m / 50m se "49d" 8d
+2u 50m
+2u 200m
+hp> "49A"
+1u 800m
+1u 200m
+hp> "483"
+1u 600m
+<hp "48G"
+2u 200m
+w< 50m / 50m ne "48d" 20d
+50m >w / 50m sw "48a" 20d
+hp> "48B"
+5v 1800m
+<hp "48I"
+1u 200m
+end "48b"
+
+14u begin -1u "49b" ne
+1u 25m
+1u 25m e
+hs> "49N1"
+4u 800m
+<hs "49P1"
+1u 25m
+1u 25m se
+end "49c"
+
+%mac fourtynine-fourtyeight 49F-49P3/49P1
+%mac fourtynine-fourtyeight 49G-49P2/49P1
+%mac fourtynine-fourtyeight 49P1-488/48G
+%mac fourtynine-fourtyeight 49P2-48G/+488
+%mac fourtynine-fourtyeight 49P3-488
+
+%mac fourtynine-fifty 49A-49N2/49N1
+%mac fourtynine-fifty 49B-49N3/+49N2/+49N1
+%mac fourtynine-fifty 49N1-491/50B
+%mac fourtynine-fifty 49N2-491/50B
+%mac fourtynine-fifty 49N3-50B
+
+%quo5 49N3 50B 50G 50H 50I 50N4 50N2 50N0 50N1 50N3 50P3 50P2 50P0 50P1 50P4
+%quo4 49N3 50B 50N4 50N2 50N0 50N1 50N3
+%quo4 50G 50H 50I 50P3 50P2 50P0 50P1 50P4
+
+%quo3 49N3 50I 50N4 50N2 50N3 50P3 50P2 50P4
+%quo2 49N3 50N4 50N2 50N3
+%quo2 50I 50P3 50P2 50P4
+
+%quo1 492 49N3
+%quo1 494 49N3
+%quo1 496 49N3
+%quo1 49F 49N3
+
+%quo2 48C 49B 50P5 49G 49P2 49P1 49N2 49N1
+%quo1 50P5 49G 49P2 49P1
+
+%quo1 48G 48B 48I
+%quo1 488 48C
+%quo1 48F 48C
+
+%quo1 50A 50P5
+%quo1 495 50P5
+%quo1 493 50P5
+%quo1 491 50P5
+
+%def %fourtynine-fourtyeight
+%def %fourtynine-fifty
+
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 
+%trn len=220 v=200 n=8 

@@ -1,0 +1,418 @@
+13u begin 1v
+4u 1000m
+<hp "In"
+1u 200m
+end "63c64"
+
+### SIXTYSIX
+
+93v begin =5+13u "65t66" w
+2u 800m
+<hp "652d"
+1u 200m
+1u 800m
+<hp "66F"
+1u 100m
+1u 100m nw
+w
+w< 50m / 50m sw "66a"
+6u 150m
+hs> "66N1"
+4u 800m
+<hs "66P1"
+6u 150m
+50m >w / 50m se "66b"
+3v 100m nw
+1u 100m w
+hp> "66B"
+1u 600m
+<hp "662"
+1u 200m
+1u 800m
+<hp "67F"
+2u 200m
+w< 50m / 50m sw "67a" 20d
+1u 25m nw
+1u 25m w
+hp> "67C"
+1u 700m
+<hp "672"
+1u 200m
+1u 800m
+<hp "67H"
+1u 200m sw
+s
+w< 50m / 50m se "67b" 20d
+1u 25m
+1u 25m se
+1u 25m e
+hp> "67J"
+1u 800m
+<hp "671"
+1u 200m
+1u 800m
+<hp "67A"
+1u 50m ne
+end "67c"
+
+%def 67H-67B/+671
+%def 67B-661/+66B
+
+94v begin +2u "66t65" w
+1u 200m
+hp> "651a"
+1u 800m
+1u 200m
+hp> "651"
+1u 700m
+<hp "66G"
+1u 100m
+1u 100m nw
+2u 50m w
+50m >w / 50m ne "66a"
+w< 50m / 50m sw "66c"
+2u 50m
+hs> "66N2"
+4u 800m
+<hs "66P2"
+2u 50m
+50m >w / 50m se "66d"
+w< 50m / 50m nw "66b"
+2u 50m
+3v 100m nw
+1u 100m w
+hp> "66A"
+1u 800m
+1u 200m
+hp> "661"
+1u 600m
+<hp "67G"
+2u 200m
+w< 50m / 50m sw "67c" 20d
+50m >w / 50m ne "67a" 20d
+hp> "67B"
+5v 1800m
+<hp "67I"
+1u 50m
+end "67b"
+
+49v begin +0u "66d" se
+50m >w e / 50m sw "66f"
+hs> "66P3"
+4u 800m
+<hs "66N3"
+w< 50m ne / 50m se "66e"
+end "66c"
+
+93v begin +3u "65t66s" w
+2u 800m
+<hp "654d"
+1u 200m
+1u 800m
+<hp "66H"
+2u 200m
+2u 50m
+50m >w / 50m se "66g"
+w< 50m / 50m nw "66e"
+2u 50m
+hs> "66N4"
+4u 800m
+<hs "66P4"
+2u 50m
+50m >w / 50m ne "66f"
+w< 50m / 50m sw "66h"
+2u 50m
+2u 200m
+hp> "66D"
+1u 600m
+<hp "664"
+1u 200m
+1u 800m
+<hp "68F"
+2u 200m
+w< 50m / 50m sw "68a" 20d
+1u 25m nw
+1u 25m w
+hp> "68C"
+1u 700m
+<hp "682"
+1u 200m
+1u 800m
+<hp "68H"
+1u 200m sw
+s
+w< 50m / 50m se "68b" 20d
+1u 25m
+1u 25m se
+1u 25m e
+hp> "68J"
+1u 800m
+<hp "681"
+1u 200m
+1u 800m
+<hp "68A"
+1u 50m ne
+end "68c"
+
+%def 68H-68B/+681
+%def 68B-663/+66D
+
+94v begin +2u "66t65s" w
+1u 200m
+hp> "653a"
+1u 800m
+1u 200m
+hp> "653"
+1u 700m
+<hp "66I"
+2u 200m
+w< 50m / 50m nw "66g"
+6u 150m
+hs> "66N5"
+4u 800m
+<hs "66P5"
+6u 150m
+50m >w / 50m ne "66h"
+2u 200m
+hp> "66C"
+1u 800m
+1u 200m
+hp> "663"
+1u 600m
+<hp "68G"
+2u 200m
+w< 50m / 50m sw "68c" 20d
+50m >w / 50m ne "68a" 20d
+hp> "68B"
+5v 1800m
+<hp "68I"
+1u 50m
+end "68b"
+
+%def 66A-66N2/66N3
+%def 66B-66N2/66N3
+%def 66C-66N5/66N3
+%def 66D-66N5/66N3
+%def 66N1-65B
+%def 66N2-651
+%def 66N3-651/+653
+%def 66N3-653
+%def 66N3-653
+
+%def 66F-66P1/66P3/66P2
+%def 66G-66P2/+66P3
+%def 66H-66P4/66P3
+%def 66I-66P4/+66P3/66P5
+%def 66P1-662
+%def 66P2-662
+%def 66P3-664/662
+%def 66P4-664
+%def 66P5-$
+
+%exc 66P2 66P3
+%quo2 66B 66N2 66N3 66P2 66P3 66G
+
+### SIXTYFOUR ETC
+
+47u begin =8+12u "63c64" w
+2u 1000m
+<hp "64F"
+3v 200m
+w< 50m / 50m sw "64a"
+2u 50m
+hs> "64N1"
+3u 800m
+<hs "64P1"
+2u 50m
+50m >w / 50m se "64b"
+3v 200m
+hp> "64A"
+1u 1000m
+1u 1000m
+<hp "65H"
+2u 300m
+1u 50m nw
+1u 50m w
+100m >w / 100m ne "65e" 13d
+w< 100m / 100m nw "65d" 13d
+w< 100m / 100m sw "65f" 16d
+2u 100m
+100m >w / 100m ne "65c" 13d
+1u 50m sw
+1u 50m w
+<hp "654"
+3v 300m
+hp> "65D"
+1u 700m
+<hp "654a"
+1u 200m
+1u 800m
+<hp "654b"
+1u 200m
+1u 800m
+<hp "654c"
+1u 200m
+end "65t66s"
+
+1u begin +2u "66t65s"
+2u 800m
+<hp "653a"
+1u 200m
+1u 800m
+<hp "653b"
+1u 200m
+1u 800m
+<hp "65C"
+2u 300m
+4u 200m
+2u 100m ne
+end "65f"
+
+1u begin -5u "66t65"
+2u 800m
+<hp "651b"
+1u 200m
+1u 800m
+<hp "651c"
+1u 200m
+1u 800m
+<hp "65A"
+2u 300m
+2u 100m
+100m >w / 100m nw "65a" 13d
+100m >w / 100m sw "65c" 13d
+w< 100m / 100m se "65d" 13d
+w< 100m / 100m ne "65b" 13d
+2u 100m
+100m >w / 100m sw "65e" 13d
+<hp "65S3"
+3v 200m
+w< 50m / 50m ne "65g" 8d
+2u 50m
+hs> "65P3"
+4u 800m
+<hs "65N3"
+2u 50m
+50m >w / 50m nw "65i" 8d
+2u 200m
+hp> "65G"
+1u 700m
+<hp "641"
+1u 200m
+1u 800m
+<hp "643"
+1u 200m
+end "65t7"
+
+1v begin -2u "65t66"
+1u 200m
+hp> "652c"
+1u 800m
+1u 200m
+hp> "652b"
+1u 800m
+1u 200m
+hp> "652a"
+1u 800m
+<hp "65B"
+3v 300m
+hp> "652"
+w< 100m / 100m se "65a" 13d
+5u 275m
+w< 50m / 50m ne "65k" 10d
+1u 75m
+100m >w / 100m sw "65b" 13d
+2u 100m
+<hp "65S2"
+3v 300m
+w< 50m / 50m ne "65h" 8d
+50m >w / 50m sw "65g" 8d
+hs> "65P2"
+4u 800m
+<hs "65N2"
+w< 50m / 50m se "65i" 8d
+50m >w / 50m nw "65j" 8d
+2u 200m
+hp> "65F"
+1u 800m
+1u 200m
+hp> "642"
+2u 800m
+end "65t7" #XXX "7t65"
+
+33u begin +6u "64b" se
+1u 25m
+1u 25m e
+hs> "64P2"
+3u 800m
+<hs "64N2"
+1u 25m
+1u 25m ne
+end "64a"
+
+75v begin -7u "65j" nw
+1u 25m
+1u 25m w
+hs> "65N1"
+4u 800m
+<hs "65P1"
+w< 50m / 50m sw "65h"
+2u 50m
+2u 200m
+4u 200m
+1u 75m sw
+end "65k"
+
+%def 64F-64P1/64P2
+%def 64P1-65H
+%def 64P2-65H
+
+%def 64A-64N1/64N2
+%def 64N1-63A
+%def 64N2-63A
+
+%quo1 64F 64P1 64P2
+%quo1 64A 64N1 64N2
+
+%mac sixtyfive-sixtysix 65F-65P2/65P1
+%mac sixtyfive-sixtysix 65G-65P2/+65P3
+%mac sixtyfive-sixtysix 65P1-652/654
+%mac sixtyfive-sixtysix 65P2-652/654
+%mac sixtyfive-sixtysix 65P3-652/654
+%mac sixtyfive-sixtysix 65H-652/654
+
+%mac sixtyfive-sixtysix-slow 65F-65P2/65P1
+%mac sixtyfive-sixtysix-slow 65G-65P2/+65P3
+%mac sixtyfive-sixtysix-slow 65P1-654/652
+%mac sixtyfive-sixtysix-slow 65P2-654/652
+%mac sixtyfive-sixtysix-slow 65P3-654/652
+%mac sixtyfive-sixtysix-slow 65H-654/652
+
+%def %sixtyfive-sixtysix
+
+%def 65A-65S3/65S2
+%def 65B-65S2/65S3
+%def 65C-65S3/65S2
+%def 65D-65S3/65S2
+
+%def 65S3-65N3/65N2
+%def 65S2-65N2
+%def 65N1-7B
+%def 65N2-641/7B
+%def 65N3-641
+
+%mac test %sixtyfive-sixtysix-slow
+
+%trn len=220 v=160 n=a %test
+%trn len=220 v=200 n=1 
+%trn len=220 v=160 n=b %test
+%trn len=220 v=200 n=2 
+%trn len=220 v=160 n=c %test
+%trn len=220 v=200 n=3 
+%trn len=220 v=160 n=d %test
+%trn len=220 v=200 n=4 
+%trn len=220 v=160 n=e %test
+%trn len=220 v=200 n=5 
+%trn len=220 v=160 n=f %test
+
+# %inc layout.in

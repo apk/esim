@@ -1,0 +1,84 @@
+
+%trn len=220 v=200 n=a1 
+
+3v begin =7+14v "02t70"
+2u 800m
+<hp "70F"
+2u 200m
+2u 50m
+50m >w / 50m nw "70a" 8d
+w< 50m / 50m se "70b" 8d
+2u 50m
+hs> "70N3"
+4u 800m
+<hs "70R3"
+2u 50m
+50m >w / 50m sw "70c" 10d
+w< 50m / 50m ne "70d" 10d
+2u 50m
+hs> "70S3"
+4u 800m
+<hs "70P3"
+2u 50m
+50m >w / 50m nw "70e" 8d
+50m >w / 50m sw "70f" 13d
+w< 50m / 50m ne "70g" 8d
+2u 50m
+2u 200m
+hp> "70B"
+1u 600m
+<hp "014"
+1u 200m
+end "70t01"
+
+1u begin -2u "70t02"
+1u 200m
+hp> "701"
+1u 600m
+<hp "70G"
+2u 200m
+w< 50m / 50m se "70a" 8d
+6u 150m
+hs> "70N4"
+4u 800m
+<hs "70R4"
+6u 150m
+50m >w / 50m sw "70d" 10d
+hs> "70S4"
+4u 800m
+<hs "70P4"
+w< 50m / 50m se "70e" 8d
+6u 150m
+50m >w / 50m sw "70g" 8d
+2u 200m
+hp> "70A"
+2u 800m
+end "01t70"
+
+11v begin +4u "69c70"
+2u 1000m
+<hp "70H"
+2u 200m
+2u 50m
+50m >w / 50m nw "70b" 8d
+hs> "70N2"
+4u 800m
+<hs "70R2"
+w< 50m / 50m ne "70c" 10d
+2u 50m
+w< 50m / 50m se "70h" 8d
+2u 50m
+hs> "70S2"
+4u 800m
+<hs "70P2"
+2u 50m
+50m >w ne / 50m sw "70i" 8d
+end "70f"
+
+25u begin +1u "70h" se
+~ 50m e
+hs> "70N1"
+4u 800m
+<hs "70P1"
+~ 50m ne
+end "70i"

@@ -1,0 +1,656 @@
+1u begin 3u
+1u 800m
+<hp "A"
+2u 200m
+1u 25m
+1u 25m ne
+end "entry"
+
+30u begin 3u "57t22"
+1u 800m
+<hp "101"
+1u 200m
+1u 800m
+<hp "101"
+1u 200m
+1u 800m
+<hp "101"
+1u 200m
+1u 800m
+<hp "101"
+1u 200m
+1u 800m
+<hp "101"
+1u 200m
+end "22t57"
+
+1u begin 1u "55t54"
+1u 800m
+<hp "401"
+2u 200m
+2u 50m
+50m >w / 50m sw "entry"
+2u 800m
+<hp "403"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 800m
+1u 200m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+end "54t55"
+
+1u begin =8u "54t55"
+2u 800m
+<hp "553"
+1u 200m
+1u 800m
+<hp "555"
+1u 200m
+1u 800m
+<hp "55A"
+2u 200m
+w< 50m / 50m ne "55a"
+4u 100m
+50m >w / 50m nw "55b"
+w< 50m / 50m se "55c"
+2u 50m
+hs> "55P2"
+7v 800m
+<hs "55N2"
+2u 50m
+50m >w / 50m sw "55e"
+50m >w / 50m nw "55g"
+w< 50m / 50m ne "55h"
+2u 50m
+2u 200m
+hp> "55G"
+1u 600m
+<hp "561"
+1u 200m
+1u 800m
+<hp "563"
+1u 200m
+1u 800m
+<hp "565"
+1u 200m
+end "55t56"
+
+1v begin -2u "55t54"
+1u 200m
+hp> "552"
+1u 800m
+1u 200m
+hp> "554"
+1u 800m
+1u 200m
+hp> "556"
+1u 600m
+<hp "55B"
+2u 200m
+2u 50m
+50m >w / 50m sw "55a"
+w< 50m / 50m se "55b"
+w< 50m / 50m ne "55d"
+2u 50m
+hs> "55P3"
+7v 800m
+<hs "55N3"
+2u 50m
+50m >w / 50m nw "55f"
+w< 50m / 50m se "55g"
+4u 100m
+50m >w / 50m sw "55h"
+2u 200m
+hp> "55F"
+1u 800m
+1u 200m
+hp> "562"
+1u 800m
+1u 200m
+hp> "564"
+2u 800m
+end "56t55"
+
+37v begin -1u "55d" ne
+1u 25m
+1u 25m e
+hs> "55P4"
+7v 800m
+<hs "55N4"
+1u 25m
+1u 25m se
+end "55f"
+
+41v begin +4u "55c" se
+1u 25m
+1u 25m e
+hs> "55P1"
+7v 800m
+<hs "55N1"
+1u 25m
+1u 25m ne
+end "55e"
+
+%mac fiftyfive-fiftysix 55A-55N2/55N1/55N4/55N3 
+%mac fiftyfive-fiftysix 55B-55N3/55N2/55N1/55N4 
+%mac fiftyfive-fiftysix 55N1-561
+%mac fiftyfive-fiftysix 55N2-561
+%mac fiftyfive-fiftysix 55N3-561
+%mac fiftyfive-fiftysix 55N4-561
+
+%mac fiftyfive-fiftyfour 55F-55P3/55P4/55P1/55P2
+%mac fiftyfive-fiftyfour 55G-55P2/55P3/55P4/55P1
+%mac fiftyfive-fiftyfour 55P1-556
+%mac fiftyfive-fiftyfour 55P2-556
+%mac fiftyfive-fiftyfour 55P3-556
+%mac fiftyfive-fiftyfour 55P4-556
+
+%def %fiftyfive-fiftysix
+%def %fiftyfive-fiftyfour
+
+%exc 55N1 55N2 55N3 55N4
+%exc 55P1 55P2 55P3 55P4
+
+### FIFTYSIX
+
+1u begin =15u "55t56"
+2u 800m
+<hp "56A"
+2u 200m
+w< 50m / 50m ne "56a"
+2u 50m
+se
+w< 50m / 50m e "56b" 10d
+2u 50m e
+hs> "56P3"
+4u 800m
+<hs "56S3"
+8u 200m
+hs> "56R3"
+4u 800m
+<hs "56N3"
+3u 75m
+ne
+50m >w / 50m w "56c" 10d
+2u 200m e
+hp> "56G"
+1u 675m
+<hp "571"
+1u 200m
+1u 800m
+<hp "573"
+1u 200m
+1u 800m
+<hp "575"
+1u 200m
+end "56t57"
+
+1v begin -2u "56t55"
+1u 200m
+hp> "566"
+1u 600m
+<hp "56B"
+2u 200m
+2u 50m
+50m >w / 50m sw "56a"
+w< 50m / 50m ne "56d"
+2u 50m
+hs> "56P1"
+4u 800m
+<hs "56S1"
+2u 50m
+50m >w / 50m nw "56e"
+w< 50m / 50m se "56f"
+2u 50m
+hs> "56R1"
+4u 800m
+<hs "56N1"
+2u 50m
+50m >w / 50m sw "56g"
+1u 25m
+2u 200m
+hp> "56F"
+1u 800m
+1u 200m
+hp> "572"
+1u 800m
+1u 200m
+hp> "574"
+2u 800m
+end "57t56"
+
+23v begin -1u "56d" ne
+1u 25m
+1u 25m e
+hs> "56P4"
+4u 800m
+<hs "56S4"
+1u 25m
+1u 25m se
+end "56e"
+
+23v begin +4u "56b" ne
+1u 25m
+1u 25m e
+hs> "56P2"
+4u 800m
+<hs "56S2"
+6u 150m
+50m >w / 50m nw "56f"
+hs> "56R2"
+4u 800m
+<hs "56N2"
+w< 50m / 50m ne "56g"
+1u 25m se
+end "56c"
+
+%mac fiftysix-fiftyseven 56A-56S3/56S2/56S4
+%mac fiftysix-fiftyseven 56B-56S4
+%mac fiftysix-fiftyseven 56S1-56N2
+%mac fiftysix-fiftyseven 56S2-56N2
+%mac fiftysix-fiftyseven 56S3-56N3
+%mac fiftysix-fiftyseven 56S4-56N2
+%mac fiftysix-fiftyseven 56N1-57C
+%mac fiftysix-fiftyseven 56N2-571/57C
+%mac fiftysix-fiftyseven 56N3-571
+
+%mac fiftysix-fiftyfive 56F-56R1/56R2
+%mac fiftysix-fiftyfive 56G-56R2
+%mac fiftysix-fiftyfive 56R1-56P1/56P4
+%mac fiftysix-fiftyfive 56R2-56P1/56P4
+%mac fiftysix-fiftyfive 56R3-56P3
+%mac fiftysix-fiftyfive 56P1-566/55G
+%mac fiftysix-fiftyfive 56P2-55G
+%mac fiftysix-fiftyfive 56P3-55G
+%mac fiftysix-fiftyfive 56P4-566/55G
+
+%def %fiftysix-fiftyseven
+%def %fiftysix-fiftyfive
+
+### FIFTYSEVEN
+
+1u begin =29u "56t57"
+2u 800m
+<hp "57A"
+2u 200m
+w< 50m / 50m ne "57a"
+6u 150m
+hs> "57P1"
+4u 800m
+<hs "57N1"
+3u 75m
+2u 50m ne
+1u 50m e
+50m >w / 50m nw "57b" 13d
+1u 25m
+2u 200m
+hp> "57H"
+1u 800m
+<hp "581"
+1u 200m
+3v 800m
+<hp "581a"
+1u 200m
+3v 800m
+<hp "581b"
+1u 200m
+3v 800m
+<hp "581c"
+1u 200m
+3v 800m
+<hp "585"
+1u 200m
+3v 400m
+end "57t58"
+
+1u begin -2u "22t57"
+2u 800m
+<hp "57B"
+2u 200m
+2u 50m
+50m >w / 50m sw "57a"
+w< 50m / 50m ne "57c"
+2u 50m
+hs> "57P2"
+4u 800m
+<hs "57N2"
+2u 50m
+ne
+50m >w / 50m w "57d"
+e
+w< 50m / 50m se "57b" 13d
+50m >w / 50m nw "57e" 10d
+1u 25m
+2u 200m
+hp> "57G"
+1u 800m
+<hp "583"
+1u 200m
+hp> "584"
+1u 800m
+<hp "583a"
+1u 200m
+hp> "584a"
+1u 800m
+<hp "583b"
+1u 200m
+hp> "584b"
+1u 800m
+<hp "583c"
+1u 200m
+hp> "584c"
+1u 800m
+<hp "587"
+1u 200m
+hp> "588"
+1u 400m
+end "57c58"
+
+1v begin -2u "57t22"
+1u 200m
+hp> "269"
+1u 600m
+<hp "57D"
+2u 200m
+2u 50m
+50m >w / 50m nw "57f"
+ne
+w< 50m / 50m e "57g"
+2u 50m e
+hs> "57P4"
+4u 800m
+<hs "57N4"
+2u 50m
+50m >w / 50m sw "57h"
+w< 50m / 50m se "57e" 10d
+1u 25m ne
+end "57i"
+
+1v begin -2u "57t56"
+1u 200m
+hp> "576"
+1u 600m
+<hp "57C"
+2u 200m
+w< 50m / 50m se "57f"
+1u 25m
+2u 50m ne
+3u 75m e
+hs> "57P5"
+4u 800m
+<hs "57N5"
+7u 175m
+se
+50m >w / 50m w "57i" 16d
+2u 200m e
+hp> "57F"
+3v 800m
+1u 200m
+hp> "582"
+3v 800m
+1u 200m
+hp> "582a"
+3v 800m
+1u 200m
+hp> "582c"
+3v 800m
+1u 200m
+hp> "582c"
+3v 800m
+1u 200m
+hp> "586"
+3v 400m
+end "58t57"
+
+23v begin +3u "57c" ne
+50m >w e / 50m nw "57g"
+hs> "57P3"
+4u 800m
+<hs "57N3"
+w< 50m se / 50m ne "57h"
+end "57d"
+
+%mac fiftyseven-fiftyeight 57A-57N1/57N2/57N3
+%mac fiftyseven-fiftyeight 57B-57N2/57N3
+%mac fiftyseven-fiftyeight 57C-57N3/57N4
+%mac fiftyseven-fiftyeight 57C-57N3/57N4
+%mac fiftyseven-fiftyeight 57N1-581
+%mac fiftyseven-fiftyeight 57N2-583/+581
+%mac fiftyseven-fiftyeight 57N3-581/+583
+%mac fiftyseven-fiftyeight 57N4-583
+%mac fiftyseven-fiftyeight 57N5-58C
+
+%mac fiftyseven-fiftysix 57F-57P5/57P4/57P3
+%mac fiftyseven-fiftysix 57G-57P4/57P3
+%mac fiftyseven-fiftysix 57H-57P3
+%mac fiftyseven-fiftysix 57P1-56G
+%mac fiftyseven-fiftysix 57P2-56G
+%mac fiftyseven-fiftysix 57P3-576
+%mac fiftyseven-fiftysix 57P4-576
+%mac fiftyseven-fiftysix 57P5-576
+
+%mac fiftyseven-twentytwo 59F-598/+596
+%mac fiftyseven-twentytwo 57F-57P4/57P3
+%mac fiftyseven-twentytwo 57G-57P4/57P3
+%mac fiftyseven-twentytwo 57H-57P3
+%mac fiftyseven-twentytwo 57P2-24G
+%mac fiftyseven-twentytwo 57P3-269
+%mac fiftyseven-twentytwo 57P4-269
+
+%def %fiftyseven-fiftyeight
+%def %fiftyseven-fiftysix
+
+### FIFTYEIGHT
+
+1v begin =36u "57t58"
+1u 400m
+<hp "58A"
+2u 200m
+2u 50m
+50m >w / 50m nw "58a" 8d
+se
+w< 50m / 50m e "58b"
+2u 50m e
+hs> "58P1"
+3u 800m
+<hs "58N1"
+2u 50m
+ne
+50m >w / 50m w "58c"
+e
+w< 50m / 50m ne "58d" 8d
+2u 50m
+2u 200m
+hp> "58H"
+1u 800m
+<hp "591"
+1u 200m
+3v 800m
+<hp "591a"
+1u 200m
+3v 800m
+<hp "59A"
+1u 200m
+w< 50m se / 50m ne "59a" 20d
+3v 50m e
+<hp "595"
+1u 200m
+hp> "59I"
+1u 800m
+<hp "595a"
+1u 200m
+1u 800m
+<hp "595b"
+1u 200m
+1u 200m ne
+5u 200m n
+1u 200m nw
+1u 200m w
+<hp "595b"
+1u 200m
+1u 800m
+<hp "595c"
+1u 200m
+1u 800m
+<hp "59F"
+1u 25m
+1u 25m sw
+end "59d"
+
+1v begin -2u "57c58"
+1u 400m
+<hp "58B"
+2u 200m
+w< 50m / 50m se "58a" 8d
+50m >w / 50m nw "58e" 8d
+w< 50m / 50m se "58f"
+2u 50m
+hs> "58P3"
+3u 800m
+<hs "58N3"
+2u 50m
+50m >w / 50m sw "58g"
+w< 50m / 50m ne "58h" 8d
+50m >w / 50m sw "58d" 8d
+2u 200m
+hp> "58G"
+1u 800m
+<hp "593"
+1u 200m
+hp> "594"
+1u 800m
+<hp "593a"
+1u 200m
+hp> "598"
+1u 800m
+<hp "29B"
+1u 200m
+w< 50m / 50m ne "59b" 20d
+se
+50m >w e / 50m w "59a" 20d
+1u 200m
+hp> "59H"
+1u 800m
+<hp "597"
+1u 200m
+1u 800m
+<hp "597a"
+1u 200m ne
+1u 400m n
+1u 400m nw
+w
+<hp "597b"
+1u 200m
+1u 800m
+<hp "597c"
+1u 200m
+1u 800m
+<hp "59G"
+w< 50m / 50m sw "59b" 20d
+end "59c"
+
+1v begin -2u "58t57"
+1u 400m
+<hp "58C"
+2u 200m
+w< 50m / 50m se "58e" 8d
+6u 150m
+hs> "58P4"
+3u 800m
+<hs "58N4"
+6u 150m
+50m >w / 50m sw "58h" 8d
+2u 200m
+hp> "58F"
+3v 800m
+1u 200m
+hp> "592"
+3v 800m
+1u 200m
+hp> "596"
+1u 800m
+<hp "59C"
+1u 200m
+w< 50m / 50m ne "59d" 20d
+end "59c"
+
+10u begin +3u "58f" se
+50m >w e / 50m sw "58b"
+hs> "58P2"
+3u 800m
+<hs "58N2"
+w< 50m ne / 50m se "58c"
+end "58g"
+
+%mac fiftyeight-fiftynine 58A-58N1/58N2
+%mac fiftyeight-fiftynine 58B-58N3/58N2/58N1
+%mac fiftyeight-fiftynine 58C-58N3/+58N2
+%mac fiftyeight-fiftynine 58N1-591/593
+%mac fiftyeight-fiftynine 58N2-591/+593
+%mac fiftyeight-fiftynine 58N3-593
+%mac fiftyeight-fiftynine 58N4-59C
+
+%mac fiftyeight-fiftyseven 58F-58P4/58P3/58P2
+%mac fiftyeight-fiftyseven 58G-58P3/58P2
+%mac fiftyeight-fiftyseven 58H-58P2
+%mac fiftyeight-fiftyseven 58P1-588
+%mac fiftyeight-fiftyseven 58P2-588/586
+%mac fiftyeight-fiftyseven 58P3-588/586
+%mac fiftyeight-fiftyseven 58P4-586
+
+%def %fiftyeight-fiftynine
+%def %fiftyeight-fiftyseven
+
+%exc 58N2 58N3
+%exc 58P2 58P3
+
+%def 59G-595/+597
+
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=b %fiftyseven-twentytwo
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=b %fiftyseven-twentytwo
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=b %fiftyseven-twentytwo
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=b %fiftyseven-twentytwo
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=a 

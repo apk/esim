@@ -1,0 +1,113 @@
+
+%trn len=220 v=200 n=1 
+%trn len=220 v=200 n=2 
+%trn len=220 v=200 n=3 
+%trn len=220 v=200 n=4 
+%trn len=220 v=200 n=5 
+%trn len=220 v=200 n=6 
+# %trn len=220 v=200 n=7 
+# %trn len=220 v=200 n=8 
+
+1u begin =10u
+2u 1000m
+<hp "A"
+1u 200m
+hp> "83G"
+1u 1000m
+end "83c88"
+
+26u begin -9u "88c89" w
+2u 1000m
+<hp "89A"
+3v 200m
+w< 50m / 50m sw "89a" 10d
+2u 50m
+hs> "89P1"
+3u 800m
+<hs "89S1"
+w< 50m / 50m sw "89b"
+6u 150m
+50m >w / 50m se "89c"
+hs> "89R1"
+3u 800m
+<end "89N1"
+
+20u begin +1u "89a" sw
+1u 25m
+1u 25m w
+hs> "89P2"
+3u 800m
+<hs "89S2"
+2u 50m
+50m >w / 50m ne "89b"
+w< 50m / 50m sw "89d"
+w< 50m / 50m nw "89c"
+2u 50m
+hs> "89R2"
+3u 800m
+<end "89N2"
+
+8u begin +2u sw "89d"
+w< 50m / 50m w "89e"
+1u 25m
+1u 25m w
+hs> "89R4"
+3u 800m
+<end "89N4"
+
+6u begin +1u w "89e"
+2u 50m
+hs> "89R3"
+3u 800m
+<end "89N3"
+
+%def 89A-89S1/+89S2
+%def 89S1-89N1/89N2/89N3/89N4
+%def 89S2-89N2/89N1/89N3/89N4
+%def 89R1-89P1/89P2
+%def 89R2-89P1/89P2
+%def 89R3-89P1/89P2
+%def 89R4-89P1/89P2
+%def 89P1-88F
+%def 89P2-88F
+
+%quo1 89A 89S1 89S2
+%quo1 89P1 89P2
+
+25u begin +1u "88c89"
+2u 1000m
+<hp "88F"
+3v 200m
+w< 50m / 50m ne "88a"
+2u 50m
+hs> "88N1"
+7v 800m
+<hs "88P1"
+2u 50m
+50m >w / 50m nw "88b"
+3v 200m
+hp> "88A"
+2u 1000m
+end "83c88"
+
+31u begin -1u "88a" ne
+1u 25m
+1u 25m e
+hs> "88N2"
+7v 800m
+<hs "88P2"
+1u 25m
+1u 25m se
+end "88b"
+
+%def 88A-88N1/88N2
+%def 88N1-89A
+%def 88N2-89A
+
+%def 88F-88P1/88P2
+%def 88P1-83G
+%def 88P2-83G
+
+%quo1 88A 88N1 88N2
+%quo1 88F 88P1 88P2
+

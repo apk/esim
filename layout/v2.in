@@ -1,0 +1,45 @@
+%inc layout.in
+%inc glob.in
+
+# Little trick to let detour to 6H only apply the first time
+%mac outlet-tour 5N1-6H,5S2-5N2/5N1-12
+%mac outlet %outlet-tour
+
+# %trn len=120 3R3-3P2/3P3,3P2-2G-2P1/2P2,2P1-G,2P2-G/F,G-P1/P2/P3,P1-4G/99,P2-4G/99,P3-4G/99,4G-4R4/4R3,4R4-4P4/4P5/4P6/4P3,4R3-4P4,4P2,4P1
+
+# %trn len=450 v=100 n=freight %outlet
+# %trn len=500 v=100 n=frgt5 %four-five
+# %trn len=550 v=100 n=freight %outlet
+# %trn len=600 v=100 n=frgt5 %four-five
+# %trn len=650 v=100 n=freight %outlet
+# %trn len=700 v=100 n=frgt5 %four-five
+# %trn len=750 v=100 n=freight %outlet
+
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=228 v=200 n=ir5 %four-five
+
+## Test additions in trains below
+# %trn len=60 n=left-tour %five-six,%six-five,5R3-5P3
+# %trn len=60 %five-six,%six-five,5R3-5P3
+
+# Tests:
+# %trn len=97 v=120 n=local %local
+# %trn len=97 v=120 n=local %local
+# %trn len=97 v=120 n=local %local
+%trn len=97 v=120 n=local %local
+%trn len=97 v=120 n=local %local
+%trn len=97 v=120 n=local %local
+%trn len=97 v=120 n=local %local
+# %trn len=97 v=120 n=local-l %left-turn-four,%four-six,%six-five
+# %trn len=97 v=120 n=local-r %five-six,%left-turn-four,%four-five
+
+# %trn len=124 v=140 n=b-line %four-eight,%one-two,%two-one
+
+# %trn len=124 v=160 n=3turn 3A-3S2/3S1/3S0,3S2-$
+

@@ -1,0 +1,871 @@
+# Testfile fuer gp.c
+#
+#
+
+### ZERO
+
+%mac zero-two A-N1/S3/N2
+%mac zero-two B-N1/N2/S3
+%mac zero-two N2-41
+%mac zero-two N3-41
+
+%mac zero-four F-P2/P3
+%mac zero-four G-P2/P3
+%mac zero-four H-P4/P3
+
+%mac zero-one A-N4/S3,S3-21,B-N4/S3
+%mac mostly-zero-one A-N4/S3/N2/N1,S3-21,B-N4/S3
+
+%def %zero-two
+%def %zero-four
+
+### ONE
+
+%mac one-zero 1A-84/82
+%mac one-zero 1B-82/84
+%mac one-zero 1C-1N2/1N1
+%mac one-zero 1D-1N3/1N2/1N1
+
+%mac one-four 1F-1P2/1P1/1P3
+%mac one-four 1P1-81/1H
+%mac one-four 1P2-81/1H
+%mac one-four 1G-22
+%mac one-four 1H-22/2C
+
+%mac one-two 1F-1P3/1P2/1P1
+%mac one-two 1P1-81/1H
+%mac one-two 1P2-81/1H
+%mac one-two 1G-2C
+%mac one-two 1H-2C/22
+
+%def %one-zero
+%def %one-four
+
+### TWO
+
+%mac two-three 2A-2N1/2N3
+%mac two-three 2B-2N2/2N3
+%mac two-three 2N2-31
+%mac two-three 2N3-31
+%mac two-three 2C-2N2/2N3
+
+%mac two-zero 2F-2P2/2P3
+%mac two-zero 2G-2P2/2P3
+%mac two-zero 2P3-44
+
+%mac two-one 2F-2P2/2P3
+%mac two-one 2G-2P2/2P3
+%mac two-one 2P3-1B
+%mac two-one 2P2-1B
+
+%def %two-three
+%def %two-zero
+
+### THREE
+
+%mac three-two 3A-3S1/3S0/3S2
+%mac three-two 3R3-3P3/3P2
+%mac three-two 3P2-32
+
+%def %three-two
+
+### FOUR
+
+%mac four-zero 4A-4S24/4S34/4S3/4S2
+%mac four-zero 4B-4S34/4S24/4S3/4S2
+%mac four-zero 4C-4S34/4S3/4S2
+%mac four-zero 4D-4S34/4S3/4S2
+%mac four-zero 4N3-98/B
+%mac four-zero 4N4-98/B
+%mac four-zero 4N5-4N4
+%mac four-zero 4N6-4N4
+%mac four-zero 4S2-4N3
+%mac four-zero 4S24-4S34/4N5/4N6
+%mac four-zero 4S3-4N4/4N3
+%mac four-zero 4S4-4N4/4N3
+
+%mac four-six 4F-4R3
+%mac four-six 4G-4R3
+%mac four-six 4H-4P5/4P6
+%mac four-six 4P1-0
+%mac four-six 4P2-0
+%mac four-six 4P3-0
+%mac four-six 4P4-0
+%mac four-six 4P5-0
+%mac four-six 4P6-0
+%mac four-six 4R3-4R13/4P2/4P1/4P4
+%mac four-six 4R4-4R13/4P4/4P6
+
+%def %four-six
+%def %four-zero
+
+%mac four-five 4F-4R3
+%mac four-five 4G-4R3
+%mac four-five 4R3-4P1/4P2/4R13
+%mac four-five 4R3-4P1/4P2/4R13
+%mac four-five 4P1-11
+%mac four-five 4P2-11
+%mac four-five 4P3-11
+
+%mac four-one 4S24-4N5/4N6
+%mac four-one 4N5-1F
+%mac four-one 4N6-1F/4N4
+
+%mac left-four-zero 4S3-4N3/4N4
+%mac left-four-zero 4N3-B/98
+
+%mac left-turn-four 4A-4S1/4S2/4S3
+%mac left-turn-four 4B-4S1/4S2/4S3
+%mac left-turn-four 4C-4S3/4S2/4S1
+%mac left-turn-four 4D-4S3/4S2/4S1
+%mac left-turn-four 4S1-$
+%mac left-turn-four 4S2-$
+%mac left-turn-four 4S3-$
+
+### FIVE
+
+%mac five-four 5S2-5N2/5N1/5N3
+%mac five-four 5N1-12
+%mac five-four 5N3-12/4D
+
+%mac five-five 5F-5R3
+%mac five-five 5G-5R3
+%mac five-five 5H-5R3
+%mac five-five 5P2-51
+
+### Test group
+%def 5R3-5P3/5P2/$
+%def 5P2-51/$
+
+%def %five-four
+%def %five-five
+
+%mac five-six 5S2-5N1/5N2
+%mac five-six 5N1-6H
+%mac five-six 5N2-6H
+
+### SIX
+
+%mac six-four 6A-6S12/6S1
+%mac six-four 6B-6S12
+%mac six-four 6S12-6S2/6N3
+%mac six-four 6S2-6N2/6N1
+%mac six-four 6N3-9
+%mac six-four 6N4-9
+
+%mac six-six 6F-6R3/6R4
+%mac six-six 6G-6R3/6R4
+%mac six-six 6H-6R4/6R3
+%mac six-six 6P3-8
+%mac six-six 6P2-8
+%mac six-six 6R1-6P2
+
+%def %six-four
+%def %six-six
+
+%mac six-five 6A-6S12
+%mac six-five 6S12-6N4/6S2
+%mac six-five 6S2-6N2-5H
+%mac six-five 6N1-5H
+%mac six-five 6N3-5H
+%mac six-five 6N4-5H
+
+### OTHER
+
+# Little trick to let detour to 6H only apply the first time
+%mac outlet-tour 5N1-6H,5S2-5N2/5N1-12
+%mac outlet %outlet-tour
+
+# %trn len=120 3R3-3P2/3P3,3P2-2G-2P1/2P2,2P1-G,2P2-G/F,G-P1/P2/P3,P1-4G/99,P2-4G/99,P3-4G/99,4G-4R4/4R3,4R4-4P4/4P5/4P6/4P3,4R3-4P4,4P2,4P1
+
+# %trn len=450 v=100 n=freight %outlet
+# %trn len=500 v=100 n=frgt5 %four-five
+# %trn len=550 v=100 n=freight %outlet
+# %trn len=600 v=100 n=frgt5 %four-five
+# %trn len=650 v=100 n=freight %outlet
+# %trn len=700 v=100 n=frgt5 %four-five
+# %trn len=750 v=100 n=freight %outlet
+
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-one,%left-four-zero,%two-one
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-one,%left-four-zero,%two-one
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir1 %outlet
+# %trn len=228 v=200 n=ir5 %four-five
+
+## Test additions in trains below
+# %trn len=60 n=left-tour %five-six,%six-five,5R3-5P3
+# %trn len=60 %five-six,%six-five,5R3-5P3
+
+# Tests:
+# %trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+# %trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+# %trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+%trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+%trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+%trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+%trn len=97 v=120 n=local %left-turn-four,%four-six,6F-6R1/6R3/6R2/6R4,6R3-$,6R4-$,6R2-$,6R1-$,%left-turn-four,%four-five
+# %trn len=97 v=120 n=local-l %left-turn-four,%four-six,%six-five
+# %trn len=97 v=120 n=local-r %five-six,%left-turn-four,%four-five
+
+# %trn len=124 v=140 n=b-line %four-one,%one-two,%two-one
+
+# %trn len=124 v=160 n=3turn 3A-3S2/3S1/3S0,3S2-$
+
+# Current real set:
+#  %trn len=300 2N3-3B-3S2,4S24-4N5/4S34,4N5-1F/4N4,2A-2N3
+#  %trn len=400 A-S3-21,1A-1N2/1X3
+#  %trn len=90 4G-4R3,4A-4S2/4S3/4S24,4S3-4N4/4N3,4N3-B/98,B-N4/S3,1A-1X3
+#  %trn len=400 A-S3-21,1A-1N2/1X3
+#  %trn len=150 4S24-4N5/4S34,4N5-1F/4N4,2A-2N3
+#  %trn len=750 4G-4R3,4R3-4P1-4P11,4C-4S2/4S3,4N3-98,4S3-4N4
+#  %trn len=750 4G-4R3,4R3-4P1-4P11,4C-4S34
+#  %trn len=750 4G-4R3,4R3-4P1/4P2,4P1-11,4P2-11,4C-4S34
+#  %trn len=750 4G-4R3,4A-4S2/4S3/4S24,4N3-98,4S3-4N4
+ 
+# %trn len=600 4N3-B/A,B-N2/S3,N2-41,S3-N3-2B
+# %trn len=600 4N3-B/A,B-N2/S3,N2-41,S3-N3-2B
+# %trn len=600 4N3-B/A,B-N2/S3,N2-41,S3-N3-2B
+# %trn len=600 4N3-B/A,B-N2/S3,N2-41,S3-N3-2B
+# %trn len=600 4N3-B/A,B-N2/S3,N2-41,S3-N3-2B
+# %trn len=750 B-N2-41
+# %trn len=750 B-N2-41
+# %trn len=750 B-N2-41
+# %trn len=750 B-N2-41
+# %trn len=750 B-N2-41
+# %trn len=750 B-N2-41
+
+18u begin 5u
+4u 900m
+<hp "5C"
+1u 50m
+50m >w / 50m "5C" nw
+hs> "5R1"
+4u 800m
+<hs "5N1"
+w< 50m / 50m "5D" ne
+6u 150m
+50m >w / 50m "5E" nw
+200m 2u
+hp> "5H"
+600m 2u
+100m 1u se
+100m 1u s
+100m 1u sw
+600m 2u w
+<hp "6H"
+200m 2u
+w< 50m / 50m sw "6C"
+6u 150m
+50m >w / 50m se "6B" 8d
+hs> "6N4"
+4u 800m
+<hs "6R4"
+3u 150m
+end "6a"
+
+47u begin 10u "nA" w
+2u 800m
+<hp "6F"
+2u 200m
+2u 50m
+50m >w / 50m se "6G"
+50m >w / 50m ne "6C"
+w< 50m / 50m sw "6F"
+w< 50m / 50m nw "6B" 8d
+2u 50m
+hs> "6N3"
+4u 800m
+<hs "6R3"
+4u 200m
+100m >w / 100m ne "6A" 10d
+w< 100m / 100m sw "6D" 10d
+3u 200m
+hs> "6S3"
+7v 400m
+<hs "6P3"
+3u 300m
+50m >w / 50m se "6X"
+2u 200m
+hp> "6B"
+1u 500m
+<hp "8"
+1u 200m
+end "xA"
+
+43v begin 9u "6A"
+1u 50m ne
+end "6a"
+
+0u begin 12u "yA"
+2u 800m
+<hp "6A"
+5v 300m
+w< 50m / 50m se "6Y" 8d
+50m >w / 50m nw "6X"
+1u 200m
+hs> "6P2"
+5v 300m
+<hs "6S12"
+2u 200m
+w< 100m / 100m ne "6D" 10d
+3v 100m
+<hs "6S2"
+w< 50m / 50m se "6H"
+2u 50m
+hs> "6R2"
+4u 800m
+<hs "6N2"
+2u 50m
+50m >w / 50m sw "6I"
+w< 50m / 50m ne "6F"
+4u 100m
+50m >w / 50m sw "6J" 8d
+50m >w / 50m nw "6G"
+2u 200m
+hp> "6G"
+1u 700m
+<hp "9"
+1u 200m
+end "vA"
+
+7u begin 13u "6Y" se
+1u 25m
+2u 125m e
+hs> "6P1"
+17v 800m
+<hs "6S1"
+2u 50m
+50m >w / 50m nw "6H"
+hs> "6R1"
+4u 800m
+<hs "6N1"
+w< 50m / 50m ne "6I"
+7u 175m
+1u 25m ne
+end "6J"
+
+45u begin 1u "nB" w
+2u 800m
+<hp "5F"
+2u 200m
+6u 150m
+50m >w / 50m se "5B"
+2u 50m
+hs> "5N3"
+4u 800m
+<hs "5R3"
+2u 50m
+w< 50m / 50m sw "5A"
+3u 150m
+hs> "5S3"
+3u 800m
+<hs "5P3"
+3u 200m
+50m >w / 50m se "5X"
+2u 200m
+hp> "5B"
+3v 750m 
+<hp "51"
+1u 200m
+3v 800m
+<hp "52"
+1u 200m
+1u 200m sw
+1u 200m s
+1u 200m se
+1u 200m e
+<hp "53"
+1u 200m ne
+1u 800m e
+<hp "54"
+1u 200m
+1u 800m
+<hp "5A"
+2u 200m
+2u 100m
+50m >w / 50m nw "5X"
+hs> "5P2"
+3u 800m
+<hs "5S2"
+2u 200m
+w< 50m / 50m ne "5A"
+w< 50m / 50m se "5C"
+2u 50m
+hs> "5P2"
+4u 800m
+<hs "5N2"
+2u 50m
+50m >w / 50m sw "5D"
+50m >w / 50m nw "5B"
+w< 50m / 50m se "5E"
+2u 50m
+2u 200m
+hp> "5G"
+1u 700m
+<hp "12"
+1u 200m
+end "vB"
+
+1v begin 85v "xO"
+3u 800m
+<hp "2C"
+2u 200m
+1v 50m se
+w< 50m e 6d / 50m "2E" 8d se
+6u 150m
+50m >w / 50m "2B" sw
+hs> "2P3"
+4u 800m
+<hs "2N3"
+w< 50m / 50m "2C" se
+ls> "123"
+4u 800m
+end
+
+0u begin 39u "nLi"
+1u 200m
+hp> "99"
+1u 50m
+<hp "B"
+3v 200m
+w< 50m / 50m 10d ne "C"
+50m >w / 50m sw "A"
+w< 50m / 50m ne "D"
+w< 50m / 50m se "B"
+2u 50m
+hs> "P2"
+7u 700m
+<hs "N2"
+2u 50m
+50m >w / 50m sw "H"
+50m >w / 50m nw "G"
+w< 50m / 50m se "I"
+2u 50m
+2u 200m
+hp> "F"
+1u 300m
+end "vRe"
+
+0u begin 41u "vLi"
+2u 250m
+<hp "A"
+2u 200m
+w< 50m / 50m ne "A"
+6u 150m
+50m >w / 50m nw "B"
+hs> "P1"
+7u 700m
+<hs "N1"
+w< 50m / 50m ne "H"
+6u 150m
+50m >w / 50m nw "I"
+2u 200m
+hp> "G"
+1u 300m
+end "nRe"
+
+13v begin 38u "C" ne
+3u 75m
+3u 75m e
+50m >w / 50m sw "E"
+hs> "P4"
+4u 500m
+<hs "N4"
+2u 50m
+50m >w / 50m sw "F"
+2u 200m
+hp> "H"
+3u 1800m
+1u 200m
+hp> "22"
+1u 200m
+<hp "21"
+1u 200m
+2u 1000m
+end "nO"
+
+21v begin 38u "D" ne
+w< 50m e / 50m ne "E"
+2u 50m
+hs> "P3"
+4u 500m
+<hs "S3"
+w< 50m / 50m ne "F"
+5v 200m
+<hs "N3"
+1u 25m
+1u 25m se
+end "G"
+
+0u begin 29u "nO"
+2u 1000m
+<hp "1A"
+2u 200m
+2u 50m
+50m >w / 50m sw "1A"
+w< 50m / 50m se "1B"
+2u 50m
+2u 200m
+hp> "1G"
+1u 1400m
+1u 200m
+hp> "81"
+3v 200m
+<hp "84"
+1u 200m
+1u 1400m
+<hp "1C"
+2u 200m
+2u 50m
+50m >w / 50m sw "1C"
+w< 50m / 50m ne "1D"
+2u 50m
+hs> "1P2"
+4u 800m
+<hs "1N2"
+2u 50m
+50m >w / 50m nw "1E"
+100m >w / 100m sw "1F" 10d
+2u 200m
+hp> "1F"
+2u 1500m
+end "Tri"
+
+30u begin 28u "1D"
+1u 25m ne
+1u 25m e
+hs> "1P1"
+4u 800m
+<hs "1N1"
+1u 25m
+1u 25m se
+end "1E"
+
+0u begin 31u "xO"
+2u 1000m
+<hp "1B"
+2u 200m
+w< 50m / 50m ne "1A"
+4u 100m
+50m >w / 50m nw "1B"
+2u 200m
+hp> "1H"
+4u 1800m
+<hp "82"
+1u 200m
+1u 1400m
+<hp "1D"
+2u 200m
+w< 50m / 50m ne "1C"
+6u 150m
+hs> "1P3"
+4u 800m
+<hs "1N3"
+3u 75m
+1u 25m ne
+end "1F"
+
+# 31v begin 29u se "1A"
+# w< 50m / 50m e "1C"
+# 1u 25m
+# 1u 25m e
+# hs> "1P3"
+# 9u 1600m
+# <hs "1X3"
+# 1u 25m ne
+# 2u 50m n
+# end "1D"
+
+# 35v begin 30u e "1C"
+# 2u 50m
+# hs> "1P2"
+# 4u 800m
+# <hs "1N2"
+# 1u 25m
+# 1u 25m ne
+# end "1B"
+
+0u begin 46u "vRe"
+2u 700m
+hp> "42"
+1u 800m
+1u 200m
+hp> "44"
+1u 600m
+<hp "2B"
+2u 200m
+50m >w / 50m "2E" nw 8d
+50m >w / 50m "2A" sw
+w< 50m / 50m "2B" ne
+2u 50m
+hs> "2P2"
+4u 800m
+<hs "2N2"
+2u 50m
+50m >w / 50m "2C" nw
+w< 50m / 50m "2D" se 8d
+4u 250m
+hp> "2F"
+2u 1000m
+end "CnR"
+
+0u begin 48u "nRe"
+1u 250m
+<hp "41"
+1u 200m
+1u 800m
+<hp "43"
+1u 200m
+1u 800m
+<hp "2A"
+2u 200m
+w< 50m / 50m "2A" ne
+6u 150m
+hs> "2P1"
+4u 800m
+<hs "2N1"
+6u 150m
+50m >w / 50m nw "2D" 8d
+2u 200m
+hp> "2G"
+1u 600m
+<hp "31"
+1u 400m
+end "RnC"
+
+0u begin 51u "CnR"
+1u 400m
+hp> "32"
+1u 600m
+<hp "3B"
+2u 200m
+w< 50m / 50m "3A" se
+4u 100m
+hs> "3P3"
+4u 800m
+<hs "3S3"
+2u 50m
+50m >w / 50m sw
+w< 50m / 50m se
+hs> "3R3"
+6u 400m
+end "3E"
+
+7v begin 53u
+3u 250m
+<ls "302"
+50m >w / 50m "3A" nw
+50m >w / 50m sw
+hs> "3P2"
+4u 800m
+<hs "3S2"
+w< 50m / 50m ne
+2u 50m
+<hs "3R2"
+3v 50m
+50m >w se / 50m nw
+end "3D"
+
+1v begin 55u "RnC"
+2u 1000m
+<hp "3A"
+2u 200m
+w< 50m / 50m se "3G"
+w< 50m / 50m ne
+2u 50m
+hs> "3P1"
+4u 800m
+<hs "3S1"
+6u 100m
+50m >w / 50m sw "3H"
+50m >w / 50m nw "3D"
+hs> "3R1"
+2u 300m
+1u 100m ne
+2u 200m n
+1u 100m nw
+end "3E"
+
+7u begin 56u se "3G"
+1u 25m
+3u 75m e
+hs> "3P0"
+4u 800m
+<hs "3S0"
+5u 125m
+1u 25m ne
+end "3H"
+
+0u begin 16u "nB"
+1u 200m
+hp> "11"
+1u 700m
+<hp "4D"
+2u 200m
+w< 50m / 50m se "4A"
+5v 50m
+hs> "4P11"
+1u 50m
+w< 50m / 50m se "4a" 601D
+6u 150m
+50m >w / 50m sw "4B"
+hs> "4P1"
+4u 800m
+<hs "4S1"
+1u 25m
+1u 25m se
+end "4C"
+
+1v begin 18u "vB"
+2u 800m
+<hp "4C"
+4u 250m
+50m >w / 50m nw "4A"
+w< 50m / 50m se "4D" 8d
+2u 50m
+50m >w / 50m nw "4a" 601D
+50m >w / 50m sw "4E"
+w< 50m / 50m ne "4B"
+2u 50m
+hs> "4P2"
+4u 800m
+<hs "4S2"
+2u 50m
+50m >w se / 50m 8d nw "4C"
+end "4F"
+
+0u begin 20u "nA"
+1u 200m
+hp> "1"
+1u 350m
+<hp "4B"
+3v 150m
+hp> "0"
+2u 200m
+50m >w / 50m sw "4G"
+w< 50m / 50m se "4H"
+50m >w / 50m nw "4D" 8d
+w< 50m / 50m ne "4E"
+w< 50m / 50m se "4J" 8d
+2u 50m
+hs> "4P3"
+1u 300m
+1u 200m
+hs> "4R13"
+3v 300m
+<hs "4S3"
+2u 50m
+50m >w / 50m sw "4K"
+w< 50m / 50m se "4M" 8d
+50m >w / 50m nw "4F" 8d
+3v 150m
+hs> "4R3"
+1u 100m
+<hs "4N3"
+2u 50m
+50m >w / 50m "4Y" sw
+w< 50m / 50m "4X" se 8d
+2u 50m
+2u 200m
+hp> "4F"
+2u 300m
+end "nLi"
+
+1v begin 22u "vA"
+2u 800m
+<hp "4A"
+2u 300m
+w< 50m / 50m ne "4G"
+4u 100m
+50m >w / 50m nw "4H"
+<hs "4S24"
+w< 50m / 50m se "4I"
+3v 50m
+50m >w / 50m nw "4J" 8d
+hs> "4P4"
+3v 400m
+<hs "4S34"
+1u 200m
+1u 200m
+<hs "4S4"
+w< 50m / 50m ne "4K"
+<hs "4S14"
+3v 50m
+50m >w / 50m sw "4L"
+50m >w / 50m nw "4M" 8d
+3v 150m
+hs> "4R4"
+1u 100m
+<hs "4N4"
+w< 50m / 50m "4Y" ne
+4u 100m
+50m >w / 50m "4X" nw 8d
+2u 200m
+hp> "4G"
+1u 50m
+<hp "98"
+1u 250m
+end "vLi"
+
+0u begin 7u "xA"
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+1u 800m
+<hp "5"
+1u 200m
+1u 800m
+<hp "6"
+1u 200m
+1u 800m
+<hp "7"
+1u 200m
+end "yA"
+
+# 11u begin 24u
+# 4u 350m
+# <ls "415"
+# 50m >w / 50m "4I" nw
+# 3v 50m
+# hs> "4P5"
+# 4u 800m
+# <hs "4N5"
+# 2u 50m
+# w< 50m / 50m "4L" ne
+# 2u 200m
+# hp> "4H"
+# 2u 1500m
+# end "Tri"
+
+31v begin 23u se "4I"
+w< 50m / 50m "4X" e
+1u 25m
+1u 25m e
+hs> "4P6"
+5v 750m
+<hs "4N6"
+1u 50m ne
+end "4Y"
+
+35v begin 24u e "4X"
+2u 50m
+hs> "4P5"
+5v 750m
+<hs "4N5"
+1u 50m
+50m >w / 50m sw "4Y"
+w< 50m / 50m "4L" ne
+3v 50m
+2u 200m
+hp> "4H"
+2u 1500m
+end "Tri"

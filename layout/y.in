@@ -1,0 +1,632 @@
+1u begin 1u
+2u 800m
+<hp "A"
+1u 200m
+end "in"
+
+9u begin 1u "xx"
+1u 200m
+hp> "56C"
+1u 1000m
+50m >w / 50m nw "in" 20d
+50m >w / 50m sw "xx" 20d
+1u 200m
+end "56c99"
+
+20u begin 1u "yy"
+1u 200m
+hp> "25H"
+1u 1000m
+50m >w / 50m sw "yy" 20d
+1u 200m
+end "25c97"
+
+29u begin 1u "zz"
+1u 200m
+hp> "34H"
+1u 1000m
+50m >w / 50m sw "zz" 20d
+1u 200m
+end "34c95"
+
+1u begin =4u "56c99"
+2u 1000m
+<hp "99F"
+2u 200m
+w< 50m / 50m se "99a" 8d
+2u 50m
+hs> "99N1"
+4u 800m
+<hs "99P1"
+2u 50m
+50m >w / 50m sw "99b" 8d
+2u 200m
+hp> "99A"
+1u 1000m
+1u 1000m
+<hp "992"
+1u 200m
+hp> "991"
+1u 1000m
+1u 1000m
+<hp "98F"
+2u 200m
+w< 50m / 50m se "98a" 8d
+2u 50m
+hs> "98N1"
+4u 800m
+<hs "98P1"
+2u 50m
+50m >w / 50m sw "98b" 8d
+2u 200m
+hp> "98A"
+2u 1000m
+end "95c98"
+
+15v begin +1u "99a" se
+1u 25m
+1u 25m e
+hs> "99N2"
+4u 800m
+<hs "99P2"
+1u 25m
+1u 25m ne
+end "99b"
+
+63v begin +0u "98a" se
+1u 25m
+1u 25m e
+hs> "98N2"
+4u 800m
+<hs "98P2"
+1u 25m
+1u 25m ne
+end "98b"
+
+%def 99A-99N1/99N2
+%def 99N1-56C
+%def 99N2-56C
+%def 99F-99P1/99P2
+%def 99P1-992
+%def 99P2-992
+
+%quo1 991 99A 99N1 99N2
+%quo1 99F 99P1 99P2
+
+%def 98A-98N1/98N2
+%def 98N1-991
+%def 98N2-991
+%def 98F-98P1/98P2
+%def 98P1-95F
+%def 98P2-95F
+
+%quo1 98A 98N1 98N2
+%quo1 992 98F 98P1 98P2
+
+1u begin =9u "25c97"
+2u 1000m
+<hp "97F"
+2u 200m
+w< 50m / 50m se "97a" 8d
+2u 50m
+hs> "97N1"
+4u 800m
+<hs "97P1"
+2u 50m
+50m >w / 50m sw "97b" 8d
+2u 200m
+hp> "97A"
+1u 1000m
+1u 1000m
+<hp "972"
+1u 200m
+hp> "971"
+1u 1000m
+1u 1000m
+<hp "96F"
+2u 200m
+w< 50m / 50m se "96a" 8d
+2u 50m
+hs> "96N1"
+4u 800m
+<hs "96P1"
+2u 50m
+50m >w / 50m sw "96b" 8d
+2u 200m
+hp> "96A"
+2u 1000m
+end "95c96"
+
+15v begin +1u "97a" se
+1u 25m
+1u 25m e
+hs> "97N2"
+4u 800m
+<hs "97P2"
+1u 25m
+1u 25m ne
+end "97b"
+
+63v begin +0u "96a" se
+1u 25m
+1u 25m e
+hs> "96N2"
+4u 800m
+<hs "96P2"
+1u 25m
+1u 25m ne
+end "96b"
+
+%def 97A-97N1/97N2
+%def 97N1-25H
+%def 97N2-25H
+%def 97F-97P1/97P2
+%def 97P1-972
+%def 97P2-972
+
+%quo1 971 97A 97N1 97N2
+%quo1 97F 97P1 97P2
+
+%def 96A-96N1/96N2
+%def 96N1-971
+%def 96N2-971
+%def 96F-96P1/96P2
+%def 96P1-95G
+%def 96P2-95G
+
+%quo1 96A 96N1 96N2
+%quo1 972 96F 96P1 96P2
+
+1v begin =14u "95c98"
+2u 1000m
+<hp "95F"
+2u 200m
+w< 50m / 50m se "95a" 13d
+4u 100m
+50m >w / 50m sw "95b" 13d
+2u 50m
+hs> "95N1"
+4u 800m
+<hs "95P1"
+w< 50m / 50m se "95c" 8d
+12u 300m
+50m >w / 50m sw "95d"
+2u 200m
+hp> "95A"
+1u 800m
+1u 200m
+hp> "955"
+1u 800m
+1u 200m
+hp> "953"
+2u 800m
+end "90t95"
+
+1v begin +2u "95c96"
+2u 1000m
+<hp "95G"
+2u 200m
+2u 50m
+50m >w / 50m nw "95a" 13d
+w< 50m / 50m ne "95b" 13d
+w< 50m / 50m se "95e" 10d
+2u 50m
+hs> "95N2"
+4u 800m
+<hs "95P2"
+2u 50m
+50m >w / 50m nw "95c" 8d
+w< 50m / 50m se "95f" 8d
+4u 100m
+50m >w / 50m sw "95g"
+w< 50m / 50m ne "95d"
+2u 50m
+2u 200m
+hp> "95B"
+1u 600m
+<hp "956"
+1u 200m
+1u 800m
+<hp "954"
+1u 200m
+1u 800m
+<hp "952"
+1u 200m
+end "95t90"
+
+13u begin +1u "95e" se
+w< 50m e / 50m se "95h"
+2u 50m
+hs> "95N3"
+4u 800m
+<hs "95R3"
+2u 50m
+50m >w / 50m sw "95i"
+50m >w / 50m nw "95f" 8d
+w< 50m / 50m ne "95g"
+w< 50m / 50m se "95j"
+2u 50m
+hs> "95S3"
+7v 800m
+<hs "95P3"
+2u 50m
+50m >w / 50m sw "95k" 8d
+2u 200m
+hp> "95C"
+2u 1000m
+end "34c95"
+
+15u begin +2u "95h" se
+1u 25m
+1u 25m e
+hs> "95N4"
+4u 800m
+<hs "95R4"
+w< 50m / 50m ne "95i"
+8u 200m
+50m >w / 50m nw "95j"
+hs> "95S4"
+7v 800m
+<hs "95P4"
+1u 25m
+1u 25m ne
+end "95k"
+
+%mac ninetyfive-ninetyeight 95A-95N1/95N2/95N3/95N4
+%mac ninetyfive-ninetyeight 95B-95N2/+95N1/95N3/95N4
+%mac ninetyfive-ninetyeight 95C-95S3/95S4
+%mac ninetyfive-ninetyeight 95S3-95N3/+95N1/+95N2/95N4
+%mac ninetyfive-ninetyeight 95S4-95N1/95N2/95N3/95N4
+%mac ninetyfive-ninetyeight 95N1-98A
+%mac ninetyfive-ninetyeight 95N2-98A
+%mac ninetyfive-ninetyeight 95N3-98A
+%mac ninetyfive-ninetyeight 95N4-98A
+
+%mac ninetyfive-ninetysix 95A-95N1/95N2/95N3/95N4
+%mac ninetyfive-ninetysix 95B-95N2/95N1/95N3/95N4
+%mac ninetyfive-ninetysix 95C-95S3/95S4
+%mac ninetyfive-ninetysix 95S3-95N3/+95N2/95N1/95N4
+%mac ninetyfive-ninetysix 95S4-95N2/95N3/95N1/95N4
+%mac ninetyfive-ninetysix 95N1-96A
+%mac ninetyfive-ninetysix 95N2-96A
+%mac ninetyfive-ninetysix 95N3-96A
+%mac ninetyfive-ninetysix 95N4-96A
+
+%mac ninetyfive-ninety 95F-95P2/95P1/95R3/95R4
+%mac ninetyfive-ninety 95G-95P2/95P1/95R3/95R4
+%mac ninetyfive-ninety 95P2-956/90D
+%mac ninetyfive-ninety 95P1-956/90D
+%mac ninetyfive-ninety 95R3-956/90D
+%mac ninetyfive-ninety 95R4-956/90D
+
+%mac ninetyfive-thirtyfour 95F-95R3/95P2/95P1/95R4
+%mac ninetyfive-thirtyfour 95G-95R3/95P2/95P1/95R4
+%mac ninetyfive-thirtyfour 95P2-95P3/95P4
+%mac ninetyfive-thirtyfour 95P1-95P3/95P4
+%mac ninetyfive-thirtyfour 95R3-95P3/95P4
+%mac ninetyfive-thirtyfour 95R4-95P4/95P3
+%mac ninetyfive-thirtyfour 95P3-34H
+%mac ninetyfive-thirtyfour 95P4-34H
+
+%def %ninetyfive-ninetyeight
+%def %ninetyfive-ninety
+
+%quo3 95A 95B 95N1 95N2 95N3 95N4
+%quo3 95F 95G 95P1 95P2 95R3 95R4
+%quo4 95A 95B 95N1 95N2 95N3 95N4 95F 95G 95P1 95P2 95R3 95R4
+
+%quo1 95C 95S3 95S4
+%quo1 95P3 95P4
+
+1u begin =27u "34t90"
+2u 800m
+<hp "903"
+1u 200m
+1u 800m
+<hp "905"
+1u 200m
+1u 800m
+<hp "90A"
+2u 200m
+2u 50m
+w< 50m / 50m ne "90a" 8d
+6u 150m
+50m >w / 50m nw "90b" 13d
+hs> "90P1"
+4u 800m
+<hs "90N1"
+2u 50m
+w< 50m / 50m ne "90c" 13d
+6u 150m
+50m >w / 50m nw "90d" 8d
+2u 200m
+hp> "90G"
+1u 600m
+<hp "911"
+1u 200m
+1u 800m
+<hp "913"
+1u 200m
+end "90t91"
+
+1v begin -2u "34t90" #XXX "90t34"
+1u 200m
+hp> "902"
+1u 800m
+1u 200m
+hp> "904"
+1u 800m
+1u 200m
+hp> "906"
+1u 600m
+<hp "90B"
+2u 200m
+2u 50m
+50m >w / 50m nw "90e" 13d
+50m >w / 50m sw "90a" 8d
+w< 50m / 50m ne "90f" 10d
+w< 50m / 50m se "90b" 13d
+2u 50m
+hs> "90P2"
+4u 800m
+<hs "90N2"
+2u 50m
+50m >w / 50m nw "90g" 13d
+50m >w / 50m sw "90c" 13d
+w< 50m / 50m ne "90h" 13d
+w< 50m / 50m se "90d" 8d
+2u 50m
+2u 200m
+hp> "90F"
+1u 800m
+1u 200m
+hp> "912"
+2u 800m
+end "91t90"
+
+4v begin -2u "95t90"
+2u 800m
+<hp "90C"
+2u 200m
+2u 50m
+50m >w / 50m nw "90i" 10d
+w< 50m / 50m se "90e" 13d
+1u 25m ne
+end "90j"
+
+3v begin -2u "90t95"
+1u 200m
+hp> "951"
+1u 600m
+<hp "90D"
+2u 200m
+w< 50m / 50m se "90i" 10d
+5u 125m
+se
+50m >w / 50m w "90j" 16d
+3u 75m e
+50m >w / 50m sw "90f" 10d
+2u 50m
+hs> "90P3"
+4u 800m
+<hs "90N3"
+w< 50m / 50m se "90g" 13d
+6u 150m
+50m >w / 50m sw "90h" 13d
+2u 200m
+hp> "90H"
+2u 1000m
+end "90c93"
+
+%mac ninety-ninetyone 90A-90N1/90N2/90N3
+%mac ninety-ninetyone 90B-90N2/+90N1/90N3
+%mac ninety-ninetyone 90C-90N1/90N2/90N3
+%mac ninety-ninetyone 90D-90N3/90N1/90N2
+%mac ninety-ninetyone 90N1-911/91B
+%mac ninety-ninetyone 90N2-911/91B
+%mac ninety-ninetyone 90N3-911/91B
+
+%mac ninety-ninetythree 90A-90N1/90N2/90N3
+%mac ninety-ninetythree 90B-90N2/+90N1/90N3
+%mac ninety-ninetythree 90C-90N3/90N2/90N1
+%mac ninety-ninetythree 90D-90N3/90N2/90N1
+%mac ninety-ninetythree 90N1-93A
+%mac ninety-ninetythree 90N2-93A
+%mac ninety-ninetythree 90N3-93A
+
+%mac ninety-thirtyfour 90F-90P2/90P3/90P1
+%mac ninety-thirtyfour 90G-90P1/+90P2/90P3
+%mac ninety-thirtyfour 90H-90P2/+90P3/90P1
+%mac ninety-thirtyfour 90P1-34G/+906
+%mac ninety-thirtyfour 90P2-906/34G
+%mac ninety-thirtyfour 90P3-906/34G
+
+%mac ninety-ninetyfive 90F-90P3/90P2/90P1
+%mac ninety-ninetyfive 90G-90P3/90P2/90P1
+%mac ninety-ninetyfive 90H-90P3/90P2/90P1
+%mac ninety-ninetyfive 90P1-951/95B
+%mac ninety-ninetyfive 90P2-951/95B
+%mac ninety-ninetyfive 90P3-951/95B
+
+%def %ninety-ninetyone
+%def %ninety-thirtyfour
+
+%quo2 90B 90D 90N1 90N2 90N3
+%quo2 90G 90H 90P1 90P2 90P3
+%quo3 90B 90D 90N1 90N2 90N3 90G 90H 90P1 90P2 90P3
+
+1u begin =31u "90c93"
+2u 1000m
+<hp "93A"
+2u 200m
+w< 50m / 50m se "93a" 8d
+2u 50m
+hs> "93P1"
+4u 800m
+<hs "93N1"
+2u 50m
+50m >w / 50m sw "93b" 8d
+2u 200m
+hp> "93F"
+1u 1000m
+1u 1000m
+<hp "94A"
+2u 200m
+w< 50m ne / 50m se "94a" 20d
+1u 25m
+3u 1000m e
+1u 400m se
+1u 400m s
+1u 400m sw
+2u 800m w
+<hp "94P"
+3v 200m
+end "94a"
+
+15v begin +1u "93a" se
+1u 25m
+1u 25m e
+hs> "93P2"
+4u 800m
+<hs "93N2"
+1u 25m
+1u 25m ne
+end "93b"
+
+%def 93A-93N1/93N2
+%def 93N1-94A
+%def 93N2-94A
+%def 93F-93P1/93P2
+%def 93P1-90H
+%def 93P2-90H
+
+%def 94A-94P
+%def 94P-93F
+
+%quo1 93A 93N1 93N2
+%quo1 93F 93P1 93P2
+%quo1 94A 94P
+
+1u begin =38u "90t91"
+2u 800m
+<hp "915"
+1u 200m
+1u 800m
+<hp "91A"
+2u 200m
+w< 50m / 50m ne "91a" 8d
+6u 150m
+hs> "91P1"
+4u 800m
+<hs "91N1"
+6u 150m
+50m >w / 50m nw "91b" 8d
+2u 200m
+hp> "91G"
+1u 600m
+<hp "921"
+1u 200m
+1u 800m
+<hp "92A"
+2u 200m
+w< 50m / 50m ne "92a" 20d
+1u 25m se
+1u 200m e
+hp> "92E"
+1u 800m
+<hp "923"
+1u 200m
+1u 800m
+<hp "92F"
+1u 200m ne
+n
+w< 50m / 50m nw "92b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "92G"
+1u 800m
+<hp "924"
+1u 200m
+1u 800m
+<hp "92C"
+1u 200m sw
+end "92d"
+
+%def 92F-924/+92D
+
+1v begin -2u "91t90"
+1u 200m
+hp> "914"
+1u 800m
+1u 200m
+hp> "916"
+1u 600m
+<hp "91B"
+2u 200m
+2u 50m
+50m >w / 50m sw "91a" 8d
+w< 50m / 50m ne "91c" 8d
+2u 50m
+hs> "91P2"
+4u 800m
+<hs "91N2"
+2u 50m
+50m >w / 50m nw "91d" 8d
+w< 50m / 50m se "91b" 8d
+2u 50m
+2u 200m
+hp> "91F"
+1u 800m
+1u 200m
+hp> "922"
+1u 600m
+<hp "92B"
+2u 200m
+w< 50m / 50m ne "92d" 20d
+50m >w / 50m sw "92a" 20d
+hp> "92D"
+5v 1800m
+<hp "92H"
+1u 200m
+end "92b"
+
+14u begin -1u "91c" ne
+1u 25m
+1u 25m e
+hs> "91P3"
+4u 800m
+<hs "91N3"
+1u 25m
+1u 25m se
+end "91d"
+
+%def 91A-91N1/91N3
+%def 91B-91N2/91N3
+%def 91N1-921
+%def 91N2-921
+%def 91N3-921
+
+%def 91F-91P2/91P3
+%def 91G-91P2/91P3
+%def 91P1-90G
+%def 91P2-916/90G
+%def 91P3-916/90G
+
+%quo1 91B 91N2 91N3
+%quo2 91B 91N2 91N3 91P3 91P2 91G
+
+##################################################
+
+%mac std %ninety-ninetythree,%ninety-ninetyfive
+
+%trn len=100 v=200 n=0 
+%trn len=100 v=200 n=0n %ninety-ninetythree
+%trn len=100 v=200 n=1a %std
+%trn len=100 v=200 n=2a %ninetyfive-ninetysix,%std
+%trn len=100 v=200 n=1b %std
+%trn len=100 v=200 n=2b %ninetyfive-ninetysix,%std
+%trn len=100 v=200 n=1h %ninety-ninetyfive
+%trn len=100 v=200 n=2h %ninetyfive-ninetysix,%ninety-ninetyfive
+%trn len=100 v=200 n=1z %ninetyfive-thirtyfour
+%trn len=100 v=200 n=2z %ninetyfive-ninetysix,%ninetyfive-thirtyfour

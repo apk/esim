@@ -1,0 +1,298 @@
+4u begin 1u "inp"
+1u 1000m
+end "85c89"
+
+1u begin 1u "88c89"
+1u 200m
+end "105c106"
+
+1v begin =14+17v "108c109"
+2u 1000m
+<hp "108A"
+3v 200m
+w< 50m / 50m se "108a" 10d
+2u 50m
+hs> "108P1"
+3u 800m
+<hs "108N1"
+2u 50m
+50m >w / 50m sw "108b" 10d
+3v 200m
+hp> "108F"
+1u 1000m
+<hp "1081"
+1u 200m
+hp> "1082"
+1u 1000m
+<hp "107A"
+3v 200m
+w< 50m / 50m ne "107a" 10d
+2u 50m
+hs> "107P3"
+3u 800m
+<hs "107S3"
+2u 50m
+w< 50m / 50m ne "107b" 
+25m >w< 25m / 25m se "107c" / 25m nw "107d"
+2u 50m
+50m >w / 50m nw "107e"
+hs> "107R3"
+3u 800m
+<end "107N3"
+
+13v begin +1u "108a" se
+~ 50m e
+hs> "108P2"
+3u 800m
+<hs "108N2"
+~ 50m ne
+end "108b"
+
+53v begin -2u "107a" ne
+50m >w e / 50m nw "107f" 10d
+hs> "107P2"
+3u 800m
+<hs "107S2"
+2u 50m
+25m ekw< 25m / 25m se "107d" / 25m nw "107g"
+25m >w< 25m / 25m ne "107h" / 25m sw "107b"
+25m >w< 25m / 25m se "107e" / 25m nw "107i"
+2u 50m
+hs> "107R2"
+3u 800m
+<end "107N2"
+
+1v begin -3u "105c106"
+2u 1000m
+<hp "106A"
+3v 200m
+w< 50m / 50m se "106a" 10d
+2u 50m
+hs> "106P1"
+3u 800m
+<hs "106N1"
+2u 50m
+50m >w / 50m sw "106b" 10d
+3v 200m
+hp> "106F"
+1u 1000m
+<hp "1061"
+1u 200m
+hp> "1062"
+1u 1000m
+<hp "107B"
+3v 200m
+w< 50m / 50m se "107f" 10d
+2u 50m
+hs> "107P1"
+3u 800m
+<hs "107S1"
+w< 50m / 50m se "107g" 
+2u 50m
+w< 50m / 50m se "107i" 
+25m >w< 25m / 25m ne "107j" / 25m sw "107h"
+2u 50m
+hs> "107R1"
+3u 800m
+<end "107N1"
+
+13v begin +1u "106a" se
+~ 50m e
+hs> "106P2"
+3u 800m
+<hs "106N2"
+~ 50m ne
+end "106b"
+
+81v begin -2u "107j" ne
+~ 50m e
+hs> "107R0"
+3u 800m
+<end "107N0"
+
+77v begin +6u "107c" se
+w< 50m / 50m e "107k"
+~ 50m e
+hs> "107R5"
+3u 800m
+<end "107N5"
+
+81v begin +1u "107k" ne
+50m e
+hs> "107R4"
+3u 800m
+<end "107N4"
+
+%def 106A-106N1/106N2
+%def 106N1-1061
+%def 106N2-1061
+
+%def 106F-106P1/106P2
+# XXX       v
+%def 106P1-89A
+%def 106P2-89A
+
+%quo1 106A 106N1 106N2
+%quo1 1062 106F 106P1 106P2
+
+%def 108A-108N1/108N2
+%def 108N1-1081
+%def 108N2-1081
+
+%def 108F-108P1/108P2
+%def 108P1-109F
+%def 108P2-109F
+
+%quo1 108A 108N1 108N2
+%quo1 1082 108F 108P1 108P2
+
+%def 107A-107S3/107S2
+%def 107B-107S1/107S2
+%def 107S1-107N1/+107N0/+107N2/+107N3/107N4/107N5
+%def 107S2-107N2/+107N3/+107N1/+107N4/107N0/107N5
+%def 107S3-107N3/+107N4/+107N2/+107N5/107N1/107N0
+
+%def 107R0-107P3/107P2
+%def 107R1-107P3/107P2
+%def 107R2-107P3/107P2
+%def 107R3-107P3/107P2
+%def 107R4-107P3/107P2
+%def 107R5-107P3/107P2
+%def 107P3-1082
+%def 107P2-1082
+
+%mac hundred 107R0-107P1/107P2
+%mac hundred 107R1-107P1/107P2
+%mac hundred 107R2-107P1/107P2
+%mac hundred 107R3-107P1/107P2
+%mac hundred 107R4-107P1/107P2
+%mac hundred 107R5-107P1/107P2
+%mac hundred 107P1-1062
+%mac hundred 107P2-1062
+
+%quo3 1081 107A 1061 107B 107S1 107S2 107S3 107P1 107P2 107P3
+%quo2 1081 107A 107S2 107S3 107P2 107P3
+%quo2 1061 107B 107S1 107S2 107P1 107P2
+%quo1 107P1 107P2
+%quo1 107P2 107P3
+
+1v begin =3u "85c89"
+2u 1000m
+<hp "89B"
+3v 200m
+w< 50m / 50m se "89a" 8d
+4u 100m
+50m >w / 50m sw "89b" 8d
+w< 50m / 50m ne "89c" 4d
+2u 50m
+hs> "89P2"
+3u 800m
+<hs "89N2"
+~ 50m se
+end "89d"
+
+29v begin -1u "89c" ne
+~ 50m e
+hs> "89P1"
+5v 800m
+<end "89N1"
+
+25v begin +4u "89e" se
+~ 50m e
+hs> "89P4"
+3u 800m
+<hs "89N4"
+~ 50m ne
+end "89f"
+
+1v begin -1u "88c89"
+2u 1000m
+<hp "89A"
+3v 200m
+2u 50m
+50m >w / 50m nw "89a" 8d
+w< 50m / 50m ne "89b" 8d
+w< 50m / 50m se "89e" 8d
+2u 50m
+hs> "89P3"
+3u 800m
+<hs "89N3"
+2u 50m
+50m >w / 50m sw "89f" 10d
+50m >w / 50m nw "89d" 13d
+3v 200m
+hp> "89F"
+1u 1000m
+1u 1000m
+<hp "109A"
+3v 200m
+w< 50m / 50m ne "109a" 8d
+2u 50m
+hs> "109P1"
+3u 800m
+<hs "109N1"
+2u 50m
+50m >w / 50m nw "109b" 8d
+3v 200m
+hp> "109F"
+2u 1000m
+end "108c109"
+
+65v begin -1u "109a" ne
+~ 50m e
+hs> "109P2"
+3u 800m
+<hs "109N2"
+~ 50m se
+end "109b"
+
+%def 89A-89N3/89N4/89N2
+%def 89B-89N2/89N3/89N4
+%def 89N2-109A
+%def 89N3-109A
+%def 89N4-109A
+
+%def 89F-89P3/89P4/89P2
+# XXX      vv
+%def 89P1-106A
+%def 89P2-106A
+%def 89P3-106A
+%def 89P4-106A
+
+%mac eightynine-eightyfive 89F-89P2/89P3/89P4
+%mac eightynine-eightyfive 89P1-85B
+%mac eightynine-eightyfive 89P1-85B
+%mac eightynine-eightyfive 89P1-85B
+%mac eightynine-eightyfive 89P1-85B
+
+%mac eightynine-turn 89A-89N1/89N4/89N3/89N2
+%mac eightynine-turn 89B-89N1/89N2/89N4/89N3
+%mac eightynine-turn 89N2-$
+%mac eightynine-turn 89N3-$
+%mac eightynine-turn 89N4-$
+
+%quo3 89A 89B 89N2 89N3 89N4 89F 89P2 89P3 89P4
+%quo2 89A 89B 89N2 89N3 89N4
+%quo2 89F 89P2 89P3 89P4
+
+%def 109A-109N1/109N2
+%def 109N1-108A
+%def 109N2-108A
+
+%def 109F-109P1/109P2
+%def 109P1-89F
+%def 109P2-89F
+
+%quo1 109A 109N1 109N2
+%quo1 109F 109P1 109P2
+
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir2 %hundred
+%trn len=228 v=200 n=ir2 %hundred
+%trn len=228 v=200 n=ir2 %hundred
+%trn len=228 v=200 n=ir2 %hundred
+%trn len=228 v=200 n=ir3 %hundred,%eightynine-turn
+%trn len=228 v=200 n=ir3 %hundred,%eightynine-turn

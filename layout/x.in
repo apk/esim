@@ -1,0 +1,324 @@
+1u begin 3u
+1u 800m
+<hp "A"
+2u 200m
+1u 25m
+1u 25m ne
+end "entry"
+
+5v begin 1u "0c1"
+2u 200m
+2u 50m
+50m >w / 50m sw 20d "entry"
+2u 700m
+<hp "1A"
+3v 200m
+w< 50m / 50m se 8d "1a"
+2u 50m
+hs> "1P1"
+7v 800m
+<hs "1N1"
+2u 50m
+50m >w / 50m sw 8d "1b"
+3v 200m
+hp> "1F"
+1u 1000m
+1u 1000m
+<hp "2A"
+3v 200m
+w< 50m / 50m se 8d "2a"
+2u 50m
+hs> "2P1"
+7v 800m
+<hs "2N1"
+2u 50m
+50m >w / 50m sw 8d "2b"
+3v 200m
+hp> "2F"
+1u 1000m
+1u 1000m
+end "2c3"
+
+29v begin 2u "1a" se
+1u 25m
+1u 25m e
+hs> "1P2"
+7v 800m
+<hs "1N2"
+1u 25m
+1u 25m ne
+end "1b"
+
+33u begin 2u "2a" se
+1u 25m
+1u 25m e
+hs> "2P2"
+7v 800m
+<hs "2N2"
+1u 25m
+1u 25m ne
+end "2b"
+
+%def 1A-1N1/+1N2
+%def 1F-1P1/+1P2
+%def 2A-2N1/+2N2
+%def 2F-2P1/+2P2
+
+1u begin 6u "2c3"
+1u 1000m
+<hp "3A"
+3v 200m
+w< 50m / 50m se 8d "3a"
+2u 50m
+hs> "3P1"
+7v 800m
+<hs "3N1"
+2u 50m
+50m >w / 50m sw 8d "3b"
+3v 200m
+hp> "3F"
+1u 1000m
+1u 1000m
+<hp "4A"
+3v 200m
+w< 50m / 50m se 8d "4a"
+2u 50m
+hs> "4P1"
+7v 800m
+<hs "4N1"
+2u 50m
+50m >w / 50m sw 8d "4b"
+3v 200m
+hp> "4F"
+1u 1000m
+end "4c5"
+
+6u begin 7u "3a" se
+1u 25m
+1u 25m e
+hs> "3P2"
+7v 800m
+<hs "3N2"
+1u 25m
+1u 25m ne
+end "3b"
+
+49v begin 7u "4a" se
+1u 25m
+1u 25m e
+hs> "4P2"
+7v 800m
+<hs "4N2"
+1u 25m
+1u 25m ne
+end "4b"
+
+%def 3A-3N1/+3N2
+%def 3F-3P1/+3P2
+%def 4A-4N1/+4N2
+%def 4F-4P1/+4P2
+
+1u begin 11u "4c5"
+1u 1000m
+<hp "5A"
+3v 200m
+w< 50m / 50m se 8d "5a"
+2u 50m
+hs> "5P1"
+7v 800m
+<hs "5N1"
+2u 50m
+50m >w / 50m sw 8d "5b"
+3v 200m
+hp> "5F"
+1u 1000m
+1u 1000m
+<hp "6A"
+3v 200m
+w< 50m / 50m se 8d "6a"
+2u 50m
+hs> "6P1"
+7v 800m
+<hs "6N1"
+2u 50m
+50m >w / 50m sw 8d "6b"
+3v 200m
+hp> "6F"
+1u 1000m
+end "6c7"
+
+6u begin 12u "5a" se
+1u 25m
+1u 25m e
+hs> "5P2"
+7v 800m
+<hs "5N2"
+1u 25m
+1u 25m ne
+end "5b"
+
+49v begin 12u "6a" se
+1u 25m
+1u 25m e
+hs> "6P2"
+7v 800m
+<hs "6N2"
+1u 25m
+1u 25m ne
+end "6b"
+
+%def 5A-5N1/+5N2
+%def 5F-5P1/+5P2
+%def 6A-6N1/+6N2
+%def 6F-6P1/+6P2
+
+1u begin 16u "0c1"
+1u 1000m
+<hp "0A"
+3v 200m
+w< 50m / 50m se "0a" 20d
+3u 75m
+2u 800m
+<hp "1"
+1u 200m
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+1u 200m se
+1u 200m s
+1u 200m sw
+6v 800m w
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "5"
+1u 200m
+1u 800m
+<hp "6"
+1u 200m
+1u 800m
+<hp "7"
+1u 200m
+1u 800m
+<hp "8"
+1u 200m
+1u 800m
+<hs "0F"
+1u 25m
+2u 50m nw
+end "0a"
+
+1u begin 23u "6c7"
+1u 1000m
+<hp "7A"
+3v 200m
+w< 50m / 50m se "0a" 20d
+3u 75m
+2u 800m
+<hp "1"
+1u 200m
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+1u 200m se
+1u 200m s
+1u 200m sw
+6v 800m w
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "5"
+1u 200m
+1u 800m
+<hp "6"
+1u 200m
+1u 800m
+<hp "7"
+1u 200m
+1u 800m
+<hp "8"
+1u 200m
+1u 800m
+<hs "7F"
+1u 25m
+2u 50m nw
+end "0a"
+
+%quo1 1A 1N1 1N2
+%quo1 2A 2N1 2N2
+%quo1 3A 3N1 3N2
+%quo1 4A 4N1 4N2
+%quo1 5A 5N1 5N2
+%quo1 6A 6N1 6N2
+
+%quo1 1F 1P1 1P2
+%quo1 2F 2P1 2P2
+%quo1 3F 3P1 3P2
+%quo1 4F 4P1 4P2
+%quo1 5F 5P1 5P2
+%quo1 6F 6P1 6P2
+
+%trn len=124 v=200 n=a 
+%trn len=124 v=200 n=b 
+%trn len=124 v=200 n=c 
+%trn len=124 v=200 n=d 
+%trn len=124 v=200 n=e 
+%trn len=124 v=200 n=f 
+%trn len=124 v=200 n=g 
+%trn len=124 v=200 n=h 
+%trn len=124 v=200 n=i 
+%trn len=124 v=200 n=j 
+%trn len=124 v=200 n=k 
+%trn len=124 v=200 n=l 
+%trn len=124 v=200 n=m 
+%trn len=124 v=200 n=n 
+%trn len=124 v=200 n=o 
+%trn len=124 v=200 n=p 

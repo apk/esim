@@ -1,0 +1,547 @@
+1v begin 1u
+1u 800m
+<hp "A"
+2u 200m
+hp> "37F"
+2u 800m
+<hp "B"
+2u 200m
+end "36c37"
+
+1v begin 5v "41t42"
+1u 800m
+<hp "11"
+1u 200m
+1u 800m
+<hp "12"
+1u 200m
+1u 800m
+<hp "13"
+1u 200m
+1u 800m
+<hp "14"
+1u 200m
+1u 800m
+<hp "15"
+1u 200m
+1u 800m
+<hp "16"
+1u 200m
+1u 800m
+<hp "17"
+1u 200m
+end "42t41"
+
+1v begin 4u "40t30"
+1u 800m
+<hp "1"
+1u 200m
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+1u 800m
+<hp "5"
+1u 200m
+1u 800m
+<hp "6"
+1u 200m
+1u 800m
+<hp "7"
+1u 200m
+1u 800m
+<hp "8"
+1u 200m
+1u 800m
+<hp "9"
+1u 200m
+end "30t40"
+
+### THIRTYSIX
+
+1v begin =10u "36c37"
+2u 1000m
+<hp "36A"
+2u 200m
+w< 50m / 50m ne "36a" 8d
+w< 50m / 50m se "36b"
+2u 50m
+hs> "36P2"
+4u 800m
+<hs "36N2"
+2u 50m
+50m >w / 50m sw "36c"
+50m >w / 50m nw "36d" 8d
+2u 200m
+hp> "36F"
+2u 1000m
+end "35c36"
+
+7u begin -1u "36a" ne
+1u 25m
+3u 75m e
+hs> "36P3"
+4u 800m
+<hs "36N3"
+3u 75m
+1u 25m se
+end "36d"
+
+9u begin +2u "36b" se
+1u 25m
+1u 25m e
+hs> "36P1"
+4u 800m
+<hs "36N1"
+1u 25m
+1u 25m ne
+end "36c"
+
+%mac thirtysix-thirtyfive 36A-36N2/36N3/36N1
+%mac thirtysix-thirtyfive 36N1-35A
+%mac thirtysix-thirtyfive 36N2-35A
+%mac thirtysix-thirtyfive 36N3-35A
+
+%mac thirtysix-thirtyseven 36F-36P2/36P3/36P1
+%mac thirtysix-thirtyseven 36P1-37F
+%mac thirtysix-thirtyseven 36P2-37F
+%mac thirtysix-thirtyseven 36P3-37F
+
+%def %thirtysix-thirtyfive
+%def %thirtysix-thirtyseven
+
+%exc 36P1 36P2 36P3
+%exc 36N1 36N2 36N3
+
+### THIRTYFIVE
+
+25v begin =5u "35c36"
+2u 1000m
+<hp "35A"
+2u 200m
+w< 50m / 50m ne "35a"
+w< 50m / 50m se "35b" 10d
+2u 50m
+hs> "35P2"
+4u 800m
+<hs "35N2"
+2u 50m
+50m >w / 50m nw "35c"
+50m >w / 50m sw "35d"
+w< 50m / 50m se "35e"
+2u 50m
+2u 200m
+hp> "35F"
+2u 1000m
+end "35c40"
+
+19u begin -1u "35a" ne
+1u 25m
+3u 75m e
+hs> "35P3"
+4u 800m
+<hs "35N3"
+1u 25m
+1u 25m se
+end "35c"
+
+21u begin +2u "35b" se
+1u 25m
+1u 25m e
+hs> "35P1"
+4u 800m
+<hs "35N1"
+2u 50m
+w< 50m / 50m ne "35d"
+4u 100m
+50m >w / 50m nw "35e"
+2u 200m
+hp> "35G"
+2u 1000m
+end "35c41"
+
+%mac thirtyfive-fourty 35A-35N2/35N3/35N1
+%mac thirtyfive-fourty 35N1-40E
+%mac thirtyfive-fourty 35N2-40E
+%mac thirtyfive-fourty 35N3-40E
+
+%mac thirtyfive-fourtyone 35A-35N1/35N2/35N3
+%mac thirtyfive-fourtyone 35N1-41I
+%mac thirtyfive-fourtyone 35N2-41I
+%mac thirtyfive-fourtyone 35N3-41I
+
+%mac thirtyfive-thirtysix 35F-35P2/35P3/35P1
+%mac thirtyfive-thirtysix 35G-35P1/35P3/35P2
+%mac thirtyfive-thirtysix 35P1-36F
+%mac thirtyfive-thirtysix 35P2-36F
+%mac thirtyfive-thirtysix 35P3-36F
+
+%exc 35P1 35P2 35P3
+%exc 35N1 35N2 35N3
+
+%def %thirtyfive-fourty
+%def %thirtyfive-thirtysix
+
+### FOURTYONE
+
+1u begin =19u "42t41"
+2u 800m
+<hp "417"
+1u 200m
+1u 800m
+<hp "41A"
+2u 200m
+w< 50m / 50m ne "41a"
+4u 100m
+50m >w / 50m nw "41b"
+hs> "41P1"
+4u 800m
+<hs "41Q1"
+2u 50m
+w< 50m / 50m ne 8d "41c"
+19v 250m
+<hs "41N1"
+2u 50m
+50m >w / 50m nw "41d"
+2u 200m
+hp> "41G"
+1u 700m
+<hp "405"
+1u 200m
+1u 800m
+<hp "407"
+1u 200m
+end "41t40"
+
+1v begin -2u "41t42"
+1u 200m
+hp> "416"
+1u 800m
+1u 200m
+hp> "418"
+1u 600m
+<hp "41B"
+2u 200m
+2u 50m
+50m >w / 50m sw "41a"
+w< 50m / 50m se "41b"
+w< 50m / 50m ne "41e" 10d
+2u 50m
+hs> "41P2"
+4u 800m
+<hs "41N2"
+2u 50m
+50m >w / 50m sw "41c" 8d
+w< 50m / 50m ne "41f" 8d
+4u 100m
+50m >w / 50m nw "41g"
+w< 50m / 50m se "41d"
+2u 50m
+2u 200m
+hp> "41F"
+1u 800m
+1u 200m
+hp> "406"
+2u 800m
+end "40t41"
+
+16u begin -1u "41e" ne
+w< 50m / 50m e "41h" 10d
+1u 25m
+1u 25m e
+hs> "41P4"
+4u 800m
+<hs "41N4"
+w< 50m / 50m se "41i"
+8u 200m
+50m >w / 50m sw "41j" 8d
+2u 200m
+hp> "41I"
+2u 1000m
+end "35c41"
+
+18u begin -1u "41h"
+2u 50m
+hs> "41P3"
+4u 800m
+<hs "41N3"
+2u 50m
+50m >w / 50m nw "41i"
+50m >w / 50m sw "41f" 8d
+w< 50m / 50m se "41g"
+w< 50m / 50m ne "41j" 8d
+2u 50m
+2u 200m
+hp> "41H"
+2u 1000m
+end "27c41"
+
+%mac fourtyone-fourtytwo 41F-41P2/41P3/41P4/41P1
+%mac fourtyone-fourtytwo 41G-41P1/41P2/41P3/41P4
+%mac fourtyone-fourtytwo 41H-41P3/+41P2/41P4/41P1
+%mac fourtyone-fourtytwo 41H-41P4/+41P3/+41P2/41P1
+%mac fourtyone-fourtytwo 41P1-418
+%mac fourtyone-fourtytwo 41P2-418
+%mac fourtyone-fourtytwo 41P3-418
+%mac fourtyone-fourtytwo 41P4-418
+
+%mac fourtyone-fourty 41A-41Q1/41N2/41N3/41N4
+%mac fourtyone-fourty 41B-41N2/+41Q1/41N3/41N4
+%mac fourtyone-fourty 41Q1-41N1/405
+%mac fourtyone-fourty 41N1-405
+%mac fourtyone-fourty 41N2-405
+%mac fourtyone-fourty 41N3-405
+%mac fourtyone-fourty 41N4-405
+
+%mac fourtyone-twentyseven 41A-41Q1/41N3/41N2/41N4
+%mac fourtyone-twentyseven 41B-41N3/+41N2/41N4/41Q1
+%mac fourtyone-twentyseven 41Q1-27H
+%mac fourtyone-twentyseven 41N2-27H
+%mac fourtyone-twentyseven 41N3-27H
+%mac fourtyone-twentyseven 41N4-27H
+
+%mac fourtyone-thirtyfive 41A-41Q1/41N4/41N3/41N2
+%mac fourtyone-thirtyfive 41B-41N4/+41N3/+41N2/41Q1
+%mac fourtyone-thirtyfive 41Q1-35G
+%mac fourtyone-thirtyfive 41N2-35G
+%mac fourtyone-thirtyfive 41N3-35G
+%mac fourtyone-thirtyfive 41N4-35G
+
+%def %fourtyone-fourtytwo
+%def %fourtyone-fourty
+
+%exc 41P1 41P2 41P3 41P4
+%exc 41N1 41N2 41N3 41N4
+
+### FOURTY
+
+1u begin =24u "27t40"
+2u 800m
+<hp "40A"
+2u 200m
+2u 50m
+50m >w / 50m nw "40a"
+w< 50m / 50m se "40b"
+8u 200m
+50m >w / 50m sw "40c" 8d
+w< 50m / 50m ne "40d" 8d
+2u 50m
+hs> "40P5"
+4u 800m
+<hs "40N5"
+2u 50m
+50m >w / 50m sw "40e" 13d
+w< 50m / 50m ne "40f" 13d
+50m >w / 50m sw "40g" 16d
+2u 200m
+hp> "40G"
+1u 700m
+<hp "301"
+1u 200m
+1u 800m
+<hp "303"
+1u 200m
+end "40t30"
+
+1v begin -2u "40t27"
+1u 200m
+hp> "404"
+1u 400m
+<hp "40B"
+2u 200m
+w< 50m / 50m se "40a"
+16u 400m
+50m >w / 50m sw "40d" 8d
+hs> "40P6"
+4u 800m
+<hs "40N6"
+6u 150m
+50m >w / 50m sw "40f" 13d
+2u 200m
+hp> "40F"
+1u 800m
+1u 200m
+hp> "302"
+2u 800m
+end "30t40"
+
+1u begin +4u "35c40"
+2u 1000m
+<hp "40E"
+2u 200m
+6u 150m
+50m >w / 50m "40b" nw
+50m >w / 50m "40h" sw
+w< 50m / 50m "40i" se
+w< 50m / 50m "40c" ne 8d
+3u 75m
+hs> "40P4"
+4u 800m
+<hs "40N4"
+3u 75m
+end "40j"
+
+1v begin +4u "40t41"
+1u 200m
+hp> "408"
+1u 700m
+<hp "40D"
+2u 200m
+2u 50m
+50m >w / 50m sw "40k"
+w< 50m / 50m ne "40l"
+8u 200m
+hs> "40P2"
+4u 800m
+<hs "40N2"
+3u 75m
+1u 25m ne
+50m >w / 50m w "40m"
+50m >w / 50m w "40j" 10d
+end "40e"
+
+1u begin +2u "41t40"
+2u 800m
+<hp "40C"
+2u 200m
+w< 50m / 50m ne "40k"
+12u 300m
+hs> "40P1"
+4u 800m
+<hs "40N1"
+5u 125m
+7u 175m ne
+end "40g"
+
+23v begin -3u "40l" ne
+w< 50m e / 50m ne "40h"
+4u 100m
+50m >w / 50m nw "40i"
+hs> "40P3"
+4u 800m
+<hs "40N3"
+4u 100m
+end "40m"
+
+%mac fourty-thirty 40A-40N5/40N4/40N3
+%mac fourty-thirty 40B-40N5/40N4/40N3
+%mac fourty-thirty 40C-40N1/40N3/40N4/40N5
+%mac fourty-thirty 40D-40N3/40N4/40N5
+%mac fourty-thirty 40E-40N4/+40N5/40N3
+%mac fourty-thirty 40N1-301
+%mac fourty-thirty 40N2-301
+%mac fourty-thirty 40N3-301
+%mac fourty-thirty 40N4-301
+%mac fourty-thirty 40N5-301
+%mac fourty-thirty 40N6-30B
+
+%mac fourty-twentyseven 40F-40P6/40P4/40P3
+%mac fourty-twentyseven 40G-40P5/40P4/40P3
+%mac fourty-twentyseven 40P3-404
+%mac fourty-twentyseven 40P4-404
+%mac fourty-twentyseven 40P5-404
+%mac fourty-twentyseven 40P6-404
+
+%mac fourty-fourtyone 40F-40P2/40P3/40P4/40P6
+%mac fourty-fourtyone 40G-40P2/40P3/40P4/40P5
+%mac fourty-fourtyone 40P2-408
+%mac fourty-fourtyone 40P3-408
+%mac fourty-fourtyone 40P4-408
+%mac fourty-fourtyone 40P5-408
+%mac fourty-fourtyone 40P6-408
+
+%mac fourty-thirtyfive 40F-40P4/+40P6/40P3
+%mac fourty-thirtyfive 40G-40P4/40P3/40P5
+%mac fourty-thirtyfive 40P3-35F
+%mac fourty-thirtyfive 40P4-35F
+%mac fourty-thirtyfive 40P5-35F
+%mac fourty-thirtyfive 40P6-35F
+
+%def %fourty-thirty
+%def %fourty-twentyseven
+
+%exc 40P3 40P4 40P5
+
+1u begin 37u "XX"
+2u 800m
+<hp "21"
+1u 200m
+1u 800m
+<hp "23"
+1u 200m
+1u 800m
+<hp "25"
+1u 200m
+1u 800m
+<hp "27A"
+2u 200m
+2u 50m
+50m >w / 50m nw "27a" 10d
+w< 50m / 50m se "27b" 10d
+2u 50m
+2u 200m
+hp> "27G"
+1u 400m
+<hp "401"
+1u 200m
+1u 800m
+<hp "403"
+1u 200m
+end "27t40"
+
+1v begin 35u "XX"
+1u 200m
+hp> "22"
+1u 800m
+1u 200m
+hp> "24"
+1u 800m
+1u 200m
+hp> "26"
+1u 800m
+1u 200m
+hp> "28"
+1u 400m
+<hp "27B"
+2u 200m
+w< 50m / 50m se "27a" 10d
+6u 150m
+2u 200m
+hp> "27F"
+1u 800m
+1u 200m
+hp> "402"
+2u 200m
+end "40t27"
+
+19u begin 38u "27b" se
+1u 25m
+1u 25m e
+2u 200m
+hp> "27H"
+2u 1000m
+end "27c41"
+
+%def 27H-28
+
+%trn len=80 n=27 %fourtyone-twentyseven,27A-41H
+%trn len=80 n=27 %fourtyone-twentyseven,27A-41H
+%trn len=80 n=35a %fourty-thirtyfive
+%trn len=80 n=35a %fourty-thirtyfive
+%trn len=80 n=35 %fourtyone-thirtyfive,%thirtyfive-fourtyone
+%trn len=80 n=35 %fourtyone-thirtyfive,%thirtyfive-fourtyone
+%trn len=80 n=a 
+%trn len=80 n=a 
+%trn len=80 n=b %fourty-fourtyone
+%trn len=80 n=b %fourty-fourtyone
+%trn len=80 n=b %fourty-fourtyone
+%trn len=80 n=b %fourty-fourtyone
+# %trn len=400 n=b 
+# %trn len=700 n=c 
+%trn len=80 n=a 
+%trn len=80 n=a 

@@ -1,0 +1,113 @@
+
+
+### FIFTYTWO
+
+1u begin =292u "53t52"
+2u 900m
+<hp "526"
+1u 200m
+1u 900m
+<hp "52F"
+2u 200m
+w< 50m / 50m ne "52a"
+6u 150m
+hs> "52N3"
+4u 800m
+<hs "52P3"
+6u 150m
+50m >w / 50m nw "52d"
+2u 200m
+hp> "52B"
+1u 600m
+<hp "518"
+1u 200m
+1u 800m
+<hp "51F"
+2u 200m
+w< 50m / 50m ne "51a" 20d
+1u 25m se
+1u 200m e
+hp> "51C"
+1u 800m
+<hp "516"
+1u 200m
+1u 800m
+<hp "51H"
+1u 200m ne
+n
+w< 50m / 50m nw "51b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "51J"
+1u 800m
+<hp "511"
+1u 200m
+1u 800m
+<hp "51A"
+1u 200m sw
+end "51d"
+
+%def 51H-511/+51B
+
+1v begin -2u "52t53"
+1u 200m
+hp> "523"
+1u 800m
+1u 200m
+hp> "521"
+1u 600m
+<hp "52G"
+2u 200m
+2u 50m
+50m >w / 50m sw "52a"
+w< 50m / 50m ne "52b"
+2u 50m
+hs> "52N2"
+4u 800m
+<hs "52P2"
+2u 50m
+50m >w / 50m nw "52c"
+w< 50m / 50m se "52d"
+2u 50m
+2u 200m
+hp> "52A"
+1u 800m
+1u 200m
+hp> "513"
+1u 600m
+<hp "51G"
+2u 200m
+w< 50m / 50m ne "51d" 20d
+50m >w / 50m sw "51a" 20d
+hp> "51B"
+5v 1800m
+<hp "51I"
+1u 200m
+end "51b"
+
+14u begin -1u "52b" ne
+1u 25m
+1u 25m e
+hs> "52N1"
+4u 800m
+<hs "52P1"
+1u 25m
+1u 25m se
+end "52c"
+
+%mac fiftytwo-fiftyone 52F-52P3/52P1
+%mac fiftytwo-fiftyone 52G-52P2/52P1
+%mac fiftytwo-fiftyone 52P1-518
+%mac fiftytwo-fiftyone 52P2-518
+%mac fiftytwo-fiftyone 52P3-518
+
+%mac fiftytwo-fiftythree 52A-52N2/52N1
+%mac fiftytwo-fiftythree 52B-52N1/+52N2
+%mac fiftytwo-fiftythree 52N1-521/53B
+%mac fiftytwo-fiftythree 52N2-521/53B
+%mac fiftytwo-fiftythree 52N3-53B
+
+%def %fiftytwo-fiftyone
+%def %fiftytwo-fiftythree
+

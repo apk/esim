@@ -1,0 +1,24 @@
+%inc layout.in
+%inc glob.in
+
+%trn len=228 v=200 n=ir2 %two-one
+%trn len=228 v=200 n=ir2 %two-one
+%trn len=228 v=200 n=ir2 %two-one
+%trn len=228 v=200 n=ir2 %two-one
+
+%trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir5 %four-five
+
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 

@@ -1,0 +1,36 @@
+%inc layout.in
+%inc glob.in
+
+%mac turn-twentythree 23A-23N1/+23N2/+23N4,23N1-$,23N2-$,23N4-$
+%mac turn-twentyfour 24N1-$,24N2-$,24N3-$,24N4-$
+
+%mac t3 %eighteen-twentyone,%turn-twentythree,%eighteen-seventyone,%seventythree-seventyseven,%three-left-turn,%three-seventyseven
+
+%mac t4 %three-fourteen,%turn-twentyfour,%eighteen-seventyone,%twelve-seventyfour,%twelve-eleven,%eleven-twelve,%six-five,%five-six,%five-eleven
+
+%trn len=380 v=200 n=iot 
+%trn len=380 v=200 n=ioq %fiftythree-fiftytwo,%fiftythree-fiftyfive
+
+%mac detour %fourteen-thirteen,%fifteen-eighteen,%eighteen-twentyone,%fiftythree-thirtythree,%fiftythree-twentythree,%eighteen-fifteen,%nineteen-fifteen,%thirteen-fourteen,%eighteen-twenty,%fiftyseven-twentytwo,%eighteen-sixteen
+
+%mac ir2 %three-fourteen,%eighteen-twenty,%fiftyseven-twentytwo,%four-six,%three-fourteen,%eighteen-twentyone,%fiftythree-fiftytwo,%fiftythree-twentythree,%early-eighteen-sixteen,%four-five
+
+%mac ir7 %twentyone-twenty,%twenty-twentyone,%fiftyseven-twentytwo
+%mac ir8 %twentythree-thirty,%thirty-twentythree
+
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=124 v=200 n=ql %five-six,%six-five
+
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=124 v=200 n=ql %five-six,%six-five
+
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=124 v=200 n=ql %five-six,%six-five
+
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=124 v=200 n=ql %five-six,%six-five
+

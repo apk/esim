@@ -1,0 +1,30 @@
+%trn len=228 v=200 n=ir1
+%trn len=228 v=200 n=ir1
+%trn len=228 v=200 n=ir1
+
+1u begin 2u
+4u 900m
+<hp "1"
+2u 200m
+<ls "1a"
+2u 200m
+<ls "1b"
+4u 800m
+<hs "2"
+2u 200m
+<ls "2a"
+2u 200m
+ls> "2b"
+4u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+1u 800m
+<hp "5"
+1u 200m
+1u 800m
+<hp "6"
+1u 200m
+end

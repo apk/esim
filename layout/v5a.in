@@ -1,0 +1,180 @@
+%inc layout.in
+%inc glob.in
+
+%mac turn-twentythree 23A-23N1/+23N2/+23N4/=23N3,23N1-$,23N2-$,23N4-$,25N1-$,25N2-$
+%mac turn-twentyfour 24N1-$,24N2-$,24N3-$,24N4-$
+
+%mac ir9 %fiftythree-fiftytwo
+%mac ir9 %fiftythree-fiftyfive
+
+%mac ir9a %fiftysix-ninetynine
+%mac ir9a %fiftytwo-thirtythree
+%mac ir9a %thirtythree-fiftytwo
+%mac ir9a %ninetyfive-thirtyfour
+%mac ir9a %thirtyfour-ninetyfive
+
+%mac t3 %eighteen-twentyone
+%mac t3 %twentyfive-ninetyseven
+%mac t3 %ninetyfive-ninetysix
+%mac t3 %ninety-ninetyfive
+%mac t3 %ninety-ninetythree
+%mac t3 %eighteen-seventyone
+%mac t3 %seventythree-seventyseven
+%mac t3 %three-left-turn
+%mac t3 %three-seventyseven
+
+%mac t4 %three-fourteen
+%mac t4 %twentyfour-twentysix
+%mac t4 %fiftysix-twentysix
+%mac t4 %fiftysix-ninetynine
+%mac t4 %ninety-ninetyfive
+%mac t4 %ninety-ninetythree
+%mac t4 %eighteen-seventyone
+%mac t4 %twelve-seventyfour
+%mac t4 %twelve-eleven
+%mac t4 %eleven-twelve
+%mac t4 %six-five
+%mac t4 %five-six
+%mac t4 %five-eleven
+%mac t4 %sixtyfive-sixtysix-slow
+
+%mac detour %fourteen-thirteen
+%mac detour %fifteen-eighteen
+%mac detour %eighteen-twentyone
+%mac detour %fiftythree-thirtythree
+%mac detour %fiftythree-twentythree
+%mac detour %eighteen-fifteen
+%mac detour %nineteen-fifteen
+%mac detour %thirteen-fourteen
+%mac detour %eighteen-twenty
+%mac detour %fiftyseven-twentytwo
+%mac detour %eighteen-sixteen
+
+%mac ir3a %detour,%twentyfive-ninetyseven,%ninety-ninetyfive,%ninetyfive-ninetysix
+
+%mac ir2 %three-fourteen
+%mac ir2 %eighteen-twenty
+%mac ir2 %fiftyseven-twentytwo
+%mac ir2 %early-eighteen-sixteen
+%mac ir2 %four-six
+%mac ir2 %three-fourteen
+%mac ir2 %eighteen-twentyone
+%mac ir2 %fiftythree-fiftytwo
+%mac ir2 %fiftythree-twentythree
+%mac ir2 %early-eighteen-sixteen
+%mac ir2 %four-five
+
+%mac ir5 %four-five,%fiftythree-fiftytwo
+%mac ir5a %four-five,%fifteen-eighteen,%eighteen-fifteen
+%mac ir5a %nineteen-fifteen,%fiftyseven-twentytwo
+
+%mac ir7 %twentyone-twenty,%twenty-twentyone,%fiftyseven-twentytwo
+%mac ir8 %twentythree-thirty,%thirty-twentythree
+%mac ir8a %ir7,%ir8,%eighteen-twentyone,18H-18P0,18I-18P0,18P0-$
+%mac ir8b %ir7,%ir8,%thirtyone-thirtytwo,%thirtytwo-fiftytwo,%fiftytwo-thirtytwo
+
+%mac ir7a %twentyone-twenty,%twenty-twentyone,%fiftyseven-twentytwo
+%mac ir7a %twentyfive-ninetyseven,%ninetyfive-ninetysix
+%mac ir7a %ninetyfive-thirtyfour,%thirtyfour-ninetyfive
+%mac ir7a %fiftytwo-thirtythree,%thirtythree-fiftytwo
+
+%mac irn %outlet
+%mac irn %four-eight
+%mac irn %two-one
+%mac irn %fourtyone-thirtyfive
+%mac irn %thirtyfive-fourtyone
+%mac irn %thirtynine-nine
+%mac irn %sixtyfive-sixtysix-slow
+%mac irn %fourtythree-eightythree
+%mac irn %eightythree-eightyeight
+
+%mac irw %twentyseven-fourtyone
+%mac irw %fourtyfour-eightythree
+%mac irw %eightythree-fourtyfour
+%mac irw %eightythree-eightyeight
+
+%mac ir4 %seventeen-nineteen
+%mac ir4 %eighteen-fifteen
+%mac ir4 %twentyseven-fourtyone
+%mac ir4 %fourtyone-twentyseven
+%mac ir4 %fiftyseven-twentytwo
+%mac ir4 %fourtythree-eightythree
+%mac ir4 %fifty-eightyseven
+
+%mac ir4a %ir4
+%mac ir4a %twentyfour-twentysix
+%mac ir4a %fiftysix-twentysix
+%mac ir4a %fiftythree-fiftyfive
+
+%mac ir4b %twentyseven-fourtyone
+%mac ir4b %thirteen-fourteen
+%mac ir4b %fourteen-thirteen
+%mac ir4b %fourtyone-twentyseven
+%mac ir4b %fiftyseven-twentytwo
+%mac ir4b %fourtythree-eightythree
+%mac ir4b %fifty-eightyseven
+
+%mac ir6 %fourty-fourtyone
+%mac ir6 %fiftythree-fiftyfive
+%mac ir6 %fiftythree-thirtytwo
+%mac ir6 %thirtyone-thirtytwo
+
+%mac ir6a %fourty-fourtyone
+
+%mac ir6b %fourtyfour-eightythree
+%mac ir6b %eightythree-fourtyfour
+%mac ir6b %eightyseven-fiftyone
+%mac ir6b %fiftyone-eightyseven
+%mac ir6b %fiftytwo-thirtythree
+%mac ir6b %thirtythree-fiftytwo
+
+%mac ir6c %fourty-fourtyone
+%mac ir6c %thirtyone-thirtytwo
+%mac ir6c %thirtytwo-fiftytwo
+%mac ir6c %fiftytwo-thirtytwo
+
+#########################################
+
+# %trn len=124 v=200 n=q-l %five-six,%ten-eleven,%two-one,%three-left-turn
+# %trn len=124 v=200 n=q-r %outlet,%six-five,%five-eleven,%one-two,%three-left-turn
+# %trn len=97 v=120 n=loc %local
+# %trn len=97 v=120 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
+
+%trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
+%trn len=380 v=200 n=iot 
+%trn len=380 v=200 n=ioq %ir9
+
+%trn len=124 v=200 n=ql %five-six,%six-five
+%trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
+%trn len=150 v=160 n=t3 %t3
+%trn len=150 v=160 n=t4 %t4
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
+%trn len=202 v=160 n=ir-k %irw
+%trn len=202 v=160 n=ir-m %outlet,%sixtyfive-sixtysix-slow,%sixtyfive-seven,%four-eight,%nine-sixtyone,%sixtyfive-sixtysix-slow,%sixtyfive-sixtyfour,%sixtyone-nine
+%trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1n %ninety-ninetythree
+%trn len=228 v=200 n=ir2 %ir2
+%trn len=228 v=200 n=ir3 %detour
+%trn len=228 v=200 n=ir3a %ir3a
+%trn len=228 v=200 n=ir4 %ir4
+%trn len=228 v=200 n=ir4 %ir4b
+%trn len=228 v=200 n=ir4a %ir4a
+%trn len=228 v=200 n=ir5 %ir5
+%trn len=228 v=200 n=ir5a %ir5a
+%trn len=228 v=200 n=ir6 %ir6
+%trn len=228 v=200 n=ir6a %ir6a
+%trn len=228 v=200 n=ir6b %ir6b
+%trn len=228 v=200 n=ir6c %ir6c
+%trn len=228 v=200 n=ir7 %three-fourteen,%ir7,%fiftythree-fiftytwo,%fiftythree-twentythree
+%trn len=228 v=200 n=ir7a %ir7a
+%trn len=228 v=200 n=ir8 %ir8,%ir7
+%trn len=228 v=200 n=ir8a %ir8a
+%trn len=228 v=200 n=ir8b %ir8b
+%trn len=228 v=200 n=ir9 %ir9
+%trn len=228 v=200 n=ir9a %ir9a
+%trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
+%trn len=80 n=35b %outlet,%fourtyone-thirtyfive,%thirtyfive-fourtyone,%fourty-fourtyone,%sixtyfive-sixtyfour
+%trn len=97 v=120 n=loc %local
+%trn len=97 v=120 n=loc-7 %five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,7F-7P3/7P2/7P4,7P3-$,7P2-$,7P4-$,%six-five,%five-six
+%trn len=97 v=120 n=loc-c %local,%five-eleven,10H-10P2/10P1/10P3/10P4,10R2-10P2/10P3/10P4/10P1,%ten-turn,%ten-ten,10X-10U/10V-12H,10F-10P2/10P1/10P3/10P4,10R2-10P2/10P1/10P3/10P4,10R3-10P3/10P4,%ten-turn,%ten-eleven

@@ -1,0 +1,178 @@
+
+4u begin 6u
+2u 800m
+<hp "C"
+2u 200m
+1u 25m
+1u 25m ne
+end "xx"
+
+4u begin 4u "23c28"
+2u 1000m
+<hp "A"
+2u 200m
+2u 50m
+50m >w / 50m sw 10d "xx"
+w< 50m / 50m ne "a"
+2u 50m
+hs> "P1"
+4u 800m
+<hs "N1"
+2u 50m
+50m >w / 50m nw "b"
+2u 200m
+hp> "F"
+2u 1000m
+end "29c30"
+
+29v begin 3u "a" ne
+1u 25m
+1u 25m e
+hp> "P2"
+4u 800m
+<hp "N2"
+1u 25m
+1u 25m se
+end "b"
+
+%exc N1 N2
+%exc P1 P2
+
+%def A-N1/N2
+%def F-P1/P2
+
+### TWENTYEIGHT/NINE
+
+1v begin =12u "23c28"
+2u 1000m
+<hp "28A"
+2u 200m
+w< 50m / 50m ne "28a"
+2u 50m
+hs> "28P1"
+4u 800m
+<hs "28N1"
+2u 50m
+50m >w / 50m nw "28b"
+2u 200m
+hp> "28F"
+2u 1000m
+2u 1000m
+<hp "29A"
+2u 200m
+w< 50m / 50m se "29a"
+2u 50m
+hs> "29P1"
+4u 800m
+<hs "29N1"
+2u 50m
+50m >w / 50m sw "29b"
+2u 200m
+hp> "29F"
+2u 1000m
+end "29c30"
+
+7u begin -1u "28a" ne
+1u 25m
+1u 25m e
+hs> "28P2"
+4u 800m
+<hs "28N2"
+1u 25m
+1u 25m se
+end "28b"
+
+29u begin +2u "29a" se
+1u 25m
+1u 25m e
+hs> "29P2"
+4u 800m
+<hs "29N2"
+1u 25m
+1u 25m ne
+end "29b"
+
+%exc 28N1 28N2
+%exc 28P1 28P2
+%exc 29N1 29N2
+%exc 29P1 29P2
+
+%mac twentyeight-twentynine 28A-28N1/28N2
+%mac twentyeight-twentynine 28N1-29A
+%mac twentyeight-twentynine 28N2-29A
+
+%mac twentyeight-twentythree 28F-28P1/28P2
+%mac twentyeight-twentythree 28P1-A
+%mac twentyeight-twentythree 28P2-A
+
+%def %twentyeight-twentynine
+%def %twentyeight-twentythree
+
+%mac twentynine-thirty 29A-29N1/29N2
+%mac twentynine-thirty 29N1-F
+%mac twentynine-thirty 29N2-F
+
+%mac twentynine-twentyeight 29F-29P1/29P2
+%mac twentynine-twentyeight 29P1-28F
+%mac twentynine-twentyeight 29P2-28F
+
+%def %twentynine-thirty
+%def %twentynine-twentyeight
+
+# 4u begin 4u
+# 2u 800m
+# <hp "A"
+# 2u 50m
+# 50m >w / 50m nw "a" 10d
+# 50m >w / 50m sw "b" 10d
+# 2u 200m
+# hp> "F"
+# 2u 800m
+# <hp "1"
+# 2u 200m
+# hp> "2"
+# 2u 800m
+# <hp "K"
+# 2u 200m
+# end "aa"
+# 
+# 10u begin 10u "aa"
+# w< 50m / 50m ne "c" 10d
+# end "bb"
+# 
+# 14u begin 10u "bb"
+# 2u 50m
+# 4u 800m
+# <hp "5"
+# 1u 100m ne
+# 1u 100m n
+# 1u 400m nw
+# 1u 400m w
+# <hp "6"
+# 1u 200m
+# 2u 800m
+# <hp "L"
+# 1u 50m sw
+# end "c"
+# 
+# 9u begin 3u "a" nw
+# 1u 50m
+# 4u 800m w
+# <hp "3"
+# 1u 100m sw
+# 2u 100m s
+# 1u 400m se
+# 1u 400m e
+# <hp "4"
+# 1u 200m
+# 4u 800m
+# <hp "C"
+# 1u 100m ne
+# end "b"
+
+# %def L-2-F-3
+# %def C-1
+
+%trn len=200 v=200 n=a 
+%trn len=200 v=200 n=b 
+%trn len=200 v=200 n=c 

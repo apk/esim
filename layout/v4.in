@@ -1,0 +1,31 @@
+%inc layout.in
+%inc glob.in
+
+# Little trick to let detour to 6H only apply the first time
+%mac outlet-tour 5N1-6H,5S2-5N2/5N1-12
+%mac outlet %outlet-tour
+
+%trn len=124 v=140 n=c-line %left-turn-four,%four-five,%five-eleven,%ten-turn,%ten-eleven
+%trn len=124 v=140 n=c-line %left-turn-four,%four-five,%five-eleven,%ten-turn,%ten-eleven
+%trn len=124 v=140 n=b-line %four-eight,%one-two,%two-one
+%trn len=124 v=140 n=b-line %four-eight,%one-two,%two-one
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one
+%trn len=202 v=140 n=b-local %mostly-zero-one,%left-four-zero,%two-one,%ten-turn
+%trn len=202 v=140 n=b-local %mostly-zero-one,%left-four-zero,%two-one,%ten-turn
+
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=228 v=200 n=ir1 
+%trn len=202 v=160 n=ir-b %outlet,%four-eight,%two-one
+%trn len=228 v=200 n=ir1 
+%trn len=202 v=160 n=ir-b %outlet,%four-eight,%two-one
+%trn len=228 v=200 n=ir1 
+%trn len=202 v=160 n=ir-b %outlet,%four-eight,%two-one
+%trn len=228 v=200 n=ir1 
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=228 v=200 n=ir5 %four-five
+%trn len=228 v=200 n=ir5 %four-five
+
+# %trn len=97 v=120 n=local %local
+# %trn len=97 v=120 n=local %local
+

@@ -1,0 +1,939 @@
+1v begin 3u
+1u 800m
+<hp "A"
+2u 200m
+1u 25m
+1u 25m ne
+end "X"
+
+1v begin 1u "31t30"
+1u 800m
+<hp "101"
+2u 200m
+2u 50m
+50m >w / 50m sw "X" 10d
+2u 700m
+<hp "103"
+1u 200m
+end "30t31"
+
+15u begin 3u "54t24"
+1u 800m
+<hp "301"
+1u 200m
+1u 800m
+<hp "303"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+end "24t54"
+
+15u begin 1u "54t55"
+1u 800m
+<hp "401"
+1u 200m
+1u 800m
+<hp "403"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 800m
+1u 200m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+1u 800m
+<hp "305"
+1u 200m
+end "55t54"
+
+### THIRTY-ONE
+
+1u begin =10u "30t31"
+2u 800m
+<hp "31A"
+2u 200m
+w< 50m / 50m ne "31a"
+w< 50m / 50m se "31e" 10d
+4u 100m
+hs> "31P3"
+4u 800m
+<hs "31N3"
+2u 50m
+50m >w / 50m sw "31f"
+2u 50m
+50m >w / 50m nw "31d" 8d
+w< 50m / 50m se "31g" 8d
+2u 50m
+2u 200m
+hp> "31G"
+1u 600m
+<hp "321"
+1u 200m
+1u 800m
+<hp "323"
+1u 200m
+1u 800m
+<hp "325"
+1u 200m
+1u 800m
+<hp "327"
+1u 200m
+1u 800m
+<hp "329"
+1u 200m
+end "31t53"
+
+1v begin -2u "31t30"
+1u 200m
+hp> "318"
+1u 600m
+<hp "31B"
+2u 200m
+2u 50m
+50m >w / 50m sw "31a"
+w< 50m / 50m ne "31b"
+2u 50m
+hs> "31P2"
+4u 800m
+<hs "31N2"
+2u 50m
+50m >w / 50m nw "31c"
+w< 50m / 50m se "31d" 8d
+2u 50m
+4u 100m
+2u 200m
+hp> "31F"
+1u 800m
+1u 200m
+hp> "322"
+1u 800m
+1u 200m
+hp> "324"
+1u 800m
+1u 200m
+hp> "326"
+1u 800m
+1u 200m
+hp> "328"
+2u 800m
+end "53t31"
+
+23v begin -1u "31b" ne
+1u 25m
+1u 25m e
+hs> "31P1"
+4u 800m
+<hs "31N1"
+1u 25m
+1u 25m se
+end "31c"
+
+19v begin +4u "31e" se
+1u 25m
+3u 75m e
+hs> "31P4"
+4u 800m
+<hs "31N4"
+w< 50m / 50m ne "31f"
+8u 200m
+50m >w / 50m nw "31g" 8d
+2u 200m
+hp> "31H"
+2u 1000m
+end "31c32"
+
+%mac thirtyone-fiftythree 31A-31N3/31N4/31N1
+%mac thirtyone-fiftythree 31B-31N2/31N1
+%mac thirtyone-fiftythree 31N1-321
+%mac thirtyone-fiftythree 31N2-321
+%mac thirtyone-fiftythree 31N3-321
+%mac thirtyone-fiftythree 31N4-321
+
+%mac thirtyone-thirtytwo 31A-31N4/31N3/31N1
+%mac thirtyone-thirtytwo 31B-31N2/31N1
+%mac thirtyone-thirtytwo 31N1-32A
+%mac thirtyone-thirtytwo 31N2-32A
+%mac thirtyone-thirtytwo 31N3-32A
+%mac thirtyone-thirtytwo 31N4-32A
+
+%mac thirtyone-thirty 31F-31P2/31P1
+%mac thirtyone-thirty 31G-31P2/31P1
+%mac thirtyone-thirty 31H-31P2/31P1
+%mac thirtyone-thirty 31P1-318
+%mac thirtyone-thirty 31P2-318
+%mac thirtyone-thirty 31P3-30G
+%mac thirtyone-thirty 31P4-30G
+
+%def %thirtyone-fiftythree
+%def %thirtyone-thirty
+
+### THIRTYTWO
+
+1u begin =53v "31c32"
+2u 1000m
+<hp "32A"
+2u 200m
+w< 50m / 50m se "32a" 8d
+2u 50m
+hs> "32P1"
+4u 800m
+<hs "32S1"
+2u 50m
+50m >w / 50m sw "32b" 8d
+2u 200m
+hs> "32R1"
+4u 1500m
+<hs "32N1"
+2u 200m
+hp> "32F"
+2u 1000m
+end "32c53"
+
+15v begin +1u "32a" se
+1u 25m
+1u 25m e
+hs> "32P2"
+4u 800m
+<hs "32S2"
+1u 25m
+1u 25m ne
+end "32b"
+
+%mac thirtytwo-fiftythree 32A-32S1/32S2
+%mac thirtytwo-fiftythree 32S1-32N1
+%mac thirtytwo-fiftythree 32S2-32N1
+%mac thirtytwo-fiftythree 32N1-53E
+
+%mac thirtytwo-thirtyone 32F-32R1
+%mac thirtytwo-thirtyone 32R1-32P1/32P2
+%mac thirtytwo-thirtyone 32P1-31H
+%mac thirtytwo-thirtyone 32P2-31H
+
+%def %thirtytwo-fiftythree
+%def %thirtytwo-thirtyone
+
+%exc 32S1 32S2
+%exc 32P1 32P2
+
+#### FIFTYFOUR
+
+1u begin =20u "53t54a"
+2u 400m
+<hp "54B"
+5v 300m
+1u 25m
+1u 25m se
+end "54a"
+
+1u begin +2u "53t54"
+2u 400m
+<hp "54A"
+5v 300m
+w< 50m / 50m se "54b" 16d
+50m >w / 50m nw "54a" 13d
+2u 200m
+<hp "54S4"
+2u 200m
+w< 50m / 50m ne "54c"
+w< 50m / 50m se "54d" 10d
+4u 100m
+hs> "54P4"
+1u 200m
+<hs "54S14"
+1u 200m
+3v 400m
+<hs "54N4"
+6u 150m
+50m >w / 50m nw "54e"
+w< 50m / 50m se "54f"
+2u 50m
+2u 200m
+hp> "54G"
+1u 600m
+<hp "541"
+1u 200m
+end "54t55"
+
+8u begin +1u se "54b"
+1u 25m
+1u 25m e
+2u 200m
+<hp "54S5"
+2u 200m
+4u 100m
+50m >w / 50m nw "54d" 10d
+2u 50m
+hs> "54P5"
+4u 800m
+<hs "54N5"
+8u 200m
+2u 50m
+50m >w / 50m nw "54f"
+2u 200m
+hp> "54I"
+1u 600m
+<hp "248"
+1u 200m
+end "54t24"
+
+1v begin -5u "54t53"
+1u 200m
+hp> "532"
+3v 300m
+1u 200m
+hp> "534"
+5u 550m
+<hp "54C"
+2u 200m
+w< 50m / 50m ne "54g" 13d
+2u 50m se
+e
+50m >w / 50m sw "54c"
+w< 50m / 50m ne "54h"
+2u 50m
+hs> "54P3"
+4u 800m
+<hs "54N3"
+2u 50m
+50m >w / 50m nw "54i"
+w< 50m / 50m se "54e"
+6u 150m
+2u 200m
+hp> "54F"
+2u 800m
+end "55t54"
+
+1v begin -2u "54t53a"
+1u 200m
+hp> "536"
+3v 300m
+1u 200m
+hp> "538"
+5v 300m
+1u 200m
+hp> "530"
+1u 50m
+<hp "54D"
+2u 200m
+2u 50m
+50m >w / 50m sw "54g" 13d
+w< 50m / 50m se "54k" 8d
+4u 100m
+hs> "54P1"
+4u 800m
+<hs "54N1"
+4u 100m
+50m >w / 50m sw "54l"
+2u 50m se
+4u 100m e
+2u 200m
+hp> "54H"
+2u 800m
+end "24t54"
+
+37v begin +1u "54k"se
+1u 25m
+1u 25m e
+50m >w / 50m sw "54h"
+hs> "54P2"
+4u 800m
+<hs "54N2"
+w< 50m / 50m se "54i"
+1u 25m
+1u 25m ne
+end "54l"
+
+### FIFTYTHREE
+
+1v begin =39u "52t53"
+2u 800m
+<hp "53A"
+2u 200m
+2u 50m
+50m >w / 50m nw "53a" 10d
+w< 50m / 50m ne "53b" 10d
+5u 125m
+2u 50m se
+3u 75m e
+50m >w / 50m nw "53c"
+hs> "53P7"
+3u 800m
+<hs "53N7"
+w< 50m / 50m ne "53d" 10d
+3u 75m
+2u 50m ne
+3u 75m e
+50m >w / 50m nw "53e" 8d
+7v 100m
+1u 100m
+<hp "541"
+1u 100m
+hp> "53H"
+1u 400m
+<hp "543"
+1u 200m
+end "53t54"
+
+1v begin -2u "33t53"
+2u 800m
+<hp "53C"
+2u 200m
+w< 50m / 50m se "53a" 10d
+50m >w / 50m nw "53f"
+w< 50m / 50m ne "53g"
+50m >w / 50m sw "53b" 10d
+w< 50m / 50m ne "53h"
+2u 50m
+se
+w< 50m / 50m e "53i"
+e
+w< 50m / 50m se "53c"
+2u 50m
+hs> "53P6"
+3u 800m
+<hs "53N6"
+2u 50m
+50m >w / 50m sw "53d" 10d
+ne
+50m >w / 50m w "53j"
+e
+w< 50m / 50m ne "53k"
+w< 50m / 50m se "53e" 8d
+4u 100m
+50m >w / 50m nw "53l"
+2u 200m
+hp> "53K"
+1u 600m
+<hp "320"
+1u 200m
+end "53t31"
+
+0u begin -2u "53t33"
+1u 200m
+hp> "331"
+1u 400m
+<hp "53D"
+2u 200m
+w< 50m / 50m se "53f"
+2u 50m
+50m >w / 50m nw "53m" 10d
+50m >w / 50m sw "53g"
+w< 50m / 50m ne "53n" 10d
+50m >w / 50m sw "53h"
+w< 50m / 50m se "53o" 8d
+w< 50m / 50m ne "53p" 8d
+2u 50m
+hs> "53P4"
+3u 800m
+<hs "53N4"
+w< 50m / 50m ne "53q"
+2u 50m
+50m >w / 50m sw "53r" 8d
+2u 50m
+50m >w / 50m sw "53k"
+50m >w / 50m nw "53s" 8d
+w< 50m / 50m se "53l"
+2u 50m
+2u 200m
+hp> "53J"
+2u 800m
+end "31t53"
+
+0u begin -2u "53t52"
+1u 200m
+hp> "528"
+1u 400m
+<hp "53B"
+2u 200m
+2u 50m
+w< 50m / 50m se "53m" 10d
+4u 100m
+50m >w / 50m nw "53t" 10d
+50m >w / 50m sw "53n" 10d
+ne
+w< 50m / 50m e "53u" 8d
+e
+w< 50m / 50m ne "53v" 10d
+2u 50m
+hs> "53P2"
+3u 800m
+<hs "53N2"
+2u 50m
+w< 50m / 50m se "53w"
+2u 50m
+50m >w / 50m nw "53x" 10d
+50m >w / 50m sw "53y"
+w< 50m / 50m ne "53aa"
+w< 50m / 50m se "53z" 8d
+2u 50m
+2u 200m
+hp> "53F"
+2u 300m
+end "54t53"
+
+19u begin +3u "53o" se
+50m >w e / 50m sw "53i"
+2u 50m
+hs> "53P5"
+3u 800m
+<hs "53N5"
+2u 50m
+w< 50m ne / 50m se "53j"
+end "53r"
+
+19u begin -4u "53u" se
+1u 25m
+1u 25m e
+50m >w / 50m sw "53p" 8d
+hs> "53P3"
+3u 800m
+<hs "53N3"
+2u 50m
+50m >w / 50m sw "53q"
+50m >w / 50m nw "53w"
+w< 50m / 50m ne "53y"
+w< 50m / 50m se "53s" 8d
+4u 100m
+50m >w / 50m nw "53z" 8d
+2u 200m
+hp> "53I"
+1u 400m
+<hp "545"
+1u 200m
+end "53t54a"
+
+13v begin -1u "32c53"
+2u 1000m
+<hp "53E"
+2u 200m
+w< 50m / 50m se "53t" 10d
+3u 75m
+2u 50m ne
+3u 75m e
+50m >w / 50m sw "53v" 10d
+hs> "53P1"
+3u 800m
+<hs "53N1"
+4u 100m
+w< 50m / 50m se "53x" 10d
+6u 150m
+50m >w / 50m sw "53aa"
+2u 50m
+2u 200m
+hp> "53G"
+2u 300m
+end "54t53a"
+
+# Rules include actions for fiftyfour (early sort out)
+
+%mac fiftythree-thirtythree 54F-54P3/54P2
+%mac fiftythree-thirtythree 54G-54P4/54P3/54P2
+%mac fiftythree-thirtythree 54H-54P1/54P2
+%mac fiftythree-thirtythree 54I-54P3/54P2
+%mac fiftythree-thirtythree 54P1-530/+534
+%mac fiftythree-thirtythree 54P2-534/+530
+%mac fiftythree-thirtythree 54P3-534
+%mac fiftythree-thirtythree 54P4-53I
+%mac fiftythree-thirtythree 54P5-53I
+%mac fiftythree-thirtythree 53F-53P2/53P3/53P4/53P1
+%mac fiftythree-thirtythree 53G-53P1/53P2/53P3/53P4
+%mac fiftythree-thirtythree 53H-53P5/53P6
+%mac fiftythree-thirtythree 53I-53P3/53P4/53P2/53P1
+%mac fiftythree-thirtythree 53J-53P4/53P3/53P5/53P2/53P6
+%mac fiftythree-thirtythree 53K-53P5/53P4/53P3
+%mac fiftythree-thirtythree 53P1-331
+%mac fiftythree-thirtythree 53P2-331
+%mac fiftythree-thirtythree 53P3-331
+%mac fiftythree-thirtythree 53P4-331
+%mac fiftythree-thirtythree 53P5-331
+%mac fiftythree-thirtythree 53P6-331
+%mac fiftythree-thirtythree 53P7-331
+
+%mac fiftythree-fiftytwo 54F-54P3/54P2
+%mac fiftythree-fiftytwo 54G-54P4/54P3/54P2
+%mac fiftythree-fiftytwo 54H-54P1/54P2
+%mac fiftythree-fiftytwo 54I-54P3/54P2
+%mac fiftythree-fiftytwo 54P1-534/+530
+%mac fiftythree-fiftytwo 54P2-534/+530
+%mac fiftythree-fiftytwo 54P3-534
+%mac fiftythree-fiftytwo 54P4-53I
+%mac fiftythree-fiftytwo 54P5-53I
+%mac fiftythree-fiftytwo 53F-53P2/53P3/53P1/53P4
+%mac fiftythree-fiftytwo 53G-53P1/53P2/53P3/53P4
+%mac fiftythree-fiftytwo 53H-53P5
+%mac fiftythree-fiftytwo 53I-53P3/53P2/53P1/53P4
+%mac fiftythree-fiftytwo 53J-53P4/53P3/53P2/53P1/53P5
+%mac fiftythree-fiftytwo 53K-53P5/53P4/53P3/53P2/53P1
+%mac fiftythree-fiftytwo 53P1-528
+%mac fiftythree-fiftytwo 53P2-528
+%mac fiftythree-fiftytwo 53P3-528
+%mac fiftythree-fiftytwo 53P4-528
+%mac fiftythree-fiftytwo 53P5-528
+%mac fiftythree-fiftytwo 53P6-528
+%mac fiftythree-fiftytwo 53P7-528
+
+%mac fiftythree-thirtytwo 54F-54P3/54P2
+%mac fiftythree-thirtytwo 54G-54P4/54P3/54P2
+%mac fiftythree-thirtytwo 54H-54P1/54P2
+%mac fiftythree-thirtytwo 54I-54P3/54P2
+%mac fiftythree-thirtytwo 54P1-530/+534
+%mac fiftythree-thirtytwo 54P2-530/+534
+%mac fiftythree-thirtytwo 54P3-534
+%mac fiftythree-thirtytwo 54P4-53I
+%mac fiftythree-thirtytwo 54P5-53I
+%mac fiftythree-thirtytwo 53F-53P2/+53P1/53P3
+%mac fiftythree-thirtytwo 53G-53P1/53P2/53P3
+%mac fiftythree-thirtytwo 53H-53P5
+%mac fiftythree-thirtytwo 53I-53P3/53P2/53P1
+%mac fiftythree-thirtytwo 53J-53P3/53P2
+%mac fiftythree-thirtytwo 53K-53P3/53P2
+%mac fiftythree-thirtytwo 53P1-32F
+%mac fiftythree-thirtytwo 53P2-32F
+%mac fiftythree-thirtytwo 53P3-32F
+
+%mac fiftythree-thirtyone 53A-53N6/+53N7/53N5/53N3
+%mac fiftythree-thirtyone 53B-53N5/+53N3/53N2/53N4
+%mac fiftythree-thirtyone 53C-53N6/53N5/53N7/53N3
+%mac fiftythree-thirtyone 53D-53N5/53N6/53N7/53N3
+%mac fiftythree-thirtyone 53E-53N3/53N2/53N1
+%mac fiftythree-thirtyone 53N1-320
+%mac fiftythree-thirtyone 53N2-320
+%mac fiftythree-thirtyone 53N3-320
+%mac fiftythree-thirtyone 53N4-320
+%mac fiftythree-thirtyone 53N5-320
+%mac fiftythree-thirtyone 53N6-320
+%mac fiftythree-thirtyone 53N7-320
+
+%mac fiftythree-fiftyfive 53A-53N7/53N6/53N5/53N3
+%mac fiftythree-fiftyfive 53B-53N5/+53N3/53N2/53N4
+%mac fiftythree-fiftyfive 53C-53N7/+53N6/53N5/53N3
+%mac fiftythree-fiftyfive 53D-53N3/+53N5/53N6/53N7
+%mac fiftythree-fiftyfive 53E-53N3/53N2/53N1
+%mac fiftythree-fiftyfive 53N1-545
+%mac fiftythree-fiftyfive 53N2-545
+%mac fiftythree-fiftyfive 53N3-545
+%mac fiftythree-fiftyfive 53N4-545
+%mac fiftythree-fiftyfive 53N5-541/545
+%mac fiftythree-fiftyfive 53N6-541
+%mac fiftythree-fiftyfive 53N7-541
+%mac fiftythree-fiftyfive 54A-54S4
+%mac fiftythree-fiftyfive 54B-54S4
+%mac fiftythree-fiftyfive 54C-54N2
+%mac fiftythree-fiftyfive 54D-54N2
+%mac fiftythree-fiftyfive 54S4-54S14/54N2
+%mac fiftythree-fiftyfive 54N1-55B
+%mac fiftythree-fiftyfive 54N2-541
+%mac fiftythree-fiftyfive 54N3-541
+%mac fiftythree-fiftyfive 54N4-541
+
+%mac fiftythree-twentyfour 53A-53N7/53N6/53N5/53N3
+%mac fiftythree-twentyfour 53B-53N5/+53N3/53N2/53N4
+%mac fiftythree-twentyfour 53C-53N7/+53N6/53N5/53N3
+%mac fiftythree-twentyfour 53D-53N3/+53N5/53N6/53N7
+%mac fiftythree-twentyfour 53E-53N3/53N2/53N1
+%mac fiftythree-twentyfour 53N1-545
+%mac fiftythree-twentyfour 53N2-545
+%mac fiftythree-twentyfour 53N3-545
+%mac fiftythree-twentyfour 53N4-545
+%mac fiftythree-twentyfour 53N5-541/545
+%mac fiftythree-twentyfour 53N6-541
+%mac fiftythree-twentyfour 53N7-541
+%mac fiftythree-twentyfour 54A-54S5/54S4
+%mac fiftythree-twentyfour 54B-54S4
+%mac fiftythree-twentyfour 54C-54N2
+%mac fiftythree-twentyfour 54D-54N2
+%mac fiftythree-twentyfour 54S4-54N5/54S14/54N2
+%mac fiftythree-twentyfour 54N1-24G
+%mac fiftythree-twentyfour 54N2-248
+%mac fiftythree-twentyfour 54N3-248
+%mac fiftythree-twentyfour 54N4-248
+%mac fiftythree-twentyfour 54N5-248
+
+%def %fiftythree-thirtythree
+%def %fiftythree-thirtyone
+
+### THIRTY-THREE
+
+1u begin =54u "53t33"
+2u 900m
+<hp "333"
+1u 200m
+1u 900m
+<hp "33A"
+2u 200m
+w< 50m / 50m ne "33a"
+6u 150m
+hs> "33P3"
+4u 800m
+<hs "33N3"
+6u 150m
+50m >w / 50m nw "33d"
+2u 200m
+hp> "33G"
+1u 600m
+<hp "341"
+1u 200m
+1u 800m
+<hp "34A"
+2u 200m
+w< 50m / 50m ne "34a" 20d
+1u 25m se
+1u 200m e
+hp> "34E"
+1u 800m
+<hp "343"
+1u 200m
+1u 800m
+<hp "34F"
+1u 200m ne
+n
+w< 50m / 50m nw "34b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "34G"
+1u 800m
+<hp "344"
+1u 200m
+1u 800m
+<hp "34C"
+1u 200m sw
+end "34d"
+
+%def 34F-344/+34D
+
+1v begin -2u "33t53"
+1u 200m
+hp> "332"
+1u 800m
+1u 200m
+hp> "334"
+1u 600m
+<hp "33B"
+2u 200m
+2u 50m
+50m >w / 50m sw "33a"
+w< 50m / 50m ne "33b"
+2u 50m
+hs> "33P2"
+4u 800m
+<hs "33N2"
+2u 50m
+50m >w / 50m nw "33c"
+w< 50m / 50m se "33d"
+2u 50m
+2u 200m
+hp> "33F"
+1u 800m
+1u 200m
+hp> "342"
+1u 600m
+<hp "34B"
+2u 200m
+w< 50m / 50m ne "34d" 20d
+50m >w / 50m sw "34a" 20d
+hp> "34D"
+5v 1800m
+<hp "34H"
+1u 200m
+end "34b"
+
+14u begin -1u "33b" ne
+1u 25m
+1u 25m e
+hs> "33P1"
+4u 800m
+<hs "33N1"
+1u 25m
+1u 25m se
+end "33c"
+
+%mac thirtythree-thirtyfour 33A-33N3/33N1
+%mac thirtythree-thirtyfour 33B-33N2/33N1
+%mac thirtythree-thirtyfour 33N1-341
+%mac thirtythree-thirtyfour 33N2-341
+%mac thirtythree-thirtyfour 33N3-341
+
+%mac thirtythree-fiftythree 33F-33P2/33P1
+%mac thirtythree-fiftythree 33G-33P2/33P1
+%mac thirtythree-fiftythree 33P1-334
+%mac thirtythree-fiftythree 33P2-334
+%mac thirtythree-fiftythree 33P3-53D
+
+%def %thirtythree-thirtyfour
+%def %thirtythree-fiftythree
+
+### FIFTYTWO
+
+1u begin =91v "53t52"
+2u 900m
+<hp "526"
+1u 200m
+1u 900m
+<hp "52F"
+2u 200m
+w< 50m / 50m ne "52a"
+se
+w< 50m / 50m e "52e" 8d
+e
+4u 100m
+hs> "52N3"
+4u 800m
+<hs "52P3"
+4u 100m
+ne
+50m >w / 50m w "52f" 8d
+e
+50m >w / 50m nw "52d"
+2u 200m
+hp> "52B"
+1u 600m
+<hp "518"
+1u 200m
+1u 800m
+<hp "51F"
+2u 200m
+w< 50m / 50m ne "51a" 20d
+1u 25m se
+1u 200m e
+hp> "51C"
+1u 800m
+<hp "516"
+1u 200m
+1u 800m
+<hp "51H"
+1u 200m ne
+n
+w< 50m / 50m nw "51b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "51J"
+1u 800m
+<hp "511"
+1u 200m
+1u 800m
+<hp "51A"
+1u 200m sw
+end "51d"
+
+%def 51H-511/+51B
+
+1v begin -2u "52t53"
+1u 200m
+hp> "523"
+1u 800m
+1u 200m
+hp> "521"
+1u 600m
+<hp "52G"
+2u 200m
+2u 50m
+50m >w / 50m sw "52a"
+w< 50m / 50m se "52b"
+2u 50m
+hs> "52N1"
+4u 800m
+<hs "52P1"
+2u 50m
+50m >w / 50m sw "52c"
+w< 50m / 50m se "52d"
+2u 50m
+2u 200m
+hp> "52A"
+1u 800m
+1u 200m
+hp> "513"
+1u 600m
+<hp "51G"
+2u 200m
+w< 50m / 50m ne "51d" 20d
+50m >w / 50m sw "51a" 20d
+hp> "51B"
+5v 1800m
+<hp "51I"
+1u 200m
+end "51b"
+
+12u begin +3u "52e" ne
+1u 25m
+1u 25m e
+50m >w / 50m nw "52b"
+hs> "52N2"
+4u 800m
+<hs "52P2"
+w< 50m / 50m ne "52c"
+1u 25m
+1u 25m se
+end "52f"
+
+%mac fiftytwo-fiftyone 52F-52P3/52P2
+%mac fiftytwo-fiftyone 52G-52P1/52P2
+%mac fiftytwo-fiftyone 52P1-518
+%mac fiftytwo-fiftyone 52P2-518
+%mac fiftytwo-fiftyone 52N3-518
+
+%mac fiftytwo-fiftythree 52A-52N1/52N2
+%mac fiftytwo-fiftythree 52B-52N2/+52N1
+%mac fiftytwo-fiftythree 52N1-521
+%mac fiftytwo-fiftythree 52N2-521
+%mac fiftytwo-fiftythree 52N3-53B
+
+%def %fiftytwo-fiftyone
+%def %fiftytwo-fiftythree
+
+%trn len=80 n=ae 
+%trn len=80 n=be %fiftythree-fiftytwo
+%trn len=80 n=ac %fiftythree-fiftyfive
+%trn len=80 n=bc %fiftythree-fiftytwo,%fiftythree-fiftyfive
+%trn len=80 n=ad %fiftythree-twentyfour
+%trn len=80 n=bd %fiftythree-fiftytwo,%fiftythree-twentyfour
+%trn len=80 n=ce %fiftythree-thirtytwo,%thirtyone-thirtytwo,%fiftythree-fiftyfive
+%trn len=80 n=de %fiftythree-thirtytwo,%thirtyone-thirtytwo,%fiftythree-twentyfour
+
+%trn len=80 n=ae 
+%trn len=80 n=be %fiftythree-fiftytwo
+%trn len=80 n=ac %fiftythree-fiftyfive
+%trn len=80 n=bc %fiftythree-fiftytwo,%fiftythree-fiftyfive
+%trn len=80 n=ad %fiftythree-twentyfour
+%trn len=80 n=bd %fiftythree-fiftytwo,%fiftythree-twentyfour
+%trn len=80 n=ce %fiftythree-thirtytwo,%thirtyone-thirtytwo,%fiftythree-fiftyfive
+%trn len=80 n=de %fiftythree-thirtytwo,%thirtyone-thirtytwo,%fiftythree-twentyfour
+
+# %trn len=80 n=c1 %fiftythree-fiftytwo
+# %trn len=80 n=c2 %fiftythree-fiftytwo
+# %trn len=80 n=c3 %fiftythree-fiftytwo
+# %trn len=80 n=c4 %fiftythree-fiftytwo
+# %trn len=80 n=c5 %fiftythree-fiftytwo
+# %trn len=80 n=a1 
+# %trn len=80 n=a2 
+# %trn len=80 n=a3 
+# %trn len=80 n=a4 
+# %trn len=80 n=a5 
+# %trn len=80 n=a6 
+# %trn len=80 n=a7 
+# %trn len=80 n=a8 
+# %trn len=80 n=a9 
+# %trn len=80 n=a0 
+# %trn len=80 n=b1 %thirtyone-thirtytwo,%fiftythree-thirtytwo,%fiftythree-twentyfour
+# %trn len=80 n=b2 %thirtyone-thirtytwo,%fiftythree-thirtytwo,%fiftythree-fiftyfive
+

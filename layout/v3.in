@@ -1,0 +1,15 @@
+%inc layout.in
+%inc glob.in
+
+# Little trick to let detour to 6H only apply the first time
+%mac outlet-tour 5N1-6H,5S2-5N2/5N1-12
+%mac outlet %outlet-tour
+
+%trn len=228 v=200 n=ir1 %outlet
+%trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,4C-4S2/4S3/4S34
+%trn len=228 v=200 n=ir5 %four-five
+
+%trn len=97 v=120 n=local %local
+%trn len=97 v=120 n=local %local
+
+# %trn len=124 v=140 n=b-line %four-eight,%one-two,%two-one

@@ -1,0 +1,96 @@
+
+%trn len=220 v=200 n=1 
+%trn len=220 v=200 n=2 
+%trn len=220 v=200 n=3 
+%trn len=220 v=200 n=4 
+%trn len=220 v=200 n=5 
+%trn len=220 v=200 n=6 
+# %trn len=220 v=200 n=7 
+# %trn len=220 v=200 n=8 
+
+1u begin =1u
+2u 1000m
+<hp "A"
+2u 200m
+~ se 50m
+end "ab"
+
+1u begin +2u "b"
+2u 1000m
+<hp "B"
+2u 200m
+2u 50m
+25m >w< 25m / 25m se "bc" / 25m nw "ab"
+50m >w / 50m sw "cb"
+2u 50m
+2u 800m
+<hp "1B"
+1u 200m
+1u 800m
+<hp "1"
+1u 200m
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+end "b"
+
+1u begin +2u "c"
+2u 1000m
+<hp "C"
+2u 200m
+w< 50m / 50m se "cd1"
+25m >w< 25m / 25m ne "cb" / 25m sw "dc"
+25m >w< 25m / 25m se "cd" / 25m nw "bc"
+2u 50m
+2u 800m
+<hp "1C"
+1u 200m
+1u 800m
+<hp "1"
+1u 200m
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+end "c"
+
+1u begin +2u "d"
+2u 1000m
+<hp "D"
+2u 200m
+w< 50m / 50m ne "dc"
+50m >w / 50m nw "cd1"
+2u 50m
+50m >w / 50m nw "cd"
+2u 800m
+<hp "1D"
+1u 200m
+1u 800m
+<hp "1"
+1u 200m
+1u 800m
+<hp "2"
+1u 200m
+1u 800m
+<hp "3"
+1u 200m
+1u 800m
+<hp "4"
+1u 200m
+end "d"
+
+%def A-1A/+1B/+1C
+%def B-1B/1C/1D
+%def C-1C/1D/1B
+%def D-1D/1B/1C

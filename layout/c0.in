@@ -1,0 +1,708 @@
+1u begin =3+5u
+2u 1000m
+<hp "X"
+2u 200m
+1u 25m
+1u 25m ne
+end "ent"
+
+1u begin 1u "05t06"
+2u 800m
+<hp "051a"
+2u 200m
+2u 50m
+50m >w / 50m sw "ent" 20d
+2u 700m
+<hp "053"
+1u 200m
+1u 800m
+<hp "055"
+1u 200m
+1u 800m
+<hp "055a"
+1u 200m
+1u 800m
+<hp "055b"
+1u 200m
+1u 300m
+end "06t05"
+
+### NAUGHTYFIVE
+
+1u begin =5+8u "06t05"
+2u 800m
+<hp "05F"
+2u 200m
+w< 50m / 50m ne "05a" 8d
+6u 50m
+50m >w / 50m nw "05b" 8d
+hs> "05N1"
+4u 800m
+<hs "05R1"
+2u 50m
+50m >w / 50m nw "05c" 8d
+w< 50m / 50m se "05d" 8d
+2u 50m
+hs> "05S1"
+4u 800m
+<hs "05P1"
+2u 50m
+50m >w / 50m nw "05e" 10d
+50m >w / 50m sw "05f" 8d
+w< 50m / 50m ne "05g" 8d
+50m >w / 50m sw "05h" 8d
+2u 200m
+hp> "05B"
+1u 300m
+end "05t04"
+
+1v begin -2u "05t06"
+1u 200m
+hp> "051"
+1u 600m
+<hp "05G"
+2u 200m
+2u 50m
+50m >w / 50m sw "05a" 8d
+w< 50m / 50m ne "05i" 8d
+w< 50m / 50m se "05b" 8d
+2u 50m
+hs> "05N2"
+4u 800m
+<hs "05R2"
+w< 50m / 50m se "05c" 8d
+4u 100m
+50m >w / 50m nw "05j" 8d
+hs> "05S2"
+4u 800m
+<hs "05P2"
+w< 50m / 50m se "05e" 10d
+2u 50m
+50m >w / 50m nw "05k" 8d
+2u 50m
+50m >w / 50m sw "05g" 8d
+2u 200m
+hp> "05A"
+1u 300m
+end "04t05"
+
+53v begin +3u "05d" se
+w< 50m / 50m e "05l" 8d
+1u 25m
+1u 25m e
+hs> "05S9"
+4u 800m
+<hs "05P9"
+3u 75m
+3u 75m ne
+end "05h"
+
+57v begin +1u "05l"
+2u 50m
+hs> "05S8"
+4u 800m
+<hs "05P8"
+1u 25m
+1u 25m ne
+end "05f"
+
+23v begin -5u "05i" ne
+w< 50m e / 50m ne "05m"
+2u 50m
+hs> "05N3"
+4u 800m
+<hs "05R3"
+2u 50m
+50m >w / 50m nw "05n" 8d
+w< 50m / 50m se "05j" 8d
+2u 50m
+hs> "05S3"
+4u 800m
+<hs "05P3"
+3u 75m
+1u 25m se
+end "05k"
+
+27v begin -2u "05m" ne
+1u 25m
+1u 25m e
+hs> "05N4"
+4u 800m
+<hs "05R4"
+1u 25m
+1u 25m se
+end "05n"
+
+%mac naughtyfive-naughtysix 05A-05S2/05S3/05S8/05S1
+%mac naughtyfive-naughtysix 05B-05S1/+05S2/05S9/05S8
+%mac naughtyfive-naughtysix 05S1-05N1/+05N2
+%mac naughtyfive-naughtysix 05S2-05N2/05N3/05N4
+%mac naughtyfive-naughtysix 05S3-05N3/05N4
+%mac naughtyfive-naughtysix 05S8-05N2/05N1
+%mac naughtyfive-naughtysix 05S9-05N2/05N1
+%mac naughtyfive-naughtysix 05N1-051
+%mac naughtyfive-naughtysix 05N2-051
+%mac naughtyfive-naughtysix 05N3-051
+%mac naughtyfive-naughtysix 05N4-051
+
+%mac naughtyfive-naughtyfour 05F-05R1/05R2/05R3/05R4
+%mac naughtyfive-naughtyfour 05G-05R2/+05R1/05R3/05R4
+%mac naughtyfive-naughtyfour 05R1-05P1/05P9/05P8
+%mac naughtyfive-naughtyfour 05R2-05P2/+05P1/05P9/05P8
+%mac naughtyfive-naughtyfour 05R3-05P2/05P3
+%mac naughtyfive-naughtyfour 05R4-05P2/05P3
+%mac naughtyfive-naughtyfour 05P1-04F/04G
+%mac naughtyfive-naughtyfour 05P2-04G/+04F
+%mac naughtyfive-naughtyfour 05P3-04G
+%mac naughtyfive-naughtyfour 05P8-04F/04G
+%mac naughtyfive-naughtyfour 05P9-04F
+
+%def %naughtyfive-naughtysix
+%def %naughtyfive-naughtyfour
+
+%quo3 05B 05S9 05S8 05S1 05S2
+%quo3 05P9 05P8 05P1 05P2
+%quo4 05B 05S9 05S8 05S1 05S2 05P9 05P8 05P1 05P2
+%quo3 05G 05R1 05R2 05R3 05R4
+%quo3 05N1 05N2 05N3 05N4
+%quo4 05G 05R1 05R2 05R3 05R4 05N1 05N2 05N3 05N4
+
+### NAUGHTYFOUR / SEVENTYFIVE / SEVENTYSIX
+
+1v begin =7u "05t04"
+1u 300m
+<hp "04F"
+2u 200m
+2u 50m
+50m >w / 50m nw "04a" 10d
+w< 50m / 50m se "04b" 13d
+w< 50m / 50m ne "04c" 8d
+8u 200m
+hs> "04N1"
+4u 800m
+<hs "04P1"
+8u 200m
+50m >w / 50m nw "04d" 8d
+50m >w / 50m sw "04e" 8d
+w< 50m / 50m ne "04f" 8d
+2u 50m
+2u 200m
+hp> "04B"
+1u 300m
+end "04t03"
+
+1v begin -2u "04t05"
+1u 300m
+<hp "04G"
+2u 200m
+w< 50m / 50m se "04a" 10d
+6u 150m
+50m >w / 50m sw "04c" 8d
+w< 50m / 50m ne "04g" 8d
+4u 100m
+hs> "04N2"
+4u 800m
+<hs "04P2"
+4u 100m
+50m >w / 50m nw "04h" 8d
+w< 50m / 50m se "04d" 8d
+6u 150m
+50m >w / 50m sw "04f" 8d
+2u 200m
+hp> "04A"
+1u 300m
+end "03t04"
+
+32v begin -1u ne "04g"
+w< 50m e / 50m ne "04i"
+2u 50m
+hs> "04N3"
+4u 800m
+<hs "04P3"
+2u 50m
+50m >w se / 50m nw "04j"
+end "04h"
+
+36v begin -2u ne "04i"
+1u 25m
+1u 25m e
+hs> "04N4"
+4u 800m
+<hs "04P4"
+1u 25m
+1u 25m se
+end "04j"
+
+20v begin +6u se "04b"
+w< 50m e / 50m se "04k" 8d
+2u 50m
+hs> "04N8"
+3u 800m
+<hs "04Y8"
+1u 25m
+1u 25m se
+50m >w / 50m w "04l" 8d
+50m >w / 50m n "04m" 8d
+3v 200m e
+hp> "04K"
+1u 800m
+<hp "751"
+1u 200m
+hp> "752"
+1u 800m
+<hp "75A"
+3v 200m
+w< 50m / 50m se "75a" 8d
+w< 50m / 50m ne "75b"
+2u 50m
+hs> "75P3"
+3u 800m
+<hs "75N3"
+2u 50m
+50m >w / 50m nw "75c"
+1u 25m se
+1u 25m s
+50m >w / 50m nw "75d" 8d
+3v 50m
+1u 100m sw
+1u 100m w
+hp> "75F"
+1u 1000m
+1u 1000m
+<hp "761"
+1u 200m
+hp> "762"
+1u 1000m
+1u 1000m
+<hp "76A"
+3v 200m
+sw
+w< 50m / 50m w "76a" 8d
+w< 50m / 50m w "76b" 13d
+w< 50m / 50m w "76c" 8d
+1u 25m
+1u 25m w
+hs> "76P1"
+3u 800m
+<hs "76S1"
+2u 50m
+50m >w / 50m ne "76d" 8d
+w< 50m / 50m nw "76e" 8d
+2u 50m
+hs> "76R1"
+3u 800m
+<hs "76N1"
+w< 50m / 50m nw "76f" 8d
+4u 100m
+50m >w / 50m ne "76g" 8d
+3v 200m
+hp> "76F"
+2u 1000m
+w< 50m / 50m sw "50c76" 20d
+1u 2500m
+<hp "50I"
+1u 200m
+end "50c76"
+
+24v begin +2u se "04k"
+1u 25m
+1u 25m e
+hs> "04N9"
+3u 800m
+<hs "04Y9"
+2u 50m
+end "04l"
+
+46v begin +2u ne "04m"
+w< 50m / 50m e "04n"
+1u 25m
+1u 25m e
+hs> "04X8"
+3u 800m
+<hs "04P8"
+2u 50m
+50m >w ne / 50m sw "04o"
+end "04e"
+
+50v begin -1u e "04n"
+2u 50m
+hs> "04X9"
+3u 800m
+<hs "04P9"
+1u 25m
+1u 25m ne
+end "04o"
+
+72v begin +2u "75b" ne
+1u 25m
+1u 25m e
+hs> "75P4"
+3u 800m
+<hs "75N4"
+1u 25m
+1u 25m se
+end "75c"
+
+68v begin +2u "75a" se
+w< 50m e / 50m se "75e"
+2u 50m
+hs> "75P1"
+3u 800m
+<hs "75N1"
+2u 50m
+75m >w / 75m sw "75f"
+end "75d"
+
+72v begin +2u "75e" se
+1u 25m
+1u 25m e
+hs> "75P2"
+3u 800m
+<hs "75N2"
+1u 25m
+1u 25m ne
+end "75f"
+
+62v begin +14v "76b" w
+2u 50m
+hs> "76P2"
+3u 800m
+<hs "76N2"
+w< 50m / 50m sw "76c" 10d
+50m >w / 50m ne "76f" 8d
+2u 50m
+50m >w / 50m se "76d" 8d
+w< 50m / 50m sw "76e" 8d
+2u 50m
+2u 200m
+hp> "76G"
+2u 1000m
+w< 50m / 50m sw "76c87" 20d
+1u 2500m
+<hp "87H"
+1u 200m
+end "76c87"
+
+66v begin -2u "76a" w
+3u 75m
+hs> "76P3"
+3u 800m
+<hs "76N3"
+2u 50m
+1u 25m sw
+end "76f"
+
+%mac naughtyfour-naughtyfive 04A-04N2/04N3/04N4/04N1
+%mac naughtyfour-naughtyfive 04B-04N1/+04N2/04N3/04N4
+%mac naughtyfour-naughtyfive 04K-04N8/04N9
+%mac naughtyfour-naughtyfive 04N1-05B/+05A
+%mac naughtyfour-naughtyfive 04N2-05A/05B
+%mac naughtyfour-naughtyfive 04N3-05A/05B
+%mac naughtyfour-naughtyfive 04N4-05A/05B
+%mac naughtyfour-naughtyfive 04N8-05A/+05B
+%mac naughtyfour-naughtyfive 04N9-05A/05B
+
+%mac naughtyfour-naughtythree 04F-04P1/04P3/04P4/04P2
+%mac naughtyfour-naughtythree 04G-04P2/+04P1/04P3/04P4
+%mac naughtyfour-naughtythree 04K-04P8/04P9
+%mac naughtyfour-naughtythree 04P1-03F/03G
+%mac naughtyfour-naughtythree 04P2-03G/+03F
+%mac naughtyfour-naughtythree 04P3-03F/03G
+%mac naughtyfour-naughtythree 04P4-03F/03G
+%mac naughtyfour-naughtythree 04P8-03F/03G
+%mac naughtyfour-naughtythree 04P9-03F/03G
+
+%mac naughtyfour-seventyfive 04A-04X8/04X9
+%mac naughtyfour-seventyfive 04B-04X8/04X9
+%mac naughtyfour-seventyfive 04F-04Y8/04Y9
+%mac naughtyfour-seventyfive 04G-04Y8/04Y9
+%mac naughtyfour-seventyfive 04X8-751
+%mac naughtyfour-seventyfive 04X9-751
+%mac naughtyfour-seventyfive 04Y8-751
+%mac naughtyfour-seventyfive 04Y9-751
+
+%def %naughtyfour-naughtyfive
+%def %naughtyfour-naughtythree
+
+%quo1 04B 04X8 04X9
+%quo1 04G 04Y8 04Y9
+%quo1 752 04K 04N8 04N9
+%quo1 752 04K 04P8 04P9
+
+%quo3 04B 04N1 04N2 04N3 04N4
+%quo3 04G 04P1 04P2 04P3 04P4
+%quo4 04B 04N1 04N2 04N3 04N4 04G 04P1 04P2 04P3 04P4
+
+%def 75A-75N3/+75N2/75N4/75N1
+%def 75N1-761
+%def 75N2-761
+%def 75N3-761
+%def 75N4-761
+
+%def 75F-75P3/+75P2/75P1/75P4
+%def 75P1-752
+%def 75P2-752
+%def 75P3-752
+%def 75P4-752
+
+%quo3 751 75A 75N1 75N2 75N3 75N4
+%quo3 762 75F 75P1 75P2 75P3 75P4
+%quo4 751 75A 75N1 75N2 75N3 75N4 762 75F 75P1 75P2 75P3 75P4
+
+%mac seventysix-fifty 76A-76N1/+76N2/76N3
+%mac seventysix-fifty 76N1-50I
+%mac seventysix-fifty 76N2-50I
+%mac seventysix-fifty 76N3-50I
+
+%mac seventysix-seventyfive 76F-76P1/76P2/76P3
+%mac seventysix-seventyfive 76G-76P2/+76P1/76P3
+%mac seventysix-seventyfive 76P1-762
+%mac seventysix-seventyfive 76P2-762
+%mac seventysix-seventyfive 76P3-762
+
+%mac seventysix-eightyseven 76A-76N2/76N3/76N1
+%mac seventysix-eightyseven 76N1-87H
+%mac seventysix-eightyseven 76N2-87H
+%mac seventysix-eightyseven 76N3-87H
+
+%def %seventysix-fifty
+%def %seventysix-seventyfive
+
+%quo2 761 76A 76N1 76N2 76N3
+%quo2 76F 76G 76P1 76P2 76P3
+%quo3 761 76A 76N1 76N2 76N3 76F 76G 76P1 76P2 76P3
+
+### NAUGHTYTHREE
+
+1v begin =37+53v "04t03"
+1u 300m
+<hp "03F"
+2u 200m
+2u 50m
+50m >w / 50m nw "03a" 8d
+w< 50m / 50m se "03b" 8d
+2u 50m
+hs> "03N2"
+4u 800m
+<hs "03P2"
+2u 50m
+50m >w / 50m sw "03c" 8d
+w< 50m / 50m ne "03d" 8d
+2u 50m
+2u 200m
+hp> "03B"
+1u 600m
+<hp "026"
+1u 200m
+1u 800m
+<hp "024"
+1u 200m
+end "03t02"
+
+1v begin -2u  "03t04"
+1u 300m
+<hp "03G"
+2u 200m
+w< 50m / 50m se "03a" 8d
+2u 50m
+w< 50m / 50m ne "03e" 8d
+2u 50m
+hs> "03N3"
+4u 800m
+<hs "03P3"
+2u 50m
+50m >w / 50m nw "03f" 8d
+2u 50m
+50m >w / 50m sw "03d" 8d
+2u 200m
+hp> "03A"
+1u 800m
+1u 200m
+hp> "025"
+2u 800m
+end "02t03"
+
+10u begin -1u "03e" ne
+1u 25m
+1u 25m e
+hs> "03N4"
+4u 800m
+<hs "03P4"
+1u 25m
+1u 25m se
+end "03f"
+
+10u begin +4u "03b" se
+1u 25m
+1u 25m e
+hs> "03N1"
+4u 800m
+<hs "03P1"
+1u 25m
+1u 25m ne
+end "03c"
+
+%mac naughtythree-naughtyfour 03A-03N3/03N4/03N1/03N2
+%mac naughtythree-naughtyfour 03B-03N2/+03N3/03N4/03N1
+%mac naughtythree-naughtyfour 03N1-04A/04B
+%mac naughtythree-naughtyfour 03N2-04B/+04A
+%mac naughtythree-naughtyfour 03N3-04A/04B
+%mac naughtythree-naughtyfour 03N3-04A/04B
+
+%mac naughtythree-naughtytwo 03F-03P2/03P1
+%mac naughtythree-naughtytwo 03G-03P3/+03P2/03P1/03P4
+%mac naughtythree-naughtytwo 03P1-026/02G
+%mac naughtythree-naughtytwo 03P2-026/02G
+%mac naughtythree-naughtytwo 03P3-02G
+%mac naughtythree-naughtytwo 03P4-02G
+
+%def %naughtythree-naughtyfour
+%def %naughtythree-naughtytwo
+
+### NAUGHTYTWO
+
+1u begin =5+6u "03t02"
+2u 900m
+<hp "022"
+1u 200m
+1u 900m
+<hp "02F"
+2u 200m
+w< 50m / 50m ne "02a" 8d
+6u 150m
+hs> "02N3"
+4u 800m
+<hs "02P3"
+6u 150m
+50m >w / 50m nw "02d" 8d
+2u 200m
+hp> "02B"
+1u 600m
+<hp "018"
+1u 200m
+1u 800m
+<hp "01F"
+2u 200m
+w< 50m / 50m ne "01a" 20d
+1u 25m se
+1u 200m e
+hp> "01C"
+1u 800m
+<hp "016"
+1u 200m
+1u 800m
+<hp "01H"
+1u 200m ne
+n
+w< 50m / 50m nw "01b" 20d
+1u 25m
+1u 25m nw
+1u 200m w
+hp> "01J"
+1u 800m
+<hp "011"
+1u 200m
+1u 800m
+<hp "01A"
+1u 200m sw
+end "01d"
+
+%def 01H-011/+01B
+
+1v begin -2u "02t03"
+1u 200m
+hp> "023"
+1u 800m
+1u 200m
+hp> "021"
+1u 600m
+<hp "02G"
+2u 200m
+2u 50m
+50m >w / 50m sw "02a" 8d
+w< 50m / 50m ne "02b"
+2u 50m
+hs> "02N2"
+4u 800m
+<hs "02P2"
+2u 50m
+50m >w / 50m nw "02c"
+w< 50m / 50m se "02d" 8d
+2u 50m
+2u 200m
+hp> "02A"
+1u 800m
+1u 200m
+hp> "013"
+1u 600m
+<hp "01G"
+2u 200m
+w< 50m / 50m ne "01d" 20d
+50m >w / 50m sw "01a" 20d
+hp> "01B"
+5v 1800m
+<hp "01I"
+1u 200m
+end "01b"
+
+14u begin -1u "02b" ne
+1u 25m
+1u 25m e
+hs> "02N1"
+4u 800m
+<hs "02P1"
+1u 25m
+1u 25m se
+end "02c"
+
+%quo2 02N3 03B 03P1 03P2 03G 03N2 03N1
+%quo1 02N3 03B 03N2 03N1
+
+%mac naughtytwo-naughtyone 02F-02P3/02P1
+%mac naughtytwo-naughtyone 02G-02P2/02P1
+%mac naughtytwo-naughtyone 02P1-018/01G
+%mac naughtytwo-naughtyone 02P2-01G/+018
+%mac naughtytwo-naughtyone 02P3-018
+
+%mac naughtytwo-naughtythree 02A-02N2/02N1
+%mac naughtytwo-naughtythree 02B-02N3/+02N2/+02N1
+%mac naughtytwo-naughtythree 02N1-021/03B
+%mac naughtytwo-naughtythree 02N2-021/03B
+%mac naughtytwo-naughtythree 02N3-03B
+
+%quo1 022 02N3
+%quo1 024 02N3
+%quo1 026 02N3
+%quo1 02F 02N3
+
+%quo2 01C 02B 03P3 02G 02P2 02P1 02N2 02N1
+%quo1 03P3 02G 02P2 02P1
+
+%quo1 01G 01B 01I
+%quo1 018 01C
+%quo1 01F 01C
+
+%quo1 03A 03P3
+%quo1 025 03P3
+%quo1 023 03P3
+%quo1 021 03P3
+
+%def %naughtytwo-naughtyone
+%def %naughtytwo-naughtythree
+
+%trn len=220 v=200 n=a %naughtyfour-seventyfive,%naughtyfour-naughtyfive
+%trn len=220 v=200 n=1 
+%trn len=220 v=200 n=b %naughtyfour-seventyfive,%naughtyfour-naughtythree,%seventysix-eightyseven
+%trn len=220 v=200 n=2 
+%trn len=220 v=200 n=a %naughtyfour-seventyfive,%naughtyfour-naughtyfive
+%trn len=220 v=200 n=3 
+%trn len=220 v=200 n=b %naughtyfour-seventyfive,%naughtyfour-naughtythree,%seventysix-eightyseven
+%trn len=220 v=200 n=4 
+%trn len=220 v=200 n=a %naughtyfour-seventyfive,%naughtyfour-naughtyfive
+%trn len=220 v=200 n=5 
+%trn len=220 v=200 n=b %naughtyfour-seventyfive,%naughtyfour-naughtythree,%seventysix-eightyseven
+%trn len=220 v=200 n=6 
+%trn len=220 v=200 n=a %naughtyfour-seventyfive,%naughtyfour-naughtyfive
+%trn len=220 v=200 n=7 
+%trn len=220 v=200 n=b %naughtyfour-seventyfive,%naughtyfour-naughtythree,%seventysix-eightyseven
+%trn len=220 v=200 n=8 
