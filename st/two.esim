@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 2A" $* 2C 2B 2A -- 2S1 -- 2N3 2N2 2N1 2N4 & 
+esimc -title "esimc 2F" $* 2G 2F -- 2P4 2R2 2P3 -- 2P1 2P2 & 

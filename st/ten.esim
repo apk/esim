@@ -1,0 +1,4 @@
+#!/bin/sh
+esimc -title "esimc 10A" $* 10A -- 10N1 10N2 10N3 10N4 &
+esimc -title "esimc 10F" $* 10G 10F 10H -- 10R3 10R2 -- 10P4 10P3 10P2 10P1 &
+
