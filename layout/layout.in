@@ -13731,16 +13731,21 @@ w< 50m / 50m se "58k" 10d
 2u 50m
 2u 200m
 hp> "58F"
-3v 800m
+1u 800m
+<hp "597"
 1u 200m
 hp> "592c"
-3v 800m
+1u 800m
+<hp "597a"
 1u 200m
 hp> "592b"
-3v 800m
+1u 800m
+<hp "597b"
 1u 200m
 hp> "592a"
-2u 1000m
+1u 800m
+<hp "597c"
+1u 200m
 end "59t58"
 
 10u begin +3u "58f" se
@@ -13762,9 +13767,9 @@ end "58c116"
 %mac fiftyeight-fiftynine 58B-58N3/58N1/58N2
 %mac fiftyeight-fiftynine 58C-58N4/+58N3/58N2
 %mac fiftyeight-fiftynine 58N1-591/593
-%mac fiftyeight-fiftynine 58N2-593/+591/59C
-%mac fiftyeight-fiftynine 58N3-593/+591/59C
-%mac fiftyeight-fiftynine 58N4-59C/+593
+%mac fiftyeight-fiftynine 58N2-593/+591/597
+%mac fiftyeight-fiftynine 58N3-593/+591/597
+%mac fiftyeight-fiftynine 58N4-597/+593
 
 %mac fiftyeight-hsixteen 58A-58N1/58N2
 %mac fiftyeight-hsixteen 58B-58N1/+58N3/58N2
@@ -14001,8 +14006,8 @@ end "59j"
 %quo3 59G 59I 59P2 59P3 59P4 59P5
 %quo4 59N2 59N3 59N4 59N5 59G 59I 59P2 59P3 59P4 59P5
 
-%quo5 59C 59E 59N2 59N3 59N4 59N5  59N6 59N7 59P6 59P7
-%quo6 59C 59E 59N2 59N3 59N4 59N5 59G 59I 59P2 59P3 59P4 59P5 59N6 59N7 59P6 59P7
+%quo5 597 597a 597b 597c 59C 59E 59N2 59N3 59N4 59N5 59N6 59N7 59P6 59P7
+%quo6 597 597a 597b 597c 59C 59E 59N2 59N3 59N4 59N5 59G 59I 59P2 59P3 59P4 59P5 59N6 59N7 59P6 59P7
 
 ### HUNDREDSEVEN/EIGHT
 
@@ -14341,24 +14346,23 @@ end "116p"
 
 ### HUNDRED-FOURTYTWO
 
-1u begin =2+2u "NoIn"
-2u 800m
-<hp "1"
+1u begin =4+2u "149c176"
 2u 200m
-50m >w / 50m sw "x" 20d
-hp> "nox"
+w< 50m / 50m se "x" 20d
 2u 2000m
 <hp "176A"
-2u 1000m
-50m >w / 50m sw "x" 20d
-end "149c176"
-
-9u begin +2u "172c173"
-w< 50m / 50m se "x4x" 20d
-2u 2000m
-<hp "173A"
-1u 400m
-end "x4x"
+1u 200m
+1u 800m
+<hp "176X"
+1u 200m
+1u 1000m
+1u 1000m
+<hp "176Y"
+1u 200m
+1u 800m
+<hp "176Z"
+1u 200m
+end "x"
 
 ### HUNDRED-THIRTY
 
@@ -14457,6 +14461,10 @@ end "130h"
 %def 130P2-59I/+1306
 %def 130P3-1306/59I
 %def 130P4-1306/59I
+
+%quo3 130B 130N1 130N2 130N3 130N4
+%quo3 130G 130P1 130P2 130P3 130P4
+%quo4 130B 130N1 130N2 130N3 130N4 130G 130P1 130P2 130P3 130P4
 
 ### HUNDRED-TWENTY
 
