@@ -7,4 +7,6 @@
 %mac local 6G-6R1/6R2/6R4/6R13
 %mac local 6H-6R4/6R1/6R2/6R13
 %mac local 6R13-$,6R4-$,6R2-$,6R1-$
-%mac local %left-turn-four,%four-five
+%mac local %left-turn-four,%four-five,%eightyone-turn
+
+%mac loca %left-turn-four,%four-five,%eightyone-turn
