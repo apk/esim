@@ -8910,7 +8910,7 @@ end "09r"
 %mac naughtynine-naughtyten 09F-09P4/+09P2/09P3/09P1
 %mac naughtynine-naughtyten 09G-09P3/+09P2/09P4/09P1
 %mac naughtynine-naughtyten 09H-09P2/09P3/09P4/09P1
-%mac naughtynine-naughtyten 09I-90P1/+09P2/09P3/09P4
+%mac naughtynine-naughtyten 09I-09P1/+09P2/09P3/09P4
 %mac naughtynine-naughtyten 09P1-010G/+0100
 %mac naughtynine-naughtyten 09P2-0100/010G
 %mac naughtynine-naughtyten 09P3-010G/+0100
@@ -9252,7 +9252,7 @@ end "012q"
 %def 012H-012P2/012P0/012P1
 %def 012I-012P1/+012P2/012P0
 %def 012P0-0128/0126/011G/011I
-%def 012P1-012I/+0128/0126/011G
+%def 012P1-011I/+0128/0126/011G
 %def 012P2-0128/0126/011G/011I
 %def 012P3-011G/+0126/+0128/011I
 %def 012P4-0126/0128/011G/011I
@@ -10977,13 +10977,13 @@ end "195u92"
 %def 92G-92P2/+92P3/92P4/92P1
 %def 92H-92P4/92P3
 %def 92I-92P1/+92P3/92P4/92P2
-%def 92P1-920/91G
+%def 92P1-920/+91G
 %def 92P2-91G/+920
 %def 92P3-920/91G
 %def 92P4-920
 
-%mac ninetytwo-naughtyten 92P1-0101/010B
-%mac ninetytwo-naughtyten 92P2-010B/+0101
+%mac ninetytwo-naughtyten 92P1-010B/+0101
+%mac ninetytwo-naughtyten 92P2-0101/+010B
 %mac ninetytwo-naughtyten 92P3-0101/010B
 %mac ninetytwo-naughtyten 92P4-0101
 
@@ -11131,7 +11131,7 @@ hp> "1964"
 2u 800m
 end "196u195"
 
-1u begin -2u "195cxxx"
+1u begin -2u "195c229"
 2u 1000m
 <hp "195E"
 2u 200m
@@ -11148,15 +11148,6 @@ hs> "195P3"
 <hs "195N3"
 w< 50m ne / 50m se "195i" 8d
 end "195l"
-
-33u begin +0u "195cxxx"
-2u 1000m
-<hp "xxz"
-1u 200m
-hp> "xxy"
-3u 800m
-<end "xxx"
-%quo1 xxx xxy xxz
 
 1u begin -2u "92t195"
 2u 800m
@@ -11251,16 +11242,16 @@ end "195q"
 %def 195P5-1956/92G
 %def 195P6-1956/92G
 
-%mac hninetyfive-xxx 195F-195P5/195P6
-%mac hninetyfive-xxx 195G-195P4/+195P5/195P3/195P6
-%mac hninetyfive-xxx 195H-195P2/195P3/195P1
-%mac hninetyfive-xxx 195I-195P1/+195P2/195P3
-%mac hninetyfive-xxx 195P1-xxx
-%mac hninetyfive-xxx 195P2-xxx
-%mac hninetyfive-xxx 195P3-xxx
-%mac hninetyfive-xxx 195P4-xxx
-%mac hninetyfive-xxx 195P5-xxx
-%mac hninetyfive-xxx 195P6-xxx
+%mac hninetyfive-ttwentynine 195F-195P5/195P6
+%mac hninetyfive-ttwentynine 195G-195P4/+195P5/195P3/195P6
+%mac hninetyfive-ttwentynine 195H-195P2/195P3/195P1
+%mac hninetyfive-ttwentynine 195I-195P1/+195P2/195P3
+%mac hninetyfive-ttwentynine 195P1-229F
+%mac hninetyfive-ttwentynine 195P2-229F
+%mac hninetyfive-ttwentynine 195P3-229F
+%mac hninetyfive-ttwentynine 195P4-229F
+%mac hninetyfive-ttwentynine 195P5-229F
+%mac hninetyfive-ttwentynine 195P6-229F
 
 %quo2 195B 195N4 195N5 195N6
 %quo2 195G 195P4 195P5 195P6
@@ -26253,7 +26244,7 @@ w< 50m / 50m se "280c" 8d
 hs> "280P2"
 4u 800m
 <hs "280N2"
-w< 50m se / 50m ne "280i" 10d
+w< 50m se / 50m ne "280i" 13d
 end "280d"
 
 1u begin -2u "268c280"
@@ -26774,36 +26765,33 @@ end "275b"
 %quo1 2751 275A 275N1 275N2
 %quo1 2762 275F 275P1 275P2
 
-### TSEVENTSIX+SEVEN
+### TSEVENTYSIX+SEVEN
 
 1u begin =8+17v "275c276"
 3v 1000m
 <hp "276A"
 3v 200m
-w< 50m / 50m ne "276a" 8d
-2u 50m
+w< 50m / 50m se "276a" 8d
+50m >w / 50m nw "276c" 10d
 hs> "276P1"
 7v 800m
 <hs "276N1"
 2u 50m
-50m >w / 50m nw "276b" 8d
+50m >w / 50m sw "276b" 8d
+50m >w / 50m nw "276d" 13d
 3v 200m
 hp> "276F"
 1u 1000m
 1u 1000m
-<hp "2771"
-1u 200m
-hp> "2772"
-1u 1000m
-1u 1000m
 <hp "277A"
 3v 200m
+w< 50m / 50m se "277c" 13d
 w< 50m / 50m ne "277a" 8d
 2u 50m
 hs> "277P1"
 7v 800m
 <hs "277N1"
-2u 50m
+w< 50m / 50m se "277d" 10d
 50m >w / 50m nw "277b" 8d
 3v 200m
 hp> "277F"
@@ -26815,15 +26803,51 @@ hp> "2782"
 3v 1000m
 end "277c278"
 
-13v begin -1u "276a" ne
+1u begin -2u "276cxxx"
+3v 1000m
+<hp "276B"
+3v 200m
+w< 50m / 50m se "276c" 10d
+2u 50m
+hs> "276P0"
+7v 800m
+<hs "276N0"
+3u ~ 100m se
+end "276d"
+
+19u begin +0u "276cxxx"
+w< 50m / 50m ne "xxa" 20d
+2u 2000m
+<hp "xxxA"
+1u 200m
+end "xxa"
+
+13v begin +3u "276a" se
 ~ 50m e
 hs> "276P2"
 7v 800m
 <hs "276N2"
-~ 50m se
+~ 50m ne
 end "276b"
 
-29u begin +0u "277a" ne
+27u begin +0u "277c" se
+~ 3u 100m e
+hs> "277P0"
+7v 800m
+<hs "277N0"
+2u 50m
+50m >w / 50m nw "277d" 10d
+3v 200m
+hp> "277G"
+1u 1000m
+1u 1000m
+<hp "2291"
+1u 200m
+hp> "2292"
+3v 1000m
+end "229c277"
+
+29u begin -2u "277a" ne
 ~ 50m e
 hs> "277P2"
 7v 800m
@@ -26832,26 +26856,77 @@ hs> "277P2"
 end "277b"
 
 %def 276A-276N1/276N2
-%def 276N1-2771
-%def 276N2-2771
+%def 276B-276N0/+276N1
+%def 276N0-277A
+%def 276N1-277A
+%def 276N2-277A
 
 %def 276F-276P1/276P2
 %def 276P1-2762
 %def 276P2-2762
 
+%mac tseventysix-xxx 276F-276P0/+276P1
+%mac tseventysix-xxx 276P0-xxxA
+%mac tseventysix-xxx 276P1-xxxA
+
 %quo1 2761 276A 276N1 276N2
-%quo1 2772 276F 276P1 276P2
+%quo1 276B 276N0 276N1
+%quo1 276F 276P0 276P1 276P2
 
 %def 277A-277N1/277N2
 %def 277N1-2781
 %def 277N2-2781
 
-%def 277F-277P1/277P2
-%def 277P1-2772
-%def 277P2-2772
+%mac tseventyseven-ttwentynine 277A-277N0/+277N1
+%mac tseventyseven-ttwentynine 277N0-2291
+%mac tseventyseven-ttwentynine 277N1-2291
 
-%quo1 2771 277A 277N1 277N2
+%def 277F-277P1/277P2
+%def 277G-277P0/+277P1
+%def 277P0-276F
+%def 277P1-276F
+%def 277P2-276F
+
+%quo1 277A 277N0 277N1 277N2
 %quo1 2782 277F 277P1 277P2
+%quo1 2292 277G 277P0 277P1
+
+### TTWENTYNINE+NINE
+
+10u begin =0+5v "229c277"
+3v 1000m
+<hp "229A"
+3v 200m
+w< 50m / 50m ne "229a" 8d
+2u 50m
+hs> "229P1"
+7v 800m
+<hs "229N1"
+2u 50m
+50m >w / 50m nw "229b" 8d
+3v 200m
+hp> "229F"
+3v 1000m
+end "195c229"
+
+31v begin -1u "229a" ne
+~ 50m e
+hs> "229P2"
+7v 800m
+<hs "229N2"
+~ 50m se
+end "229b"
+
+%def 229A-229N1/229N2
+%def 229N1-195E
+%def 229N2-195E
+
+%def 229F-229P1/229P2
+%def 229P1-2292
+%def 229P2-2292
+
+%quo1 2291 229A 229N1 229N2
+%quo1 229F 229P1 229P2
 
 ### TSEVENTEIGHT+NINE
 
@@ -26878,11 +26953,11 @@ hp> "2792"
 <hp "279A"
 3v 200m
 w< 50m / 50m ne "279a" 8d
-2u 50m
+4u 100m
 hs> "279P1"
 7v 800m
 <hs "279N1"
-2u 50m
+4u 100m
 50m >w / 50m nw "279b" 8d
 3v 200m
 hp> "279F"
@@ -26898,12 +26973,22 @@ hs> "278P2"
 end "278b"
 
 29u begin +0u "279a" ne
+w< 50m / 50m e "279c" 8d
 ~ 50m e
+hs> "279P3"
+7v 800m
+<hs "279N3"
+~ 50m se
+50m >w / 50m w "279d" 8d
+end "279b"
+
+31u begin -1u "279c"
+2u 50m
 hs> "279P2"
 7v 800m
 <hs "279N2"
-~ 50m se
-end "279b"
+2u 50m
+end "279d"
 
 %def 278A-278N1/278N2
 %def 278N1-2791
@@ -26916,13 +27001,16 @@ end "279b"
 %quo1 2781 278A 278N1 278N2
 %quo1 2792 278F 278P1 278P2
 
-%def 279A-279N1/279N2
+%def 279A-279N1/279N2/279N3
 %def 279N1-059
 %def 279N2-059
+%def 279N3-059
 
-%def 279F-279P1/279P2
+%def 279F-279P1/279P2/279P3
 %def 279P1-2792
 %def 279P2-2792
+%def 279P3-2792
 
-%quo1 2791 279A 279N1 279N2
-%quo1 060 279F 279P1 279P2
+%quo2 2791 279A 279N1 279N2 279N3
+%quo2 060 279F 279P1 279P2 279P3
+%quo3 2791 279A 279N1 279N2 279N3 060 279F 279P1 279P2 279P3

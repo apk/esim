@@ -213,7 +213,7 @@
 %mac ir1n %ninety-ninetythree,%naughtyseven-ninetythree
 %mac ir1n %naughtytwelve-naughtythirteen,%naughtysixteen-naughtyfifteen
 
-%mac ir1p %hninetysix-hninetyone,%tfifty-hninety
+%mac ir1p %hninetysix-hninetyone,%tfifty-hninety,%tfiftythree-tfiftyseven
 
 %mac ir1q %ninetytwo-naughtyten,%naughtynine-naughtyten
 %mac ir1q %hninetysix-hninetyone,%tfifty-hninety,%fiftynine-htwenty
@@ -580,13 +580,29 @@
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 # %trn len=80 n=tst %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree,%hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
 
-%trn len=80 n=uX %hninetyfive-xxx,%ir1a
-%trn len=80 n=tX %hninetyfive-xxx
-%trn len=80 n=uX %hninetyfive-xxx,%ir1a
-%trn len=80 n=tX %hninetyfive-xxx
-%trn len=80 n=uX %hninetyfive-xxx,%ir1a
-%trn len=80 n=tX %hninetyfive-xxx
-%trn len=80 n=uX %hninetyfive-xxx,%ir1a
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=228 v=200 n=ir1a %ir1a
+%trn len=228 v=200 n=ir1p %ir1p
+%trn len=228 v=200 n=ir1p %ir1p
+%trn len=228 v=200 n=ir1p %ir1p
+%trn len=228 v=200 n=ir1q %ir1q
+%trn len=228 v=200 n=ir1q %ir1q
+%trn len=228 v=200 n=ir1q %ir1q
+%trn len=228 v=200 n=ir1r %ir1r
+%trn len=228 v=200 n=ir1r %ir1r
+%trn len=228 v=200 n=ir1r %ir1r
+%trn len=228 v=200 n=ir1s %ir1s
+%trn len=228 v=200 n=ir1s %ir1s
+%trn len=228 v=200 n=ir1s %ir1s
+
+%trn len=80 n=uX %hninetyfive-ttwentynine,%ir1a,%tseventyseven-ttwentynine,%tseventysix-xxx
+%trn len=80 n=tX %hninetyfive-ttwentynine,%tseventyseven-ttwentynine,%tseventysix-xxx
+%trn len=80 n=uX %hninetyfive-ttwentynine,%ir1a,%tseventyseven-ttwentynine,%tseventysix-xxx
+%trn len=80 n=tX %hninetyfive-ttwentynine,%tseventyseven-ttwentynine,%tseventysix-xxx
+%trn len=80 n=uX %hninetyfive-ttwentynine,%ir1a,%tseventyseven-ttwentynine,%tseventysix-xxx
+%trn len=80 n=tX %hninetyfive-ttwentynine,%tseventyseven-ttwentynine,%tseventysix-xxx
+%trn len=80 n=uX %hninetyfive-ttwentynine,%ir1a,%tseventyseven-ttwentynine,%tseventysix-xxx,%tseventyseven-ttwentynine,%tseventysix-xxx
 
 %trn len=80 n=uA %hninetysix-hninetyone,%tfiftyfour-tsixtynine,%teighty-tsixtynine,%teighty-tseventyone,%naughtysix-turn,%naughtysix-tseventynine
 %trn len=80 n=uB %hninetysix-hninetyone,%tfiftysix-tsixtyeight,%teighty-tsixtyeight,%teighty-tseventyone,%naughtysix-turn,%naughtysix-tseventynine
