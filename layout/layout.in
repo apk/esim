@@ -237,6 +237,8 @@ end "80j"
 
 %quo1 81N1 80B 80P0 80S0
 %quo2 80S1 80N2 80N3 80R2 80R3
+%quo1 80G 80N2 80N3 80R2 80R3
+%quo2 80H 80G 80N2 80N3 80R2 80R3 80R1 80N1
 %quo1 80G 80R2 80R3
 %quo2 80H 80G 80R2 80R3 80R1 80N1
 %quo1 801 80P2
@@ -14643,8 +14645,8 @@ end "175b"
 %def 175N2-2091
 
 %def 175F-175P1/175P2
-%def 175P1-176F
-%def 175P2-176F
+%def 175P1-1752
+%def 175P2-1752
 
 %quo1 1751 175A 175N1 175N2
 %quo1 2092 175F 175P1 175P2
@@ -14740,14 +14742,16 @@ hs> "209N2"
 3u 800m
 <end "209R2"
 
-%def 209A-209S1/+209S5
-%def 209S1-209N1
-%def 209S5-209N1/209N5/209N4
-%def 209N1-2111
-%def 209N2-2111
-%def 209N3-2111
-%def 209N4-2111
-%def 209N5-2111
+%mac tnine-televen 209A-209S1/+209S5
+%mac tnine-televen 209S1-209N1
+%mac tnine-televen 209S5-209N1/209N5/209N4
+%mac tnine-televen 209N1-2111
+%mac tnine-televen 209N2-2111
+%mac tnine-televen 209N3-2111
+%mac tnine-televen 209N4-2111
+%mac tnine-televen 209N5-2111
+
+%def %tnine-televen
 
 %mac tnine-tten 209A-209S5/+209S1
 %mac tnine-tten 209S1-209N1
@@ -14763,7 +14767,7 @@ hs> "209N2"
 %def 209R15-209R5/209R4
 %def 209R12-209R1/+209R5/209R4
 %def 209R11-209R1
-%def 209R1-209P1/209P5
+%def 209R1-209P1/+209P5
 %def 209R4-209P5
 %def 209R5-209P5
 %def 209P1-2092
@@ -14774,10 +14778,10 @@ hs> "209N2"
 %quo3 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5
 
 %quo3 2091 209A 209S5 209N1 209N4 209N5 209P1 209S1
-%quo3 2091 209A 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5 209P1 209S1
+%quo4 2091 209A 209S5 209N1 209N4 209N5 2112 209F 2102 209G 209R11 209R12 209R15 209R1 209R4 209R5 209P1 209S1
 
 %quo2 2091 209A 209P1 209P5 209S1
-%quo2 209P1 209P5 2092 175F 175P1 175P2
+%quo1 209P5 2092 175F 175P1 175P2
 
 %quo1 209R1 209N1 209R11
 %quo2 209R4 209N4 209R5 209N5 209R15
@@ -19031,8 +19035,8 @@ hs> "43P2"
 <hs "43N2"
 2u 50m
 50m >w / 50m nw "43e"
-50m >w / 50m sw "43c" 10d
-w< 50m / 50m ne "43d" 8d
+50m >w / 50m sw "43c" 11d
+w< 50m / 50m ne "43d" 10d
 2u 50m
 2u 200m
 hp> "43G"
@@ -19067,7 +19071,7 @@ hs> "43P1"
 <hs "43N1"
 w< 50m / 50m se "43e"
 6u 150m
-50m >w / 50m sw "43d" 8d
+50m >w / 50m sw "43d" 10d
 2u 200m
 hp> "43F"
 1u 800m
@@ -19090,21 +19094,19 @@ end "42t43"
 2u 1000m
 <hp "43C"
 2u 200m
-w< 50m / 50m ne "43f" 8d
+w< 50m / 50m ne "43f" 9d
 4u 100m
 hs> "43P5"
 4u 800m
 <hs "43N5"
-1u 25m
-1u 25m ne
+~ 50m ne
 50m >w / 50m w "43h"
-50m >w / 50m w "43g" 8d
+50m >w / 50m w "43g" 9d
 end "43c"
 
 15v begin -1u "43f" ne
 w< 50m / 50m e "43i"
-1u 25m
-1u 25m e
+~ 50m e
 50m >w / 50m nw "43b"
 hs> "43P3"
 4u 800m
@@ -19247,9 +19249,9 @@ end "41c42"
 3v 200m
 2u 50m
 50m >w / 50m sw "83a" 13d
-w< 50m / 50m se "83b" 10d
+w< 50m / 50m se "83b" 8d
 ne
-w< 50m / 50m e "83c" 10d
+w< 50m / 50m e "83c" 13d
 e
 w< 50m / 50m ne "83d"
 2u 50m
@@ -19264,7 +19266,6 @@ w< 50m / 50m se "83g" 8d
 hs> "83R4"
 3u 800m
 <hs "83N4"
-w< 50m / 50m se "83h" 10d
 6u 150m
 50m >w / 50m sw "83i" 10d
 3v 200m
@@ -19278,20 +19279,19 @@ end "83c84"
 3v 200m
 w< 50m / 50m ne "83a" 13d
 4u 100m
-50m >w / 50m nw "83b" 10d
-w< 50m / 50m se "83j"
-2u 50m
+50m >w / 50m nw "83b" 8d
+w< 50m / 50m se "83j" 8d
+50m >w / 50m nw "83o" 13d
 hs> "83P2"
 3u 800m
 <hs "83S2"
 2u 50m
-50m >w / 50m sw "83k"
+50m >w / 50m sw "83k" 8d
 w< 50m / 50m ne "83l" 8d
 4u 100m
 hs> "83R2"
 3u 800m
 <hs "83N2"
-2u 50m
 w< 50m / 50m ne "83m" 8d
 4u 100m
 50m >w / 50m nw "83n" 10d
@@ -19301,8 +19301,8 @@ hp> "83G"
 end "83c88"
 
 24v begin -3u "83c" se
-1u 25m
-3u 75m e
+w< 50m e / 50m se "83o" 13d
+2u 50m
 hs> "83P3"
 3u 800m
 <hs "83S3"
@@ -19315,32 +19315,27 @@ hs> "83R3"
 3u 800m
 <hs "83N3"
 2u 50m
-50m >w / 50m nw "83h" 10d
 50m >w / 50m sw "83m" 8d
 w< 50m se / 50m ne "83i" 10d
 end "83n"
 
 28v begin -2u "83d" ne
-1u 25m
-1u 25m e
+~ 50m e
 hs> "83P5"
 3u 800m
 <hs "83S5"
-1u 25m
-1u 25m se
+~ 50m se
 end "83e"
 
 28v begin +6u "83j" se
-1u 25m
-1u 25m e
+~ 50m e
 hs> "83P1"
 3u 800m
 <hs "83S1"
-1u 25m
-1u 25m ne
+~ 50m ne
 end "83k"
 
-%def 83A-83S4/83S3/83S2/83S5/83S1
+%def 83A-83S4/+83S3/83S2/83S5/83S1
 %def 83B-83S4/+83S2/83S3/83S1/83S5
 %def 83S1-83N3/+83N2
 %def 83S2-83N2/+83N3
@@ -19355,9 +19350,9 @@ end "83k"
 %mac eightythree-eightyeight 83B-83S2/+83S3/83S1/83S4/83S5
 %mac eightythree-eightyeight 83S1-83N2/83N3
 %mac eightythree-eightyeight 83S2-83N2/83N3
-%mac eightythree-eightyeight 83S3-83N3/83N4
-%mac eightythree-eightyeight 83S4-83N4/83N3
-%mac eightythree-eightyeight 83S5-83N3/83N4
+%mac eightythree-eightyeight 83S3-83N3
+%mac eightythree-eightyeight 83S4-83N3
+%mac eightythree-eightyeight 83S5-83N3
 %mac eightythree-eightyeight 83N2-88A
 %mac eightythree-eightyeight 83N3-88A
 %mac eightythree-eightyeight 83N4-88A
@@ -19387,8 +19382,12 @@ end "83k"
 %quo4 83A 44N1 83B 83S1 83S2 83S3 83S4 83S5
 %quo4 83P1 83P2 83P3 83P4 83P5
 %quo5 83A 44N1 83B 83S1 83S2 83S3 83S4 83S5 83P1 83P2 83P3 83P4 83P5
-%quo2 83F 83G 83R2 83R3 83R4
-%quo2 83N2 83N3 83N4
+
+%quo1 83G 83R2 83R3
+%quo1 83N2 83N3
+%quo2 83G 83R2 83R3 83N2 83N3
+
+%quo2 83F 83G 83R2 83R3 83R4 83N4
 %quo3 83F 83G 83R2 83R3 83R4 83N2 83N3 83N4
 
 ### EIGHTYFOUR-FIVE
