@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 478A" $* 478B 478A -- 478N4 478N3 478N2 478N1 &
+esimc -title "esimc 478F" $* 478G 478F -- 478P1 478P2 478P3 478P4 &

@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 475A" $* 475B 475A -- 475N4 475N3 475N2 475N1 &
+esimc -title "esimc 475F" $* 475G 475F -- 475P1 475P2 475P3 475P4 &

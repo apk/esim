@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 472A" $* 472D 472C 472B 472A -- 472N5 472N4 472N3 472N2 472N1 &
+esimc -title "esimc 472F" $* 472G 472F 472I 472H -- 472P1 472P2 472P3 472P4 472P5 &
