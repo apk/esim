@@ -12,7 +12,10 @@
 
 #include "muxbmf.h"
 
-#define Karo 4
+int karo = 4;
+#ifndef Karo
+#define Karo karo
+#endif
 #define KaroH (Karo / 2)
 
 MUX_TIMEOUT_TYP xTo;
@@ -315,6 +318,10 @@ int main(argc,argv) int argc; char **argv; {
                 ks = 0; }
 	    else if(!strcmp(argv[i],"-ks")) {
                 ks = 1; }
+	    else if(!strcmp(argv[i],"-big")) {
+                karo = 8; }
+	    else if(!strcmp(argv[i],"-small")) {
+                karo = 2; }
 	    else if(!strcmp(argv[i],"-b")) {
                 grayname = "blue4"; }
 	    else if(!strcmp(argv[i],"-d")) {
@@ -370,7 +377,7 @@ int main(argc,argv) int argc; char **argv; {
     myhint.x=10;
     myhint.y=10;
     myhint.width=xsize=((14*Karo)*qq)/4;
-    myhint.height=ks?160:238;
+    myhint.height=Karo*(ks?160:238)/4;
     myhint.flags=PSize;
     cmap = DefaultColormap (mydisplay, myscreen);
     if (XAllocNamedColor (mydisplay, cmap, grayname, &exact, &color) == 0) {
@@ -533,8 +540,8 @@ void DrawNum (int x, int y, int num, GC gc) {
 		for (i = 0; i < 5; i ++) {
 			if (p [j] & (16 >> i)) {
 				XFillRectangle (mydisplay, basewindow, gc,
-					x + i * Karo + 1, y + j * Karo + 1,
-					Karo - 2, Karo - 2);
+					x + i * Karo + KaroH / 2, y + j * Karo + KaroH / 2,
+					Karo / 2, Karo / 2);
 			}
 		}
 	}
