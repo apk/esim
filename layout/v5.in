@@ -484,6 +484,7 @@
 %trn len=380 v=200 n=ios %ir5
 %trn len=380 v=200 n=iot 
 
+%trn len=228 v=200 n=ir1m %ir1m
 %trn len=202 v=160 n=ir-k %irw
 %trn len=228 v=200 n=ir4b %ir4b
 %trn len=150 v=160 n=t9 %t9
@@ -610,7 +611,6 @@
 %trn len=228 v=200 n=ir4 %ir4
 %trn len=228 v=200 n=ir6g %ir6g
 %trn len=228 v=200 n=ir1 %outlet
-%trn len=228 v=200 n=ir1m %ir1m
 %trn len=150 v=160 n=t4 %t4
 %trn len=228 v=200 n=ir9 %ir9
 %trn len=202 v=160 n=ir-j %irj,%sixtyfive-sixtysix-slow
