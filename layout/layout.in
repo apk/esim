@@ -9964,10 +9964,10 @@ w< 50m / 50m nw "76e" 8d
 hs> "76R1"
 5v 800m
 <hs "76N1"
-2u 50m
-w< 50m / 50m nw "76f" 8d
 4u 100m
 50m >w / 50m ne "76g" 8d
+w< 50m / 50m nw "76f" 10d
+2u 50m
 3v 200m
 hp> "76F"
 3v 1000m
@@ -10045,14 +10045,33 @@ hs> "76R3"
 5v 800m
 <hs "76N3"
 w< 50m / 50m sw "76l" 8d
-6u 150m
-50m >w / 50m se "76m" 8d
+3u 75m
+sw
+50m >w / 50m e "76m" 8d
+1u 25m w
+50m >w / 50m se "76f" 10d
+hs> "76T"
+2u 200m
+1u 100m nw
+5v 250m n
+ne
+~ 200m e
+<hs "76U"
+w< 50m / 50m se "76x" 10d
+3v 50m
 3v 200m
 hp> "76G"
-3v 1000m
+3v 300m
 end "76c87"
 
-61v begin +2u "76c" w
+9v begin -3v "76x" se
+1u 50m
+3v 200m e
+hp> "76H"
+1u 500m
+end "51c76"
+
+61v begin +7v "76c" w
 2u 50m
 hs> "76P2"
 5v 800m
@@ -10065,9 +10084,8 @@ hs> "76R2"
 5v 800m
 <hs "76N2"
 2u 50m
-50m >w / 50m ne "76l" 8d
-50m >w / 50m se "76f" 8d
-w< 50m nw / 50m sw "76g" 8d
+25m ekw< 25m / 25m sw 8d "76g" / 25m ne "76l"
+1u 25m nw
 end "76m"
 
 69v begin -4u "76a" w
@@ -10146,7 +10164,9 @@ end "76j"
 %mac seventysix-fifty 76N3-50I
 
 %mac seventysix-seventyfive 76F-76R1/76R2/76R3
-%mac seventysix-seventyfive 76G-76R3/76R2/76R1
+%mac seventysix-seventyfive 76G-76T
+%mac seventysix-seventyfive 76H-76T
+%mac seventysix-seventyfive 76T-76R3/+76R1/76R2
 %mac seventysix-seventyfive 76R1-76P1/76P2
 %mac seventysix-seventyfive 76R2-76P1/+76P2/+76P3/76P4
 %mac seventysix-seventyfive 76R3-76P3/76P4
@@ -10154,25 +10174,38 @@ end "76j"
 %mac seventysix-seventyfive 76P2-762
 %mac seventysix-seventyfive 76P3-762
 %mac seventysix-seventyfive 76P4-762
- 
+
 %mac seventysix-eightyseven 76A-76S3/76S4/76S2/76S1
 %mac seventysix-eightyseven 76S1-76N1/+76N2
 %mac seventysix-eightyseven 76S2-76N2/76N1
 %mac seventysix-eightyseven 76S3-76N3/76N2
 %mac seventysix-eightyseven 76S4-76N3/76N2
-%mac seventysix-eightyseven 76N1-87H
-%mac seventysix-eightyseven 76N2-87H
-%mac seventysix-eightyseven 76N3-87H
+%mac seventysix-eightyseven 76N1-76U
+%mac seventysix-eightyseven 76N2-76U
+%mac seventysix-eightyseven 76N3-76U
+%mac seventysix-eightyseven 76U-87H
+
+%mac seventysix-fiftyone 76A-76S1/+76S3/76S4/76S2
+%mac seventysix-fiftyone 76S1-76N1/+76N2
+%mac seventysix-fiftyone 76S2-76N2/76N1
+%mac seventysix-fiftyone 76S3-76N3/76N2
+%mac seventysix-fiftyone 76S4-76N3/76N2
+%mac seventysix-fiftyone 76N1-76U
+%mac seventysix-fiftyone 76N2-76U
+%mac seventysix-fiftyone 76N3-76U
+%mac seventysix-fiftyone 76U-51D
 
 %def %seventysix-fifty
 %def %seventysix-seventyfive
 
+%quo1 76G 76H 76U
+
 %quo3 761 76A 76S1 76S2 76S3 76S4
 %quo3 76P1 76P2 76P3 76P4
 %quo4 761 76A 76S1 76S2 76S3 76S4 76P1 76P2 76P3 76P4
-%quo2 76F 76G 76R1 76R2 76R3
+%quo2 76F 76G 76H 76T 76R1 76R2 76R3
 %quo2 76N1 76N2 76N3
-%quo3 76F 76G 76R1 76R2 76R3 76N1 76N2 76N3
+%quo3 76F 76G 76H 76T 76R1 76R2 76R3 76N1 76N2 76N3
 
 %quo3 76S1 76S2 76N2 76N3
 %quo3 76S3 76S4 76N1 76N2
@@ -10353,23 +10386,32 @@ w< 50m / 50m se "51e" 10d
 end "51k"
 
 41v begin +4u "51c" se
-1u 25m
-1u 25m e
+~ 50m e
 hs> "51N1"
 4u 800m
 <hs "51P1"
 w< 50m / 50m ne "51d" 8d
 6u 150m
 50m >w / 50m nw "51f" 10d
+1u 25m
+w< 50m / 50m se "51l" 10d
 2u 50m
 2u 200m
 hp> "51C"
 2u 1000m
 end "51c87"
 
+81v begin +2u "51l" se
+~ 50m e
+2u 200m
+hp> "51D"
+3v 500m
+end "51c76"
+
 %def 51A-51N4/51N3/51N2/51N1
 %def 51B-51N2/+51N3/51N4/51N1
 %def 51C-51N4/+51N3/51N1/51N2
+%def 51D-51N4/+51N3/51N1/51N2
 %def 51N1-511/52B
 %def 51N2-52B/+511
 %def 51N3-511/52B
@@ -10388,6 +10430,13 @@ end "51c87"
 %mac fiftyone-eightyseven 51P2-87G
 %mac fiftyone-eightyseven 51P3-87G
 %mac fiftyone-eightyseven 51P4-87G
+
+%mac fiftyone-seventysix 51F-51P2/+51P1/51P3/51P4
+%mac fiftyone-seventysix 51G-51P3/+51P1/+51P2/51P4
+%mac fiftyone-seventysix 51P1-76H
+%mac fiftyone-seventysix 51P2-76H
+%mac fiftyone-seventysix 51P3-76H
+%mac fiftyone-seventysix 51P4-76H
 
 ### FIFTY
 
@@ -10527,8 +10576,8 @@ w< 50m / 50m se "50e" 8d
 1u 25m ne
 end "50k"
 
-%quo4 509 51B 51G 51C 51P1 51P2 51P4 51P3 51N1 51N2 51N3 51N4
-%quo3 509 51B 51C 51N1 51N2 51N3 51N4
+%quo4 509 51B 51G 76U 51C 51P1 51P2 51P4 51P3 51N1 51N2 51N3 51N4
+%quo3 509 51B 76U 51C 51N1 51N2 51N3 51N4
 %quo3 51G 51P1 51P2 51P4 51P3
 
 %def 50A-50N5/50N4/50Q2/50Q0/50Q1/50N3
@@ -10749,9 +10798,9 @@ end "87k"
 %quo2 871 87A 87S1 87S2 87S3
 %quo2 87P1 87P2 87P3
 %quo3 871 87A 87S1 87S2 87S3 87P1 87P2 87P3
-%quo3 50N2 87F 87G 87H 87R1 87R2 87R3 87R4
+%quo3 50N2 87F 87G 76U 87H 87R1 87R2 87R3 87R4
 %quo3 87N1 87N2 87N3 87N4
-%quo4 87F 87G 87H 87R1 87R2 87R3 87R4 87N1 87N2 87N3 87N4
+%quo4 87F 87G 76U 87H 87R1 87R2 87R3 87R4 87N1 87N2 87N3 87N4
 
 %quo3 87P1 87P2 87R3 87R4
 %quo3 87S1 87S2 87N3 87N4
