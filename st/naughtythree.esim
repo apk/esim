@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 03F" $* 03G 03F -- 03P4 03P3 03P2 03P1 &
+esimc -title "esimc 03A" $* 03B 03A -- 03N1 03N2 03N3 03N4 &

@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 05F" $* 05G 05F -- 05R4 05R3 05R2 05R1 -- 05P3 05P2 05P1 05P8 05P9 &
+esimc -title "esimc 05A" $* 05B 05A -- 05S8 05S9 05S1 05S2 05S3 -- 05N1 05N2 05N3 05N4 &

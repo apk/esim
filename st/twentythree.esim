@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 23A" $* 23B 23A -- 23N1 23N2 23N3 23N4 &
+esimc -title "esimc 23F" $* 23K 23G 23F -- 23R2 -- 23P4 23P3 23P2 23P1 &
