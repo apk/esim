@@ -269,10 +269,10 @@ end "405t0"
 1u 200m
 end "406t0"
 
-1u begin =1+2u "310c685"
+1u begin =1+2u "x310c685"
 w< / ne "x620a" 20d
 2u 2000m
-<hp "6852"
+<hp "x6852"
 1u 200m
 1u 800m
 <hp "6x"
@@ -314,11 +314,11 @@ w< / ne "x620a" 20d
 <hp "6x"
 1u 200m
 1u 800m
-<hp "6851"
+<hp "x6851"
 1u 200m
 end "x620a"
 
-1u begin =1+2u "309t310"
+1u begin =1+2u "x310t311"
 # w< / ne "x620b" 20d
 2u 2000m
 <hp "x6372"
@@ -365,11 +365,362 @@ end "x620a"
 1u 800m
 <hp "x6371"
 1u 200m
+end "x311t310"
+
+### THTWELVE+THIRTEEN
+
+93v begin =3+6u "311t312" w
+2u 800m
+<hp "3125"
+1u 200m
+1u 800m
+<hp "312A"
+2u 200m
+w< 50m / 50m sw "312a"
+6u 150m
+hs> "312P3"
+4u 800m
+<hs "312N3"
+6u 150m
+50m >w / 50m se "312b" 10d
+2u 200m
+hp> "312G"
+1u 600m
+<hp "3131"
+1u 200m
+1u 800m
+<hp "313A"
+2u 200m
+w< 50m / 50m sw "313a" 20d
+1u 25m nw
+1u 25m w
+hp> "313H"
+1u 700m
+<hp "3133"
+1u 200m
+1u 800m
+<hp "313C"
+1u 200m sw
+s
+w< 50m / 50m se "313b" 20d
+1u 25m
+1u 25m se
+1u 25m e
+hp> "313E"
+1u 800m
+<hp "3134"
+1u 200m
+1u 800m
+<hp "313F"
+1u 50m ne
+end "313c"
+
+%def 313A-3133/+313D
+%def 313C-313G/+3134
+%def 313G-3132/+312G
+
+94v begin +2u "312t311" w
+1u 200m
+hp> "3124"
+1u 800m
+1u 200m
+hp> "3126"
+1u 700m
+<hp "312B"
+2u 200m
+2u 50m
+50m >w / 50m ne "312a"
+w< 50m / 50m sw "312c"
+2u 50m
+hs> "312P2"
+4u 800m
+<hs "312N2"
+2u 50m
+50m >w / 50m se "312d"
+w< 50m / 50m nw "312b" 10d
+2u 50m
+2u 200m
+hp> "312F"
+1u 800m
+1u 200m
+hp> "3132"
+1u 600m
+<hp "313B"
+2u 200m
+w< 50m / 50m sw "313c" 20d
+50m >w / 50m ne "313a" 20d
+hp> "313G"
+5v 1800m
+<hp "313D"
+1u 50m
+end "313b"
+
+49v begin +1u "312d" se
+1u 25m
+1u 25m e
+hs> "312N1"
+4u 800m
+<hs "312P1"
+1u 25m
+1u 25m ne
+end "312c"
+
+%def 312A-312N3/312N1/312N2
+%def 312B-312N2/312N1
+%def 312N1-3131/313B
+%def 312N2-313B/+3131
+%def 312N1-3131
+
+%def 312F-312P2/312P1
+%def 312G-312P3/+312P2/312P1
+%def 312P1-3126/311G
+%def 312P2-3126/311G
+%def 312P3-311G
+
+%quo1 313B 313G 313D
+%quo1 313H 313A
+%quo1 313H 3131
+
+%quo1 312B 312N1 312N2
+%quo2 312B 312N1 312N2 313H 312G 312P1 312P2
+
+### THELEVEN
+
+18u begin =13+12v "311a" se
+~ 50m e
+hs> "311N1"
+7v 800m
+<hs "311P1"
+~ 50m ne
+end "311b"
+
+1u begin -1u "312t311"
+2u 800m
+<hp "3122"
+1u 200m
+1u 800m
+<hp "311F"
+2u 200m
+w< 50m / 50m ne "311c" 8d
+4u 100m
+50m >w / 50m nw "311d" 8d
+w< 50m / 50m se "311a" 8d
+2u 50m
+hs> "311N2"
+7v 800m
+<hs "311P2"
+2u 50m
+50m >w / 50m sw "311b" 8d
+50m >w / 50m nw "311e" 8d
+w< 50m / 50m ne "311f" 8d
+2u 50m
+2u 200m
+hp> "311B"
+1u 600m
+<hp "3118"
+1u 200m
+1u 600m
+<hp "3116"
+1u 200m
+1u 800m
+<hp "3114"
+1u 200m
+hp> "3119"
+1u 800m
+<hp "3112"
+1u 200m
+end "311t310"
+
+1v begin -2u "311t312"
+1u 200m
+hp> "3123"
+1u 800m
+1u 200m
+hp> "3121"
+1u 600m
+<hp "311G"
+2u 200m
+2u 50m
+50m >w / 50m sw "311c" 8d
+w< 50m / 50m se "311d" 8d
+w< 50m / 50m ne "311g" 8d
+2u 50m
+hs> "311N3"
+7v 800m
+<hs "311P3"
+2u 50m
+50m >w / 50m nw "311h" 8d
+w< 50m / 50m se "311e" 8d
+4u 100m
+50m >w / 50m sw "311f" 8d
+2u 200m
+hp> "311A"
+1u 800m
+1u 200m
+hp> "3117"
+1u 800m
+1u 200m
+hp> "3115"
+1u 800m
+<hp "3110"
+1u 200m
+hp> "3113"
+2u 800m
+end "310t311"
+
+16u begin -1u "311g" ne
+~ 50m e
+hs> "311N4"
+7v 800m
+<hs "311P4"
+~ 50m se
+end "311h"
+
+%def 311A-311N3/311N4/311N1/311N2
+%def 311B-311N2/+311N3/311N1/311N4
+%def 311N1-3121/312B
+%def 311N2-312B/+3121
+%def 311N3-3121/312B
+%def 311N4-3121/312B
+
+%def 311F-311P2/311P1/311P4/311P3
+%def 311G-311P3/+311P2/311P4/311P1
+%def 311P1-3118/3110
+%def 311P2-3118/3110
+%def 311P3-3110/+3118
+%def 311P4-3118/3110
+
+%quo1 312P3 312A
+%quo1 312P3 3125
+%quo1 312P3 3123
+%quo1 312P3 3121
+
+%quo3 312P3 311G 311P3 311P2 311P4 311P1
+%quo3 3119 311B 311N2 311N3 311N1 311N4
+%quo4 312P3 311G 311P3 311P2 311P4 311P1 3119 311B 311N2 311N3 311N1 311N4
+
+### THTEN
+
+11u begin =14+21v "310a" se
+w< / 3u e "310b" 9d
+~ 50m e
+hs> "310N1"
+7v 800m
+<hs "310Q1"
+w< 6u / ne "310c" 8d
+6u >w / nw "310d" 10d
+2u 200m
+hp> "310C"
+1u 1000m
+1u 1000m
+<hp "6851"
+1u 200m
+hp> "6852"
+3v 1000m
+end "310c685"
+
+15u begin +1u "310b"
+hs> "310N2"
+7v 800m
+<hs "310Q2"
+75m 3u ekw< 75m 3u / 25m ne "310e" 6d / 25m sw "310c"
+5u >w se / nw "310f" 10d
+end "310d"
+
+1v begin -2u "311t310"
+2u 800m
+<hp "310F"
+2u 200m
+3u >w / nw "310g" 10d
+w< / se "310a" 13d
+w< 3u / ne "310h" 8d
+hs> "310N3"
+7v 800m
+<hs "310Q3"
+3u >w / nw "310i" 10d
+>w / sw "310e" 8d
+w< / ne "310j" 8d
+w< 3u / se "310f" 10d
+hs> "310S3"
+7v 800m
+<hs "310P3"
+5u >w / nw "310k" 8d
+2u 200m
+hp> "310B"
+1u 600m
+<hp "3106"
+1u 200m
 end "310t309"
+
+0u begin -2u "310t311"
+1u 200m
+hp> "3111"
+1u 600m
+<hp "310G"
+2u 200m
+w< 4u / se "310g" 10d
+4u >w / sw "310h" 8d
+hs> "310N4"
+7v 800m
+<hs "310Q4"
+w< 4u / se "310i" 10d
+w< 3v / ne "310l" 8d
+3v >w / sw "310j" 8d
+hs> "310S4"
+7v 800m
+<hs "310P4"
+3u >w / nw "310m" 8d
+w< 3u / se "310k" 8d
+2u 200m
+hp> "310A"
+2u 800m
+end "309t310"
+
+53v begin -1u "310l" ne
+~ 2u 75m e
+hs> "310S5"
+7v 800m
+<hs "310P5"
+~ 50m se
+end "310m"
+
+%def 310A-310S4/310S5
+%def 310B-310S3/+310S4/310S5
+%def 310C-310N4/+310N1/++310N3/310N2
+%def 310S3-310N3/+310N4/310N2/310N1
+%def 310S4-310N4/310N2/310N1/310N3
+%def 310S5-310N4
+%def 310N1-3111/311B
+%def 310N2-3111/311B
+%def 310N3-311B/+3111
+%def 310N4-3111/311B
+
+%def 310F-310Q3/310Q2/310Q1/310Q4
+%def 310G-310Q4/+310Q3/310Q2/310Q1
+%def 310Q1-310P3/310P4
+%def 310Q2-310P3/310P4
+%def 310Q3-310P3/310P4
+%def 310Q4-310P4/+310P3/310P5
+%def 310P3-3106
+%def 310P4-309G/+3106
+%def 310P5-3106/309G
+
+%mac thten-seightyfive 310F-310Q1/++310Q2/++310Q3/310Q4
+%mac thten-seightyfive 310G-310Q4/+310Q1/+310Q2/+310Q3
+%mac thten-seightyfive 310Q1-6851
+%mac thten-seightyfive 310Q2-6851
+%mac thten-seightyfive 310Q3-6851
+%mac thten-seightyfive 310Q4-6851
+
+%quo3 6852 310C 310S3 310N1 310N2 310N3 310N4
+%quo3 3110 310G 310Q1 310Q2 310Q3 310Q4
+%quo4 6852 310C 310S3 310N1 310N2 310N3 310N4 3110 310G 310Q1 310Q2 310Q3 310Q4
+%quo1 310P4 310P5
+%quo2 310P4 310P5 310S4 310S5 310B
 
 ### THNINE
 
-33v begin =14+13v "309a" se
+33v begin =10+9v "309a" se
 ~ 50m e
 hs> "309N1"
 7v 800m
@@ -3725,42 +4076,42 @@ end "405ae"
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
-%trn len=200 v=200 n=ae %sten-sfive,%sfive-sten,%seleven-seighteen
+%trn len=200 v=200 n=ae %sten-sfive,%sfive-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=af %sten-sfive,%sfive-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=bd %sfour-sten
-%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
-%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
-%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine
+%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%thten-seightyfive
 %trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=ef 1-3
 
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=ad %sten-sfive,%sfive-sten
-%trn len=200 v=200 n=ae %sten-sfive,%sfive-sten,%seleven-seighteen
+%trn len=200 v=200 n=ae %sten-sfive,%sfive-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=af %sten-sfive,%sfive-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=bd %sfour-sten
-%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
-%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
-%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine
+%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%thten-seightyfive
 %trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=ef 1-3
 
 %trn len=200 v=200 n=ab 
 %trn len=200 v=200 n=ac %null-fsix
 %trn len=200 v=200 n=bd %sfour-sten
-%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=be %sfour-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=bf %sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=cd %null-fsix,%sfour-sten
-%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen
+%trn len=200 v=200 n=ce %null-fsix,%sfour-sten,%seleven-seighteen,%thten-seightyfive
 %trn len=200 v=200 n=cf %null-fsix,%sfour-sten,%seleven-seighteen,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
-%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine
+%trn len=200 v=200 n=de %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%thten-seightyfive
 %trn len=200 v=200 n=df %sfour-sten,%sfourteen-stwentyeight,%stwenty-stwentynine,%stwenty-sthirtyeight,%sninetysix-sthirtyseven
 %trn len=200 v=200 n=ef 1-3
 
