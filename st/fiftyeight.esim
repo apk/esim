@@ -1,3 +1,3 @@
 #!/bin/sh
 esimc -title "esimc 58A" $* 58C 58B 58A -- 58N4 58N3 58N2 58N1 &
-esimc -title "esimc 58F" $* 58H 58G 58F -- 58P1 58P2 58P3 58P4 &
+esimc -title "esimc 58F" $* 58I 58H 58G 58F -- 58P1 58P2 58P3 58P4 &
