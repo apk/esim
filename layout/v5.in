@@ -64,6 +64,8 @@
 %mac t3 %ninetyfive-ninetysix
 %mac t3 %ninety-ninetyfive
 %mac t3 %ninety-ninetythree,%naughtyseven-ninetythree
+%mac t3 %naughtytwelve-naughtythirteen
+%mac t3 %naughtythirteen-hfiftynine,%hfiftyeight-hfiftynine
 %mac t3 %eighteen-seventyone
 %mac t3 %seventythree-seventyseven
 %mac t3 %three-left-turn
@@ -83,11 +85,17 @@
 %mac t4 %five-six
 %mac t4 %five-eleven
 %mac t4 %sixtyfive-sixtysix-slow
+%mac t4 %naughtytwelve-naughtythirteen
+%mac t4 %naughtysixteen-naughtyfifteen
+%mac t4 %naughtysixteen-hninetynine
+%mac t4 %hninetynine-hsixtyone
+%mac t4 %hsixtyone-hninetynine
+%mac t4 %hsixtyone-hsixtytwo
 
 %mac t5 %four-five,%mostly-zero-one,%left-four-zero,%two-one,%three-fourteen
 %mac t5 %twelve-seventyfour
-%mac t5 %twentyfour-twentysix
-%mac t5 %fiftysix-twentysix
+%mac t5 %twentyfour-hseventyfour
+%mac t5 %fiftysix-twentysix,%twentysix-hseventyfour
 %mac t5 %fiftysix-ninetynine
 %mac t5 %ninety-ninetyfive
 %mac t5 %ninety-ninetythree,%naughtyseven-ninetythree
@@ -283,39 +291,6 @@
 %mac ir6g %two-one,%one-two
 %mac ir6g %twelve-seventyfour
 
-%mac t3 %eighteen-twentyone,5N1-4D/12
-%mac t3 %twentyfive-ninetyseven
-%mac t3 %ninetyfive-ninetysix
-%mac t3 %ninety-ninetyfive
-%mac t3 %ninety-ninetythree,%naughtyseven-ninetythree
-%mac t3 %naughtytwelve-naughtythirteen
-%mac t3 %naughtythirteen-hfiftynine,%hfiftyeight-hfiftynine
-%mac t3 %eighteen-seventyone
-%mac t3 %seventythree-seventyseven
-%mac t3 %three-left-turn
-%mac t3 %three-seventyseven
-
-%mac t4 %three-fourteen
-%mac t4 %twentyfour-twentysix
-%mac t4 %fiftysix-twentysix
-%mac t4 %fiftysix-ninetynine
-%mac t4 %ninety-ninetyfive
-%mac t4 %ninety-ninetythree,%naughtyseven-ninetythree
-%mac t4 %eighteen-seventyone
-%mac t4 %twelve-seventyfour
-%mac t4 %twelve-eleven
-%mac t4 %eleven-twelve
-%mac t4 %six-five
-%mac t4 %five-six
-%mac t4 %five-eleven
-%mac t4 %sixtyfive-sixtysix-slow
-%mac t4 %naughtytwelve-naughtythirteen
-%mac t4 %naughtysixteen-naughtyfifteen
-%mac t4 %naughtysixteen-hninetynine
-%mac t4 %hninetynine-hsixtyone
-%mac t4 %hsixtyone-hninetynine
-%mac t4 %hsixtyone-hsixtytwo
-
 %mac t1 5N1-4D/12
 %mac t1 %three-fourteen,%eighteen-twentyone
 %mac t1 %fiftythree-fiftytwo
@@ -342,6 +317,13 @@
 %trn len=380 v=200 n=ior %seventeen-nineteen,%eighteen-twentyone,%fiftythree-thirtytwo
 %trn len=380 v=200 n=ios %ir5
 %trn len=380 v=200 n=iot 
+
+%trn len=150 v=160 n=t3 %t3
+%trn len=150 v=160 n=t4 %t4
+%trn len=150 v=160 n=t5 %t5
+%trn len=150 v=160 n=t3 %t3
+%trn len=150 v=160 n=t4 %t4
+%trn len=150 v=160 n=t5 %t5
 
 %trn len=202 v=160 n=ir-n %irn,%sixtyfive-sixtysix-slow
 %trn len=228 v=200 n=ir1q %ir1q
@@ -388,7 +370,6 @@
 %trn len=228 v=200 n=ir6 %ir6
 %trn len=202 v=160 n=ir-b %four-five,%mostly-zero-one,%four-eight,%left-four-zero,%two-one,%three-left-turn
 %trn len=80 n=35a %outlet,%fourty-thirtyfive,%fiftythree-fiftytwo,%sixtyfive-sixtyfour
-%trn len=150 v=160 n=t3 %t3
 %trn len=228 v=200 n=ir8a %ir8a
 %trn len=228 v=200 n=ir6g %ir6g
 %trn len=228 v=200 n=ir8c %ir8c
@@ -405,7 +386,6 @@
 %trn len=228 v=200 n=ir1r %ir1r
 %trn len=228 v=200 n=ir1s %ir1s
 %trn len=228 v=200 n=ir1s %ir1s
-%trn len=150 v=160 n=t4 %t4
 %trn len=228 v=200 n=ir6 %ir6
 %trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two
 %trn len=228 v=200 n=ir1e %ir1e
@@ -418,7 +398,6 @@
 %trn len=228 v=200 n=ir5a %ir5a
 %trn len=228 v=200 n=ir6 %ir6
 %trn len=228 v=200 n=ir4c %ir4c
-%trn len=150 v=160 n=t5 %t5
 %trn len=228 v=200 n=ir5c %ir5c
 %trn len=228 v=200 n=ir2 %ir2
 %trn len=228 v=200 n=ir6d %ir6d
