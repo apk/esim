@@ -90,6 +90,16 @@ void handle_window(myevent) XEvent myevent; {
 	int i;
 #endif
 	switch(myevent.type) {
+	  case KeyPress:
+#if 0
+	    i=XLookupString(&myevent,text,10,&mykey,0);
+	    if(i==1) {
+	      printf ("txt=%d\n", text [0]);
+	    } else {
+	      printf ("i=%d\n", i);
+	    }
+#endif
+	    break;
 	  case Expose:
 	    if(myevent.xexpose.count) break;
 	    /* XClearArea(mydisplay,basewindow,R.x,R.y,R.w,R.h,False); */
@@ -122,8 +132,6 @@ void handle_window(myevent) XEvent myevent; {
 	  case MotionNotify:
 	    break;
 	  case ButtonRelease:
-	    break;
-	  case KeyPress:
 	    break; }}}
 
 int X_req (MUX_FD_TYP *x) {
