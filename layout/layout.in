@@ -356,7 +356,7 @@ end "78d"
 %mac zero-two N5-41/2B
 
 %mac zero-four F-R12-R2/P3
-%mac zero-four G-P2/P3/R5
+%mac zero-four G-P1/+P2/P3/R5
 %mac zero-four H-P4/P3
 %mac zero-four P4-99/4G
 %mac zero-four P3-99/4G
@@ -650,7 +650,7 @@ end "78d"
 ### SEVEN
 
 %mac seven-seven 7F-7R1/7R5/7P3/7P4/7P2
-%mac seven-seven 7G-7P2/+7P3/+7R1/7P4
+%mac seven-seven 7G-7P2/7R1/7P3/7P4
 %mac seven-seven 7R1-7P1/65G/72
 %mac seven-seven 7R5-7P1/65G/72
 %mac seven-seven 7P1-72/65G
@@ -659,11 +659,12 @@ end "78d"
 %mac seven-seven 7P4-72/65G
 
 %mac seven-six 7A-7N2/7N3/7N4/7N1/7N5
+%mac seven-six 7B-7N1/+7N2/7N3/7N4/7N5
+%mac seven-six 7N1-6B/+73
 %mac seven-six 7N2-73/6B
 %mac seven-six 7N3-73/6B
 %mac seven-six 7N4-73/6B
-%mac seven-six 7N1-73/6B
-%mac seven-six 7B-7N2/7N3/7N1/7N4/7N5
+%mac seven-six 7N5-6B
 
 %def %seven-seven
 %def %seven-six
@@ -825,7 +826,7 @@ hs> "66N1"
 4u 800m
 <hs "66P1"
 6u 150m
-50m >w / 50m se "66b"
+50m >w / 50m se "66b" 10d
 2u 200m
 hp> "66B"
 1u 600m
@@ -875,14 +876,14 @@ hp> "651"
 1u 100m nw
 2u 50m w
 50m >w / 50m ne "66a"
-w< 50m / 50m sw "66c"
+w< 50m / 50m sw "66c" 8d
 2u 50m
 hs> "66N2"
 4u 800m
 <hs "66P2"
 2u 50m
 50m >w / 50m se "66d"
-w< 50m / 50m nw "66b"
+w< 50m / 50m nw "66b" 10d
 2u 50m
 2u 200m
 hp> "66A"
@@ -902,8 +903,10 @@ hp> "67B"
 1u 50m
 end "67b"
 
+%quo1 67G 67B 67I
+
 49v begin +0u "66d" se
-50m >w e / 50m sw "66f"
+50m >w e / 50m sw "66f" 8d
 hs> "66P3"
 4u 800m
 <hs "66N3"
@@ -918,14 +921,14 @@ end "66c"
 <hp "66H"
 2u 200m
 2u 50m
-50m >w / 50m se "66g"
+50m >w / 50m se "66g" 8d
 w< 50m / 50m nw "66e"
 2u 50m
 hs> "66N4"
 4u 800m
 <hs "66P4"
 2u 50m
-50m >w / 50m ne "66f"
+50m >w / 50m ne "66f" 8d
 w< 50m / 50m sw "66h"
 2u 50m
 2u 200m
@@ -972,7 +975,7 @@ hp> "653"
 1u 700m
 <hp "66I"
 2u 200m
-w< 50m / 50m nw "66g"
+w< 50m / 50m nw "66g" 8d
 6u 150m
 hs> "66N5"
 4u 800m
@@ -996,27 +999,29 @@ hp> "68B"
 end "68b"
 
 %def 66A-66N2/66N3
-%def 66B-66N2/66N3
-%def 66C-66N5/66N3
-%def 66D-66N5/66N3
+%def 66B-66N1/+66N2/66N3
+%def 66C-66N5/66N3/66N4
+%def 66D-66N4/66N3
 %def 66N1-65B
-%def 66N2-651
-%def 66N3-651/+653
-%def 66N3-653
-%def 66N3-653
+%def 66N2-651/65B
+%def 66N3-651/+653/65D/65B
+%def 66N4-65D/+653
+%def 66N5-653
 
 %def 66F-66P1/66P3/66P2
 %def 66G-66P2/+66P3
 %def 66H-66P4/66P3
 %def 66I-66P4/+66P3/66P5
 %def 66P1-662
-%def 66P2-662
-%def 66P3-664/662
+%def 66P2-67G/+662
+%def 66P3-664/662/67G
 %def 66P4-664
 %def 66P5-$
 
 %quo1 66P2 66P3
-%quo2 66B 66N2 66N3 66P2 66P3 66G
+%quo2 67C 66B 66N2 66N3 66P2 66P3 66G
+%quo1 67C 67F
+%quo1 67C 662
 
 ### SIXTYFOUR ETC
 
@@ -1061,6 +1066,8 @@ hp> "65D"
 <hp "654c"
 1u 200m
 end "65t66s"
+
+%exc 65D 654
 
 1u begin +2u "66t65s"
 2u 800m
@@ -1149,6 +1156,8 @@ hp> "642"
 2u 800m
 end "7t65"
 
+%exc 65B 652
+
 33u begin +6u "64b" se
 1u 25m
 1u 25m e
@@ -1187,7 +1196,7 @@ end "65k"
 
 %mac sixtyfive-sixtysix 65F-65R2/65R1
 %mac sixtyfive-sixtysix 65G-65P3/+65R2
-%mac sixtyfive-sixtysix 65R2-65P2/+654/66G
+%mac sixtyfive-sixtysix 65R2-65P2/+654/+66G
 %mac sixtyfive-sixtysix 65R1-65P1/65P2/654/66G
 %mac sixtyfive-sixtysix 65P1-652
 %mac sixtyfive-sixtysix 65P2-652
@@ -1196,17 +1205,17 @@ end "65k"
 
 %mac sixtyfive-sixtysix-slow 65F-65R2/65R1
 %mac sixtyfive-sixtysix-slow 65G-65P3/+65R2
-%mac sixtyfive-sixtysix-slow 65R2-654/65P2
-%mac sixtyfive-sixtysix-slow 65R1-654/65P1/65P2
+%mac sixtyfive-sixtysix-slow 65R2-654/65P2/66G
+%mac sixtyfive-sixtysix-slow 65R1-654/65P1/65P2/66G
 %mac sixtyfive-sixtysix-slow 65P1-652
 %mac sixtyfive-sixtysix-slow 65P2-652
-%mac sixtyfive-sixtysix-slow 65P3-654/+652
-%mac sixtyfive-sixtysix-slow 65H-654/652
+%mac sixtyfive-sixtysix-slow 65P3-654/+652/+66G
+%mac sixtyfive-sixtysix-slow 65H-654/652/66G
 
 %def %sixtyfive-sixtysix
 
-%quo3 652 652a 652b 652c
-%quo3 65H 654 654a 654b 654c
+%quo2 652 652a 652b
+%quo2 65H 654 654a 654b
 
 %quo1 65S2 65R2 65N2 65G
 %quo1 65S2 65P3
@@ -1229,6 +1238,14 @@ end "65k"
 %mac sixtyfive-sixtyfour 65B-64A
 %mac sixtyfive-sixtyfour 65C-64A
 %mac sixtyfive-sixtyfour 65D-64A
+
+%quo1 65B 65D 66N1
+%quo1 66N1 66F
+%quo1 66N1 652d
+%quo1 66N1 652c
+%quo1 66N1 652b
+%quo1 66N1 652a
+%quo1 66N1 652
 
 ### SIX
 
@@ -1464,10 +1481,12 @@ hs> "7P3"
 2u 50m
 end "7i"
 
-%exc 7P2 7P3 7P4 7B
-%exc 7N2 7N3 7N4 7G
-%exc 7N1 7N5
-%quo3 7B 7G 7P2 7P3 7P4 7N2 7N3 7N4
+%quo3 7B 7N1 7N2 7N3 7N4
+%quo3 7G 7P1 7P2 7P3 7P4
+%quo3 7G 7R1 7P2 7P3 7P4
+%quo4 7B 7G 7N1 7P2 7P3 7P4 7N2 7N3 7N4
+%quo4 7B 7G 7R1 7P2 7P3 7P4 7N2 7N3 7N4
+%quo4 7B 7G 7P1 7P2 7P3 7P4 7N2 7N3 7N4
 
 %quo3 6P2 8 78 76
 
@@ -2912,15 +2931,16 @@ end "3x"
 %mac three-fourteen 3Q9-141/140
 
 %mac three-two 3F-3R1/3R5
+%mac three-two 3G-3R5
 %mac three-two 3H-3R2/3P3/3P4/3P1/3P6/3P9/3P8/3P7
-%mac three-two 3I-3P3/3P4/3P1/3P6/3P9/3P8/3P7
+%mac three-two 3I-3P4/+3P3/3P1/3P6/3P9/3P8/3P7
 %mac three-two 3R1-3P1/3P2/3P3
-%mac three-two 3R5-3P1/3P2/3P3/3P4/3P5/3P9/3P8/3P7/3P6
+%mac three-two 3R5-3P5/+3P3/3P1/3P2/3P4/3P9/3P8/3P7/3P6
 %mac three-two 3R2-3P2/3P1/3P3
 %mac three-two 3P1-3X/39
 %mac three-two 3P2-3X/39
 %mac three-two 3P3-3X/39
-%mac three-two 3P4-3X/39
+%mac three-two 3P4-39/+3X
 %mac three-two 3P5-39/+3X
 %mac three-two 3P6-3X/39
 %mac three-two 3P7-3X/39
@@ -3051,7 +3071,7 @@ end "13t15"
 %mac thirteen-three 13P1-138/3G
 %mac thirteen-three 13P2-138/3G
 %mac thirteen-three 13P3-138/3G
-%mac thirteen-three 13P4-138/+3G
+%mac thirteen-three 13P4-3G/+138
 
 %mac thirteen-fourteen 13F-13P1/13P2/13P3
 %mac thirteen-fourteen 13G-13P1/13P2/13P3
@@ -3416,11 +3436,11 @@ end "19b"
 %mac fifteen-eighteen 15N4-194
 
 %mac fifteen-thirteen 15F-15P2/15P1/15P4/15P3
-%mac fifteen-thirteen 15G-15P2/+15P3/15P4/15P1
+%mac fifteen-thirteen 15G-15P3/+15P2/15P4/15P1
 %mac fifteen-thirteen 15H-15P1/15P2/15P4/15P3
 %mac fifteen-thirteen 15P1-158/150
 %mac fifteen-thirteen 15P2-158/150
-%mac fifteen-thirteen 15P3-158/+150
+%mac fifteen-thirteen 15P3-150/+158
 %mac fifteen-thirteen 15P4-158/150
 
 %mac fifteen-thirtyseven 15F-15P4/15P2/15P3/15P1
@@ -3574,11 +3594,12 @@ end "17f"
 %mac seventeen-twentyfour 17N1-27B
 
 %mac seventeen-fifteen 17F-17R1/17R2
-%mac seventeen-fifteen 17G-17R2
+%mac seventeen-fifteen 17G-17R3/+17R2
 %mac seventeen-fifteen 17R1-17P1
 %mac seventeen-fifteen 17R2-17P1/17P3
+%mac seventeen-fifteen 17R3-17P3
 %mac seventeen-fifteen 17P1-174
-%mac seventeen-fifteen 17P3-174/15G
+%mac seventeen-fifteen 17P3-15G/+174
 
 %mac seventeen-nineteen 17F-17R1/17R2
 %mac seventeen-nineteen 17G-17R2
@@ -3590,7 +3611,7 @@ end "17f"
 %def %seventeen-twentyfour
 %def %seventeen-fifteen
 
-%quo1 17B 17P3
+%quo1 17B 17P3 17R3
 %quo1 17C 17P3
 %quo1 17S1 17R2 17N2 17G
 
@@ -5607,6 +5628,7 @@ end "30e"
 
 %quo1 40N6 30B 30S1 30S2
 %quo2 40N6 30B 30S1 30S2 30P1 30P2
+%quo1 30P2 30P3
 %quo1 40N6 40F
 %quo1 40N6 302
 %quo1 40N6 304
@@ -10873,7 +10895,8 @@ hp> "601"
 <hp "60G"
 2u 200m
 w< 50m / 50m se "60a" 8d
-4u 100m
+2u 50m
+50m >w / 50m nw "60q" 10d
 w< 50m / 50m ne "60i" 13d
 50m >w / 50m sw "60c" 10d
 w< 50m / 50m ne "60j" 10d
@@ -10907,8 +10930,7 @@ w< 50m / 50m ne "60e" 8d
 7u ~ 200m ne
 end "60g"
 
-32v begin -5u "60i" ne
-w< 50m / 50m e "60m" 11d
+36v begin -7u "60r" ne
 ~ 3u 100m e
 50m >w / 50m sw "60n" 10d
 hs> "60N5"
@@ -10926,7 +10948,13 @@ hp> "695"
 2u 800m
 end "69t60"
 
-36v begin -1u "60m"
+11v begin +1u "100c60"
+2u 1000m
+<hp "60I"
+2u 50m
+w< 50m / 50m se "60q" 10d
+4u 100m
+25m >w< 25m / 25m ne "60r" 10d / 25m sw "60i"
 2u 50m
 25m >ekw 25m / 25m ne "60n" 10d / 25m sw "60j"
 2u 50m
@@ -10961,6 +10989,7 @@ end "60t69"
 %mac sixty-fourtynine 60F-60P2/60P1/60P4/60P3
 %mac sixty-fourtynine 60G-60P3/+60P2/60P1/60P4
 %mac sixty-fourtynine 60H-60P1/+60P2/60P4/60P3
+%mac sixty-fourtynine 60I-60P4/60P3
 %mac sixty-fourtynine 60P1-494/49G
 %mac sixty-fourtynine 60P2-494/49G
 %mac sixty-fourtynine 60P3-49G/+494
@@ -10969,6 +10998,7 @@ end "60t69"
 %mac sixty-sixtynine 60F-60P4/+60P2/60P5/60P3/60P1
 %mac sixty-sixtynine 60G-60P5/+60P4/60P3/60P2/60P1
 %mac sixty-sixtynine 60H-60P4/+60P1/+60P2/60P5/60P3
+%mac sixty-sixtynine 60I-60P4/+60P5/60P3
 %mac sixty-sixtynine 60P1-696/69G
 %mac sixty-sixtynine 60P2-696/69G
 %mac sixty-sixtynine 60P3-696/69G
@@ -11606,7 +11636,7 @@ hs> "100P1"
 3u 800m
 <hs "100N1"
 2u 50m
-50m >w / 50m sw "100b" 11d
+50m >w / 50m sw "100b" 13d
 3v 200m
 hp> "100F"
 1u 800m
@@ -11627,15 +11657,19 @@ hp> "101F"
 2u 1000m
 end "101c104"
 
-7u begin +1u "100a" se
-~ 50m e
+1u begin +2u "100c60"
+2u 1000m
+<hp "100B"
+3v 200m
+2u 50m
+50m >w / 50m nw "100a" 10d
 hs> "100P2"
 3u 800m
 <hs "100N2"
 ~ 50m ne
 end "100b"
 
-24u begin +0u "101a" e
+24u begin -1u "101a" e
 4u 100m
 hs> "101P3"
 3u 800m
@@ -11665,7 +11699,7 @@ end "101c"
 %def 100N2-101A
 %def 100F-100P1/+100P2
 %def 100P1-60H
-%def 100P2-60H
+%def 100P2-60I/+60H
 
 %def 101A-101N1/101N2/101N3
 %def 101N1-104A
@@ -12115,9 +12149,9 @@ hs> "107R5"
 
 %mac hundred 60N1-100A
 %mac hundred 60N2-100A
-%mac hundred 60N3-100A
-%mac hundred 60N4-100A
-%mac hundred 60N5-100A
+%mac hundred 60N3-100A/+100B
+%mac hundred 60N4-100B/+100A
+%mac hundred 60N5-100A/+100B
 
 %quo1 1081 107A 107S3 107S4
 %quo1 107P3 107P4
