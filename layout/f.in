@@ -22,6 +22,7 @@ end "ab"
 2u 50m
 25m >w< 25m / 25m se "bc" / 25m nw "ab"
 50m >w / 50m sw "cb"
+"bc" >< "cb"
 2u 50m
 2u 800m
 <hp "1B"
@@ -46,6 +47,7 @@ end "b"
 2u 200m
 w< 50m / 50m se "cd1"
 25m >w< 25m / 25m ne "cb" / 25m sw "dc"
+"cd1" >< "dc"
 25m >w< 25m / 25m se "cd" / 25m nw "bc"
 2u 50m
 2u 800m

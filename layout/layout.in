@@ -7931,6 +7931,7 @@ hs> "06P4"
 2u 50m 10d
 25m >w< 25m / 25m se "06g" 4d / 25m nw "06f"
 50m >w / 50m sw "06h" 4d
+"06g" >< "06h"
 hs> "06R4" 10d
 3v 400m
 end "06i4"
@@ -9644,6 +9645,7 @@ hp> "852"
 3v 200m
 w< 50m / 50m se "85a"
 25m ekw< 25m / 25m ne "85b" / 25m sw "85c"
+"85a" >< "85c"
 50m >w / 50m sw "85d"
 hs> "85P2"
 3u 800m
@@ -11715,6 +11717,7 @@ hs> "103P1"
 <hs "103S1"
 w< 50m / 50m se "103b"
 50m >w / 50m sw "103c"
+"103b" >< "103c"
 2u 50m
 hs> "103R1"
 5v 800m
@@ -11931,8 +11934,11 @@ hs> "107P3"
 <hs "107S3"
 w< 50m / 50m ne "107b" 
 25m >w< 25m / 25m se "107c" / 25m nw "107d"
+"107d" >< "107b"
 25m >w< 25m / 25m ne "107x" / 25m sw "107y"
+"107c" >< "107y"
 50m >w / 50m nw "107e"
+"107e" >< "107x"
 hs> "107R3"
 3u 800m
 <end "107N3"
@@ -11952,8 +11958,10 @@ hs> "107P2"
 <hs "107S2"
 w< 50m / 50m ne "107l"
 25m ekw< 25m / 25m se "107d" / 25m nw "107g"
+"107g" >< "107l"
 25m >w< 25m / 25m ne "107h" / 25m sw "107b"
 25m >w< 25m / 25m se "107e" / 25m nw "107i"
+"107i" >< "107h"
 50m >w / 50m sw "107x"
 hs> "107R2"
 3u 800m
@@ -12013,15 +12021,17 @@ hs> "107R0"
 hs> "107P4"
 3u 800m
 <hs "107S4"
-2u 50m
+w< 50m / 50m se "107p"
 25m ekw< 25m / 25m ne "107y" / 25m sw "107n"
-25m >w< 25m / 25m se "107k" / 25m nw "107c"
+"107p" >< "107n"
+25m >ekw 25m / 25m se "107k" / 25m nw "107c"
 50m >w / 50m sw "107o" 8d
+"107k" >< "107o"
 hs> "107R4"
 3u 800m
 <end "107N4"
 
-53v begin +3u "107c110" # "107k" se
+53v begin +3u "107c110"
 2u 1000m
 <hp "1102"
 1u 200m
@@ -12030,7 +12040,7 @@ hp> "1101"
 <hp "107C"
 3v 200m
 w< 50m / 50m ne "107n"
-2u 50m
+50m >w / 50m nw "107p"
 w< 50m / 50m ne "107o" 8d
 50m >w / 50m nw "107k"
 hs> "107R5"
@@ -12070,9 +12080,9 @@ hs> "107R5"
 %mac hundrednull 107R0-107P3/107P2
 %mac hundrednull 107R1-107P3/107P2
 %mac hundrednull 107R2-107P3/107P2/107P4
-%mac hundrednull 107R3-107P3/107P2/107P4
-%mac hundrednull 107R4-107P3/107P2/107P4
-%mac hundrednull 107R5-107P3/107P2/107P4
+%mac hundrednull 107R3-107P3/107P4/107P2
+%mac hundrednull 107R4-107P3/107P4/107P2
+%mac hundrednull 107R5-107P3/107P4/107P2
 %mac hundrednull 107P4-1082
 %mac hundrednull 107P3-1082
 %mac hundrednull 107P2-1082
@@ -12167,9 +12177,9 @@ w< 50m / 50m se "109a" 8d
 hs> "109P1"
 3u 800m
 <hs "109N1"
-2u 50m
-50m >w / 50m sw "109b" 8d
-3v 200m
+~ se 50m
+50m >w / 50m w "109b" 8d
+~ e 200m
 hp> "109F"
 2u 1000m
 end "108c109"
@@ -12179,7 +12189,7 @@ end "108c109"
 hs> "109P2"
 3u 800m
 <hs "109N2"
-~ 50m ne
+2u 50m
 end "109b"
 
 %def 89A-89N3/89N4/89N2

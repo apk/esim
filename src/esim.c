@@ -77,6 +77,7 @@ int xsize = 37 * FieldXSize - 1, ysize = 44 * FieldYSize - 1;
 #define Stop		0x4000
 #define FullCross	0x8000
 #define HalfCross	0x10000
+#define Nothing		0x20000
 
 #define Eoln		(0)
 #define JoinSwitch	(1 | Switch)
@@ -101,6 +102,7 @@ int xsize = 37 * FieldXSize - 1, ysize = 44 * FieldYSize - 1;
 #define FwdCrossSwitch	(20 | Switch | HalfCross)
 #define RevCrossSwitch	(21 | Switch | HalfCross)
 #define CurveCrossSwitch (22 | Switch | HalfCross)
+#define Crossing	(23 | HalfCross | CtlTwo)
 
 #define Straight	(23)
 #define Curve		(24)
@@ -131,6 +133,7 @@ struct {
 	{ "~" , Curve },
 	{ ">w", JoinSwitch },
 	{ "w<", BranchSwitch },
+	{ "><", Crossing },
 	{ ">w<", FullCrossSwitch },
 	{ "ekw<", FwdCrossSwitch },
 	{ ">ekw", RevCrossSwitch },
@@ -2216,7 +2219,7 @@ int parseline (char *p) {
 	int z;
 	int u, m, t, i;
 	int d1, d2, d3;
-	struct conn *c, *c2, *c3;
+	struct conn *c, *c2, *c3, *c1;
 	struct trk *tk;
 	struct sig *sg;
 	if (*p == '%') {
@@ -2338,6 +2341,28 @@ int parseline (char *p) {
 		currconn = c;
 		return 0;
 	case 2:
+		if (A [0].tok == Crossing) {
+			if ((A [0].flags | A [1].flags) & (Dseen | Mseen | Sseen)) {
+				ErrDiag ("Only names allowed on crossing");
+			}
+			if (!A [0].name || !A [1].name) {
+				ErrDiag ("Names required on crossing");
+			}
+			c = GetConn (A [0].name, 0);
+			c2 = GetConn (A [1].name, 0);
+			c1 = GetConn (A [0].name, 0);
+			c3 = GetConn (A [1].name, 0);
+
+			x = mkdnode (Nothing);
+
+			tk = MkTrk (1, c, c1, x);
+			c->b = tk;
+			c1->b = tk;
+			tk = MkTrk (1, c2, c3, x);
+			c2->b = tk;
+			c3->b = tk;
+			return 0;
+		}
 		if (A [0].tok == Curve) {
 			if (!currconn) {
 				ErrDiag ("no circuit");
