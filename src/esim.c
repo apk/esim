@@ -466,8 +466,6 @@ struct qlg {
 
 struct sig *actlist = 0;	/* Active path list */
 
-struct train *followtrain = 0;
-
 struct train *currtrn = 0;	/* I hate globals, but is the easiest way... */
 
 void do_paths (void) {
@@ -1845,6 +1843,31 @@ void train_ddraw (struct train *trn) {
 
 void stash (int f);
 
+struct train *followtrain = 0;
+
+void set_followtrain (struct train *trn) {
+	if (followtrain != trn) {
+		if (followtrain) {
+			XSetWindowBackground (mydisplay,
+				followtrain->dwin, spaceground);
+			train_ddraw (followtrain);
+		}
+		followtrain = trn;
+		if (followtrain) {
+			XSetWindowBackground (mydisplay,
+				trn->dwin, markground);
+			train_ddraw (trn);
+		}
+	} else {
+		if (trn) {
+			XSetWindowBackground (mydisplay,
+				trn->dwin, spaceground);
+			train_ddraw (trn);
+		}
+		followtrain = 0;
+	}
+}
+
 void train_dwin (struct train *trn, struct sig *sig) {
 	int h, w;
 	int x, y;
@@ -1909,22 +1932,7 @@ void train_event (struct train *trn, XEvent myevent) {
 	    i=XLookupString(&myevent,text,10,&mykey,0);
 	    if(i==1) switch(text[0]) {
 	      case ' ':
-		if (followtrain != trn) {
-			if (followtrain) {
-				XSetWindowBackground (mydisplay,
-					followtrain->dwin, spaceground);
-				train_ddraw (followtrain);
-			}
-			followtrain = trn;
-			XSetWindowBackground (mydisplay,
-				trn->dwin, markground);
-			train_ddraw (trn);
-		} else {
-			XSetWindowBackground (mydisplay,
-				trn->dwin, spaceground);
-			train_ddraw (trn);
-			followtrain = 0;
-		}
+		set_followtrain (trn);
 		break;
 	      default:
 	    } else {
@@ -3681,6 +3689,16 @@ void handle_window(myevent) XEvent myevent; {
 		break;
 	      case '+':
 		if (oncesteps < 20) oncesteps ++;
+		break;
+	      case 'a':
+		if (trlist && trlist->speed == 0 && trlist != followtrain) {
+		  set_followtrain (trlist);
+		}
+		break;
+	      case 'n':
+		if (followtrain) {
+		  set_followtrain (followtrain->next);
+		}
 		break;
 	      default:
 	    } else {
