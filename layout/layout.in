@@ -21719,7 +21719,7 @@ end "349t350"
 ### THFOURTYNINE
 
 1u begin =8+9v "350t349"
-2u 200m
+2u 800m
 <hp "3497"
 1u 200m
 1u 800m
@@ -55053,15 +55053,13 @@ end "376b"
 1u 800m
 <hp "375F"
 2u 200m
-w< 50m / 50m ne "375a" 8d
-6u 150m
-50m >w / 50m nw "375b" 8d
-2u 50m
+w< 4u / ne "375a" 8d
+4u >w 3u / 50m nw "375b" 8d
 hs> "375N1"
 7v 800m
 <hs "375P1"
-6u 150m
-50m >w / 50m nw "375c" 10d
+3u >w / nw "375g" 1001D
+4u >w / nw "375c" 10d
 2u 200m
 hp> "375B"
 1u 600m
@@ -55087,19 +55085,16 @@ hp> "4481"
 1u 600m
 <hp "375G"
 2u 200m
-2u 50m
-50m >w / 50m sw "375a" 8d
-50m >w / 50m nw "375d" 8d
-w< 50m / 50m se "375b" 8d
-w< 50m / 50m ne "375e" 8d
-2u 50m
+3u >w / sw "375a" 8d
+>w / nw "375d" 8d
+w< 50m / se "375b" 8d
+w< 3u / ne "375e" 8d
 hs> "375N2"
 7v 800m
 <hs "375P2"
-2u 50m
-50m >w / 50m nw "375f" 10d
-w< 50m / 50m se "375c" 10d
-2u 50m
+w< 3v / se "375g" 1001D
+3v >w / nw "375f" 10d
+w< 3u / se "375c" 10d
 2u 200m
 hp> "375A"
 1u 800m
@@ -55123,13 +55118,12 @@ hp> "3761"
 1u 1000m
 <hp "375H"
 2u 200m
-w< 50m / 50m se "375d" 8d
-6u 150m
-50m >w / 50m sw "375e" 8d
+w< 4u / se "375d" 8d
+4u >w / sw "375e" 8d
 hs> "375N3"
 7v 800m
 <hs "375P3"
-~ 50m se
+2u 75m ~ se
 end "375f"
 
 %quo1 3772 376F 376P1 376P2
