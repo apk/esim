@@ -1392,11 +1392,14 @@ end "804c"
 1u 50m
 <hp "804A"
 2u 300m
-w< 3u / se "804a" 8d
+w< 4u / se "804a" 8d
 hs> "804P3"
-4u 800m
+3v 300m
+<hs "804S13"
+1u 200m
+1u 300m
 <hs "804S3"
-5u >w / sw "804g"
+4u >w / sw "804g"
 >w / nw "804h" 8d
 w< 3u / se "804d" 8d
 hs> "804R3"
@@ -1446,7 +1449,7 @@ hs> "804P5"
 ~ 50m se
 end "804l"
 
-%def 804A-804S3/804S1/804S2
+%def 804A-804S13/804S1/804S2
 %def 804B-804S4/804S5
 %def 804S1-804N1
 %def 804S2-804N3/804N1
@@ -1457,7 +1460,7 @@ end "804l"
 %def 804N3-8051/805B
 %def 804N4-805B/+8051
 
-%mac afour-aten 804A-804S1/+804S2/++804S3
+%mac afour-aten 804A-804S1/+804S2/++804S13
 %mac afour-aten 804B-804S4/804S5
 %mac afour-aten 804S1-804N1
 %mac afour-aten 804S2-804N1/804N3
@@ -1485,7 +1488,8 @@ end "804l"
 %quo1 804P4 804R14 804S4
 
 %quo2 804P1 804P2 804P3
-%quo3 804A 804S1 804S2 804S3 804P1 804P2 804P3
+%quo3 804A 804S1 804S2 804S13 804S3 804P1 804P2 804P3
+%quo1 804S13 804S3
 
 %quo1 804R1 804R3
 %quo2 804R1 804R3 804G 8102 804H 804R4 804N4
