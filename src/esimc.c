@@ -387,7 +387,7 @@ int main(argc,argv) int argc; char **argv; {
 		ak = 0;
                 ks = 1; }
 	    else if(!strcmp(argv[i],"-ak")) {
-		ak = 1;
+		ak ++;
                 ks = 0; }
 	    else if(!strcmp(argv[i],"-big")) {
                 karo = 8; }
@@ -695,6 +695,60 @@ void DrawSig (struct sig *d) {
 			} else {
 				draw_dot (x + 3 * KaroH, y + 21 * KaroH, Karo, myclrgc);
 			}
+		}
+		return;
+	}
+	if (d->ak > 1) {
+#if 0
+		if (d->hp > 0 && d->hp < 160 && d->zs3 == 0) {
+			d->zs3 = 4;
+			d->typ |= T_ZS;
+		}
+		if (d->vr > 0 && d->vr < 160 && d->zs3v == 0) {
+			d->zs3v = 4;
+			d->typ |= T_ZV;
+		}
+#endif
+		if (d->typ & T_ZS) {
+			DrawNum (x + 3 * KaroH, 2 * Karo, d->zs3, myclrgc);
+		}
+		if (d->typ & T_ZV) {
+			DrawNum (x + 3 * KaroH, KaroH + 32 * Karo, d->zs3v, myyellowgc);
+		}
+		if (d->typ & T_NM && karo > 3) {
+			XDrawRectangle (mydisplay, basewindow, mythingc,
+					x + 4 * Karo - wd - 2, KaroH + 27 * Karo - 2, 2 * wd + 3, font_height + font_depth + 3);
+			XFillRectangle (mydisplay, basewindow, mywhitegc,
+					x + 4 * Karo - wd - 1, KaroH + 27 * Karo - 1, 2 * wd + 2, font_height + font_depth + 2);
+			XDrawString (mydisplay, basewindow, mygc, x + 4 * Karo - wd, KaroH + 27 * Karo + font_height,
+				     d->name, strlen (d->name));
+		}
+		XFillArc (mydisplay, basewindow, mygc,
+			  x - 2 * Karo, 13 * Karo, 12 * Karo, 12 * Karo,
+			  0, 360 * 64);
+
+		if (d->hp == 0) {
+			draw_dot (x + 3 * Karo, y + 13 * KaroH, 2 * Karo, myredgc);
+			return;
+		}
+		if (d->hp == -1 && d->vr == -1) {
+			draw_dot (x + 2 * KaroH, y + 7 * KaroH, Karo, myclrgc);
+			return;
+		}
+		if (/* d->vr == 0 || (d->hp >= 0 && d->hp <= 60)*/
+		    d->hp > 0 && d->hp <= 60) {
+			draw_dot (x + 5 * Karo, y + 20 * KaroH, 2 * Karo, myyellowgc);
+		}
+		if (d->vr != 0) {
+			draw_dot (x + 5 * Karo, y + 7 * KaroH, 2 * Karo, mygreengc);
+		}
+		if (/*(d->vr > 0 && d->vr <= 60) ||
+		      (d->hp > 0 && d->hp <= 60 && d->vr == 0)*/
+		    d->vr >= 0 && d->vr <= 60) {
+			draw_dot (x - 1 * KaroH, y + 13 * KaroH, 2 * Karo, myyellowgc);
+		}
+		if (d->wh && (d->vr >= 0 && d->vr < 160 || d->zs3v)) {
+			draw_dot (x + 2 * KaroH, y + 7 * KaroH, Karo, myclrgc);
 		}
 		return;
 	}
