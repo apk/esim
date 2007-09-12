@@ -162,7 +162,7 @@ void X_fail (MUX_FD_TYP *x, int rev) {
 }
 
 void tick_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
-    	MUX_SendToBmfIO (&xIo, bmfMakeMessage (
+    	MUX_SendToBmfClt (&xIo, bmfMakeMessage (
 			BMF_NAME, "#",
 			BMF_NAME, "tick",
 			BMF_END));
