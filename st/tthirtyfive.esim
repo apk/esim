@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 235A" $* 235S3 235S2 235S1 235S0 -- 235T3 235T2 235T1 -- 235N2 235N1 &
+esimc -title "esimc 235F" $* 235F -- 235U1 235U2 -- 235R1 235R2 235R3 &

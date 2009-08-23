@@ -6319,7 +6319,7 @@ end "54t53a"
 %mac fiftythree-thirtythree 53F-53P2/53P3/53P4/53P1
 %mac fiftythree-thirtythree 53G-53P1/53P2/53P3/53P4
 %mac fiftythree-thirtythree 53H-53P7/+53P6/+53P5
-%mac fiftythree-thirtythree 53I-53P3/53P4/53P2/53P1
+%mac fiftythree-thirtythree 53I-53P3/53P4/53P2/53P1/53P5/53P6
 %mac fiftythree-thirtythree 53J-53P4/53P3/53P5/53P2/53P6/53P7
 %mac fiftythree-thirtythree 53K-53P6/+53P5/53P4/53P3/53P2/53P7
 %mac fiftythree-thirtythree 53P1-331/33B
@@ -6342,7 +6342,7 @@ end "54t53a"
 %mac fiftythree-fiftytwo 53F-53P2/53P3/53P1/53P4
 %mac fiftythree-fiftytwo 53G-53P1/53P2/53P3/53P4
 %mac fiftythree-fiftytwo 53H-53P7/+53P6/53P5
-%mac fiftythree-fiftytwo 53I-53P3/53P2/53P1/53P4
+%mac fiftythree-fiftytwo 53I-53P3/53P2/53P1/53P4/53P5/53P6
 %mac fiftythree-fiftytwo 53J-53P4/53P2/53P3/53P5/53P6/53P7
 %mac fiftythree-fiftytwo 53K-53P7/+53P6/+53P5/53P4/53P3/53P2
 %mac fiftythree-fiftytwo 53P1-528
@@ -42773,7 +42773,7 @@ end "238n"
 %quo1 2383 238P1
 %quo1 2385 238P1
 %quo1 2387 238P1
-%quo1 238A 238P1
+%quo1 238B 238P1
 
 %quo1 2371 237A 237N1 237N2
 %quo1 2382 237F 237P1 237P2
