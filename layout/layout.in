@@ -44805,8 +44805,8 @@ end "251t250"
 %mac tfifty-hninety 250G-250P2/+250P4/+250P5/250P1/250P3
 %mac tfifty-hninety 250H-250P4/250P5/250P1/250P2/250P3
 %mac tfifty-hninety 250P1-2500/190G
-%mac tfifty-hninety 250P2-2500/190G
-%mac tfifty-hninety 250P3-190G/+2500
+%mac tfifty-hninety 250P2-190G/+2500
+%mac tfifty-hninety 250P3-2500/190G
 %mac tfifty-hninety 250P4-2500/190G
 %mac tfifty-hninety 250P5-2500/190G
 
