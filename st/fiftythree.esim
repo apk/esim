@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 53A" $* 53E 53B 53D 53C 53A -- 53N1 53N2 53N3 53N4 53N5 53N6 53N7 -- 545 541 -- 547 543 &
+esimc -title "esimc 53F" $* 530 -- 534 538 -- 532 536 -- 53H 53K 53J 53I 53F 53G -- 53P7 53P6 53P5 53P4 53P3 53P2 53P1 &

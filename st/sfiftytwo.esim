@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 652F" $* 652I 652H 652G 652F -- 652P4 652P3 652P2 652P1 &
+esimc -title "esimc 652A" $* 652C 652D 652B 652A -- 652N1 652N2 652N3 652N4 &
