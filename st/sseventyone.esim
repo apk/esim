@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 671A" $* 671A -- 671N1 671N2 &
+esimc -title "esimc 671F" $* 671F -- 671P2 671P1 &

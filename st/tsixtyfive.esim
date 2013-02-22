@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 265A" $* 265B 265A -- 265Q5 265Q4 265Q3 265Q2 265Q1 265Q0 -- 265N4 265N3 &
+esimc -title "esimc 265F" $* 265G -- 265F 265R3 265R4 -- 265P1 265P2 265P3 265P4 265P5 &
