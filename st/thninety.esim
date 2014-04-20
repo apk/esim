@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 390F" $* 390G 390F -- 390P3 390P2 390P1 &
+esimc -title "esimc 390A" $* 390B 390A 390C -- 390N1 390N2 390N3 &
