@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 249A" $*  249B 249A -- 249N3 249N2 249N1 &
+esimc -title "esimc 249F" $*  249H 249G 249F -- 249P1 249P2 249P3 &

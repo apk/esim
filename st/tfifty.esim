@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 250A" $*  250C 250D 250A 250B -- 250N5 250N4 250N3 250N2 250N1 &
+esimc -title "esimc 250F" $*  250H 250G 250F -- 250P1 250P2 250P3 250P4 250P5 &

@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 190A" $*  190B 190A -- 190Q4 190Q3 190Q2 190Q1 -- 2503 190N2 190N1 &
+esimc -title "esimc 190F" $*  190H 2504 -- 190S1 190S2 190G 190F -- 190P1 190P2 190P3 190P4 &

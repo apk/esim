@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 314A" $*  314A -- 314N4 314N3 314N2 314N1 -- 315A -- 315N2 315N1 &
+esimc -title "esimc 314F" $*  315F -- 315P1 315P2 -- 314F 314G -- 314P1 314P2 314P3 314P4 &
