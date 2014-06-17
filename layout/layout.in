@@ -44484,7 +44484,7 @@ end "248h"
 
 ### TFOURTYNINE
 
-51v begin =9+13v "249a" se
+43v begin =9+13v "249a" se
 ~ 50m e
 hs> "249P1"
 4u 800m
@@ -44492,7 +44492,14 @@ hs> "249P1"
 ~ 50m ne
 end "249b"
 
-5u begin -1u "248t249"
+73v begin +0u "249f" se
+~ e 50m
+2u 200m
+hp> "249H" 8d
+1u 100m
+end "249c314"
+
+1u begin -1u "248t249"
 2u 800m
 <hp "2493"
 1u 200m
@@ -44508,17 +44515,15 @@ end "249b"
 1u 800m
 <hp "249A"
 2u 200m
-2u 50m
-50m >w / 50m nw "249c" 8d
-w< 50m / 50m se "249a" 8d
-2u 50m
+3u >w / nw "249c" 8d
+w< 3u / se "249a" 8d
 hs> "249P2"
 4u 800m
 <hs "249N2"
-2u 50m
-50m >w / 50m sw "249b" 8d
-w< 50m / 50m ne "249d" 8d
-2u 50m
+3u >w / sw "249b" 8d
+>w / nw "249e" 8d
+w< / se "249f" 8d
+w< 3u / ne "249d" 8d
 2u 200m
 hp> "249G"
 1u 600m
@@ -44526,7 +44531,7 @@ hp> "249G"
 1u 200m
 end "249t250"
 
-9v begin -2u "249t248"
+1v begin -2u "249t248"
 1u 200m
 hp> "2492"
 1u 800m
@@ -44544,13 +44549,12 @@ hp> "2490"
 1u 800m
 <hp "249B"
 2u 200m
-w< 50m / 50m se "249c" 8d
-6u 150m
+w< 7u / se "249c" 8d
 hs> "249P3"
 4u 800m
 <hs "249N3"
-6u 150m
-50m >w / 50m sw "249d" 8d
+3u w< 4u / se "249e" 8d
+4u >w / sw "249d" 8d
 2u 200m
 hp> "249F"
 2u 800m
@@ -44563,33 +44567,62 @@ end "250t249"
 %def 249N3-250C
 
 %def 249F-249P3/249P1/249P2
-%def 249G-249P2/249P1
+%def 249G-249P2/+249P3/249P1
+%def 249H-249P3/+249P2/249P1
 %def 249P1-2490/248G
 %def 249P2-248G/+2490
 %def 249P3-2490
 
+%mac tfourtynine-thfourteen 249N1-314G
+%mac tfourtynine-thfourteen 249N2-314G
+%mac tfourtynine-thfourteen 249N3-314G
+
+%quo2 249B 249N1 249N2 249N3
+%quo2 249G 249H 249P1 249P2 249P3 249N3
+%quo1 249P1 249P2
+%quo3 249B 249N1 249N2 249N3 249G 249H 249P1 249P2 249P3
+
 ### HUNDRED-NINETY
 
-31v begin =9+12v "190a" se
+31v begin =9+16v "190a" se
 ~ 50m e
 hs> "190P1"
 4u 800m
+<hs "190Q1"
+w< 3u / ne "190b" 8d
+2u 50m se
+e
+5u >w / nw "190j" 8d
+hs> "190S1"
+7v 800m
 <hs "190N1"
-~ 50m ne
-end "190b"
+3u >w / nw "190k" 8d
+3v 200m
+hp> "190H"
+2u 800m
+end "190c314"
+
+61v begin +0u "190i" se
+w< 3u e / se "190j" 8d
+hs> "190S2"
+7v 800m
+<hs "190N2"
+~ se 50m
+end "190k"
 
 1u begin -1u "194t190"
 2u 800m
 <hp "190A"
 2u 200m
 w< 3u / ne "190e" 8d
-3u >w / nw "190c" 8d
-w< 3u / se "190a" 8d
+3u >w / nw "190c" 10d
+w< 3u / se "190a" 10d
 hs> "190P2"
 4u 800m
-<hs "190N2"
+<hs "190Q2"
 3u >w / sw "190b" 8d
 >w / nw "190f" 8d
+w< / se "190i" 8d
 w< 3u / ne "190d" 8d
 2u 200m
 hp> "190G"
@@ -44614,14 +44647,14 @@ hp> "1900"
 <hp "190B"
 2u 200m
 3u >w / sw "190e" 8d
-w< / se "190c" 8d
+w< / se "190c" 10d
 w< 3u / ne "190g" 8d
 hs> "190P3"
 4u 800m
-<hs "190N3"
+<hs "190Q3"
 3u >w / nw "190h" 8d
-w< 3u / se "190f" 8d
-3u >w / sw "190d" 8d
+w< 4u / se "190f" 8d
+4u >w / sw "190d" 8d
 2u 200m
 hp> "190F"
 1u 800m
@@ -44640,27 +44673,143 @@ end "250t190"
 ~ 50m e
 hs> "190P4"
 4u 800m
-<hs "190N4"
+<hs "190Q4"
 ~ 50m se
 end "190h"
 
-%def 190A-190N2/190N1/190N4/190N3
-%def 190B-190N3/+190N2/190N4/190N1
-%def 190N1-2503/250D
-%def 190N2-2503/250D
-%def 190N3-250D/+2503
-%def 190N4-2503/250D
+%def 190A-190Q2/190Q1/190Q4/190Q3
+%def 190B-190Q3/+190Q2/190Q4/190Q1
+%def 190Q1-2503/250D
+%def 190Q2-2503/250D
+%def 190Q3-250D/+2503
+%def 190Q4-2503/250D
+%def 190N1-314A
+%def 190N2-314A
 
 %def 190F-190P3/190P4/190P1/190P2
 %def 190G-190P2/+190P3/190P1/190P4
+%def 190H-190S1/+190S2
+%def 190S1-190P1/+190P3/190P4/190P2
+%def 190S2-190P3/190P4/190P1/190P2
 %def 190P1-1900/194G
 %def 190P2-194G/+1900
 %def 190P3-1900/194G
 %def 190P4-1900/194G
 
-%quo3 190B 190N1 190N2 190N3 190N4
+%mac hninety-thfourteen 190A-190Q1/+190Q2/190Q4/190Q3
+%mac hninety-thfourteen 190B-190Q1/+190Q2/+190Q3/190Q4
+%mac hninety-thfourteen 190Q1-190N1/190N2
+%mac hninety-thfourteen 190Q2-190N1/190N2
+%mac hninety-thfourteen 190Q3-190N1/190N2
+%mac hninety-thfourteen 190Q4-190N1/190N2
+
+%quo3 190B 190Q1 190Q2 190Q3 190Q4
 %quo3 190G 190P1 190P2 190P3 190P4
-%quo4 190B 190N1 190N2 190N3 190N4 190G 190P1 190P2 190P3 190P4
+%quo4 190B 190Q1 190Q2 190Q3 190Q4 190G 190P1 190P2 190P3 190P4
+
+%quo1 190S1 190S2 190H
+%quo1 190N1 190N2
+
+### THFOURTEEN
+
+1v begin =4+8u "190c314"
+3v 800m
+<hp "314A"
+3v 200m
+w< / ne "314a" 10d
+w< 3u / se "314b" 8d
+hs> "314P2"
+7v 800m
+<hs "314N2"
+w< 3v / ne "314c" 8d
+3v >w / sw "314d" 8d
+2u >w / nw "314e" 10d
+3v 200m
+hp> "314F"
+3v 600m
+<hp "315A"
+3v 200m
+w< 3u / se "315a" 8d
+hs> "315P2"
+7v 800m
+<hs "315N2"
+3u >w / sw "315b" 8d
+3v 200m
+hp> "315F"
+3v 800m
+end "315c316"
+
+6u begin -1u "314a" ne
+w< 3u e / ne "314f" 10d
+hs> "314P3"
+7v 800m
+<hs "314N3"
+3u 8d >w / sw "314c" 8d
+25m >w< 75m 3u / 25m se "314e" / 25m nw "314g"
+3v 200m
+hp> "314G" 8d
+1u 200m
+end "249c314"
+
+8u begin -2u "314f" ne
+~ e 50m
+hs> "314P4"
+7v 800m
+<hs "314N4"
+3u ~ se 100m
+end "314g"
+
+8u begin +4u "314b" se
+~ e 50m
+hs> "314P1"
+7v 800m
+<hs "314N1"
+2u ~ ne 75m
+end "314d"
+
+30u begin +0u "315a" se
+~ e 50m
+hs> "315P1"
+7v 800m
+<hs "315N1"
+~ ne 75m
+end "315b"
+
+%def 314A-314N2/+314N4/+314N1/314N3
+%def 314N1-315A
+%def 314N2-315A
+%def 314N3-315A
+%def 314N4-315A
+
+%def 314F-314P2/+314P4/+314P1/314P3
+%def 314G-314P2/+314P3/+314P4
+%def 314P1-190H
+%def 314P2-190H
+%def 314P3-190H
+%def 314P4-190H
+
+%mac thfourteen-tfourtynine 314A-314N2/+314N3/314N4
+%mac thfourteen-tfourtynine 314N2-249H
+%mac thfourteen-tfourtynine 314N3-249H
+%mac thfourteen-tfourtynine 314N4-249H
+
+%quo2 314A 314N2 314N3 314N4
+%quo2 314G 314P2 314P3 314P4
+%quo3 314A 314N2 314N3 314N4 314G 314P2 314P3 314P4
+%quo3 314A 314N2 314N3 314N4 314N1 314P1 314F
+%quo3 314G 314P2 314P3 314P4 314N1 314P1 314F
+%quo4 314A 314N2 314N3 314N4 314G 314P2 314P3 314P4 314N1 314P1 314F
+
+%def 315A-315N2/+315N1
+%def 315N1-316A
+%def 315N2-316A
+
+%def 315F-315P2/+315P1
+%def 315P1-314F
+%def 315P2-314F
+
+%quo1 315A 315N1 315N2
+%quo1 315F 315P1 315P2
 
 ### TFIFTY
 
@@ -44693,7 +44842,7 @@ e
 50m >w / 50m sw "250c" 10d
 3u 75m
 50m >w / 50m nw "250g" 10d
-2u 800m
+2u 200m
 hp> "250H"
 2u 1000m
 end "250c281"
@@ -44812,14 +44961,9 @@ end "251t250"
 %mac tfifty-hninety 250P4-2500/190G
 %mac tfifty-hninety 250P5-2500/190G
 
-%quo4 249N3 250C 250D 250N1 250N2 250N3 250N4 250N5
+%quo4 250C 250D 250N1 250N2 250N3 250N4 250N5
 %quo4 250G 250H 250P1 250P2 250P3 250P4 250P5
-%quo5 249N3 250C 250D 250N1 250N2 250N3 250N4 250N5 250G 250H 250P1 250P2 250P3 250P4 250P5
-
-%quo2 249B 249N1 249N2 249P1 249P2 249G
-%quo1 249P1 249P2 249G
-%quo1 249N3 249F
-%quo1 249N3 2502
+%quo5 250C 250D 250N1 250N2 250N3 250N4 250N5 250G 250H 250P1 250P2 250P3 250P4 250P5
 
 ### TEIGHTYONE+TWO
 

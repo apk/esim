@@ -432,6 +432,16 @@
 %mac ir8q %tsixtyfive-fninetyfive,%fsixtyseven-fninetyseven
 %mac ir8q %fsixtyfive-fsixtyfour,%fsixtytwo-thfourtyone
 
+%mac ir8r %hsixtynine-teighteen
+%mac ir8r %hsixtynine-hsixty
+%mac ir8r %fseventy-tfourtyfour,%tfourtyfour-fseventy
+%mac ir8r %fseventythree-fseventyseven
+%mac ir8r %hninety-thfourteen,%thfourteen-tfourtynine
+%mac ir8r %tfourtynine-thfourteen
+%mac ir8r %tfourtyfour-fseventy
+%mac ir8r %fseventy-tfourtyfour
+%mac ir8r %hninety-hsixty
+
 %mac ir8s %ttwo-left
 %mac ir8s %theightynine-t
 %mac ir8s %sfourtyfive-theightyfour,%theightyfour-sfourtyfive
@@ -585,6 +595,13 @@
 %mac ir6e %naughtyeleven-hfiftyone
 %mac ir6e %hninetyeight-hfifty
 %mac ir6e %hninetyeight-hsixtythree
+%mac ir6e %hsixtynine-hsixty
+%mac ir6e %hninety-thfourteen,%thfourteen-tfourtynine
+%mac ir6e %tfourtyfour-fseventy
+%mac ir6e %fseventy-tfourtyfour
+%mac ir6e %tfourtynine-thfourteen
+%mac ir6e %hninety-hsixty
+%mac ir6e %hsixtynine-hsixtyeight
 
 %mac ir6f %twentyseven-fourtyone
 %mac ir6f %fourtyfour-eightythree
@@ -990,6 +1007,8 @@
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 # %trn len=80 n=tst %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree,%hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
 
+%trn len=228 v=200 n=ir6e %ir6e
+%trn len=228 v=200 n=ir8r %ir8r
 %trn len=228 v=200 n=ir6k %ir6k
 %trn len=228 v=200 n=ir0v %ir0v
 
@@ -1096,6 +1115,7 @@
 %trn len=228 v=200 n=ir1p %ir1p
 %trn len=228 v=200 n=ir1e %ir1e
 %trn len=228 v=200 n=ir8p %ir8p
+%trn len=228 v=200 n=ir8r %ir8r
 %trn len=228 v=200 n=ir9s %ir9s
 %trn len=97 v=140 n=loc-b %zero-one,%televen-tninetyeight,%televen-tnine,%tnine-right,%tnine-tten,%ten-turn,%tten-tnine,%tnine-right,%tnine-televen
 %trn len=228 v=200 n=ir1q %ir1q
@@ -1239,6 +1259,7 @@
 %trn len=228 v=200 n=ir3 %detour
 %trn len=228 v=200 n=ir0r %ir0r
 %trn len=228 v=200 n=ir8p %ir8p
+%trn len=228 v=200 n=ir8r %ir8r
 %trn len=228 v=200 n=ir1j %ir1j
 %trn len=124 v=200 n=qr %seventynine-eighty,%eighty-seventynine,%ten-eleven,%two-one,%three-left-turn,%one-two,%ttwentynine-ftwenty,%ftwenty-ttwentynine,%tsixteen-teightyfour
 %trn len=310 v=200 n=ic1a %ic1a
