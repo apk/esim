@@ -1066,14 +1066,18 @@ int try_make_subpath (struct conn *c,
 	return 0;
 }
 
-int check_oppose (struct conn *c, struct sig *sig) {
-	/* Return 1 when there is an opposing path before the
-	 * next switch.
+int check_quora (struct conn *c, struct sig *sig) {
+	/* Return 1 when either the target signal would exceed
+	 * some quora, or there is an occupied opposing signal
+	 * ahead without intervening switch. The latter would
+	 * mean a head-on deadlock on a track which we don't
+	 * want to explicitly handle via %quo.
 	 */
 
 	struct trk *tk;
 	int f;
 
+	/* Check %exc style exclusions */
 	if (sig->grp) {
 		struct ilg *ip;
 		int n = 0;
@@ -1095,6 +1099,7 @@ if (iDebugLevel > 2) printf (" %s%s", ip->sig->name, ip->sig->lcks ? (ip->sig->a
 		if (iDebugLevel > 2) printf (": ok\n");
 	}
 
+	/* Check %quo style quora */
 	if (sig->qgrp) {
 		struct qlgm *im;
 		for (im = sig->qgrp; im; im = im->next) {
@@ -1134,6 +1139,7 @@ if (iDebugLevel > 2) printf (" %s%s", ip->sig->name, ip->sig->lcks ? (ip->sig->a
 
 if (iDebugLevel > 2) printf ("Oppose %s", sig->name);
 
+	/* Check opposing signals */
 	if (sig == c->sf) {
 		f = 0;
 	} else if (sig == c->sr) {
@@ -1248,7 +1254,7 @@ int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, char *n, struc
 		}
 		if (!n || strcmp (n, sig->name) == 0) {
 			/* Found matching signal */
-			if (check_oppose (c, sig)) return 0;
+			if (check_quora (c, sig)) return 0;
 			/*old if (tk->maxsp) r --; */
 			return r;
 		}
