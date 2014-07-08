@@ -375,7 +375,26 @@ struct dnode {
 	struct train *ctrn;	/* Another hack */
 	struct coord four;			/* Fourth display position */
 	struct conn *swtcb;			/* Other of fullcross */
+	struct group *group;
+	struct dnode *gnext;
 };
+
+struct group {
+	struct group *next;
+	struct dnode *list;
+	char name [1];
+} *grouplist = 0;
+
+void mkgroup (char *name) {
+	struct group *g = malloc (sizeof (struct group) + (name ? strlen (name) : 20));
+	if (name) {
+		strcpy (g->name, name);
+	} else {
+		sprintf (g->name, "#%x", (int)g);
+	}
+	g->next = grouplist;
+	grouplist = g;
+}
 
 int cycle = 1;		/* Emulation cycle counter */
 
@@ -2238,6 +2257,9 @@ struct dnode *dnode_list = 0;
 
 struct dnode *mkdnode (int t) {
 	struct dnode *x = malloc (sizeof (struct dnode));
+	if (!grouplist) {
+		mkgroup (0);
+	}
 	x->type = t;
 	x->tnext = dnode_list;
 	x->state = 0;
@@ -2581,6 +2603,10 @@ int parseline (char *p) {
 	struct sig *sg;
 	if (*p == '%') {
 		return parsedef (p);
+	}
+	if (!strncmp (p, "### ", 4)) {
+		mkgroup (p + 4);
+		return 0;
 	}
 	for (z = 0; z < 4; z ++) {
 		A [z].flags = 0;
