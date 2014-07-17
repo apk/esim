@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 401A" $* 401B 401A -- 401N1 401N2 401N3 &
+esimc -title "esimc 401F" $* 401G 401F -- 401P3 401P2 401P1 &

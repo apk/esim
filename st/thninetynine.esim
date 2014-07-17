@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 399A" $* 399B 399C 399A -- 399N1 399N2 399N3 399N4 &
+esimc -title "esimc 399F" $* 399G 399H 399F -- 399P4 399P3 399P2 399P1 &

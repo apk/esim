@@ -1,0 +1,3 @@
+#!/bin/sh
+esimc -title "esimc 400A" $* 400B 400C 400A -- 400N1 400N2 400N3 400N4 400N5 400N6 &
+esimc -title "esimc 400F" $* 400G 400H 400F -- 400P6 400P5 400P4 400P3 400P2 400P1 &
