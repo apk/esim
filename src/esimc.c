@@ -68,6 +68,9 @@ struct sig {
 #define T_ZS 8
 #define T_ZV 16
 #define T_NM 32
+#define T_HP2 64
+#define T_VR2 128
+#define T_KL 256
 	int hp; 	/* -1 == Kl, others == speed */
 	int vr;		/* Also speed */
 	int wh;
@@ -236,6 +239,7 @@ void handle_in (bmfItem_t *l) {
 				d->hp = 160;
 			} else if (!strcmp (n, "Hp2")) {
 				d->hp = 60;
+				d->typ |= T_HP2;
 			} else if (!strcmp (n, "Kl")) {
 				d->hp = -1;
 			} else if (!strcmp (n, "Vr0")) {
@@ -246,10 +250,13 @@ void handle_in (bmfItem_t *l) {
 				d->typ |= T_VR;
 			} else if (!strcmp (n, "Vr2")) {
 				d->vr = 60;
-				d->typ |= T_VR;
+				d->typ |= (T_VR | T_VR2);
 			} else if (!strcmp (n, "VrWh")) {
 				d->wh = 1;
 				d->typ |= T_WH;
+			}
+			if (d->hp == -1 && d->vr == -1) {
+				d->typ |= T_KL;
 			}
 		}
 		DrawSig (d);
@@ -698,17 +705,7 @@ void DrawSig (struct sig *d) {
 		}
 		return;
 	}
-	if (d->ak > 1) {
-#if 0
-		if (d->hp > 0 && d->hp < 160 && d->zs3 == 0) {
-			d->zs3 = 4;
-			d->typ |= T_ZS;
-		}
-		if (d->vr > 0 && d->vr < 160 && d->zs3v == 0) {
-			d->zs3v = 4;
-			d->typ |= T_ZV;
-		}
-#endif
+	if (d->ak == 2) {
 		if (d->typ & T_ZS) {
 			DrawNum (x + 3 * KaroH, 2 * Karo, d->zs3, myclrgc);
 		}
@@ -753,16 +750,41 @@ void DrawSig (struct sig *d) {
 		return;
 	}
 	if (d->ak) {
-#if 0
-		if (d->hp > 0 && d->hp < 160 && d->zs3 == 0) {
-			d->zs3 = 4;
-			d->typ |= T_ZS;
+		int wh = 0;
+		int ht = 7;
+		int kl = 3;
+		int vr = 13;
+		int hp = 8;
+		if (d->ak == 1) {
+			wh = 2;
+			ht= 15;
+		} else {
+			if ((d->wh && (d->vr > 0 && d->vr < 160 || d->zs3v)) ||
+			    (d->vr == 0 && (d->hp > 0 && d->hp <= 60))
+			    ) {
+				d->typ |= T_VR2; /* Hack into wide form... */
+			}
+			if (d->typ & T_VR) {
+				ht = 9;
+			}
+			if (d->typ & T_VR2) {
+				wh = 2;
+				ht = 11;
+			} else {
+				if ((d->typ & T_KL) || (d->typ & T_WH)) {
+					hp += 3;
+					kl = 8;
+					ht += 2;
+					vr += 3;
+				}
+				if (d->typ & T_HP2) {
+					vr = 23;
+				}
+			}
+			if (d->typ & T_HP2) {
+				ht = 15;
+			}
 		}
-		if (d->vr > 0 && d->vr < 160 && d->zs3v == 0) {
-			d->zs3v = 4;
-			d->typ |= T_ZV;
-		}
-#endif
 		if (d->typ & T_ZS) {
 			DrawNum (x + 3 * KaroH, 2 * Karo, d->zs3, myclrgc);
 		}
@@ -777,42 +799,48 @@ void DrawSig (struct sig *d) {
 			XDrawString (mydisplay, basewindow, mygc, x + 4 * Karo - wd, KaroH + 27 * Karo + font_height,
 				     d->name, strlen (d->name));
 		}
-		pts [0].x = x;
+
+		pts [0].x = x + (2 - wh) * Karo;
 		pts [0].y = 12 * Karo;
 		pts [1].x = Karo;
 		pts [1].y = -Karo;
-		pts [2].x = 6 * Karo;
+		pts [2].x = (2 * wh + 2) * Karo;
 		pts [2].y = 0;
 		pts [3].x = Karo;
 		pts [3].y = Karo;
 		pts [4].x = 0;
-		pts [4].y = 15 * Karo;
-		pts [5].x = -8 * Karo;
+		pts [4].y = ht * Karo;
+		pts [5].x = -(2 * wh + 4) * Karo;
 		pts [5].y = 0;
 		XFillPolygon (mydisplay, basewindow, mygc, pts, 6, Convex, CoordModePrevious);
 
 		if (d->hp == 0) {
-			draw_dot (x + 1 * Karo, y + 8 * KaroH, 2 * Karo, myredgc);
+			draw_dot (x + (3 - wh) * Karo, y + hp * KaroH, 2 * Karo, myredgc);
 			return;
 		}
 		if (d->hp == -1 && d->vr == -1) {
-			draw_dot (x + 3 * KaroH, y + 3 * KaroH, Karo, myclrgc);
+			/* Kl */
+			draw_dot (x + (3 - wh) * Karo + KaroH, y + kl * KaroH, Karo, myclrgc);
 			return;
 		}
 		if (/* d->vr == 0 || (d->hp >= 0 && d->hp <= 60)*/
 		    d->hp > 0 && d->hp <= 60) {
-			draw_dot (x + 5 * Karo, y + 23 * KaroH, 2 * Karo, myyellowgc);
+			draw_dot (x + (3 + wh) * Karo, y + 23 * KaroH, 2 * Karo, myyellowgc);
 		}
 		if (d->vr != 0) {
-			draw_dot (x + 5 * Karo, y + 3 * KaroH, 2 * Karo, mygreengc);
+			draw_dot (x + (3 + wh) * Karo, y + 3 * KaroH, 2 * Karo, mygreengc);
 		}
 		if (/*(d->vr > 0 && d->vr <= 60) ||
 		      (d->hp > 0 && d->hp <= 60 && d->vr == 0)*/
 		    d->vr >= 0 && d->vr <= 60) {
-			draw_dot (x + 1 * Karo, y + 14 * KaroH, 2 * Karo, myyellowgc);
+			draw_dot (x + (3 - wh) * Karo, y + vr * KaroH, 2 * Karo, myyellowgc);
 		}
 		if (d->wh && (d->vr >= 0 && d->vr < 160 || d->zs3v)) {
+			/* Wh */
+			draw_dot (x + (3 - wh) * Karo + KaroH, y + kl * KaroH, Karo, myclrgc);
+#if 0
 			draw_dot (x + 3 * KaroH, y + 3 * KaroH, Karo, myclrgc);
+#endif
 		}
 		return;
 	}
