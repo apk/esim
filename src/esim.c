@@ -1101,7 +1101,6 @@ if (iDebugLevel > 2) printf (" %s%s", ip->sig->name, ip->sig->lcks ? (ip->sig->a
 
 	/* Check %quo style quora */
 	if (sig->qgrp) {
-		struct qlgm *im;
 		for (im = sig->qgrp; im; im = im->next) {
 			struct qlg *ip;
 			int n = 0;
