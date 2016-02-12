@@ -642,6 +642,8 @@ void DrawSig (struct sig *d) {
 	int yv = y + 24 * Karo;
 	int wd = (XTextWidth (myfontstruct, d->name, strlen (d->name)) + 1) / 2;
 
+	int f;
+
 	if (d->ks) {
 		if (d->hp > 0 && d->hp < 160 && d->zs3 == 0) {
 			d->zs3 = 4;
@@ -845,6 +847,13 @@ void DrawSig (struct sig *d) {
 		return;
 	}
 
+	f = 0;
+	if (d->typ & (T_ZS | T_HP2 | T_HS)) {
+		f = 0;
+	} else if (d->typ & T_VR) {
+		f = a_flg;
+	}
+
 	if (d->typ & T_ZS) DrawNum (x + 3 * KaroH, 2 * Karo, d->zs3, myclrgc);
 	if (d->typ & T_ZV) DrawNum (x + 3 * KaroH, 50 * Karo, d->zs3v, myyellowgc);
 
@@ -860,9 +869,11 @@ void DrawSig (struct sig *d) {
 	pts [4].y = 17 * Karo;
 	pts [5].x = -8 * Karo;
 	pts [5].y = 0;
-	XFillPolygon (mydisplay, basewindow, mygc, pts, 6, Convex, CoordModePrevious);
+	XFillPolygon (mydisplay, basewindow, f ? mygraygc : mygc, pts, 6, Convex, CoordModePrevious);
 
-	if (d->typ & T_HS) {
+	if (f) {
+		/* nix */
+	} else if (d->typ & T_HS) {
 		if (d->hp < 0) {
 			/* Kl */
 			draw_dot (x + 3 * KaroH, y + 17 * KaroH, Karo, myclrgc);
@@ -915,7 +926,16 @@ void DrawSig (struct sig *d) {
 	pts [7].y = -6 * KaroH;
 	XFillPolygon (mydisplay, basewindow, mygc, pts, 8, Convex, CoordModePrevious);
 
+	if (d->hp == 0) {
+		if (f == 2) {
+			draw_dot (x + Karo, yv + 18 * KaroH, 2 * Karo, myredgc);
+		} else if (f) {
+			draw_dot (x + 3 * Karo, yv + 12 * KaroH, 2 * Karo, myredgc);
+		}
+	}
+
 	if (d->vr < 0) {
+		if (f && d->hp > 0) draw_dot (x + 7 * Karo, yv + 6 * KaroH, 2 * Karo, mygreengc);
 	} else if (d->vr < 1) {
 		draw_dot (x + 5 * Karo, yv + 6 * KaroH, 2 * Karo, myyellowgc);
 		draw_dot (x - Karo, yv + 18 * KaroH, 2 * Karo, myyellowgc);
@@ -924,14 +944,16 @@ void DrawSig (struct sig *d) {
 		draw_dot (x - Karo, yv + 18 * KaroH, 2 * Karo, myyellowgc);
 	} else {
 		draw_dot (x + 7 * Karo, yv + 6 * KaroH, 2 * Karo, mygreengc);
-		draw_dot (x + Karo, yv + 18 * KaroH, 2 * Karo, mygreengc);
+		if (f != 2) {
+			draw_dot (x + Karo, yv + 18 * KaroH, 2 * Karo, mygreengc);
+		}
 	}
 
 	if (!(d->typ & T_WH)) return;
 
 	XDrawLine (mydisplay, basewindow, mygc,
 			x, yv + 8 * KaroH,
-			x + 3 * Karo, yv + 14 * KaroH);
+			x + 2 * Karo, yv + 12 * KaroH);
 
 	if (d->wh) {
 		draw_dot (x - KaroH, yv + 7 * KaroH, Karo, myclrgc);
