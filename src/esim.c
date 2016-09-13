@@ -4052,155 +4052,6 @@ struct connsig {
 	char name [1];
 };
 
-void fini_conn (MUX_BMFCONN_TYP *pC) {
-	struct connsig *s;
-	while ((s = pC->pvUserData)) {
-		pC->pvUserData = s->next;
-		free (s);
-	}
-}
-
-bmfItem_t *bmfSigState (struct dnode *x) {
-	int hk = MMS2KMH (x->hps) / 10;
-	int vk = MMS2KMH (x->vrs) / 10;
-	int s = x->state;
-	bmfBuild_t B;
-	bmfBuildInit (&B);
-	bmfBuildAddName (&B, "sig");
-	bmfBuildAddString (&B, x->sig->name);
-	if (s & DST_Hp1) {
-		bmfBuildAddName (&B, "Hp1");
-		if (hk < 16) {
-			bmfBuildAddAsgnInt (&B, "Zs3", hk);
-		}
-	} else if (s & DST_Hp2) {
-		bmfBuildAddName (&B, "Hp2");
-		if (hk != 4) {
-			bmfBuildAddAsgnInt (&B, "Zs3", hk);
-		}
-	} else if (s & DST_Sh1) {
-		bmfBuildAddName (&B, "Sh1");
-	} else if (s & DST_Kl) {
-		bmfBuildAddName (&B, "Kl");
-	} else if (x->type & HpSig) {
-		if (x->type & LsSig) {
-			bmfBuildAddName (&B, "Hp00");
-		} else {
-			bmfBuildAddName (&B, "Hp0");
-		}
-	} else if (x->type & LsSig) {
-		bmfBuildAddName (&B, "Sh0");
-	}
-	if (s & DST_Vr0) {
-		bmfBuildAddName (&B, "Vr0");
-	} else if (s & DST_Vr1) {
-		bmfBuildAddName (&B, "Vr1");
-		if (vk < 16) {
-			bmfBuildAddAsgnInt (&B, "Zs3v", vk);
-		}
-	} else if (s & DST_Vr2) {
-		bmfBuildAddName (&B, "Vr2");
-		if (vk != 4) {
-			bmfBuildAddAsgnInt (&B, "Zs3v", vk);
-		}
-	}
-	if (s & DST_VrWh) {
-		bmfBuildAddName (&B, "VrWh");
-	}
-	return bmfBuildFini (&B);
-}
-
-static BMFCONN_CMD_HDLR (BmfSig) {
-	bmfItem_t *l;
-	for (l = args; !bmfIsEnd (l); l = bmfGetNext (l)) {
-		char *n = bmfGetString (l);
-		if (n) {
-			struct connsig *s;
-			struct dnode *dn;
-			s = malloc (sizeof (struct connsig) + strlen (n));
-			if (s) {
-				strcpy (s->name, n);
-				s->next = pConn->pvUserData;
-				pConn->pvUserData = s;
-			}
-			for (dn = dnode_list; dn; dn = dn->tnext) {
-				if (dn->sig && !strcmp (dn->sig->name, n)) {
-					MUX_SendMsgToBmfConn (pConn, bmfSigState (dn));
-				}
-			}
-		}
-	}
-	return BMFCONN_CMD_OK ();
-}
-
-static BMFCONN_CMD_HDLR (BmfDumpCounts) {
-	struct dnode *dn;
-	dump_cnts ("siglist");
-	return BMFCONN_CMD_OK ();
-}
-
-static BMFCONN_CMD_HDLR (BmfUsePlan) {
-	int d = useplans;
-	if (bmfParseMessage (args,
-			BMF_INT | BMF_OPT_OPT, &d,
-			BMF_END) == 0) {
-		useplans = d;
-		return bmfMakeMessage (
-			BMF_NAME, "ok",
-			BMF_NAME, bmfGetName (cmd),
-			BMF_INT, d,
-			BMF_END);
-	}
-	return BMFCONN_CMD_SYNERR ();
-}
-
-static BMFCONN_CMD_HDLR (BmfGetSteps) {
-	if (bmfIsEnd (args)) {
-		return bmfMakeMessage (
-			BMF_NAME, "ok",
-			BMF_NAME, bmfGetName (cmd),
-			BMF_INT, emulsteps,
-			BMF_END);
-	}
-	return BMFCONN_CMD_SYNERR ();
-}
-
-static BMFCONN_CMD_HDLR (BmfNStanding) {
-	if (bmfIsEnd (args)) {
-		return bmfMakeMessage (
-			BMF_NAME, "ok",
-			BMF_NAME, bmfGetName (cmd),
-			BMF_INT, nstanding,
-			BMF_END);
-	}
-	return BMFCONN_CMD_SYNERR ();
-}
-
-static BMFCONN_CMD_HDLR (BmfOnceSteps) {
-	int d = oncesteps;
-	if (bmfParseMessage (args,
-			BMF_INT | BMF_OPT_OPT, &d,
-			BMF_END) == 0) {
-		if (d < 1) d = 1;
-		oncesteps = d;
-		return bmfMakeMessage (
-			BMF_NAME, "ok",
-			BMF_NAME, bmfGetName (cmd),
-			BMF_INT, oncesteps,
-			BMF_END);
-	}
-	return BMFCONN_CMD_SYNERR ();
-}
-
-MUX_BMFCMDTABLE_TYP arCmdTable[] = {
-	{ "sig", BmfSig, "sig [name:str]..." },
-	{ "use-plans", BmfUsePlan, "use-plans [flag:int]" },
-	{ "get-steps", BmfGetSteps, "get-steps" },
-	{ "once-steps", BmfOnceSteps, "once-steps [steps:int]" },
-	{ "nstanding", BmfNStanding, "nstanding" },
-	{ "dump-counts", BmfDumpCounts, "dump-counts ..." },
-	{ 0, 0, 0 }
-};
 
 int main(argc,argv) int argc; char **argv; {
     XSizeHints myhint;
@@ -4439,21 +4290,6 @@ spaceground = mybackground;
 		X_req, X_hdl, X_fail, 0);
     MUX_AddMuxFd (&xX);
 
-    MUX_InitBmfConnList (&xConnList, "esim",
-		0, fini_conn, arCmdTable);
-    for (pt = 8440; ; pt ++) {
-	if (pt < 8450) {
-		if (!MUX_CreateBmfTcpListener (&xListen, pt, &xConnList)) {
-			if (pt > 8440) printf ("Listening on %d\n", pt);
-			break;
-		}
-		continue;
-	}
-	printf ("Listening failed...\n");
-	exit (1);
-    }
-    MUX_AddBmfListener(&xListen);
-
     MUX_DoServe ();
     exit (1);
 }
@@ -4503,16 +4339,6 @@ void DrawFLine (struct coord *a, struct coord *b, int f, int g, GC *gcp, int h) 
 		   YCenter (c.y) - (ys * g) / 12);
 }
 
-static int conn_pred (MUX_BMFCONN_TYP *pConn, void *p) {
-	struct connsig *s;
-	for (s = pConn->pvUserData; s; s = s->next) {
-		if (strcmp (s->name, p) == 0) {
-			return 1;
-		}
-	}
-	return 0;
-}
-
 void DrawDIllum (struct dnode *x) {
 	int xb, yb, xc;
 	GC *gcp, *gcpu;
@@ -4524,11 +4350,6 @@ void DrawDIllum (struct dnode *x) {
 			if (x->state == 0) {
 				x->sig->cnt ++;
 			}
-			MUX_SendMsgToPredicatedBmfConn (
-				&xConnList,
-				bmfSigState (x),
-				conn_pred,
-				x->sig->name);
 		}
 	}
 
