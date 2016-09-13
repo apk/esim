@@ -1097,6 +1097,7 @@ if (iDebugLevel > 2) printf (" %s%s", ip->sig->name, ip->sig->lcks ? (ip->sig->a
 
 	/* Check %quo style quora */
 	if (sig->qgrp) {
+		struct qlgm *im;
 		for (im = sig->qgrp; im; im = im->next) {
 			struct qlg *ip;
 			int n = 0;
@@ -5268,3 +5269,9 @@ if (curr->speed > KMH2MMS (5) && lla < 1500000) lla = 1500000;
 	cycle ++;
 	nstanding = nstand;
 }
+
+/*
+  Local Variables:
+  compile-command: "gcc -o esim -I ../../jfdt/h -I /usr/include/X11 esim.c -lX11 ../../jfdt/src/.obj/jfdt.a"
+  End:
+*/
