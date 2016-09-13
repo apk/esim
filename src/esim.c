@@ -30,13 +30,9 @@ Space in Zugfenster selektiert für automatische Verfolgung;
 #include <X11/cursorfont.h>
 #include <X11/keysym.h>
 
-#include "muxbmf.h"
+#include "jfdt/base.h"
 
-MUX_TIMEOUT_TYP xTo;
-MUX_FD_TYP xX;
-
-MUX_BMFCONNLIST_TYP xConnList;
-MUX_BMFLSTN_TYP xListen;
+int iDebugLevel = 0;
 
 Display *mydisplay;
 Window drawwindow;
@@ -3963,38 +3959,28 @@ void handle_window(myevent) XEvent myevent; {
 	    }
 	    break; }}}
 
-int X_req (MUX_FD_TYP *x) {
-	return MUX_POLLIN;
-}
-
-void X_hdl (MUX_FD_TYP *x, int rev) {
+void X_inhdl (jfdtFd_t *fd) {
 	XEvent myevent;
-	if (rev & MUX_POLLIN) {
-		while (XEventsQueued (mydisplay, QueuedAfterReading) > 0) {
-			struct train *curr;
-			XNextEvent(mydisplay,&myevent);
-			if(myevent.type==MappingNotify) {
-				XRefreshKeyboardMapping(&myevent); }
-			else if(myevent.xany.window==basewindow) {
-				handle_bwin(myevent); }
-			else if(myevent.xany.window==drawwindow) {
-				handle_window(myevent); }
-			else if(myevent.xany.window==smlwin) {
-				handle_smlwin(myevent); }
-			else for (curr = trlist; curr; curr = curr->next) {
-				if (curr->dwin == myevent.xany.window) {
-					train_event (curr, myevent);
-					break; }}}
-		if (todo) {
-			DrawPicture ();
-		}
-		XFlush (mydisplay);
+	while (XEventsQueued (mydisplay, QueuedAfterReading) > 0) {
+		struct train *curr;
+		XNextEvent(mydisplay,&myevent);
+		if(myevent.type==MappingNotify) {
+			XRefreshKeyboardMapping(&myevent); }
+		else if(myevent.xany.window==basewindow) {
+			handle_bwin(myevent); }
+		else if(myevent.xany.window==drawwindow) {
+			handle_window(myevent); }
+		else if(myevent.xany.window==smlwin) {
+			handle_smlwin(myevent); }
+		else for (curr = trlist; curr; curr = curr->next) {
+			if (curr->dwin == myevent.xany.window) {
+				train_event (curr, myevent);
+				break; }}}
+	if (todo) {
+		DrawPicture ();
 	}
-}
-
-void X_fail (MUX_FD_TYP *x, int rev) {
-	printf ("X connection failed...\n");
-	exit (1);
+	XFlush (mydisplay);
+	jfdtFdReqIn (fd);
 }
 
 static FILE *dump_cnts (char *s) {
@@ -4011,16 +3997,22 @@ static FILE *dump_cnts (char *s) {
 	return fp;
 }
 
-void to_fire (MUX_TIMEOUT_TYP *pTo, struct timeval dt) {
+static void to_fire (jfdtTimer_t *pTo, jfdtTime_t now) {
 	int i;
-	struct timeval now = MUX_GetTime ();
-	TV_AddFrac (&dt, 1, 10);
-	TV_AddInt (&now, -1, 0);
-	if (TV_LessThan (&dt, &now)) {
-		MUX_SetTimeout (pTo, &now);
+	struct timeval dt = pTo->tm;
+#if 0
+	jfdtTimeAddFrac (&dt, 1, 10);
+	jfdtTimeAddSecs (&now, -1);
+	/* Try to keep up, but go slow when way off... */
+	if (jfdtTimeLessThan (dt, now)) {
+		jfdtTimerSet (pTo, now);
 	} else {
-		MUX_SetTimeout (pTo, &dt);
+		jfdtTimerSet (pTo, dt);
 	}
+#else
+	jfdtTimeAddFrac (&now, 1, 10);
+	jfdtTimerSet (pTo, now);
+#endif
 
 	for (i = 0; i < oncesteps; i ++) {
 		everysec ();
@@ -4052,6 +4044,8 @@ struct connsig {
 	char name [1];
 };
 
+static jfdtTimer_t xTo;
+static jfdtFd_t xX;
 
 int main(argc,argv) int argc; char **argv; {
     XSizeHints myhint;
@@ -4282,15 +4276,15 @@ spaceground = mybackground;
     XMapRaised(mydisplay,drawwindow);
     XMapRaised(mydisplay,smlwin);
 
-    MUX_InitTimeout (&xTo, to_fire, 0);
-    currtime = MUX_GetTime ();
-    MUX_SetTimeout (&xTo, &currtime);
+    jfdtTimerInit (&xTo, to_fire, 0);
+    currtime = jfdtGetTime ();
+    jfdtTimerSet (&xTo, currtime);
 
-    MUX_InitMuxFd (&xX, ConnectionNumber (mydisplay),
-		X_req, X_hdl, X_fail, 0);
-    MUX_AddMuxFd (&xX);
+    jfdtFdInit (&xX, ConnectionNumber (mydisplay),
+		X_inhdl, 0, 0);
+    jfdtFdReqIn (&xX);
 
-    MUX_DoServe ();
+    jfdtServe ();
     exit (1);
 }
 
