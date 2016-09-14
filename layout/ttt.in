@@ -4,7 +4,7 @@
 3u >w / sw "a" 20d
 1u 800m
 1u 800m
-<hp "319A"
+<hp "320A"
 1u 200m
 1u 800m
 <hp "Z1"
@@ -43,7 +43,7 @@
 <hp "Z12"
 1u 200m
 3u >w / sw "a" 20d
-end "318c319"
+end "319c320"
 
 %quo3 Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z9 Z10 Z11 Z12
 
@@ -161,6 +161,42 @@ end "194t190"
 <hp "12"
 1u 200m
 end "251t250"
+
+1u begin +2u "d"
+1u 800m
+<hp "81"
+1u 200m
+1u 800m
+<hp "82"
+1u 200m
+1u 800m
+<hp "83"
+1u 200m
+1u 800m
+<hp "84"
+1u 200m
+1u 800m
+<hp "85"
+1u 200m
+1u 800m
+<hp "86"
+1u 200m
+1u 800m
+<hp "87"
+1u 200m
+1u 800m
+<hp "88"
+1u 200m
+1u 800m
+<hp "89"
+1u 200m
+1u 800m
+<hp "80"
+1u 200m
+3u >w / sw "d" 20d
+hp> "321A"
+2u 800m
+end "319c321"
 
 ### THSIXTEEN
 
@@ -302,7 +338,6 @@ end "317l"
 hs> "317W6"
 7v 800m
 <hs "317N6"
-2u 50m
 end "317n"
 
 %quo2 316A 316N3 316N2 316N1
@@ -319,10 +354,10 @@ end "317n"
 %def 317V2-317N2
 %def 317T3-317N2
 %def 317T4-317N2
-%def 317N2-318A
-%def 317N5-318A
-%def 317N6-318A
-%def 317N7-318A
+%def 317N2-3181
+%def 317N5-3181
+%def 317N6-3181
+%def 317N7-3181
 
 %def 317F-317W2/317W5/317W7/317W6
 %def 317W2-317U2/+317S4/+317S3
@@ -350,62 +385,208 @@ end "317n"
 %quo2 317W5 317W6 317W7
 %quo3 317V5 317N5 317N6 317N7 317W5 317W6 317W7
 
-%quo6 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317W5 317W6 317W7 317F
-%quo7 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317V5 317N5 317N6 317N7 317W5 317W6 317W7 317F
-
-%quo7 3171 317A 317R3 317R4 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317W5 317W6 317W7 317F
-%quo8 3171 317A 317R3 317R4 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317V5 317N5 317N6 317N7 317W5 317W6 317W7 317F
-
-%quo1 3171 317P2
-%quo1 317A 317P2
-%quo1 317U2 317V2 317W2 317N2 317F
-
 ### THEIGHTEEN
 
-1v begin =3+10v "317c318"
+1v begin =3+14v "317c318"
 3v 800m
+<hp "3181"
+1u 200m
+hp> "3182"
+1u 800m
+1u 800m
 <hp "318A"
 3v 200m
 w< 5u / se "318a" 10d
 hs> "318P3"
 7v 800m
+<hs "318R3"
+w< 4u / se "318g" 8d
+2u >w 3u / sw "318h" 8d
+hs> "318S3"
+7v 800m
 <hs "318N3"
 5u >w / sw "318b" 10d
 3v 200m
 hp> "318F"
+1u 800m
+1u 800m
+<hp "3191"
+1u 200m
+hp> "3192"
 3v 800m
 end "318c319"
 
-6u begin +1u "318a" se
+10u begin +1u "318a" se
 w< / 3u e "318c" 10d
 ~ 50m e
 hs> "318P1"
+7v 800m
+<hs "318R1"
+3u w< 2u / ne "318e" 8d
+4u >w / nw "318f" 8d
+hs> "318S1"
 7v 800m
 <hs "318N1"
 ~ 50m ne
 >w / 3u w "318d" 10d
 end "318b"
 
-10u begin +1u "318c"
+14u begin +1u "318c"
 hs> "318P2"
+7v 800m
+<hs "318R2"
+3u >w / nw "318g" 8d
+25m >w< 25m / 25m ne "318h" 6d / 25m sw "318e"
+w< 3u / se "318f" 8d
+hs> "318S2"
 7v 800m
 <hs "318N2"
 end "318d"
 
-%def 318A-318N3/318N1/318N2
-%def 318N1-319A
-%def 318N2-319A
-%def 318N3-319A
+%quo6 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317W5 317W6 317W7 3182 317F
+%quo7 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317V5 317N5 317N6 317N7 317W5 317W6 317W7 3182 317F
 
-%def 318F-318P3/318P2/318P1
-%def 318P1-317F
-%def 318P2-317F
+%quo7 3171 317A 317R3 317R4 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317W5 317W6 317W7 3182 317F
+%quo8 3171 317A 317R3 317R4 317T3 317T4 317S3 317S4 317W2 317R2 317S1 317S2 317T1 317T2 317U2 317V5 317N5 317N6 317N7 317W5 317W6 317W7 3182 317F
 
-%quo2 317V2 317N2 318A 318N1 318N2 318N3
-%quo2 318F 318P1 318P2 318P3
-%quo3 317V2 317N2 318A 318N1 318N2 318N3 318F 318P1 318P2 318P3
+%quo1 3171 317P2
+%quo1 317A 317P2
+%quo1 317U2 317V2 317W2 317N2 317F
+%quo1 317U2 317V2 317W2 317N2 3182
+
+%def 318A-318R3/318R1/318R2
+%def 318R1-318N1/318N3/318N2
+%def 318R2-318N2/318N1/318N3
+%def 318R3-318N3/318N2/318N1
+%def 318N1-3191
+%def 318N2-3191
+%def 318N3-3191
+
+%def 318F-318S3/318S2/318S1
+%def 318S1-318P1/318P2/318P3
+%def 318S2-318P2/318P3/318P1
+%def 318S3-318P3/318P1/318P2
+%def 318P1-3182
+%def 318P2-3182
+%def 318P3-3182
+
+%quo4 317V2 317N2 3181 318A 318R1 318R2 318R3 318N1 318N2 318N3
+%quo4 3192 318F 318S1 318S2 318S3 318P1 318P2 318P3
+%quo6 317V2 317N2 3181 318A 318R1 318R2 318R3 318N1 318N2 318N3 3192 318F 318S1 318S2 318S3 318P1 318P2 318P3
+
+%quo2 318N1 318N2 318N3
+%quo2 318P1 318P2 318P3
+%quo4 318R1 318R2 318R3 318S1 318S2 318S3
+
+### THNINETEEN
+
+1v begin =7+14v "318c319"
+3v 800m
+<hp "319A"
+3v 200m
+w< / se "319c" 13d
+w< 3u / ne "319a" 8d
+hs> "319P3"
+7v 800m
+<hs "319R3"
+3u >w / nw "319b" 8d
+w< 3u / se "319d" 10d
+3u >w / sw "319e" 10d
+hs> "319S3"
+7v 800m
+<hs "319N3"
+w< 3u / se "319f" 10d
+3u >w / sw "319g" 10d
+3v 200m
+hp> "319F"
+1u 800m
+1u 800m
+<hp "3201"
+1u 200m
+hp> "3202"
+3v 800m
+end "319c320"
+
+8u begin -1u ne "319a"
+~ 50m e
+hs> "319P4"
+7v 800m
+<hs "319R4"
+~ 50m se
+end "319b"
+
+6u begin +2u se "319c"
+~ 50m e
+w< 3u / se "319h" 8d
+hs> "319P2"
+7v 800m
+<hs "319R2"
+3u >w / sw "319i" 8d
+>w / nw "319d" 10d
+w< 3u / ne "319e" 10d
+hs> "319S2"
+7v 800m
+<hs "319N2"
+3u >w / nw "319f" 10d
+w< 3u / ne "319g" 10d
+3v 200m
+hp> "319G"
+1u 800m
+1u 800m
+<hp "3211"
+1u 200m
+hp> "3212"
+3v 800m
+end "319c321"
+
+10u begin +2u se "319h"
+~ 50m e
+hs> "319P1"
+7v 800m
+<hs "319R1"
+~ 50m ne
+end "319i"
+
+%def 319A-319R3/319R4/319R1/319R2
+%def 319R1-319N3/319N2
+%def 319R2-319N2/+319N3
+%def 319R3-319N3/319N2
+%def 319R4-319N3/319N2
+%def 319N2-3201
+%def 319N3-3201
+
+%mac thnineteen-thtwentyone 319A-319R2/+319R3/319R1/319R4
+%mac thnineteen-thtwentyone 319R1-319N2/319N3
+%mac thnineteen-thtwentyone 319R2-319N2/319N3
+%mac thnineteen-thtwentyone 319R3-319N3/+319N2
+%mac thnineteen-thtwentyone 319R4-319N2/319N3
+%mac thnineteen-thtwentyone 319N2-3211
+%mac thnineteen-thtwentyone 319N3-3211
+
+%def 319F-319S3/++319S2
+%def 319G-319S2/++319S3
+%def 319S2-319P2/319P3/319P1/319P4
+%def 319S3-319P3/319P4/319P1/319P2
+%def 319P1-3192
+%def 319P2-3192
+%def 319P3-3192
+%def 319P4-3192
+
+%quo4 3191 319A 319R1 319R2 319R3 319R4 319N2 319N3
+%quo4 3202 319F 3212 319G 319S2 319S3 319P1 319P2 319P3 319P4
+%quo6 3191 319A 319R1 319R2 319R3 319R4 319N2 319N3 3202 319F 3212 319G 319S2 319S3 319P1 319P2 319P3 319P4
+
+%quo1 319N2 319N3
+%quo3 319P1 319P2 319P3 319P4
+%quo4 319R1 319R2 319R3 319R4 319S2 319S3
 
 ### WHAT
+
+%quo1 3201 320A
+%def 3201-320A
+
+%quo3 81 82 83 3211 321A
+%def 321A-81
 
 23u begin =13+17v "248a" se
 ~ 50m e
@@ -589,7 +770,7 @@ end "250t249"
 %def 249B-249N3/+249N2/249N1
 %def 249N1-2501/250C
 %def 249N2-2501/250C
-%def 249N3-250C
+%def 249N3-250C/+2501
 
 %def 249F-249P3/249P1/249P2
 %def 249G-249P2/+249P3/249P1
@@ -992,17 +1173,17 @@ end "251t250"
 
 ###
 
+%trn len=310 v=200 n=g %hninety-thfourteen,%thnineteen-thtwentyone
 %trn len=310 v=200 n=d %hninety-thfourteen
+%trn len=310 v=200 n=g %hninety-thfourteen,%thnineteen-thtwentyone
 %trn len=310 v=200 n=d %hninety-thfourteen
+%trn len=310 v=200 n=g %hninety-thfourteen,%thnineteen-thtwentyone
 %trn len=310 v=200 n=d %hninety-thfourteen
+%trn len=310 v=200 n=g %hninety-thfourteen,%thnineteen-thtwentyone
 %trn len=310 v=200 n=d %hninety-thfourteen
+%trn len=310 v=200 n=g %hninety-thfourteen,%thnineteen-thtwentyone
 %trn len=310 v=200 n=d %hninety-thfourteen
-%trn len=310 v=200 n=d %hninety-thfourteen
-%trn len=310 v=200 n=d %hninety-thfourteen
-%trn len=310 v=200 n=d %hninety-thfourteen
-%trn len=310 v=200 n=d %hninety-thfourteen
-%trn len=310 v=200 n=d %hninety-thfourteen
-%trn len=310 v=200 n=d %hninety-thfourteen
+%trn len=310 v=200 n=g %hninety-thfourteen,%thnineteen-thtwentyone
 
 %trn len=310 v=200 n=a 
 %trn len=310 v=200 n=b %tfifty-hninety

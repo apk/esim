@@ -106,7 +106,7 @@ line '73', '74', '75', '76'
 line '75', '76', '77', '78'
 
 puts '
-1v begin "77c78" =5+10u
+1v begin "77c78" =5+7u
 3v 800m
 <hp "78A"
 3v 200m
@@ -115,16 +115,64 @@ w< 3u / ne "78a" 10d
 hs> "78P1"
 7v 800m
 <hs "78N1"
-w< / se "78d" 13d
->w / nw "78b" 10d
+3u >w / nw "78b" 10d
+>w / sw "78e" 10d
+3v 200m
+hp> "78H"
+1u 800m
+1u 800m
+<hp "78I"
+3v 200m
+w< 3u / se "78d" 13d
 3v 200m
 hp> "78F"
 1u 800m
+end "78c79"
+
+8u begin -1u "78a" ne
+~ 50m e
+hs> "78P2"
+7v 800m
+<hs "78N2"
+~ 50m se
+end "78b"
+
+6u begin +2u "78c" se
+w< / 3u 75m e "78f" 10d
+~ 50m e
+hs> "78P3"
+7v 800m
+<hs "78N3"
+~ 50m ne
+>w / 3u 75m w "78g" 10d
+end "78e"
+
+10u begin +1u "78f"
+hs> "78P4"
+7v 800m
+<hs "78N4"
+end "78g"
+
+57v begin -1u "78d" se
+~ 50m e
+3v 200m
+hp> "78G" 13d
+1u 400m
+end "78c90"
+
+9u begin "78c79" =4+10u
 1u 800m
 <hp "79A"
 3v 200m
-w< / ne "79a" 10d
->w / sw "79c" 13d
+3u >w / sw "79c" 13d
+3v 200m
+hp> "79H"
+1u 800m
+1u 800m
+<hp "79I"
+3v 200m
+w< / se "79e" 10d
+w< 3u / ne "79a" 10d
 hs> "79P1"
 7v 800m
 <hs "79N1"
@@ -140,26 +188,14 @@ hp> "802"
 3v 800m
 end "79c80"
 
-8u begin -1u "78a" ne
-~ 50m e
-hs> "78P2"
-7v 800m
-<hs "78N2"
-~ 50m se
-end "78b"
-
-6u begin +2u "78c" se
-~ 3u 100m e
-hs> "78P3"
-7v 800m
-<hs "78N3"
-3u 10d >w se / nw "78d" 13d
-3v 200m e
-hp> "78G" 13d
+9u begin +2u "79c90"
 1u 400m
-end "78c90"
+<hp "79B" 13d
+3v 200m
+~ ne 50m
+end "79c"
 
-53v begin -2u "79a" ne
+26u begin -3u "79a" ne
 ~ 50m e
 hs> "79P2"
 7v 800m
@@ -167,47 +203,67 @@ hs> "79P2"
 ~ 50m se
 end "79b"
 
-42v begin +5u "79c90"
-1u 400m
-<hp "79B" 13d
-~ 200m ne
-w< 3u 10d e / 13d ne "79c"
+24u begin +2u "79e" se
+w< / 3u e "79f" 10d
+~ e 50m
 hs> "79P3"
 7v 800m
 <hs "79N3"
-3u ~ 100m ne
+~ 50m ne
+>w / 3u w "79g" 10d
 end "79d"
 
-%def 78A-78N1/78N2
-%def 78N1-79A
-%def 78N2-79A
-%mac b 78A-78N1/78N3
-%mac b 78N1-90F
-%mac b 78N3-90F
-%def 78F-78P1/78P2
-%def 78G-78P1/78P3
+28u begin +1u "79f" e
+hs> "79P4"
+7v 800m
+<hs "79N4"
+end "79g"
+
+%def 78A-78N1/78N2/78N3/78N4
+%def 78N1-78I
+%def 78N2-78I
+%def 78N3-78I
+%def 78N4-78I
+%def 78I-79A
+%mac b 78I-90F
+%def 78F-78H
+%def 78G-78H
+%def 78H-78P1/78P3/78P2/78P4
 %def 78P1-782
 %def 78P2-782
 %def 78P3-782
+%def 78P4-782
 
-%def 79A-79N1/79N2
-%def 79B-79N1/79N3
+%def 79A-79I
+%def 79B-79I
+%def 79I-79N1/79N2/79N3/79N4
 %def 79N1-801
 %def 79N2-801
 %def 79N3-801
-%def 79F-79P1/79P2
-%def 79P1-78F
-%def 79P2-78F
-%mac c 79F-79P1/79P3
-%mac c 79P1-90G
-%mac c 79P2-90G
+%def 79N4-801
+%def 79F-79P1/79P2/79P3/79P4
+%def 79P1-79H
+%def 79P2-79H
+%def 79P3-79H
+%def 79P4-79H
+%def 79H-78F
+%mac c 79H-90G
 
-%quo1 781 78A 78N1 78N2 78N3
-%quo1 78F 78P1 78P2
-%quo1 78G 78P1 78P3
-%quo1 79A 79N1 79N2
-%quo1 79B 79N1 79N3
-%quo1 802 79F 79P1 79P2 79P3
+%quo1 79A 79H
+%quo1 79B 79H
+
+%quo1 78I 78F
+%quo1 78I 78G
+
+%quo1 78I 79H
+
+%quo3 781 78A 78N1 78N2 78N3 78N4
+%quo3 79H 78F 78G 78H 78P1 78P2 78P3 78P4
+%quo4 781 78A 78N1 78N2 78N3 78N4 79H 78F 78G 78H 78P1 78P2 78P3 78P4
+
+%quo3 78I 79A 79B 79I 79N1 79N2 79N3 79N4
+%quo3 802 79F 79P1 79P2 79P3 79P4
+%quo4 78I 79A 79B 79I 79N1 79N2 79N3 79N4 802 79F 79P1 79P2 79P3 79P4
 '
 
 puts '
@@ -291,7 +347,7 @@ line '67', '68', '69', '90'
 
 puts '%quo1 861 86A'
 
-[1,2,3,4].each do |x|
+[1,2,3,4,5,6].each do |x|
   puts '%trn len=310 v=200 n=a '
   puts '%trn len=310 v=200 n=b %b'
   puts '%trn len=310 v=200 n=c %c'
@@ -299,6 +355,6 @@ end
 
 puts '
 %quo1 901 90A 90N1 90N2 90N3 90N4
-%quo1 90F 90P1 90P2
-%quo1 90G 90P1 90P3
+%quo1 78I 90F 90P1 90P2
+%quo1 79H 90G 90P1 90P3
 '
