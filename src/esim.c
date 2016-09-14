@@ -1,4 +1,4 @@
-/* Mode:C */
+/* -*- Mode:C; c-basic-offset: 8 -*- */
 
 /*
   mkdir obj/Linux-2-i586 exe/Linux-2-i586
