@@ -19489,15 +19489,15 @@ end "401b"
 <hp "401F"
 2u 200m
 2u 50m
-50m >w / 50m nw "401c" 8d
-w< 50m / 50m se "401a" 8d
+50m >w / 50m nw "401c"
+w< 50m / 50m se "401a"
 2u 50m
 hs> "401N2"
 4u 800m
 <hs "401P2"
 2u 50m
-50m >w / 50m sw "401b" 8d
-w< 50m / 50m ne "401d" 8d
+50m >w / 50m sw "401b"
+w< 50m / 50m ne "401d"
 2u 50m
 2u 200m
 hp> "401B"
@@ -19530,13 +19530,13 @@ hp> "4021"
 1u 600m
 <hp "401G"
 2u 200m
-w< 50m / 50m se "401c" 8d
+w< 50m / 50m se "401c"
 6u 150m
 hs> "401N3"
 4u 800m
 <hs "401P3"
 6u 150m
-50m >w / 50m sw "401d" 8d
+50m >w / 50m sw "401d"
 2u 200m
 hp> "401A"
 1u 800m
