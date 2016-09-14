@@ -1,3 +1,3 @@
 #!/bin/sh
-esimc -title "esimc 56A" $* 56B 56A 56C -- 56N1 56N2 56N3 56N4 56N5 56N6 &
-esimc -title "esimc 56F" $* 56I 56H 56G 56F -- 56P6 56P5 56P4 56P3 56P2 56P1 &
+esimc -title "esimc 56A" $* 56B 56A 56C -- 56N1 56N2 56N3 56N4 56N5 56N6 -- 571 567 &
+esimc -title "esimc 56F" $* 568 572 -- 56I 56H 56G 56F -- 56P6 56P5 56P4 56P3 56P2 56P1 &
