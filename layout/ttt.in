@@ -1231,4 +1231,5 @@ end "251t250"
 
 %trn len=310 v=200 n=a 
 %trn len=310 v=200 n=b %tfifty-hninety
+%trn len=310 v=200 n=e %tfifty-teightyone
 %trn len=310 v=200 n=f %tfifty-teightyone,%tfifty-hninety
