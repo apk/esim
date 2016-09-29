@@ -4275,7 +4275,7 @@ spaceground = mybackground;
        |KeyPressMask|ExposureMask|StructureNotifyMask);
     XMapRaised(mydisplay,basewindow);
     XMapRaised(mydisplay,drawwindow);
-    XMapRaised(mydisplay,smlwin);
+    //XMapRaised(mydisplay,smlwin);
 
     jfdtTimerInit (&xTo, to_fire, 0);
     currtime = jfdtGetTime ();
