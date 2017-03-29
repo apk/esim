@@ -1,5 +1,5 @@
 # Little trick to let detour to 6H only apply the first time
-%mac outlet-tour 5N1-6H,5S2-5N2/5N1-12
+%mac outlet-tour 5N1-6H,5S2-5N2/5N1,5N1-12
 %mac outlet %outlet-tour
 
 %mac local %left-turn-four,%four-six

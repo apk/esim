@@ -247,7 +247,7 @@
 %mac ir1f %fnull-seightyfour
 %mac ir1f %fseventy-tfourtyfour,%tfourtyfour-fseventy
 %mac ir1f %fsixtyseven-fsixtyeight,%ffiftyone-tsixty
-%mac ir1f %thninety-sfiftytwo,sfiftytwo-theightyeight,%sfiftytwo-thninety
+%mac ir1f %thninety-sfiftytwo,%sfiftytwo-theightyeight,%sfiftytwo-thninety
 
 %mac ir1g %hninetysix-hninetyone,%tfifty-hninety,%tfiftythree-tfiftyseven
 %mac ir1g %hninety-hsixty,%hsixtynine-hsixty

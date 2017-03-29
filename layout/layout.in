@@ -151,7 +151,7 @@ hs> "81Y4"
 %mac eightyone-turn 81P2-81X
 %mac eightyone-turn 81P3-81X
 %mac eightyone-turn 81P4-81X
-%mac eightyone-turn 81X-81Z3/+81Z4/81Z2/81Z1
+%mac eightyone-turn 81X-81Z3/+81Z4
 
 ### EIGHTY
 
@@ -396,9 +396,10 @@ end "78d"
 %mac zero-two N3-N1/2B
 %mac zero-two N5-41/2B
 
-%mac zero-four F-R12-R2/P3
+%mac zero-four F-R12/R5/P1
 %mac zero-four G-P1/+P2/P3/R5
 %mac zero-four H-P4/P3
+%mac zero-four R12-R2/P3
 %mac zero-four P4-99/4G
 %mac zero-four P3-99/4G
 %mac zero-four P2-99/4G
@@ -428,7 +429,8 @@ end "78d"
 %mac ten-ten 10N2-10B/10C
 %mac ten-ten 10N1-10B
 
-%mac ten-back 10Z-10X-10V/+10U
+%mac ten-back 10Z-10X
+%mac ten-back 10X-10V/+10U
 %mac ten-back 10V-12I/12H
 %mac ten-back 10U-12H
 
@@ -728,10 +730,10 @@ end "78d"
 
 ### EIGHT
 
-%mac eight-nine 8A-8N2/8N1/8N3
-%mac eight-nine 8N2-9A,8N1-9A,8N3-9A
+%mac eight-nine 8A-8N2/8N1
+%mac eight-nine 8N2-9A,8N1-9A
 
-%mac eight-four 8F-8P2/8P1/8P3
+%mac eight-four 8F-8P2/8P1
 %mac eight-four 8P2-48,8P1-48
 
 %def %eight-nine,%eight-four
@@ -3280,7 +3282,8 @@ end "14f"
 %mac fourteen-sixteen 14N3-16B
 %mac fourteen-sixteen 14N4-16B
 
-%mac fourteen-thirteen 14F-14R13-14P2
+%mac fourteen-thirteen 14F-14R13
+%mac fourteen-thirteen 14R13-14P2
 %mac fourteen-thirteen 14G-14P1/+14P2
 %mac fourteen-thirteen 14P1-148
 %mac fourteen-thirteen 14P2-148
@@ -8296,9 +8299,9 @@ end "94t06"
 %quo1 06D 06J
 %quo1 069 06J
 
-%def 06A-06S2/06S3/06S5/06S1//06S4/06S6
+%def 06A-06S2/06S3/06S5/06S1/06S4/06S6
 %def 06B-06S1/+06S2/06S3/06S4/06S5/06S6
-%def 06E-06S3/+06S2/06S5/06S1//06S4/06S6
+%def 06E-06S3/+06S2/06S5/06S1/06S4/06S6
 %def 06S1-06N1
 %def 06S2-06N2/06N1
 %def 06S3-06N2/06N5/06N4
@@ -16089,7 +16092,7 @@ hs> "480S3"
 2u 200m
 hp> "480B"
 1u 600m
-<hp "4808"
+<hp "4800"
 1u 200m
 end "480t82"
 
@@ -16155,9 +16158,9 @@ end "480k"
 %def 480R2-480P3/480P4
 %def 480R3-480P3/480P5/480P4
 %def 480R4-480P4/480P5
-%def 480P3-4808
-%def 480P4-82G/+4808
-%def 480P5-4808/82G
+%def 480P3-4800
+%def 480P4-82G/+4800
+%def 480P5-4800/82G
 
 %quo1 480R4 480P4 480P5
 %quo2 480R4 480S4 480S5 480P4 480P5 480B
@@ -20230,7 +20233,7 @@ end "397t398"
 %def 398P2-3986/3988/3980
 %def 398P3-3986/3988/3980
 %def 398P4-3988/++3986/3980
-%def 398P5-3980/+3988/++3986/
+%def 398P5-3980/+3988/++3986
 
 ### THNINETYSEVEN
 
@@ -26536,7 +26539,7 @@ end "225h"
 %def 225S5-225N3/226B
 
 %def 225F-225R2/225P1
-%def 225G-225P3/+225R2/225R4/225P1/225R5
+%def 225G-225P3/+225R2/225P1
 %def 225R2-225P2/225P4/225P3/225P5
 %def 225P1-2258/224G
 %def 225P2-2258/224G
@@ -28524,7 +28527,7 @@ end "131k"
 %mac hthirtyone-hfourty 131Q2-140G
 
 %mac hthirtyone-hfourtyone 131F-131R3/+131Q2/131Q1
-%mac hthirtyone-hfourtyone 131G-131R3/+131Q3/131Q2/131Q0
+%mac hthirtyone-hfourtyone 131G-131R3/+131Q1/131Q2/131Q0
 %mac hthirtyone-hfourtyone 131Q0-131P1
 %mac hthirtyone-hfourtyone 131Q1-131P1
 %mac hthirtyone-hfourtyone 131Q2-131P2/131P1
@@ -31738,7 +31741,6 @@ end "427t426"
 %def 426R2-426P2
 %def 426R3-426P3/426P2
 %def 426R4-426P4/426P2/426P3
-%def 426P1-4268/425G
 %def 426P2-4268/425G
 %def 426P3-425G/+4268
 %def 426P4-4268
@@ -32654,7 +32656,7 @@ end "139f"
 %mac hthirtynine-ftwentynine 139Q4-4299
 
 %mac hthirtynine-sfiftyeight 139A-139Q3/+139Q2/139Q4
-%mac hthirtynine-sfiftyeight 139B-139Q3/+139Q2/+139Q/139Q4
+%mac hthirtynine-sfiftyeight 139B-139Q3/+139Q2/+139Q1/139Q4
 %mac hthirtynine-sfiftyeight 139Q1-139N3/139N4
 %mac hthirtynine-sfiftyeight 139Q2-139N3/139N4
 %mac hthirtynine-sfiftyeight 139Q3-139N3/139N4
@@ -33595,8 +33597,6 @@ end "290c"
 %mac ttwenty-hthirtyseven 220G-220R2
 %mac ttwenty-hthirtyseven 220H-220R2
 %mac ttwenty-hthirtyseven 220R2-220P6/220P4/220P5
-%mac ttwenty-hthirtyseven 220R3-220P6/220P4/220P5
-%mac ttwenty-hthirtyseven 220R4-220P6/220P4/220P5
 %mac ttwenty-hthirtyseven 220P4-137C
 %mac ttwenty-hthirtyseven 220P5-137C
 %mac ttwenty-hthirtyseven 220P6-137C
@@ -44791,8 +44791,9 @@ end "315b"
 %quo4 314A 314N2 314N3 314N4 314G 314P2 314P3 314P4 314N1 314P1 314F
 
 %def 315A-315N2/+315N1
-%def 315N1-316A
-%def 315N2-316A
+# Doesn't exist yet.
+# %def 315N1-316A
+# %def 315N2-316A
 
 %def 315F-315P2/+315P1
 %def 315P1-314F
@@ -46530,14 +46531,14 @@ end "262d"
 %quo3 2611 261A 261N0 261N1 261N2 2622 2624 261F 261P0 261P1 261P2
 
 %def 262A-262N1/262N2/262N0
+%def 262N0-2631
 %def 262N1-2631
 %def 262N2-2631
-%def 262N3-2631
 
 %def 262F-262P1/262P2/262P0
+%def 262P0-2624
 %def 262P1-2624
 %def 262P2-2624
-%def 262P3-2624
 
 %quo2 2621 2623 262A 262N0 262N1 262N2
 %quo2 2632 262F 262P0 262P1 262P2
@@ -46679,14 +46680,14 @@ end "273d"
 %quo3 2721 272A 272N0 272N1 272N2 2732 2734 272F 272P0 272P1 272P2
 
 %def 273A-273N1/273N2/273N0
+%def 273N0-2741
 %def 273N1-2741
 %def 273N2-2741
-%def 273N3-2741
 
 %def 273F-273P1/273P2/273P0
+%def 273P0-2734
 %def 273P1-2734
 %def 273P2-2734
-%def 273P3-2734
 
 %quo2 2731 2733 273A 273N0 273N1 273N2
 %quo2 2742 273F 273P0 273P1 273P2
@@ -58049,7 +58050,7 @@ end "604t610"
 %mac sten-sfive 610N2-6100
 %mac sten-sfive 610N3-6100
 %mac sten-sfive 610N4-6100
-%mac sten-sfive 610N5-610D/+6101
+%mac sten-sfive 610N5-604V/+6101
 
 %def 610F-610P5/610P4/610P2/610P1/610P3
 %def 610G-610P3/+610P4/+610P5/610P2/610P1
