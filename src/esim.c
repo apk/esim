@@ -467,7 +467,7 @@ struct train {
 	int maxspeed;
 	char *name;
 	struct splan plan;
-	struct sig *ppos;
+	struct planent **ppos;
 
 	Window dwin;		/* The data window */
 	char dtxt [100];	/* The current text */
@@ -1557,14 +1557,16 @@ struct planent *hash_ent (struct planent *e) {
 	*hpp = hp;
 	z ++;
 	memcpy (hp->dests, e, z * sizeof (struct planent));
+#if 0
 	for (z = 0; e [z].sig; z ++) {
 		printf ("%s%s", e [z].sig->name, z ? "/" : "-");
 	}
 	printf ("\n");
+#endif
 	return hp->dests;
 }
 
-struct planent *find_dest (struct splan *spl, struct sig *sign, struct sig **ppos) {
+struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent ***ppos) {
 	static char destname [100];
 	char *p = spl->plan;
 	int z;
@@ -1638,11 +1640,25 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct sig **ppo
 	}
 	epp = spl->P [H (sign, spl->n)];
 	if (epp) {
+		int past = 0;
+		struct planent **cand = 0;
 		while (*epp) {
+			if (ppos && epp == *ppos) {
+				past = 1;
+			}
 			if ((*epp)->sig == sign) {
-				return 1 + *epp; /* Skip the source field */
+				if (past) {
+					cand = epp;
+					break;
+				} else if (!cand) {
+					cand = epp;
+				}
 			}
 			epp ++;
+		}
+		if (cand) {
+			if (ppos) *ppos = cand;
+			return 1 + *cand; /* Skip the source field */
 		}
 	}
 	return 0;
@@ -1774,7 +1790,7 @@ int test_lookahead (struct train *trn,
 					pe = find_dest (&trn->plan, sig, &trn->ppos);
 				}
 				if (sig->d->mode == -1) {
-					if (try_make_path (sig, pe->sig, trn->speed) > 0) {
+					if (try_make_path (sig, pe ? pe->sig : 0, trn->speed) > 0) {
 						try_build_path (sig->d);
 						trn->oflg ++;
 					}
