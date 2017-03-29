@@ -1576,11 +1576,12 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 		return 0;
 	}
 	if (!spl->P) {
+		static int pcnt = 0;
 		/* Create the hash table */
 		char *cp, *bp;
 		struct planent E[100], *ep;
 #if 1
-		printf ("Converting plan of %d chars '%s'\n", strlen (spl->plan), spl->plan);
+		printf ("Converting plan %d of %d chars '%.80s'\n", ++ pcnt, strlen (spl->plan), spl->plan);
 #endif
 		if (spl->n == 0) spl->n = 53;
 		spl->P = malloc (spl->n * sizeof (*spl->P));
@@ -1600,6 +1601,16 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 			}
 			if (!*cp) break;
 			E[z].sig = find_sig (bp, cp);
+			if (!E[z].sig) {
+				int n = bp - spl->plan;
+				if (n > 30) n = 30;
+				printf ("+ Did not find %.*s'%.*s'%.30s\n",
+					n, bp - n,
+					cp - bp, bp,
+					cp);
+				exit (1);
+				break;
+			}
 			E[z].flags = 0;
 			z ++;
 			cp ++;
@@ -1621,6 +1632,16 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 					cp ++;
 				}
 				E[z].sig = find_sig (bp, cp);
+				if (!E[z].sig) {
+					int n = bp - spl->plan;
+					if (n > 30) n = 30;
+					printf ("- Did not find %.*s'%.*s'%.30s\n",
+						n, bp - n,
+						cp - bp, bp,
+						cp);
+					exit (1);
+					break;
+				}
 				z ++;
 				if (*cp == '/') {
 					cp ++;
@@ -2193,9 +2214,9 @@ static struct sig *sigtab [SIG_N];
 
 struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 	int h = sighash (name, name + strlen (name));
+	struct sig *q;
 	struct sig **sp = sigtab + h;
 	struct sig *s = malloc (sizeof (struct sig));
-	printf ("sig %s: %d\n", name, h);
 	s->hnext = *sp;
 	*sp = s;
 	s->c = c;
@@ -2210,6 +2231,11 @@ struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 	s->dsigcnt = 0;
 	s->maxsp = 0;
 	s->cnt = 0;
+	for (q = s->hnext; q; q = q->hnext) {
+		if (strcmp (q->name, name) == 0) {
+			printf ("Dup sig %s\n", name);
+		}
+	}
 	return s;
 }
 
@@ -2224,8 +2250,6 @@ struct sig *find_sig (char *a, char *e) {
 		}
 		s = s->hnext;
 	}
-	printf ("Did not find sig %.*s (%d)\n", (int)(e - a), a, h);
-	exit (9);
 	return 0;
 }
 
