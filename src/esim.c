@@ -1591,6 +1591,10 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 		cp = spl->plan;
 		z = 0;
 		while (*cp) {
+			if (*cp == ',') {
+				cp ++;
+				continue;
+			}
 #if 0
 			printf ("conv: '%.40s'\n", cp);
 #endif
@@ -1626,6 +1630,9 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 						E[z].flags = FL_SEMIFAST;
 						cp ++;
 					}
+				} else if (*cp == '=') {
+					E[z].flags = FL_STOP;
+					cp ++;
 				}
 				bp = cp;
 				while (*cp && *cp != '/' && *cp != ',') {
@@ -2602,17 +2609,23 @@ if (iDebugLevel > 2) printf ("Exc: %s", p);
 if (iDebugLevel > 2) printf ("Exc: %s", p);
 			ii = 0;
 			if (q > p) {
-				for (dn = dnode_list; dn; dn = dn->tnext) {
-					if (!dn->sig) continue;
-					if (strlen (dn->sig->name) + p != q) continue;
-					if (strncmp (dn->sig->name, p, q - p)) continue;
-	AT;
-					ii = malloc (sizeof (struct qlg));
-					ii->sig = dn->sig;
-					ii->next = ip;
-					ii->unchecked = u;
-if (iDebugLevel > 4) if (u) printf ("Unchecked signal %.*s for quote\n", q - p, p);
-					ip = ii;
+				struct sig *sg = find_sig (p, q);
+				if (sg) {
+					/* TODO: I don't think we need to
+					 * go through the dnode_list and
+					 * can just use 'sg'.
+					 */
+					for (dn = dnode_list; dn; dn = dn->tnext) {
+						if (!dn->sig) continue;
+						if (dn->sig != sg) continue;
+						AT;
+						ii = malloc (sizeof (struct qlg));
+						ii->sig = dn->sig;
+						ii->next = ip;
+						ii->unchecked = u;
+						if (iDebugLevel > 4) if (u) printf ("Unchecked signal %.*s for quote\n", q - p, p);
+						ip = ii;
+					}
 				}
 				if (ii == 0) {
 					printf ("Not found signal %.*s for quote\n", q - p, p);
