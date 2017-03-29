@@ -397,21 +397,29 @@ int cycle = 1;		/* Emulation cycle counter */
 void DrawDIllum (struct dnode *x);
 void DrawSmallDNode (struct dnode *x);
 
+struct planent {
+	struct sig *sig;
+	char flags;
+#define FL_FAST 1
+#define FL_SEMIFAST 2
+#define FL_STOP 4
+};
+
+struct planhead {
+	struct planhead *next;
+	struct planent dests[1];
+};
+
 struct splan {
 	char *plan;
 	int n;
-	struct splink **H;
-};
-
-struct splink {
-	struct splink *next;
-	char *pos;
+	struct planent ***P;
 };
 
 void initplan (struct splan *spl, char *p) {
 	spl->plan = p;
-	spl->n = 5;
-	spl->H = 0;
+	spl->n = 1;
+	spl->P = 0;
 }
 
 struct conn {
@@ -459,7 +467,7 @@ struct train {
 	int maxspeed;
 	char *name;
 	struct splan plan;
-	char *ppos;
+	struct sig *ppos;
 
 	Window dwin;		/* The data window */
 	char dtxt [100];	/* The current text */
@@ -470,9 +478,10 @@ struct train {
 };
 
 struct sig {
+	char *name;
+	struct sig *hnext;	/* Next in hash */
 	struct sig *anext;	/* Next active path end */
 	struct conn *c;
-	char *name;
 	struct dnode *d;
 	struct dnode *pre;	/* The track in front */
 	struct dnode *lcks;	/* List of locked dnodes, starting with sig */
@@ -486,6 +495,8 @@ struct sig {
 	int maxsp;		/* Posted maximum speed */
 	int cnt;		/* Usage count */
 };
+
+static struct sig turn_sig = { "$" };
 
 struct ilg {
 	struct ilg *next;
@@ -936,14 +947,14 @@ struct try_make {
 int try_make_subpath_c (struct conn *c,
 			struct trk *tk,
 			int dist,
-			char *n,
+			struct sig *n,
 			struct try_make *sp,
 			int *hp);
 
 int try_make_subpath (struct conn *c,
 		      int f,
 		      int dist,
-		      char *n,
+		      struct sig *n,
 		      struct try_make *sp,
 		      int *hp) {
 	/* (Don't check the signal on c */
@@ -1187,7 +1198,7 @@ if (c->sf) if (iDebugLevel > 2) printf (" [%s]", c->sf->name);
 	}
 }
 
-int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, char *n, struct try_make *sp, int *hp) {
+int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, struct sig *n, struct try_make *sp, int *hp) {
 	struct dnode *x;
 	int f, ha;
 	struct sig *sig;
@@ -1248,7 +1259,7 @@ int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, char *n, struc
 			/* Already locked */
 			return 0;
 		}
-		if (!n || strcmp (n, sig->name) == 0) {
+		if (!n || n == sig) {
 			/* Found matching signal */
 			if (check_quora (c, sig)) return 0;
 			/*old if (tk->maxsp) r --; */
@@ -1270,7 +1281,7 @@ int try_make_subpath_c (struct conn *c, struct trk *tk, int dist, char *n, struc
 	return r;
 }
 
-int try_opt_make_subpath (struct conn *c, int f, int dist, char *n, int sp) {
+int try_opt_make_subpath (struct conn *c, int f, int dist, struct sig *n, int sp) {
 	int h, r;
 	struct try_make tm;
 	tm.m = 0;
@@ -1284,7 +1295,7 @@ int try_opt_make_subpath (struct conn *c, int f, int dist, char *n, int sp) {
 	return r;
 }
 
-int try_make_path (struct sig *sig, char *n, int sp) {
+int try_make_path (struct sig *sig, struct sig *n, int sp) {
 	struct dnode *d = sig->d;
 	int r;
 	if (!d || !d->sig) {
@@ -1499,118 +1510,142 @@ int move_train (struct train *trn, int dist) {
 	return a;
 }
 
-char *find_dest (struct splan *spl, char *sign, char **ppos) {
+int H (struct sig *s, int m) {
+	unsigned n = (unsigned)(unsigned long long)s;
+	return m ? n % m : n;
+}
+
+struct planent **add_e (struct planent **p, struct planent *e) {
+	int z = 0;
+	if (p) {
+		while (p [z]) z ++;
+	}
+	p = realloc (p, (z + 2) * sizeof (struct planent **));
+	p [z] = e;
+	p [z + 1] = 0;
+	return p;
+}
+
+struct sig *find_sig (char *a, char *e);
+
+#define PLAN_N 613
+
+static struct planhead *planhash [PLAN_N];
+
+struct planent *hash_ent (struct planent *e) {
+	int z;
+	struct planhead *hp, **hpp;
+	for (z = 0; e [z].sig; z ++);
+	hpp = planhash + H (e->sig, PLAN_N);
+	for (hp = *hpp; hp; hp = hp->next) {
+		int x;
+		for (x = 0; ; x ++) {
+			if (e [x].sig == hp->dests [x].sig) {
+				if (!e [x].sig) {
+					return hp->dests;
+				}
+				if (e [x].flags == hp->dests [x].flags) {
+					continue;
+				}
+			}
+			goto new;
+		}
+	}
+ new:
+	hp = malloc (sizeof (struct planhead) + z * sizeof (struct planent));
+	hp->next = *hpp;
+	*hpp = hp;
+	z ++;
+	memcpy (hp->dests, e, z * sizeof (struct planent));
+	for (z = 0; e [z].sig; z ++) {
+		printf ("%s%s", e [z].sig->name, z ? "/" : "-");
+	}
+	printf ("\n");
+	return hp->dests;
+}
+
+struct planent *find_dest (struct splan *spl, struct sig *sign, struct sig **ppos) {
 	static char destname [100];
 	char *p = spl->plan;
 	int z;
 	int i;
+	struct planent **epp;
 	if (!spl->plan || !sign) {
 		return 0;
 	}
-	if (spl->n >= 0 && !spl->H) {
+	if (!spl->P) {
 		/* Create the hash table */
 		char *cp, *bp;
-		struct splink *sp, **spp;
-#if 0
-		printf ("Converting plan of %d chars\n", strlen (spl->plan));
+		struct planent E[100], *ep;
+#if 1
+		printf ("Converting plan of %d chars '%s'\n", strlen (spl->plan), spl->plan);
 #endif
-		z = 0;
 		if (spl->n == 0) spl->n = 53;
-		spl->H = malloc (spl->n * sizeof (*spl->H));
+		spl->P = malloc (spl->n * sizeof (*spl->P));
 		for (i = 0; i < spl->n; i ++) {
-			spl->H [i] = 0;
+			spl->P [i] = 0;
 		}
 		cp = spl->plan;
-		while (1) {
-			unsigned int h = 0;
+		z = 0;
+		while (*cp) {
+#if 0
+			printf ("conv: '%.40s'\n", cp);
+#endif
+			z = 0;
 			bp = cp;
 			while (*cp && *cp != '-') {
-				if (*cp == '/') goto again;
-				if (*cp == ',') goto again;
-				h = (13 * h + (*cp)) % spl->n;
 				cp ++;
 			}
-			for (spp = &spl->H [h]; *spp; spp = &(*spp)->next);
-			sp = malloc (sizeof (struct splink));
-			sp->pos = bp;
-			sp->next = *spp;
-			*spp = sp;
-			while (*cp && *cp != ',' && *cp != '-') cp ++;
 			if (!*cp) break;
+			E[z].sig = find_sig (bp, cp);
+			E[z].flags = 0;
 			z ++;
-again:
 			cp ++;
-		}
+			while (*cp) {
 #if 0
-		printf ("Converted %d plan entries\n", z);
+				printf ("sub : '%.40s'\n", cp);
 #endif
-	}
-	if (spl->n >= 0 && spl->H) {
-		/* Use the hash table */
-		unsigned int h = 0;
-		int i;
-		char *s, *q;
-		struct splink *sp;
-		for (i = 0; sign [i]; i ++) {
-			h = (13 * h + (sign [i])) % spl->n;
-		}
-		for (sp = spl->H [h]; sp; sp = sp->next) {
-			if (ppos && (*ppos > sp->pos)) continue;
-			if (strncmp (sign, sp->pos, i) == 0) {
-				if (sp->pos [i] == '-') {
+				E[z].flags = 0;
+				if (*cp == '+') {
+					E[z].flags = FL_FAST;
+					cp ++;
+					if (*cp == '+') {
+						E[z].flags = FL_SEMIFAST;
+						cp ++;
+					}
+				}
+				bp = cp;
+				while (*cp && *cp != '/' && *cp != ',') {
+					cp ++;
+				}
+				E[z].sig = find_sig (bp, cp);
+				z ++;
+				if (*cp == '/') {
+					cp ++;
+					continue;
+				}
+				if (*cp == ',') {
+					cp ++;
 					break;
 				}
 			}
+			E[z].sig = 0;
+			E[z].flags = 0;
+			ep = hash_ent (E);
+			z = H (ep->sig, spl->n);
+			spl->P [z] = add_e (spl->P [z], ep);
 		}
-		if (!sp) {
-			for (sp = spl->H [h]; sp; sp = sp->next) {
-				if (strncmp (sign, sp->pos, i) == 0) {
-					if (sp->pos [i] == '-') {
-						break;
-					}
-				}
+	}
+	epp = spl->P [H (sign, spl->n)];
+	if (epp) {
+		while (*epp) {
+			if ((*epp)->sig == sign) {
+				return 1 + *epp; /* Skip the source field */
 			}
+			epp ++;
 		}
-		if (!sp) return 0;
-		s = destname;
-		q = sp->pos + i + 1;
-		while (*q && *q != ',' && *q != '-') {
-			*s ++ = *q ++;
-		}
-		*s = 0;
-		if (ppos) *ppos = sp->pos;
-		return destname;
 	}
-	if (ppos && *ppos) {
-		p = *ppos;
-	}
-	z = 0;
-	while (1) {
-		char *s = sign;
-		char *q = p;
-		while (*p == *s) {
-			p ++;
-			s ++;
-		}
-		if (*p == '-' && *s == 0) {
-			/* Next is target */
-			p ++;
-			s = destname;
-			while (*p && *p != ',' && *p != '-') {
-				*s ++ = *p ++;
-			}
-			*s = 0;
-			if (ppos) *ppos = q;
-			return destname;
-		}
-		while (*p && *p != ',' && *p != '-') p ++;
-		if (!*p) {
-			if (++ z > 1) return 0;
-			p = spl->plan;
-			continue;
-		}
-		p ++;
-	}
+	return 0;
 }
 
 struct splan defplan = { 0 };
@@ -1728,7 +1763,7 @@ int test_lookahead (struct train *trn,
 			}
 			if (dist < longopendist && (sig->d->mode || trn->go)) {
 				int r;
-				char *n = 0;
+				struct planent *pe = 0;
 				char buf [8192];
 				if (sig->d->type & Stop) {
 					if (trn->speed == 0) {
@@ -1736,11 +1771,10 @@ int test_lookahead (struct train *trn,
 					}
 				}
 				if (useplans) {
-					n = find_dest (&trn->plan, sig->name,
-						     &trn->ppos);
+					pe = find_dest (&trn->plan, sig, &trn->ppos);
 				}
 				if (sig->d->mode == -1) {
-					if (try_make_path (sig, n, trn->speed) > 0) {
+					if (try_make_path (sig, pe->sig, trn->speed) > 0) {
 						try_build_path (sig->d);
 						trn->oflg ++;
 					}
@@ -1750,12 +1784,9 @@ int test_lookahead (struct train *trn,
 					if (trn->speed == 0) {
 						return -1;
 					}
-				} else if (n || (defplan.plan && (n = find_dest (&defplan, sig->name, 0)))) {
+				} else if (pe || (defplan.plan && (pe = find_dest (&defplan, sig, 0)))) {
 					int nth = 0;
-					char *p, *q;
-					strcpy (buf, n);
-					p = buf;
-					while (*p) {
+					while (pe->sig) {
 						if (nth ++ > 0 && trn->speed * 36 > 100 * 10000) {
 							/* No second choice at high speed */
 							break;
@@ -1764,52 +1795,32 @@ int test_lookahead (struct train *trn,
 							/* No far lookahead for second choice */
 							break;
 						}
-						for (q = p;
-						     *q && *q != '/';
-						     q ++);
-						if (q == p + 1 && *p == '$') {
+						if (pe->sig == &turn_sig) {
 							if (trn->speed == 0) {
 								return -1;
 							}
 						}
-						if (*q) {
-							*q = 0;
-/* These 'nth' references never work because always > 0 */
-							r = try_make_path (sig, p, nth ? 0 : trn->speed);
-							if (r < 0) break;
-							if (r > 0) {
-								if (sig->d->mode) sig->d->mode --;
-								try_build_path (sig->d);
-								trn->oflg ++;
-								break;
-							}
-							p = q + 1;
-							if (*p == '=') {
-								p ++;
-								if (trn->speed > 0) break;
-								if (trn->ztim < 100) break;
-							} else if (*p == '+') {
-								if (p [1] == '+') {
-									if (trn->speed * 36 > 160 * 10000) break;
-									p ++;
-								}
-								nth = 0;
-								p ++;
-							}
-						} else {
-							r = try_make_path (sig, p, nth ? 0 : trn->speed);
-							if (r < 0) break;
-							if (r > 0) {
-								if (sig->d->mode) sig->d->mode --;
-								try_build_path (sig->d);
-								trn->oflg ++;
-								break;
-							}
-							p = q;
+						r = try_make_path (sig, pe->sig, nth ? 0 : trn->speed);
+						if (r < 0) break;
+						if (r > 0) {
+							if (sig->d->mode) sig->d->mode --;
+							try_build_path (sig->d);
+							trn->oflg ++;
+							break;
+						}
+						pe ++;
+						if (pe->flags & FL_STOP) { /* if (*p == '=') { */
+							if (trn->speed > 0) break;
+							if (trn->ztim < 100) break;
+						} else if (pe->flags & FL_SEMIFAST) {
+							if (trn->speed * 36 > 160 * 10000) break;
+							nth = 0;
+						} else if (pe->flags & FL_FAST) {
+							nth = 0;
 						}
 					}
 				} else {
-					r = try_make_path (sig, n, trn->speed);
+					r = try_make_path (sig, 0, trn->speed);
 					if (r > 0) {
 						if (sig->d->mode) sig->d->mode --;
 						try_build_path (sig->d);
@@ -2152,8 +2163,25 @@ void train_event (struct train *trn, XEvent myevent) {
 	    train_ddraw (trn);
 	    break; }}}
 
+#define SIG_N 317
+
+int sighash (char *a, char *e) {
+	unsigned z = 0;
+	while (a < e) {
+		z = z * 17 + (255 & *a ++);
+	}
+	return z % SIG_N;
+}
+
+static struct sig *sigtab [SIG_N];
+
 struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
+	int h = sighash (name, name + strlen (name));
+	struct sig **sp = sigtab + h;
 	struct sig *s = malloc (sizeof (struct sig));
+	printf ("sig %s: %d\n", name, h);
+	s->hnext = *sp;
+	*sp = s;
 	s->c = c;
 	s->name = name;
 	s->d = x;
@@ -2167,6 +2195,22 @@ struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 	s->maxsp = 0;
 	s->cnt = 0;
 	return s;
+}
+
+struct sig *find_sig (char *a, char *e) {
+	int h = sighash (a, e);
+	struct sig *s = sigtab[h];
+	if (a + 1 == e && *a == '$') return &turn_sig;
+	while (s) {
+		int n = e - a;
+		if (strncmp (s->name, a, n) == 0 && !s->name [n]) {
+			return s;
+		}
+		s = s->hnext;
+	}
+	printf ("Did not find sig %.*s (%d)\n", (int)(e - a), a, h);
+	exit (9);
+	return 0;
 }
 
 struct trk *MkTrk (int m, struct conn *a, struct conn *b, struct dnode *x) {
