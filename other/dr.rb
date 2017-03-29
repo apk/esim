@@ -1,3 +1,5 @@
+# run-on-change ../src/esim.c dr.rb -- aenv -C ../src gcc -o esim -I ../../jfdt/h -I /usr/include/X11 esim.c -lX11 ../../jfdt/.obj/jfdt.a -- aenv -O out ruby dr.rb -- ../src/esim -a -s20 out
+
 puts '#** Generated **#
 
 1u begin =1+3u
@@ -347,7 +349,7 @@ line '67', '68', '69', '90'
 
 puts '%quo1 861 86A'
 
-[1,2,3,4,5,6].each do |x|
+1.upto(6).each do |x|
   puts '%trn len=310 v=200 n=a '
   puts '%trn len=310 v=200 n=b %b'
   puts '%trn len=310 v=200 n=c %c'
