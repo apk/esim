@@ -107,7 +107,7 @@ line '71', '72', '73', '74'
 line '73', '74', '75', '76'
 line '75', '76', '77', '78'
 
-puts '
+puts %q{
 1v begin "77c78" =5+7u
 3v 800m
 <hp "78A"
@@ -227,6 +227,10 @@ end "79g"
 %def 78N3-78I
 %def 78N4-78I
 %def 78I-79A
+%mac b 78N1-78I'
+%mac b 78N2-78I'
+%mac b 78N3-78I'
+%mac b 78N4-78I'
 %mac b 78I-90F
 %def 78F-78H
 %def 78G-78H
@@ -249,13 +253,17 @@ end "79g"
 %def 79P3-79H
 %def 79P4-79H
 %def 79H-78F
+%mac c 79P1-79H'
+%mac c 79P2-79H'
+%mac c 79P3-79H'
+%mac c 79P4-79H'
 %mac c 79H-90G
 
 %quo1 79A 79H
-%quo1 79B 79H
+%quo1 79B 79H'
 
 %quo1 78I 78F
-%quo1 78I 78G
+%quo1 78I' 78G
 
 %quo1 78I 79H
 
@@ -266,9 +274,9 @@ end "79g"
 %quo3 78I 79A 79B 79I 79N1 79N2 79N3 79N4
 %quo3 802 79F 79P1 79P2 79P3 79P4
 %quo4 78I 79A 79B 79I 79N1 79N2 79N3 79N4 802 79F 79P1 79P2 79P3 79P4
-'
+}
 
-puts '
+puts %q{
 1v begin "69c90" =3+6u
 3v 800m
 <hp "90A"
@@ -322,7 +330,7 @@ end "90e"
 %def 90P1-902
 %def 90P2-902
 %def 90P3-902
-'
+}
 
 line '79', '80', '81', '82'
 line '81', '82', '83', '84'
@@ -355,8 +363,8 @@ puts '%quo1 861 86A'
   puts '%trn len=310 v=200 n=c %c'
 end
 
-puts '
+puts %q{
 %quo1 901 90A 90N1 90N2 90N3 90N4
-%quo1 78I 90F 90P1 90P2
-%quo1 79H 90G 90P1 90P3
-'
+%quo1 78I' 90F 90P1 90P2
+%quo1 79H' 90G 90P1 90P3
+}
