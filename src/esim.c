@@ -491,7 +491,7 @@ struct sig {
 	struct dnode *flck;	/* Starting node of open path (may be inv.) */
 	int im;			/* (Flag) Intermediate signal in path */
 	struct ilg *grp;	/* Interlock group list */
-	struct qlgm *qgrp;	/* Quorum interlock group list */
+	struct quo_el *quos;	/* Quorum interlock group list */
 	int dsigcnt;		/* How many trains see me as stop? */
 	int maxsp;		/* Posted maximum speed */
 	int cnt;		/* Usage count */
@@ -499,22 +499,22 @@ struct sig {
 
 static struct sig turn_sig = { "$" };
 
+struct quo_el {
+	struct quo_el *nextgrp;
+	struct quo_el *nextsig;
+	struct sig *sig;
+	struct quo_hd *quo;
+	char unchecked;
+};
+
+struct quo_hd {
+	int num;
+	struct quo_el *sigs;
+};
+
 struct ilg {
 	struct ilg *next;
 	struct sig *sig;
-};
-
-struct qlgm {
-	struct qlgm *next;
-	int num;
-	struct sig *sig;
-	struct qlg *grp;
-};
-
-struct qlg {
-	struct qlg *next;
-	struct sig *sig;
-	int unchecked;
 };
 
 struct sig *actlist = 0;	/* Active path list */
@@ -1108,36 +1108,37 @@ if (iDebugLevel > 2) printf (" %s%s", ip->sig->name, ip->sig->lcks ? (ip->sig->a
 	}
 
 	/* Check %quo style quora */
-	if (sig->qgrp) {
-		struct qlgm *im;
-		for (im = sig->qgrp; im; im = im->next) {
-			struct qlg *ip;
+	if (sig->quos) {
+		struct quo_el *im;
+		for (im = sig->quos; im; im = im->nextgrp) {
+			struct quo_hd *hd = im->quo;
+			struct quo_el *el;
 			int n = 0;
 			int fl = 0;
 if (iDebugLevel > 2) printf ("Check quorum:");
-			for (ip = im->grp; ip; ip = ip->next) {
-if (iDebugLevel > 2) printf (" %s%s", ip->sig->name, ip->sig->lcks ? (ip->sig->anext ? "++" : "*") : "");
-				if (ip->sig == sig) {
-					if (ip->unchecked) {
+			for (el = hd->sigs; el; el = el->nextsig) {
+if (iDebugLevel > 2) printf (" %s%s", el->sig->name, el->sig->lcks ? (el->sig->anext ? "++" : "*") : "");
+				if (el->sig == sig) {
+					if (el->unchecked) {
 						/* May always approach */
 						n = 0;
 						break;
 					}
 				}
-				if (currtrn && currtrn->dsig == ip->sig) {
-					if (!ip->unchecked) {
+				if (currtrn && currtrn->dsig == el->sig) {
+					if (!el->unchecked) {
 						/* Already in group */
 						fl = 1;
 					}
 				}
 				/* if (ip->sig->lcks) { */
-				if (ip->sig->dsigcnt) {
-					if (!currtrn || currtrn->dsig != ip->sig) {
+				if (el->sig->dsigcnt) {
+					if (!currtrn || currtrn->dsig != el->sig) {
 						n ++;
 					}
 				}
 			}
-			if (n >= im->num && !fl) {
+			if (n >= hd->num && !fl) {
 				if (iDebugLevel > 2) printf (": inhibit\n");
 				return 1;
 			}
@@ -2243,7 +2244,7 @@ struct sig *MkSig (struct conn *c, char *name, struct dnode *x) {
 	s->sp = 0;
 	s->im = 0;
 	s->grp = 0;
-	s->qgrp = 0;
+	s->quos = 0;
 	s->dsigcnt = 0;
 	s->maxsp = 0;
 	s->cnt = 0;
@@ -2604,9 +2605,9 @@ if (iDebugLevel > 2) printf ("3\n");
 if (iDebugLevel > 2) printf ("4\n");
 	} else if ((num = isquo (&p)) > 0) {
 		char *q;
-		struct dnode *dn;
-		struct qlg *ip = 0;
-		struct qlg *ii;
+		struct quo_hd *hd = malloc (sizeof (struct quo_hd));
+		hd->num = num;
+		hd->sigs = 0;
 		while (*p) {
 			int u = 0;
 if (iDebugLevel > 2) printf ("Exc: %s", p);
@@ -2616,29 +2617,20 @@ if (iDebugLevel > 2) printf ("Exc: %s", p);
 			}
 			for (q = p; *q && *q != ' ' && *q != '\n'; q ++);
 if (iDebugLevel > 2) printf ("Exc: %s", p);
-			ii = 0;
 			if (q > p) {
 				char *h = q;
 				while (h > p && h [-1] == '\'') h --;
 				struct sig *sg = find_sig (p, h);
 				if (sg) {
-					/* TODO: I don't think we need to
-					 * go through the dnode_list and
-					 * can just use 'sg'.
-					 */
-					for (dn = dnode_list; dn; dn = dn->tnext) {
-						if (!dn->sig) continue;
-						if (dn->sig != sg) continue;
-						AT;
-						ii = malloc (sizeof (struct qlg));
-						ii->sig = dn->sig;
-						ii->next = ip;
-						ii->unchecked = u;
-						if (iDebugLevel > 4) if (u) printf ("Unchecked signal %.*s for quote\n", q - p, p);
-						ip = ii;
-					}
-				}
-				if (ii == 0) {
+					struct quo_el *el = malloc (sizeof (struct quo_el));
+					el->sig = sg;
+					el->nextgrp = sg->quos;
+					sg->quos = el;
+					el->nextsig = hd->sigs;
+					hd->sigs = el;
+					el->quo = hd;
+					el->unchecked = u;
+				} else {
 					printf ("Not found signal %.*s for quote\n", h - p, p);
 				}
 			}
@@ -2647,14 +2639,6 @@ AT;
 			p = q;
 		}
 if (iDebugLevel > 2) printf ("3\n");
-		for (ii = ip; ii; ii = ii->next) {
-			struct qlgm *im = malloc (sizeof (struct qlgm));
-			im->next = ii->sig->qgrp;
-			ii->sig->qgrp = im;
-			im->grp = ip;
-			im->sig = ii->sig;
-			im->num = num;
-		}
 if (iDebugLevel > 2) printf ("4\n");
 	} else if (strncmp (p, "%trn ", 5) == 0) {
 		int l;
