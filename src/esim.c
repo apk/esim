@@ -403,6 +403,7 @@ struct planent {
 #define FL_FAST 1
 #define FL_SEMIFAST 2
 #define FL_STOP 4
+	char tag;
 };
 
 struct planhead {
@@ -1544,7 +1545,9 @@ struct planent *hash_ent (struct planent *e) {
 				if (!e [x].sig) {
 					return hp->dests;
 				}
-				if (e [x].flags == hp->dests [x].flags) {
+				if (e [x].flags == hp->dests [x].flags &&
+				    e [x].tag == hp->dests [x].tag)
+				{
 					continue;
 				}
 			}
@@ -1581,7 +1584,7 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 		char *cp, *bp;
 		struct planent E[100], *ep;
 #if 1
-		printf ("Converting plan %d of %d chars '%.80s'\n", ++ pcnt, strlen (spl->plan), spl->plan);
+		printf ("Converting plan %d of %d chars <%.80s>\n", ++ pcnt, strlen (spl->plan), spl->plan);
 #endif
 		if (spl->n == 0) spl->n = 53;
 		spl->P = malloc (spl->n * sizeof (*spl->P));
@@ -1608,7 +1611,7 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 			if (!E[z].sig) {
 				int n = bp - spl->plan;
 				if (n > 30) n = 30;
-				printf ("+ Did not find %.*s'%.*s'%.30s\n",
+				printf ("+ Did not find %.*s<%.*s>%.30s\n",
 					n, bp - n,
 					cp - bp, bp,
 					cp);
@@ -1616,6 +1619,7 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 				break;
 			}
 			E[z].flags = 0;
+			E[z].tag = 0;
 			z ++;
 			cp ++;
 			while (*cp) {
@@ -1635,19 +1639,24 @@ struct planent *find_dest (struct splan *spl, struct sig *sign, struct planent *
 					cp ++;
 				}
 				bp = cp;
-				while (*cp && *cp != '/' && *cp != ',') {
+				while (*cp && *cp != '/' && *cp != ',' && *cp != '\'') {
 					cp ++;
 				}
 				E[z].sig = find_sig (bp, cp);
 				if (!E[z].sig) {
 					int n = bp - spl->plan;
 					if (n > 30) n = 30;
-					printf ("- Did not find %.*s'%.*s'%.30s\n",
+					printf ("- Did not find %.*s<%.*s>%.30s\n",
 						n, bp - n,
 						cp - bp, bp,
 						cp);
 					exit (1);
 					break;
+				}
+				E[z].tag = 0;
+				while (*cp == '\'') {
+					cp ++;
+					E[z].tag ++;
 				}
 				z ++;
 				if (*cp == '/') {
@@ -2609,7 +2618,9 @@ if (iDebugLevel > 2) printf ("Exc: %s", p);
 if (iDebugLevel > 2) printf ("Exc: %s", p);
 			ii = 0;
 			if (q > p) {
-				struct sig *sg = find_sig (p, q);
+				char *h = q;
+				while (h > p && h [-1] == '\'') h --;
+				struct sig *sg = find_sig (p, h);
 				if (sg) {
 					/* TODO: I don't think we need to
 					 * go through the dnode_list and
@@ -2628,7 +2639,7 @@ if (iDebugLevel > 2) printf ("Exc: %s", p);
 					}
 				}
 				if (ii == 0) {
-					printf ("Not found signal %.*s for quote\n", q - p, p);
+					printf ("Not found signal %.*s for quote\n", h - p, p);
 				}
 			}
 AT;
