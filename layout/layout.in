@@ -44765,6 +44765,15 @@ hs> "315P1"
 ~ ne 75m
 end "315b"
 
+1u begin +2u "315c316" e
+1u 1000m
+w< / se "316a" 20d
+1u 1000m
+1u 1000m
+<hp "316A"
+1u 200m
+end "316a"
+
 %def 314A-314N2/+314N4/+314N1/314N3
 %def 314N1-315A
 %def 314N2-315A
@@ -44791,9 +44800,8 @@ end "315b"
 %quo4 314A 314N2 314N3 314N4 314G 314P2 314P3 314P4 314N1 314P1 314F
 
 %def 315A-315N2/+315N1
-# Doesn't exist yet.
-# %def 315N1-316A
-# %def 315N2-316A
+%def 315N1-316A
+%def 315N2-316A
 
 %def 315F-315P2/+315P1
 %def 315P1-314F
