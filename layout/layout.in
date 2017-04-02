@@ -28115,7 +28115,7 @@ hs> "170P2"
 3u 800m
 <hs "170N2"
 2u 50m
-50m >w ne / 50m sw "170b" 8d
+50m >w ne / 50m sw "170b" 9d
 end "170d"
 
 1v begin -2u "142c170"
