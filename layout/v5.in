@@ -424,6 +424,12 @@
 %mac ir8c %sfourteen-stwentyeight,%stwenty-stwentynine
 %mac ir8c %stwenty-sthirtyeight,%sninetysix-sthirtyseven
 
+%mac ir8k %hninety-thfourteen
+%mac ir8k %hninety-hsixty
+%mac ir8k %hsixtynine-teighteen
+%mac ir8k %hsixtynine-hsixty
+%mac ir8k %hninetysix-hninetyone
+
 %mac ir8p %fseventy-tfourtyfour,%tfourtyfour-fseventy,%ffiftynine-fsixtyfour
 %mac ir8p %fsixtyfour-ffiftynine,%fsixtytwo-thfourtyone,%ffiftyone-tsixty
 
@@ -1007,6 +1013,8 @@
 # %trn len=97 v=140 n=loc-11 %five-six,%six-five,%five-eleven,%eleven-twelve,10I-11B,10J-11B,10V-12H,11N2-$,11N3-$
 # %trn len=80 n=tst %three-fourteen,%twentyfour-hseventyfour,%hseventy-hfourtythree,%hfourtynine-turn,%hfourtynine-hfourtyfour,%hfourtythree-hseventy
 
+%trn len=228 v=200 n=ir8k %ir8k
+%trn len=228 v=200 n=ir8k %ir8k
 %trn len=228 v=200 n=ir6e %ir6e
 %trn len=228 v=200 n=ir8r %ir8r
 %trn len=228 v=200 n=ir6k %ir6k
