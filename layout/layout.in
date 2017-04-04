@@ -834,7 +834,7 @@ hs> "5R2"
 50m >w / 50m sw "5D"
 50m >w / 50m nw "5B" 8d
 <ls "w14"
-ls> "523"
+ls> "w523"
 w< 50m / 50m se "5E" 8d
 w< 50m / 50m ne "5a"
 3v 50m
@@ -1706,7 +1706,7 @@ hs> "4P11"
 1u 50m
 w< 50m / 50m se "4a" 8d
 1u 25m
-ls> "441"
+ls> "w441"
 5u 125m
 50m >w / 50m sw "4B"
 hs> "4P1"
@@ -1726,8 +1726,8 @@ w< 50m / 50m se "4D" 8d
 2u 50m
 50m >w / 50m nw "4a" 8d
 50m >w / 50m sw "4E"
-<ls "431"
-ls> "432"
+<ls "w431"
+ls> "w432"
 w< 50m / 50m ne "4B"
 2u 50m
 hs> "4P2"
@@ -1746,11 +1746,11 @@ hp> "1"
 hp> "0"
 2u 200m
 50m >w / 50m sw "4G" 8d
-<ls "420"
+<ls "w420"
 w< 50m / 50m se "4H" 8d
 50m >w / 50m nw "4D" 8d
-<ls "421"
-ls> "422"
+<ls "w421"
+ls> "w422"
 w< 50m / 50m ne "4E"
 w< 50m / 50m se "4J" 8d
 2u 50m
@@ -1762,7 +1762,7 @@ hs> "4R13"
 <hs "4S3"
 2u 50m
 50m >w / 50m sw "4K"
-<ls "401"
+<ls "w401"
 w< 50m / 50m se "4M" 8d
 50m >w / 50m nw "4F" 10d
 1u 150m
@@ -2840,7 +2840,7 @@ hs> "3P1"
 <hs "3Q1"
 w< 50m / 50m se "3k"
 2u 50m
-ls> "311"
+ls> "w311"
 6u 150m
 50m >w / 50m sw "3l"
 hs> "3R1"
@@ -2893,12 +2893,12 @@ hs> "3P4"
 4u 800m
 <hs "3Q4"
 6u 150m
-<ls "341"
+<ls "w341"
 2u 50m
 50m >w / 50m sw "3f" 10d
 50m >w / 50m nw "3r" 8d
 50m >w / 50m sw "3h"
-<ls "342"
+<ls "w342"
 w< 50m / 50m ne "3o"
 w< 50m / 50m se "3i" 8d
 2u 50m
@@ -2918,7 +2918,7 @@ hs> "3P3"
 2u 50m
 w< 50m / 50m ne "3m"
 2u 50m
-<ls "331"
+<ls "w331"
 2u 50m
 50m >w se / 50m nw "3n"
 end "3r"
@@ -3092,7 +3092,7 @@ end "15t13"
 2u 200m
 w< 50m / 50m se "13e" 8d
 2u 50m
-ls> "1311"
+ls> "w1311"
 4u 100m
 50m >w / 50m sw "13g"
 hs> "13P1"
@@ -3105,7 +3105,7 @@ end "13h"
 38v begin +3u se "13f"
 w< 50m e 6d / 50m se 8d "13b"
 2u 50m
-ls> "1331"
+ls> "w1331"
 2u 50m
 50m >w / 50m sw "13c"
 hs> "13P3"
@@ -3385,7 +3385,7 @@ hs> "15P2"
 2u 50m
 50m >w / 50m nw "15g"
 50m >w / 50m sw "15d" 8d
-ls> "1521"
+ls> "w1521"
 w< 50m / 50m ne "15h" 8d
 w< 50m / 50m se "15k"
 2u 50m
@@ -8885,7 +8885,7 @@ end "011c151"
 
 1u begin -1u "09u011"
 2u 800m
-<hp "0115"
+<hp "0117"
 1u 200m
 1u 800m
 <hp "011C"
@@ -8982,7 +8982,7 @@ hs> "011P4"
 hp> "011F"
 1u 800m
 1u 200m
-hp> "0112"
+hp> "0122"
 2u 800m
 end "012t011"
 
@@ -10928,7 +10928,7 @@ w< 50m / 50m se "92k" 8d
 hp> "92H"
 1u 800m
 1u 200m
-hp> "1953"
+hp> "1954"
 2u 800m
 end "195u92"
 
@@ -16217,6 +16217,8 @@ hp> "82B"
 1u 200m
 end "82t81"
 
+# Dup 2548 2542
+
 1v begin -2u "82t480"
 1u 200m
 hp> "4809"
@@ -19169,7 +19171,7 @@ end "403t402"
 hp> "4047"
 1u 800m
 1u 200m
-hp> "4044"
+hp> "4045"
 1u 800m
 1u 200m
 hp> "4043"
@@ -20068,11 +20070,11 @@ w< 50m / 50m se "399d" 10d
 hp> "399A"
 1u 800m
 1u 200m
-hp> "3996"
+hp> "3995"
 1u 800m
 <hp "3990"
 1u 200m
-hp> "3994"
+hp> "3993"
 2u 800m
 end "398t399"
 
@@ -21849,13 +21851,13 @@ w< 50m / 50m ne "392d" 8d
 2u 200m
 hp> "392B"
 1u 600m
-<hp "3916"
+<hp "3926"
 1u 200m
 1u 800m
-<hp "3914"
+<hp "3924"
 1u 200m
 1u 800m
-<hp "3912"
+<hp "3922"
 1u 200m
 end "392t391"
 
@@ -21903,8 +21905,8 @@ end "391t392"
 
 %def 392F-392P2/392P1
 %def 392G-392P3/+392P2/392P1
-%def 392P1-3916/391G
-%def 392P2-3916/391G
+%def 392P1-3926/391G
+%def 392P2-3926/391G
 %def 392P3-391G
 
 %quo1 392B 392N1 392N2
@@ -22916,10 +22918,10 @@ end "387t388"
 
 1u begin -2u "652t388"
 2u 800m
-<hp "6524"
+<hp "6528"
 1u 200m
 1u 800m
-<hp "6524"
+<hp "9520"
 1u 200m
 1u 800m
 <hp "388H"
@@ -23014,10 +23016,10 @@ end "653t654"
 
 1v begin -2u "653t389"
 1u 200m
-hp> "6523"
+hp> "9523"
 1u 800m
 1u 200m
-hp> "6521"
+hp> "9521"
 1u 600m
 <hp "653G"
 2u 200m
@@ -23078,9 +23080,9 @@ end "653f"
 
 %mac sfiftythree-theightynine 653A-653N2/653N3
 %mac sfiftythree-theightynine 653B-653N1/+653N2/653N3
-%mac sfiftythree-theightynine 653N1-389D/+6521
-%mac sfiftythree-theightynine 653N2-6521/389D
-%mac sfiftythree-theightynine 653N3-6521/389D
+%mac sfiftythree-theightynine 653N1-389D/+9521
+%mac sfiftythree-theightynine 653N2-9521/389D
+%mac sfiftythree-theightynine 653N3-9521/389D
 
 %def 653F-653P1/653P3/653P2
 %def 653G-653P2/+653P1/653P3
@@ -32038,7 +32040,7 @@ end "676t428"
 
 1v begin -2u "676t427"
 1u 200m
-hp> "6768"
+hp> "6760"
 1u 600m
 <hp "676B"
 2u 200m
@@ -32091,12 +32093,12 @@ end "428t676"
 %def 676R1-676P5/676P4/676P3/676P2
 %def 676R4-676P5/676P4/676P3/676P2
 %def 676P1-6754
-%def 676P2-6768/427G
-%def 676P3-6768/427G
-%def 676P4-6768/427G
-%def 676P5-6768/427G
-%def 676P6-427G/+6768
-%def 676P7-6768/427G
+%def 676P2-6760/427G
+%def 676P3-6760/427G
+%def 676P4-6760/427G
+%def 676P5-6760/427G
+%def 676P6-427G/+6760
+%def 676P7-6760/427G
 
 %mac sseventysix-sseventyfive 676F-676P2/+676P4/676P3/676P5
 %mac sseventysix-sseventyfive 676G-676P2/+676P3/676P4/676P5
@@ -32108,8 +32110,8 @@ end "428t676"
 %mac sseventysix-sseventyfive 676P3-6754
 %mac sseventysix-sseventyfive 676P4-6754
 %mac sseventysix-sseventyfive 676P5-6754
-%mac sseventysix-sseventyfive 676P6-427G/+6768
-%mac sseventysix-sseventyfive 676P7-6768/427G
+%mac sseventysix-sseventyfive 676P6-427G/+6760
+%mac sseventysix-sseventyfive 676P7-6760/427G
 
 %quo3 676B 6753 676C 676N2 676N3 676N4 676N5
 %quo3 676G 6770 676H 676P2 676P3 676P4 676P5
@@ -43642,7 +43644,7 @@ end "471t470"
 
 1v begin -2u "470t244"
 1u 200m
-hp> "4803"
+hp> "9803"
 1u 600m
 <hp "470D"
 2u 200m
@@ -43745,19 +43747,19 @@ end "471u470"
 %mac fseventy-tfourtyfour 470G-470P1/+470P3/+470P2
 %mac fseventy-tfourtyfour 470H-470P4/+470P6/++470P3/470P5
 %mac fseventy-tfourtyfour 470I-470P5/+470P4/++470P3/++470P6/470P2/470P1
-%mac fseventy-tfourtyfour 470P1-244D/+4803
-%mac fseventy-tfourtyfour 470P2-4803/244D
-%mac fseventy-tfourtyfour 470P3-4803/244D
-%mac fseventy-tfourtyfour 470P4-4803/244D
-%mac fseventy-tfourtyfour 470P5-4803/244D
-%mac fseventy-tfourtyfour 470P6-4803/244D
+%mac fseventy-tfourtyfour 470P1-244D/+9803
+%mac fseventy-tfourtyfour 470P2-9803/244D
+%mac fseventy-tfourtyfour 470P3-9803/244D
+%mac fseventy-tfourtyfour 470P4-9803/244D
+%mac fseventy-tfourtyfour 470P5-9803/244D
+%mac fseventy-tfourtyfour 470P6-9803/244D
 
 %mac fseventy-tfourtythree 470F-470P6/++470P4/470P3/470P5
 %mac fseventy-tfourtythree 470G-470P3/470P1/470P2
 %mac fseventy-tfourtythree 470H-470P6/470P4/470P3/470P5
 %mac fseventy-tfourtythree 470I-470P5/+470P6/470P4/470P3
-%mac fseventy-tfourtythree 470P1-244D/+4803
-%mac fseventy-tfourtythree 470P2-244D/+4803
+%mac fseventy-tfourtythree 470P1-244D/+9803
+%mac fseventy-tfourtythree 470P2-244D/+9803
 %mac fseventy-tfourtythree 470P3-4810/243I
 %mac fseventy-tfourtythree 470P4-4810/243I
 %mac fseventy-tfourtythree 470P5-243I/+4810
@@ -43916,13 +43918,13 @@ end "472u471"
 
 1u begin =15+17v "470t244"
 2u 800m
-<hp "4805"
+<hp "9805"
 1u 200m
 1u 800m
-<hp "4807"
+<hp "9807"
 1u 200m
 1u 800m
-<hp "4809"
+<hp "9809"
 1u 200m
 1u 800m
 <hp "244C"
@@ -44010,16 +44012,16 @@ end "245t244"
 
 1v begin -2u "244t470"
 1u 200m
-hp> "4804"
+hp> "9804"
 1u 800m
 1u 200m
-hp> "4806"
+hp> "9806"
 1u 800m
 1u 200m
-hp> "4808"
+hp> "9808"
 1u 800m
 1u 200m
-hp> "4800"
+hp> "9800"
 1u 600m
 <hp "244D"
 2u 200m
@@ -44052,10 +44054,10 @@ end "244j"
 
 %mac tfourtyfour-fseventy 244F-244P3/244P4/244P1/244P2
 %mac tfourtyfour-fseventy 244G-244P1/+244P2/+244P3/244P4
-%mac tfourtyfour-fseventy 244P1-470D/+4800
-%mac tfourtyfour-fseventy 244P2-4800/470D
-%mac tfourtyfour-fseventy 244P3-4800/470D
-%mac tfourtyfour-fseventy 244P4-4800/470D
+%mac tfourtyfour-fseventy 244P1-470D/+9800
+%mac tfourtyfour-fseventy 244P2-9800/470D
+%mac tfourtyfour-fseventy 244P3-9800/470D
+%mac tfourtyfour-fseventy 244P4-9800/470D
 
 %quo4 244B 244D 244N1 244N2 244N3 244N4 244G 244P1 244P2 244P3 244P4
 %quo3 244B 244D 244N1 244N2 244N3 244N4 244G 244P1
